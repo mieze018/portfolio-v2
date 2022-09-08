@@ -10,6 +10,11 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
   "dependencies": {
     "next": "12.2.5",
     "react": "18.2.0",
