@@ -1,7 +1,6 @@
 
 import React, { useContext, memo } from 'react';
 
-import { Footer } from 'components/atoms/footer';
 import Image from 'next/image';
 import { Photo, Post } from 'pages/@type/tumblr';
 import tw from 'twin.macro';
@@ -30,14 +29,15 @@ export const PostComponent: React.FC<{ post: Post }> = ({ post }) => (
                 photoK === post.photos.length - 1
               ) {
                 return (
-                  <Image
-                    className="w-full"
-                    src={photo.original_size.url}
-                    alt={photo.original_size.url}
-                    key={photo.original_size.url}
-                    height={photo.original_size.height}
-                    width={photo.original_size.width}
-                  />
+                  <></>
+                  // <Image
+                  //   className="w-full"
+                  //   src={photo.original_size.url}
+                  //   alt={photo.original_size.url}
+                  //   key={photo.original_size.url}
+                  //   height={photo.original_size.height}
+                  //   width={photo.original_size.width}
+                  // />
                 );
               } else {
                 return null;
@@ -72,7 +72,6 @@ export const PostComponent: React.FC<{ post: Post }> = ({ post }) => (
         </div>
       </Article>
 
-      <Footer />
     </div>
 
   </>
