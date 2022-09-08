@@ -16,7 +16,6 @@ const Home: NextPage = () => {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  const { users } = data
   console.log(data)
   return (
     <div>
