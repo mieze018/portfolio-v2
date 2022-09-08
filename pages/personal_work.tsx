@@ -1,4 +1,5 @@
 
+import {PostComponent} from "components/molecules/Post"
 import Link from "next/link"
 import { GetStaticProps, NextPage } from "next/types"
 import { endpoint, fetcher, tags } from "pages/api/tumblr"
@@ -22,6 +23,7 @@ const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
           <div key={post.id}>
             <h1>{post.id}</h1>
             <p>{post.caption}</p>
+            {fallbackData.response.posts.map((post) => ( <PostComponent post={post} key={post.id} /> ))}
           </div>
         )
       }
