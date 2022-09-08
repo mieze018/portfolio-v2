@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import useSWR from 'swr'
-import { Root } from './tumblrType';
+import { Root } from '../@type/tumblr';
 
 const fetcher = (url: string): Promise<any> => fetch(url).then(res => res.json());
 const TumblrData: () => Root | undefined = () => {
