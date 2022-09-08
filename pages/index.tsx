@@ -19,6 +19,15 @@ const Home: NextPage = () => {
       <Link href="/personal_work">personal_work</Link>
       <Link href="/commissioned_work">commissioned_work</Link>
       <Link href="/info">info</Link>
+      {TumblrData()?.response.posts.map((post) => {
+        return (
+          <div key={post.id}>
+            <h1>{post.id}</h1>
+            <p>{post.caption}</p>
+          </div>
+        )
+      }
+      )}
 
     </div>
   )
