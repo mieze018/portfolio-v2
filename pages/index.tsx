@@ -1,13 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Root } from './@type/tumblr';
+import useSWR from 'swr'
 
-import TumblrData from './api/tumblr';
+const fetcher = (url: string): Promise<any> => fetch(url).then(res => res.json());
 const Home: NextPage = () => {
-
-
-  if (!TumblrData()) return <div>Loading...</div>
-
+  const api_uri = process.env.NEXT_PUBLIC_api_URI;
+  const api_Key = process.env.NEXT_PUBLIC_api_Key;
+  const Blog_name = `${process.env.NEXT_PUBLIC_Tumblr_username}.tumblr.com`;
+  const endpoint = `${api_uri}${Blog_name}/posts?api_key=${api_Key}&limit=999`
+  const { data, error } = useSWR<Root>(endpoint, fetcher)
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
   return (
     <div>
       <Head>
@@ -19,7 +24,7 @@ const Home: NextPage = () => {
       <Link href="/personal_work">personal_work</Link>
       <Link href="/commissioned_work">commissioned_work</Link>
       <Link href="/info">info</Link>
-      {TumblrData()?.response.posts.map((post) => {
+      {data?.response.posts.map((post) => {
         return (
           <div key={post.id}>
             <h1>{post.id}</h1>
