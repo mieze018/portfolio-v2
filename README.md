@@ -15,17 +15,19 @@
 - Storybook
 - Playwright
 
-## できそうならつかいたいもの
+## これができたら別リポジトリでエンジニアポートフォリ作成時にやりたいこと
+
+### サーバサイド候補
+
+- WordPress(Headless)
+
+### できそうならつかいたいもの
 
 - GraphQL
+- WPGraphQL
 - Prisma
 
-## サーバサイド候補
-
-- Tumblr
-- WordPress
-
-## デプロイ先候補
+### デプロイ先候補
 
 - Vercel
 - GitHub Pages
