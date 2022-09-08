@@ -1,18 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import { Root } from './@type/tumblr';
-import useSWR from 'swr'
+import type { GetStaticProps, NextPage } from 'next'
 
-const fetcher = (url: string): Promise<any> => fetch(url).then(res => res.json());
-const Home: NextPage = () => {
-  const api_uri = process.env.NEXT_PUBLIC_api_URI;
-  const api_Key = process.env.NEXT_PUBLIC_api_Key;
-  const Blog_name = `${process.env.NEXT_PUBLIC_Tumblr_username}.tumblr.com`;
-  const endpoint = `${api_uri}${Blog_name}/posts?api_key=${api_Key}&limit=999`
-  const { data, error } = useSWR<Root>(endpoint, fetcher)
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+import Link from 'next/link'
+import { endpoint, fetcher } from 'pages/api/tumblr';
+import React from 'react';
+import { DefaultHeader } from '../components/Header';
+import { Root } from './@type/tumblr';
+
+const Home: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
+
+  // if (error) return <div>Failed to load</div>
+  if (!fallbackData) return <div>Loading...</div>
   return (
     <div>
       <Head>
@@ -24,7 +21,7 @@ const Home: NextPage = () => {
       <Link href="/personal_work">personal_work</Link>
       <Link href="/commissioned_work">commissioned_work</Link>
       <Link href="/info">info</Link>
-      {data?.response.posts.map((post) => {
+      {fallbackData?.response.posts.map((post) => {
         return (
           <div key={post.id}>
             <h1>{post.id}</h1>
@@ -39,3 +36,14 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async () => {
+  const API_URL_ROOT = endpoint
+
+  const data = await fetcher(API_URL_ROOT)
+  return {
+    props: {
+      fallbackData: data
+    }
+  }
+}
