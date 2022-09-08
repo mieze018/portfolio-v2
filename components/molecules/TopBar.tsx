@@ -1,15 +1,29 @@
 // ⚛️
-import { FC, useContext, memo, useEffect, useRef, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-// 🧩
-import { DataCTX } from 'App';
-import { navs } from 'Type';
-import { classList } from 'functions';
+import Link from 'next/link';
+import { FC, memo, useEffect, useRef, useCallback } from 'react';
+
 import './TopBar.css';
-//
-export const TopBar: FC<{ navs: navs }> = memo((props) => {
-  const GetDataCTX: any = useContext(DataCTX);
-  let location = useLocation();
+function classList(elt: HTMLElement | null) {
+  const list = elt?.classList;
+  // console.log(list);
+  return elt === null
+    ? null
+    : {
+        toggle: function (c: string) {
+          list?.toggle(c);
+          return this;
+        },
+        add: function (c: string) {
+          list?.add(c);
+          return this;
+        },
+        remove: function (c: string) {
+          list?.remove(c);
+          return this;
+        }
+      };
+}
+export const TopBar: FC = memo((props) => {
 
   //スマホでアクセスした時tumblrへのリンクをアプリから開くリンクに書き換え
   {
@@ -83,15 +97,15 @@ export const TopBar: FC<{ navs: navs }> = memo((props) => {
   }, [isScrollToggle]);
 
   const TitleLink: FC = (props) => {
-    return (<Link to="/">
-      {GetDataCTX['info']?.['title'] ?? process.env.REACT_APP_title}
+    return (<Link href="/">
+      {/* {GetDataCTX['info']?.['title'] ?? process.env.REACT_APP_title} */}
     </Link>)
   }
   const navLinks: FC<{ className: string }> = ({ className }) => {
     console.log(className)
     return (
       <>
-        {props.navs.map((nav) =>
+        {/* {props.navs.map((nav) =>
           <Link
             to={nav.pathname}
             key={nav.name}
@@ -104,18 +118,19 @@ export const TopBar: FC<{ navs: navs }> = memo((props) => {
           >
             {nav.name}
           </Link>
-        )}
+        )} */}
       </>
     )
   }
   return (
     <TopBarComponent
       TitleLink={TitleLink}
-      description={GetDataCTX['description']}
+      // description={GetDataCTX['description']}
       navLinks={navLinks} />
   );
 });
 
+TopBar.displayName = 'TopBar';
 
 
 export const TopBarComponent: FC<{
@@ -146,3 +161,4 @@ export const TopBarComponent: FC<{
     </>
   );
 });
+TopBarComponent.displayName='TopBarComponent'

@@ -1,5 +1,5 @@
+import { work } from 'pages/@type/work';
 import React, { memo, FC } from 'react';
-import { work } from 'Type'
 export const Work: FC<{ work: work }> = memo(({ work }) => {
   return (
     <li>
@@ -17,3 +17,4 @@ export const Work: FC<{ work: work }> = memo(({ work }) => {
     </li>
   );
 });
+Work.displayName = 'Work';

@@ -108,5 +108,5 @@ const Info: FC = memo(() => {
     </>
   );
 });
-
+Info.displayName = 'Info';
 export default Info;

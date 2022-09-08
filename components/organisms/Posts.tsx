@@ -1,24 +1,17 @@
 // ⚛️
 import React, { useContext, memo } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-// 🧩
-import { DataCTX } from 'App';
-import { routeParam } from 'Type';
 import {Footer} from 'components/atoms/footer';
+import Image from 'next/image';
 
 const Posts = memo(
-  (props: { tag: routeParam; displayFork: number; className?: string }) => {
-    const GetDataCTX: any = useContext(DataCTX);
+  (props: { tag: any; displayFork: number; className?: string }) => {
     return (
       <div
         id={props.tag.pathname}
         className={`fade-wrapper ${props.className && props.className}`}
       >
         {props.tag.isStatic
-          ? props.tag.isStatic
-          : GetDataCTX.posts
-          ? GetDataCTX.posts
               .filter((rawPost: any) =>
                 rawPost.tags.find(
                   (tag: string, i: any) => tag === props.tag.name
@@ -44,11 +37,11 @@ const Posts = memo(
                             photoK === post.photos.length - 1
                           ) {
                             return (
-                              <LazyLoadImage
+                              <Image
                                 className="w-full"
                                 src={photo.alt_sizes[props.displayFork].url}
                                 alt={photo.alt_sizes[props.displayFork].url}
-                                threshold={1280}
+                                // threshold={1280}
                                 // afterLoad={
                                 //   () =>
                                 //     document
@@ -60,7 +53,7 @@ const Posts = memo(
                                 // }
                                 // delayTime={postK === 0 ? 1 : 0}
                                 key={photoK}
-                                visibleByDefault={postK === 0 ? true : false}
+                                // visibleByDefault={postK === 0 ? true : false}
                               />
                             );
                           } else {
@@ -98,11 +91,11 @@ const Posts = memo(
                   </article>
                 );
               })
-          : ' '}
+          }
         <Footer />
       </div>
     );
   }
 );
-
+Posts.displayName = 'Posts';
 export default Posts;

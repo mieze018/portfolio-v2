@@ -1,4 +1,5 @@
-import { events, works } from 'Type'
+import { works,event } from "pages/@type/work";
+
 export const links: { [key: string]: string | undefined }[] = [
   {
     text: 'Twitter',
@@ -325,6 +326,6 @@ export const workExperienceBook: works = [
   }
 ];
 export const workExperience: works = workExperienceEtc.concat(workExperienceBook);
-export const Events: events = [
+export const Events: event[] = [
 
 ]
