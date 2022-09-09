@@ -1,32 +1,26 @@
 import { Footer } from 'components/atoms/footer'
 import { Work } from 'components/atoms/Work'
-import {
-  Events,
-  Genres,
-  links,
-  workExperience,
-} from 'components/molecules/infoData'
+import { Events, links, workExperience } from 'components/molecules/infoData'
 import { NextPage } from 'next'
-import { useTranslation } from 'next-i18next'
+// import { Genres } from 'pages/@type/work'
+import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 
 const Info: NextPage = () => {
-  const { t, ready } = useTranslation()
-  console.log(ready)
-  console.log(t('info.author'))
+  const { t } = useTranslation()
   return (
     <>
       <Wrapper>
         <div id="workExperience" className="mt-12 text-left Japanese">
           <p>
-            {t('info.author')}
-            <small>{t('info.author_pronunciation')}</small>
-            {t('info.description')}
+            {t('author')}
+            <small>{t('author_pronunciation')}</small>
+            {t('description')}
           </p>
           <p>
-            {t('info.toMail')}
+            {t('toMail')}
             <br />
             <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
               {process.env.NEXT_PUBLIC_mail}
@@ -34,9 +28,7 @@ const Info: NextPage = () => {
           </p>
           <div className="mt-16">
             <h1 className="">
-              <a href={process.env.NEXT_PUBLIC_linktree}>
-                {t('info.linktree')}
-              </a>
+              <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
             </h1>
             <hr />
             {links.map((link, linkK) => (
@@ -53,16 +45,16 @@ const Info: NextPage = () => {
 
           {Events.length > 0 && (
             <p>
-              {t('info.eventIncoming')}
+              {t('eventIncoming')}
               <hr />
             </p>
           )}
 
           <div className="mt-16">
-            <h1 className="">{t('info.workExperience')}</h1>
+            <h1 className="">{t('workExperience')}</h1>
             <hr />
             <ul>
-              {Genres.map((genre, genreK) => (
+              {/* {Genres.map((genre, genreK) => (
                 <li key={genreK} className="">
                   <h2 className="my-2 leading-loose tracking-widest">
                     {genre}
@@ -75,7 +67,7 @@ const Info: NextPage = () => {
                       ))}
                   </ul>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
 
@@ -99,7 +91,7 @@ const Info: NextPage = () => {
         </p> */}
 
           <div className="my-12">
-            {t('info.awards')}
+            {t('awards')}
             <hr />
             <ul>
               <li>
