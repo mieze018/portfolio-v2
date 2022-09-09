@@ -1,31 +1,23 @@
+import React, { useContext, memo } from 'react'
 
-import React, { useContext, memo } from 'react';
-
-import Image from 'next/image';
-import { Photo, Post } from 'pages/@type/tumblr';
-import tw from 'twin.macro';
+import Image from 'next/image'
+import { Photo, Post } from 'pages/@type/tumblr'
+import tw from 'twin.macro'
 const Article = tw.article`flex max-w-full mb-10`
 const PhotoWrapper = tw.div`m-auto`
 const PostFooter = tw.footer`mt-0 text-xs sm:text-sm`
 const Caption = tw.div`mt-0 text-sm sm:text-base`
 export const PostComponent: React.FC<{ post: Post }> = ({ post }) => (
   <>
-
-    <div
-      key={post.id_string}
-      className={`fade-wrapper`}
-    >
+    <div key={post.id_string} className={`fade-wrapper`}>
       <Article>
         <div
-          className={`${post.photoset_layout ? 'photoset block' : post.type
-            }`}
+          className={`${post.photoset_layout ? 'photoset block' : post.type}`}
         >
           <PhotoWrapper>
             {post.photos.map((photo: Photo, photoK: any) => {
               if (
-                !post.tags.find(
-                  (tag: string, i: any) => tag === 's-o-l-p'
-                ) ||
+                !post.tags.find((tag: string, i: any) => tag === 's-o-l-p') ||
                 photoK === post.photos.length - 1
               ) {
                 return (
@@ -37,15 +29,15 @@ export const PostComponent: React.FC<{ post: Post }> = ({ post }) => (
                     height={photo.original_size.height}
                     width={photo.original_size.width}
                   />
-                );
+                )
               } else {
-                return null;
+                return null
               }
             })}
           </PhotoWrapper>
           <Caption
             dangerouslySetInnerHTML={{
-              __html: post['caption']
+              __html: post['caption'],
             }}
           />
           <PostFooter>
@@ -55,13 +47,9 @@ export const PostComponent: React.FC<{ post: Post }> = ({ post }) => (
                   <span className="time-ago">
                     {new Intl.DateTimeFormat('en-US', {
                       year: 'numeric',
-                      month: 'long'
+                      month: 'long',
                     }).format(
-                      new Date(
-                        post.date
-                          .replace(' GMT', '')
-                          .replace(' ', 'T')
-                      )
+                      new Date(post.date.replace(' GMT', '').replace(' ', 'T'))
                     )}
                   </span>
                 </li>
@@ -70,10 +58,6 @@ export const PostComponent: React.FC<{ post: Post }> = ({ post }) => (
           </PostFooter>
         </div>
       </Article>
-
     </div>
-
   </>
 )
-
-

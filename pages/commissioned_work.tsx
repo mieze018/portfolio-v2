@@ -1,15 +1,16 @@
-import { DefaultHeader } from "components/Header"
-import Link from "next/link"
-import { GetStaticProps, NextPage } from "next/types"
-import { Root } from "pages/@type/tumblr"
-import { tags, endpoint, fetcher } from "pages/api/tumblr"
+import { DefaultHeader } from 'components/Header'
+import Link from 'next/link'
+import { GetStaticProps, NextPage } from 'next/types'
+import { Root } from 'pages/@type/tumblr'
+import { tags, endpoint, fetcher } from 'pages/api/tumblr'
 
-const CommissionedWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
+const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
+  fallbackData,
+}) => {
   console.log(fallbackData)
   if (!fallbackData) return <div>Loading...</div>
   return (
     <div>
-
       <DefaultHeader />
       <Link href="/personal_work">personal_work</Link>
       <Link href="/commissioned_work">commissioned_work</Link>
@@ -23,15 +24,11 @@ const CommissionedWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) =>
             <p>{post.caption}</p>
           </div>
         )
-      }
-      )}
-
+      })}
     </div>
   )
 }
 export default CommissionedWork
-
-
 
 export const getStaticProps: GetStaticProps = async () => {
   const API_URL_ROOT = endpoint
@@ -39,7 +36,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await fetcher(API_URL_ROOT)
   return {
     props: {
-      fallbackData: data
-    }
+      fallbackData: data,
+    },
   }
 }

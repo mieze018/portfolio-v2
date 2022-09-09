@@ -1,44 +1,44 @@
-import { works,event } from "pages/@type/work";
+import { works, event } from 'pages/@type/work'
 
 export const links: { [key: string]: string | undefined }[] = [
   {
     text: 'Twitter',
-    url: process.env.REACT_APP_twitter_url
+    url: process.env.REACT_APP_twitter_url,
   },
   {
     text: 'pixiv',
-    url: process.env.REACT_APP_pixiv_url
+    url: process.env.REACT_APP_pixiv_url,
   },
   {
     text: 'Instagram',
-    url: process.env.REACT_APP_instagram_url
+    url: process.env.REACT_APP_instagram_url,
   },
   {
     text: 'Deviantart',
-    url: process.env.REACT_APP_deviantart_url
+    url: process.env.REACT_APP_deviantart_url,
   },
   {
     text: 'Behance',
-    url: process.env.REACT_APP_behance_url
+    url: process.env.REACT_APP_behance_url,
   },
   {
     text: 'Tumblr',
     url: `https://www.tumblr.com/blog/${process.env.REACT_APP_Tumblr_username}/`,
-    class: 'tumblr'
+    class: 'tumblr',
   },
   {
     text: 'booth',
-    url: process.env.REACT_APP_booth_url
-  }
-];
-export const Genres = ['文芸書 装画', '文芸誌 扉絵', 'その他'] as const;
+    url: process.env.REACT_APP_booth_url,
+  },
+]
+export const Genres = ['文芸書 装画', '文芸誌 扉絵', 'その他'] as const
 export const workExperienceEtc: works = [
   {
     gジャンル: 'その他',
     k形態: 'CDアートワーク',
     tタイトル: 'WaVe',
     t著者: 'ijuice',
-    n発表年月: '2021'
+    n発表年月: '2021',
   },
   {
     gジャンル: 'その他',
@@ -46,7 +46,7 @@ export const workExperienceEtc: works = [
     s出版社: 'Virgin Babylon Records',
     tタイトル: 'Transform Ordinary Events Into Miracles',
     t著者: 'Laxenanchaos',
-    n発表年月: '2018-06'
+    n発表年月: '2018-06',
   },
   {
     gジャンル: 'その他',
@@ -54,44 +54,44 @@ export const workExperienceEtc: works = [
     k形態: '作品・メイキング掲載',
     s出版社: 'エムディエヌコーポレーション',
     tタイトル: '創る。',
-    n発表年月: '2015-05'
+    n発表年月: '2015-05',
   },
   {
     gジャンル: 'その他',
     k形態: 'webアプリ イラスト',
     s出版社: '株式会社コムドアーズ',
     tタイトル: '六壬式占タロット',
-    n発表年月: '2021-05'
+    n発表年月: '2021-05',
   },
   {
     gジャンル: 'その他',
     k形態: 'webアプリ イラスト',
     s出版社: '株式会社コムドアーズ',
     tタイトル: 'ディアスティマタロット',
-    n発表年月: '2019'
+    n発表年月: '2019',
   },
   {
     gジャンル: 'その他',
     k形態: 'webアプリ イラスト',
     s出版社: '株式会社コムドアーズ',
     tタイトル: '密教曼荼羅タロット',
-    n発表年月: '2017'
+    n発表年月: '2017',
   },
   {
     gジャンル: 'その他',
     k形態: '作品掲載',
     s出版社: '翔泳社',
     tタイトル: 'ILLUSTRATION 2017',
-    n発表年月: '2016-12'
+    n発表年月: '2016-12',
   },
   {
     gジャンル: 'その他',
     k形態: '作品掲載',
     s出版社: '翔泳社',
     tタイトル: 'ILLUSTRATION 2014',
-    n発表年月: '2014-05'
-  }
-];
+    n発表年月: '2014-05',
+  },
+]
 export const workExperienceBook: works = [
   {
     gジャンル: '文芸書 装画',
@@ -100,7 +100,7 @@ export const workExperienceBook: works = [
     tタイトル: 'ボギー 怪異考察士の憶測',
     t著者: '黒史郎',
     dデザイン: 'デザイン 坂野公一 (welle design)',
-    n発表年月: '2021-08'
+    n発表年月: '2021-08',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -108,7 +108,7 @@ export const workExperienceBook: works = [
     s出版社: '株式会社KADOKAWA',
     tタイトル: '悪の芽',
     t著者: '貫井徳郎',
-    n発表年月: '2020'
+    n発表年月: '2020',
   },
   {
     gジャンル: '文芸書 装画',
@@ -117,7 +117,7 @@ export const workExperienceBook: works = [
     tタイトル: '少女は夜を綴らない',
     t著者: '逸木裕',
     dデザイン: 'カバーデザイン 大原由依',
-    n発表年月: '2020-06'
+    n発表年月: '2020-06',
   },
   {
     gジャンル: '文芸書 装画',
@@ -126,7 +126,7 @@ export const workExperienceBook: works = [
     tタイトル: 'ファミリーランド',
     t著者: '澤村伊智',
     dデザイン: '装幀 受川ミドリ',
-    n発表年月: '2019-07'
+    n発表年月: '2019-07',
   },
   {
     gジャンル: '文芸書 装画',
@@ -134,7 +134,7 @@ export const workExperienceBook: works = [
     s出版社: '集英社',
     tタイトル: 'スノーマン',
     t著者: '一雫ライオン',
-    n発表年月: '2018-09'
+    n発表年月: '2018-09',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -142,7 +142,7 @@ export const workExperienceBook: works = [
     s出版社: '角川書店',
     tタイトル: 'スケルトン・キー',
     t著者: '道尾秀介',
-    n発表年月: '2018'
+    n発表年月: '2018',
   },
   {
     gジャンル: '文芸書 装画',
@@ -151,7 +151,7 @@ export const workExperienceBook: works = [
     tタイトル: '15回目の昨日',
     t著者: 'クリスティン・テリル, 田辺千幸 翻訳',
     dデザイン: 'ブックデザイン albireo',
-    n発表年月: '2018-02'
+    n発表年月: '2018-02',
   },
   {
     gジャンル: '文芸書 装画',
@@ -160,7 +160,7 @@ export const workExperienceBook: works = [
     tタイトル: 'ユートロニカのこちら側',
     t著者: '小川哲',
     dデザイン: 'カバーデザイン アフターグロウ',
-    n発表年月: '2017-12'
+    n発表年月: '2017-12',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -168,7 +168,7 @@ export const workExperienceBook: works = [
     s出版社: '早川書房',
     tタイトル: 'マリッジ・サバイバー',
     t著者: '澤村伊智',
-    n発表年月: '2017'
+    n発表年月: '2017',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -176,7 +176,7 @@ export const workExperienceBook: works = [
     s出版社: '早川書房',
     tタイトル: '翼の折れた金魚',
     t著者: '澤村伊智',
-    n発表年月: '2017'
+    n発表年月: '2017',
   },
   {
     gジャンル: '文芸書 装画',
@@ -185,7 +185,7 @@ export const workExperienceBook: works = [
     tタイトル: 'ゲームの王国 下',
     t著者: '小川哲',
     dデザイン: 'カバーデザイン 有馬トモユキ',
-    n発表年月: '2017-08'
+    n発表年月: '2017-08',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -193,7 +193,7 @@ export const workExperienceBook: works = [
     s出版社: '早川書房',
     tタイトル: 'コンピューターお義母さん',
     t著者: '澤村伊智',
-    n発表年月: '2017'
+    n発表年月: '2017',
   },
   {
     gジャンル: '文芸書 装画',
@@ -202,7 +202,7 @@ export const workExperienceBook: works = [
     tタイトル: 'あとは野となれ大和撫子',
     t著者: '宮内悠介',
     dデザイン: '装幀 鈴木成一デザイン室',
-    n発表年月: '2017-04'
+    n発表年月: '2017-04',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -210,7 +210,7 @@ export const workExperienceBook: works = [
     s出版社: '角川書店',
     tタイトル: '東京の子',
     t著者: '藤井太洋',
-    n発表年月: '2017'
+    n発表年月: '2017',
   },
   {
     gジャンル: '文芸書 装画',
@@ -219,7 +219,7 @@ export const workExperienceBook: works = [
     tタイトル: 'Y.M.G.A.―暴動有資格者',
     t著者: '三羽省吾',
     dデザイン: '装幀 鈴木成一デザイン室',
-    n発表年月: '2016-02'
+    n発表年月: '2016-02',
   },
   {
     gジャンル: '文芸書 装画',
@@ -227,7 +227,7 @@ export const workExperienceBook: works = [
     s出版社: 'ハート出版',
     tタイトル: '妻に棲む別人I・II',
     t著者: '花田深',
-    n発表年月: '2015-12'
+    n発表年月: '2015-12',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -235,7 +235,7 @@ export const workExperienceBook: works = [
     s出版社: '角川書店',
     tタイトル: 'あとは野となれ大和撫子',
     t著者: '宮内悠介',
-    n発表年月: '2015'
+    n発表年月: '2015',
   },
   {
     gジャンル: '文芸書 装画',
@@ -244,7 +244,7 @@ export const workExperienceBook: works = [
     tタイトル: 'マレ・サカチのたったひとつの贈物',
     t著者: '王城夕紀',
     dデザイン: '装幀 鈴木成一デザイン室',
-    n発表年月: '2015-02'
+    n発表年月: '2015-02',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -252,7 +252,7 @@ export const workExperienceBook: works = [
     s出版社: '角川書店',
     tタイトル: 's.o.w',
     t著者: '海猫沢めろん',
-    n発表年月: '2015'
+    n発表年月: '2015',
   },
   {
     gジャンル: '文芸書 装画',
@@ -261,7 +261,7 @@ export const workExperienceBook: works = [
     tタイトル: 'ナイト&シャドウ',
     t著者: '柳広司',
     dデザイン: 'ブックデザイン 鈴木成一デザイン室',
-    n発表年月: '2014-07'
+    n発表年月: '2014-07',
   },
   {
     gジャンル: '文芸書 装画',
@@ -270,7 +270,7 @@ export const workExperienceBook: works = [
     tタイトル: '闇にあかく点るのは、鬼の灯か君の瞳。',
     t著者: 'ごとうしのぶ',
     dデザイン: '装幀 鈴木成一デザイン室',
-    n発表年月: '2014-02'
+    n発表年月: '2014-02',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -278,7 +278,7 @@ export const workExperienceBook: works = [
     s出版社: '角川書店',
     tタイトル: 'サロメは金曜',
     t著者: '海猫沢めろん',
-    n発表年月: '2014'
+    n発表年月: '2014',
   },
   {
     gジャンル: '文芸誌 扉絵',
@@ -286,7 +286,7 @@ export const workExperienceBook: works = [
     s出版社: '角川書店',
     tタイトル: '水のかげふみ',
     t著者: '海猫沢めろん',
-    n発表年月: '2014'
+    n発表年月: '2014',
   },
   {
     gジャンル: '文芸書 装画',
@@ -295,7 +295,7 @@ export const workExperienceBook: works = [
     tタイトル: '人狼ゲーム~人事の悪夢~',
     t著者: '鈴木教久',
     dデザイン: 'ブックデザイン 鈴木成一デザイン室',
-    n発表年月: '2014-04'
+    n発表年月: '2014-04',
   },
   {
     gジャンル: '文芸書 装画',
@@ -304,7 +304,7 @@ export const workExperienceBook: works = [
     tタイトル: '薔薇の足枷',
     t著者: '大石圭',
     dデザイン: 'カバーデザイン 平川彰 (幻冬舎デザイン室)',
-    n発表年月: '2013-12'
+    n発表年月: '2013-12',
   },
   {
     gジャンル: '文芸書 装画',
@@ -313,7 +313,7 @@ export const workExperienceBook: works = [
     tタイトル: '美しいこと',
     t著者: '木原音瀬',
     dデザイン: 'カバーデザイン 坂野公一＋吉田友美 (welle design)',
-    n発表年月: '2013-03'
+    n発表年月: '2013-03',
   },
   {
     gジャンル: '文芸書 装画',
@@ -322,10 +322,9 @@ export const workExperienceBook: works = [
     tタイトル: 'スタート・アゲイン (上・下)',
     t著者: '石川ヨナ',
     dデザイン: 'ブックデザイン 鈴木成一デザイン室',
-    n発表年月: '2011-12'
-  }
-];
-export const workExperience: works = workExperienceEtc.concat(workExperienceBook);
-export const Events: event[] = [
-
+    n発表年月: '2011-12',
+  },
 ]
+export const workExperience: works =
+  workExperienceEtc.concat(workExperienceBook)
+export const Events: event[] = []

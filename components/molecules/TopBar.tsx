@@ -1,45 +1,44 @@
 // ⚛️
-import Link from 'next/link';
-import { FC, memo, useEffect, useRef, useCallback } from 'react';
+import Link from 'next/link'
+import { FC, memo, useEffect, useRef, useCallback } from 'react'
 
-import './TopBar.css';
+import './TopBar.css'
 function classList(elt: HTMLElement | null) {
-  const list = elt?.classList;
+  const list = elt?.classList
   // console.log(list);
   return elt === null
     ? null
     : {
         toggle: function (c: string) {
-          list?.toggle(c);
-          return this;
+          list?.toggle(c)
+          return this
         },
         add: function (c: string) {
-          list?.add(c);
-          return this;
+          list?.add(c)
+          return this
         },
         remove: function (c: string) {
-          list?.remove(c);
-          return this;
-        }
-      };
+          list?.remove(c)
+          return this
+        },
+      }
 }
 export const TopBar: FC = memo((props) => {
-
   //スマホでアクセスした時tumblrへのリンクをアプリから開くリンクに書き換え
   {
-    const userAgent = window.navigator.userAgent.toLowerCase();
+    const userAgent = window.navigator.userAgent.toLowerCase()
 
     if (
       userAgent.indexOf('iphone') !== -1 ||
       userAgent.indexOf('ipad') !== -1 ||
       userAgent.indexOf('android') !== -1
     ) {
-      document.querySelector('html')?.classList.add('mobile');
+      document.querySelector('html')?.classList.add('mobile')
     } else {
-      document.querySelector('html')?.classList.add('desktop');
+      document.querySelector('html')?.classList.add('desktop')
     }
     userAgent.indexOf('android') !== -1 &&
-      document.querySelector('html')?.classList.add('android');
+      document.querySelector('html')?.classList.add('android')
     // userAgent.indexOf('gecko') !== -1 &&
     //   document.querySelector('html')?.classList.add('gecko');
     document
@@ -47,29 +46,29 @@ export const TopBar: FC = memo((props) => {
       ?.setAttribute(
         'href',
         `http://www.tumblr.com/open/app?app_args=blog&blogName=${process.env.REACT_APP_Tumblr_username}&page=blog`
-      );
+      )
   }
   //スクロール
-  const isRunning = useRef(false); // スクロール多発防止用フラグ
+  const isRunning = useRef(false) // スクロール多発防止用フラグ
   // リスナに登録する関数
   const isScrollToggle = useCallback(() => {
-    if (isRunning.current) return;
-    isRunning.current = true;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (isRunning.current) return
+    isRunning.current = true
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     requestAnimationFrame(() => {
-      const body = document.querySelector('body');
+      const body = document.querySelector('body')
       if (scrollTop === 0) {
         classList(body)
           ?.add('scroll-backed')
           .remove('scroll-top-gt-0')
           .remove('scroll-top-gt-23vh')
-          .remove('scroll-top-gt-38vh');
+          .remove('scroll-top-gt-38vh')
       } else if (scrollTop > window.innerHeight * 0.382) {
         classList(body)
           ?.add('scroll-top-gt-38vh')
           .remove('scroll-backed')
           .remove('scroll-top-gt-0')
-          .remove('scroll-top-gt-23vh');
+          .remove('scroll-top-gt-23vh')
         // } else if (scrollTop > window.innerHeight * 0.236) {
         //   classList(body)
         //     ?.add('scroll-top-gt-23vh')
@@ -81,25 +80,27 @@ export const TopBar: FC = memo((props) => {
           ?.add('scroll-top-gt-0')
           .remove('scroll-backed')
           .remove('scroll-top-gt-23vh')
-          .remove('scroll-top-gt-38vh');
+          .remove('scroll-top-gt-38vh')
       }
 
-      isRunning.current = false;
-    });
-  }, []);
+      isRunning.current = false
+    })
+  }, [])
 
   // 登録と後始末
   useEffect(() => {
-    document.addEventListener('scroll', isScrollToggle, { passive: true });
+    document.addEventListener('scroll', isScrollToggle, { passive: true })
     return () => {
-      document.removeEventListener('scroll', isScrollToggle, true);
-    };
-  }, [isScrollToggle]);
+      document.removeEventListener('scroll', isScrollToggle, true)
+    }
+  }, [isScrollToggle])
 
   const TitleLink: FC = (props) => {
-    return (<Link href="/">
-      {/* {GetDataCTX['info']?.['title'] ?? process.env.REACT_APP_title} */}
-    </Link>)
+    return (
+      <Link href="/">
+        {/* {GetDataCTX['info']?.['title'] ?? process.env.REACT_APP_title} */}
+      </Link>
+    )
   }
   const navLinks: FC<{ className: string }> = ({ className }) => {
     console.log(className)
@@ -126,17 +127,17 @@ export const TopBar: FC = memo((props) => {
     <TopBarComponent
       TitleLink={TitleLink}
       // description={GetDataCTX['description']}
-      navLinks={navLinks} />
-  );
-});
+      navLinks={navLinks}
+    />
+  )
+})
 
-TopBar.displayName = 'TopBar';
-
+TopBar.displayName = 'TopBar'
 
 export const TopBarComponent: FC<{
   TitleLink: FC
   description?: string
-  navLinks: FC<{ className: string; }>
+  navLinks: FC<{ className: string }>
 }> = memo((props) => {
   return (
     <>
@@ -149,16 +150,15 @@ export const TopBarComponent: FC<{
             </h1>
 
             <p className="text-xs header-desc sm:text-base">
-              {props.description ?? process.env.REACT_APP_description
-              }
+              {props.description ?? process.env.REACT_APP_description}
             </p>
           </div>
           <nav className="z-10 text-center">
-            <props.navLinks className='inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest' />
+            <props.navLinks className="inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest" />
           </nav>
         </div>
       </header>
     </>
-  );
-});
-TopBarComponent.displayName='TopBarComponent'
+  )
+})
+TopBarComponent.displayName = 'TopBarComponent'

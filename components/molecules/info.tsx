@@ -1,7 +1,7 @@
-import { FC, memo } from 'react';
+import { FC, memo } from 'react'
 import { Work } from 'components/atoms/Work'
-import { Footer } from 'components/atoms/footer';
-import { links, Genres, workExperience, Events } from './infoData';
+import { Footer } from 'components/atoms/footer'
+import { links, Genres, workExperience, Events } from './infoData'
 const Info: FC = memo(() => {
   return (
     <>
@@ -106,7 +106,7 @@ const Info: FC = memo(() => {
       </div>
       <Footer />
     </>
-  );
-});
-Info.displayName = 'Info';
-export default Info;
+  )
+})
+Info.displayName = 'Info'
+export default Info
