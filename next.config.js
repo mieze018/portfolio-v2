@@ -6,7 +6,6 @@ const nextConfig = {
 
 const imageConfig = {
   images: {
-    domains: ['64.media.tumblr.com'],
     remotePatterns: [
       {
         protocol: 'https',
