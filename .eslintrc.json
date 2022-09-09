@@ -1,16 +1,6 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
-    "next",
-    "next/core-web-vitals"
-  ],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended", "next", "next/core-web-vitals", "prettier"],
   "plugins": ["simple-import-sort"],
   "rules": {
     "padding-line-between-statements": [
@@ -26,14 +16,13 @@
         "next": [
           "export",
           "multiline-const",
-          "multiline-blankLine",
+          "multiline-block-like",
           "block-like"
         ]
       }
     ],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "no-multi-spaces": "error",
-    "space-in-brackets": "always"
+    "no-multi-spaces": "error"
   }
 }
