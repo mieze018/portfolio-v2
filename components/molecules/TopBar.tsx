@@ -25,7 +25,7 @@ function classList(elt: HTMLElement | null) {
       }
 }
 
-export const TopBar: FC = memo((props) => {
+export const TopBar: FC = memo(() => {
   //スマホでアクセスした時tumblrへのリンクをアプリから開くリンクに書き換え
   {
     const userAgent = window.navigator.userAgent.toLowerCase()
@@ -100,7 +100,7 @@ export const TopBar: FC = memo((props) => {
     }
   }, [isScrollToggle])
 
-  const TitleLink: FC = (props) => {
+  const TitleLink: FC = () => {
     return (
       <Link href="/">
         {/* {GetDataCTX['info']?.['title'] ?? process.env.NEXT_PUBLIC_title} */}

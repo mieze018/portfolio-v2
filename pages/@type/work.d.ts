@@ -1,3 +1,6 @@
+
+export const Genres = ['文芸書 装画', '文芸誌 扉絵', 'その他'] as const
+
 export type work = {
   gジャンル: typeof Genres[number]
   k形態?: '単行本' | '文庫本' | string

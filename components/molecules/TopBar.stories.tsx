@@ -2,11 +2,11 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
 import { TopBarComponent } from './TopBar'
 
-const title: React.FC = () => {
+const title = () => {
   return <>mieze illustration</>
 }
 
-const navLinks: React.FC<{ className: string }> = ({ className }) => {
+const navLinks = ({ className }: { className: string }) => {
   return (
     <>
       <a href="/aaa" className={className}>
