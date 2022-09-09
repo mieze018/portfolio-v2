@@ -16,17 +16,24 @@
     "padding-line-between-statements": [
       "error",
       {
-        "blankLine": "always",
-        "prev": "*",
-        "next": "export"
-      },
-      {
         "blankLine": "any",
         "prev": "export",
         "next": "export"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "export",
+          "multiline-const",
+          "multiline-blankLine",
+          "block-like"
+        ]
       }
     ],
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "no-multi-spaces": "error",
+    "space-in-brackets": "always"
   }
 }
