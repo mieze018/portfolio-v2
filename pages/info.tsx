@@ -6,14 +6,16 @@ import {
   links,
   workExperience,
 } from 'components/molecules/infoData'
-import { NextPage } from 'next/types'
+import { NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 import tw from 'twin.macro'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 
 const Info: NextPage = () => {
-  const { t } = useTranslation()
+  const { t, ready } = useTranslation()
+  console.log(ready)
+  console.log(t('info.author'))
   return (
     <>
       <Wrapper>
@@ -33,6 +35,8 @@ const Info: NextPage = () => {
           <div className="mt-16">
             <h1 className="">
               <a href={process.env.NEXT_PUBLIC_linktree}>
+                {t('info.linktree')}
+              </a>
             </h1>
             <hr />
             {links.map((link, linkK) => (
