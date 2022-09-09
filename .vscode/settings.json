@@ -2,5 +2,8 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "i18n-ally.localesPaths": ["i18n"],
-  "cSpell.words": ["photoset"]
+  "cSpell.words": ["photoset", "reblog"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
