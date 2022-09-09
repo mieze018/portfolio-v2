@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 }
+
 const imageConfig = {
   images: {
     domains: ['64.media.tumblr.com'],

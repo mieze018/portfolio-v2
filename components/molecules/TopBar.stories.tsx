@@ -1,9 +1,11 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
 import { TopBarComponent } from './TopBar'
+
 const title: React.FC = () => {
   return <>mieze illustration</>
 }
+
 const navLinks: React.FC<{ className: string }> = ({ className }) => {
   return (
     <>
@@ -19,9 +21,11 @@ const navLinks: React.FC<{ className: string }> = ({ className }) => {
     </>
   )
 }
+
 export default { component: TopBarComponent } as ComponentMeta<
   typeof TopBarComponent
 >
+
 export const Default: ComponentStoryObj<typeof TopBarComponent> = {
   args: {
     TitleLink: title,

@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
-
 import Link from 'next/link'
 import { endpoint, fetcher } from 'pages/api/tumblr'
 import PersonalWork from 'pages/personal_work'
 import React from 'react'
+
 import { DefaultHeader } from '../components/Header'
 import { Root } from './@type/tumblr'
 

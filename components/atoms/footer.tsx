@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import tw from 'twin.macro'
+
 export const Footer = memo(() => {
   //現在の年を取得
   const now = new Date()

@@ -1,4 +1,4 @@
-import { works, event } from 'pages/@type/work'
+import { event,works } from 'pages/@type/work'
 
 export const links: { [key: string]: string | undefined }[] = [
   {
@@ -31,7 +31,9 @@ export const links: { [key: string]: string | undefined }[] = [
     url: process.env.REACT_APP_booth_url,
   },
 ]
+
 export const Genres = ['文芸書 装画', '文芸誌 扉絵', 'その他'] as const
+
 export const workExperienceEtc: works = [
   {
     gジャンル: 'その他',
@@ -92,6 +94,7 @@ export const workExperienceEtc: works = [
     n発表年月: '2014-05',
   },
 ]
+
 export const workExperienceBook: works = [
   {
     gジャンル: '文芸書 装画',
@@ -325,6 +328,8 @@ export const workExperienceBook: works = [
     n発表年月: '2011-12',
   },
 ]
+
 export const workExperience: works =
   workExperienceEtc.concat(workExperienceBook)
+
 export const Events: event[] = []

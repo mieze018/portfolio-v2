@@ -1,8 +1,9 @@
 // ⚛️
-import Link from 'next/link'
-import { FC, memo, useEffect, useRef, useCallback } from 'react'
-
 import './TopBar.css'
+
+import Link from 'next/link'
+import { FC, memo, useCallback,useEffect, useRef } from 'react'
+
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList
   // console.log(list);
@@ -23,6 +24,7 @@ function classList(elt: HTMLElement | null) {
         },
       }
 }
+
 export const TopBar: FC = memo((props) => {
   //スマホでアクセスした時tumblrへのリンクをアプリから開くリンクに書き換え
   {
@@ -50,6 +52,7 @@ export const TopBar: FC = memo((props) => {
   }
   //スクロール
   const isRunning = useRef(false) // スクロール多発防止用フラグ
+
   // リスナに登録する関数
   const isScrollToggle = useCallback(() => {
     if (isRunning.current) return
@@ -57,6 +60,7 @@ export const TopBar: FC = memo((props) => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     requestAnimationFrame(() => {
       const body = document.querySelector('body')
+
       if (scrollTop === 0) {
         classList(body)
           ?.add('scroll-backed')
@@ -90,6 +94,7 @@ export const TopBar: FC = memo((props) => {
   // 登録と後始末
   useEffect(() => {
     document.addEventListener('scroll', isScrollToggle, { passive: true })
+
     return () => {
       document.removeEventListener('scroll', isScrollToggle, true)
     }
@@ -102,6 +107,7 @@ export const TopBar: FC = memo((props) => {
       </Link>
     )
   }
+
   const navLinks: FC<{ className: string }> = ({ className }) => {
     console.log(className)
     return (

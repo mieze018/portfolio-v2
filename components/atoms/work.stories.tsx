@@ -1,6 +1,9 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+
 import { Work } from './Work'
+
 export default { component: Work } as ComponentMeta<typeof Work>
+
 export const Default: ComponentStoryObj<typeof Work> = {
   args: {
     work: {

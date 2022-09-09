@@ -3,6 +3,7 @@ import { PostComponent } from 'components/molecules/Post'
 import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next/types'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
+
 import { DefaultHeader } from '../components/Header'
 import { Root } from './@type/tumblr'
 

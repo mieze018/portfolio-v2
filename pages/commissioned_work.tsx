@@ -2,7 +2,7 @@ import { DefaultHeader } from 'components/Header'
 import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next/types'
 import { Root } from 'pages/@type/tumblr'
-import { tags, endpoint, fetcher } from 'pages/api/tumblr'
+import { endpoint, fetcher,tags } from 'pages/api/tumblr'
 
 const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
   fallbackData,
@@ -28,6 +28,7 @@ const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
     </div>
   )
 }
+
 export default CommissionedWork
 
 export const getStaticProps: GetStaticProps = async () => {
