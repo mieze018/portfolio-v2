@@ -2,7 +2,7 @@
 import './TopBar.css'
 
 import Link from 'next/link'
-import { FC, memo, useCallback,useEffect, useRef } from 'react'
+import { FC, memo, useCallback, useEffect, useRef } from 'react'
 
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList
@@ -47,7 +47,7 @@ export const TopBar: FC = memo((props) => {
       .querySelector('.mobile .tumblr')
       ?.setAttribute(
         'href',
-        `http://www.tumblr.com/open/app?app_args=blog&blogName=${process.env.REACT_APP_Tumblr_username}&page=blog`
+        `http://www.tumblr.com/open/app?app_args=blog&blogName=${process.env.NEXT_PUBLIC_Tumblr_username}&page=blog`
       )
   }
   //スクロール
@@ -103,7 +103,7 @@ export const TopBar: FC = memo((props) => {
   const TitleLink: FC = (props) => {
     return (
       <Link href="/">
-        {/* {GetDataCTX['info']?.['title'] ?? process.env.REACT_APP_title} */}
+        {/* {GetDataCTX['info']?.['title'] ?? process.env.NEXT_PUBLIC_title} */}
       </Link>
     )
   }
@@ -156,7 +156,7 @@ export const TopBarComponent: FC<{
             </h1>
 
             <p className="text-xs header-desc sm:text-base">
-              {props.description ?? process.env.REACT_APP_description}
+              {props.description ?? process.env.NEXT_PUBLIC_description}
             </p>
           </div>
           <nav className="z-10 text-center">

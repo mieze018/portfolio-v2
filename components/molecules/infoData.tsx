@@ -1,34 +1,34 @@
-import { event,works } from 'pages/@type/work'
+import { event, works } from 'pages/@type/work'
 
 export const links: { [key: string]: string | undefined }[] = [
   {
     text: 'Twitter',
-    url: process.env.REACT_APP_twitter_url,
+    url: process.env.NEXT_PUBLIC_twitter_url,
   },
   {
     text: 'pixiv',
-    url: process.env.REACT_APP_pixiv_url,
+    url: process.env.NEXT_PUBLIC_pixiv_url,
   },
   {
     text: 'Instagram',
-    url: process.env.REACT_APP_instagram_url,
+    url: process.env.NEXT_PUBLIC_instagram_url,
   },
   {
     text: 'Deviantart',
-    url: process.env.REACT_APP_deviantart_url,
+    url: process.env.NEXT_PUBLIC_deviantart_url,
   },
   {
     text: 'Behance',
-    url: process.env.REACT_APP_behance_url,
+    url: process.env.NEXT_PUBLIC_behance_url,
   },
   {
     text: 'Tumblr',
-    url: `https://www.tumblr.com/blog/${process.env.REACT_APP_Tumblr_username}/`,
+    url: `https://www.tumblr.com/blog/${process.env.NEXT_PUBLIC_Tumblr_username}/`,
     class: 'tumblr',
   },
   {
     text: 'booth',
-    url: process.env.REACT_APP_booth_url,
+    url: process.env.NEXT_PUBLIC_booth_url,
   },
 ]
 

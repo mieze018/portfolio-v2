@@ -8,7 +8,7 @@ export const Footer = memo(() => {
   const Footer = tw.footer`absolute bottom-0 py-0 text-xs text-center`
   return (
     <Footer>
-      © 2009-{this_year} {process.env.REACT_APP_author}
+      © 2009-{this_year} {process.env.NEXT_PUBLIC_author}
     </Footer>
   )
 })

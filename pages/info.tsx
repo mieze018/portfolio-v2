@@ -26,13 +26,13 @@ const Info: NextPage = () => {
           <p>
             {t('info.toMail')}
             <br />
-            <a href={`mailto:${process.env.REACT_APP_mail}`}>
-              {process.env.REACT_APP_mail}
+            <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
+              {process.env.NEXT_PUBLIC_mail}
             </a>
           </p>
           <div className="mt-16">
             <h1 className="">
-              <a href={process.env.REACT_APP_linktree}>{t('info.linktree')}</a>
+              <a href={process.env.NEXT_PUBLIC_linktree}>
             </h1>
             <hr />
             {links.map((link, linkK) => (
