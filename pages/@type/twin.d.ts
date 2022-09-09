@@ -1,7 +1,7 @@
 import 'twin.macro'
 
-import styledImport, { css as cssImport,CSSProp } from 'styled-components'
-
+import styledImport, { css as cssImport, CSSProp } from 'styled-components'
+/* eslint-disable */
 declare module 'twin.macro' {
   // The styled and css imports
   const styled: typeof styledImport
