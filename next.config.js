@@ -17,9 +17,17 @@ const imageConfig = {
   },
 }
 
+const i18n = {
+  i18n: {
+    locales: ['en', 'ja'],
+    defaultLocale: 'ja',
+  },
+}
+
 module.exports = {
   ...nextConfig,
   ...imageConfig,
+  ...i18n,
   webpack: (config) => {
     // Unset client-side javascript that only works server-side
     config.resolve.fallback = { fs: false, module: false, path: false }
