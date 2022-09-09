@@ -11,5 +11,22 @@
     "next",
     "next/core-web-vitals"
   ],
-  "plugins": ["simple-import-sort"]
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "export"
+      },
+      {
+        "blankLine": "any",
+        "prev": "export",
+        "next": "export"
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
 }
