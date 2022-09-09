@@ -1,7 +1,17 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["photoset", "reblog"],
+  "cSpell.words": [
+    "Behance",
+    "Deviantart",
+    "ijuice",
+    "KADOKAWA",
+    "Laxenanchaos",
+    "photoset",
+    "pixiv",
+    "reblog",
+    "welle"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
