@@ -10,5 +10,6 @@
     "plugin:prettier/recommended",
     "next",
     "next/core-web-vitals"
-  ]
+  ],
+  "plugins": ["simple-import-sort"]
 }
