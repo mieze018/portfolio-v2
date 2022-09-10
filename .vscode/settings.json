@@ -7,9 +7,11 @@
     "ijuice",
     "KADOKAWA",
     "Laxenanchaos",
+    "Lemo",
     "photoset",
     "pixiv",
     "reblog",
+    "strapi",
     "welle"
   ],
   "editor.codeActionsOnSave": {
@@ -21,5 +23,10 @@
   "i18n-ally.annotationDelimiter": ":",
   "i18n-ally.displayLanguage": "ja",
   "i18n-ally.extract.autoDetect": true,
-  "i18n-ally.fullReloadOnChanged": true
+  "i18n-ally.fullReloadOnChanged": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2a2a2a",
+    "titleBar.activeBackground": "#ff5e00",
+    "titleBar.activeForeground": "#F8F9FD"
+  }
 }

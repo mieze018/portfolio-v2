@@ -2,7 +2,9 @@
 import './TopBar.css'
 
 import Link from 'next/link'
-import { FC, memo, useCallback, useEffect, useRef } from 'react'
+import { memo, useCallback, useEffect, useRef } from 'react'
+
+import type { FC } from 'react'
 
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList
@@ -39,8 +41,7 @@ export const TopBar: FC = memo(() => {
     } else {
       document.querySelector('html')?.classList.add('desktop')
     }
-    userAgent.indexOf('android') !== -1 &&
-      document.querySelector('html')?.classList.add('android')
+    userAgent.indexOf('android') !== -1 && document.querySelector('html')?.classList.add('android')
     // userAgent.indexOf('gecko') !== -1 &&
     //   document.querySelector('html')?.classList.add('gecko');
     document
@@ -102,9 +103,7 @@ export const TopBar: FC = memo(() => {
 
   const TitleLink: FC = () => {
     return (
-      <Link href="/">
-        {/* {GetDataCTX['info']?.['title'] ?? process.env.NEXT_PUBLIC_title} */}
-      </Link>
+      <Link href="/">{/* {GetDataCTX['info']?.['title'] ?? process.env.NEXT_PUBLIC_title} */}</Link>
     )
   }
 

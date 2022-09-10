@@ -10,11 +10,7 @@
 header {
   /* 最上部の隙間対策 */
   min-height: 2em;
-  background: linear-gradient(
-    180deg,
-    rgb(246 246 246 / 100%) 0%,
-    rgb(255 255 255 / 0%) 100%
-  );
+  background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
 }
 #floater {
   top: 0; /* 上部のボケを隠すため少し上に上げる */

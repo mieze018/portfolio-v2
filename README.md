@@ -10,12 +10,20 @@
   - Styled Components <https://styled-components.com/>
 - ESLint <https://eslint.org/docs/latest/>
 - Prettier <https://prettier.io/docs/en/>
+- Tumblr API <https://www.tumblr.com/docs/en/api/>
 
 ## 余裕があればつかいたもの
 
 - Storybook <https://storybook.js.org/docs/react/>
   - [twin.macro Storybook + styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript)
 - Playwright <https://playwright.dev/docs/intro>
+
+### DB の勉強のために仕事の経歴をサーバに置いて投稿できるようにする
+
+- Prisma?
+  - Prisma Github <https://github.com/prisma/prisma>
+- Heroku?
+- Firebase?
 
 ## これができたら別リポジトリでエンジニアポートフォリ作成時にやりたいこと
 
@@ -38,3 +46,24 @@
 
 - Vercel
 - GitHub Pages
+
+## ルールのメモ
+
+### ファイル/ディレクトリ名
+
+`./pages`以下の自動でルーティングしているページにあたるファイルはスネークケース
+React コンポーネント(`tsx`)やそれが入っているディレクトリはパスカルケース
+メソッドや型(`ts`)その他設定ファイルはキャメルケース
+
+### `./components`
+
+UI コンポーネント
+
+### `./pages/api`
+
+データ配列の定義(?) もっといい呼び方あると思う
+学んだこと! 型定義で`type`じゃなくて`interface`使う時って json のデータに型つけたい時？多分
+
+### `./libs`
+
+メソッドや型や i18n
