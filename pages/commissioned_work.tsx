@@ -2,8 +2,7 @@ import type { Tumblr } from 'libs/@type/tumblr'
 import type { NextPage, GetStaticProps } from 'next'
 
 import { Footer } from 'components/Molecules/Footer'
-import { DefaultHeader } from 'components/Molecules/Header'
-import { Navigation } from 'components/Molecules/Navigation'
+import { TopBar } from 'components/Molecules/TopBar'
 import { Posts } from 'components/Organisms/Posts'
 import { tags } from 'pages/api/tags'
 import { endpoint, fetcher } from 'pages/api/tumblr'
@@ -13,8 +12,7 @@ const CommissionedWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackDat
   const posts = fallbackData.response.posts
   return (
     <>
-      <DefaultHeader />
-      <Navigation />
+      <TopBar />
       <Posts posts={posts} tag={tags.commissionedWork} />
       <Footer />
     </>

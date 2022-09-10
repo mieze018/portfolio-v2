@@ -1,21 +1,28 @@
-export const NavLinks = () => {
-  console.log()
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import tw, { styled } from 'twin.macro'
+
+export const NavLinks = ({
+  routes,
+}: {
+  routes: {
+    name: string
+    pathname: string
+  }[]
+}) => {
+  const router = useRouter()
+  const currentPath = router.pathname
+  const A = styled.a<{ isCurrent: boolean }>`
+    ${tw`inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest`}
+    ${({ isCurrent }) => isCurrent && tw`underline`}
+  `
   return (
     <>
-      {/* {props.navs.map((nav) =>
-        <Link
-          to={nav.pathname}
-          key={nav.name}
-          className={`${className} ${location.pathname === nav.pathname ||
-            (location.pathname === '/' &&
-              nav.pathname === GetDataCTX.routes[0].pathname)
-            ? 'underline'
-            : ''
-            }`}
-        >
-          {nav.name}
+      {routes.map((route) => (
+        <Link href={route.pathname} key={route.pathname}>
+          <A isCurrent={currentPath === route.pathname}> {route.name}</A>
         </Link>
-      )} */}
+      ))}
     </>
   )
 }

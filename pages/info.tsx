@@ -5,9 +5,8 @@ import type { eventType, infoDataType, works } from 'libs/@type/work'
 import type { GetStaticProps, NextPage } from 'next'
 
 import { Footer } from 'components/Molecules/Footer'
-import { DefaultHeader } from 'components/Molecules/Header'
 import { Work } from 'components/Molecules/Info/Work'
-import { Navigation } from 'components/Molecules/Navigation'
+import { TopBar } from 'components/Molecules/TopBar'
 import { eventsData } from 'pages/api/events'
 import { links } from 'pages/api/links'
 import { workExperience } from 'pages/api/workExperiences/workExperiences'
@@ -24,8 +23,7 @@ const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   return (
     <>
-      <DefaultHeader />
-      <Navigation />
+      <TopBar />
       <InfoContent infoData={fallbackData} />
       <Footer />
     </>
@@ -100,7 +98,7 @@ const WorkExperience = ({ workExperience }: { workExperience: works }) => {
             <H2>{genre}</H2>
             <ul className="leading-normal tracking-wide">
               {workExperience
-                .filter((work) => work.gジャンル === genre)
+                .filter((work) => work.genre === genre)
                 .map((work, workK) => (
                   <Work key={workK} work={work} />
                 ))}
