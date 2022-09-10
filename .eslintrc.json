@@ -19,24 +19,6 @@
     }
   },
   "rules": {
-    "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "any",
-        "prev": "export",
-        "next": "export"
-      },
-      {
-        "blankLine": "always",
-        "prev": "import",
-        "next": "const"
-      },
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": ["export", "multiline-const", "multiline-block-like", "block-like"]
-      }
-    ],
     "import/order": [
       "error",
       {
