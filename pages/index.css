@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* start */
 html {
   @apply h-full;
@@ -10,6 +11,7 @@ html {
   /* scroll-behavior: smooth; */
   font-size: 1rem;
 }
+
 body {
   position: relative;
   font-family: 'Baskerville Old Face', Baskerville, 'Times New Roman', Times, Georgia, Palatino,
@@ -19,50 +21,58 @@ body {
   text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(255 124 0 / 16%);
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
-  background: linear-gradient(
-    to bottom,
-    rgb(245 245 245 / 100%) 0%,
-    rgb(237 251 255 / 100%) 16%,
-    rgb(237 245 247 / 100%) 24%,
-    rgb(255 255 255 / 100%) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgb(245 245 245 / 100%) 0%,
+      rgb(237 251 255 / 100%) 16%,
+      rgb(237 245 247 / 100%) 24%,
+      rgb(255 255 255 / 100%) 100%);
   background-attachment: fixed;
 }
+
 body,
 a {
   color: #797979;
 }
+
 a:active {
   opacity: 1 important;
 }
+
 html.gecko,
 html.android {
   font-size: 0.85em;
 }
+
 div,
 article {
   @apply max-w-full;
 }
+
 svg:not(:root) {
   overflow: hidden;
 }
+
 a:hover {
   color: #222;
   opacity: 1;
 }
+
 li {
   margin: 0 0.556em 0 0;
 }
+
 /* ショートカット */
 .eng {
   line-height: 1.4em;
   letter-spacing: 1px;
 }
+
 .jpn {
   font-size: small;
   line-height: 1.6em;
   letter-spacing: 0.1px;
 }
+
 /* start */
 .header-overlay {
   position: fixed;
@@ -72,6 +82,7 @@ li {
   width: 65px;
   transform: translate(-50%, -50%);
 }
+
 article {
   flex-flow: column wrap;
   align-content: space-between;
@@ -82,10 +93,12 @@ article {
   text-align: left;
   vertical-align: middle;
 }
+
 .photo-container {
   /* @apply max-w-screen-lg; */
   /* background: linear-gradient(to bottom, whitesmoke 0%, white 100%); */
 }
+
 .photoset .photo-container {
   display: inline-flex;
   flex-wrap: wrap;
@@ -93,6 +106,7 @@ article {
   align-items: center;
   justify-content: space-around;
 }
+
 .photoset img {
   flex-basis: 25%;
   flex-grow: 2;
@@ -100,6 +114,7 @@ article {
   width: 25%;
   margin: 0 0 1em;
 }
+
 /* //ロード時のアニメーション */
 .sunk-short {
   transform: translate(0, -10em);
@@ -110,25 +125,26 @@ article {
   0% {
     transform: translate(0, -1em);
   }
+
   100% {
     transform: translate(0, 0);
   }
 }
+
 /* //tag switch */
 /* http://reactcommunity.org/react-transition-group/css-transition */
 #posts-wrapper {
   padding: 25px 0;
   @apply mt-golden61vh;
 }
+
 .fade-wrapper {
-  @apply flex flex-col items-center justify-center min-h-screen;
-  position: absolute;
-  top: 0;
+  @apply flex flex-col items-center justify-center min-h-screen absolute top-0 w-full;
   display: none;
-  width: 100%;
   opacity: 0;
   transition: 500ms, translate 2000ms;
 }
+
 .fade-appear-active,
 .fade-appear-done {
   position: static;
@@ -136,6 +152,7 @@ article {
   opacity: 1;
   transition: 3000ms;
 }
+
 .fade-appear,
 .fade-enter {
   position: static;
@@ -143,24 +160,29 @@ article {
   opacity: 0;
   transform: translate(0, -1rem);
 }
+
 .fade-enter-active {
   position: static;
   display: flex;
   opacity: 1;
   transform: translate(0, 0);
 }
+
 .fade-enter-done {
   position: static;
   display: flex;
   opacity: 1;
   transform: translate(0, 0);
 }
+
 .fade-exit {
   opacity: 1;
 }
+
 .fade-exit-active {
   opacity: 0;
 }
+
 .fade-exit-done {
   position: absolute;
   top: 0;
