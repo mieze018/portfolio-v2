@@ -1,6 +1,6 @@
-import { PostFooter } from 'components/Molecules/PostFooter'
+import { PhotoImage } from 'components/Molecules/Post/PhotoImage'
+import { PostFooter } from 'components/Molecules/Post/PostFooter'
 import { Tumblr } from 'libs/@type/tumblr'
-import Image from 'next/image'
 import tw, { styled } from 'twin.macro'
 
 const Article = tw.article`flex max-w-full flex-col flex-wrap justify-center px-[2.618vw] mb-[1.618vh]`
@@ -34,26 +34,3 @@ export const Post = ({ post }: { post: Tumblr.Post }) => (
     </Article>
   </FadeWrapper>
 )
-
-const PhotoImage = ({
-  photo,
-  showOnlyLastPhoto,
-  lastPhoto,
-}: {
-  photo: Tumblr.Photo
-  showOnlyLastPhoto: boolean
-  lastPhoto: boolean
-}) => {
-  //最後の画像だけ表示するタグがついている場合、最後の画像でなければスキップ
-  if (showOnlyLastPhoto && lastPhoto) return <></>
-  return (
-    <Image
-      className="w-full"
-      src={photo.original_size.url}
-      alt={photo.original_size.url}
-      key={photo.original_size.url}
-      height={photo.original_size.height}
-      width={photo.original_size.width}
-    />
-  )
-}
