@@ -1,4 +1,4 @@
-import '/i18n/config'
+import 'libs/i18n/config'
 
 import type { AppProps } from 'next/app'
 

@@ -1,5 +1,5 @@
-import common from 'i18n/ja/common'
 import i18n from 'i18next'
+import common from 'libs/i18n/ja/common'
 import { initReactI18next } from 'react-i18next'
 
 
