@@ -1,9 +1,10 @@
-import { Footer } from 'components/atoms/Footer'
+import type { Root } from 'libs/@type/tumblr'
+import type { GetStaticProps, NextPage } from 'next/types'
+
 import { DefaultHeader } from 'components/Header'
-import { Navigation } from 'components/molecules/Navigation'
 import { Posts } from 'components/Organisms/Posts'
-import { Root } from 'libs/@type/tumblr'
-import { GetStaticProps, NextPage } from 'next/types'
+import { Footer } from 'components/atoms/Footer'
+import { Navigation } from 'components/molecules/Navigation'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
 const CommissionedWork: NextPage<{ fallbackData: Root }> = ({

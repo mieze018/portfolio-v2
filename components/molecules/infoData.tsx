@@ -1,4 +1,4 @@
-import { event, works } from 'libs/@type/work'
+import type { event, works } from 'libs/@type/work'
 
 export const links: { [key: string]: string | undefined }[] = [
   {
