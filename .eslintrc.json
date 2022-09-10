@@ -36,6 +36,10 @@
     ],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "no-multi-spaces": "error"
+    "import/no-duplicates": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "no-multi-spaces": "error",
+    "@typescript-eslint/consistent-type-imports": "error"
   }
 }
