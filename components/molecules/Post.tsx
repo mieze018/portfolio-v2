@@ -1,5 +1,5 @@
 import { PostFooter } from 'components/Molecules/PostFooter'
-import { Photo, Post } from 'libs/@type/tumblr'
+import { Tumblr } from 'libs/@type/tumblr'
 import Image from 'next/image'
 import tw, { styled } from 'twin.macro'
 
@@ -12,7 +12,7 @@ const PhotoWrapper = styled.div<{ photoset?: boolean }>`
   ${({ photoset }) => photoset && tw`flex flex-wrap justify-center max-w-full`}
 `
 
-export const PostComponent = ({ post }: { post: Post }) => (
+export const Post = ({ post }: { post: Tumblr.Post }) => (
   <FadeWrapper key={post.id}>
     <Article>
       <PhotoWrapper photoset={!!post.photoset_layout}>
@@ -40,7 +40,7 @@ const PhotoImage = ({
   showOnlyLastPhoto,
   lastPhoto,
 }: {
-  photo: Photo
+  photo: Tumblr.Photo
   showOnlyLastPhoto: boolean
   lastPhoto: boolean
 }) => {

@@ -6,9 +6,9 @@ import { tags } from 'pages/api/tags'
 import { endpoint, fetcher } from 'pages/api/tumblr'
 
 import { DefaultHeader } from '../components/Molecules/Header'
-import { Root } from '../libs/@type/tumblr'
+import { Tumblr } from '../libs/@type/tumblr'
 
-const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
+const PersonalWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts
   return (

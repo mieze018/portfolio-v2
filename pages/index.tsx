@@ -3,9 +3,9 @@ import { endpoint, fetcher } from 'pages/api/tumblr'
 import PersonalWork from 'pages/personal_work'
 import React from 'react'
 
-import { Root } from '../libs/@type/tumblr'
+import { Tumblr } from '../libs/@type/tumblr'
 
-const Home: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
+const Home: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   console.log(fallbackData)
   // if (error) return <div>Failed to load</div>
   if (!fallbackData) return <div>Loading...</div>
