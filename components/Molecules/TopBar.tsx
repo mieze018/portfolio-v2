@@ -1,11 +1,43 @@
 import Link from 'next/link'
 import { useCallback, useEffect, useRef } from 'react'
+import { keyframes } from 'styled-components'
 import tw, { styled } from 'twin.macro'
 
 import type { FC } from 'react'
 
 import { NavLinks } from 'components/Molecules/NavLink'
 import { addAgentToHtml } from 'libs/tumblrLink'
+
+const wave = keyframes`
+  /* 読み込み時 */
+  0% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  /* 最初の3秒ほどでここまで沈む */
+  2% {
+    transform: matrix(1, 0, 0, 0.8, 0, 0);
+  }
+
+  /* 少し戻る */
+  10% {
+    transform: matrix(1, 0.02, 0, 0.6, 0, 0);
+  }
+
+  /* 少し沈む・水平に  */
+  30% {
+    transform: matrix(1, 0.03, 0, 0.8, 0, 0);
+  }
+
+  /* その後30秒ほどかけて浮き上がる */
+  50% {
+    transform: matrix(1, 0.03, 0, 0.7, 0, 0);
+  }
+
+  /* 残り126秒かけて水平に元に戻る */
+  100% {
+    transform: matrix(1, 0.03, 0, 1, 0, 0);
+  }`
 
 const Floater = styled.div`
   ${tw`fixed top-0 z-10 w-full bg-surface h-golden23vh`}
@@ -17,7 +49,7 @@ const Floater = styled.div`
   background-size: 120% 100%;
   transition: 10000ms;
   transform-origin: right top;
-  animation: wave 180s 0s ease-out forwards;
+  animation: ${wave} 180s 0s ease-out forwards;
 `
 const Sinker = styled.div`
   ${tw`fixed top-golden23vh w-full m-auto opacity-0 hover:blur-none`}

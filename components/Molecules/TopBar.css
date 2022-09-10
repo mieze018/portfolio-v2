@@ -8,40 +8,6 @@
 /* https://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%28245\%2C245\%2C245\%2C1\%29\%200\%25\%2C\%20rgba\%28237\%2C251\%2C255\%2C1\%29\%2016\%25\%2C\%20rgba\%28237\%2C245\%2C247\%2C1\%29\%2024\%25\%2C\%20rgba\%28255\%2C255\%2C255\%2C1\%29\%20100\%25\%29\%3B' */
 /* background: whitesmoke; */
 
-
-@keyframes wave {
-
-  /* 読み込み時 */
-  0% {
-    transform: matrix(1, 0, 0, 1, 0, 0);
-  }
-
-  /* 最初の3秒ほどでここまで沈む */
-  2% {
-    transform: matrix(1, 0, 0, 0.8, 0, 0);
-  }
-
-  /* 少し戻る */
-  10% {
-    transform: matrix(1, 0.02, 0, 0.6, 0, 0);
-  }
-
-  /* 少し沈む・水平に  */
-  30% {
-    transform: matrix(1, 0.03, 0, 0.8, 0, 0);
-  }
-
-  /* その後30秒ほどかけて浮き上がる */
-  50% {
-    transform: matrix(1, 0.03, 0, 0.7, 0, 0);
-  }
-
-  /* 残り126秒かけて水平に元に戻る */
-  100% {
-    transform: matrix(1, 0.03, 0, 1, 0, 0);
-  }
-}
-
 /* スクロール後 */
 .scroll-top-gt-0 #floater {
   top: -1vh;
