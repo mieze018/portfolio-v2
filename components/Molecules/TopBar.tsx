@@ -1,5 +1,3 @@
-import './TopBar.css'
-
 import Link from 'next/link'
 import { useCallback, useEffect, useRef } from 'react'
 import tw from 'twin.macro'
