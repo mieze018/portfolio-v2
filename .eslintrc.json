@@ -20,6 +20,11 @@
       },
       {
         "blankLine": "always",
+        "prev": "import",
+        "next": "const"
+      },
+      {
+        "blankLine": "always",
         "prev": "*",
         "next": [
           "export",
