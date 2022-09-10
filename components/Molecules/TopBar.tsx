@@ -38,7 +38,7 @@ const Wrapper = styled.header`
 `
 const Title = tw.h1`mb-1 text-2xl text-primary xs:text-3xl tracking-title`
 const Description = tw.p`text-xs  sm:text-base`
-const Nav = tw.nav`z-10 text-center`
+const Nav = tw.nav`z-10 text-center m-auto opacity-100 transition[1200ms]`
 export const TopBarComponent: FC<{
   TitleLink?: FC
   description?: string

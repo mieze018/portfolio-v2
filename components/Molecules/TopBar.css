@@ -155,12 +155,6 @@
   opacity: 0;
 }
 
-nav {
-  @apply m-auto;
-  opacity: 1;
-  transition: 1200ms;
-}
-
 .scroll-top-gt-0 nav {
   opacity: 0;
 }
