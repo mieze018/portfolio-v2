@@ -1,11 +1,12 @@
-import type { GetStaticProps, NextPage } from 'next'
-import { endpoint, fetcher } from 'pages/api/tumblr'
-import PersonalWork from 'pages/personal_work'
 import React from 'react'
 
-import { Root } from '../libs/@type/tumblr'
+import type { Tumblr } from '../libs/@type/tumblr'
+import type { GetStaticProps, NextPage } from 'next'
 
-const Home: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
+import { endpoint, fetcher } from 'pages/api/tumblr'
+import PersonalWork from 'pages/personal_work'
+
+const Home: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   console.log(fallbackData)
   // if (error) return <div>Failed to load</div>
   if (!fallbackData) return <div>Loading...</div>

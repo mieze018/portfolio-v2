@@ -1,11 +1,16 @@
-import { Footer } from 'components/atoms/Footer'
-import { Work } from 'components/atoms/Work'
-import { DefaultHeader } from 'components/Header'
-import { Events, links, workExperience } from 'components/molecules/infoData'
-import { Navigation } from 'components/molecules/Navigation'
-import { NextPage } from 'next'
 import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
+
+import type { eventType, infoDataType, works } from 'libs/@type/work'
+import type { GetStaticProps, NextPage } from 'next'
+
+import { Footer } from 'components/Molecules/Footer'
+import { DefaultHeader } from 'components/Molecules/Header'
+import { Work } from 'components/Molecules/Info/Work'
+import { Navigation } from 'components/Molecules/Navigation'
+import { eventsData } from 'pages/api/events'
+import { links } from 'pages/api/links'
+import { workExperience } from 'pages/api/workExperiences/workExperiences'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
@@ -15,113 +20,170 @@ const H2 = tw.h2`my-2 leading-loose tracking-widest`
 
 export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
-const Info: NextPage = () => (
-  <>
-    <DefaultHeader />
-    <Navigation />
-    <InfoContent />
-    <Footer />
-  </>
-)
+const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
+  if (!fallbackData) return <div>Loading...</div>
+  return (
+    <>
+      <DefaultHeader />
+      <Navigation />
+      <InfoContent infoData={fallbackData} />
+      <Footer />
+    </>
+  )
+}
 
 export default Info
 
-const InfoContent = () => {
-  const { t } = useTranslation()
+const InfoContent = ({ infoData }: { infoData: infoDataType }) => {
+  const { events } = infoData
   return (
     <Wrapper>
       <div id="workExperience" className="mt-12 text-left Japanese">
-        <P>
-          {t('author')}
-          <small>{t('author_pronunciation')}</small>
-          {t('description')}
-        </P>
-        <P>
-          {t('toMail')}
-          <br />
-          <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
-            {process.env.NEXT_PUBLIC_mail}
-          </a>
-        </P>
-        <LinktreeWrapper>
-          <h1>
-            <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
-          </h1>
-          <hr />
-          {links.map((link, linkK) => (
-            <P key={linkK}>
-              <SnsLink
-                href={link.url}
-                className={`${link.class && link.class}`}
-              >
-                {link.text}
-              </SnsLink>
-            </P>
-          ))}
-        </LinktreeWrapper>
-
-        {Events.length > 0 && (
-          <P>
-            {t('eventIncoming')}
-            <hr />
-          </P>
-        )}
-
-        <div className="mt-16">
-          <h1 className="">{t('workExperience')}</h1>
-          <hr />
-          <ul>
-            {genres.map((genre, genreK) => (
-              <li key={genreK} className="">
-                <H2>{genre}</H2>
-                <ul className="leading-normal tracking-wide">
-                  {workExperience
-                    .filter((work) => work.gジャンル === genre)
-                    .map((work, workK) => (
-                      <Work key={workK} work={work} />
-                    ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* <p className="mt20">
-    展示
-    <hr />
-    <ul>
-      <li>
-        2016
-        <ul>
-          <li>
-            <i></i>CANCAN exhibition at LemoArt Gallery (Berlin, Germany)
-          </li>
-          <li>
-            <i></i>Digital Creator 23人展「恋」 at アートスペースリビーナ
-            (Tokyo, Japan)
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </p> */}
-
-        <div className="my-12">
-          {t('awards')}
-          <hr />
-          <ul>
-            <li>
-              <H2> </H2>
-              <i className="ml-3">ペーターズギャラリーコンペ 2010</i>
-              「山口はるみ賞」及び「鈴木成一賞次点」
-            </li>
-          </ul>
-        </div>
+        <Introduction />
+        {links?.length && <Linktree links={links} />}
+        {events?.length && <Events events={events} />}
+        {workExperience?.length && <WorkExperience workExperience={workExperience} />}
+        <EventHistory events={events} />
+        <Awards />
       </div>
-      {/* <div className="mt20">
-  <a href="https://www.cgtrader.com" target="_blank" rel="noreferrer">
-    Participant of the CGTrader Digital Art Competition
-  </a>
-</div> */}
+      <Participant />
     </Wrapper>
   )
+}
+
+const Introduction = () => {
+  const { t } = useTranslation()
+  return (
+    <>
+      <P>
+        {t('author')}
+        <small>{t('author_pronunciation')}</small>
+        {t('description')}
+      </P>
+      <P>
+        {t('toMail')}
+        <br />
+        <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>{process.env.NEXT_PUBLIC_mail}</a>
+      </P>
+    </>
+  )
+}
+
+const Linktree = ({ links }: { links: any[] }) => {
+  const { t } = useTranslation()
+  return (
+    <LinktreeWrapper>
+      <h1>
+        <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
+      </h1>
+      <hr />
+      {links.map((link, linkK) => (
+        <P key={linkK}>
+          <SnsLink href={link.url} className={`${link.class && link.class}`}>
+            {link.text}
+          </SnsLink>
+        </P>
+      ))}
+    </LinktreeWrapper>
+  )
+}
+
+const WorkExperience = ({ workExperience }: { workExperience: works }) => {
+  const { t } = useTranslation()
+  return (
+    <div className="mt-16">
+      <h1 className="">{t('workExperience')}</h1>
+      <hr />
+      <ul>
+        {genres.map((genre, genreK) => (
+          <li key={genreK} className="">
+            <H2>{genre}</H2>
+            <ul className="leading-normal tracking-wide">
+              {workExperience
+                .filter((work) => work.gジャンル === genre)
+                .map((work, workK) => (
+                  <Work key={workK} work={work} />
+                ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const Events = ({ events }: { events: eventType[] }) => {
+  const { t } = useTranslation()
+  return (
+    <div className="mt-12">
+      <P>{t('eventIncoming')}</P>
+      <hr />
+      <ul>
+        {events.map((event, eventK) => (
+          <li key={eventK}>
+            <h2>{event.title}</h2>
+            <p>{event.description}</p>
+            <p>{event.date}</p>
+            <p>{event.place}</p>
+            <p>{event.url}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const EventHistory = ({ events }: { events: eventType[] }) => {
+  const { t } = useTranslation()
+  return (
+    <div className="mt-12">
+      <P>{t('eventHistory')}</P>
+      <hr />
+      <ul>
+        {events.map((event, eventK) => (
+          <li key={eventK}>
+            <h2>{event.title}</h2>
+            <p>{event.description}</p>
+            <p>{event.date}</p>
+            <p>{event.place}</p>
+            <p>{event.url}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const Participant = () => (
+  <div className="mt20">
+    {/* <a href="https://www.cgtrader.com" target="_blank" rel="noreferrer">
+      Participant of the CGTrader Digital Art Competition
+    </a> */}
+  </div>
+)
+
+const Awards = () => {
+  const { t } = useTranslation()
+  return (
+    <div className="my-12">
+      {t('awards')}
+      <hr />
+      <ul>
+        <li>
+          <H2> </H2>
+          <i className="ml-3">ペーターズギャラリーコンペ 2010</i>
+          「山口はるみ賞」及び「鈴木成一賞次点」
+        </li>
+      </ul>
+    </div>
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const Data: infoDataType = { events: eventsData }
+  return {
+    props: {
+      fallbackData: Data,
+    },
+  }
 }

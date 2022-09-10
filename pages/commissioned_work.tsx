@@ -1,14 +1,14 @@
-import { Footer } from 'components/atoms/Footer'
-import { DefaultHeader } from 'components/Header'
-import { Navigation } from 'components/molecules/Navigation'
-import { Posts } from 'components/Organisms/Posts'
-import { Root } from 'libs/@type/tumblr'
-import { GetStaticProps, NextPage } from 'next/types'
-import { endpoint, fetcher, tags } from 'pages/api/tumblr'
+import type { Tumblr } from 'libs/@type/tumblr'
+import type { NextPage, GetStaticProps } from 'next'
 
-const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
-  fallbackData,
-}) => {
+import { Footer } from 'components/Atoms/Footer'
+import { DefaultHeader } from 'components/Molecules/Header'
+import { Navigation } from 'components/Molecules/Navigation'
+import { Posts } from 'components/Organisms/Posts'
+import { tags } from 'pages/api/tags'
+import { endpoint, fetcher } from 'pages/api/tumblr'
+
+const CommissionedWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts
   return (

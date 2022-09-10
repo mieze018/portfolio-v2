@@ -1,11 +1,12 @@
-import { PostComponent } from 'components/molecules/Post'
-import { Post } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/tumblr'
 
-export const Posts = ({ posts, tag }: { posts: Post[]; tag: string }) => (
+import { Post } from 'components/Molecules/Post'
+
+export const Posts = ({ posts, tag }: { posts: Tumblr.Post[]; tag: string }) => (
   <>
     {posts.map((post) => {
       if (!post.tags.includes(tag)) return
-      return <PostComponent post={post} key={post.id} />
+      return <Post post={post} key={post.id} />
     })}
   </>
 )
