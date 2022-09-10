@@ -8,6 +8,7 @@ const common = {
   eventIncoming: 'イベントの参加予定',
   workExperience: '仕事の経験(敬称略)',
   awards: '受賞',
+  eventHistory: '過去のイベント',
 }
 
 export default common
