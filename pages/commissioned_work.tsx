@@ -1,8 +1,8 @@
 import { DefaultHeader } from 'components/Header'
-import Link from 'next/link'
+import { Navigation } from 'components/molecules/Navigation'
 import { GetStaticProps, NextPage } from 'next/types'
 import { Root } from 'pages/@type/tumblr'
-import { endpoint, fetcher,tags } from 'pages/api/tumblr'
+import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
 const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
   fallbackData,
@@ -12,9 +12,7 @@ const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
   return (
     <div>
       <DefaultHeader />
-      <Link href="/personal_work">personal_work</Link>
-      <Link href="/commissioned_work">commissioned_work</Link>
-      <Link href="/info">info</Link>
+      <Navigation />
       {fallbackData?.response.posts.map((post) => {
         console.log(post.tags)
         if (!post.tags.includes(tags.commissionedWork)) return

@@ -1,6 +1,8 @@
 import { Footer } from 'components/atoms/Footer'
 import { Work } from 'components/atoms/Work'
+import { DefaultHeader } from 'components/Header'
 import { Events, links, workExperience } from 'components/molecules/infoData'
+import { Navigation } from 'components/molecules/Navigation'
 import { NextPage } from 'next'
 import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
@@ -17,6 +19,8 @@ const Info: NextPage = () => {
   const { t } = useTranslation()
   return (
     <>
+      <DefaultHeader />
+      <Navigation />
       <Wrapper>
         <div id="workExperience" className="mt-12 text-left Japanese">
           <P>

@@ -1,6 +1,6 @@
 import { Footer } from 'components/atoms/Footer'
+import { Navigation } from 'components/molecules/Navigation'
 import { PostComponent } from 'components/molecules/Post'
-import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next/types'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
@@ -8,14 +8,11 @@ import { DefaultHeader } from '../components/Header'
 import { Root } from './@type/tumblr'
 
 const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
-  console.log(fallbackData)
   if (!fallbackData) return <div>Loading...</div>
   return (
     <div>
       <DefaultHeader />
-      <Link href="/personal_work">personal_work</Link>
-      <Link href="/commissioned_work">commissioned_work</Link>
-      <Link href="/info">info</Link>
+      <Navigation />
       {fallbackData?.response.posts.map((post) => {
         if (!post.tags.includes(tags.personalWork)) return
         return (
