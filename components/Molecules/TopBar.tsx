@@ -38,6 +38,20 @@ const wave = keyframes`
   100% {
     transform: matrix(1, 0.03, 0, 1, 0, 0);
   }`
+const sunk = keyframes`  0% {
+    opacity: 0;
+    transform: translate(0, -3em);
+  }
+
+  1% {
+    opacity: 0.618;
+    transform: translate(0, -1em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }`
 
 const Floater = styled.div`
   ${tw`fixed top-0 z-10 w-full bg-surface h-golden23vh`}
@@ -55,7 +69,7 @@ const Sinker = styled.div`
   ${tw`fixed top-golden23vh w-full m-auto opacity-0 hover:blur-none`}
   transition: 1000ms, 1000ms, 1200ms, 10000ms;
   transition-property: opacity, filter, top, height;
-  animation: sunk 10s 0.3s ease-in-out forwards;
+  animation: ${sunk} 10s 0.3s ease-in-out forwards;
 `
 const FadeOuter = styled.div`
   ${tw`opacity-100 transition[5000ms]`}/* margin-top: calc(23vh);
