@@ -1,4 +1,4 @@
-import { PostComponent } from 'components/molecules/Post'
+import { PostComponent } from 'components/Molecules/Post'
 import { Post } from 'libs/@type/tumblr'
 
 export const Posts = ({ posts, tag }: { posts: Post[]; tag: string }) => (

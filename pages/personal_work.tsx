@@ -1,10 +1,10 @@
-import { Footer } from 'components/atoms/Footer'
-import { Navigation } from 'components/molecules/Navigation'
+import { Footer } from 'components/Atoms/Footer'
+import { Navigation } from 'components/Molecules/Navigation'
 import { Posts } from 'components/Organisms/Posts'
 import { GetStaticProps, NextPage } from 'next/types'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
-import { DefaultHeader } from '../components/Header'
+import { DefaultHeader } from '../components/Molecules/Header'
 import { Root } from '../libs/@type/tumblr'
 
 const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {

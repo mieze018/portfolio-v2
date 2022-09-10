@@ -1,4 +1,4 @@
-import { PostFooter } from 'components/molecules/PostFooter'
+import { PostFooter } from 'components/Molecules/PostFooter'
 import { Photo, Post } from 'libs/@type/tumblr'
 import Image from 'next/image'
 import tw, { styled } from 'twin.macro'
