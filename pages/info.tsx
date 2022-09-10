@@ -1,4 +1,4 @@
-import { Footer } from 'components/atoms/footer'
+import { Footer } from 'components/atoms/Footer'
 import { Work } from 'components/atoms/Work'
 import { Events, links, workExperience } from 'components/molecules/infoData'
 import { NextPage } from 'next'
@@ -9,6 +9,7 @@ const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
 const LinktreeWrapper = tw.div`mt-16`
 const SnsLink = tw.a`ml-3 tracking-wider`
+const H2 = tw.h2`my-2 leading-loose tracking-widest`
 
 export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
@@ -60,9 +61,7 @@ const Info: NextPage = () => {
             <ul>
               {genres.map((genre, genreK) => (
                 <li key={genreK} className="">
-                  <h2 className="my-2 leading-loose tracking-widest">
-                    {genre}
-                  </h2>
+                  <H2>{genre}</H2>
                   <ul className="leading-normal tracking-wide">
                     {workExperience
                       .filter((work) => work.gジャンル === genre)
@@ -99,7 +98,7 @@ const Info: NextPage = () => {
             <hr />
             <ul>
               <li>
-                <h2 className="my-2 leading-loose tracking-widest"> </h2>
+                <H2> </H2>
                 <i className="ml-3">ペーターズギャラリーコンペ 2010</i>
                 「山口はるみ賞」及び「鈴木成一賞次点」
               </li>

@@ -1,4 +1,4 @@
-import { Footer } from 'components/atoms/footer'
+import { Footer } from 'components/atoms/Footer'
 import { PostComponent } from 'components/molecules/Post'
 import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next/types'
