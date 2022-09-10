@@ -2,11 +2,15 @@ import { Footer } from 'components/atoms/footer'
 import { Work } from 'components/atoms/Work'
 import { Events, links, workExperience } from 'components/molecules/infoData'
 import { NextPage } from 'next'
-// import { Genres } from 'pages/@type/work'
 import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
+const P = tw.p``
+const LinktreeWrapper = tw.div`mt-16`
+const SnsLink = tw.a`ml-3 tracking-wider`
+
+export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
 const Info: NextPage = () => {
   const { t } = useTranslation()
@@ -14,47 +18,47 @@ const Info: NextPage = () => {
     <>
       <Wrapper>
         <div id="workExperience" className="mt-12 text-left Japanese">
-          <p>
+          <P>
             {t('author')}
             <small>{t('author_pronunciation')}</small>
             {t('description')}
-          </p>
-          <p>
+          </P>
+          <P>
             {t('toMail')}
             <br />
             <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
               {process.env.NEXT_PUBLIC_mail}
             </a>
-          </p>
-          <div className="mt-16">
-            <h1 className="">
+          </P>
+          <LinktreeWrapper>
+            <h1>
               <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
             </h1>
             <hr />
             {links.map((link, linkK) => (
-              <p key={linkK}>
-                <a
+              <P key={linkK}>
+                <SnsLink
                   href={link.url}
-                  className={`${link.class && link.class} ml-3 tracking-wider`}
+                  className={`${link.class && link.class}`}
                 >
                   {link.text}
-                </a>
-              </p>
+                </SnsLink>
+              </P>
             ))}
-          </div>
+          </LinktreeWrapper>
 
           {Events.length > 0 && (
-            <p>
+            <P>
               {t('eventIncoming')}
               <hr />
-            </p>
+            </P>
           )}
 
           <div className="mt-16">
             <h1 className="">{t('workExperience')}</h1>
             <hr />
             <ul>
-              {/* {Genres.map((genre, genreK) => (
+              {genres.map((genre, genreK) => (
                 <li key={genreK} className="">
                   <h2 className="my-2 leading-loose tracking-widest">
                     {genre}
@@ -67,7 +71,7 @@ const Info: NextPage = () => {
                       ))}
                   </ul>
                 </li>
-              ))} */}
+              ))}
             </ul>
           </div>
 
