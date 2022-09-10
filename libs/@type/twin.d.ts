@@ -1,7 +1,10 @@
+
+/* eslint-disable */
+// types/twin.d.ts
 import 'twin.macro'
 
 import styledImport, { css as cssImport, CSSProp } from 'styled-components'
-/* eslint-disable */
+
 declare module 'twin.macro' {
   // The styled and css imports
   const styled: typeof styledImport
@@ -13,5 +16,19 @@ declare module 'react' {
   interface HTMLAttributes<T> extends DOMAttributes<T> {
     css?: CSSProp
     tw?: string
+  }
+  // The inline svg css prop
+  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
+    css?: CSSProp
+    tw?: string
+  }
+}
+
+// The 'as' prop on styled components
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
+      as?: string | Element
+    }
   }
 }
