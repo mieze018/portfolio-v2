@@ -7,7 +7,18 @@ import type { FC } from 'react'
 import { NavLinks } from 'components/Molecules/NavLink'
 import { addAgentToHtml } from 'libs/tumblrLink'
 
-const Floater = tw.div`fixed top-0 z-10 w-full bg-surface`
+const Floater = styled.div`
+  ${tw`fixed top-0 z-10 w-full bg-surface  h-golden23vh`}
+  top: 0; /* 上部のボケを隠すため少し上に上げる */
+  filter: blur(0) brightness(1);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-size: 120% 100%;
+  transition: 10000ms;
+  transform-origin: right top;
+  animation: wave 180s 0s ease-out forwards;
+`
 const Wrapper = styled.header`
   ${tw`fixed top-0 z-10 w-full mb-0 text-sm text-center`}
   min-height: 2em; // 最上部の隙間対策

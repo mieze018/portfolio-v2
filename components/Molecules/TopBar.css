@@ -8,19 +8,6 @@
 /* https://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%28245\%2C245\%2C245\%2C1\%29\%200\%25\%2C\%20rgba\%28237\%2C251\%2C255\%2C1\%29\%2016\%25\%2C\%20rgba\%28237\%2C245\%2C247\%2C1\%29\%2024\%25\%2C\%20rgba\%28255\%2C255\%2C255\%2C1\%29\%20100\%25\%29\%3B' */
 /* background: whitesmoke; */
 
-#floater {
-  top: 0;
-  /* 上部のボケを隠すため少し上に上げる */
-  @apply h-golden23vh;
-  filter: blur(0) brightness(1);
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center top;
-  background-size: 120% 100%;
-  transition: 10000ms;
-  transform-origin: right top;
-  animation: wave 180s 0s ease-out forwards;
-}
 
 @keyframes wave {
 
