@@ -8,8 +8,6 @@ import { Footer } from 'components/atoms/Footer'
 import { Navigation } from 'components/molecules/Navigation'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
-
-
 const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts

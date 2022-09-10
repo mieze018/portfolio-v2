@@ -9,7 +9,6 @@ import { Work } from 'components/atoms/Work'
 import { Navigation } from 'components/molecules/Navigation'
 import { Events, links, workExperience } from 'components/molecules/infoData'
 
-
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
 const LinktreeWrapper = tw.div`mt-16`
@@ -42,9 +41,7 @@ const InfoContent = () => {
         <P>
           {t('toMail')}
           <br />
-          <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
-            {process.env.NEXT_PUBLIC_mail}
-          </a>
+          <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>{process.env.NEXT_PUBLIC_mail}</a>
         </P>
         <LinktreeWrapper>
           <h1>
@@ -53,10 +50,7 @@ const InfoContent = () => {
           <hr />
           {links.map((link, linkK) => (
             <P key={linkK}>
-              <SnsLink
-                href={link.url}
-                className={`${link.class && link.class}`}
-              >
+              <SnsLink href={link.url} className={`${link.class && link.class}`}>
                 {link.text}
               </SnsLink>
             </P>

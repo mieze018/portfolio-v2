@@ -329,7 +329,6 @@ export const workExperienceBook: works = [
   },
 ]
 
-export const workExperience: works =
-  workExperienceEtc.concat(workExperienceBook)
+export const workExperience: works = workExperienceEtc.concat(workExperienceBook)
 
 export const Events: event[] = []

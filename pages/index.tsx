@@ -6,7 +6,6 @@ import type { GetStaticProps, NextPage } from 'next'
 import { endpoint, fetcher } from 'pages/api/tumblr'
 import PersonalWork from 'pages/personal_work'
 
-
 const Home: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
   console.log(fallbackData)
   // if (error) return <div>Failed to load</div>
