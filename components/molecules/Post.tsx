@@ -1,7 +1,9 @@
-import { PostFooter } from 'components/molecules/PostFooter'
-import { Photo, Post } from 'libs/@type/tumblr'
 import Image from 'next/image'
 import tw, { styled } from 'twin.macro'
+
+import type { Photo, Post } from 'libs/@type/tumblr'
+
+import { PostFooter } from 'components/molecules/PostFooter'
 
 const Article = tw.article`flex max-w-full flex-col flex-wrap justify-center px-[2.618vw] mb-[1.618vh]`
 const Caption = tw.div`mt-0 text-sm sm:text-base`

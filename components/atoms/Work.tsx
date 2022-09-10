@@ -1,5 +1,7 @@
-import { work } from 'libs/@type/work'
-import React, { FC, memo } from 'react'
+import React, { memo } from 'react'
+
+import type { work } from 'libs/@type/work'
+import type { FC } from 'react'
 
 export const Work: FC<{ work: work }> = memo(({ work }) => {
   return (
@@ -9,9 +11,7 @@ export const Work: FC<{ work: work }> = memo(({ work }) => {
       {work.s出版社 && <span className="ml-3">({work.s出版社})</span>}
       {work.k形態 && <small className="ml-3">{work.k形態}</small>}
       {work.dデザイン && <small className="ml-3">{work.dデザイン}</small>}
-      {work.n発表年月 && (
-        <small className="ml-3">- {work.n発表年月?.split('-', 1)}</small>
-      )}
+      {work.n発表年月 && <small className="ml-3">- {work.n発表年月?.split('-', 1)}</small>}
     </li>
   )
 })

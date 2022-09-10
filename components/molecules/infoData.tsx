@@ -1,4 +1,4 @@
-import { event, works } from 'libs/@type/work'
+import type { event, works } from 'libs/@type/work'
 
 export const links: { [key: string]: string | undefined }[] = [
   {
@@ -329,7 +329,6 @@ export const workExperienceBook: works = [
   },
 ]
 
-export const workExperience: works =
-  workExperienceEtc.concat(workExperienceBook)
+export const workExperience: works = workExperienceEtc.concat(workExperienceBook)
 
 export const Events: event[] = []
