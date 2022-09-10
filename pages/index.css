@@ -21,11 +21,13 @@ body {
   text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(255 124 0 / 16%);
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
-  background: linear-gradient(to bottom,
-      rgb(245 245 245 / 100%) 0%,
-      rgb(237 251 255 / 100%) 16%,
-      rgb(237 245 247 / 100%) 24%,
-      rgb(255 255 255 / 100%) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgb(245 245 245 / 100%) 0%,
+    rgb(237 251 255 / 100%) 16%,
+    rgb(237 245 247 / 100%) 24%,
+    rgb(255 255 255 / 100%) 100%
+  );
   background-attachment: fixed;
 }
 
