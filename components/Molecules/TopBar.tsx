@@ -5,6 +5,12 @@ import { useCallback, useEffect, useRef } from 'react'
 
 import type { FC } from 'react'
 
+import { addAgentToHtml } from 'libs/tumblrLink'
+
+const TitleLink: FC = () => {
+  return <Link href="/"> {process.env.NEXT_PUBLIC_title}</Link>
+}
+
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList
   // console.log(list);
@@ -27,30 +33,8 @@ function classList(elt: HTMLElement | null) {
 }
 
 export const TopBar: FC = () => {
-  //スマホでアクセスした時tumblrへのリンクをアプリから開くリンクに書き換え
-  {
-    const userAgent = window.navigator.userAgent.toLowerCase()
-
-    if (
-      userAgent.indexOf('iphone') !== -1 ||
-      userAgent.indexOf('ipad') !== -1 ||
-      userAgent.indexOf('android') !== -1
-    ) {
-      document.querySelector('html')?.classList.add('mobile')
-    } else {
-      document.querySelector('html')?.classList.add('desktop')
-    }
-    userAgent.indexOf('android') !== -1 && document.querySelector('html')?.classList.add('android')
-    // userAgent.indexOf('gecko') !== -1 &&
-    //   document.querySelector('html')?.classList.add('gecko');
-    document
-      .querySelector('.mobile .tumblr')
-      ?.setAttribute(
-        'href',
-        `http://www.tumblr.com/open/app?app_args=blog&blogName=${process.env.NEXT_PUBLIC_Tumblr_username}&page=blog`
-      )
-  }
-  //スクロール
+  addAgentToHtml()
+  // TODO:スクロールオブサーバーにする
   const isRunning = useRef(false) // スクロール多発防止用フラグ
 
   // リスナに登録する関数
@@ -99,13 +83,6 @@ export const TopBar: FC = () => {
       document.removeEventListener('scroll', isScrollToggle, true)
     }
   }, [isScrollToggle])
-
-  const TitleLink: FC = () => {
-    return (
-      <Link href="/">{/* {GetDataCTX['info']?.['title'] ?? process.env.NEXT_PUBLIC_title} */}</Link>
-    )
-  }
-
   const navLinks: FC<{ className: string }> = ({ className }) => {
     console.log(className)
     return (
