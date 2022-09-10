@@ -1,8 +1,7 @@
-// ⚛️
 import './TopBar.css'
 
 import Link from 'next/link'
-import { memo, useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
 import type { FC } from 'react'
 
@@ -27,7 +26,7 @@ function classList(elt: HTMLElement | null) {
       }
 }
 
-export const TopBar: FC = memo(() => {
+export const TopBar: FC = () => {
   //スマホでアクセスした時tumblrへのリンクをアプリから開くリンクに書き換え
   {
     const userAgent = window.navigator.userAgent.toLowerCase()
@@ -135,15 +134,13 @@ export const TopBar: FC = memo(() => {
       navLinks={navLinks}
     />
   )
-})
-
-TopBar.displayName = 'TopBar'
+}
 
 export const TopBarComponent: FC<{
   TitleLink: FC
   description?: string
   navLinks: FC<{ className: string }>
-}> = memo((props) => {
+}> = (props) => {
   return (
     <>
       <div id="floater" className="fixed top-0 z-10 w-full bg-surface"></div>
@@ -165,5 +162,4 @@ export const TopBarComponent: FC<{
       </header>
     </>
   )
-})
-TopBarComponent.displayName = 'TopBarComponent'
+}

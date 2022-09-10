@@ -1,9 +1,7 @@
-import React, { memo } from 'react'
-
 import type { work } from 'libs/@type/work'
 import type { FC } from 'react'
 
-export const Work: FC<{ work: work }> = memo(({ work }) => {
+export const Work: FC<{ work: work }> = ({ work }) => {
   return (
     <li>
       {work.t著者 && <i className="ml-3">{work.t著者}</i>}
@@ -14,5 +12,4 @@ export const Work: FC<{ work: work }> = memo(({ work }) => {
       {work.n発表年月 && <small className="ml-3">- {work.n発表年月?.split('-', 1)}</small>}
     </li>
   )
-})
-Work.displayName = 'Work'
+}
