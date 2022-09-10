@@ -147,10 +147,7 @@ article {
 
 .fade-appear-active,
 .fade-appear-done {
-  position: static;
-  display: flex;
-  opacity: 1;
-  transition: 3000ms;
+  @apply static flex opacity-100 transition[3000ms];
 }
 
 .fade-appear,
