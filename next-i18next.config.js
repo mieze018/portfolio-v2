@@ -1,5 +1,4 @@
-
-const { initReactI18next } = require('react-i18next');
+const { initReactI18next } = require('react-i18next')
 module.exports = {
   i18n: {
     locales: ['en', 'ja'],
@@ -7,5 +6,5 @@ module.exports = {
     localeDetection: false,
   },
   serializeConfig: false,
-  use: [initReactI18next]
-};
+  use: [initReactI18next],
+}
