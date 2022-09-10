@@ -14,7 +14,6 @@ const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
       <DefaultHeader />
       <Navigation />
       {fallbackData?.response.posts.map((post) => {
-        console.log(post.tags)
         if (!post.tags.includes(tags.commissionedWork)) return
         return (
           <div key={post.id}>

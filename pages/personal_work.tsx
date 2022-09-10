@@ -9,21 +9,17 @@ import { Root } from './@type/tumblr'
 
 const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
+  console.log(fallbackData.response.posts.length)
+  const posts = fallbackData.response.posts
   return (
     <div>
       <DefaultHeader />
       <Navigation />
-      {fallbackData?.response.posts.map((post) => {
+      {posts.map((post) => {
         if (!post.tags.includes(tags.personalWork)) return
-        return (
-          <div key={post.id}>
-            {fallbackData.response.posts.map((post) => (
-              <PostComponent post={post} key={post.id} />
-            ))}
-            <Footer />
-          </div>
-        )
+        return <PostComponent post={post} key={post.id} />
       })}
+      <Footer />
     </div>
   )
 }
