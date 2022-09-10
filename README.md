@@ -10,6 +10,7 @@
   - Styled Components <https://styled-components.com/>
 - ESLint <https://eslint.org/docs/latest/>
 - Prettier <https://prettier.io/docs/en/>
+- Tumblr API <https://www.tumblr.com/docs/en/api/>
 
 ## 余裕があればつかいたもの
 
