@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useCallback, useEffect, useRef } from 'react'
-import { useTranslation } from 'react-i18next'
 import { keyframes } from 'styled-components'
 import tw, { styled } from 'twin.macro'
 
