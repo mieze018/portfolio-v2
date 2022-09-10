@@ -1,7 +1,7 @@
 import { Footer } from 'components/atoms/Footer'
 import { DefaultHeader } from 'components/Header'
 import { Navigation } from 'components/molecules/Navigation'
-import { Posts } from 'components/molecules/Posts'
+import { Posts } from 'components/Organisms/Posts'
 import { GetStaticProps, NextPage } from 'next/types'
 import { Root } from 'pages/@type/tumblr'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'

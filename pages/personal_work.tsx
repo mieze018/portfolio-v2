@@ -1,6 +1,6 @@
 import { Footer } from 'components/atoms/Footer'
 import { Navigation } from 'components/molecules/Navigation'
-import { Posts } from 'components/molecules/Posts'
+import { Posts } from 'components/Organisms/Posts'
 import { GetStaticProps, NextPage } from 'next/types'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
@@ -9,7 +9,6 @@ import { Root } from './@type/tumblr'
 
 const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  console.log(fallbackData.response.posts.length)
   const posts = fallbackData.response.posts
   return (
     <>
