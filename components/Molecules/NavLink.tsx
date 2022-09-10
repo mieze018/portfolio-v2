@@ -1,21 +1,30 @@
-export const NavLinks = () => {
+import Link from 'next/link'
+
+export const NavLinks = ({
+  routes,
+}: {
+  routes: {
+    name: string
+    pathname: string
+  }[]
+}) => {
   console.log()
   return (
     <>
-      {/* {props.navs.map((nav) =>
+      {routes.map((route) => (
         <Link
-          to={nav.pathname}
-          key={nav.name}
-          className={`${className} ${location.pathname === nav.pathname ||
-            (location.pathname === '/' &&
-              nav.pathname === GetDataCTX.routes[0].pathname)
-            ? 'underline'
-            : ''
-            }`}
+          href={route.pathname}
+          key={route.pathname}
+          className={`inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest ${
+            location.pathname === route.pathname ||
+            (location.pathname === '/' && route.pathname === routes[0].pathname)
+              ? 'underline'
+              : ''
+          }`}
         >
-          {nav.name}
+          {route.name}
         </Link>
-      )} */}
+      ))}
     </>
   )
 }

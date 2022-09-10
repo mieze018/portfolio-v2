@@ -1,13 +1,33 @@
 import Link from 'next/link'
 import { useCallback, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { keyframes } from 'styled-components'
 import tw, { styled } from 'twin.macro'
 
 import type { FC } from 'react'
 
 import { NavLinks } from 'components/Molecules/NavLink'
+import { routes } from 'libs/routes'
 import { addAgentToHtml } from 'libs/tumblrLink'
 
+export const TopBarComponent = () => (
+  <>
+    <Floater id="floater" />
+    <Wrapper>
+      <Sinker id="sinker">
+        <FadeOuter id="fade-outer">
+          <Title>
+            <Link href="/">{process.env.NEXT_PUBLIC_title}</Link>
+          </Title>
+          <Description>{process.env.NEXT_PUBLIC_description}</Description>
+        </FadeOuter>
+        <Nav>
+          <NavLinks routes={routes} />
+        </Nav>
+      </Sinker>
+    </Wrapper>
+  </>
+)
 const wave = keyframes`
   /* 読み込み時 */
   0% {
@@ -66,7 +86,7 @@ const Floater = styled.div`
   animation: ${wave} 180s 0s ease-out forwards;
 `
 const Sinker = styled.div`
-  ${tw`fixed top-golden23vh w-full m-auto opacity-0 hover:blur-none`}
+  ${tw`fixed w-full m-auto opacity-0 top-golden23vh hover:blur-none`}
   transition: 1000ms, 1000ms, 1200ms, 10000ms;
   transition-property: opacity, filter, top, height;
   animation: ${sunk} 10s 0.3s ease-in-out forwards;
@@ -85,30 +105,6 @@ const Wrapper = styled.header`
 const Title = tw.h1`mb-1 text-2xl text-primary xs:text-3xl tracking-title`
 const Description = tw.p`text-xs  sm:text-base`
 const Nav = tw.nav`z-10 text-center m-auto opacity-100 transition[1200ms]`
-export const TopBarComponent: FC<{
-  TitleLink?: FC
-  description?: string
-  navLinks?: FC<{ className: string }>
-}> = (props) => (
-  <>
-    <Floater id="floater" />
-    <Wrapper>
-      <Sinker id="sinker">
-        <FadeOuter id="fade-outer">
-          <Title>{/* <props.TitleLink /> */}</Title>
-          <Description>{props.description ?? process.env.NEXT_PUBLIC_description}</Description>
-        </FadeOuter>
-        <Nav>
-          {/* <props.navLinks className="inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest" /> */}
-        </Nav>
-      </Sinker>
-    </Wrapper>
-  </>
-)
-
-const TitleLink: FC = () => {
-  return <Link href="/"> {process.env.NEXT_PUBLIC_title}</Link>
-}
 
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList
@@ -183,11 +179,5 @@ export const TopBar: FC = () => {
     }
   }, [isScrollToggle])
 
-  return (
-    <TopBarComponent
-      TitleLink={TitleLink}
-      // description={GetDataCTX['description']}
-      navLinks={NavLinks}
-    />
-  )
+  return <TopBarComponent />
 }
