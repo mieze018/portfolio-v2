@@ -3,11 +3,11 @@ import tw from 'twin.macro'
 
 import type { NextPage } from 'next'
 
+import { Footer } from 'components/Atoms/Footer'
+import { Work } from 'components/Atoms/Work'
 import { DefaultHeader } from 'components/Header'
-import { Footer } from 'components/atoms/Footer'
-import { Work } from 'components/atoms/Work'
-import { Navigation } from 'components/molecules/Navigation'
-import { Events, links, workExperience } from 'components/molecules/infoData'
+import { Navigation } from 'components/Molecules/Navigation'
+import { links, Events, workExperience } from 'components/Molecules/infoData'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
