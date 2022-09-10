@@ -1,7 +1,7 @@
 import type { Tumblr } from 'libs/@type/tumblr'
 import type { NextPage, GetStaticProps } from 'next'
 
-import { Footer } from 'components/Atoms/Footer'
+import { Footer } from 'components/Molecules/Footer'
 import { DefaultHeader } from 'components/Molecules/Header'
 import { Navigation } from 'components/Molecules/Navigation'
 import { Posts } from 'components/Organisms/Posts'

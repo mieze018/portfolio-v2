@@ -1,3 +1,8 @@
 {
-  "recommendations": ["lokalise.i18n-ally", "esbenp.prettier-vscode", "dbaeumer.vscode-eslint"]
+  "recommendations": [
+    "lokalise.i18n-ally",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "styled-components.vscode-styled-components"
+  ]
 }

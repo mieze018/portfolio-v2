@@ -1,4 +1,3 @@
-
 import type { Tumblr } from 'libs/@type/tumblr'
 
 const api_uri = process.env.NEXT_PUBLIC_api_URI

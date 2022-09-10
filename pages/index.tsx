@@ -7,8 +7,6 @@ import { endpoint, fetcher } from 'pages/api/tumblr'
 import PersonalWork from 'pages/personal_work'
 
 const Home: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
-  console.log(fallbackData)
-  // if (error) return <div>Failed to load</div>
   if (!fallbackData) return <div>Loading...</div>
   return <PersonalWork fallbackData={fallbackData} />
 }
