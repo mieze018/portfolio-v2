@@ -15,109 +15,113 @@ const H2 = tw.h2`my-2 leading-loose tracking-widest`
 
 export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
-const Info: NextPage = () => {
+const Info: NextPage = () => (
+  <>
+    <DefaultHeader />
+    <Navigation />
+    <InfoContent />
+    <Footer />
+  </>
+)
+
+export default Info
+
+const InfoContent = () => {
   const { t } = useTranslation()
   return (
-    <>
-      <DefaultHeader />
-      <Navigation />
-      <Wrapper>
-        <div id="workExperience" className="mt-12 text-left Japanese">
-          <P>
-            {t('author')}
-            <small>{t('author_pronunciation')}</small>
-            {t('description')}
-          </P>
-          <P>
-            {t('toMail')}
-            <br />
-            <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
-              {process.env.NEXT_PUBLIC_mail}
-            </a>
-          </P>
-          <LinktreeWrapper>
-            <h1>
-              <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
-            </h1>
-            <hr />
-            {links.map((link, linkK) => (
-              <P key={linkK}>
-                <SnsLink
-                  href={link.url}
-                  className={`${link.class && link.class}`}
-                >
-                  {link.text}
-                </SnsLink>
-              </P>
-            ))}
-          </LinktreeWrapper>
-
-          {Events.length > 0 && (
-            <P>
-              {t('eventIncoming')}
-              <hr />
+    <Wrapper>
+      <div id="workExperience" className="mt-12 text-left Japanese">
+        <P>
+          {t('author')}
+          <small>{t('author_pronunciation')}</small>
+          {t('description')}
+        </P>
+        <P>
+          {t('toMail')}
+          <br />
+          <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>
+            {process.env.NEXT_PUBLIC_mail}
+          </a>
+        </P>
+        <LinktreeWrapper>
+          <h1>
+            <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
+          </h1>
+          <hr />
+          {links.map((link, linkK) => (
+            <P key={linkK}>
+              <SnsLink
+                href={link.url}
+                className={`${link.class && link.class}`}
+              >
+                {link.text}
+              </SnsLink>
             </P>
-          )}
+          ))}
+        </LinktreeWrapper>
 
-          <div className="mt-16">
-            <h1 className="">{t('workExperience')}</h1>
+        {Events.length > 0 && (
+          <P>
+            {t('eventIncoming')}
             <hr />
-            <ul>
-              {genres.map((genre, genreK) => (
-                <li key={genreK} className="">
-                  <H2>{genre}</H2>
-                  <ul className="leading-normal tracking-wide">
-                    {workExperience
-                      .filter((work) => work.gジャンル === genre)
-                      .map((work, workK) => (
-                        <Work key={workK} work={work} />
-                      ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </div>
+          </P>
+        )}
 
-          {/* <p className="mt20">
-          展示
+        <div className="mt-16">
+          <h1 className="">{t('workExperience')}</h1>
+          <hr />
+          <ul>
+            {genres.map((genre, genreK) => (
+              <li key={genreK} className="">
+                <H2>{genre}</H2>
+                <ul className="leading-normal tracking-wide">
+                  {workExperience
+                    .filter((work) => work.gジャンル === genre)
+                    .map((work, workK) => (
+                      <Work key={workK} work={work} />
+                    ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* <p className="mt20">
+    展示
+    <hr />
+    <ul>
+      <li>
+        2016
+        <ul>
+          <li>
+            <i></i>CANCAN exhibition at LemoArt Gallery (Berlin, Germany)
+          </li>
+          <li>
+            <i></i>Digital Creator 23人展「恋」 at アートスペースリビーナ
+            (Tokyo, Japan)
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </p> */}
+
+        <div className="my-12">
+          {t('awards')}
           <hr />
           <ul>
             <li>
-              2016
-              <ul>
-                <li>
-                  <i></i>CANCAN exhibition at LemoArt Gallery (Berlin, Germany)
-                </li>
-                <li>
-                  <i></i>Digital Creator 23人展「恋」 at アートスペースリビーナ
-                  (Tokyo, Japan)
-                </li>
-              </ul>
+              <H2> </H2>
+              <i className="ml-3">ペーターズギャラリーコンペ 2010</i>
+              「山口はるみ賞」及び「鈴木成一賞次点」
             </li>
           </ul>
-        </p> */}
-
-          <div className="my-12">
-            {t('awards')}
-            <hr />
-            <ul>
-              <li>
-                <H2> </H2>
-                <i className="ml-3">ペーターズギャラリーコンペ 2010</i>
-                「山口はるみ賞」及び「鈴木成一賞次点」
-              </li>
-            </ul>
-          </div>
         </div>
-        {/* <div className="mt20">
-        <a href="https://www.cgtrader.com" target="_blank" rel="noreferrer">
-          Participant of the CGTrader Digital Art Competition
-        </a>
-      </div> */}
-      </Wrapper>
-      <Footer />
-    </>
+      </div>
+      {/* <div className="mt20">
+  <a href="https://www.cgtrader.com" target="_blank" rel="noreferrer">
+    Participant of the CGTrader Digital Art Competition
+  </a>
+</div> */}
+    </Wrapper>
   )
 }
-
-export default Info
