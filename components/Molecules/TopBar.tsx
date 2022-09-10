@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useCallback, useEffect, useRef } from 'react'
-import tw from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 import type { FC } from 'react'
 
@@ -8,7 +8,11 @@ import { NavLinks } from 'components/Molecules/NavLink'
 import { addAgentToHtml } from 'libs/tumblrLink'
 
 const Floater = tw.div`fixed top-0 z-10 w-full bg-surface`
-const Wrapper = tw.header`fixed top-0 z-10 w-full mb-0 text-sm text-center`
+const Wrapper = styled.header`
+  ${tw`fixed top-0 z-10 w-full mb-0 text-sm text-center`}
+  min-height: 2em; // 最上部の隙間対策
+  background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
+`
 const Title = tw.h1`mb-1 text-2xl text-primary xs:text-3xl tracking-title`
 const Description = tw.p`text-xs  sm:text-base`
 const Nav = tw.nav`z-10 text-center`

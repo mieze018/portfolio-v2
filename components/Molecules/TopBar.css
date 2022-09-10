@@ -7,11 +7,6 @@
 /* start */
 /* https://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%28245\%2C245\%2C245\%2C1\%29\%200\%25\%2C\%20rgba\%28237\%2C251\%2C255\%2C1\%29\%2016\%25\%2C\%20rgba\%28237\%2C245\%2C247\%2C1\%29\%2024\%25\%2C\%20rgba\%28255\%2C255\%2C255\%2C1\%29\%20100\%25\%29\%3B' */
 /* background: whitesmoke; */
-header {
-  /* 最上部の隙間対策 */
-  min-height: 2em;
-  background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
-}
 
 #floater {
   top: 0;
@@ -28,6 +23,7 @@ header {
 }
 
 @keyframes wave {
+
   /* 読み込み時 */
   0% {
     transform: matrix(1, 0, 0, 1, 0, 0);
