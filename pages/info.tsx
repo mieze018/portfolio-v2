@@ -5,7 +5,6 @@ import type { eventType, infoDataType, works } from 'libs/@type/work'
 import type { GetStaticProps, NextPage } from 'next'
 
 import { Footer } from 'components/Molecules/Footer'
-import { DefaultHeader } from 'components/Molecules/Header'
 import { Work } from 'components/Molecules/Info/Work'
 import { TopBar } from 'components/Molecules/TopBar'
 import { eventsData } from 'pages/api/events'
@@ -24,7 +23,6 @@ const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   return (
     <>
-      <DefaultHeader />
       <TopBar />
       <InfoContent infoData={fallbackData} />
       <Footer />
