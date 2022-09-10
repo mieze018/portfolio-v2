@@ -3,7 +3,7 @@ import { endpoint, fetcher } from 'pages/api/tumblr'
 import PersonalWork from 'pages/personal_work'
 import React from 'react'
 
-import { Tumblr } from '../libs/@type/tumblr'
+import type { Tumblr } from '../libs/@type/tumblr'
 
 const Home: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   console.log(fallbackData)

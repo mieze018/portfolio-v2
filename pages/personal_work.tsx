@@ -1,12 +1,12 @@
 import { Footer } from 'components/Molecules/Footer'
+import { DefaultHeader } from 'components/Molecules/Header'
 import { Navigation } from 'components/Molecules/Navigation'
 import { Posts } from 'components/Organisms/Posts'
-import { GetStaticProps, NextPage } from 'next/types'
+import type { GetStaticProps, NextPage } from 'next/types'
 import { tags } from 'pages/api/tags'
 import { endpoint, fetcher } from 'pages/api/tumblr'
 
-import { DefaultHeader } from '../components/Molecules/Header'
-import { Tumblr } from '../libs/@type/tumblr'
+import type { Tumblr } from '../libs/@type/tumblr'
 
 const PersonalWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
 import { TopBarComponent } from './TopBar'
 
@@ -22,9 +22,7 @@ const navLinks = ({ className }: { className: string }) => {
   )
 }
 
-export default { component: TopBarComponent } as ComponentMeta<
-  typeof TopBarComponent
->
+export default { component: TopBarComponent } as ComponentMeta<typeof TopBarComponent>
 
 export const Default: ComponentStoryObj<typeof TopBarComponent> = {
   args: {

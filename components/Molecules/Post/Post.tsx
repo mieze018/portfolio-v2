@@ -1,6 +1,6 @@
 import { PhotoImage } from 'components/Molecules/Post/PhotoImage'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
-import { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/tumblr'
 import tw, { styled } from 'twin.macro'
 
 const Article = tw.article`flex max-w-full flex-col flex-wrap justify-center px-[2.618vw] mb-[1.618vh]`

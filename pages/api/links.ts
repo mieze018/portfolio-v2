@@ -1,4 +1,3 @@
-
 export const links: { [key: string]: string | undefined }[] = [
   {
     text: 'Twitter',

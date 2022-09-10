@@ -1,5 +1,5 @@
 import { Post } from 'components/Molecules/Post/Post'
-import { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/tumblr'
 
 export const Posts = ({ posts, tag }: { posts: Tumblr.Post[]; tag: string }) => (
   <>

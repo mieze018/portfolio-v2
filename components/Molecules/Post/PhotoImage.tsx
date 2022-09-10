@@ -1,4 +1,4 @@
-import { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/tumblr'
 import Image from 'next/image'
 
 export const PhotoImage = ({
