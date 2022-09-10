@@ -1,4 +1,4 @@
-import { Post } from 'pages/@type/tumblr'
+import { Post } from 'libs/@type/tumblr'
 import tw from 'twin.macro'
 
 const Wrapper = tw.footer`mt-0 text-xs sm:text-sm`
