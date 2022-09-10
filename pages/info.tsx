@@ -100,7 +100,7 @@ const WorkExperience = ({ workExperience }: { workExperience: works }) => {
             <H2>{genre}</H2>
             <ul className="leading-normal tracking-wide">
               {workExperience
-                .filter((work) => work.gジャンル === genre)
+                .filter((work) => work.genre === genre)
                 .map((work, workK) => (
                   <Work key={workK} work={work} />
                 ))}
