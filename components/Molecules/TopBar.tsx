@@ -25,6 +25,12 @@ const Sinker = styled.div`
   transition-property: opacity, filter, top, height;
   animation: sunk 10s 0.3s ease-in-out forwards;
 `
+const FadeOuter = styled.div`
+  ${tw`opacity-100 transition[5000ms]`}/* margin-top: calc(23vh);
+  opacity: 1;
+  transition: 2000ms, 2000ms, 2000ms, 10000ms;
+  transition-property: opacity, translate, filter, margin-top; */
+`
 const Wrapper = styled.header`
   ${tw`fixed top-0 z-10 w-full mb-0 text-sm text-center`}
   min-height: 2em; // 最上部の隙間対策
@@ -42,10 +48,10 @@ export const TopBarComponent: FC<{
     <Floater id="floater" />
     <Wrapper>
       <Sinker id="sinker">
-        <div id="fade-outer">
+        <FadeOuter id="fade-outer">
           <Title>{/* <props.TitleLink /> */}</Title>
           <Description>{props.description ?? process.env.NEXT_PUBLIC_description}</Description>
-        </div>
+        </FadeOuter>
         <Nav>
           {/* <props.navLinks className="inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest" /> */}
         </Nav>

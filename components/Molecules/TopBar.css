@@ -145,15 +145,6 @@
   animation: fade-in 3ms 0s ease-in-out forwards;
 }
 
-#fade-outer {
-  opacity: 1;
-  transition: 500ms;
-  /* margin-top: calc(23vh);
-  opacity: 1;
-  transition: 2000ms, 2000ms, 2000ms, 10000ms;
-  transition-property: opacity, translate, filter, margin-top; */
-}
-
 .scroll-top-gt-0 #fade-outer {
   margin-top: calc(-2em);
   opacity: 0;
