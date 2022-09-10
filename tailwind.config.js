@@ -1,6 +1,8 @@
 module.exports = {
   content: [
-    './public/**/*.html', "./src/**/*.{html,js,jsx,ts,tsx}"],
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     textColor: {
       primary: '#555',
