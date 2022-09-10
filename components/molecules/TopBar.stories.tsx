@@ -1,6 +1,7 @@
+import { TopBarComponent } from './TopBar'
+
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
-import { TopBarComponent } from './TopBar'
 
 const title = () => {
   return <>mieze illustration</>

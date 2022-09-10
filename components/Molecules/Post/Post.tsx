@@ -1,7 +1,9 @@
+import tw, { styled } from 'twin.macro'
+
+import type { Tumblr } from 'libs/@type/tumblr'
+
 import { PhotoImage } from 'components/Molecules/Post/PhotoImage'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
-import type { Tumblr } from 'libs/@type/tumblr'
-import tw, { styled } from 'twin.macro'
 
 const Article = tw.article`flex max-w-full flex-col flex-wrap justify-center px-[2.618vw] mb-[1.618vh]`
 const Caption = tw.div`mt-0 text-sm sm:text-base`
