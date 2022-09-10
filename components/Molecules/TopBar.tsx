@@ -8,7 +8,7 @@ import { NavLinks } from 'components/Molecules/NavLink'
 import { addAgentToHtml } from 'libs/tumblrLink'
 
 const Floater = styled.div`
-  ${tw`fixed top-0 z-10 w-full bg-surface  h-golden23vh`}
+  ${tw`fixed top-0 z-10 w-full bg-surface h-golden23vh`}
   top: 0; /* 上部のボケを隠すため少し上に上げる */
   filter: blur(0) brightness(1);
   background-repeat: no-repeat;
@@ -18,6 +18,12 @@ const Floater = styled.div`
   transition: 10000ms;
   transform-origin: right top;
   animation: wave 180s 0s ease-out forwards;
+`
+const Sinker = styled.div`
+  ${tw`fixed top-golden23vh w-full m-auto opacity-0 hover:blur-none`}
+  transition: 1000ms, 1000ms, 1200ms, 10000ms;
+  transition-property: opacity, filter, top, height;
+  animation: sunk 10s 0.3s ease-in-out forwards;
 `
 const Wrapper = styled.header`
   ${tw`fixed top-0 z-10 w-full mb-0 text-sm text-center`}
@@ -35,7 +41,7 @@ export const TopBarComponent: FC<{
   <>
     <Floater id="floater" />
     <Wrapper>
-      <div id="sinker">
+      <Sinker id="sinker">
         <div id="fade-outer">
           <Title>{/* <props.TitleLink /> */}</Title>
           <Description>{props.description ?? process.env.NEXT_PUBLIC_description}</Description>
@@ -43,7 +49,7 @@ export const TopBarComponent: FC<{
         <Nav>
           {/* <props.navLinks className="inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest" /> */}
         </Nav>
-      </div>
+      </Sinker>
     </Wrapper>
   </>
 )

@@ -67,16 +67,7 @@
   transition-property: filter, top, height;
 }
 
-#sinker {
-  @apply fixed;
-  @apply top-golden23vh;
-  width: 100%;
-  margin: auto;
-  opacity: 0;
-  transition: 1000ms, 1000ms, 1200ms, 10000ms;
-  transition-property: opacity, filter, top, height;
-  animation: sunk 10s 0.3s ease-in-out forwards;
-}
+
 
 @keyframes sunk {
   0% {
@@ -115,7 +106,7 @@
   }
 }
 
-@keyframes fade-out {
+@keyframes fade-out-in {
   0% {
     opacity: 1;
   }
@@ -145,10 +136,6 @@
   filter: blur(1px);
   opacity: 1;
   animation: fade-out-in 3ms 0.3s ease-in-out forwards;
-}
-
-#sinker:hover {
-  filter: blur(0);
 }
 
 .scroll-backed #sinker {
