@@ -12,8 +12,10 @@ header {
   min-height: 2em;
   background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
 }
+
 #floater {
-  top: 0; /* 上部のボケを隠すため少し上に上げる */
+  top: 0;
+  /* 上部のボケを隠すため少し上に上げる */
   @apply h-golden23vh;
   filter: blur(0) brightness(1);
   background-repeat: no-repeat;
@@ -24,32 +26,39 @@ header {
   transform-origin: right top;
   animation: wave 180s 0s ease-out forwards;
 }
+
 @keyframes wave {
   /* 読み込み時 */
   0% {
     transform: matrix(1, 0, 0, 1, 0, 0);
   }
+
   /* 最初の3秒ほどでここまで沈む */
   2% {
     transform: matrix(1, 0, 0, 0.8, 0, 0);
   }
+
   /* 少し戻る */
   10% {
     transform: matrix(1, 0.02, 0, 0.6, 0, 0);
   }
+
   /* 少し沈む・水平に  */
   30% {
     transform: matrix(1, 0.03, 0, 0.8, 0, 0);
   }
+
   /* その後30秒ほどかけて浮き上がる */
   50% {
     transform: matrix(1, 0.03, 0, 0.7, 0, 0);
   }
+
   /* 残り126秒かけて水平に元に戻る */
   100% {
     transform: matrix(1, 0.03, 0, 1, 0, 0);
   }
 }
+
 /* スクロール後 */
 .scroll-top-gt-0 #floater {
   top: -1vh;
@@ -58,6 +67,7 @@ header {
   transition: 10000ms, 1000ms, 8000ms;
   transition-property: filter, top, height;
 }
+
 .scroll-top-gt-38vh #floater {
   top: -4vh;
   height: calc(4vh + 7em);
@@ -65,6 +75,7 @@ header {
   transition: 10000ms, 1000ms, 10000ms;
   transition-property: filter, top, height;
 }
+
 .scroll-backed #floater {
   top: 0;
   @apply h-golden23vh;
@@ -72,6 +83,7 @@ header {
   transition: 10000ms, 1000ms, 10000ms;
   transition-property: filter, top, height;
 }
+
 #sinker {
   @apply fixed;
   @apply top-golden23vh;
@@ -82,47 +94,58 @@ header {
   transition-property: opacity, filter, top, height;
   animation: sunk 10s 0.3s ease-in-out forwards;
 }
+
 @keyframes sunk {
   0% {
     opacity: 0;
     transform: translate(0, -3em);
   }
+
   1% {
     opacity: 0.618;
     transform: translate(0, -1em);
   }
+
   100% {
     opacity: 1;
     transform: translate(0, 0);
   }
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 @keyframes fade-out {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
 }
+
 @keyframes fade-out {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 /* header.scroll-top-gt-0 .header-desc, */
 .scroll-top-gt-0 #sinker {
   /* margin-top: 0.1vh; */
@@ -133,21 +156,25 @@ header {
   /* animation: fade-ou-int 4ms 0.3s ease-in-out forwards; */
   animation: sunk 3s 0s ease-in-out reverse both;
 }
+
 .scroll-top-gt-38vh #sinker {
   top: -2em;
   filter: blur(1px);
   opacity: 1;
   animation: fade-out-in 3ms 0.3s ease-in-out forwards;
 }
+
 #sinker:hover {
   filter: blur(0);
 }
+
 .scroll-backed #sinker {
   opacity: 0;
   transition: 2000ms, 2000ms, 2000ms, 10000ms;
   transition-property: opacity, filter, margin-top;
   animation: fade-in 3ms 0s ease-in-out forwards;
 }
+
 #fade-outer {
   opacity: 1;
   transition: 500ms;
@@ -156,22 +183,27 @@ header {
   transition: 2000ms, 2000ms, 2000ms, 10000ms;
   transition-property: opacity, translate, filter, margin-top; */
 }
+
 .scroll-top-gt-0 #fade-outer {
   margin-top: calc(-2em);
   opacity: 0;
 }
+
 .scroll-top-gt-38vh #fade-outer {
   margin-top: calc(-2em);
   opacity: 0;
 }
+
 nav {
   @apply m-auto;
   opacity: 1;
   transition: 1200ms;
 }
+
 .scroll-top-gt-0 nav {
   opacity: 0;
 }
+
 .scroll-top-gt-38vh nav {
   opacity: 1;
 }

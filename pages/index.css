@@ -12,10 +12,9 @@ html {
 }
 body {
   position: relative;
-  font-family: 'Baskerville Old Face', Baskerville, 'Times New Roman', Times,
-    Georgia, Palatino, 'Palatino Linotype', 'HGS明朝E', 'ヒラギノ明朝 Pro W3',
-    'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝', '游明朝', YuMincho,
-    'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+  font-family: 'Baskerville Old Face', Baskerville, 'Times New Roman', Times, Georgia, Palatino,
+    'Palatino Linotype', 'HGS明朝E', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+    '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'MS PMincho', serif;
   line-height: 1.5em;
   text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(255 124 0 / 16%);
   letter-spacing: 0.05em;

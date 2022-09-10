@@ -1,13 +1,10 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     textColor: {
       primary: '#555',
       secondary: '#797979',
-      darkest: '#222'
+      darkest: '#222',
     },
     fontFamily: {
       kakugo: [
@@ -17,7 +14,7 @@ module.exports = {
         'メイリオ',
         'ＭＳ ゴシック',
         'MS Gothic',
-        'sans-serif'
+        'sans-serif',
       ],
       meiryo: [
         'Meiryo',
@@ -26,15 +23,9 @@ module.exports = {
         'ヒラギノ角ゴ ProN W3',
         'ＭＳ ゴシック',
         'MS Gothic',
-        'sans-serif'
+        'sans-serif',
       ],
-      mincho: [
-        'HGS明朝E',
-        'ヒラギノ明朝 Pro W3',
-        'Hiragino Mincho Pro',
-        'ＭＳ Ｐ明朝',
-        'serif'
-      ],
+      mincho: ['HGS明朝E', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝', 'serif'],
       serif: [
         'Baskerville Old Face',
         'Baskerville',
@@ -52,9 +43,9 @@ module.exports = {
         'ヒラギノ明朝 ProN W3',
         'Hiragino Mincho ProN',
         'MS PMincho',
-        'serif'
+        'serif',
       ],
-      sans: ['Merriweather', 'serif']
+      sans: ['Merriweather', 'serif'],
     },
 
     extend: {
@@ -67,7 +58,7 @@ module.exports = {
         golden23vw: '23.6vw',
         golden23vh: '23.6vh',
         golden14vw: '14.6vw',
-        golden14vh: '14.6vh'
+        golden14vh: '14.6vh',
       },
       spacing: {
         square: 'calc((92vh + 92vw) /2)',
@@ -78,28 +69,28 @@ module.exports = {
         golden23vw: '23.6vw',
         golden23vh: '23.6vh',
         golden14vw: '14.6vw',
-        golden14vh: '14.6vh'
+        golden14vh: '14.6vh',
       },
       backgroundImage: {
-        surface: `url('img/surface.webp')`
+        surface: `url('img/surface.webp')`,
       },
       transitionProperty: {
         header: {
           'transition-property': 'all',
           'transition-timing-function': 'ease-in-out',
-          'transition-duration': '2000ms'
-        }
+          'transition-duration': '2000ms',
+        },
       },
       letterSpacing: {
-        title: '0.2em'
+        title: '0.2em',
       },
       blur: {
-        '1px': '1px'
+        '1px': '1px',
       },
       screens: {
-        xs: '375px'
-      }
-    }
+        xs: '375px',
+      },
+    },
   },
   // plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'), require('@tailwindcss/typography')]
-};
+}
