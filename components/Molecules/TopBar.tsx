@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef } from 'react'
 
 import type { FC } from 'react'
 
+import { NavLinks } from 'components/Molecules/NavLink'
 import { addAgentToHtml } from 'libs/tumblrLink'
 
 const TitleLink: FC = () => {
@@ -83,32 +84,12 @@ export const TopBar: FC = () => {
       document.removeEventListener('scroll', isScrollToggle, true)
     }
   }, [isScrollToggle])
-  const navLinks: FC<{ className: string }> = ({ className }) => {
-    console.log(className)
-    return (
-      <>
-        {/* {props.navs.map((nav) =>
-          <Link
-            to={nav.pathname}
-            key={nav.name}
-            className={`${className} ${location.pathname === nav.pathname ||
-              (location.pathname === '/' &&
-                nav.pathname === GetDataCTX.routes[0].pathname)
-              ? 'underline'
-              : ''
-              }`}
-          >
-            {nav.name}
-          </Link>
-        )} */}
-      </>
-    )
-  }
+
   return (
     <TopBarComponent
       TitleLink={TitleLink}
       // description={GetDataCTX['description']}
-      navLinks={navLinks}
+      navLinks={NavLinks}
     />
   )
 }
