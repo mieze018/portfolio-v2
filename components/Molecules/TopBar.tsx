@@ -9,6 +9,34 @@ import type { FC } from 'react'
 import { NavLinks } from 'components/Molecules/NavLink'
 import { addAgentToHtml } from 'libs/tumblrLink'
 
+const Floater = tw.div`fixed top-0 z-10 w-full bg-surface`
+const Wrapper = tw.header`fixed top-0 z-10 w-full mb-0 text-sm text-center`
+const Title = tw.h1`mb-1 text-2xl header-title text-primary xs:text-3xl tracking-title`
+const Description = tw.p`text-xs header-desc sm:text-base`
+const Nav = tw.nav`z-10 text-center`
+export const TopBarComponent: FC<{
+  TitleLink: FC
+  description?: string
+  navLinks: FC<{ className: string }>
+}> = (props) => (
+  <>
+    <Floater id="floater" className="fixed top-0 z-10 w-full bg-surface" />
+    <Wrapper>
+      <div id="sinker">
+        <div id="fade-outer">
+          <Title>
+            <props.TitleLink />
+          </Title>
+          <Description>{props.description ?? process.env.NEXT_PUBLIC_description}</Description>
+        </div>
+        <Nav>
+          <props.navLinks className="inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest" />
+        </Nav>
+      </div>
+    </Wrapper>
+  </>
+)
+
 const TitleLink: FC = () => {
   return <Link href="/"> {process.env.NEXT_PUBLIC_title}</Link>
 }
@@ -94,30 +122,3 @@ export const TopBar: FC = () => {
     />
   )
 }
-const Floater = tw.div`fixed top-0 z-10 w-full bg-surface`
-const Wrapper = tw.header`fixed top-0 z-10 w-full mb-0 text-sm text-center`
-const Title = tw.h1`mb-1 text-2xl header-title text-primary xs:text-3xl tracking-title`
-const Description = tw.p`text-xs header-desc sm:text-base`
-const Nav = tw.nav`z-10 text-center`
-export const TopBarComponent: FC<{
-  TitleLink: FC
-  description?: string
-  navLinks: FC<{ className: string }>
-}> = (props) => (
-  <>
-    <Floater id="floater" className="fixed top-0 z-10 w-full bg-surface" />
-    <Wrapper>
-      <div id="sinker">
-        <div id="fade-outer">
-          <Title>
-            <props.TitleLink />
-          </Title>
-          <Description>{props.description ?? process.env.NEXT_PUBLIC_description}</Description>
-        </div>
-        <Nav>
-          <props.navLinks className="inline-block m-2 xs:m-3 mix-blend-multiply xs:tracking-widest" />
-        </Nav>
-      </div>
-    </Wrapper>
-  </>
-)
