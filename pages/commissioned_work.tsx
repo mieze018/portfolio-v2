@@ -1,5 +1,7 @@
+import { Footer } from 'components/atoms/Footer'
 import { DefaultHeader } from 'components/Header'
 import { Navigation } from 'components/molecules/Navigation'
+import { Posts } from 'components/molecules/Posts'
 import { GetStaticProps, NextPage } from 'next/types'
 import { Root } from 'pages/@type/tumblr'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
@@ -7,22 +9,15 @@ import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
   fallbackData,
 }) => {
-  console.log(fallbackData)
   if (!fallbackData) return <div>Loading...</div>
+  const posts = fallbackData.response.posts
   return (
-    <div>
+    <>
       <DefaultHeader />
       <Navigation />
-      {fallbackData?.response.posts.map((post) => {
-        if (!post.tags.includes(tags.commissionedWork)) return
-        return (
-          <div key={post.id}>
-            <h1>{post.id}</h1>
-            <p>{post.caption}</p>
-          </div>
-        )
-      })}
-    </div>
+      <Posts posts={posts} tag={tags.commissionedWork} />
+      <Footer />
+    </>
   )
 }
 

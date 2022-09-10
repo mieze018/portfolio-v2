@@ -1,6 +1,6 @@
 import { Footer } from 'components/atoms/Footer'
 import { Navigation } from 'components/molecules/Navigation'
-import { PostComponent } from 'components/molecules/Post'
+import { Posts } from 'components/molecules/Posts'
 import { GetStaticProps, NextPage } from 'next/types'
 import { endpoint, fetcher, tags } from 'pages/api/tumblr'
 
@@ -12,15 +12,12 @@ const PersonalWork: NextPage<{ fallbackData: Root }> = ({ fallbackData }) => {
   console.log(fallbackData.response.posts.length)
   const posts = fallbackData.response.posts
   return (
-    <div>
+    <>
       <DefaultHeader />
       <Navigation />
-      {posts.map((post) => {
-        if (!post.tags.includes(tags.personalWork)) return
-        return <PostComponent post={post} key={post.id} />
-      })}
+      <Posts posts={posts} tag={tags.personalWork} />
       <Footer />
-    </div>
+    </>
   )
 }
 
