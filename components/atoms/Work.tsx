@@ -1,5 +1,5 @@
-import { work } from 'pages/@type/work'
-import React, { FC,memo } from 'react'
+import { work } from 'libs/@type/work'
+import React, { FC, memo } from 'react'
 
 export const Work: FC<{ work: work }> = memo(({ work }) => {
   return (

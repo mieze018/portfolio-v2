@@ -16,7 +16,7 @@
     "source.fixAll.eslint": true
   },
   "i18n-ally.localesPaths": ["libs/i18n"],
-  "i18n-ally.keystyle": "auto",
+  "i18n-ally.keystyle": "flat",
   "i18n-ally.enabledParsers": ["ts"],
   "i18n-ally.annotationDelimiter": ":",
   "i18n-ally.displayLanguage": "ja",
