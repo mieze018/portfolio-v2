@@ -4,7 +4,8 @@ import { Navigation } from 'components/Molecules/Navigation'
 import { Posts } from 'components/Organisms/Posts'
 import { Root } from 'libs/@type/tumblr'
 import { GetStaticProps, NextPage } from 'next/types'
-import { endpoint, fetcher, tags } from 'pages/api/tumblr'
+import { tags } from 'pages/api/tags'
+import { endpoint, fetcher } from 'pages/api/tumblr'
 
 const CommissionedWork: NextPage<{ fallbackData: Root }> = ({
   fallbackData,

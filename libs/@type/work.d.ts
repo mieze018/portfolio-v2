@@ -1,7 +1,8 @@
-export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他'] as const
 
-export type work = {
-  gジャンル: typeof genres[number]
+export type genresType = '文芸書 装画' | '文芸誌 扉絵' | 'その他'
+
+export interface work {
+  gジャンル: genresType
   k形態?: '単行本' | '文庫本' | string
   s出版社?: string
   tタイトル: string
@@ -12,10 +13,14 @@ export type work = {
 
 export type works = work[]
 
-export type event = {
-  tタイトル: string
-  n日時: string
-  b場所: string
+export interface eventType {
+  title: string
+  description?: string
+  date: string
+  place: string
+  url?: string
 }
 
-export type events = event[]
+export interface infoDataType {
+  events: eventType[]
+}
