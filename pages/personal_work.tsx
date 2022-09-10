@@ -8,7 +8,6 @@ import { Posts } from 'components/Organisms/Posts'
 import { tags } from 'pages/api/tags'
 import { endpoint, fetcher } from 'pages/api/tumblr'
 
-
 const PersonalWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts

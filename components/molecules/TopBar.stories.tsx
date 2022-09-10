@@ -2,7 +2,6 @@ import { TopBarComponent } from './TopBar'
 
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
-
 const title = () => {
   return <>mieze illustration</>
 }

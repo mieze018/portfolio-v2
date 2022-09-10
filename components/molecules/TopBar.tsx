@@ -4,7 +4,7 @@ import './TopBar.css'
 import Link from 'next/link'
 import { memo, useCallback, useEffect, useRef } from 'react'
 
-import type { FC} from 'react';
+import type { FC } from 'react'
 
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList

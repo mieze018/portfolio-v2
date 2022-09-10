@@ -12,7 +12,6 @@ import { eventsData } from 'pages/api/events'
 import { links } from 'pages/api/links'
 import { workExperience } from 'pages/api/workExperiences/workExperiences'
 
-
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
 const LinktreeWrapper = tw.div`mt-16`
