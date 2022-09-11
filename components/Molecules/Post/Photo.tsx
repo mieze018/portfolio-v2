@@ -11,8 +11,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
   return (
     <FlexItem isColumn={isColumn}>
       <Image
-        //TODO:ImageコンポーネントでtailwindCSSのコンパイルできてなさそう
-        // style={style}
+        className="m-auto"
         src={photo.original_size.url}
         alt={photo.original_size.url}
         key={photo.original_size.url}
