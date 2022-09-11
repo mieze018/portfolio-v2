@@ -4,10 +4,7 @@ import tw from 'twin.macro'
 import type { LocalApi } from 'libs/@type/api/local'
 import type { GetStaticProps, NextPage } from 'next'
 
-import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
-import { Footer } from 'components/Molecules/Footer'
 import { Work } from 'components/Molecules/Info/Work'
-import { TopBar } from 'components/Molecules/TopBar'
 import { mail } from 'pages/api/basics'
 import { infoData } from 'pages/api/info'
 import { linktree } from 'pages/api/info/links'
@@ -25,15 +22,7 @@ export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
 const Info: NextPage<{ fallbackData: typeof infoData }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  return (
-    <>
-      <TopBar />
-      <ContentsWrapper>
-        <InfoContent data={fallbackData} />
-      </ContentsWrapper>
-      <Footer />
-    </>
-  )
+  return <InfoContent data={fallbackData} />
 }
 
 export default Info

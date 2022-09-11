@@ -26,6 +26,7 @@
     "printWidth": 100
   },
   "dependencies": {
+    "framer-motion": "^7.3.2",
     "i18next": "^21.9.1",
     "next": "^12.3.0",
     "react": "18.2.0",

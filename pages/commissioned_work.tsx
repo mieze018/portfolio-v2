@@ -1,9 +1,6 @@
 import type { Tumblr } from 'libs/@type/api/tumblr'
 import type { NextPage, GetStaticProps } from 'next'
 
-import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
-import { Footer } from 'components/Molecules/Footer'
-import { TopBar } from 'components/Molecules/TopBar'
 import { Posts } from 'components/Organisms/Posts'
 import { tags } from 'pages/api/works/tags'
 import { endpoint, fetcher } from 'pages/api/works/tumblr'
@@ -11,15 +8,7 @@ import { endpoint, fetcher } from 'pages/api/works/tumblr'
 const CommissionedWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts
-  return (
-    <>
-      <TopBar />
-      <ContentsWrapper>
-        <Posts posts={posts} tag={tags.commissionedWork} />
-      </ContentsWrapper>
-      <Footer />
-    </>
-  )
+  return <Posts posts={posts} tag={tags.commissionedWork} />
 }
 
 export default CommissionedWork
