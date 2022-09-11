@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import type { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/api/tumblr'
 
 export const PhotoImage = ({
   photo,

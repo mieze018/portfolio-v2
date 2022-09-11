@@ -1,9 +1,9 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import type { work } from 'libs/@type/work'
+import type { LocalApi } from 'libs/@type/api/local'
 
-export const Work = ({ work }: { work: work }) => {
+export const Work = ({ work }: { work: LocalApi.WorkExperience.Work }) => {
   return (
     <li css={tw`flex gap-3`}>
       {work.author && <i>{work.author}</i>}

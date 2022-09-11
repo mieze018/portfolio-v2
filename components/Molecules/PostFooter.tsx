@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 
-import type { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/api/tumblr'
 
 const Wrapper = tw.footer`mt-0 text-xs sm:text-sm`
 

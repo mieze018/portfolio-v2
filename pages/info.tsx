@@ -67,24 +67,19 @@ const Introduction = () => {
   )
 }
 
-const Linktree = ({ links }: { links: any[] }) => {
-  const { t } = useTranslation()
-  return (
-    <LinktreeWrapper>
-      <h1>
-        <a href={linktree.url}>{linktree.text}</a>
-      </h1>
-      <hr />
-      {links.map((link, linkK) => (
-        <P key={linkK}>
-          <SnsLink href={link.url} className={`${link.class && link.class}`}>
-            {link.text}
-          </SnsLink>
-        </P>
-      ))}
-    </LinktreeWrapper>
-  )
-}
+const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
+  <LinktreeWrapper>
+    <h1>
+      <a href={linktree.url}>{linktree.text}</a>
+    </h1>
+    <hr />
+    {links.map((link, linkK) => (
+      <P key={linkK}>
+        <SnsLink href={link.url}>{link.text}</SnsLink>
+      </P>
+    ))}
+  </LinktreeWrapper>
+)
 
 const WorkExperience = ({ workExperience }: { workExperience: LocalApi.WorkExperience.Work[] }) => {
   const { t } = useTranslation()

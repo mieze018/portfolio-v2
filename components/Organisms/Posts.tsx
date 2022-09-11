@@ -1,4 +1,4 @@
-import type { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/api/tumblr'
 
 import { Post } from 'components/Molecules/Post'
 
