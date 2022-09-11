@@ -2,7 +2,7 @@ import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
-import { PhotoImage } from 'components/Molecules/Post/PhotoImage'
+import { Photo } from 'components/Molecules/Post/Photo'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
 const Article = tw.article`flex max-w-full flex-col flex-wrap justify-center px-[2.618vw] mb-[1.618vh]`

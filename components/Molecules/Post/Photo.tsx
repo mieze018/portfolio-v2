@@ -2,17 +2,17 @@ import Image from 'next/image'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
-export const PhotoImage = ({
+export const Photo = ({
   photo,
-  showOnlyLastPhoto,
-  lastPhoto,
+  isShowOnlyLastPhoto,
+  isLastPhoto,
 }: {
   photo: Tumblr.Photo
-  showOnlyLastPhoto: boolean
-  lastPhoto: boolean
+  isShowOnlyLastPhoto: boolean
+  isLastPhoto: boolean
 }) => {
   //最後の画像だけ表示するタグがついている場合、最後の画像でなければスキップ
-  if (showOnlyLastPhoto && lastPhoto) return <></>
+  if (isShowOnlyLastPhoto && isLastPhoto) return <></>
   return (
     <Image
       className="w-full"
