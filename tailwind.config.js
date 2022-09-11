@@ -49,6 +49,17 @@ module.exports = {
     },
 
     extend: {
+      spacing: {
+        square: 'calc((92vh + 92vw) /2)',
+        golden61vw: '61.8vw',
+        golden61vh: '61.8vh',
+        golden38vw: '38.2vw',
+        golden38vh: '38.2vh',
+        golden23vw: '23.6vw',
+        golden23vh: '23.6vh',
+        golden14vw: '14.6vw',
+        golden14vh: '14.6vh',
+      },
       minHeight: {
         square: 'calc((92vh + 92vw) /2)',
         golden61vw: '61.8vw',
@@ -60,7 +71,29 @@ module.exports = {
         golden14vw: '14.6vw',
         golden14vh: '14.6vh',
       },
-      spacing: {
+      maxHeight: {
+        square: 'calc((92vh + 92vw) /2)',
+        golden61vw: '61.8vw',
+        golden61vh: '61.8vh',
+        golden38vw: '38.2vw',
+        golden38vh: '38.2vh',
+        golden23vw: '23.6vw',
+        golden23vh: '23.6vh',
+        golden14vw: '14.6vw',
+        golden14vh: '14.6vh',
+      },
+      minWidth: {
+        square: 'calc((92vh + 92vw) /2)',
+        golden61vw: '61.8vw',
+        golden61vh: '61.8vh',
+        golden38vw: '38.2vw',
+        golden38vh: '38.2vh',
+        golden23vw: '23.6vw',
+        golden23vh: '23.6vh',
+        golden14vw: '14.6vw',
+        golden14vh: '14.6vh',
+      },
+      maxWidth: {
         square: 'calc((92vh + 92vw) /2)',
         golden61vw: '61.8vw',
         golden61vh: '61.8vh',
