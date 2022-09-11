@@ -1,21 +1,21 @@
-declare module 'Tumblr' {
-  interface Root {
+export namespace Tumblr {
+  export interface Root {
     meta: Meta
     response: Response
   }
 
-  interface Meta {
+  export interface Meta {
     status: number
     msg: string
   }
 
-  interface Response {
+  export interface Response {
     blog: Blog
     posts: Post[]
     total_posts: number
   }
 
-  interface Blog {
+  export interface Blog {
     ask: boolean
     ask_anon: boolean
     ask_page_title: string
@@ -38,13 +38,13 @@ declare module 'Tumblr' {
     uuid: string
   }
 
-  interface Avatar {
+  export interface Avatar {
     width: number
     height: number
     url: string
   }
 
-  interface Theme {
+  export interface Theme {
     header_full_width: number
     header_full_height: number
     header_focus_width: number
@@ -68,7 +68,7 @@ declare module 'Tumblr' {
     title_font_weight: string
   }
 
-  interface Post {
+  export interface Post {
     type: string
     blog_name: string
     blog: Blog2
@@ -104,7 +104,7 @@ declare module 'Tumblr' {
     link_url?: string
   }
 
-  interface Blog2 {
+  export interface Blog2 {
     name: string
     title: string
     description: string
@@ -113,12 +113,12 @@ declare module 'Tumblr' {
     updated: number
   }
 
-  interface Reblog {
+  export interface Reblog {
     comment: string
     tree_html: string
   }
 
-  interface Trail {
+  export interface Trail {
     blog: Blog3
     post: Post2
     content_raw: string
@@ -127,7 +127,7 @@ declare module 'Tumblr' {
     is_root_item?: boolean
   }
 
-  interface Blog3 {
+  export interface Blog3 {
     name: string
     active: boolean
     theme: Theme2
@@ -136,7 +136,7 @@ declare module 'Tumblr' {
     can_be_followed: boolean
   }
 
-  interface Theme2 {
+  export interface Theme2 {
     header_full_width?: number
     header_full_height?: number
     header_focus_width?: number
@@ -160,23 +160,23 @@ declare module 'Tumblr' {
     title_font_weight: string
   }
 
-  interface Post2 {
+  export interface Post2 {
     id: string
   }
 
-  interface Photo {
+  export interface Photo {
     caption: string
     original_size: OriginalSize
     alt_sizes: AltSize[]
   }
 
-  interface OriginalSize {
+  export interface OriginalSize {
     url: string
     width: number
     height: number
   }
 
-  interface AltSize {
+  export interface AltSize {
     url: string
     width: number
     height: number
