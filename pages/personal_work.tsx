@@ -1,11 +1,11 @@
-import type { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/api/tumblr'
 import type { NextPage, GetStaticProps } from 'next'
 
 import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/TopBar'
 import { Posts } from 'components/Organisms/Posts'
-import { tags } from 'pages/api/tags'
-import { endpoint, fetcher } from 'pages/api/tumblr'
+import { tags } from 'pages/api/works/tags'
+import { endpoint, fetcher } from 'pages/api/works/tumblr'
 
 const PersonalWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>

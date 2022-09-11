@@ -1,6 +1,7 @@
-import type { eventType } from 'libs/@type/work'
+import type { LocalApi } from "libs/@type/api/local";
 
-export const eventsData: eventType[] = [
+
+export const events: LocalApi.Event[] = [
   {
     title: 'CANCAN exhibition',
     date: '2016',

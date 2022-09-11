@@ -1,40 +1,6 @@
-import type { works } from 'libs/@type/work'
+import type { LocalApi } from "libs/@type/api/local"
 
-export const links: { [key: string]: string | undefined }[] = [
-  {
-    text: 'Twitter',
-    url: process.env.NEXT_PUBLIC_twitter_url,
-  },
-  {
-    text: 'pixiv',
-    url: process.env.NEXT_PUBLIC_pixiv_url,
-  },
-  {
-    text: 'Instagram',
-    url: process.env.NEXT_PUBLIC_instagram_url,
-  },
-  {
-    text: 'Deviantart',
-    url: process.env.NEXT_PUBLIC_deviantart_url,
-  },
-  {
-    text: 'Behance',
-    url: process.env.NEXT_PUBLIC_behance_url,
-  },
-  {
-    text: 'Tumblr',
-    url: `https://www.tumblr.com/blog/${process.env.NEXT_PUBLIC_Tumblr_username}/`,
-    class: 'tumblr',
-  },
-  {
-    text: 'booth',
-    url: process.env.NEXT_PUBLIC_booth_url,
-  },
-]
-
-export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
-
-export const workExperienceEtc: works = [
+export const workExperienceEtc: LocalApi.WorkExperience.Work[] = [
   {
     genre: 'その他',
     format: 'CDアートワーク',
@@ -95,7 +61,7 @@ export const workExperienceEtc: works = [
   },
 ]
 
-export const workExperienceBook: works = [
+export const workExperienceBook: LocalApi.WorkExperience.Work[] = [
   {
     genre: '文芸書 装画',
     format: '文庫本',
@@ -329,4 +295,4 @@ export const workExperienceBook: works = [
   },
 ]
 
-export const workExperience: works = workExperienceEtc.concat(workExperienceBook)
+export const workExperience: LocalApi.WorkExperience.Work[] = workExperienceEtc.concat(workExperienceBook)

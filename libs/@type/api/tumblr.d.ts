@@ -68,7 +68,7 @@ export namespace Tumblr {
     title_font_weight: string
   }
 
-  export interface Post {
+  interface Post {
     type: string
     blog_name: string
     blog: Blog2

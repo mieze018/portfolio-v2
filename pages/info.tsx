@@ -1,15 +1,13 @@
 import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
 
-import type { eventType, infoDataType, works } from 'libs/@type/work'
+import type { LocalApi } from 'libs/@type/api/local'
 import type { GetStaticProps, NextPage } from 'next'
 
 import { Footer } from 'components/Molecules/Footer'
 import { Work } from 'components/Molecules/Info/Work'
 import { TopBar } from 'components/Molecules/TopBar'
-import { eventsData } from 'pages/api/events'
-import { links } from 'pages/api/links'
-import { workExperience } from 'pages/api/workExperiences/workExperiences'
+import { infoData } from 'pages/api/info'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
@@ -19,12 +17,12 @@ const H2 = tw.h2`my-2 leading-loose tracking-widest`
 
 export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
-const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
+const Info: NextPage<{ fallbackData: typeof infoData }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   return (
     <>
       <TopBar />
-      <InfoContent infoData={fallbackData} />
+      <InfoContent data={fallbackData} />
       <Footer />
     </>
   )
@@ -32,8 +30,8 @@ const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
 
 export default Info
 
-const InfoContent = ({ infoData }: { infoData: infoDataType }) => {
-  const { events } = infoData
+const InfoContent = ({ data }: { data: typeof infoData }) => {
+  const { links, events, workExperience } = data
   return (
     <Wrapper>
       <div id="workExperience" className="mt-12 text-left Japanese">
@@ -86,7 +84,7 @@ const Linktree = ({ links }: { links: any[] }) => {
   )
 }
 
-const WorkExperience = ({ workExperience }: { workExperience: works }) => {
+const WorkExperience = ({ workExperience }: { workExperience: LocalApi.WorkExperience.Work[] }) => {
   const { t } = useTranslation()
   return (
     <div className="mt-16">
@@ -110,7 +108,7 @@ const WorkExperience = ({ workExperience }: { workExperience: works }) => {
   )
 }
 
-const Events = ({ events }: { events: eventType[] }) => {
+const Events = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
   return (
     <div className="mt-12">
@@ -131,7 +129,7 @@ const Events = ({ events }: { events: eventType[] }) => {
   )
 }
 
-const EventHistory = ({ events }: { events: eventType[] }) => {
+const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
   return (
     <div className="mt-12">
@@ -178,7 +176,7 @@ const Awards = () => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const Data: infoDataType = { events: eventsData }
+  const Data = infoData
   return {
     props: {
       fallbackData: Data,
