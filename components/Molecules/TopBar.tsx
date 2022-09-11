@@ -74,7 +74,8 @@ const sunk = keyframes`  0% {
   }`
 
 const Floater = styled.div`
-  ${tw`fixed top-0 z-10 w-full bg-surface h-golden23vh`}
+  ${tw`fixed top-0 z-10 w-full h-golden23vh`}
+  background-image:url('img/surface.webp');
   top: 0; /* 上部のボケを隠すため少し上に上げる */
   filter: blur(0) brightness(1);
   background-repeat: no-repeat;

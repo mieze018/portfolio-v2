@@ -4,6 +4,7 @@ import tw from 'twin.macro'
 import type { LocalApi } from 'libs/@type/api/local'
 import type { GetStaticProps, NextPage } from 'next'
 
+import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import { Footer } from 'components/Molecules/Footer'
 import { Work } from 'components/Molecules/Info/Work'
 import { TopBar } from 'components/Molecules/TopBar'
@@ -11,11 +12,14 @@ import { mail } from 'pages/api/basics'
 import { infoData } from 'pages/api/info'
 import { linktree } from 'pages/api/info/links'
 
-const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
+const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mx-auto gap-y-16`
 const P = tw.p``
-const LinktreeWrapper = tw.div`mt-16`
 const SnsLink = tw.a`ml-3 tracking-wider`
 const H2 = tw.h2`my-2 leading-loose tracking-widest`
+
+const SectionWrapper = tw.section``
+const Hr = tw.hr``
+const UlNest1 = tw.ul`grid gap-1 leading-normal tracking-wide`
 
 export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
@@ -24,7 +28,9 @@ const Info: NextPage<{ fallbackData: typeof infoData }> = ({ fallbackData }) => 
   return (
     <>
       <TopBar />
-      <InfoContent data={fallbackData} />
+      <ContentsWrapper>
+        <InfoContent data={fallbackData} />
+      </ContentsWrapper>
       <Footer />
     </>
   )
@@ -36,14 +42,12 @@ const InfoContent = ({ data }: { data: typeof infoData }) => {
   const { links, events, workExperience } = data
   return (
     <Wrapper>
-      <div id="workExperience" className="mt-12 text-left Japanese">
-        <Introduction />
-        {links?.length && <Linktree links={links} />}
-        {events?.length && <Events events={events} />}
-        {workExperience?.length && <WorkExperience workExperience={workExperience} />}
-        <EventHistory events={events} />
-        <Awards />
-      </div>
+      <Introduction />
+      {links?.length && <Linktree links={links} />}
+      {events?.length && <Events events={events} />}
+      {workExperience?.length && <WorkExperience workExperience={workExperience} />}
+      <EventHistory events={events} />
+      <Prizes />
       <Participant />
     </Wrapper>
   )
@@ -52,7 +56,7 @@ const InfoContent = ({ data }: { data: typeof infoData }) => {
 const Introduction = () => {
   const { t } = useTranslation()
   return (
-    <>
+    <SectionWrapper>
       <P>
         {t('author')}
         <small>{t('author_pronunciation')}</small>
@@ -63,45 +67,45 @@ const Introduction = () => {
         <br />
         <a href={`mailto:${mail}`}>{mail}</a>
       </P>
-    </>
+    </SectionWrapper>
   )
 }
 
 const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
-  <LinktreeWrapper>
+  <SectionWrapper>
     <h1>
       <a href={linktree.url}>{linktree.text}</a>
     </h1>
-    <hr />
+    <Hr />
     {links.map((link, linkK) => (
       <P key={linkK}>
         <SnsLink href={link.url}>{link.text}</SnsLink>
       </P>
     ))}
-  </LinktreeWrapper>
+  </SectionWrapper>
 )
 
 const WorkExperience = ({ workExperience }: { workExperience: LocalApi.WorkExperience.Work[] }) => {
   const { t } = useTranslation()
   return (
-    <div className="mt-16">
-      <h1 className="">{t('workExperience')}</h1>
-      <hr />
+    <SectionWrapper>
+      <h1>{t('workExperience')}</h1>
+      <Hr />
       <ul>
         {genres.map((genre, genreK) => (
           <li key={genreK} className="">
             <H2>{genre}</H2>
-            <ul className="leading-normal tracking-wide">
+            <UlNest1>
               {workExperience
                 .filter((work) => work.genre === genre)
                 .map((work, workK) => (
                   <Work key={workK} work={work} />
                 ))}
-            </ul>
+            </UlNest1>
           </li>
         ))}
       </ul>
-    </div>
+    </SectionWrapper>
   )
 }
 
@@ -117,7 +121,7 @@ const Events = ({ events }: { events: LocalApi.Event[] }) => {
   return (
     <div className="mt-12">
       <P>{t('eventIncoming')}</P>
-      <hr />
+      <Hr />
       <ul>
         {futureEvents.map((event, eventK) => (
           <li key={eventK}>
@@ -142,9 +146,9 @@ const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
     return eventDate < today
   })
   return (
-    <div className="mt-12">
+    <SectionWrapper>
       <P>{t('eventHistory')}</P>
-      <hr />
+      <Hr />
       <ul>
         {pastEvents.map((event, eventK) => (
           <li key={eventK}>
@@ -156,24 +160,24 @@ const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </SectionWrapper>
   )
 }
 
 const Participant = () => (
-  <div className="mt20">
+  <SectionWrapper>
     {/* <a href="https://www.cgtrader.com" target="_blank" rel="noreferrer">
       Participant of the CGTrader Digital Art Competition
     </a> */}
-  </div>
+  </SectionWrapper>
 )
 
-const Awards = () => {
+const Prizes = () => {
   const { t } = useTranslation()
   return (
-    <div className="my-12">
+    <SectionWrapper>
       {t('awards')}
-      <hr />
+      <Hr />
       <ul>
         <li>
           <H2> </H2>
@@ -181,7 +185,7 @@ const Awards = () => {
           「山口はるみ賞」及び「鈴木成一賞次点」
         </li>
       </ul>
-    </div>
+    </SectionWrapper>
   )
 }
 
