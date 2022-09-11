@@ -23,7 +23,7 @@ export namespace LocalApi {
       releaseMonth?: string
     }
 
-    export type Genres = { [key: string]: string }
+    export type GenreGroup = { [key: string]: string }
   }
 
   export interface infoDataType {
