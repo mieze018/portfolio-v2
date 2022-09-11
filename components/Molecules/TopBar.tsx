@@ -91,7 +91,7 @@ const Sinker = styled.div`
   animation: ${sunk} 10s 0.3s ease-in-out forwards;
 `
 const FadeOuter = styled.div`
-  ${tw`opacity-100 transition[5000ms]`}/* margin-top: calc(23vh);
+  ${tw`opacity-100 duration-[5000ms]`}/* margin-top: calc(23vh);
   opacity: 1;
   transition: 2000ms, 2000ms, 2000ms, 10000ms;
   transition-property: opacity, translate, filter, margin-top; */
@@ -103,7 +103,7 @@ const Wrapper = styled.header`
 `
 const Title = tw.h1`mb-1 text-2xl text-primary xs:text-3xl tracking-title`
 const Description = tw.p`text-xs  sm:text-base`
-const Nav = tw.nav`z-10 text-center m-auto opacity-100 transition[1200ms]`
+const Nav = tw.nav`z-10 text-center m-auto opacity-100 duration-[1200ms]`
 
 function classList(elt: HTMLElement | null) {
   const list = elt?.classList
