@@ -112,12 +112,19 @@ const WorkExperience = ({ workExperience }: { workExperience: LocalApi.WorkExper
 
 const Events = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
+  //日にちが今日以降のものだけを抽出
+  const futureEvents = events.filter((event) => {
+    const today = new Date()
+    const eventDate = new Date(event.date)
+    return eventDate >= today
+  })
+  if (!futureEvents.length) return <></>
   return (
     <div className="mt-12">
       <P>{t('eventIncoming')}</P>
       <hr />
       <ul>
-        {events.map((event, eventK) => (
+        {futureEvents.map((event, eventK) => (
           <li key={eventK}>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
@@ -133,12 +140,18 @@ const Events = ({ events }: { events: LocalApi.Event[] }) => {
 
 const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
+  //日にちが今日以前のものだけを抽出
+  const pastEvents = events.filter((event) => {
+    const today = new Date()
+    const eventDate = new Date(event.date)
+    return eventDate < today
+  })
   return (
     <div className="mt-12">
       <P>{t('eventHistory')}</P>
       <hr />
       <ul>
-        {events.map((event, eventK) => (
+        {pastEvents.map((event, eventK) => (
           <li key={eventK}>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
