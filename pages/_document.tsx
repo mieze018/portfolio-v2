@@ -4,6 +4,8 @@ import { ServerStyleSheet } from 'styled-components'
 
 import type { DocumentContext } from 'next/document'
 
+import { author, description, title, url } from 'pages/api/basics'
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
@@ -23,10 +25,10 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
 
-            <title>{process.env.NEXT_PUBLIC_title}</title>
-            <meta name="description" content={process.env.NEXT_PUBLIC_description} />
-            <meta name="author" content={process.env.NEXT_PUBLIC_author} />
-            <link rel="canonical" href={process.env.NEXT_PUBLIC_url} />
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta name="author" content={author} />
+            <link rel="canonical" href={url} />
             <link rel="icon" href="/favicon.ico" />
             {/* web font */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />

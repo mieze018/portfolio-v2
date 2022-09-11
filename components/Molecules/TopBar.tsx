@@ -8,6 +8,7 @@ import type { FC } from 'react'
 import { NavLinks } from 'components/Molecules/NavLink'
 import { routes } from 'libs/routes'
 import { addAgentToHtml } from 'libs/tumblrLink'
+import { description, title } from 'pages/api/basics'
 
 export const TopBarComponent = () => (
   <>
@@ -16,9 +17,9 @@ export const TopBarComponent = () => (
       <Sinker id="sinker">
         <FadeOuter id="fade-outer">
           <Title>
-            <Link href="/">{process.env.NEXT_PUBLIC_title}</Link>
+            <Link href="/">{title}</Link>
           </Title>
-          <Description>{process.env.NEXT_PUBLIC_description}</Description>
+          <Description>{description}</Description>
         </FadeOuter>
         <Nav>
           <NavLinks routes={routes} />

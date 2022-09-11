@@ -1,6 +1,6 @@
 import tw, { styled } from 'twin.macro'
 
-import type { Tumblr } from 'libs/@type/tumblr'
+import type { Tumblr } from 'libs/@type/api/tumblr'
 
 import { PhotoImage } from 'components/Molecules/Post/PhotoImage'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'

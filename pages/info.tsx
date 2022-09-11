@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
 
-import type { eventType, infoDataType, works } from 'libs/@type/work'
+import type { LocalApi } from 'libs/@type/api/local'
 import type { GetStaticProps, NextPage } from 'next'
 
 import { Footer } from 'components/Molecules/Footer'
 import { Work } from 'components/Molecules/Info/Work'
 import { TopBar } from 'components/Molecules/TopBar'
-import { eventsData } from 'pages/api/events'
-import { links } from 'pages/api/links'
-import { workExperience } from 'pages/api/workExperiences/workExperiences'
+import { mail } from 'pages/api/basics'
+import { infoData } from 'pages/api/info'
+import { linktree } from 'pages/api/info/links'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
@@ -19,12 +19,12 @@ const H2 = tw.h2`my-2 leading-loose tracking-widest`
 
 export const genres = ['文芸書 装画', '文芸誌 扉絵', 'その他']
 
-const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
+const Info: NextPage<{ fallbackData: typeof infoData }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   return (
     <>
       <TopBar />
-      <InfoContent infoData={fallbackData} />
+      <InfoContent data={fallbackData} />
       <Footer />
     </>
   )
@@ -32,8 +32,8 @@ const Info: NextPage<{ fallbackData: infoDataType }> = ({ fallbackData }) => {
 
 export default Info
 
-const InfoContent = ({ infoData }: { infoData: infoDataType }) => {
-  const { events } = infoData
+const InfoContent = ({ data }: { data: typeof infoData }) => {
+  const { links, events, workExperience } = data
   return (
     <Wrapper>
       <div id="workExperience" className="mt-12 text-left Japanese">
@@ -61,32 +61,27 @@ const Introduction = () => {
       <P>
         {t('toMail')}
         <br />
-        <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>{process.env.NEXT_PUBLIC_mail}</a>
+        <a href={`mailto:${mail}`}>{mail}</a>
       </P>
     </>
   )
 }
 
-const Linktree = ({ links }: { links: any[] }) => {
-  const { t } = useTranslation()
-  return (
-    <LinktreeWrapper>
-      <h1>
-        <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
-      </h1>
-      <hr />
-      {links.map((link, linkK) => (
-        <P key={linkK}>
-          <SnsLink href={link.url} className={`${link.class && link.class}`}>
-            {link.text}
-          </SnsLink>
-        </P>
-      ))}
-    </LinktreeWrapper>
-  )
-}
+const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
+  <LinktreeWrapper>
+    <h1>
+      <a href={linktree.url}>{linktree.text}</a>
+    </h1>
+    <hr />
+    {links.map((link, linkK) => (
+      <P key={linkK}>
+        <SnsLink href={link.url}>{link.text}</SnsLink>
+      </P>
+    ))}
+  </LinktreeWrapper>
+)
 
-const WorkExperience = ({ workExperience }: { workExperience: works }) => {
+const WorkExperience = ({ workExperience }: { workExperience: LocalApi.WorkExperience.Work[] }) => {
   const { t } = useTranslation()
   return (
     <div className="mt-16">
@@ -110,14 +105,21 @@ const WorkExperience = ({ workExperience }: { workExperience: works }) => {
   )
 }
 
-const Events = ({ events }: { events: eventType[] }) => {
+const Events = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
+  //日にちが今日以降のものだけを抽出
+  const futureEvents = events.filter((event) => {
+    const today = new Date()
+    const eventDate = new Date(event.date)
+    return eventDate >= today
+  })
+  if (!futureEvents.length) return <></>
   return (
     <div className="mt-12">
       <P>{t('eventIncoming')}</P>
       <hr />
       <ul>
-        {events.map((event, eventK) => (
+        {futureEvents.map((event, eventK) => (
           <li key={eventK}>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
@@ -131,14 +133,20 @@ const Events = ({ events }: { events: eventType[] }) => {
   )
 }
 
-const EventHistory = ({ events }: { events: eventType[] }) => {
+const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
+  //日にちが今日以前のものだけを抽出
+  const pastEvents = events.filter((event) => {
+    const today = new Date()
+    const eventDate = new Date(event.date)
+    return eventDate < today
+  })
   return (
     <div className="mt-12">
       <P>{t('eventHistory')}</P>
       <hr />
       <ul>
-        {events.map((event, eventK) => (
+        {pastEvents.map((event, eventK) => (
           <li key={eventK}>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
@@ -178,7 +186,7 @@ const Awards = () => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const Data: infoDataType = { events: eventsData }
+  const Data = infoData
   return {
     props: {
       fallbackData: Data,
