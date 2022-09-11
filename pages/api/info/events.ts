@@ -1,5 +1,4 @@
-import type { LocalApi } from "libs/@type/api/local";
-
+import type { LocalApi } from 'libs/@type/api/local'
 
 export const events: LocalApi.Event[] = [
   {

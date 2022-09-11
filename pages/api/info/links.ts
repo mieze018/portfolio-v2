@@ -1,7 +1,6 @@
-import type { LocalApi } from "libs/@type/api/local";
+import type { LocalApi } from 'libs/@type/api/local'
 
-export const linktree: LocalApi.SnsLink =
-{
+export const linktree: LocalApi.SnsLink = {
   text: 'Linktree',
   url: 'https://linktr.ee/mieze018',
 }

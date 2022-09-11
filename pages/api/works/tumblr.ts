@@ -1,5 +1,4 @@
-import type { Tumblr } from "libs/@type/api/tumblr"
-
+import type { Tumblr } from 'libs/@type/api/tumblr'
 
 const api_uri = 'https://api.tumblr.com/v2/blog/'
 const api_Key = process.env.NEXT_PUBLIC_api_Key

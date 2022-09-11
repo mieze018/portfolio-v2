@@ -1,7 +1,10 @@
-
 export namespace LocalApi {
   /**  SNSリンク */
-  export interface SnsLink { text: string, url: string, mobileLUrl?: string }
+  export interface SnsLink {
+    text: string
+    url: string
+    mobileLUrl?: string
+  }
   /** イベント */
   export interface Event {
     title: string
@@ -12,7 +15,6 @@ export namespace LocalApi {
   }
   /** 仕事の経験 */
   export namespace WorkExperience {
-
     export interface Work {
       genre: Genre
       format?: '単行本' | '文庫本' | string
