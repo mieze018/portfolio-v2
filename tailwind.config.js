@@ -71,9 +71,6 @@ module.exports = {
         golden14vw: '14.6vw',
         golden14vh: '14.6vh',
       },
-      backgroundImage: {
-        surface: `url('/surface.webp')`,
-      },
       transitionProperty: {
         header: {
           'transition-property': 'all',
