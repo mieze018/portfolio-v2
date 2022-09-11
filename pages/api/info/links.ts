@@ -1,33 +1,38 @@
 import type { LocalApi } from "libs/@type/api/local";
 
+export const linktree: LocalApi.SnsLink =
+{
+  text: 'Linktree',
+  url: 'https://linktr.ee/mieze018',
+}
 export const links: LocalApi.SnsLink[] = [
   {
     text: 'Twitter',
-    url: process.env.NEXT_PUBLIC_twitter_url || '',
+    url: 'https://twitter.com/mieze018/',
   },
   {
     text: 'pixiv',
-    url: process.env.NEXT_PUBLIC_pixiv_url || '',
+    url: 'https://www.pixiv.net/users/1144713/',
   },
   {
     text: 'Instagram',
-    url: process.env.NEXT_PUBLIC_instagram_url || '',
+    url: 'https://www.instagram.com/mieze018/',
   },
   {
     text: 'Deviantart',
-    url: process.env.NEXT_PUBLIC_deviantart_url || '',
+    url: 'https://mieze018.deviantart.com/',
   },
   {
     text: 'Behance',
-    url: process.env.NEXT_PUBLIC_behance_url || '',
+    url: 'https://www.behance.net/mieze018/',
   },
   {
     text: 'Tumblr',
-    url: `https://www.tumblr.com/blog/${process.env.NEXT_PUBLIC_Tumblr_username}/` || '',
+    url: 'https://www.tumblr.com/blog/mieze018',
     mobileLUrl: 'tumblr',
   },
   {
     text: 'booth',
-    url: process.env.NEXT_PUBLIC_booth_url || '',
+    url: 'https://mieze.booth.pm/',
   },
 ]

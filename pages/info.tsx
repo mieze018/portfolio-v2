@@ -7,7 +7,9 @@ import type { GetStaticProps, NextPage } from 'next'
 import { Footer } from 'components/Molecules/Footer'
 import { Work } from 'components/Molecules/Info/Work'
 import { TopBar } from 'components/Molecules/TopBar'
+import { mail } from 'pages/api/basics'
 import { infoData } from 'pages/api/info'
+import { linktree } from 'pages/api/info/links'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 text-center md:text-sm`
 const P = tw.p``
@@ -59,7 +61,7 @@ const Introduction = () => {
       <P>
         {t('toMail')}
         <br />
-        <a href={`mailto:${process.env.NEXT_PUBLIC_mail}`}>{process.env.NEXT_PUBLIC_mail}</a>
+        <a href={`mailto:${mail}`}>{mail}</a>
       </P>
     </>
   )
@@ -70,7 +72,7 @@ const Linktree = ({ links }: { links: any[] }) => {
   return (
     <LinktreeWrapper>
       <h1>
-        <a href={process.env.NEXT_PUBLIC_linktree}>{t('linktree')}</a>
+        <a href={linktree.url}>{linktree.text}</a>
       </h1>
       <hr />
       {links.map((link, linkK) => (

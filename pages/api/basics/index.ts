@@ -1,0 +1,5 @@
+export const url = 'https://www.mieze018.net/'
+export const title = 'mieze illustration'
+export const description = 'by Ayu Nakata. Osaka, Japan-based illustrator/artist.'
+export const author = 'Ayu Nakata'
+export const mail = 'mieze@mieze018.net'

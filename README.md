@@ -19,6 +19,11 @@
   - [twin.macro Storybook + styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript)
 - Playwright <https://playwright.dev/docs/intro>
 
+- Linktree-API <https://documenter.getpostman.com/view/14039622/Tzsik4P8>
+  - リンクの二重管理しなくていいかも
+- .env
+  - 今回表示だけで非公開にする情報はないけど勉強のためにあとで Tumblr の API キーをサーバでも設定したい
+
 ### DB の勉強のために仕事の経歴をサーバに置いて投稿できるようにする
 
 - Prisma?
@@ -67,9 +72,9 @@ UI コンポーネント
 
 ### `./pages/api`
 
-データ配列の定義(?) もっといい呼び方あると思う
-学んだこと! 型定義で`type`じゃなくて`interface`使う時って json のデータに型つけたい時？多分
+- データ配列の定義(?) もっといい呼び方あると思う
+- 学んだこと! 型定義で`type`じゃなくて`interface`使う時って json のデータに型つけたい時？多分
 
 ### `./libs`
 
-メソッドや型や i18n
+- メソッドや型や i18n
