@@ -1,5 +1,6 @@
+import { motion, AnimatePresence } from 'framer-motion'
 import { keyframes } from 'styled-components'
-import tw, { styled } from 'twin.macro'
+import tw, { css, styled } from 'twin.macro'
 
 const sunkShort = keyframes`
   0% {
@@ -10,8 +11,29 @@ const sunkShort = keyframes`
   }
 `
 
-export const ContentsWrapper = styled.section`
-  ${tw`px-0 py-6 mt-golden61vh`}
-  transform: translate(0, -10em);
-  animation: ${sunkShort} 3s 0s ease-out forwards;
-`
+/** ページ移管時にトランジションする */
+export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.section
+      key="ContentsWrapper"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      // variants={variants} // Pass the variant object into Framer Motion
+      // initial="hidden" // Set the initial state to variants.hidden
+      // animate="enter" // Animated state to variants.enter
+      // exit="exit" // Exit state (used later) to variants.exit
+      // transition={{ type: 'linear' }} // Set the transition to linear
+      css={[
+        tw`px-0 py-6 mt-golden61vh`,
+        css`
+          transform: translate(0, -10em);
+          animation: ${sunkShort} 3s 0s ease-out forwards;
+        `,
+      ]}
+    >
+      {children}
+    </motion.section>
+  )
+}
