@@ -2,37 +2,44 @@ import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
-import { Photo } from 'components/Molecules/Post/Photo'
+import { Photos } from 'components/Molecules/Post/Photos'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
-const Article = tw.article`flex max-w-full flex-col flex-wrap justify-center px-[2.618vw] mb-[1.618vh]`
-const Caption = tw.div`mt-0 text-sm sm:text-base`
+const Article = tw.article`flex flex-col flex-wrap justify-center px-[2.618vw] lg:mb-24 w-full lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl`
+const PostCaption = tw.div`mt-0 text-sm sm:text-base text-left w-full`
 const FadeWrapper = tw.div`flex flex-col items-center justify-center min-h-screen top-0 w-full transition-all`
 
-const PhotoWrapper = styled.div<{ photoset?: boolean }>`
-  ${tw`grid m-auto gap-y-4 min-w-golden23vw xl:max-w-golden38vw`}
-  ${({ photoset }) => photoset && tw`flex flex-wrap justify-center max-w-full`}
+const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
+  ${tw`m-auto`}
+  ${({ isColumn }) => isColumn && tw`flex flex-wrap items-start justify-center max-w-full`}
+  ${({ isRow }) => isRow && tw`grid gap-y-4`}
 `
 
-export const Post = ({ post }: { post: Tumblr.Post }) => (
-  <FadeWrapper key={post.id}>
-    <Article>
-      <PhotoWrapper photoset={!!post.photoset_layout} className="photo-container">
-        {post.photos.map((photo, index) => (
-          <PhotoImage
-            key={photo.original_size.url}
-            photo={photo}
-            showOnlyLastPhoto={!!post.tags.find((tag) => tag === 's-o-l-p')}
-            lastPhoto={index === post.photos.length - 1}
+export const Post = ({ post }: { post: Tumblr.Post }) => {
+  // TODO:投稿ごとにタグでレイアウト指定できるようにするといいかも
+  /** 画像が2枚以上(photoset)で4枚以上なら横に並べる*/
+  const isColumn = !!post.photoset_layout && post.photos.length >= 4
+  /** 画像が2枚以上(photoset)で4枚未満なら縦に並べる*/
+  const isRow = !!post.photoset_layout && !isColumn
+  const isShowOnlyLastPhoto = post.tags.includes('s-o-l-p')
+  return (
+    <FadeWrapper key={post.id}>
+      <Article>
+        <PhotoWrapper isColumn={isColumn} isRow={isRow} className="photo-container">
+          <Photos
+            photos={post.photos}
+            isShowOnlyLastPhoto={isShowOnlyLastPhoto}
+            isColumn={isColumn}
           />
-        ))}
-      </PhotoWrapper>
-      <Caption
-        dangerouslySetInnerHTML={{
-          __html: post['caption'],
-        }}
-      />
-      <PostFooter postDate={post.date} />
-    </Article>
-  </FadeWrapper>
-)
+        </PhotoWrapper>
+
+        <PostCaption
+          dangerouslySetInnerHTML={{
+            __html: post.caption,
+          }}
+        />
+        <PostFooter postDate={post.date} />
+      </Article>
+    </FadeWrapper>
+  )
+}

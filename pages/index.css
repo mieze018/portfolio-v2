@@ -121,28 +121,8 @@
     margin: 0 0 1em;
   }
 
-  /* //ロード時のアニメーション */
-  .sunk-short {
-    transform: translate(0, -10em);
-    animation: sunk-short 3s 0s ease-out forwards;
-  }
-
-  @keyframes sunk-short {
-    0% {
-      transform: translate(0, -1em);
-    }
-
-    100% {
-      transform: translate(0, 0);
-    }
-  }
-
   /* //tag switch */
   /* http://reactcommunity.org/react-transition-group/css-transition */
-  #posts-wrapper {
-    padding: 25px 0;
-    @apply mt-golden61vh;
-  }
 
   .fade-wrapper {
     @apply absolute top-0 flex flex-col items-center justify-center w-full min-h-screen;
