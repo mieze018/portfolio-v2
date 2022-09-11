@@ -4,6 +4,11 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "styled-components.vscode-styled-components",
-    "csstools.postcss"
+    "csstools.postcss",
+    "lightyen.tailwindcss-intellisense-twin",
+    "bradlc.vscode-tailwindcss",
+    "github.copilot",
+    "heybourn.headwind",
+    "streetsidesoftware.code-spell-checker"
   ]
 }
