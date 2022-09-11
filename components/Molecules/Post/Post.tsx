@@ -11,7 +11,7 @@ const FadeWrapper = tw.div`flex flex-col items-center justify-center min-h-scree
 
 const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
   ${tw`m-auto`}
-  ${({ isColumn }) => isColumn && tw`flex flex-wrap items-start justify-center max-w-full`}
+  ${({ isColumn }) => isColumn && tw`flex flex-wrap justify-center max-w-full`}
   ${({ isRow }) => isRow && tw`grid gap-y-4`}
 `
 
