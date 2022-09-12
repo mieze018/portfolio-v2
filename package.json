@@ -10,7 +10,8 @@
     "lint:fix": "npx eslint . --config .eslintrc.json --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
+    "unused": "yarn ts-unused-exports tsconfig.json"
   },
   "babelMacros": {
     "twin": {
