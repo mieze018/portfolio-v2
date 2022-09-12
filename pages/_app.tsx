@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <ContentsWrapper key={router.asPath}>
           <Component {...pageProps} />
         </ContentsWrapper>
+        <Footer />
       </AnimatePresence>
-      <Footer />
     </>
   )
 }
