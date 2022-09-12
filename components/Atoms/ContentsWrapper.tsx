@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { keyframes } from 'styled-components'
-import tw, { css, styled } from 'twin.macro'
+import tw, { css } from 'twin.macro'
 
 const sunkShort = keyframes`
   0% {
