@@ -12,7 +12,6 @@ import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/TopBar'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  console.log('router', router.asPath)
   return (
     <>
       <TopBar />
