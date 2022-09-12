@@ -15,16 +15,10 @@ const sunkShort = keyframes`
 export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.section
-      key="ContentsWrapper"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      // variants={variants} // Pass the variant object into Framer Motion
-      // initial="hidden" // Set the initial state to variants.hidden
-      // animate="enter" // Animated state to variants.enter
-      // exit="exit" // Exit state (used later) to variants.exit
-      // transition={{ type: 'linear' }} // Set the transition to linear
+      transition={{ duration: 0.1 }}
       css={[
         tw`px-0 py-6 mt-golden61vh`,
         css`
