@@ -5,9 +5,9 @@ import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
-const FlexItem = styled(motion.div)<{ isColumn: boolean }>`
+const FlexItem = styled(motion.div)<{ $isColumn: boolean }>`
   ${tw`w-full`}
-  ${({ isColumn }) => isColumn && tw`flex-grow w-1/4 mx-0 my-4 basis-1/4 shrink`}
+  ${({ $isColumn }) => $isColumn && tw`flex-grow w-1/4 mx-0 my-4 basis-1/4 shrink`}
 `
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
   const [ready, setReady] = useState<string>('')
@@ -20,7 +20,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        isColumn={isColumn}
+        $isColumn={isColumn}
       >
         <Image
           className="m-auto"
