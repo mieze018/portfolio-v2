@@ -6,7 +6,6 @@ import App from 'next/app'
 import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
-import './index.css'
 import '../components/Molecules/TopBar.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import { Footer } from 'components/Molecules/Footer'
