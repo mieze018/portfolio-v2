@@ -6,7 +6,7 @@ import tw, { styled } from 'twin.macro'
 import type { Tumblr } from 'libs/@type/api/tumblr'
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
 const FlexItem = styled(motion.div)<{ $isColumn: boolean }>`
-  ${tw`w-full`}
+  ${tw`w-full snap-center`}
   ${({ $isColumn }) => $isColumn && tw`flex-grow w-1/4 mx-0 my-4 basis-1/4 shrink`}
 `
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
