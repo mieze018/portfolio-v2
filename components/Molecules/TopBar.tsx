@@ -1,5 +1,6 @@
+import { motion, useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { useCallback, useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { keyframes } from 'styled-components'
 import tw, { styled } from 'twin.macro'
 
@@ -10,24 +11,39 @@ import { routes } from 'libs/routes'
 import { addAgentToHtml } from 'libs/tumblrLink'
 import { description, title } from 'pages/api/basics'
 
-export const TopBarComponent = () => (
-  <>
-    <Floater id="floater" />
-    <Wrapper>
-      <Sinker id="sinker">
-        <FadeOuter id="fade-outer">
-          <Title>
-            <Link href="/">{title}</Link>
-          </Title>
-          <Description>{description}</Description>
-        </FadeOuter>
-        <Nav>
-          <NavLinks routes={routes} />
-        </Nav>
-      </Sinker>
-    </Wrapper>
-  </>
-)
+export const TopBarComponent = () => {
+  const { scrollY } = useScroll()
+  const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
+  const classNameForAnimation = () => {
+    if (scrollTop === 0) return 'scroll-backed'
+    if (scrollTop > window.innerHeight * 0.382) return 'scroll-top-gt-38vh'
+    if (scrollTop > 0) return 'scroll-top-gt-0'
+    return ''
+  }
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      setScrollTop(latest)
+    })
+  }, [])
+  return (
+    <>
+      <Floater id="floater" />
+      <Wrapper>
+        <Sinker as={motion.div} className={classNameForAnimation()} id="sinker">
+          <FadeOuter id="fade-outer">
+            <Title>
+              <Link href="/">{title}</Link>
+            </Title>
+            <Description>{description}</Description>
+          </FadeOuter>
+          <Nav>
+            <NavLinks routes={routes} />
+          </Nav>
+        </Sinker>
+      </Wrapper>
+    </>
+  )
+}
 const wave = keyframes`
   /* 読み込み時 */
   0% {
@@ -86,7 +102,7 @@ const Floater = styled.div`
   transform-origin: right top;
   animation: ${wave} 180s 0s ease-out forwards;
 `
-const Sinker = styled.div`
+const Sinker = styled(motion.div)`
   ${tw`fixed w-full m-auto opacity-0 top-golden23vh hover:blur-none`}
   transition: 1000ms, 1000ms, 1200ms, 10000ms;
   transition-property: opacity, filter, top, height;
@@ -107,78 +123,7 @@ const Title = tw.h1`mb-1 text-2xl text-primary xs:text-3xl tracking-title`
 const Description = tw.p`text-xs  sm:text-base`
 const Nav = tw.nav`z-10 text-center m-auto opacity-100 duration-[1200ms]`
 
-function classList(elt: HTMLElement | null) {
-  const list = elt?.classList
-  // console.log(list);
-  return elt === null
-    ? null
-    : {
-        toggle: function (c: string) {
-          list?.toggle(c)
-          return this
-        },
-        add: function (c: string) {
-          list?.add(c)
-          return this
-        },
-        remove: function (c: string) {
-          list?.remove(c)
-          return this
-        },
-      }
-}
-
 export const TopBar: FC = () => {
   addAgentToHtml()
-  // TODO:スクロールオブサーバーにする
-  const isRunning = useRef(false) // スクロール多発防止用フラグ
-
-  // リスナに登録する関数
-  const isScrollToggle = useCallback(() => {
-    if (isRunning.current) return
-    isRunning.current = true
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    requestAnimationFrame(() => {
-      const body = document.querySelector('body')
-
-      if (scrollTop === 0) {
-        classList(body)
-          ?.add('scroll-backed')
-          .remove('scroll-top-gt-0')
-          .remove('scroll-top-gt-23vh')
-          .remove('scroll-top-gt-38vh')
-      } else if (scrollTop > window.innerHeight * 0.382) {
-        classList(body)
-          ?.add('scroll-top-gt-38vh')
-          .remove('scroll-backed')
-          .remove('scroll-top-gt-0')
-          .remove('scroll-top-gt-23vh')
-        // } else if (scrollTop > window.innerHeight * 0.236) {
-        //   classList(body)
-        //     ?.add('scroll-top-gt-23vh')
-        //     .remove('scroll-backed')
-        //     .remove('scroll-top-gt-0')
-        //     .remove('scroll-top-gt-38vh');
-      } else if (scrollTop > 0) {
-        classList(body)
-          ?.add('scroll-top-gt-0')
-          .remove('scroll-backed')
-          .remove('scroll-top-gt-23vh')
-          .remove('scroll-top-gt-38vh')
-      }
-
-      isRunning.current = false
-    })
-  }, [])
-
-  // 登録と後始末
-  useEffect(() => {
-    document.addEventListener('scroll', isScrollToggle, { passive: true })
-
-    return () => {
-      document.removeEventListener('scroll', isScrollToggle, true)
-    }
-  }, [isScrollToggle])
-
   return <TopBarComponent />
 }

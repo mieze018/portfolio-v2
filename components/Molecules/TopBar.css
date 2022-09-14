@@ -68,28 +68,39 @@
 }
 
 /* header.scroll-top-gt-0 .header-desc, */
-.scroll-top-gt-0 #sinker {
-  /* margin-top: 0.1vh; */
-  /* display: none; */
-  top: -2em;
-  filter: blur(6px);
-  /* opacity: 0.1; */
-  /* animation: fade-ou-int 4ms 0.3s ease-in-out forwards; */
-  animation: sunk 3s 0s ease-in-out reverse both;
-}
+#sinker {
+  &.scroll-top-gt-0 {
+    /* margin-top: 0.1vh; */
+    /* display: none; */
+    top: -2em;
+    filter: blur(6px);
+    /* opacity: 0.1; */
+    /* animation: fade-ou-int 4ms 0.3s ease-in-out forwards; */
+    animation: sunk 3s 0s ease-in-out reverse both;
+  }
+  &.scroll-top-gt-0 {
+    /* margin-top: 0.1vh; */
+    /* display: none; */
+    top: -2em;
+    filter: blur(6px);
+    /* opacity: 0.1; */
+    /* animation: fade-ou-int 4ms 0.3s ease-in-out forwards; */
+    animation: sunk 3s 0s ease-in-out reverse both;
+  }
 
-.scroll-top-gt-38vh #sinker {
-  top: -2em;
-  filter: blur(1px);
-  opacity: 1;
-  animation: fade-out-in 3ms 0.3s ease-in-out forwards;
-}
+  &.scroll-top-gt-38vh {
+    top: -2em;
+    filter: blur(1px);
+    opacity: 1;
+    animation: fade-out-in 3ms 0.3s ease-in-out forwards;
+  }
 
-.scroll-backed #sinker {
-  opacity: 0;
-  transition: 2000ms, 2000ms, 2000ms, 10000ms;
-  transition-property: opacity, filter, margin-top;
-  animation: fade-in 3ms 0s ease-in-out forwards;
+  &.scroll-backed {
+    opacity: 0;
+    transition: 2000ms, 2000ms, 2000ms, 10000ms;
+    transition-property: opacity, filter, margin-top;
+    animation: fade-in 3ms 0s ease-in-out forwards;
+  }
 }
 
 .scroll-top-gt-0 #fade-outer {
