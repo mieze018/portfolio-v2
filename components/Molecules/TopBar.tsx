@@ -27,7 +27,7 @@ export const TopBarComponent = () => {
   }, [])
   return (
     <>
-      <Floater id="floater" />
+      <FloatingWave id="floater" />
       <Wrapper>
         <Sinker as={motion.div} className={classNameForAnimation()} id="sinker">
           <FadeOuter id="fade-outer">
@@ -89,7 +89,7 @@ const sunk = keyframes`  0% {
     transform: translate(0, 0);
   }`
 
-const Floater = styled.div`
+const FloatingWave = styled.div`
   ${tw`fixed top-0 z-10 w-full h-golden23vh`}
   background-image:url('img/surface.webp');
   top: 0; /* 上部のボケを隠すため少し上に上げる */
