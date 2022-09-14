@@ -1,9 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html {
-  @apply snap-y snap-proximity scroll-smooth;
-}
+
 @layer utilities {
   /* start */
   html {
