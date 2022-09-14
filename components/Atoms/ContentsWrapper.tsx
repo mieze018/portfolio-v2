@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useRef } from 'react'
 import { keyframes } from 'styled-components'
 import tw, { css } from 'twin.macro'
 
@@ -10,11 +11,12 @@ const sunkShort = keyframes`
     transform: translate(0, 0);
   }
 `
-
 /** ページ移管時にトランジションする */
 export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef(null)
   return (
     <motion.section
+      ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
