@@ -3,16 +3,12 @@ import { useRef } from 'react'
 import { keyframes } from 'styled-components'
 import tw, { css } from 'twin.macro'
 
-const sunkShort = keyframes`
-  0% {
-    transform: translate(0, -1em);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-`
 /** ページ移管時にトランジションする */
 export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => {
+  const sunkShort = keyframes`
+0% {transform: translate(0, -1em);}
+100% {transform: translate(0, 0);}
+`
   const ref = useRef(null)
   return (
     <motion.section
