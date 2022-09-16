@@ -1,4 +1,4 @@
-import { TopBarComponent } from './TopBar'
+import { TopBarComponent } from './Header/TopBar'
 
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 

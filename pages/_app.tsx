@@ -8,7 +8,7 @@ import type { AppContext, AppProps } from 'next/app'
 import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import { Footer } from 'components/Molecules/Footer'
-import { TopBar } from 'components/Molecules/TopBar'
+import { TopBar } from 'components/Molecules/Header/TopBar'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
