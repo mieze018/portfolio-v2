@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         mode="wait"
         initial={false}
         //TODO:現在のスクロール位置がコンテンツトップより上なら同じ位置にスクロール、そうでなければコンテンツトップにスクロール
-        onExitComplete={() => window.scrollTo(1000, 0)}
+        onExitComplete={() => window.scrollTo(0, 1000)}
       >
         <ContentsWrapper key={router.asPath}>
           <Component {...pageProps} />

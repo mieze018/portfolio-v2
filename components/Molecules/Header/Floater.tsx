@@ -37,7 +37,7 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
 }
 export const Floater = styled(motion.div)<{ $scrollStates: scrollStatesType }>`
   ${tw`fixed w-full m-auto opacity-0 top-golden23vh`}
-  transition: 1000ms, 1000ms, 1200ms, 10000ms;
+  transition-duration: 1000ms, 1000ms, 1200ms, 10000ms;
   transition-property: opacity, filter, top, height;
   animation: ${sunk} 10s 0.3s ease-in-out forwards;
   ${({ $scrollStates }) => scrollAnimation($scrollStates)}

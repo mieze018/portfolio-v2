@@ -127,7 +127,7 @@
     @apply absolute top-0 flex flex-col items-center justify-center w-full min-h-screen;
     display: none;
     opacity: 0;
-    transition: 500ms, translate 2000ms;
+    transition-duration: 500ms, translate 2000ms;
   }
 
   .fade-appear-active,

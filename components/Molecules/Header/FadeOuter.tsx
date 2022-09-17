@@ -9,7 +9,7 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
 export const FadeOuter = styled.div<{ scrollStates: scrollStatesType }>`
   ${tw`opacity-100 duration-[5000ms]`} /* margin-top: calc(23vh);
 opacity: 1;
-transition: 2000ms, 2000ms, 2000ms, 10000ms;
+transition-duration: 2000ms, 2000ms, 2000ms, 10000ms;
 transition-property: opacity, translate, filter, margin-top; */
   ${({ scrollStates }) => scrollAnimation(scrollStates)}
 `
