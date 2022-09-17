@@ -10,7 +10,6 @@ import { Sinker } from 'components/Molecules/Header/Sinker'
 import { NavLinks } from 'components/Molecules/NavLink'
 import { routes } from 'libs/routes'
 import { addAgentToHtml } from 'libs/tumblrLink'
-import { useGetWindowSize } from 'libs/useGetWindowSize'
 import { description, title } from 'pages/api/basics'
 
 export type scrollStatesType = {
@@ -22,18 +21,17 @@ export const TopBarComponent = () => {
   const ref = useRef(null)
   const { scrollY } = useScroll()
   const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
-  /** 縦スクロール位置の定義 */
-  const scrollStates: scrollStatesType = {
-    init: scrollTop === 0,
-    sinking: scrollTop < useGetWindowSize().height && scrollTop > 0,
-    sunk: scrollTop > useGetWindowSize().height,
-  }
-  //縦スクロール位置を監視
   useEffect(() => {
     return scrollY.onChange((latest) => {
       setScrollTop(latest)
     })
   }, [scrollY])
+
+  const scrollStates: scrollStatesType = {
+    init: scrollTop === 0,
+    sinking: scrollTop > 0,
+    sunk: scrollTop > ref?.current?.clientHeight,
+  }
 
   const Wrapper = styled.header`
     ${tw`fixed top-0 z-10 w-full mb-0 text-sm text-center`}
