@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <RecoilRoot>
       <TopBar />
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait">
         <ContentsWrapper key={router.asPath}>
           <Component {...pageProps} />
         </ContentsWrapper>

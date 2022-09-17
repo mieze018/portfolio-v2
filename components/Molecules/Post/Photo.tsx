@@ -1,6 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/future/image'
-import { useState } from 'react'
 import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
@@ -10,16 +9,24 @@ const FlexItem = styled(motion.div)<{ $isColumn: boolean }>`
   ${({ $isColumn }) => $isColumn && tw`flex-grow w-1/4 mx-0 my-4 basis-1/4 shrink`}
 `
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
-  const [ready, setReady] = useState<string>('')
-
+  const variants = {
+    whileInView: {
+      opacity: 1,
+      filter: 'blur(0px)',
+    },
+    inactive: {
+      opacity: 0.1,
+      filter: 'blur(16px)',
+    },
+  }
   return (
-    <AnimatePresence mode="wait">
+    <>
       <FlexItem
         as={motion.div}
-        key={ready}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
+        variants={variants}
+        initial="inactive"
+        whileInView="whileInView"
+        transition={{ delay: 0.25 }}
         $isColumn={isColumn}
       >
         <Image
@@ -33,9 +40,8 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
           quality={85}
           // placeholder="blur"
           // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
-          onLoad={() => setReady(photo.original_size.url)}
         />
       </FlexItem>
-    </AnimatePresence>
+    </>
   )
 }
