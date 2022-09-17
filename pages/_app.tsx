@@ -15,12 +15,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <RecoilRoot>
       <TopBar />
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        //TODO:現在のスクロール位置がコンテンツトップより上なら同じ位置にスクロール、そうでなければコンテンツトップにスクロール
-        onExitComplete={() => window.scrollTo(0, 1000)}
-      >
+      <AnimatePresence mode="wait" initial={false}>
         <ContentsWrapper key={router.asPath}>
           <Component {...pageProps} />
         </ContentsWrapper>

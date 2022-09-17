@@ -17,7 +17,10 @@ export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => 
   useEffect(() => {
     setContentsWrapperState(ref.current)
   }, [setContentsWrapperState])
-
+  useEffect(() => {
+    //現在のスクロール位置がコンテンツラッパーより下ならコンテンツラッパーの上部までスクロール
+    if (window.scrollY > 0) ref.current?.scrollIntoView(true)
+  }, [])
   return (
     <motion.section
       ref={ref}
@@ -26,7 +29,7 @@ export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => 
       exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
       css={[
-        tw`relative px-0 py-6 top-golden61vh mt-golden23vh`,
+        tw`relative px-0 py-6 top-golden61vh pt-golden23vh`,
         css`
           transform: translate(0, -10em);
           animation: ${sunkShort} 3s 0s ease-out forwards;
