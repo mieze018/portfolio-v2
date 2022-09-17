@@ -1,6 +1,6 @@
 import { useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import tw, { styled } from 'twin.macro'
 
@@ -20,7 +20,6 @@ export type scrollStatesType = {
   sunk: boolean
 }
 export const TopBarComponent = () => {
-  const ref = useRef(null)
   const { scrollY } = useScroll()
   const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
   const contentsWrapperScrollTop = useRecoilState(contentsWrapperState)[0]?.offsetTop ?? 500
@@ -46,7 +45,7 @@ export const TopBarComponent = () => {
   return (
     <>
       <WaterSurface scrollStates={scrollStates} />
-      <Wrapper ref={ref}>
+      <Wrapper>
         <Floater $scrollStates={scrollStates}>
           <FadeOuter scrollStates={scrollStates}>
             <Title>
