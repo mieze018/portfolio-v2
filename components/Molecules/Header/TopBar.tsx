@@ -1,7 +1,6 @@
 import { useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { useRecoilState } from 'recoil'
+import { useEffect, useRef, useState } from 'react'
 import tw, { styled } from 'twin.macro'
 
 import { FadeOuter } from 'components/Molecules/Header/FadeOuter'
@@ -9,7 +8,6 @@ import { FloatingWave } from 'components/Molecules/Header/FloatingWave'
 import { Nav } from 'components/Molecules/Header/Nav'
 import { Sinker } from 'components/Molecules/Header/Sinker'
 import { NavLinks } from 'components/Molecules/NavLink'
-import { contentsWrapperState } from 'libs/recoil/atoms'
 import { routes } from 'libs/routes'
 import { addAgentToHtml } from 'libs/tumblrLink'
 import { description, title } from 'pages/api/basics'
@@ -20,22 +18,19 @@ export type scrollStatesType = {
   sunk: boolean
 }
 export const TopBarComponent = () => {
-  const contentsWrapper = useRecoilState(contentsWrapperState)
+  const ref = useRef(null)
   const { scrollY } = useScroll()
   const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
-
-  //縦スクロール位置を監視
   useEffect(() => {
     return scrollY.onChange((latest) => {
       setScrollTop(latest)
     })
-  }, [contentsWrapper, scrollY])
+  }, [scrollY])
 
-  /** 縦スクロール位置の定義 */
   const scrollStates: scrollStatesType = {
     init: scrollTop === 0,
     sinking: scrollTop > 0,
-    sunk: scrollTop > contentsWrapper?.clientHeight,
+    sunk: scrollTop > ref?.current?.clientHeight,
   }
 
   const Wrapper = styled.header`
@@ -48,7 +43,7 @@ export const TopBarComponent = () => {
   return (
     <>
       <FloatingWave scrollStates={scrollStates} />
-      <Wrapper>
+      <Wrapper ref={ref}>
         <Sinker $scrollStates={scrollStates}>
           <FadeOuter scrollStates={scrollStates}>
             <Title>

@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import { useSetRecoilState } from 'recoil'
+import { useRef } from 'react'
 import { keyframes } from 'styled-components'
 import tw, { css } from 'twin.macro'
-
-import { contentsWrapperState } from 'libs/recoil/atoms'
 
 /** ページ移管時にトランジションする */
 export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -12,14 +9,7 @@ export const ContentsWrapper = ({ children }: { children: React.ReactNode }) => 
 0% {transform: translate(0, -1em);}
 100% {transform: translate(0, 0);}
 `
-  const ref = useRef<HTMLElement>(null)
-  const setContentsWrapperState = useSetRecoilState(contentsWrapperState)
-  useEffect(() => {
-    if (ref === null) return
-    if (!ref === null) setContentsWrapperState(ref.current)
-    console.log(`ContentsWrapper:${ref?.current?.scrollTop}`)
-  }, [setContentsWrapperState, ref])
-
+  const ref = useRef(null)
   return (
     <motion.section
       ref={ref}
