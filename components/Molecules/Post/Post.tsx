@@ -11,6 +11,9 @@ const FadeWrapper = tw.div`flex flex-col items-center justify-center min-h-scree
 
 const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
   ${tw`m-auto`}
+
+  ${({ isRow, isColumn }) =>
+    (isRow || isColumn) && tw`inline-flex flex-wrap items-center content-start justify-around`}
   ${({ isColumn }) => isColumn && tw`flex flex-wrap justify-center max-w-full`}
   ${({ isRow }) => isRow && tw`grid gap-y-4`}
 `
@@ -25,7 +28,7 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
   return (
     <FadeWrapper key={post.id}>
       <Article>
-        <PhotoWrapper isColumn={isColumn} isRow={isRow} className="photo-container">
+        <PhotoWrapper isColumn={isColumn} isRow={isRow}>
           <Photos
             photos={post.photos}
             isShowOnlyLastPhoto={isShowOnlyLastPhoto}
