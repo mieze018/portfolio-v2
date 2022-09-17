@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
@@ -5,9 +6,11 @@ import type { Tumblr } from 'libs/@type/api/tumblr'
 import { Photos } from 'components/Molecules/Post/Photos'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
+const FadeWrapper = styled(motion.div)`
+  ${tw`top-0 flex flex-col items-center justify-center w-full min-h-screen transition-all`}
+`
 const Article = tw.article`flex flex-col flex-wrap justify-center px-[2.618vw] lg:mb-24 w-full lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl`
 const PostCaption = tw.div`mt-0 text-sm sm:text-base text-left w-full`
-const FadeWrapper = tw.div`flex flex-col items-center justify-center min-h-screen top-0 w-full transition-all`
 
 const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
   ${tw`m-auto`}
@@ -25,8 +28,25 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
   /** 画像が2枚以上(photoset)で4枚未満なら縦に並べる*/
   const isRow = !!post.photoset_layout && !isColumn
   const isShowOnlyLastPhoto = post.tags.includes('s-o-l-p')
+  /** ビューに入るまでぼかす */
+  const variants = {
+    whileInView: {
+      opacity: 1,
+      filter: 'blur(0px) brightness(1)',
+    },
+    inactive: {
+      opacity: 0.9,
+      filter: 'blur(5px) brightness(1.2)',
+    },
+  }
   return (
-    <FadeWrapper key={post.id}>
+    <FadeWrapper
+      as={motion.div}
+      variants={variants}
+      initial="inactive"
+      whileInView="whileInView"
+      transition={{ duration: 1, delay: 0 }}
+    >
       <Article>
         <PhotoWrapper isColumn={isColumn} isRow={isRow}>
           <Photos
