@@ -31,12 +31,12 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
   /** ビューに入るまでぼかす */
   const variants = {
     whileInView: {
-      opacity: 1,
+      // opacity: 1,
       filter: 'blur(0px) brightness(1)',
     },
     inactive: {
-      opacity: 0.9,
-      filter: 'blur(5px) ',
+      // opacity: 0.5,
+      filter: 'blur(8px)  brightness(1.1)',
     },
   }
   return (
@@ -45,7 +45,7 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
       variants={variants}
       initial="inactive"
       whileInView="whileInView"
-      transition={{ duration: 0.2, delay: 0 }}
+      transition={{ duration: 0.25, delay: 0, ease: 'easeInOut' }}
     >
       <PhotoWrapper isColumn={isColumn} isRow={isRow}>
         <Photos
