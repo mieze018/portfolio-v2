@@ -5,9 +5,9 @@ import { useRecoilState } from 'recoil'
 import tw, { styled } from 'twin.macro'
 
 import { FadeOuter } from 'components/Molecules/Header/FadeOuter'
-import { FloatingWave } from 'components/Molecules/Header/FloatingWave'
+import { Floater } from 'components/Molecules/Header/Floater'
 import { Nav } from 'components/Molecules/Header/Nav'
-import { Sinker } from 'components/Molecules/Header/Sinker'
+import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { NavLinks } from 'components/Molecules/NavLink'
 import { contentsWrapperState } from 'libs/recoil/atoms'
 import { routes } from 'libs/routes'
@@ -26,7 +26,6 @@ export const TopBarComponent = () => {
   const contentsWrapperScrollTop = useRecoilState(contentsWrapperState)[0]?.offsetTop ?? 500
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      console.log(`TopBarComponent:${contentsWrapperScrollTop}`)
       setScrollTop(latest)
     })
   }, [contentsWrapperScrollTop, scrollY])
@@ -46,9 +45,9 @@ export const TopBarComponent = () => {
   const Description = tw.p`text-xs  sm:text-base`
   return (
     <>
-      <FloatingWave scrollStates={scrollStates} />
+      <WaterSurface scrollStates={scrollStates} />
       <Wrapper ref={ref}>
-        <Sinker $scrollStates={scrollStates}>
+        <Floater $scrollStates={scrollStates}>
           <FadeOuter scrollStates={scrollStates}>
             <Title>
               <Link href="/">{title}</Link>
@@ -58,7 +57,7 @@ export const TopBarComponent = () => {
           <Nav scrollStates={scrollStates}>
             <NavLinks routes={routes} />
           </Nav>
-        </Sinker>
+        </Floater>
       </Wrapper>
     </>
   )

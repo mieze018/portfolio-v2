@@ -3,7 +3,7 @@ import tw, { css, styled } from 'twin.macro'
 
 import type { scrollStatesType } from 'components/Molecules/Header/TopBar'
 
-const floatWaveAnimation = (scrollStates: scrollStatesType) => {
+const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
       top: 0;
@@ -38,7 +38,7 @@ const wave = keyframes`
   50% {transform: matrix(1, 0.03, 0, 0.7, 0, 0);}/* その後30秒ほどかけて浮き上がる */
   100% {transform: matrix(1, 0.03, 0, 1, 0, 0);}` /* 残り126秒かけて水平に元に戻る */
 
-export const FloatingWave = styled.div<{ scrollStates: scrollStatesType }>`
+export const WaterSurface = styled.div<{ scrollStates: scrollStatesType }>`
   ${tw`fixed top-0 z-10 w-full bg-scroll bg-no-repeat h-golden23vh`}
   background-image:url('img/surface.webp');
   top: 0; /* 上部のボケを隠すため少し上に上げる */
@@ -47,5 +47,5 @@ export const FloatingWave = styled.div<{ scrollStates: scrollStatesType }>`
   transition: 10000ms;
   transform-origin: right top;
   animation: ${wave} 180s 0s ease-out forwards;
-  ${({ scrollStates }) => floatWaveAnimation(scrollStates)}
+  ${({ scrollStates }) => scrollAnimation(scrollStates)}
 `

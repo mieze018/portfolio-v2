@@ -17,7 +17,7 @@ const fadeOutIn = keyframes`
 100% {opacity: 1;}
   `
 
-const sinkerAnimation = (scrollStates: scrollStatesType) => {
+const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
       ${tw`opacity-0 duration-[2s,2s,2s,10s]`}
@@ -35,10 +35,10 @@ const sinkerAnimation = (scrollStates: scrollStatesType) => {
     `
   return tw``
 }
-export const Sinker = styled(motion.div)<{ $scrollStates: scrollStatesType }>`
+export const Floater = styled(motion.div)<{ $scrollStates: scrollStatesType }>`
   ${tw`fixed w-full m-auto opacity-0 top-golden23vh`}
   transition: 1000ms, 1000ms, 1200ms, 10000ms;
   transition-property: opacity, filter, top, height;
   animation: ${sunk} 10s 0.3s ease-in-out forwards;
-  ${({ $scrollStates }) => sinkerAnimation($scrollStates)}
+  ${({ $scrollStates }) => scrollAnimation($scrollStates)}
 `
