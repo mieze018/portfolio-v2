@@ -2,6 +2,7 @@ import 'libs/i18n/config'
 
 import { AnimatePresence } from 'framer-motion'
 import App from 'next/app'
+import { RecoilRoot } from 'recoil'
 
 import type { AppContext, AppProps } from 'next/app'
 
@@ -12,7 +13,7 @@ import { TopBar } from 'components/Molecules/Header/TopBar'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <>
+    <RecoilRoot>
       <TopBar />
       <AnimatePresence
         mode="wait"
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </ContentsWrapper>
         <Footer />
       </AnimatePresence>
-    </>
+    </RecoilRoot>
   )
 }
 
