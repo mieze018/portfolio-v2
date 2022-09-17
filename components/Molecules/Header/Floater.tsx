@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { keyframes } from 'styled-components'
 import tw, { css, styled } from 'twin.macro'
 
-import type { scrollStatesType } from 'components/Molecules/Header/TopBar'
+import type { scrollStatesType } from 'libs/useScrollState'
 
 const sunk = keyframes`
   0% {opacity: 0;transform: translate(0, -3em);}

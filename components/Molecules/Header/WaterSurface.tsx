@@ -1,7 +1,7 @@
 import { keyframes } from 'styled-components'
 import tw, { css, styled } from 'twin.macro'
 
-import type { scrollStatesType } from 'components/Molecules/Header/TopBar'
+import type { scrollStatesType } from 'libs/useScrollState'
 
 const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)

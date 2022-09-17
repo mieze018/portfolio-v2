@@ -1,7 +1,4 @@
-import { useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { useRecoilState } from 'recoil'
 import tw, { styled } from 'twin.macro'
 
 import { FadeOuter } from 'components/Molecules/Header/FadeOuter'
@@ -9,31 +6,13 @@ import { Floater } from 'components/Molecules/Header/Floater'
 import { Nav } from 'components/Molecules/Header/Nav'
 import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { NavLinks } from 'components/Molecules/NavLink'
-import { contentsWrapperState } from 'libs/recoil/atoms'
 import { routes } from 'libs/routes'
 import { addAgentToHtml } from 'libs/tumblrLink'
+import { useScrollState } from 'libs/useScrollState'
 import { description, title } from 'pages/api/basics'
 
-export type scrollStatesType = {
-  init: boolean
-  sinking: boolean
-  sunk: boolean
-}
 export const TopBarComponent = () => {
-  const { scrollY } = useScroll()
-  const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
-  const contentsWrapperScrollTop = useRecoilState(contentsWrapperState)[0]?.offsetTop ?? 500
-  useEffect(() => {
-    return scrollY.onChange((latest) => {
-      setScrollTop(latest)
-    })
-  }, [contentsWrapperScrollTop, scrollY])
-
-  const scrollStates: scrollStatesType = {
-    init: scrollTop === 0,
-    sinking: scrollTop > 0 && scrollTop < contentsWrapperScrollTop,
-    sunk: scrollTop > contentsWrapperScrollTop,
-  }
+  const scrollStates = useScrollState()
 
   const Wrapper = styled.header`
     ${tw`fixed top-0 z-10 w-full mb-0 text-sm text-center`}

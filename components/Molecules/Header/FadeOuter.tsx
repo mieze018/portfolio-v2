@@ -1,6 +1,6 @@
 import tw, { styled } from 'twin.macro'
 
-import type { scrollStatesType } from 'components/Molecules/Header/TopBar'
+import type { scrollStatesType } from 'libs/useScrollState'
 
 const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.sunk || scrollStates.sinking) return tw`opacity-0 mt-[-2em]`
