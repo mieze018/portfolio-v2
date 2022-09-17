@@ -4,73 +4,36 @@
 
 @layer utilities {
   html {
+    @apply scroll-smooth;
     text-size-adjust: 100%;
-    scroll-behavior: smooth;
-    font-size: 1rem;
+    &.gecko,
+    &.android {
+      @apply text-sm;
+    }
   }
-
   body {
-    font-family: 'Baskerville Old Face', Baskerville, 'Times New Roman', Times, Georgia, Palatino,
-      'Palatino Linotype', 'HGS明朝E', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
-      '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'MS PMincho', serif;
-    line-height: 1.5em;
+    @apply text-secondary leading-normal tracking-wider bg-fixed font-serif bg-body;
     text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(255 124 0 / 16%);
-    letter-spacing: 0.05em;
-    background: linear-gradient(
-      to bottom,
-      rgb(245 245 245 / 100%) 0%,
-      rgb(237 251 255 / 100%) 16%,
-      rgb(237 245 247 / 100%) 24%,
-      rgb(255 255 255 / 100%) 100%
-    );
-    background-attachment: fixed;
   }
-
-  body,
   a {
-    @apply text-secondary;
+    @apply text-secondary cursor-pointer;
+    &:active {
+      @apply opacity-100;
+    }
+    &:hover {
+      @apply opacity-100 text-darkest blur-0;
+    }
   }
-
-  a {
-    @apply cursor-pointer;
-  }
-
-  a:active {
-    opacity: 1 important;
-  }
-
-  html.gecko,
-  html.android {
-    font-size: 0.85em;
-  }
-
   div,
   article {
     @apply max-w-full;
   }
 
   svg:not(:root) {
-    overflow: hidden;
-  }
-
-  a:hover {
-    color: #222;
-    opacity: 1;
+    @apply overflow-hidden;
   }
 
   li {
-    margin: 0 0.556em 0 0;
-  }
-
-  /* ショートカット */
-  .eng {
-    line-height: 1.4em;
-    letter-spacing: 1px;
-  }
-
-  .jpn {
-    font-size: small;
-    line-height: 1.6em;
-    letter-spacing: 0.1px;
+    @apply m-0 mr-[0.556em];
   }
 }
