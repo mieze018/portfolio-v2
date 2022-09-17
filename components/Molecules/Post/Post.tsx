@@ -6,10 +6,10 @@ import type { Tumblr } from 'libs/@type/api/tumblr'
 import { Photos } from 'components/Molecules/Post/Photos'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
-const FadeWrapper = styled(motion.div)`
-  ${tw`top-0 flex flex-col items-center justify-center w-full min-h-screen transition-all`}
+const Article = styled(motion.article)`
+  ${tw`top-0 flex flex-col items-center justify-center w-full min-h-screen transition-all  mx-auto flex-wrap  px-[2.618vw] lg:mb-24  lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl`}
 `
-const Article = tw.article`flex flex-col flex-wrap justify-center px-[2.618vw] lg:mb-24 w-full lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl`
+
 const PostCaption = tw.div`mt-0 text-sm sm:text-base text-left w-full`
 
 const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
@@ -36,33 +36,31 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
     },
     inactive: {
       opacity: 0.9,
-      filter: 'blur(5px) brightness(1.2)',
+      filter: 'blur(5px) ',
     },
   }
   return (
-    <FadeWrapper
-      as={motion.div}
+    <Article
+      as={motion.article}
       variants={variants}
       initial="inactive"
       whileInView="whileInView"
-      transition={{ duration: 1, delay: 0 }}
+      transition={{ duration: 0.2, delay: 0 }}
     >
-      <Article>
-        <PhotoWrapper isColumn={isColumn} isRow={isRow}>
-          <Photos
-            photos={post.photos}
-            isShowOnlyLastPhoto={isShowOnlyLastPhoto}
-            isColumn={isColumn}
-          />
-        </PhotoWrapper>
-
-        <PostCaption
-          dangerouslySetInnerHTML={{
-            __html: post.caption,
-          }}
+      <PhotoWrapper isColumn={isColumn} isRow={isRow}>
+        <Photos
+          photos={post.photos}
+          isShowOnlyLastPhoto={isShowOnlyLastPhoto}
+          isColumn={isColumn}
         />
-        <PostFooter postDate={post.date} />
-      </Article>
-    </FadeWrapper>
+      </PhotoWrapper>
+
+      <PostCaption
+        dangerouslySetInnerHTML={{
+          __html: post.caption,
+        }}
+      />
+      <PostFooter postDate={post.date} />
+    </Article>
   )
 }
