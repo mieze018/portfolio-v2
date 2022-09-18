@@ -6,10 +6,9 @@ import type { scrollStatesType } from 'libs/useScrollState'
 const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
-      top: 0;
+      top: 0; /* 上部のボケを隠すため少し上に上げる */
       ${tw`h-golden23vh duration-[10s,1s,10s]`}
       filter: blur(4px) brightness(1.05);
-      transition-property: filter, top, height;
     `
   if (scrollStates.sunk)
     return css`
@@ -17,7 +16,6 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
       height: calc(4vh + 7em);
       filter: blur(10px) brightness(1.1);
       transition-duration: 10000ms, 1000ms, 10000ms;
-      transition-property: filter, top, height;
     `
   if (scrollStates.sinking)
     return css`
@@ -25,7 +23,6 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
       ${tw`h-golden14vh`}
       filter: blur(1px) brightness(1.01);
       transition-duration: 10000ms, 1000ms, 8000ms;
-      transition-property: filter, top, height;
     `
   return tw``
 }
@@ -40,11 +37,11 @@ const wave = keyframes`
 export const WaterSurface = styled.div<{ scrollStates: scrollStatesType }>`
   ${tw`fixed top-0 z-10 w-full bg-scroll bg-no-repeat h-golden23vh`}
   background-image:url('img/surface.webp');
-  top: 0; /* 上部のボケを隠すため少し上に上げる */
   filter: blur(0) brightness(1);
   background-size: 120% 100%;
   transition-duration: 10000ms;
   transform-origin: right top;
+  transition-property: filter, top, height;
   animation: ${wave} 180s 0s ease-out forwards;
   ${({ scrollStates }) => scrollAnimation(scrollStates)}
 `

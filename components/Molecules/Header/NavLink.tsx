@@ -20,6 +20,7 @@ export const NavLinks = ({
   const currentPath = router.pathname
 
   //現在のスクロール位置が沈み途中の場合は上に戻す
+  //TODO: 現在のパスへのリンクをクリックした時コンテンツトップにスクロールする
   const scrollStates = useScrollState()
   return (
     <>
