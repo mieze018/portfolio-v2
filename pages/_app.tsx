@@ -1,33 +1,24 @@
 import 'libs/i18n/config'
 
-import { AnimatePresence } from 'framer-motion'
 import App from 'next/app'
+import { RecoilRoot } from 'recoil'
 
 import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
-import './index.css'
-import '../components/Molecules/TopBar.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import { Footer } from 'components/Molecules/Footer'
-import { TopBar } from 'components/Molecules/TopBar'
+import { TopBar } from 'components/Molecules/Header/TopBar'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <>
+    <RecoilRoot>
       <TopBar />
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        //TODO:現在のスクロール位置がコンテンツトップより上なら同じ位置にスクロール、そうでなければコンテンツトップにスクロール
-        onExitComplete={() => window.scrollTo(1000, 0)}
-      >
-        <ContentsWrapper key={router.asPath}>
-          <Component {...pageProps} />
-        </ContentsWrapper>
-        <Footer />
-      </AnimatePresence>
-    </>
+      <ContentsWrapper $key={router.asPath}>
+        <Component {...pageProps} />
+      </ContentsWrapper>
+      <Footer />
+    </RecoilRoot>
   )
 }
 

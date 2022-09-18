@@ -1,4 +1,4 @@
-import { TopBarComponent } from './TopBar'
+import { TopBar } from './Header/TopBar'
 
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
@@ -22,9 +22,9 @@ const navLinks = ({ className }: { className: string }) => {
   )
 }
 
-export default { component: TopBarComponent } as ComponentMeta<typeof TopBarComponent>
+export default { component: TopBar } as ComponentMeta<typeof TopBar>
 
-export const Default: ComponentStoryObj<typeof TopBarComponent> = {
+export const Default: ComponentStoryObj<typeof TopBar> = {
   args: {
     TitleLink: title,
     description: 'by Ayu Nakata. Osaka, Japan-based illustrator/artist.',
