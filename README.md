@@ -1,17 +1,43 @@
 # portfolio-v2
 
-## つかいたいもの
+## 使っているもの
 
+### フレームワーク(? なんと呼ぶのが正しいのか調べる)
+
+- React <https://ja.reactjs.org/>
 - Next.js <https://nextjs.org/docs>
 - TypeScript <https://nextjs.org/docs/basic-features/typescript>
+
+### フレームワークのためのライブラリ
+
+- Recoil <https://recoiljs.org/>
+- i18next <https://www.i18next.com/>
+
+### スタイルのためのライブラリ
+
 - twin.macro <https://github.com/ben-rogerson/twin.macro>
   - [next-styled-components-typescript](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript)
   - Tailwind CSS <https://tailwindcss.com/>
     - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
   - Styled Components <https://styled-components.com/>
+
+#### アニメーション
+
+- Framer Motion <https://www.framer.com/motion/>
+  - ease <https://www.framer.com/docs/transition/###ease>
+
+### なんと呼ぶのか調べる
+
 - ESLint <https://eslint.org/docs/latest/>
 - Prettier <https://prettier.io/docs/en/>
+- ts-unused-exports <https://github.com/pzavolinsky/ts-unused-exports>
+
+### サーバとのやりとり
+
 - Tumblr API <https://www.tumblr.com/docs/en/api/>
+- SWR <https://swr.vercel.app/>
+
+## つかいたいもの
 
 ## 余裕があればつかいたもの
 
@@ -58,11 +84,11 @@
 ### ファイル/ディレクトリ名
 
 ```text
-教訓：後から大文字小文字を変更するとローカルでは認識されてもサーバで認識されないとか色々大変になるので要注意
+TODO:教訓：後から大文字小文字を変更するとローカルでは認識されてもサーバで認識されないとか色々大変になるので要注意
 一度親ディレクトリごとリネーム -> 中身のリネームし -> 親の名前戻す するとよい
 ```
 
-- `./pages`以下の自動でルーティングしているページにあたるファイルはスネークケース(urlのパスに準じる)
+- `./pages`以下の自動でルーティングしているページにあたるファイルはスネークケース(url のパスに準じる)
 - React コンポーネント(`tsx`)やそれが入っているディレクトリはパスカルケース
 - メソッドや型(`ts`)その他設定ファイルはキャメルケース
 
@@ -78,3 +104,20 @@ UI コンポーネント
 ### `./libs`
 
 - メソッドや型や i18n
+
+## 教訓メモ
+
+TODO:あとでまとめて Zenn の記事書くぞがんばるぞ
+
+### アニメーション
+
+- 再レンダリングすると描写がリセットされる、トランジションも効かなくなる
+  - <del> prop を渡さない </del> 親要素があるとダメ？？？Wrapper があるとだめだな・・
+  - Framer Motion でどうにかできるか？
+- アニメーションで指定されているスタイルはそうでないスタイルより強い
+- <del> 長さの単位は揃えないとトランジションしない</del>
+
+#### アニメーションと Styled Components
+
+- 複数のアニメーションをさせる場合 1 つの`animation`プロパティ内で全て指定しないといけないのでプロパティを上書きすると後のしか残らない
+- DOM の出現からずっと継続させたいアニメーションは、クラス再生成するとその都度リセットされるのでそういう場合はアニメーションの CSS だけ他の動的なスタイルと別クラスで指定して再生成されないようにする
