@@ -20,25 +20,25 @@ const fadeOutIn = keyframes`
 const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
-      ${tw`opacity-0 duration-[2s,2s,2s,10s]`}
-      animation: ${fadeIn} 3ms 0s ease-in-out forwards;
-    `
-  if (scrollStates.sunk)
-    return css`
-      ${tw`top-[-2em] blur-1px opacity-100`}
-      animation: ${fadeOutIn} 3ms 0.3s ease-in-out forwards;
+      /* ${tw`opacity-100 duration-[2s,2s,2s,10s]`}
+      animation: ${fadeIn} 3ms 0s ease-in-out forwards; */
     `
   if (scrollStates.sinking)
     return css`
       ${tw`top-[-2em] blur-[6px]`}
       animation: ${sunk} 3s 0s ease-in-out reverse both;
     `
+  if (scrollStates.sunk)
+    return css`
+      ${tw`top-[-2em] blur-1px opacity-100`}
+      animation: ${fadeOutIn} 3ms 0.3s ease-in-out forwards;
+    `
   return tw``
 }
 export const Floater = styled(motion.div)<{ $scrollStates: scrollStatesType }>`
   ${tw`fixed w-full m-auto opacity-0 top-golden23vh`}
-  transition-duration: 1000ms, 1000ms, 1200ms, 10000ms;
   transition-property: opacity, filter, top, height;
+  transition-duration: 1s, 1s, 1.2s, 10s;
   animation: ${sunk} 10s 0.3s ease-in-out forwards;
   ${({ $scrollStates }) => scrollAnimation($scrollStates)}
 `

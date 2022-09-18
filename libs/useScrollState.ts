@@ -25,6 +25,6 @@ export const useScrollState = () => {
   return {
     init: scrollTop === 0,
     sinking: scrollTop > 0 && scrollTop < contentsWrapperScrollTop,
-    sunk: scrollTop > contentsWrapperScrollTop,
+    sunk: scrollTop >= contentsWrapperScrollTop - 1,
   }
 };

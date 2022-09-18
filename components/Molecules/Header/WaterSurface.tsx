@@ -7,9 +7,8 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
       top: 0;
-      ${tw`h-golden23vh`}
+      ${tw`h-golden23vh duration-[10s,1s,10s]`}
       filter: blur(4px) brightness(1.05);
-      transition-duration: 10000ms, 1000ms, 10000ms;
       transition-property: filter, top, height;
     `
   if (scrollStates.sunk)
