@@ -1,6 +1,5 @@
 import 'libs/i18n/config'
 
-import { AnimatePresence } from 'framer-motion'
 import App from 'next/app'
 import { RecoilRoot } from 'recoil'
 
@@ -15,12 +14,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <RecoilRoot>
       <TopBar />
-      <AnimatePresence mode="wait">
-        <ContentsWrapper key={router.asPath}>
-          <Component {...pageProps} />
-        </ContentsWrapper>
-        <Footer />
-      </AnimatePresence>
+      <ContentsWrapper $key={router.asPath}>
+        <Component {...pageProps} />
+      </ContentsWrapper>
+      <Footer />
     </RecoilRoot>
   )
 }

@@ -3,6 +3,8 @@ import tw, { css, styled } from 'twin.macro'
 
 import type { scrollStatesType } from 'libs/useScrollState'
 
+import { useScrollState } from 'libs/useScrollState'
+
 const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
@@ -34,7 +36,7 @@ const wave = keyframes`
   50% {transform: matrix(1, 0.03, 0, 0.7, 0, 0);}/* その後30秒ほどかけて浮き上がる */
   100% {transform: matrix(1, 0.03, 0, 1, 0, 0);}` /* 残り126秒かけて水平に元に戻る */
 
-export const WaterSurface = styled.div<{ scrollStates: scrollStatesType }>`
+export const WaterSurface = styled.div`
   ${tw`fixed top-0 z-10 w-full bg-scroll bg-no-repeat h-golden23vh`}
   background-image:url('img/surface.webp');
   filter: blur(0) brightness(1);
@@ -43,5 +45,5 @@ export const WaterSurface = styled.div<{ scrollStates: scrollStatesType }>`
   transform-origin: right top;
   transition-property: filter, top, height;
   animation: ${wave} 180s 0s ease-out forwards;
-  ${({ scrollStates }) => scrollAnimation(scrollStates)}
+  ${() => scrollAnimation(useScrollState())}
 `
