@@ -19,7 +19,7 @@ export const NavLinks = ({
   return (
     <>
       {routes.map((route) => (
-        <Link href={route.pathname} scroll={false} key={route.pathname} passHref>
+        <Link href={route.pathname} scroll={false} key={route.pathname}>
           <A isCurrent={currentPath === route.pathname}>{route.name}</A>
         </Link>
       ))}
