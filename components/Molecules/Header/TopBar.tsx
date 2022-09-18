@@ -17,7 +17,7 @@ export const TopBar = () => {
     ${tw`fixed top-0 z-10 w-full h-golden14vh `}
     background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
   `
-  const Title = tw.h1`mb-1 text-2xl text-primary xs:text-3xl tracking-title`
+  const Title = tw.h1`mb-1 text-2xl xs:text-3xl tracking-title`
   const Description = tw.p`text-xs  sm:text-base`
   return (
     <>

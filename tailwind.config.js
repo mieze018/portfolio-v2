@@ -2,7 +2,7 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     textColor: {
-      primary: '#555',
+      primary: '#888',
       secondary: '#797979',
       darkest: '#222',
     },
