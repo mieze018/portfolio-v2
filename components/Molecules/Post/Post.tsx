@@ -13,7 +13,7 @@ const Article = styled(motion.article)`
 const PostCaption = tw.div`mt-0 text-sm sm:text-base text-left w-full`
 
 const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
-  ${tw`m-auto`}
+  ${tw`mx-auto`}
 
   ${({ isRow, isColumn }) =>
     (isRow || isColumn) && tw`inline-flex flex-wrap items-center content-start justify-around`}
