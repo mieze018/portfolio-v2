@@ -30,9 +30,9 @@ export const ContentsWrapper = ({
   return (
     <AnimatePresence
       mode="wait"
-      onExitComplete={() => {
-        ref.current?.scrollIntoView(true)
-      }}
+      // onExitComplete={() => {
+      //   ref.current?.scrollIntoView(true)
+      // }}
     >
       <motion.section
         ref={ref}

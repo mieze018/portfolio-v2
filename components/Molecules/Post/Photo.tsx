@@ -1,4 +1,5 @@
 import Image from 'next/future/image'
+import Link from 'next/link'
 import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
@@ -9,7 +10,17 @@ const FlexItem = styled.div<{ $isColumn: boolean }>`
 `
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
   return (
-    <>
+    <Link
+      scroll={false}
+      href={{
+        pathname: `/photo/${encodeURIComponent(photo.original_size.url)}`,
+        query: {
+          url: photo.original_size.url,
+          width: photo.original_size.width,
+          height: photo.original_size.height,
+        },
+      }}
+    >
       <FlexItem $isColumn={isColumn}>
         <Image
           className="m-auto"
@@ -24,6 +35,6 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
           // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
         />
       </FlexItem>
-    </>
+    </Link>
   )
 }
