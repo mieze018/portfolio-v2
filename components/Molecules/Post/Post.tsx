@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
@@ -7,7 +8,7 @@ import { Photos } from 'components/Molecules/Post/Photos'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
 const Article = styled(motion.article)`
-  ${tw`top-0 flex flex-col items-center justify-center w-full min-h-screen transition-all  mx-auto flex-wrap  px-[2.618vw] lg:mb-24  lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl`}
+  ${tw`top-0 flex flex-col items-center justify-center w-full min-h-screen transition-all  mx-auto flex-wrap  px-[2.618vw] `}
 `
 
 const PostCaption = tw.div`mt-0 text-sm sm:text-base text-left w-full`
@@ -22,6 +23,7 @@ const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
 `
 
 export const Post = ({ post }: { post: Tumblr.Post }) => {
+  const [isFocusing, setIsFocusing] = useState(false)
   // TODO:投稿ごとにタグでレイアウト指定できるようにするといいかも
   /** 画像が2枚以上(photoset)で4枚以上なら横に並べる*/
   const isColumn = !!post.photoset_layout && post.photos.length >= 4
@@ -46,12 +48,19 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
       initial="inactive"
       whileInView="whileInView"
       transition={{ duration: 0.25, delay: 0, ease: 'easeInOut' }}
+      css={
+        isFocusing
+          ? tw`max-w-none`
+          : tw`lg:mb-24 lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl`
+      }
     >
       <PhotoWrapper isColumn={isColumn} isRow={isRow}>
         <Photos
           photos={post.photos}
           isShowOnlyLastPhoto={isShowOnlyLastPhoto}
           isColumn={isColumn}
+          isFocusing={isFocusing}
+          setIsFocusing={setIsFocusing}
         />
       </PhotoWrapper>
 
