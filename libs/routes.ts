@@ -5,7 +5,7 @@ export const routes = [
     pathname: '/commissioned_work',
   },
   {
-    name: 'info',
-    pathname: '/info',
+    name: 'about',
+    pathname: '/about',
   },
 ]
