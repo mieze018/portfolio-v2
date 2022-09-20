@@ -7,7 +7,7 @@ import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/Header/TopBar'
 import { Modal } from 'components/Organisms/Modal'
 import { userAgentState } from 'libs/recoil/atoms'
-import { GlobalStyle } from 'styles/grobal'
+import { GlobalStyle } from 'styles/global'
 
 export default function Layout({
   children,
