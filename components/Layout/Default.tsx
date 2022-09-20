@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useSetRecoilState } from 'recoil'
 
 import { Footer } from 'components/Molecules/Footer'
@@ -12,7 +13,12 @@ export default function Layout({
   children: React.ReactNode
   userAgent: string
 }) {
-  useSetRecoilState(userAgentState)(userAgent)
+  const setUserAgent = useSetRecoilState(userAgentState)
+  useEffect(() => {
+    if (userAgent) {
+      setUserAgent(userAgent)
+    }
+  }, [setUserAgent, userAgent])
   return (
     <>
       <TopBar />
