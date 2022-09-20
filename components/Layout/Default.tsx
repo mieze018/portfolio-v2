@@ -5,6 +5,7 @@ import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/Header/TopBar'
 import { Modal } from 'components/Organisms/Modal'
 import { userAgentState } from 'libs/recoil/atoms'
+import { GlobalStyle } from 'styles/grobal'
 
 export default function Layout({
   children,
@@ -21,6 +22,7 @@ export default function Layout({
   }, [setUserAgent, userAgent])
   return (
     <>
+      <GlobalStyle userAgent={userAgent ?? ''} />
       <TopBar />
       {children}
       <Modal />
