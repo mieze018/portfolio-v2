@@ -28,7 +28,7 @@ export namespace LocalApi {
     export type GenreGroup = { [key: string]: string }
   }
 
-  export interface infoDataType {
+  export interface aboutDataType {
     events: Event[]
   }
 }
