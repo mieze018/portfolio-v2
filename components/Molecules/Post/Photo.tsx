@@ -30,7 +30,14 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
         $isColumn={isColumn}
         onClick={() => {
           setIsModalOpen(!isModalOpen)
-          setModalContent(<ImageElement $closeup quality={95} />)
+          setModalContent(
+            <ImageElement
+              $closeup
+              quality={95}
+              // placeholder="blur"
+              // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
+            />
+          )
         }}
       >
         <ImageElement />
