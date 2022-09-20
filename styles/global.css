@@ -13,6 +13,7 @@
   }
   body {
     @apply text-primary leading-normal tracking-wider bg-fixed font-serif bg-body;
+    @apply scrollbar-thin scrollbar-thumb-White;
     text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(255 124 0 / 16%);
   }
   a {

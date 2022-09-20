@@ -22,14 +22,16 @@ export const Modal = () => {
       as={Fragment}
     >
       <Dialog
-        tw="fixed inset-0 z-50 w-full h-full overflow-auto"
+        tw="fixed inset-0 z-50 w-full h-full"
         onClose={() => {
           setIsModalOpen(!isModalOpen)
         }}
       >
         <Dialog.Overlay tw="bg-modal fixed h-full w-full opacity-100 inset-0" />
         <Dialog.Panel
-          tw="fixed m-auto overflow-auto cursor-pointer h-screen w-screen flex items-center"
+          tw="fixed m-auto cursor-pointer h-screen w-screen flex items-center
+          overflow-auto scrollbar-thin scrollbar-thumb-Azure scrollbar-corner-transparent
+          "
           onClick={() => setIsModalOpen(!isModalOpen)}
         >
           <ContentWrapper>{modalContent}</ContentWrapper>
