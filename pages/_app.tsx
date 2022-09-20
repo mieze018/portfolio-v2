@@ -7,20 +7,17 @@ import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
-import { Footer } from 'components/Molecules/Footer'
-import { TopBar } from 'components/Molecules/Header/TopBar'
-import { Modal } from 'components/Organisms/Modal'
+import Layout from 'components/Layout/Default'
 import { getUserAgent } from 'libs/nextjs-device-detect'
 
 function MyApp({ Component, pageProps, router, userAgent }: AppProps & { userAgent: string }) {
   return (
     <RecoilRoot>
-      <TopBar />
-      <ContentsWrapper $key={router.asPath}>
-        <Component {...pageProps} />
-      </ContentsWrapper>
-      <Modal />
-      <Footer />
+      <Layout userAgent={userAgent}>
+        <ContentsWrapper $key={router.asPath}>
+          <Component {...pageProps} />
+        </ContentsWrapper>
+      </Layout>
     </RecoilRoot>
   )
 }
