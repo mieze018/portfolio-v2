@@ -6,4 +6,4 @@ export const H2 = tw.h2`my-2 leading-loose tracking-widest`
 
 export const SectionWrapper = tw.section``
 export const Hr = tw.hr``
-export const UlNest1 = tw.ul`grid gap-1 leading-normal tracking-wide`
+export const UlNest1 = tw.ul`grid gap-4 leading-normal tracking-wide`

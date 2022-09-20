@@ -19,9 +19,9 @@ export const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
       <ul>
         {pastEvents.map((event, eventK) => (
           <li key={eventK}>
+            <p>{event.date}</p>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
-            <p>{event.date}</p>
             <p>{event.place}</p>
             <p>{event.url}</p>
           </li>
