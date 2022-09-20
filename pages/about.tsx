@@ -1,17 +1,17 @@
 import type { GetStaticProps, NextPage } from 'next'
 
-import { InfoContent } from 'components/Organisms/InfoContent'
-import { infoData } from 'pages/api/info'
+import { AboutContent } from 'components/Organisms/AboutContent'
+import { aboutData } from 'pages/api/about'
 
-const About: NextPage<{ fallbackData: typeof infoData }> = ({ fallbackData }) => {
+const About: NextPage<{ fallbackData: typeof aboutData }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  return <InfoContent data={fallbackData} />
+  return <AboutContent data={fallbackData} />
 }
 
 export default About
 
 export const getStaticProps: GetStaticProps = async () => {
-  const Data = infoData
+  const Data = aboutData
   return {
     props: {
       fallbackData: Data,
