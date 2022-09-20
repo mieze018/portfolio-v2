@@ -8,7 +8,7 @@ import { isModalOpenState, modalContentState } from 'libs/recoil/atoms'
 export const Modal = () => {
   const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState)
   const [modalContent] = useRecoilState(modalContentState)
-  const ContentWrapper = tw.div`m-auto flex items-center h-screen w-screen overflow-auto`
+  const ContentWrapper = tw.div`m-auto`
 
   return (
     <Transition
@@ -29,7 +29,7 @@ export const Modal = () => {
       >
         <Dialog.Overlay tw="bg-modal fixed h-full w-full opacity-100 inset-0" />
         <Dialog.Panel
-          tw="fixed m-auto overflow-auto cursor-pointer min-w-full min-h-full"
+          tw="fixed m-auto overflow-auto cursor-pointer h-screen w-screen flex items-center"
           onClick={() => setIsModalOpen(!isModalOpen)}
         >
           <ContentWrapper>{modalContent}</ContentWrapper>
