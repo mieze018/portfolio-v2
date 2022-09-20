@@ -1,4 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
 import { useRecoilState } from 'recoil'
 import tw from 'twin.macro'
 
@@ -12,12 +13,13 @@ export const Modal = () => {
   return (
     <Transition
       show={isModalOpen}
-      enter="transition duration-100 ease-out"
-      enterFrom="transform scale-95 opacity-0"
-      enterTo="transform scale-100 opacity-100"
-      leave="transition duration-75 ease-out"
-      leaveFrom="transform scale-100 opacity-100"
-      leaveTo="transform scale-95 opacity-0"
+      enter="transition duration-200"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition duration-100 ease-out"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+      as={Fragment}
     >
       <Dialog
         tw="fixed inset-0 z-50 w-full h-full overflow-auto"
@@ -26,22 +28,13 @@ export const Modal = () => {
           setIsModalOpen(!isModalOpen)
         }}
       >
-        <Transition.Child
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+        <Dialog.Overlay tw="bg-body fixed h-full w-full opacity-95 inset-0" />
+        <Dialog.Panel
+          tw="fixed m-auto overflow-auto cursor-pointer min-w-full min-h-full"
+          onClick={() => setIsModalOpen(!isModalOpen)}
         >
-          <Dialog.Overlay tw="bg-white fixed h-full w-full opacity-95 inset-0" />
-          <Dialog.Panel
-            tw="fixed m-auto overflow-auto cursor-pointer min-w-full min-h-full"
-            onClick={() => setIsModalOpen(!isModalOpen)}
-          >
-            <ContentWrapper>{modalContent}</ContentWrapper>
-          </Dialog.Panel>
-        </Transition.Child>
+          <ContentWrapper>{modalContent}</ContentWrapper>
+        </Dialog.Panel>
       </Dialog>
     </Transition>
   )
