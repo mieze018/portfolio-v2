@@ -8,8 +8,8 @@ import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
-import GoogleAnalytics from 'components/Atoms/GoogleAnalytics'
 import Layout from 'components/Layout/Default'
+import { GoogleAnalytics, usePageView } from 'libs/gtag'
 import { getUserAgent } from 'libs/nextjs-device-detect'
 
 function MyApp({
@@ -18,6 +18,7 @@ function MyApp({
   router,
   userAgent,
 }: AppProps & { userAgent: userAgentType }) {
+  usePageView()
   return (
     <RecoilRoot>
       <Layout userAgent={userAgent}>
