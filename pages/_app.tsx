@@ -8,6 +8,7 @@ import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
+import GoogleAnalytics from 'components/Atoms/GoogleAnalytics'
 import Layout from 'components/Layout/Default'
 import { getUserAgent } from 'libs/nextjs-device-detect'
 
@@ -20,6 +21,7 @@ function MyApp({
   return (
     <RecoilRoot>
       <Layout userAgent={userAgent}>
+        <GoogleAnalytics />
         <ContentsWrapper $key={router.asPath}>
           <Component {...pageProps} />
         </ContentsWrapper>
