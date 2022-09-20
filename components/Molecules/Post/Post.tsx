@@ -9,8 +9,8 @@ import { PostFooter } from 'components/Molecules/Post/PostFooter'
 const Article = styled(motion.article)`
   ${tw`flex flex-col items-center justify-center flex-wrap
     max-w-full lg:max-w-screen-md 2xl:max-w-screen-lg
-    mx-auto px-[2.618vw] py-32
-    min-h-61vh
+    mx-auto px-[2.618vw] pb-64
+    min-h-g-61vh
    `}
 `
 

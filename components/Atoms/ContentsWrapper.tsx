@@ -42,7 +42,7 @@ export const ContentsWrapper = ({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.1 }}
         css={[
-          tw`relative px-0 py-6 top-golden38vh pt-golden23vh`,
+          tw`relative px-0 py-6 top-g-38vh pt-g-14vh`,
           css`
             transform: translate(0, -10em);
             animation: ${sunkShort} 3s 0s ease-out forwards;
