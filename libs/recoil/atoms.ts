@@ -13,3 +13,7 @@ export const modalContentState = atom<JSX.Element | null>({
   key: "modalContent",
   default: null,
 });
+export const userAgentState = atom<string | null>({
+  key: "userAgent",
+  default: null,
+});

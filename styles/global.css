@@ -6,7 +6,6 @@
   html {
     /* @apply scroll-smooth; //ページ移管時にスムーズにスクロールして欲しくない */
     text-size-adjust: 100%;
-    &.gecko,
     &.android {
       @apply text-sm;
     }

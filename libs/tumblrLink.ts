@@ -1,7 +1,11 @@
 // TODO:絶対もっといいやり方ある
 
+import { useRecoilState } from "recoil"
+
+
 export const addAgentToHtml = () => {
-  console.log()
+  const [userAgent] = useRecoilState(userAgentState)
+  console.log(userAgent)
   // {
   //   const userAgent = window.navigator.userAgent.toLowerCase()
   //   //モバイルの時
