@@ -10,8 +10,9 @@ import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/Header/TopBar'
 import { Modal } from 'components/Organisms/Modal'
+import { getUserAgent } from 'libs/nextjs-device-detect'
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps, router, userAgent }: AppProps & { userAgent: string }) {
   return (
     <RecoilRoot>
       <TopBar />
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 MyApp.getInitialProps = async (appContext: AppContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext)
+  const userAgent = getUserAgent(appContext.ctx.req)
 
   if (appContext.ctx.res?.statusCode === 404) {
     appContext.ctx.res.writeHead(302, { Location: '/' })
@@ -34,7 +36,7 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
     return
   }
 
-  return { ...appProps }
+  return { ...appProps, userAgent }
 }
 
 export default MyApp
