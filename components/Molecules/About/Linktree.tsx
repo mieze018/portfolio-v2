@@ -1,7 +1,7 @@
 import type { LocalApi } from 'libs/@type/api/local'
 
-import { SectionWrapper, Hr, P, SnsLink } from 'components/Molecules/Info/Atoms'
-import { linktree } from 'pages/api/info/links'
+import { SectionWrapper, Hr, P, SnsLink } from 'components/Molecules/About/Atoms'
+import { linktree } from 'pages/api/about/links'
 
 export const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
   <SectionWrapper>
