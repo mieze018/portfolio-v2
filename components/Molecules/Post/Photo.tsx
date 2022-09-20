@@ -13,40 +13,27 @@ const FlexItem = styled.div<{ $isColumn: boolean }>`
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
   const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState)
   const setModalContent = useSetRecoilState(modalContentState)
+  const ImageElement = styled(Image).attrs({
+    src: photo.original_size.url,
+    alt: photo.original_size.url,
+    key: photo.original_size.url,
+    height: photo.original_size.height,
+    width: photo.original_size.width,
+  })<{ closeup?: boolean }>`
+    ${tw`mx-auto cursor-pointer `}
+    ${({ closeup }) => (closeup ? tw`max-w-none` : tw`max-w-full`)}
+  `
+
   return (
     <>
       <FlexItem
         $isColumn={isColumn}
         onClick={() => {
           setIsModalOpen(!isModalOpen)
-          setModalContent(
-            <Image
-              className="m-auto"
-              src={photo.original_size.url}
-              alt={photo.original_size.url}
-              key={photo.original_size.url}
-              height={photo.original_size.height}
-              width={photo.original_size.width}
-              //image/next
-              quality={85}
-              // placeholder="blur"
-              // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
-            />
-          )
+          setModalContent(<ImageElement closeup quality={95} />)
         }}
       >
-        <Image
-          css={tw`mx-auto hover:cursor-zoom-in`}
-          src={photo.original_size.url}
-          alt={photo.original_size.url}
-          key={photo.original_size.url}
-          height={photo.original_size.height}
-          width={photo.original_size.width}
-          //image/next
-          quality={85}
-          // placeholder="blur"
-          // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
-        />
+        <ImageElement />
       </FlexItem>
     </>
   )
