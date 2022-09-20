@@ -8,7 +8,7 @@ import { isModalOpenState, modalContentState } from 'libs/recoil/atoms'
 export const Modal = () => {
   const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenState)
   const [modalContent] = useRecoilState(modalContentState)
-  const ContentWrapper = tw.div`m-auto`
+  const ContentWrapper = tw.div`m-auto p-4`
 
   return (
     <Transition
