@@ -97,6 +97,9 @@ module.exports = {
         'g-14': '14.58659418%'//'calc(100% * 0.618 * 0.618 * 0.618 * 0.618)',
       },
       minHeight: {
+        '85vh': '85.4134vh',
+        '61vh': '61.8033vh',
+
         square: 'calc((92vh + 92vw) /2)',
         golden61vw: '61.8vw',
         golden61vh: '61.8vh',
@@ -106,6 +109,10 @@ module.exports = {
         golden23vh: '23.6vh',
         golden14vw: '14.6vw',
         golden14vh: '14.6vh',
+      },
+      maxHeight: {
+        '100vh': '100vh',
+        '61vh': '61.8vh',
       },
       minWidth: {
         square: 'calc((92vh + 92vw) /2)',
@@ -120,6 +127,8 @@ module.exports = {
       },
       maxWidth: {
         square: 'calc((92vh + 92vw) /2)',
+        '100w': '100vh',
+        '61vw': '61.8033vw',
         golden61vw: '61.8vw',
         golden61vh: '61.8vh',
         golden38vw: '38.2vw',
