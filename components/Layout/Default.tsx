@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useSetRecoilState } from 'recoil'
 
+import type { userAgentType } from 'libs/recoil/atoms'
+
 import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/Header/TopBar'
 import { Modal } from 'components/Organisms/Modal'
@@ -12,7 +14,7 @@ export default function Layout({
   userAgent,
 }: {
   children: React.ReactNode
-  userAgent: string
+  userAgent: userAgentType
 }) {
   const setUserAgent = useSetRecoilState(userAgentState)
   useEffect(() => {

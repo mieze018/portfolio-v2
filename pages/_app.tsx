@@ -3,6 +3,7 @@ import 'libs/i18n/config'
 import App from 'next/app'
 import { RecoilRoot } from 'recoil'
 
+import type { userAgentType } from 'libs/recoil/atoms'
 import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
@@ -10,7 +11,12 @@ import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import Layout from 'components/Layout/Default'
 import { getUserAgent } from 'libs/nextjs-device-detect'
 
-function MyApp({ Component, pageProps, router, userAgent }: AppProps & { userAgent: string }) {
+function MyApp({
+  Component,
+  pageProps,
+  router,
+  userAgent,
+}: AppProps & { userAgent: userAgentType }) {
   return (
     <RecoilRoot>
       <Layout userAgent={userAgent}>
