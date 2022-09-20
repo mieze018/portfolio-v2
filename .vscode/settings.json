@@ -26,7 +26,8 @@
     "pixiv",
     "reblog",
     "strapi",
-    "welle"
+    "welle",
+    "gtag"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
