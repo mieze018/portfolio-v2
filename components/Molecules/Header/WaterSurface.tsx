@@ -9,7 +9,7 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
       top: 0; /* 上部のボケを隠すため少し上に上げる */
-      ${tw`h-golden23vh duration-[10s,1s,10s]`}
+      ${tw`h-g-23vh duration-[10s,1s,10s]`}
       filter: blur(4px) brightness(1.05);
     `
   if (scrollStates.sunk)
@@ -22,7 +22,7 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.sinking)
     return css`
       top: -1vh;
-      ${tw`h-golden14vh`}
+      ${tw`h-g-14vh`}
       filter: blur(1px) brightness(1.01);
       transition-duration: 10000ms, 1000ms, 8000ms;
     `
@@ -37,7 +37,7 @@ const wave = keyframes`
   100% {transform: matrix(1, 0.03, 0, 1, 0, 0);}` /* 残り126秒かけて水平に元に戻る */
 
 export const WaterSurface = styled.div`
-  ${tw`fixed top-0 z-10 w-full bg-scroll bg-no-repeat h-golden23vh`}
+  ${tw`fixed top-0 z-10 w-full bg-scroll bg-no-repeat h-g-23vh`}
   background-image:url('img/surface.webp');
   filter: blur(0) brightness(1);
   background-size: 120% 100%;

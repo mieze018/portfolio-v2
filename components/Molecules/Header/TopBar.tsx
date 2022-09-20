@@ -11,7 +11,7 @@ import { description, title } from 'pages/api/basics'
 
 export const TopBar = () => {
   const Flare = styled.div`
-    ${tw`fixed top-0 z-10 w-full h-golden14vh opacity-80 `}
+    ${tw`fixed top-0 z-10 w-full h-g-14vh opacity-80 `}
     background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
   `
   const Title = tw.h1`mb-1 text-2xl xs:text-3xl tracking-title`

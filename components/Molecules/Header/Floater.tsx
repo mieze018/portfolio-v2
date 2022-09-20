@@ -19,6 +19,6 @@ export const Floater = styled(motion.header).attrs({
 })`
   ${tw`text-sm text-center w-full m-auto
   z-10 mb-0 min-h-[2em] 
-  sticky mt-golden23vh top-0 opacity-0
+  sticky mt-g-23vh top-0 opacity-0
   `}
 `

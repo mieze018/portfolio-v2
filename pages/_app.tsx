@@ -9,6 +9,7 @@ import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import { Footer } from 'components/Molecules/Footer'
 import { TopBar } from 'components/Molecules/Header/TopBar'
+import { Modal } from 'components/Organisms/Modal'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <ContentsWrapper $key={router.asPath}>
         <Component {...pageProps} />
       </ContentsWrapper>
+      <Modal />
       <Footer />
     </RecoilRoot>
   )

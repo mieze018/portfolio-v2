@@ -24,10 +24,6 @@
       @apply opacity-100 text-darkest blur-0;
     }
   }
-  div,
-  article {
-    @apply max-w-full;
-  }
 
   svg:not(:root) {
     @apply overflow-hidden;
