@@ -13,13 +13,19 @@
 - Recoil <https://recoiljs.org/>
 - i18next <https://www.i18next.com/>
 
-### スタイルのためのライブラリ
+### スタイル, UI のためのライブラリ
 
 - twin.macro <https://github.com/ben-rogerson/twin.macro>
   - [next-styled-components-typescript](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript)
   - Tailwind CSS <https://tailwindcss.com/>
     - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
+    - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar>
   - Styled Components <https://styled-components.com/>
+  - Headless UI <https://headlessui.com/>
+
+### スタイルのための資料
+
+W3C color names <https://www.computerhope.com/jargon/w/w3c-color-names.htm>
 
 #### アニメーション
 
