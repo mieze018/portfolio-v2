@@ -6,7 +6,6 @@ import { Nav } from 'components/Molecules/Header/Nav'
 import { NavLinks } from 'components/Molecules/Header/NavLink'
 import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { routes } from 'libs/routes'
-import { addAgentToHtml } from 'libs/tumblrLink'
 import { description, title } from 'pages/api/basics'
 
 export const TopBar = () => {

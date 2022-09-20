@@ -178,7 +178,7 @@ export namespace Tumblr {
 
   export interface AltSize {
     url: string
-    width: number
+    width: 1280 | 500 | 250 | 100 | 50
     height: number
   }
 }
