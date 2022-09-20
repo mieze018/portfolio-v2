@@ -1,6 +1,35 @@
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    colors: {
+      White: 'White',
+      Water: '#EBF4FA',
+      Snow: 'Snow',
+      WhiteSmoke: 'WhiteSmoke',
+      GhostWhite: 'GhostWhite',
+      AliceBlue: 'AliceBlue',
+      MintCream: 'MintCream',
+      Azure: 'Azure',
+      HoneyDew: 'HoneyDew',
+      LightCyan: 'LightCyan',
+    },
+    backgroundImage: {
+      body: `linear-gradient(
+      to top,
+        WhiteSmoke 0%,
+        #EBF4FA 61.8%,
+        AliceBlue 76.4%,
+        Azure 85.4%,
+        MintCream 100%
+      )`,
+      modal: `linear-gradient(
+      to bottom,
+        WhiteSmoke 0%,
+        #EBF4FA 61.8%,
+        AliceBlue 85.4%,
+        GhostWhite 100%
+      )`,
+    },
     textColor: {
       primary: '#888',
       secondary: '#797979',
@@ -59,6 +88,13 @@ module.exports = {
         golden23vh: '23.6vh',
         golden14vw: '14.6vw',
         golden14vh: '14.6vh',
+        'g-85': '85.4134%',//'calc(100% - (100% * 0.618 * 0.618 * 0.618 * 0.618))',
+        'g-76': '76.3971%',//'calc(100% - (100% * 0.618 * 0.618 * 0.618))',
+        'g-100-38': '61.8076%',//'calc(100% * 0.618)',
+        'g-61': '61.8033%',//'calc(100% * 0.618)',
+        'g-38': '38.1924%',//'calc(100% * 0.618 * 0.618)',
+        'g-23': '23.6029032%',//'calc(100% * 0.618 * 0.618 * 0.618)',
+        'g-14': '14.58659418%'//'calc(100% * 0.618 * 0.618 * 0.618 * 0.618)',
       },
       minHeight: {
         square: 'calc((92vh + 92vw) /2)',
@@ -108,15 +144,6 @@ module.exports = {
       },
       screens: {
         xs: '375px',
-      },
-      backgroundImage: {
-        body: `linear-gradient(
-          to bottom,
-          rgb(245 245 245 / 100%) 0%,
-          rgb(237 251 255 / 100%) 16%,
-          rgb(237 245 247 / 100%) 24%,
-          rgb(255 255 255 / 100%) 100%
-        );`
       }
     },
   },

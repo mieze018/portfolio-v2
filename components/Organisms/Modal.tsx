@@ -23,12 +23,11 @@ export const Modal = () => {
     >
       <Dialog
         tw="fixed inset-0 z-50 w-full h-full overflow-auto"
-        open={isModalOpen}
         onClose={() => {
           setIsModalOpen(!isModalOpen)
         }}
       >
-        <Dialog.Overlay tw="bg-body fixed h-full w-full opacity-95 inset-0" />
+        <Dialog.Overlay tw="bg-modal fixed h-full w-full opacity-100 inset-0" />
         <Dialog.Panel
           tw="fixed m-auto overflow-auto cursor-pointer min-w-full min-h-full"
           onClick={() => setIsModalOpen(!isModalOpen)}
