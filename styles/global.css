@@ -6,9 +6,6 @@
   html {
     /* @apply scroll-smooth; //ページ移管時にスムーズにスクロールして欲しくない */
     text-size-adjust: 100%;
-    &.android {
-      @apply text-sm;
-    }
   }
   body {
     @apply text-primary leading-normal tracking-wider bg-fixed font-serif bg-body;
