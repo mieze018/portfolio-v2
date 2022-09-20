@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
-import { P, Hr } from 'components/Molecules/Info/Atoms'
+import { P, Hr } from 'components/Molecules/About/Atoms'
 
 export const Events = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()

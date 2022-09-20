@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import { SectionWrapper, P } from 'components/Molecules/Info/Atoms'
+import { SectionWrapper, P } from 'components/Molecules/About/Atoms'
 import { mail } from 'pages/api/basics'
 
 export const Introduction = () => {

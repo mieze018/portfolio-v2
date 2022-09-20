@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
-import { H2, Hr, SectionWrapper, UlNest1 } from 'components/Molecules/Info/Atoms'
-import { Work } from 'components/Molecules/Info/Work'
+import { H2, Hr, SectionWrapper, UlNest1 } from 'components/Molecules/About/Atoms'
+import { Work } from 'components/Molecules/About/Work'
 
 export const WorkExperience = ({
   workExperience,

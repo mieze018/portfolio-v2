@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-import { SectionWrapper, Hr, H2 } from 'components/Molecules/Info/Atoms'
+import { SectionWrapper, Hr, H2 } from 'components/Molecules/About/Atoms'
 
 export const Prizes = () => {
   const { t } = useTranslation()

@@ -16,7 +16,7 @@ const navLinks = ({ className }: { className: string }) => {
         commissioned work
       </a>
       <a href="/aaa" className={className}>
-        info
+        about
       </a>
     </>
   )
