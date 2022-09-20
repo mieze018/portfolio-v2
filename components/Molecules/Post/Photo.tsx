@@ -19,9 +19,9 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
     key: photo.original_size.url,
     height: photo.original_size.height,
     width: photo.original_size.width,
-  })<{ closeup?: boolean }>`
+  })<{ $closeup?: boolean }>`
     ${tw`mx-auto cursor-pointer `}
-    ${({ closeup }) => (closeup ? tw`max-w-none` : tw`max-w-full`)}
+    ${({ $closeup }) => ($closeup ? tw`max-w-none` : tw`max-w-full`)}
   `
 
   return (
@@ -30,7 +30,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
         $isColumn={isColumn}
         onClick={() => {
           setIsModalOpen(!isModalOpen)
-          setModalContent(<ImageElement closeup quality={95} />)
+          setModalContent(<ImageElement $closeup quality={95} />)
         }}
       >
         <ImageElement />
