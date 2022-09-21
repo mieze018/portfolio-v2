@@ -1,16 +1,15 @@
-import { atom } from "recoil";
+import { atom } from 'recoil'
 
 export const contentsWrapperState = atom<HTMLElement | null>({
-  key: "contentsWrapper",
+  key: 'contentsWrapper',
   default: null,
-});
-
+})
 
 export const modalContentState = atom<JSX.Element | null>({
-  key: "modalContent",
+  key: 'modalContent',
   default: null,
-});
+})
 export const userAgentState = atom<string | null>({
-  key: "userAgent",
+  key: 'userAgent',
   default: null,
-});
+})
