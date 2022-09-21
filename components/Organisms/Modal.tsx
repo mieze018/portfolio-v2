@@ -1,4 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react'
+import router from 'next/router'
 import { Fragment, useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import tw from 'twin.macro'
@@ -16,7 +17,11 @@ export const Modal = () => {
 
   //ハッシュ値がcloseupならモーダルを開く
   useEffect(() => {
-    hash === hashCloseup ? setIsModalOpen(true) : setIsModalOpen(false)
+    const onHashChangeStart = () =>
+      hash === hashCloseup ? setIsModalOpen(true) : setIsModalOpen(false)
+    onHashChangeStart()
+    router.events.on('hashChangeStart', onHashChangeStart)
+    router.events.on('hashChangeComplete', onHashChangeStart)
   }, [hash, setIsModalOpen])
 
   return (
@@ -30,16 +35,11 @@ export const Modal = () => {
       leaveTo="opacity-0"
       as={Fragment}
     >
-      <Dialog
-        tw="fixed inset-0 z-50 w-full h-full"
-        onClose={() => setIsModalOpen(false)}
-        id={hashCloseup}
-      >
+      <Dialog tw="fixed inset-0 z-50 w-full h-full" onClose={() => setIsModalOpen(false)}>
         <Dialog.Overlay tw="bg-modal fixed h-full w-full opacity-100 inset-0" />
         <Dialog.Panel
           tw="fixed m-auto cursor-pointer h-screen w-screen flex items-center
-          overflow-auto scrollbar-thin scrollbar-thumb-Azure scrollbar-corner-transparent
-          "
+          overflow-auto scrollbar-thin scrollbar-thumb-Azure scrollbar-corner-transparent "
           onClick={() => setHash('')}
         >
           <ContentWrapper>{modalContent}</ContentWrapper>
