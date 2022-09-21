@@ -19,7 +19,7 @@
   - [next-styled-components-typescript](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript)
   - Tailwind CSS <https://tailwindcss.com/>
     - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
-    - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar>
+    - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar> overflow:overlayが不都合なのでオミット
   - Styled Components <https://styled-components.com/>
   - Headless UI <https://headlessui.com/>
 
