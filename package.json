@@ -27,6 +27,7 @@
     "printWidth": 100
   },
   "dependencies": {
+    "@formspree/react": "^2.4.0",
     "@headlessui/react": "^1.7.2",
     "framer-motion": "^7.3.2",
     "i18next": "^21.9.1",
