@@ -16,9 +16,9 @@ export const GlobalStyle = createGlobalStyle<{ userAgent: string | null }>`
     text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(var(--color-main) / 16%);
     ${props => (props.userAgent === 'Android' ? tw`text-sm` : tw`text-base`)}
     ${tw`scrollbar-thin scrollbar-thumb-main/20`}//スクロールバー
-    &::after{
+    &::before{
       content: "";
-    ${tw`fixed inset-0 block w-full h-full min-h-screen bg-body -z-1`}//背景
+    ${tw`fixed inset-0 block w-[300%] mx-auto h-full min-h-screen bg-body -z-1`}//背景
     }
   }
 `
