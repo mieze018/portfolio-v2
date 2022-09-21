@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
+
+// URL の # 以降の文字列を取り出すユーティリティ
+const extractHash = (url: string): string => url.split('#')[1] ?? ''
 
 /**
  * URL のハッシュフラグメント部分を扱うためのフックです。
@@ -11,17 +14,16 @@ import { useCallback } from 'react'
  * const [hash, setHash] = useHash()
  * ```
  */
+
 export function useHash(): [string, (newHash: string) => void] {
   const router = useRouter()
+
+
   const hash = extractHash(router.asPath)
   const setHash = useCallback((newHash: string) => {
-    // ブラウザの履歴に残すなら、ここを router.push に変えれば OK
-    router.replace({ hash: newHash }, undefined, { shallow: true })
+    // ブラウザの履歴に残すならrouter.push, そうでなければrouter.replace
+    router.push({ hash: newHash }, undefined, { shallow: true, scroll: false })
   }, [])
   return [hash, setHash]
 }
 
-// URL の # 以降の文字列を取り出すユーティリティ
-function extractHash(url: string): string {
-  return url.split('#')[1] ?? ''
-}
