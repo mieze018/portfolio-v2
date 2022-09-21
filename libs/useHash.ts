@@ -17,12 +17,10 @@ const extractHash = (url: string): string => url.split('#')[1] ?? ''
 
 export function useHash(): [string, (newHash: string) => void] {
   const router = useRouter()
-
-
   const hash = extractHash(router.asPath)
   const setHash = useCallback((newHash: string) => {
     // ブラウザの履歴に残すならrouter.push, そうでなければrouter.replace
-    router.push({ hash: newHash }, undefined, { shallow: true, scroll: false })
+    router.replace({ hash: newHash }, undefined, { shallow: true, scroll: false })
   }, [])
   return [hash, setHash]
 }
