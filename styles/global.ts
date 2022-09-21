@@ -17,7 +17,6 @@ export const GlobalStyle = createGlobalStyle<{ ua?: UserAgent | null }>`
     text-size-adjust: 100%;
     text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(var(--color-main) / 16%);
     ${props => (props.ua?.isDesktop ? tw`text-base` : tw`text-sm`)}
-    ${tw`scrollbar-thin scrollbar-thumb-main/20`}//スクロールバー
     &::before{
       content: "";
     ${tw`fixed inset-0 block w-full h-full min-h-screen bg-body -z-1`}//背景

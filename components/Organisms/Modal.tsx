@@ -16,7 +16,7 @@ export const Modal = () => {
 
   return (
     <Transition show={isShow} as={Fragment}>
-      <Dialog tw="fixed inset-0 z-50 w-full h-full" onClose={() => setHash('')}>
+      <Dialog tw="fixed inset-0 z-50 w-full h-full" open={isShow} onClose={() => setHash('')}>
         <Transition.Child
           as={Fragment}
           enter=""
@@ -38,8 +38,7 @@ export const Modal = () => {
           leaveTo="opacity-0"
         >
           <Dialog.Panel
-            tw="fixed m-auto cursor-pointer h-screen w-screen flex items-center
-          overflow-auto scrollbar-thin scrollbar-thumb-Azure scrollbar-corner-transparent "
+            tw="fixed m-auto cursor-pointer h-screen w-full flex items-center overflow-auto"
             onClick={() => setHash('')}
           >
             <ContentWrapper>{modalContent}</ContentWrapper>
