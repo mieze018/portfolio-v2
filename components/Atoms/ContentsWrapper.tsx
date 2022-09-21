@@ -22,6 +22,11 @@ export const ContentsWrapper = ({
   0% {transform: translate(0, -1em);}
   100% {transform: translate(0, 0);}
 `
+  const styles = {
+    sunk: css`
+      animation: ${sunkShort} 3s 0s ease-out forwards;
+    `,
+  }
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapperState = useSetRecoilState(contentsWrapperState)
 
@@ -47,10 +52,7 @@ export const ContentsWrapper = ({
         transition={{ duration: 0.1 }}
         css={[
           tw`relative px-0 py-6 top-g-38vh pt-g-14vh`,
-          ua?.isDesktop &&
-            css`
-              animation: ${sunkShort} 3s 0s ease-out forwards;
-            `,
+          userAgent && ua.isDesktop ? styles.sunk : '',
         ]}
         onLoad={() => setContentsWrapperState(ref.current)}
       >
