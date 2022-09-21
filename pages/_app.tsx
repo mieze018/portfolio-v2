@@ -23,7 +23,8 @@ function MyApp({
     <RecoilRoot>
       <Layout userAgent={userAgent}>
         <GoogleAnalytics />
-        <ContentsWrapper $key={router.asPath}>
+        {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
+        <ContentsWrapper $key={router.pathname}>
           <Component {...pageProps} />
         </ContentsWrapper>
       </Layout>

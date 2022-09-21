@@ -16,22 +16,22 @@ export const ContentsWrapper = ({
 }) => {
   const [userAgent] = useRecoilState(userAgentState)
   const sunkShort = keyframes`
-0% {transform: translate(0, -1em);}
-100% {transform: translate(0, 0);}
+  0% {transform: translate(0, -1em);}
+  100% {transform: translate(0, 0);}
 `
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapperState = useSetRecoilState(contentsWrapperState)
+
   useEffect(() => {
     setContentsWrapperState(ref.current)
   }, [setContentsWrapperState, ref, $key])
-  useEffect(() => {
-    //現在のスクロール位置がコンテンツラッパーより下ならコンテンツラッパーの上部までスクロール
-    // if (window.scrollY > 0) ref.current?.scrollIntoView(true)
-  }, [])
+
   return (
     <AnimatePresence
       mode="wait"
       onExitComplete={() => {
+        //現在のスクロール位置がコンテンツラッパーより下ならコンテンツラッパーの上部までスクロール
+        // if (window.scrollY > 0) ref.current?.scrollIntoView(true)
         ref.current?.scrollIntoView(true)
       }}
     >
