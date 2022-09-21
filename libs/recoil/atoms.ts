@@ -13,8 +13,7 @@ export const modalContentState = atom<JSX.Element | null>({
   key: "modalContent",
   default: null,
 });
-export type userAgentType = "Android" | "iOS" | "other";
-export const userAgentState = atom<userAgentType | null>({
+export const userAgentState = atom<string | null>({
   key: "userAgent",
   default: null,
 });

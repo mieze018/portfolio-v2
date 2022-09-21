@@ -1,8 +1,7 @@
+import { useUserAgent } from 'next-useragent'
 import { useEffect } from 'react'
 import { useSetRecoilState } from 'recoil'
 import tw from 'twin.macro'
-
-import type { userAgentType } from 'libs/recoil/atoms'
 
 import { Footer } from 'components/Molecules/Footer'
 import { Nav } from 'components/Molecules/Header/Nav'
@@ -15,24 +14,26 @@ import { GlobalStyle } from 'styles/global'
 
 export default function Layout({
   children,
-  userAgent,
+  uaString,
 }: {
   children: React.ReactNode
-  userAgent: userAgentType
+  uaString: string
 }) {
   const setUserAgent = useSetRecoilState(userAgentState)
+
   useEffect(() => {
-    if (userAgent) {
-      setUserAgent(userAgent)
-    }
-  }, [setUserAgent, userAgent])
+    if (uaString) setUserAgent(uaString)
+  }, [setUserAgent, uaString])
+
+  const ua = useUserAgent(uaString)
+
   return (
     <>
-      <GlobalStyle userAgent={userAgent ?? ''} />
+      <GlobalStyle ua={ua ?? ''} />
       <TopBar />
       {children}
       {/* スマホの時だけ下にもナビを置く */}
-      {userAgent !== 'other' && (
+      {ua.isMobile && (
         <Nav css={tw`relative mb-3 top-g-38vh blur-0`}>
           <NavLinks routes={routes} />
         </Nav>

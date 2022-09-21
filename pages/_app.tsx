@@ -1,27 +1,21 @@
 import 'libs/i18n/config'
 
+import { useUserAgent } from 'next-useragent'
 import App from 'next/app'
 import { RecoilRoot } from 'recoil'
 
-import type { userAgentType } from 'libs/recoil/atoms'
 import type { AppContext, AppProps } from 'next/app'
 
 import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import Layout from 'components/Layout/Default'
 import { GoogleAnalytics, usePageView } from 'libs/gtag'
-import { getUserAgent } from 'libs/nextjs-device-detect'
 
-function MyApp({
-  Component,
-  pageProps,
-  router,
-  userAgent,
-}: AppProps & { userAgent: userAgentType }) {
+function MyApp({ Component, pageProps, router, uaString }: AppProps & { uaString: string }) {
   usePageView()
   return (
     <RecoilRoot>
-      <Layout userAgent={userAgent}>
+      <Layout uaString={uaString}>
         <GoogleAnalytics />
         {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
         <ContentsWrapper $key={router.pathname}>
@@ -35,7 +29,7 @@ function MyApp({
 MyApp.getInitialProps = async (appContext: AppContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext)
-  const userAgent = getUserAgent(appContext.ctx.req)
+  const uaString = appContext?.ctx?.req?.headers['user-agent'] || ''
 
   if (appContext.ctx.res?.statusCode === 404) {
     appContext.ctx.res.writeHead(302, { Location: '/' })
@@ -43,7 +37,7 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
     return
   }
 
-  return { ...appProps, userAgent }
+  return { ...appProps, uaString }
 }
 
 export default MyApp
