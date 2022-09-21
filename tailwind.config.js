@@ -4,6 +4,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       White: 'White',
+      main: 'rgb(var(--color-main)/ <alpha-value>)',
       Water: '#EBF4FA',
       Snow: 'Snow',
       WhiteSmoke: 'WhiteSmoke',
