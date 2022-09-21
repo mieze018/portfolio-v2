@@ -103,6 +103,10 @@ module.exports = {
       minHeight: {
         'g-61vh': '61.8vh',
       },
+      minWidth: {
+        'screen': '100vw',
+        'g-61vh': '61.8vh',
+      },
       transitionProperty: {
         header: {
           'transition-property': 'all',
