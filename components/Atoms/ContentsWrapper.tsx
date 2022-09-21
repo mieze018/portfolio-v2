@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import { useUserAgent } from 'next-useragent'
 import { useEffect, useRef } from 'react'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import { keyframes } from 'styled-components'
@@ -15,6 +16,8 @@ export const ContentsWrapper = ({
   $key: string
 }) => {
   const [userAgent] = useRecoilState(userAgentState)
+  const ua = useUserAgent(userAgent ?? '')
+
   const sunkShort = keyframes`
   0% {transform: translate(0, -1em);}
   100% {transform: translate(0, 0);}
@@ -44,7 +47,7 @@ export const ContentsWrapper = ({
         transition={{ duration: 0.1 }}
         css={[
           tw`relative px-0 py-6 top-g-38vh pt-g-14vh`,
-          userAgent === 'other' &&
+          ua?.isDesktop &&
             css`
               animation: ${sunkShort} 3s 0s ease-out forwards;
             `,
