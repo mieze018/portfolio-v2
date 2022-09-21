@@ -25,7 +25,8 @@
 
 ### スタイルのための資料
 
-W3C color names <https://www.computerhope.com/jargon/w/w3c-color-names.htm>
+- W3C color names <https://www.w3schools.com/colors/colors_names.asp>
+- Color Name Finder <https://colors.artyclick.com/color-name-finder/>
 
 #### アニメーション
 

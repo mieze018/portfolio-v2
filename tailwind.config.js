@@ -1,18 +1,21 @@
+
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       transparent: 'transparent',
-      White: 'White',
+      black: '#000',
+      white: '#fff',
+      main: '#FF7F00',// rgb(255 124 0)
       Water: '#EBF4FA',
-      Snow: 'Snow',
-      WhiteSmoke: 'WhiteSmoke',
-      GhostWhite: 'GhostWhite',
-      AliceBlue: 'AliceBlue',
-      MintCream: 'MintCream',
-      Azure: 'Azure',
-      HoneyDew: 'HoneyDew',
-      LightCyan: 'LightCyan',
+      Snow: '##FFFAFA',
+      WhiteSmoke: '#F5F5F5',
+      GhostWhite: '#F8F8FF',
+      AliceBlue: '#F0F8FF',
+      MintCream: '#F5FFFA',
+      Azure: '#F0FFFF',
+      HoneyDew: '#F0FFF0',
+      LightCyan: '#E0FFFF',
     },
     backgroundImage: {
       body: `linear-gradient(
@@ -20,7 +23,7 @@ module.exports = {
         WhiteSmoke 0%,
         #EBF4FA 61.8%,
         AliceBlue 76.4%,
-        Azure 85.4%,
+        azure 85.4%,
         MintCream 100%
       )`,
       modal: `linear-gradient(
