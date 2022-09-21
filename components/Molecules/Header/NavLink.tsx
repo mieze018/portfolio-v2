@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import tw, { styled } from 'twin.macro'
 
 const A = styled.a<{ isCurrent: boolean }>`
-  ${tw`inline-block m-2 cursor-pointer xs:m-3 mix-blend-multiply xs:tracking-widest`}
+  ${tw`inline-block m-1 mt-3 cursor-pointer md:m-2 mix-blend-multiply xs:tracking-widest`}
   ${({ isCurrent }) => isCurrent && tw`underline cursor-default hover:text-secondary`}
 `
 export const NavLinks = ({
