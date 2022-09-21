@@ -1,13 +1,12 @@
-import { useScroll } from "framer-motion";
-import { useState, useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useScroll } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { useRecoilState } from 'recoil'
 
-
-import { contentsWrapperState } from "libs/recoil/atoms";
+import { contentsWrapperState } from 'libs/recoil/atoms'
 
 export type scrollStatesType = {
-  scrollY?: number;
-  contentsWrapperScrollTop?: number;
+  scrollY?: number
+  contentsWrapperScrollTop?: number
   init: boolean
   sinking: boolean
   sunk: boolean
@@ -32,4 +31,4 @@ export const useScrollState = () => {
     sinking: scrollTop > 0 && scrollTop < contentsWrapperScrollTop,
     sunk: scrollTop >= contentsWrapperScrollTop,
   }
-};
+}

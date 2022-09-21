@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { useEffect } from 'react'
 
-export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
+const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
 
 type ContactEvent = {
   action: 'submit_form'
@@ -16,21 +16,19 @@ type ClickEvent = {
   label: string
 }
 
-export type Event = ContactEvent | ClickEvent
+type Event = ContactEvent | ClickEvent
 // IDが取得できない場合を想定する
-export const existsGaId = GA_ID !== ''
+const existsGaId = GA_ID !== ''
 
 // PVを測定する
-export const pageView = (path: string) => {
+const pageView = (path: string) => {
   window.gtag('config', GA_ID, {
     page_path: path,
   })
 }
-// GAイベントを発火させる
+// GAイベントを発火させる 使いたいとこで使う
 export const event = ({ action, category, label }: Event) => {
-  if (!existsGaId) {
-    return
-  }
+  if (!existsGaId) return
 
   window.gtag('event', action, {
     event_category: category,
