@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
 
 // URL の # 以降の文字列を取り出すユーティリティ
 const extractHash = (url: string): string => url.split('#')[1] ?? ''
@@ -21,7 +21,7 @@ export function useHash(): [string, (newHash: string) => void] {
   const setHash = useCallback((newHash: string) => {
     // ブラウザの履歴に残すならrouter.push, そうでなければrouter.replace
     router.replace({ hash: newHash }, undefined, { shallow: true, scroll: false })
-  }, [])
+  }, [router])
   return [hash, setHash]
 }
 

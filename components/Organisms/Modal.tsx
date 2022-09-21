@@ -32,9 +32,7 @@ export const Modal = () => {
     >
       <Dialog
         tw="fixed inset-0 z-50 w-full h-full"
-        onClose={() => {
-          setIsModalOpen(false)
-        }}
+        onClose={() => setIsModalOpen(false)}
         id={hashCloseup}
       >
         <Dialog.Overlay tw="bg-modal fixed h-full w-full opacity-100 inset-0" />
