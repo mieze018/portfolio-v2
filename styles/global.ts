@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle<{ userAgent: string | null }>`
     ${tw`scrollbar-thin scrollbar-thumb-main/20`}//スクロールバー
     &::before{
       content: "";
-    ${tw`fixed inset-0 block w-[300%] mx-auto h-full min-h-screen bg-body -z-1`}//背景
+    ${tw`fixed inset-0 block w-full h-full min-h-screen bg-body -z-1`}//背景
     }
   }
 `
