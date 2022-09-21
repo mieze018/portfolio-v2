@@ -5,10 +5,7 @@ export const contentsWrapperState = atom<HTMLElement | null>({
   default: null,
 });
 
-export const isModalOpenState = atom<boolean>({
-  key: "isModalOpen",
-  default: false,
-});
+
 export const modalContentState = atom<JSX.Element | null>({
   key: "modalContent",
   default: null,
