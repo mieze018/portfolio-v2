@@ -18,11 +18,11 @@ export const Modal = () => {
   //ハッシュ値がcloseupならモーダルを開く
   useEffect(() => {
     const onHashChangeStart = () =>
-      hash === hashCloseup ? setIsModalOpen(true) : setIsModalOpen(false)
+      hash === hashCloseup && modalContent ? setIsModalOpen(true) : setIsModalOpen(false)
     onHashChangeStart()
     router.events.on('hashChangeStart', onHashChangeStart)
     router.events.on('hashChangeComplete', onHashChangeStart)
-  }, [hash, setIsModalOpen])
+  }, [hash, modalContent, setIsModalOpen])
 
   return (
     <Transition
