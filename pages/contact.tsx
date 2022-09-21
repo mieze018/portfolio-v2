@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 
-import { ContactContent } from 'components/Organisms/Contact'
+import { ContactContent } from 'components/Organisms/ContactContent'
 import { aboutData } from 'pages/api/about'
 
 const Contact: NextPage<{ fallbackData: typeof aboutData }> = ({ fallbackData }) => {
