@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle<{ ua?: UserAgent | null }>`
     ${tw`font-serif leading-normal tracking-wider text-primary accent-main`}//テキスト
     text-size-adjust: 100%;
     text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 rgb(var(--color-main) / 16%);
-    ${props => (props.ua?.isMobile ? tw`text-sm` : tw`text-base`)}
+    ${props => (props.ua?.isDesktop ? tw`text-base` : tw`text-sm`)}
     ${tw`scrollbar-thin scrollbar-thumb-main/20`}//スクロールバー
     &::before{
       content: "";

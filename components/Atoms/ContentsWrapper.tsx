@@ -47,7 +47,7 @@ export const ContentsWrapper = ({
         transition={{ duration: 0.1 }}
         css={[
           tw`relative px-0 py-6 top-g-38vh pt-g-14vh`,
-          !ua?.isMobile &&
+          ua?.isDesktop &&
             css`
               animation: ${sunkShort} 3s 0s ease-out forwards;
             `,

@@ -33,7 +33,7 @@ export default function Layout({
       <TopBar />
       {children}
       {/* スマホの時だけ下にもナビを置く */}
-      {ua.isMobile && (
+      {!ua.isDesktop && (
         <Nav css={tw`relative mb-3 top-g-38vh blur-0`}>
           <NavLinks routes={routes} />
         </Nav>
