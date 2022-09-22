@@ -8,10 +8,10 @@ import { useHash } from 'libs/useHash'
 /**画像拡大用のハッシュ値 */
 export const hashCloseup = 'closeup'
 
+const ContentWrapper = tw.div`m-auto p-4`
 export const Modal = () => {
   const [modalContent] = useRecoilState(modalContentState)
   const [hash, setHash] = useHash()
-  const ContentWrapper = tw.div`m-auto p-4`
   const isShow = !!(hash === hashCloseup && modalContent)
 
   return (
