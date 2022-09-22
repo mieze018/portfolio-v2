@@ -1,7 +1,7 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
-
   i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja', 'en']
+    locales: ['ja', 'en'],
+    defaultLocale: 'ja'
   }
 }
