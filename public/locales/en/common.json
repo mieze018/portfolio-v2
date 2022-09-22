@@ -13,5 +13,20 @@
   "messageLabel": "Message",
   "messageSend": "Send",
   "messageSendThankYou": "Your transmission has been completed. Thank you for your message.",
-  "Privacy Policy": "Privacy Policy"
+  "Privacy Policy": "Privacy Policy",
+  "Copyrights and Portrait Rights": "Copyright/portrait rights",
+  "Copyrights and Portrait Rights P1": "The copyrights and portrait rights to all content on this site are owned by the owner of this site or the respective right holders and may not be used without permission.",
+  "Personal Information": "Personal Information",
+  "Personal Information P1": "Personal information obtained will be used only for necessary communications and will not be used for any other purposes.",
+  "Other Disclosures": "Other Disclosures",
+  "Other Disclosures P1": "Personal information obtained will be managed appropriately and will not be provided to third parties except for legitimate reasons.",
+  "Contact Form": "Contact Form",
+  "Contact Form P1": "This site uses Formspree for its contact form.",
+  "Access Analysis": "Access Analysis",
+  "Access Analysis P1": "This site uses Google Analytics provided by Google to analyze and improve the site.",
+  "Privacy Disclosures Policy": "Privacy Disclosures Policy",
+  "Changes To This Privacy Policy": "Changes To This Privacy Policy",
+  "Changes To This Privacy Policy P1": "This site will review and improve this Privacy Policy from time to time.",
+  "Changes To This Privacy Policy P2": "This Privacy Policy is subject to change without prior notice.",
+  "Changes To This Privacy Policy P3": "Changes to this Privacy Policy shall be effective upon posting on this site."
 }
