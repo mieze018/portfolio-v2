@@ -9,15 +9,8 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init)
     return css`
       top: 0; /* 上部のボケを隠すため少し上に上げる */
-      ${tw`h-g-23vh duration-[10s,1s,10s]`}
+      ${tw`h-contentWrapperTop duration-[10s,1s,10s]`}
       filter: blur(4px) brightness(1.05);
-    `
-  if (scrollStates.sunk)
-    return css`
-      top: -4vh;
-      height: calc(4vh + 7em);
-      filter: blur(10px) brightness(1.1);
-      transition-duration: 10000ms, 1000ms, 10000ms;
     `
   if (scrollStates.sinking)
     return css`
@@ -25,6 +18,13 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
       ${tw`h-g-14vh`}
       filter: blur(1px) brightness(1.01);
       transition-duration: 10000ms, 1000ms, 8000ms;
+    `
+  if (scrollStates.sunk)
+    return css`
+      top: -4vh;
+      height: calc(4vh + 7em);
+      filter: blur(10px) brightness(1.1);
+      transition-duration: 10000ms, 1000ms, 10000ms;
     `
   return tw``
 }

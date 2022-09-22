@@ -97,8 +97,8 @@ module.exports = {
         'g-38': '38.1924%', //'calc(100% * 0.618 * 0.618)',
         'g-23': '23.6029032%', //'calc(100% * 0.618 * 0.618 * 0.618)',
         'g-14': '14.58659418%', //'calc(100% * 0.618 * 0.618 * 0.618 * 0.618)',
-        contentWrapperTop: '38vh',
-        contentWrapperTopPadding: '14vh',
+        contentWrapperTop: '23vh',
+        contentWrapperTopPadding: '38vh',
       },
       minHeight: {
         'g-61vh': '61.8vh',

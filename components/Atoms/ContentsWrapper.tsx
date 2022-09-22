@@ -28,6 +28,8 @@ export const ContentsWrapper = ({
 
   useEffect(() => {
     setContentsWrapper(ref.current)
+    if ($key !== '/' && ref.current?.offsetTop)
+      setTimeout(() => ref.current?.scrollIntoView(true), 10)
   }, [setContentsWrapper, ref, $key])
 
   return (
@@ -45,7 +47,7 @@ export const ContentsWrapper = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.2 }}
         onLoad={() => setContentsWrapper(ref.current)}
         css={[
           tw`relative px-0 py-6 top-contentWrapperTop pt-contentWrapperTopPadding`,
