@@ -5,7 +5,7 @@ import { aboutData } from 'pages/api/about'
 
 const Contact: NextPage<{ fallbackData: typeof aboutData }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  return <ContactContent data={fallbackData} />
+  return <ContactContent />
 }
 
 export default Contact

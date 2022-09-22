@@ -19,12 +19,12 @@ export const ContentsWrapper = ({
   const ua = useUserAgent(userAgent ?? '')
 
   const sunkShort = keyframes`
-  0% {transform: translate(0, -1em);}
+  0% {transform: translate(0, -0.5em);}
   100% {transform: translate(0, 0);}
 `
   const styles = {
     sunk: css`
-      animation: ${sunkShort} 3s 0s ease-out forwards;
+      animation: ${sunkShort} 0.618s 0s ease-out forwards;
     `,
   }
   const ref = useRef<HTMLElement>(null)

@@ -9,7 +9,10 @@ const common = {
   workExperience: '仕事の経験(敬称略)',
   awards: '受賞',
   eventHistory: '過去のイベント',
-  emailLabel: 'Email'
+  emailLabel: 'Email',
+  messageLabel: 'Message',
+  messageSend: 'Send',
+  messageSendThankYou: '送信が完了しました。メッセージをありがとうございました。'
 }
 
 export default common

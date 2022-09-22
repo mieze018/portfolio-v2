@@ -10,6 +10,9 @@ const common = {
   awards: 'Awards',
   eventHistory: 'Past Events',
   emailLabel: 'Email',
+  messageLabel: 'Message',
+  messageSend: 'Send',
+  messageSendThankYou: 'Your transmission has been completed. Thank you for your message.'
 }
 
 export default common

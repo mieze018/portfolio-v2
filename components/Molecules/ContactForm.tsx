@@ -2,73 +2,78 @@
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
+
+import { LabelText } from 'components/Atoms/LabelText'
+import { PrimaryButton } from 'components/Atoms/PrimaryButton'
+import { Textarea } from 'components/Atoms/Textarea'
 
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || '')
+  const { t } = useTranslation()
+  // const [replyAllowed, setReplyAllowed] = useState(false)
 
-  const Form = tw.form`grid gap-4 w-full md:w-g-61vw m-auto md:max-w-screen-md`
+  const Form = tw.form`grid gap-4 w-full md:w-g-61vw m-auto max-w-screen-sm`
   const RequiredMarkSpan = tw.span`text-main px-1`
   const RequiredMark = () => <RequiredMarkSpan>*</RequiredMarkSpan>
-  const [replyRequested, setReplyRequested] = React.useState(false)
+  const TermsWrapper = tw.div`text-right`
+  const TermLink = tw.a`text-xs`
+  const SubmitButton = tw(PrimaryButton)``
+  const Label = tw.label`flex items-center gap-2 py-1`
   type formType = {
     label: string
     type: string
     name: string
-    placeholder: string
+    placeholder?: string
     required: boolean
     checked?: boolean
     onChange?: () => void
   }
-  const forms: formType[] = [
+  const formsAttrs: formType[] = [
     {
-      label: 'メッセージ',
+      label: t('messageLabel'),
       type: 'textarea',
       name: 'message',
-      placeholder: 'メッセージ',
       required: true,
     },
-    {
-      label: '返信を希望する',
-      type: 'checkbox',
-      name: 'replyRequested',
-      placeholder: '返信を希望する',
-      required: false,
-      checked: replyRequested,
-      onChange: () => setReplyRequested(!replyRequested),
-    },
-    {
-      label: 'お名前',
-      type: 'text',
-      name: 'name',
-      placeholder: 'お名前',
-      required: replyRequested ? true : false,
-    },
-    {
-      label: 'メールアドレス',
-      type: 'email',
-      name: 'email',
-      placeholder: 'メールアドレス',
-      required: replyRequested ? true : false,
-    },
+    // {
+    //   label: '返信可能',
+    //   type: 'checkbox',
+    //   name: 'replyAllowed',
+    //   required: false,
+    //   checked: replyAllowed,
+    //   onChange: () => setReplyAllowed(!replyAllowed),
+    // },
+    // {
+    //   label: 'お名前',
+    //   type: 'text',
+    //   name: 'name',
+    //   required: replyAllowed ? true : false,
+    // },
+    // {
+    //   label: 'メールアドレス',
+    //   type: 'email',
+    //   name: 'email',
+    //   required: replyAllowed ? true : false,
+    // },
   ]
 
   return (
     <Form onSubmit={handleSubmit}>
-      {forms.map(({ label, type, name, placeholder, required, checked, onChange }) => {
+      {formsAttrs.map(({ label, type, name, placeholder, required, checked, onChange }) => {
         if (type === 'textarea')
           return (
             <div key={name}>
-              <label htmlFor={name}>
-                {label}
+              <Label htmlFor={name}>
+                <LabelText>{label}</LabelText>
                 {required && <RequiredMark />}
-              </label>
-              <textarea
+              </Label>
+              <Textarea
                 id={name}
                 name={name}
                 placeholder={placeholder}
                 required={required}
-                css={tw`w-full h-32 p-2 border rounded-md border-Azure`}
                 onChange={onChange}
               />
               <ValidationError prefix={label} field={name} errors={state.errors} />
@@ -77,7 +82,7 @@ export const ContactForm = () => {
         if (type === 'checkbox')
           return (
             <div key={name}>
-              <label htmlFor={name}>
+              <Label htmlFor={name}>
                 <input
                   id={name}
                   name={name}
@@ -88,18 +93,18 @@ export const ContactForm = () => {
                   onChange={onChange}
                   checked={checked}
                 />
-                {label}
+                <LabelText>{label}</LabelText>
                 {required && <RequiredMark />}
-              </label>
+              </Label>
               <ValidationError prefix={label} field={name} errors={state.errors} />
             </div>
           )
         return (
           <div key={name}>
-            <label htmlFor={name}>
+            <Label htmlFor={name}>
               {label}
               {required && <RequiredMark />}
-            </label>
+            </Label>
             <input
               id={name}
               type={type}
@@ -113,19 +118,23 @@ export const ContactForm = () => {
           </div>
         )
       })}
-      {/* <label htmlFor="email">Name</label>
-      <input id="name" type="name" name="name" disabled={state.succeeded} />
-      <label htmlFor="email">Email Address</label>
-      <input id="email" type="email" name="email" disabled={state.succeeded} />
-      <ValidationError prefix="Email" field="email" errors={state.errors} />
-
-      <label htmlFor="email">Message</label>
-      <textarea id="message" name="message" disabled={state.succeeded} />
-      <ValidationError prefix="Message" field="message" errors={state.errors} /> */}
-      <button type="submit" disabled={state.submitting}>
-        Send
-      </button>
-      {state.succeeded && <p>送信が正常に完了しました。ありがとうございました。</p>}
+      <SubmitButton type="submit" disabled={state.submitting}>
+        {t('messageSend')}
+      </SubmitButton>
+      {state.succeeded && (
+        <>
+          <p>{t('messageSendThankYou')}</p>
+        </>
+      )}
+      <TermsWrapper>
+        <TermLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://formspree.io/legal/privacy-policy/"
+        >
+          Formspree Privacy Policy
+        </TermLink>
+      </TermsWrapper>
     </Form>
   )
 }
