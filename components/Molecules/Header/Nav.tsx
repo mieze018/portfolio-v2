@@ -16,7 +16,8 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
     return css`
       ${tw`
       brightness-110 
-      blur-[3px]
+      blur-[1px]
+      md:blur-[3px]
       `}
     `
   return tw``
