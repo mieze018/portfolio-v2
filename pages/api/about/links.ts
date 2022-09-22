@@ -37,8 +37,9 @@ export const links: LocalApi.SnsLink[] = [
   {
     text: 'GitHub',
     url: 'https://github.com/mieze018',
-  }, {
+  },
+  {
     text: 'booth',
     url: 'https://mieze.booth.pm/',
-  }
+  },
 ]
