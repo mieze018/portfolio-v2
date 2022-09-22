@@ -17,6 +17,8 @@
   "cSpell.words": [
     "Behance",
     "Deviantart",
+    "formspree",
+    "gtag",
     "ijuice",
     "KADOKAWA",
     "Laxenanchaos",
@@ -26,8 +28,7 @@
     "pixiv",
     "reblog",
     "strapi",
-    "welle",
-    "gtag"
+    "welle"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

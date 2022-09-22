@@ -5,6 +5,9 @@ module.exports = {
       transparent: 'transparent',
       black: '#000',
       white: '#fff',
+      primary: '#888',
+      secondary: '#797979',
+      darkest: '#222',
       main: '#FF7F00', // rgb(255 124 0)
       Water: '#EBF4FA',
       Snow: '##FFFAFA',
@@ -33,11 +36,7 @@ module.exports = {
         GhostWhite 100%
       )`,
     },
-    textColor: {
-      primary: '#888',
-      secondary: '#797979',
-      darkest: '#222',
-    },
+
     fontFamily: {
       kakugo: [
         'Hiragino Kaku Gothic ProN',
@@ -101,6 +100,8 @@ module.exports = {
       },
       minHeight: {
         'g-61vh': '61.8vh',
+        'g-38vh': '38.2vh',
+        'g-23vh': '23.6vh',
       },
       minWidth: {
         screen: '100vw',

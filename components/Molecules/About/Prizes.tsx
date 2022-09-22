@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next'
 
-import { SectionWrapper, Hr, H2 } from 'components/Molecules/About/Atoms'
+import { Separator } from 'components/Atoms/Separator'
+import { SectionWrapper, H2 } from 'components/Molecules/About/Atoms'
 
 export const Prizes = () => {
   const { t } = useTranslation()
   return (
     <SectionWrapper>
       {t('awards')}
-      <Hr />
+
+      <Separator />
       <ul>
         <li>
           <H2> </H2>

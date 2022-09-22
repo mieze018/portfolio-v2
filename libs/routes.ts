@@ -8,4 +8,8 @@ export const routes = [
     name: 'about',
     pathname: '/about',
   },
+  {
+    name: 'contact',
+    pathname: '/contact',
+  },
 ]

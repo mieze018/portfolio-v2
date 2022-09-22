@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
-import { SectionWrapper, P, Hr } from 'components/Molecules/About/Atoms'
+import { Separator } from 'components/Atoms/Separator'
+import { SectionWrapper, P } from 'components/Molecules/About/Atoms'
 
 export const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
@@ -15,7 +16,8 @@ export const EventHistory = ({ events }: { events: LocalApi.Event[] }) => {
   return (
     <SectionWrapper>
       <P>{t('eventHistory')}</P>
-      <Hr />
+
+      <Separator />
       <ul>
         {pastEvents.map((event, eventK) => (
           <li key={eventK}>
