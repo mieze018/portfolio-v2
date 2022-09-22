@@ -32,12 +32,9 @@ export default function Layout({
       <GlobalStyle ua={ua ?? ''} />
       <TopBar />
       {children}
-      {/* スマホの時だけ下にもナビを置く */}
-      {!ua.isDesktop && (
-        <Nav css={tw`relative mb-3 top-g-38vh blur-0`}>
-          <NavLinks routes={routes} />
-        </Nav>
-      )}
+      <Nav css={tw`relative mb-8 top-g-38vh blur-0`}>
+        <NavLinks routes={routes} />
+      </Nav>
       <Modal />
       <Footer />
     </>

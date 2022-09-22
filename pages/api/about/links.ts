@@ -31,7 +31,14 @@ export const links: LocalApi.SnsLink[] = [
     mobileLUrl: 'tumblr',
   },
   {
+    text: 'Pinterest',
+    url: 'https://www.pinterest.com/mieze018/',
+  },
+  {
+    text: 'GitHub',
+    url: 'https://github.com/mieze018',
+  }, {
     text: 'booth',
     url: 'https://mieze.booth.pm/',
-  },
+  }
 ]

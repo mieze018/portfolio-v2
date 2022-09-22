@@ -5,7 +5,7 @@ export const Separator = styled(SeparatorPrimitive.Root)`
   ${tw`shadow-sm bg-black/10 shadow-main/10`}
 
   &[data-orientation="horizontal"] {
-    ${tw`w-full h-px`}
+    ${tw`w-full h-px mx-auto`}
   }
 
   &[data-orientation='vertical'] {
