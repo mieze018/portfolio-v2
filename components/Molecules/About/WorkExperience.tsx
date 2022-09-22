@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
@@ -14,7 +14,7 @@ export const WorkExperience = ({
   // genres: LocalApi.WorkExperience.GenreGroup
   genres: string[]
 }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   return (
     <SectionWrapper>
       <h1>{t('workExperience')}</h1>

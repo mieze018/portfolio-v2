@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { GoMail } from 'react-icons/go'
 import { IoMdPaperPlane } from 'react-icons/io'
 import tw from 'twin.macro'
@@ -14,7 +14,7 @@ const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-
 const MailWrapper = tw(Center)`text-lg select-all`
 const IconWrapper = tw(Center)`py-4`
 export const ContactContent = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   return (
     <Wrapper>
       <P>{t('acceptingWork')}</P>

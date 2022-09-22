@@ -1,6 +1,4 @@
-import 'libs/i18n/config'
-
-import { useUserAgent } from 'next-useragent'
+import { appWithTranslation } from 'next-i18next'
 import App from 'next/app'
 import { RecoilRoot } from 'recoil'
 
@@ -40,4 +38,4 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   return { ...appProps, uaString }
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
