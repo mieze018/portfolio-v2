@@ -23,6 +23,6 @@ export const GlobalStyle = createGlobalStyle<{ ua?: UserAgent | null }>`
     }
   }
     ::selection {
-      background: rgb(var(--color-main) / 60%);
+      ${tw`bg-main/30 text-primary`}//選択範囲
 }
 `
