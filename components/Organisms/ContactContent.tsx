@@ -10,31 +10,32 @@ import { P } from 'components/Molecules/About/Atoms'
 import { ContactForm } from 'components/Molecules/ContactForm'
 import { mail } from 'pages/api/basics'
 
-const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mt-12 mx-auto gap-y-16`
+const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-20 grid gap-12 text-left mt-12 
+mx-auto gap-y-16`
 const MailWrapper = tw(Center)`text-lg select-all`
-const IconWrapper = tw(Center)`py-4`
+const IconWrapper = tw(Center)`py-4 text-xl`
 export const ContactContent = () => {
   const { t } = useTranslation('common')
   return (
     <Wrapper>
       <P>{t('acceptingWork')}</P>
-      <P>
+      <div>
         <IconWrapper>
           <LabelText aria-label="Email">
             <GoMail />
           </LabelText>
         </IconWrapper>
         <MailWrapper>{mail}</MailWrapper>
-      </P>
+      </div>
       <Separator />
-      <P>
+      <div>
         <IconWrapper>
           <LabelText aria-label="mail form">
             <IoMdPaperPlane />
           </LabelText>
         </IconWrapper>
         <ContactForm />
-      </P>
+      </div>
     </Wrapper>
   )
 }

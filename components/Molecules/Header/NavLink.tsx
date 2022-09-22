@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useRecoilState } from 'recoil'
 import tw, { styled } from 'twin.macro'
+
+import { contentsWrapperState } from 'libs/recoil/atoms'
 
 const A = styled.a<{ isCurrent: boolean }>`
   ${tw`inline-block m-1 mt-3 cursor-pointer md:m-2 mix-blend-multiply xs:tracking-widest`}
-  ${({ isCurrent }) => isCurrent && tw`underline cursor-default hover:text-secondary`}
+  ${({ isCurrent }) => isCurrent && tw`underline hover:text-secondary`}
 `
 export const NavLinks = ({
   routes,
@@ -15,14 +18,25 @@ export const NavLinks = ({
   }[]
 }) => {
   const router = useRouter()
-  const currentPath = router.pathname
+  const [contentsWrapper] = useRecoilState(contentsWrapperState)
   return (
     <>
-      {routes.map((route) => (
-        <Link href={route.pathname} scroll={false} key={route.pathname}>
-          <A isCurrent={currentPath === route.pathname}>{route.name}</A>
-        </Link>
-      ))}
+      {routes.map((route) => {
+        const currentPath = router.pathname === route.pathname
+        const toOnclickScroll = route.pathname === '/' || currentPath
+        return (
+          <Link href={route.pathname} key={route.pathname} scroll={toOnclickScroll ? false : true}>
+            <A
+              onClick={() =>
+                toOnclickScroll && setTimeout(() => contentsWrapper?.scrollIntoView(), 100)
+              }
+              isCurrent={currentPath}
+            >
+              {route.name}
+            </A>
+          </Link>
+        )
+      })}
     </>
   )
 }
