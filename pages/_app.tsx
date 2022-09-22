@@ -1,6 +1,4 @@
-import 'libs/i18n/config'
-
-import { useUserAgent } from 'next-useragent'
+import { appWithTranslation } from 'next-i18next'
 import App from 'next/app'
 import { RecoilRoot } from 'recoil'
 
@@ -11,11 +9,11 @@ import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import Layout from 'components/Layout/Default'
 import { GoogleAnalytics, usePageView } from 'libs/gtag'
 
-function MyApp({ Component, pageProps, router, uaString }: AppProps & { uaString: string }) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
     <RecoilRoot>
-      <Layout uaString={uaString}>
+      <Layout>
         <GoogleAnalytics />
         {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
         <ContentsWrapper $key={router.pathname}>
@@ -40,4 +38,4 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   return { ...appProps, uaString }
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)

@@ -1,8 +1,8 @@
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react'
+import { useTranslation } from 'next-i18next'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import tw from 'twin.macro'
 
 import { LabelText } from 'components/Atoms/LabelText'
@@ -11,7 +11,7 @@ import { Textarea } from 'components/Atoms/Textarea'
 
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || '')
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   // const [replyAllowed, setReplyAllowed] = useState(false)
 
   const Form = tw.form`grid gap-4 w-full md:w-g-61vw m-auto max-w-screen-sm`

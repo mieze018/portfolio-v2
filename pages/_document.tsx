@@ -2,12 +2,12 @@ import Document from 'next/document'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
-import type { DocumentContext } from 'next/document'
+import type { DocumentContext, DocumentInitialProps } from 'next/document'
 
 import { author, description, title, url } from 'pages/api/basics'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 

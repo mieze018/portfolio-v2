@@ -11,7 +11,7 @@
 ### フレームワークのためのライブラリ
 
 - Recoil <https://recoiljs.org/>
-- i18next <https://www.i18next.com/>
+- next-i18next <https://github.com/i18next/next-i18next>
 
 ### スタイル, UI のためのライブラリ
 
@@ -24,6 +24,7 @@
   - Headless UI <https://headlessui.com/>
   - Radix UI <https://www.radix-ui.com/docs/primitives/overview/introduction>
   - React Icons - <https://react-icons.github.io/react-icons/>
+  - next-useragent<https://github.com/tokuda109/next-useragent>
 
 ### スタイルのための資料
 

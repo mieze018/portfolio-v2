@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 import { Separator } from 'components/Atoms/Separator'
 import { SectionWrapper, H2 } from 'components/Molecules/About/Atoms'
 
 export const Prizes = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   return (
     <SectionWrapper>
       {t('awards')}

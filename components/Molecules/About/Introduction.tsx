@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 import { SectionWrapper, P } from 'components/Molecules/About/Atoms'
 
 export const Introduction = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   return (
     <SectionWrapper>
       <P>

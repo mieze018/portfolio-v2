@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
@@ -6,7 +6,7 @@ import { Separator } from 'components/Atoms/Separator'
 import { P } from 'components/Molecules/About/Atoms'
 
 export const Events = ({ events }: { events: LocalApi.Event[] }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
   //日にちが今日以降のものだけを抽出
   const futureEvents = events.filter((event) => {
     const today = new Date()

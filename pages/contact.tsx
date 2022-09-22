@@ -1,3 +1,5 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 import type { GetStaticProps, NextPage } from 'next'
 
 import { ContactContent } from 'components/Organisms/ContactContent'
@@ -10,11 +12,12 @@ const Contact: NextPage<{ fallbackData: typeof aboutData }> = ({ fallbackData })
 
 export default Contact
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale = 'ja' }) => {
   const Data = aboutData
   return {
     props: {
       fallbackData: Data,
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }
