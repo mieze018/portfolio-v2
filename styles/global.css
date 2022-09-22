@@ -8,12 +8,13 @@
 }
 @layer utilities {
   a {
-    @apply text-primary;
+    @apply text-primary transition;
     &:active {
-      @apply opacity-100;
+      @apply underline;
     }
-    &:hover {
-      @apply opacity-100 text-darkest blur-0;
+    &:hover,
+    &:active {
+      @apply opacity-100 text-secondary blur-0 underline;
     }
   }
 
