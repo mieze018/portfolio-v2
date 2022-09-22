@@ -1,11 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useUserAgent } from 'next-useragent'
 import { useEffect, useRef } from 'react'
-import { useRecoilState, useSetRecoilState } from 'recoil'
+import { useSetRecoilState } from 'recoil'
 import { keyframes } from 'styled-components'
 import tw, { css } from 'twin.macro'
 
-import { contentsWrapperState, userAgentState } from 'libs/recoil/atoms'
+import { contentsWrapperState } from 'libs/recoil/atoms'
 
 /** ページ移管時にトランジションする */
 export const ContentsWrapper = ({
@@ -15,9 +14,6 @@ export const ContentsWrapper = ({
   children: React.ReactNode
   $key: string
 }) => {
-  const [userAgent] = useRecoilState(userAgentState)
-  const ua = useUserAgent(userAgent ?? '')
-
   const sunkShort = keyframes`
   0% {transform: translate(0, -0.5em);}
   100% {transform: translate(0, 0);}
@@ -50,10 +46,7 @@ export const ContentsWrapper = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.1 }}
-        css={[
-          tw`relative px-0 py-6 top-g-38vh pt-g-14vh`,
-          userAgent && ua.isDesktop ? styles.sunk : '',
-        ]}
+        css={[tw`relative px-0 py-6 top-g-38vh pt-g-14vh`, styles.sunk]}
         onLoad={() => setContentsWrapperState(ref.current)}
       >
         {children}

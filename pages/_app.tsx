@@ -9,11 +9,11 @@ import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
 import Layout from 'components/Layout/Default'
 import { GoogleAnalytics, usePageView } from 'libs/gtag'
 
-function MyApp({ Component, pageProps, router, uaString }: AppProps & { uaString: string }) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
     <RecoilRoot>
-      <Layout uaString={uaString}>
+      <Layout>
         <GoogleAnalytics />
         {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
         <ContentsWrapper $key={router.pathname}>
