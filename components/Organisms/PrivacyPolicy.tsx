@@ -22,17 +22,15 @@ export const PrivacyPolicy = () => {
       </div>
       <div>
         <h2>{t('Contact Form')}</h2>
+        <P>{t('Contact Form P1')}</P>
         <P>
-          {t('Contact Form P1')}
-          <P>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://formspree.io/legal/privacy-policy/"
-            >
-              Formspree Privacy Policy
-            </a>
-          </P>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://formspree.io/legal/privacy-policy/"
+          >
+            Formspree Privacy Policy
+          </a>
         </P>
       </div>
       <div>
