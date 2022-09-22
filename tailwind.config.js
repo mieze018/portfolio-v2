@@ -100,6 +100,8 @@ module.exports = {
       },
       minHeight: {
         'g-61vh': '61.8vh',
+        'g-38vh': '38.2vh',
+        'g-23vh': '23.6vh',
       },
       minWidth: {
         screen: '100vw',
