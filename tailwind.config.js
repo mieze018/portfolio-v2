@@ -19,23 +19,6 @@ module.exports = {
       HoneyDew: '#F0FFF0',
       LightCyan: '#E0FFFF',
     },
-    backgroundImage: {
-      body: `linear-gradient(
-      to top,
-        WhiteSmoke 0%,
-        #EBF4FA 61.8%,
-        AliceBlue 76.4%,
-        azure 85.4%,
-        MintCream 100%
-      )`,
-      modal: `linear-gradient(
-      to bottom,
-        WhiteSmoke 0%,
-        #EBF4FA 61.8%,
-        AliceBlue 85.4%,
-        GhostWhite 100%
-      )`,
-    },
 
     fontFamily: {
       kakugo: [
@@ -124,6 +107,23 @@ module.exports = {
       },
       screens: {
         xs: '375px',
+      },
+      backgroundImage: {
+        body: `linear-gradient(
+        to top,
+          WhiteSmoke 0%,
+          #EBF4FA 61.8%,
+          AliceBlue 76.4%,
+          azure 85.4%,
+          MintCream 100%
+        )`,
+        modal: `linear-gradient(
+        to bottom,
+          WhiteSmoke 0%,
+          #EBF4FA 61.8%,
+          AliceBlue 85.4%,
+          GhostWhite 100%
+        )`,
       },
     },
   },
