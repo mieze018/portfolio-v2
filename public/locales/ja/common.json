@@ -12,5 +12,21 @@
   "emailLabel": "Email",
   "messageLabel": "Message",
   "messageSend": "Send",
-  "messageSendThankYou": "送信が完了しました。メッセージをありがとうございました。"
+  "messageSendThankYou": "送信が完了しました。メッセージをありがとうございました。",
+  "Privacy Policy": "Privacy Policy",
+  "Copyrights and Portrait Rights": "著作権・肖像権",
+  "Copyrights and Portrait Rights P1": "当サイトで掲載しているすべてのコンテンツの著作権・肖像権等は当サイト所有者または各権利所有者が保有し、許可なく無断利用することを禁止します。",
+  "Personal Information": "個人情報の利用目的",
+  "Personal Information P1": "取得した個人情報は、必要な連絡のみに利用させていただくもので、これらの目的以外では利用いたしません。",
+  "Other Disclosures": "個人情報の第三者開示",
+  "Other Disclosures P1": "取得した個人情報は適切に管理し、正当な理由がある場合を除き第三者に提供することはありません。",
+  "Contact Form": "お問合せフォーム",
+  "Contact Form P1": "当サイトでは、お問い合わせフォームにFormspreeを利用しています。",
+  "Access Analysis": "アクセス解析",
+  "Access Analysis P1": "当サイトでは、サイトの分析と改善のためにGoogleが提供している「Google アナリティクス」を利用しています。",
+  "Privacy Disclosures Policy": "プライバシーの開示に関するポリシー（アナリティクス ヘルプ）",
+  "Changes To This Privacy Policy": "プライバシーポリシーの変更",
+  "Changes To This Privacy Policy P1": "当サイトは、本プライバシーポリシーの内容を適宜見直し、その改善に努めます。",
+  "Changes To This Privacy Policy P2": "本プライバシーポリシーは、事前の予告なく変更することがあります。",
+  "Changes To This Privacy Policy P3": "本プライバシーポリシーの変更は、当サイトに掲載された時点で有効になるものとします。"
 }

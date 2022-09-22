@@ -2,10 +2,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import type { GetStaticProps, NextPage } from 'next'
 
-import { ContactContent } from 'components/Organisms/ContactContent'
+import { PrivacyPolicy } from 'components/Organisms/PrivacyPolicy'
 
 const Contact: NextPage = () => {
-  return <ContactContent />
+  return <PrivacyPolicy />
 }
 
 export default Contact

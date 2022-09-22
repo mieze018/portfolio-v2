@@ -17,8 +17,6 @@ export const ContactForm = () => {
   const Form = tw.form`grid gap-4 w-full md:w-g-61vw m-auto max-w-screen-sm`
   const RequiredMarkSpan = tw.span`text-main px-1`
   const RequiredMark = () => <RequiredMarkSpan>*</RequiredMarkSpan>
-  const TermsWrapper = tw.div`text-right`
-  const TermLink = tw.a`text-xs`
   const SubmitButton = tw(PrimaryButton)``
   const Label = tw.label`flex items-center gap-2 py-1`
   type formType = {
@@ -126,15 +124,6 @@ export const ContactForm = () => {
           <p>{t('messageSendThankYou')}</p>
         </>
       )}
-      <TermsWrapper>
-        <TermLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://formspree.io/legal/privacy-policy/"
-        >
-          Formspree Privacy Policy
-        </TermLink>
-      </TermsWrapper>
     </Form>
   )
 }
