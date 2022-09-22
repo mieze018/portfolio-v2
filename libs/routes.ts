@@ -1,15 +1,15 @@
 export const routes = [
-  { name: 'personal work', pathname: '/' },
+  { name: 'Works', pathname: '/' },
   {
-    name: 'commissioned work',
-    pathname: '/commissioned_work',
+    name: 'Client Works',
+    pathname: '/client_works',
   },
   {
-    name: 'about',
+    name: 'About',
     pathname: '/about',
   },
   {
-    name: 'contact',
+    name: 'Contact',
     pathname: '/contact',
   },
 ]

@@ -5,13 +5,13 @@ import { Posts } from 'components/Organisms/Posts'
 import { tags } from 'pages/api/works/tags'
 import { endpoint, fetcher } from 'pages/api/works/tumblr'
 
-const CommissionedWork: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
+const ClientWorks: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts
   return <Posts posts={posts} tag={tags.commissionedWork} />
 }
 
-export default CommissionedWork
+export default ClientWorks
 
 export const getStaticProps: GetStaticProps = async () => {
   const API_URL_ROOT = endpoint
