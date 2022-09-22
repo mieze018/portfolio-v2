@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 
-const Wrapper = tw.div`px-5 mt-20 max-w-screen-md m-auto grid gap-y-4 text-xs mb-20`
+const Wrapper = tw.div`px-5 max-w-screen-md m-auto grid gap-y-4 text-xs mb-20`
 const P = tw.p``
 
 export const PrivacyPolicy = () => {
@@ -16,6 +16,21 @@ export const PrivacyPolicy = () => {
         <h2>個人情報の第三者開示</h2>
         <P>
           取得した個人情報は適切に管理し、正当な理由がある場合を除き第三者に提供することはありません。
+        </P>
+      </div>
+      <div>
+        <h2>お問合せフォーム</h2>
+        <P>
+          当サイトでは、お問い合わせフォームにFormspreeを利用しています。
+          <P>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://formspree.io/legal/privacy-policy/"
+            >
+              Formspree Privacy Policy
+            </a>
+          </P>
         </P>
       </div>
       <div>
