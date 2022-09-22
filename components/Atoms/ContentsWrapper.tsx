@@ -24,11 +24,11 @@ export const ContentsWrapper = ({
     `,
   }
   const ref = useRef<HTMLElement>(null)
-  const setContentsWrapperState = useSetRecoilState(contentsWrapperState)
+  const setContentsWrapper = useSetRecoilState(contentsWrapperState)
 
   useEffect(() => {
-    setContentsWrapperState(ref.current)
-  }, [setContentsWrapperState, ref, $key])
+    setContentsWrapper(ref.current)
+  }, [setContentsWrapper, ref, $key])
 
   return (
     <AnimatePresence
@@ -46,7 +46,7 @@ export const ContentsWrapper = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.1 }}
-        onLoad={() => setContentsWrapperState(ref.current)}
+        onLoad={() => setContentsWrapper(ref.current)}
         css={[
           tw`relative px-0 py-6 top-contentWrapperTop pt-contentWrapperTopPadding`,
           styles.sunk,
