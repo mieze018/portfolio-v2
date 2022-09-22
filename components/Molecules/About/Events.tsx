@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
-import { P, Hr } from 'components/Molecules/About/Atoms'
+import { Separator } from 'components/Atoms/Separator'
+import { P } from 'components/Molecules/About/Atoms'
 
 export const Events = ({ events }: { events: LocalApi.Event[] }) => {
   const { t } = useTranslation()
@@ -16,7 +17,8 @@ export const Events = ({ events }: { events: LocalApi.Event[] }) => {
   return (
     <div className="mt-12">
       <P>{t('eventIncoming')}</P>
-      <Hr />
+
+      <Separator />
       <ul>
         {futureEvents.map((event, eventK) => (
           <li key={eventK}>

@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next'
 
 import type { LocalApi } from 'libs/@type/api/local'
 
-import { H2, Hr, SectionWrapper, UlNest1 } from 'components/Molecules/About/Atoms'
+import { Separator } from 'components/Atoms/Separator'
+import { H2, SectionWrapper, UlNest1 } from 'components/Molecules/About/Atoms'
 import { Work } from 'components/Molecules/About/Work'
 
 export const WorkExperience = ({
@@ -17,7 +18,7 @@ export const WorkExperience = ({
   return (
     <SectionWrapper>
       <h1>{t('workExperience')}</h1>
-      <Hr />
+      <Separator />
       <ul>
         {genres.map((genre, genreK) => (
           <li key={genreK} className="">
