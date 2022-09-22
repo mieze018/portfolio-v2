@@ -39,5 +39,6 @@
     "titleBar.activeBackground": "#ff5e00",
     "titleBar.activeForeground": "#F8F9FD"
   },
-  "i18n-ally.localesPaths": ["public/locales"]
+  "i18n-ally.localesPaths": ["public/locales"],
+  "i18n-ally.keystyle": "flat"
 }

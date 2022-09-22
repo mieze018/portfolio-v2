@@ -12,5 +12,6 @@
   "emailLabel": "Email",
   "messageLabel": "Message",
   "messageSend": "Send",
-  "messageSendThankYou": "送信が完了しました。メッセージをありがとうございました。"
+  "messageSendThankYou": "送信が完了しました。メッセージをありがとうございました。",
+  "Privacy Policy": "Privacy Policy"
 }

@@ -12,5 +12,6 @@
   "emailLabel": "Email",
   "messageLabel": "Message",
   "messageSend": "Send",
-  "messageSendThankYou": "Your transmission has been completed. Thank you for your message."
+  "messageSendThankYou": "Your transmission has been completed. Thank you for your message.",
+  "Privacy Policy": "Privacy Policy"
 }
