@@ -46,8 +46,11 @@ export const ContentsWrapper = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.1 }}
-        css={[tw`relative px-0 py-6 top-g-38vh pt-g-14vh`, styles.sunk]}
         onLoad={() => setContentsWrapperState(ref.current)}
+        css={[
+          tw`relative px-0 py-6 top-contentWrapperTop pt-contentWrapperTopPadding`,
+          styles.sunk,
+        ]}
       >
         {children}
       </motion.section>
