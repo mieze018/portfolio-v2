@@ -15,7 +15,7 @@ import tw from 'twin.macro'
 import { links } from 'pages/api/about/links'
 
 export const SocialLinks = () => {
-  const Wrapper = tw.div`flex items-center justify-center m-auto w-full gap-x-2`
+  const Wrapper = tw.div`flex items-center justify-center m-auto w-full gap-4  md:gap-4 text-4xl md:text-2xl flex-wrap`
   return (
     <Wrapper>
       {links.map((link) => (
