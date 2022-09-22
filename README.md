@@ -19,7 +19,7 @@
   - [next-styled-components-typescript](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript)
   - Tailwind CSS <https://tailwindcss.com/>
     - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
-    - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar> overflow:overlayが不都合なのでオミット
+    - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar> overflow:overlay が不都合なのでオミット
   - Styled Components <https://styled-components.com/>
   - Headless UI <https://headlessui.com/>
 
@@ -44,6 +44,11 @@
 - Tumblr API <https://www.tumblr.com/docs/en/api/>
 - SWR <https://swr.vercel.app/>
 
+### メールフォーム
+
+- Formspree <https://formspree.io/>
+  - <https://vercel.com/integrations/formspree>
+
 ## つかいたいもの
 
 ## 余裕があればつかいたもの
@@ -63,6 +68,7 @@
   - Prisma Github <https://github.com/prisma/prisma>
 - Heroku?
 - Firebase?
+- Upstash? <https://vercel.com/integrations/upstash>
 
 ## これができたら別リポジトリでエンジニアポートフォリ作成時にやりたいこと
 
