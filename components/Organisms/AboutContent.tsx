@@ -22,7 +22,7 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
       {workExperienceGenre?.length && (
         <WorkExperience workExperience={workExperience} genres={workExperienceGenre} />
       )} */}
-      {/* <EventHistory events={events} /> */}
+      <EventHistory events={events} />
       <Prizes prizes={prizes} />
       {/* {links?.length && <Linktree links={links} />} */}
       {/* <Participant /> */}
