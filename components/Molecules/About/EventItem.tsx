@@ -1,5 +1,3 @@
-import { dateToYear } from 'libs/dataFormat'
-
 type eventItemType = {
   title: string
   date: string | number

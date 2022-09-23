@@ -4,7 +4,7 @@ import type { PageObject } from 'libs/@type/api/notion'
 import type { GetStaticProps, NextPage } from 'next'
 
 import { ContactContent } from 'components/Organisms/ContactContent'
-import { getDatabase, getPage } from 'libs/notion'
+import { getPage } from 'libs/notion'
 import { workAcceptanceStatusDBId } from 'libs/notionDB'
 
 export type contactDataType = {
