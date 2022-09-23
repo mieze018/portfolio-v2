@@ -15,15 +15,15 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.sinking || scrollStates.sunk)
     return css`
       ${tw`
-      brightness-110 
-      blur-[1px]
-      md:blur-[3px]
+      brightness-125 
+      blur-[0px]
+      md:blur-[1px]
       `}
     `
   return tw``
 }
-export const Nav = styled.nav`
-  ${tw`sticky top-0 z-10 m-auto text-center hover:blur-0`}
+export const Nav = styled.nav<{ footer?: boolean }>`
+  ${tw`sticky top-0 z-10 m-auto mt-6 md:mt-2 text-center hover:blur-0 grid grid-flow-col justify-center gap-x-4`}
 
   transition-property: opacity, filter, top;
   transition-duration: 1s, 1s, 0.2s;
