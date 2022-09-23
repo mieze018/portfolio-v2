@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next'
 import React from 'react'
 import tw from 'twin.macro'
 
+import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { PrimaryButton } from 'components/Atoms/PrimaryButton'
 import { Textarea } from 'components/Atoms/Textarea'
@@ -56,7 +57,7 @@ export const ContactForm = () => {
     //   required: replyAllowed ? true : false,
     // },
   ]
-
+  if (state.succeeded) return <Center>{t('messageSendThankYou')}</Center>
   return (
     <Form onSubmit={handleSubmit}>
       {formsAttrs.map(({ label, type, name, placeholder, required, checked, onChange }) => {
@@ -119,11 +120,6 @@ export const ContactForm = () => {
       <SubmitButton type="submit" disabled={state.submitting}>
         {t('messageSend')}
       </SubmitButton>
-      {state.succeeded && (
-        <>
-          <p>{t('messageSendThankYou')}</p>
-        </>
-      )}
     </Form>
   )
 }

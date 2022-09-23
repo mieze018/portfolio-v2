@@ -12,19 +12,15 @@ const FlexItem = styled.div<{ $isColumn: boolean }>`
   ${tw`w-full`}
   ${({ $isColumn }) => $isColumn && tw`flex-grow w-1/4 mx-0 my-4 basis-1/4 shrink`}
 `
+
+const ImageElement = styled(Image)<{ photo: Tumblr.Photo; $closeup?: boolean }>`
+  ${tw`mx-auto cursor-pointer `}
+  ${({ $closeup }) => ($closeup ? tw`max-w-none` : tw`max-w-full`)}
+`
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
   const setModalContent = useSetRecoilState(modalContentState)
-  const ImageElement = styled(Image).attrs({
-    src: photo.original_size.url,
-    alt: photo.original_size.url,
-    key: photo.original_size.url,
-    height: photo.original_size.height,
-    width: photo.original_size.width,
-  })<{ $closeup?: boolean }>`
-    ${tw`mx-auto cursor-pointer `}
-    ${({ $closeup }) => ($closeup ? tw`max-w-none` : tw`max-w-full`)}
-  `
-
+  const lightCyan =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
   return (
     <Link href={`#${hashCloseup}`} scroll={false}>
       <FlexItem
@@ -32,15 +28,27 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
         onClick={() => {
           setModalContent(
             <ImageElement
+              src={photo.original_size.url}
+              alt={photo.original_size.url}
+              key={photo.original_size.url}
+              height={photo.original_size.height}
+              width={photo.original_size.width}
+              photo={photo}
               $closeup
-              quality={95}
-              // placeholder="blur"
-              // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
+              placeholder="blur"
+              blurDataURL={lightCyan}
             />
           )
         }}
       >
-        <ImageElement />
+        <ImageElement
+          src={photo.original_size.url}
+          alt={photo.original_size.url}
+          key={photo.original_size.url}
+          height={photo.original_size.height}
+          width={photo.original_size.width}
+          photo={photo}
+        />
       </FlexItem>
     </Link>
   )

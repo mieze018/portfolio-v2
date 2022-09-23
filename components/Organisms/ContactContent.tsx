@@ -13,9 +13,9 @@ import { ContactForm } from 'components/Molecules/ContactForm'
 import { getProperties } from 'libs/notion'
 import { mail } from 'pages/api/basics'
 
-const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-20 grid gap-12 text-left mt-12 
+const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-24 grid gap-12 text-left 
 mx-auto gap-y-16`
-const MailWrapper = tw(Center)`text-lg select-all`
+const MailWrapper = tw(Center)`text-lg select-all mb-4`
 const IconWrapper = tw(Center)`py-4 text-xl`
 export const ContactContent = ({ fallbackData }: contactDataType) => {
   const { workAcceptanceStatus } = fallbackData
@@ -28,7 +28,8 @@ export const ContactContent = ({ fallbackData }: contactDataType) => {
 
   return (
     <Wrapper>
-      <P>{statusTranslation}</P>
+      <Center>{statusTranslation}</Center>
+      <Separator />
       <div>
         <IconWrapper>
           <LabelText aria-label="Email">

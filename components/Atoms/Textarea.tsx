@@ -1,4 +1,8 @@
-import tw from 'twin.macro'
+import TextareaAutosize from 'react-textarea-autosize'
+import tw, { styled } from 'twin.macro'
 
-export const Textarea = tw.textarea`
-w-full h-32 p-2 border border-Azure rounded outline-AliceBlue bg-white/80`
+export const Textarea = styled(TextareaAutosize).attrs({
+  minRows: 5,
+})`
+  ${tw`w-full h-32 p-2 border rounded resize-none border-Azure outline-AliceBlue bg-white/80`}
+`
