@@ -5,6 +5,7 @@ import type { PageObject } from 'libs/@type/api/notion'
 import { Separator } from 'components/Atoms/Separator'
 import { SectionWrapper, P } from 'components/Molecules/About/Atoms'
 import { EventItem } from 'components/Molecules/About/EventItem'
+import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 
 export const EventHistory = ({ events }: { events: PageObject[] }) => {
@@ -22,8 +23,6 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
       <Separator />
       <ul className="mt-2">
         {pastEvents.map((event) => {
-          const properties = event.properties
-          console.log(properties)
           const title = getProperties(event, { name: 'title', type: 'title' })
           const place = getProperties(event, { name: 'place', type: 'select' })
           const date = getProperties(event, { name: 'date', type: 'date' }).start
@@ -34,7 +33,7 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
               key={event.id}
               title={title}
               place={place}
-              date={date}
+              date={dateToYear(date)}
               url={url}
               description={description}
             />

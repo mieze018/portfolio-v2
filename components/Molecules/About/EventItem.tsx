@@ -2,7 +2,7 @@ import { dateToYear } from 'libs/dataFormat'
 
 type eventItemType = {
   title: string
-  date: string
+  date: string | number
   place: string
   url: string
   description: string
@@ -10,11 +10,13 @@ type eventItemType = {
 export const EventItem = ({ title, description, place, date, url }: eventItemType) => {
   return (
     <li>
-      <p>{dateToYear(date)}</p>
+      <p>{date}</p>
       <h2>{title}</h2>
-      <p>{description}</p>
       <p>{place}</p>
-      <p>{url}</p>
+      <p>
+        <a href={url}>{url}</a>
+      </p>
+      <p>{description}</p>
     </li>
   )
 }

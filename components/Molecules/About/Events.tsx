@@ -21,10 +21,8 @@ export const Events = ({ events }: { events: PageObject[] }) => {
       <P>{t('eventIncoming')}</P>
 
       <Separator />
-      <ul>
+      <ul className="mt-2">
         {futureEvents.map((event) => {
-          const properties = event.properties
-          console.log(properties)
           const title = getProperties(event, { name: 'title', type: 'title' })
           const place = getProperties(event, { name: 'place', type: 'select' })
           const date = getProperties(event, { name: 'date', type: 'date' }).start
