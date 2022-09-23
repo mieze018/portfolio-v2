@@ -12,7 +12,7 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
   //日にちが今日以前のものだけを抽出
   const pastEvents = events.filter((event) => {
     const today = new Date()
-    const eventDate = new Date(event.properties.date.date.start)
+    const eventDate = new Date(getProperties(event, { name: 'date', type: 'date' }).start)
     return eventDate < today
   })
   return (
@@ -24,15 +24,11 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
         {pastEvents.map((event) => {
           const properties = event.properties
           console.log(properties)
-          const title = getProperties({ object: event, name: 'title', type: 'title' })
-          const place = getProperties({ object: event, name: 'place', type: 'select' })
-          const date = getProperties({ object: event, name: 'date', type: 'date' }).start
-          const url = getProperties({ object: event, name: 'url', type: 'url' })
-          const description = getProperties({
-            object: event,
-            name: 'description',
-            type: 'rich_text',
-          })
+          const title = getProperties(event, { name: 'title', type: 'title' })
+          const place = getProperties(event, { name: 'place', type: 'select' })
+          const date = getProperties(event, { name: 'date', type: 'date' }).start
+          const url = getProperties(event, { name: 'url', type: 'url' })
+          const description = getProperties(event, { name: 'description', type: 'rich_text' })
           return (
             <li key={event.id}>
               <p>{dateToYear(date)}</p>

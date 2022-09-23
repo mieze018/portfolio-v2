@@ -5,6 +5,7 @@ import type { PageObject } from 'libs/@type/api/notion'
 import { Separator } from 'components/Atoms/Separator'
 import { SectionWrapper } from 'components/Molecules/About/Atoms'
 import { dateToYear } from 'libs/dataFormat'
+import { getProperties } from 'libs/notion'
 
 export const Prizes = ({ prizes }: { prizes: PageObject[] }) => {
   const { t } = useTranslation('common')
@@ -14,10 +15,9 @@ export const Prizes = ({ prizes }: { prizes: PageObject[] }) => {
 
       <Separator />
       {prizes.map((prize) => {
-        const properties = prize.properties
-        const title = properties.title.title[0].plain_text
-        const prizeName = properties.prize.rich_text[0].plain_text
-        const date = properties.date.date.start
+        const title = getProperties(prize, { name: 'title', type: 'title' })
+        const prizeName = getProperties(prize, { name: 'prizeName', type: 'rich_text' })
+        const date = getProperties(prize, { name: 'date', type: 'date' }).start
         return (
           <ul key={prize.id} className="mt-2">
             <li>
