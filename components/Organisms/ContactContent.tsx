@@ -1,24 +1,34 @@
-import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
 import { GoMail } from 'react-icons/go'
 import { IoMdPaperPlane } from 'react-icons/io'
 import tw from 'twin.macro'
+
+import type { contactDataType } from 'pages/contact'
 
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { Separator } from 'components/Atoms/Separator'
 import { P } from 'components/Molecules/About/Atoms'
 import { ContactForm } from 'components/Molecules/ContactForm'
+import { getProperties } from 'libs/notion'
 import { mail } from 'pages/api/basics'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-20 grid gap-12 text-left mt-12 
 mx-auto gap-y-16`
 const MailWrapper = tw(Center)`text-lg select-all`
 const IconWrapper = tw(Center)`py-4 text-xl`
-export const ContactContent = () => {
-  const { t } = useTranslation('common')
+export const ContactContent = ({ fallbackData }: contactDataType) => {
+  const { workAcceptanceStatus } = fallbackData
+  const router = useRouter()
+  if (!router.locale) return <></>
+  const statusTranslation = getProperties(workAcceptanceStatus, {
+    name: router.locale.includes('ja') ? 'ja' : 'en',
+    type: 'rich_text',
+  })
+
   return (
     <Wrapper>
-      <P>{t('acceptingWork')}</P>
+      <P>{statusTranslation}</P>
       <div>
         <IconWrapper>
           <LabelText aria-label="Email">

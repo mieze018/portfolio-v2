@@ -17,7 +17,7 @@ export const Work = ({ work }: { work: PageObject }) => {
   return (
     <li css={tw`flex flex-wrap items-end gap-x-3`}>
       {author && <i>{author}</i>}
-      <span>『{title}』</span>
+      {title && <span>『{title}』</span>}
       {publisher && <span>({publisher})</span>}
       {format && <small>{format}</small>}
       {designer && <small>{designer}</small>}
