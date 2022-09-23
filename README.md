@@ -45,6 +45,7 @@
 ### サーバとのやりとり
 
 - Tumblr API <https://www.tumblr.com/docs/en/api/>
+- Notion API <https://developers.notion.com/>
 - SWR <https://swr.vercel.app/>
 
 ### メールフォーム
