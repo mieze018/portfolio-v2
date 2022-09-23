@@ -1,15 +1,34 @@
 import { Client } from "@notionhq/client";
 
+import type { QueryDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
 import type { PageObject, propertiesTypes } from "libs/@type/api/notion";
 
 const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN })
+type getDatabaseOptions = {
+  sortProperty?: string,
+  sortDirection?: "ascending" | "descending"
+}
+export const getDatabase = async (databaseId: string, { sortProperty, sortDirection = 'descending' }: getDatabaseOptions = {}
+) => {
+  //オプションでソート順を指定できる
+  const sorts: QueryDatabaseParameters['sorts'] = sortProperty ?
+    [{
+      property: sortProperty || '',
+      direction: sortDirection
+    }]
+    :
+    [{
+      timestamp: 'created_time',
+      direction: 'descending'
+    }]
 
-export const getDatabase = async (databaseId: string) => {
   const response = await notion.databases.query({
     database_id: databaseId,
+    sorts: sorts,
   });
   return response.results;
 };
+
 
 export const getPage = async (pageId: string) => {
   const response = await notion.pages.retrieve({ page_id: pageId });
@@ -34,9 +53,10 @@ export const getBlocks = async (blockId: string) => {
 };
 
 export const getProperties = (object: PageObject, { name, type }: { name: string, type: propertiesTypes }) => {
+  if (!object?.properties[name]) return null
   switch (type) {
     case 'select':
-      return object.properties[name].select.name
+      return object.properties[name].select?.name
     case 'title':
       return object.properties[name].title[0]?.plain_text
     case 'rich_text':
@@ -62,7 +82,7 @@ export const getProperties = (object: PageObject, { name, type }: { name: string
     // case 'formula':
     //   return object.properties[name].formula
     case 'relation':
-      return object.properties[name].relation
+      return object.properties[name].relation[0]
     case 'rollup':
       return object.properties[name].rollup
     // case 'created_time':

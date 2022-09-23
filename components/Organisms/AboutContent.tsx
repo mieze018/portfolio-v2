@@ -19,9 +19,9 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
     <Wrapper>
       <Introduction />
       {events?.length && <Events events={events} />}
-      {/*  {workExperienceGenre?.length && (
+      {workExperienceGenre?.length && (
         <WorkExperience workExperience={workExperience} genres={workExperienceGenre} />
-      )} */}
+      )}
       <EventHistory events={events} />
       <Prizes prizes={prizes} />
       {/* {links?.length && <Linktree links={links} />} */}

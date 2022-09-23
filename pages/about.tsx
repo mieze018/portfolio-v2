@@ -17,7 +17,6 @@ export type aboutDataType = {
 }
 
 const About: NextPage<aboutDataType> = ({ fallbackData }) => {
-  console.log(fallbackData)
   if (!fallbackData) return <div>Loading...</div>
   return <AboutContent fallbackData={fallbackData} />
 }
@@ -25,9 +24,12 @@ const About: NextPage<aboutDataType> = ({ fallbackData }) => {
 export default About
 
 export const getStaticProps: GetStaticProps<aboutDataType> = async ({ locale = 'ja' }) => {
-  const prizesDB = await getDatabase(prizesDBId)
+  const prizesDB = await getDatabase(prizesDBId, {
+    sortProperty: 'date',
+    sortDirection: 'descending',
+  })
   const workExperienceDB = await getDatabase(workExperienceDBId)
-  const workExperienceGenreDB = await getDatabase(workExperienceGenreDBId)
+  const workExperienceGenreDB = await getDatabase(workExperienceGenreDBId, { sortProperty: 'sort' })
   const eventDB = await getDatabase(eventDBId)
   const Data = {
     prizes: prizesDB,
