@@ -15,9 +15,9 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.sinking || scrollStates.sunk)
     return css`
       ${tw`
-      brightness-110 
-      blur-[1px]
-      md:blur-[3px]
+      brightness-125 
+      blur-[0px]
+      md:blur-[1px]
       `}
     `
   return tw``
