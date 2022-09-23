@@ -25,13 +25,11 @@ const About: NextPage<aboutDataType> = ({ fallbackData }) => {
 export default About
 
 export const getStaticProps: GetStaticProps<aboutDataType> = async ({ locale = 'ja' }) => {
-  // const page = await getPage(pageId)
   const prizesDB = await getDatabase(prizesDBId)
   const workExperienceDB = await getDatabase(workExperienceDBId)
   const workExperienceGenreDB = await getDatabase(workExperienceGenreDBId)
   const eventDB = await getDatabase(eventDBId)
   const Data = {
-    // page: page,
     prizes: prizesDB,
     workExperience: workExperienceDB,
     workExperienceGenre: workExperienceGenreDB,

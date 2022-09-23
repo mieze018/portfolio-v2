@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 
-import type { aboutData } from 'pages/api/about'
+import type { aboutDataType } from 'pages/about'
 
 import { EventHistory } from 'components/Molecules/About/EventHistory'
 import { Events } from 'components/Molecules/About/Events'
@@ -12,15 +12,18 @@ import { WorkExperience } from 'components/Molecules/About/WorkExperience'
 
 const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16`
 
-export const AboutContent = ({ data }: { data: typeof aboutData }) => {
-  const { events, workExperience, genres } = data
+export const AboutContent = ({ fallbackData }: aboutDataType) => {
+  const { prizes, workExperience, workExperienceGenre, events } = fallbackData
+  if (!fallbackData) return <div>Loading...</div>
   return (
     <Wrapper>
       <Introduction />
-      {events?.length && <Events events={events} />}
-      {workExperience?.length && <WorkExperience workExperience={workExperience} genres={genres} />}
-      <EventHistory events={events} />
-      <Prizes />
+      {/* {events?.length && <Events events={events} />}
+      {workExperienceGenre?.length && (
+        <WorkExperience workExperience={workExperience} genres={workExperienceGenre} />
+      )} */}
+      {/* <EventHistory events={events} /> */}
+      <Prizes prizes={prizes} />
       {/* {links?.length && <Linktree links={links} />} */}
       {/* <Participant /> */}
     </Wrapper>
