@@ -15,6 +15,7 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.sinking || scrollStates.sunk)
     return css`
       ${tw`
+      grid-flow-col
       brightness-125 
       blur-[0px]
       md:blur-[1px]
@@ -22,10 +23,10 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
     `
   return tw``
 }
-export const Nav = styled.nav`
-  ${tw`sticky top-0 z-10 m-auto text-center hover:blur-0`}
+export const Nav = styled.nav<{ footer?: boolean }>`
+  ${tw`sticky top-0 z-10 m-auto mt-12 md:mt-2 text-center hover:blur-0 grid md:grid-flow-col justify-center gap-y-12 gap-x-4`}
 
   transition-property: opacity, filter, top;
   transition-duration: 1s, 1s, 0.2s;
-  ${() => scrollAnimation(useScrollState())}
+  ${({ footer }) => !footer && scrollAnimation(useScrollState())}
 `
