@@ -8,13 +8,13 @@ import { SocialLinks } from 'components/Molecules/SocialLinks'
 import { copyright } from 'libs/copyright'
 import { routes } from 'libs/routes'
 
-const Wrapper = tw.footer`bottom-0 py-0 text-xs text-center pb-4 relative top-contentWrapperTop pt-8 grid gap-4`
+const Wrapper = tw.footer`bottom-0 py-0 text-xs text-center pb-4 relative top-contentWrapperTop pt-8 grid gap-16`
 
 export const Footer = () => {
   const { t } = useTranslation('common')
   return (
     <Wrapper>
-      <Nav css={tw`blur-0`}>
+      <Nav footer css={tw`blur-0`}>
         <NavLinks routes={routes} />
       </Nav>
       <SocialLinks />

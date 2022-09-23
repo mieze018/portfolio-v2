@@ -6,7 +6,7 @@ import tw, { styled } from 'twin.macro'
 import { contentsWrapperState } from 'libs/recoil/atoms'
 
 const A = styled.a<{ isCurrent: boolean }>`
-  ${tw`inline-block m-1 mt-3 cursor-pointer md:m-2 mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`}
+  ${tw`inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`}
   ${({ isCurrent }) => isCurrent && tw`underline hover:text-secondary`}
 `
 export const NavLinks = ({
