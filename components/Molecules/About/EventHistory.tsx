@@ -4,7 +4,7 @@ import type { PageObject } from 'libs/@type/api/notion'
 
 import { Separator } from 'components/Atoms/Separator'
 import { SectionWrapper, P } from 'components/Molecules/About/Atoms'
-import { dateToYear } from 'libs/dataFormat'
+import { EventItem } from 'components/Molecules/About/EventItem'
 import { getProperties } from 'libs/notion'
 
 export const EventHistory = ({ events }: { events: PageObject[] }) => {
@@ -30,13 +30,14 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
           const url = getProperties(event, { name: 'url', type: 'url' })
           const description = getProperties(event, { name: 'description', type: 'rich_text' })
           return (
-            <li key={event.id}>
-              <p>{dateToYear(date)}</p>
-              <h2>{title}</h2>
-              <p>{description}</p>
-              <p>{place}</p>
-              <p>{url}</p>
-            </li>
+            <EventItem
+              key={event.id}
+              title={title}
+              place={place}
+              date={date}
+              url={url}
+              description={description}
+            />
           )
         })}
       </ul>
