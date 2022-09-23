@@ -1,6 +1,7 @@
 # portfolio-v2
 
 ## 使っているもの
+https://github.com/mieze018/portfolio-v2/network/dependencies
 
 ### フレームワーク(? なんと呼ぶのが正しいのか調べる)
 
