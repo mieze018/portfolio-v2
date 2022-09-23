@@ -34,8 +34,8 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
             <ImageElement
               $closeup
               quality={95}
-              // placeholder="blur"
-              // blurDataURL={photo.alt_sizes.find((size) => size.width === 100)?.url}
+              placeholder="blur"
+              blurDataURL={'img/surface.webp'}
             />
           )
         }}
