@@ -39,6 +39,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^11.18.5",
     "react-icons": "^4.4.0",
+    "react-textarea-autosize": "^8.3.4",
     "recoil": "^0.7.5",
     "storybook": "^7.0.0-alpha.33",
     "styled-components": "^5.3.5",
