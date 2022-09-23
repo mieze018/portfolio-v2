@@ -26,10 +26,14 @@ export default About
 export const getStaticProps: GetStaticProps<aboutDataType> = async ({ locale = 'ja' }) => {
   const prizesDB = await getDatabase(prizesDBId, {
     sortProperty: 'date',
-    sortDirection: 'descending',
   })
-  const workExperienceDB = await getDatabase(workExperienceDBId)
-  const workExperienceGenreDB = await getDatabase(workExperienceGenreDBId, { sortProperty: 'sort' })
+  const workExperienceDB = await getDatabase(workExperienceDBId, {
+    sortProperty: 'date',
+  })
+  const workExperienceGenreDB = await getDatabase(workExperienceGenreDBId, {
+    sortProperty: 'sort',
+    sortDirection: 'ascending',
+  })
   const eventDB = await getDatabase(eventDBId)
   const Data = {
     prizes: prizesDB,
