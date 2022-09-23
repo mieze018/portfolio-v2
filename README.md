@@ -21,10 +21,10 @@
     - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
     - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar> overflow:overlay が不都合なのでオミット
   - Styled Components <https://styled-components.com/>
-  - Headless UI <https://headlessui.com/>
-  - Radix UI <https://www.radix-ui.com/docs/primitives/overview/introduction>
-  - React Icons - <https://react-icons.github.io/react-icons/>
-  - next-useragent<https://github.com/tokuda109/next-useragent>
+- Headless UI <https://headlessui.com/>
+- Radix UI <https://www.radix-ui.com/docs/primitives/overview/introduction>
+- React Icons - <https://react-icons.github.io/react-icons/>
+- next-useragent<https://github.com/tokuda109/next-useragent>
 
 ### スタイルのための資料
 
