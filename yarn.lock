@@ -12680,10 +12680,10 @@ tty-browserify@0.0.0:
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
   integrity sha512-JVa5ijo+j/sOoHGjw0sxw734b1LhBkQ3bvUGNdxnVXDCX81Yx7TFgnZygxrIIWn23hbfTaMYLwRmAxFyDuFmIw==
 
-twin.macro@^3.0.0-rc.4:
-  version "3.0.0-rc.4.2"
-  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-3.0.0-rc.4.2.tgz#07b4b5922ce658dd0564479afa2d63168f014233"
-  integrity sha512-eMXh9uhj8UO22zvhPBfC+gNt5yrpSGFeDU0+wzoN4wO+lEYQaWogvum7l0uQFUspzNFih3cWsgXaGxu4cCTkHQ==
+twin.macro@^3.0.0-rc.5:
+  version "3.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-3.0.0-rc.5.tgz#cfd0643a1099a4bc14730b96778596f3e389949b"
+  integrity sha512-VqyWCcG6d/euWXaxH4LYVDF1HzzqRK6MjxRpwOgHzSW8jekw9U4bpyQlqJfQAEx4ztxHABZguyKVhyYsMuUhNQ==
   dependencies:
     "@babel/template" "^7.18.10"
     babel-plugin-macros "^3.1.0"
