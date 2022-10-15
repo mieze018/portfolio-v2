@@ -1,39 +1,43 @@
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client'
 
-import type { QueryDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
-import type { PageObject, propertiesTypes } from "libs/@type/api/notion";
+import type { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
+import type { PageObject, propertiesTypes } from 'libs/@type/api/notion'
 
 const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN })
 type getDatabaseOptions = {
-  sortProperty?: string,
-  sortDirection?: "ascending" | "descending"
+  sortProperty?: string
+  sortDirection?: 'ascending' | 'descending'
 }
-export const getDatabase = async (databaseId: string, { sortProperty, sortDirection = 'descending' }: getDatabaseOptions = {}
+export const getDatabase = async (
+  databaseId: string,
+  { sortProperty, sortDirection = 'descending' }: getDatabaseOptions = {}
 ) => {
   //オプションでソート順を指定できる
-  const sorts: QueryDatabaseParameters['sorts'] = sortProperty ?
-    [{
-      property: sortProperty || '',
-      direction: sortDirection
-    }]
-    :
-    [{
-      timestamp: 'created_time',
-      direction: 'descending'
-    }]
+  const sorts: QueryDatabaseParameters['sorts'] = sortProperty
+    ? [
+        {
+          property: sortProperty || '',
+          direction: sortDirection,
+        },
+      ]
+    : [
+        {
+          timestamp: 'created_time',
+          direction: 'descending',
+        },
+      ]
 
   const response = await notion.databases.query({
     database_id: databaseId,
     sorts: sorts,
-  });
-  return response.results;
-};
-
+  })
+  return response.results
+}
 
 export const getPage = async (pageId: string) => {
-  const response = await notion.pages.retrieve({ page_id: pageId });
-  return response;
-};
+  const response = await notion.pages.retrieve({ page_id: pageId })
+  return response
+}
 
 // export const getBlocks = async (blockId: string) => {
 //   const blocks = [];
@@ -52,7 +56,10 @@ export const getPage = async (pageId: string) => {
 //   return blocks;
 // };
 
-export const getProperties = (object: PageObject, { name, type }: { name: string, type: propertiesTypes }) => {
+export const getProperties = (
+  object: PageObject,
+  { name, type }: { name: string; type: propertiesTypes }
+) => {
   if (!object?.properties[name]) return null
   switch (type) {
     case 'select':
