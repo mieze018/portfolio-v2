@@ -29,7 +29,7 @@
     "@headlessui/react": "^1.7.3",
     "@notionhq/client": "^2.2.1",
     "@radix-ui/react-label": "^1.0.0",
-    "@radix-ui/react-separator": "^1.0.0",
+    "@radix-ui/react-separator": "^1.0.1",
     "framer-motion": "^7.5.4",
     "next": "^12.3.0",
     "next-i18next": "^12.1.0",
