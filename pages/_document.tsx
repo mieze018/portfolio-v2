@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
             <link
-              href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap&display=optional"
+              href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=optional"
               rel="stylesheet"
             />
           </React.Fragment>,
