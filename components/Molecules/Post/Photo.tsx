@@ -22,7 +22,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
   const lightCyan =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
   return (
-    <Link href={`#${hashCloseup}`} scroll={false}>
+    <Link href={`#${hashCloseup}`} scroll={false} className="contents">
       <FlexItem
         $isColumn={isColumn}
         onClick={() => {
