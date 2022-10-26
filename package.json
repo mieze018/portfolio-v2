@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -57,7 +58,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "^8.26.0",
-    "eslint-config-next": "12.3.1",
+    "eslint-config-next": "13.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-css": "^0.6.0",
     "postcss": "^8.4.18",
