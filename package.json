@@ -28,7 +28,7 @@
   "dependencies": {
     "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.3",
-    "@notionhq/client": "^2.2.1",
+    "@notionhq/client": "^2.2.2",
     "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-separator": "^1.0.1",
     "framer-motion": "^7.6.2",
