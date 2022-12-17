@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
+const { i18n } = require('./next-i18next.config')
+const withTwin = require('./withTwin.js')
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -16,9 +18,8 @@ const imageConfig = {
   },
 }
 
-const { i18n } = require('./next-i18next.config')
-
-module.exports = {
+/** @type {import('next').NextConfig} */
+module.exports = withTwin({
   ...nextConfig,
   ...imageConfig,
   i18n,
@@ -27,4 +28,4 @@ module.exports = {
     config.resolve.fallback = { fs: false, module: false, path: false }
     return config
   },
-}
+})
