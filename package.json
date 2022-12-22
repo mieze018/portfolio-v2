@@ -44,7 +44,7 @@
     "swr": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "^7.20.7",
     "@babel/plugin-syntax-typescript": "^7.20.0",
     "@playwright/test": "^1.29.0",
     "@types/gtag.js": "^0.0.12",
