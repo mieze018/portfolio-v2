@@ -1,3 +1,5 @@
 export const Button = ({ children, ...props }: { children: React.ReactNode }) => (
-  <button {...props}>{children}</button>
+  <button {...props} className="border">
+    {children}
+  </button>
 )
