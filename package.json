@@ -10,7 +10,9 @@
     "lint": "next lint",
     "lint:fix": "npx eslint . --config .eslintrc.json --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "unused": "yarn ts-unused-exports tsconfig.json"
+    "unused": "yarn ts-unused-exports tsconfig.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "babelMacros": {
     "twin": {
@@ -47,6 +49,14 @@
     "@babel/core": "^7.20.5",
     "@babel/plugin-syntax-typescript": "^7.20.0",
     "@playwright/test": "^1.29.0",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
     "@types/gtag.js": "^0.0.12",
     "@types/node": "18.11.17",
     "@types/react": "18.0.26",
@@ -62,6 +72,7 @@
     "eslint-config-next": "13.0.7",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-css": "^0.6.0",
+    "eslint-plugin-storybook": "^0.6.8",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "tailwindcss": "^3.2.4",
