@@ -1,4 +1,4 @@
-import { PrimaryButton } from './PrimaryButton'
+import { Button } from './Button'
 
-export default { component: PrimaryButton }
-export const Primary = () => <PrimaryButton>Button</PrimaryButton>
+export default { component: Button }
+export const SampleButton = () => <Button>Button</Button>
