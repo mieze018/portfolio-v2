@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "npx eslint . --config .eslintrc.json --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
+    "format": "prettier --write --ignore-path .gitignore ./**/*.{js,jsx,ts,tsx,json,css}",
     "unused": "yarn ts-unused-exports tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
