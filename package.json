@@ -56,7 +56,7 @@
     "@storybook/addon-links": "^7.0.0-beta.13",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/nextjs": "7.0.0-beta.14",
-    "@storybook/react": "^7.0.0-beta.13",
+    "@storybook/react": "^7.0.0-beta.15",
     "@storybook/testing-library": "^0.0.14--canary.30.5f44d14.0",
     "@types/gtag.js": "^0.0.12",
     "@types/node": "18.11.17",
