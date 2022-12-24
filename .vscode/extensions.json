@@ -3,11 +3,11 @@
     "lokalise.i18n-ally",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
+    "github.copilot-nightly",
     "styled-components.vscode-styled-components",
     "csstools.postcss",
     "lightyen.tailwindcss-intellisense-twin",
     "bradlc.vscode-tailwindcss",
-    "github.copilot",
     "heybourn.headwind",
     "streetsidesoftware.code-spell-checker"
   ]
