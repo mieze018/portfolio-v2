@@ -38,3 +38,6 @@ next-env.d.ts
 /playwright-report/
 /playwright/.cache/
 build-storybook.log
+
+.vercel
+.env
