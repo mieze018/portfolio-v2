@@ -1,7 +1,8 @@
 # portfolio-v2
 
 ## 使っているもの
-https://github.com/mieze018/portfolio-v2/network/dependencies
+
+<https://github.com/mieze018/portfolio-v2/network/dependencies>
 
 ### フレームワーク(? なんと呼ぶのが正しいのか調べる)
 
@@ -27,6 +28,11 @@ https://github.com/mieze018/portfolio-v2/network/dependencies
 - React Icons - <https://react-icons.github.io/react-icons/>
 - next-useragent<https://github.com/tokuda109/next-useragent>
 
+- Storybook <https://storybook.js.org/docs/react/>
+  - [twin.macro Storybook + styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript)
+  - Chromatic <https://www.chromatic.com/>
+    - メモ dependabot はフォークされた PR なのでシークレットキーを公開にしないと使えないので、UI に変更がある可能性のあるものは個別にローカルで`chromatic`コマンドを叩いてデプロイする
+
 ### スタイルのための資料
 
 - W3C color names <https://www.w3schools.com/colors/colors_names.asp>
@@ -37,7 +43,7 @@ https://github.com/mieze018/portfolio-v2/network/dependencies
 - Framer Motion <https://www.framer.com/motion/>
   - ease <https://www.framer.com/docs/transition/###ease>
 
-### なんと呼ぶのか調べる
+### Linter, Formatter, Maintenance tools
 
 - ESLint <https://eslint.org/docs/latest/>
 - Prettier <https://prettier.io/docs/en/>
@@ -58,8 +64,7 @@ https://github.com/mieze018/portfolio-v2/network/dependencies
 
 ## 余裕があればつかいたもの
 
-- Storybook <https://storybook.js.org/docs/react/>
-  - [twin.macro Storybook + styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript)
+- Jest <https://jestjs.io/docs/ja/getting-started>
 - Playwright <https://playwright.dev/docs/intro>
 
 - Linktree-API <https://documenter.getpostman.com/view/14039622/Tzsik4P8>
@@ -139,4 +144,3 @@ TODO:あとでまとめて Zenn の記事書くぞがんばるぞ
 
 - 複数のアニメーションをさせる場合 1 つの`animation`プロパティ内で全て指定しないといけないのでプロパティを上書きすると後のしか残らない
 - DOM の出現からずっと継続させたいアニメーションは、クラス再生成するとその都度リセットされるのでそういう場合はアニメーションの CSS だけ他の動的なスタイルと別クラスで指定して再生成されないようにする
-
