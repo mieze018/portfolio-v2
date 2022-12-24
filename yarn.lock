@@ -1813,21 +1813,21 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.15"
 
-"@storybook/addon-interactions@^7.0.0-beta.13":
-  version "7.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-7.0.0-beta.13.tgz#10bae1eb1c104402252ccf3c905b238135f6ffa9"
-  integrity sha512-kk3E+55tWDPAMvaRHbOoUjLIJV80NNLX6WmVPqNlfIDivtZE0onDwNZvOb+ZUPxqct1lHoX6EeSYit/rKqHiOQ==
+"@storybook/addon-interactions@^7.0.0-beta.15":
+  version "7.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-7.0.0-beta.15.tgz#ec883b67e671c3262cf03fbd9e02821eb5ddaae1"
+  integrity sha512-Vdf5vUj3yEMdj4s5mPfzuH+axX7ItA67213oLo9+PIpvUXHDe4A/0l08xjKRpBpyUDTlhpo2pL1E+XSkx7PKyQ==
   dependencies:
-    "@storybook/client-logger" "7.0.0-beta.13"
-    "@storybook/components" "7.0.0-beta.13"
-    "@storybook/core-common" "7.0.0-beta.13"
-    "@storybook/core-events" "7.0.0-beta.13"
+    "@storybook/client-logger" "7.0.0-beta.15"
+    "@storybook/components" "7.0.0-beta.15"
+    "@storybook/core-common" "7.0.0-beta.15"
+    "@storybook/core-events" "7.0.0-beta.15"
     "@storybook/global" "^5.0.0"
-    "@storybook/instrumenter" "7.0.0-beta.13"
-    "@storybook/manager-api" "7.0.0-beta.13"
-    "@storybook/preview-api" "7.0.0-beta.13"
-    "@storybook/theming" "7.0.0-beta.13"
-    "@storybook/types" "7.0.0-beta.13"
+    "@storybook/instrumenter" "7.0.0-beta.15"
+    "@storybook/manager-api" "7.0.0-beta.15"
+    "@storybook/preview-api" "7.0.0-beta.15"
+    "@storybook/theming" "7.0.0-beta.15"
+    "@storybook/types" "7.0.0-beta.15"
     jest-mock "^27.0.6"
     polished "^4.2.2"
     ts-dedent "^2.2.0"
@@ -2199,19 +2199,6 @@
     recast "^0.19.0"
     util "^0.12.4"
 
-"@storybook/components@7.0.0-beta.13":
-  version "7.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-7.0.0-beta.13.tgz#c3592a06f09e647c482dcaf13c34be8a9772514e"
-  integrity sha512-IjUwbHKzPaBGokLBHIONnVtbcVnvt2+h76afTtvRGLw979gz9OLNxC2+sep3ybIiAO+/SNhXcMjAU/3k0hsFsg==
-  dependencies:
-    "@storybook/client-logger" "7.0.0-beta.13"
-    "@storybook/csf" next
-    "@storybook/global" "^5.0.0"
-    "@storybook/theming" "7.0.0-beta.13"
-    "@storybook/types" "7.0.0-beta.13"
-    memoizerific "^1.11.3"
-    util-deprecate "^1.0.2"
-
 "@storybook/components@7.0.0-beta.14":
   version "7.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-7.0.0-beta.14.tgz#316db660a7d45f89d561fb95dde6ae7c6a776a23"
@@ -2499,7 +2486,19 @@
   resolved "https://registry.yarnpkg.com/@storybook/global/-/global-5.0.0.tgz#b793d34b94f572c1d7d9e0f44fac4e0dbc9572ed"
   integrity sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==
 
-"@storybook/instrumenter@7.0.0-beta.13", "@storybook/instrumenter@next":
+"@storybook/instrumenter@7.0.0-beta.15":
+  version "7.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-7.0.0-beta.15.tgz#a82f67764541e224ce91401d4213389d450c5741"
+  integrity sha512-Kc3V5jaf2TGm2wN2ucwBQvM/y2Z04N+QW3rWeef1rOiFF8k/CadgRMj/jAHEyFOO6npUaAap6kWyzOXoyy+y3w==
+  dependencies:
+    "@storybook/channels" "7.0.0-beta.15"
+    "@storybook/client-logger" "7.0.0-beta.15"
+    "@storybook/core-events" "7.0.0-beta.15"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "7.0.0-beta.15"
+    core-js "^3.8.2"
+
+"@storybook/instrumenter@next":
   version "7.0.0-beta.13"
   resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-7.0.0-beta.13.tgz#16e83d7d324d8fe57923146b632f4ad79aef14f0"
   integrity sha512-eQmpo7VwX9Y+C/8CnMxtbLm0mxVzYCdE41KY9c9qqPN1KXYMqG6HS0k+9kC+7sVYuzwlKghPczHWm0+ykF5qqQ==
@@ -2510,27 +2509,6 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.13"
     core-js "^3.8.2"
-
-"@storybook/manager-api@7.0.0-beta.13":
-  version "7.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-7.0.0-beta.13.tgz#b5bb2c62b32db8059f2df8f9d18586bc9b81c025"
-  integrity sha512-KWfqYD3pyP6y0QR8mF2TNxweqfM+CfEAisK+nZbKq3M1nFjmIbHuqT7mQekKUqezeHZkNxJV4tlYpOjVTObfqg==
-  dependencies:
-    "@storybook/channels" "7.0.0-beta.13"
-    "@storybook/client-logger" "7.0.0-beta.13"
-    "@storybook/core-events" "7.0.0-beta.13"
-    "@storybook/csf" next
-    "@storybook/global" "^5.0.0"
-    "@storybook/router" "7.0.0-beta.13"
-    "@storybook/theming" "7.0.0-beta.13"
-    "@storybook/types" "7.0.0-beta.13"
-    dequal "^2.0.2"
-    lodash "^4.17.21"
-    memoizerific "^1.11.3"
-    semver "^7.3.7"
-    store2 "^2.14.2"
-    telejson "^7.0.3"
-    ts-dedent "^2.0.0"
 
 "@storybook/manager-api@7.0.0-beta.14":
   version "7.0.0-beta.14"
@@ -2834,15 +2812,6 @@
     type-fest "^2.19.0"
     util-deprecate "^1.0.2"
 
-"@storybook/router@7.0.0-beta.13":
-  version "7.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-7.0.0-beta.13.tgz#aaac7242fde57e149fbd79a7f33f48add898f91e"
-  integrity sha512-7A0dx4lfA3L0bsh/xHVA9LblHgbmYwyNxfB5KM9Bg+nC7I8OHW5vuAn2p2AnKETFqGhSjNnGjQ8kcKpO8q8xXQ==
-  dependencies:
-    "@storybook/client-logger" "7.0.0-beta.13"
-    memoizerific "^1.11.3"
-    qs "^6.10.0"
-
 "@storybook/router@7.0.0-beta.14":
   version "7.0.0-beta.14"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-7.0.0-beta.14.tgz#48168f25fc015083509bbd681471c0cad1b29fa1"
@@ -2894,16 +2863,6 @@
     "@testing-library/dom" "^8.3.0"
     "@testing-library/user-event" "^13.2.1"
     ts-dedent "^2.2.0"
-
-"@storybook/theming@7.0.0-beta.13":
-  version "7.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.0.0-beta.13.tgz#e5b7b6baefaf6b7c1ad027572cc09ab22b70a769"
-  integrity sha512-Wxmb1jCB4pAyd40twisrHtKGl3uTIWso3yyr70zyweHu0xKMQi+kx9Y4hMe0qd/IG6nvn3YtgJBuEiWmCZSXqw==
-  dependencies:
-    "@emotion/use-insertion-effect-with-fallbacks" "^1.0.0"
-    "@storybook/client-logger" "7.0.0-beta.13"
-    "@storybook/global" "^5.0.0"
-    memoizerific "^1.11.3"
 
 "@storybook/theming@7.0.0-beta.14":
   version "7.0.0-beta.14"
