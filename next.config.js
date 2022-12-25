@@ -23,9 +23,10 @@ module.exports = withTwin({
   ...nextConfig,
   ...imageConfig,
   i18n,
-  webpack: (config) => {
-    // Unset client-side javascript that only works server-side
-    config.resolve.fallback = { fs: false, module: false, path: false }
-    return config
-  },
+  //withTwin と重複するためコメントアウト
+  // webpack: (config) => {
+  //   // Unset client-side javascript that only works server-side
+  //   config.resolve.fallback = { fs: false, module: false, path: false }
+  //   return config
+  // },
 })
