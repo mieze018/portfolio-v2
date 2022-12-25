@@ -1694,6 +1694,25 @@
     lodash.union "^4.6.0"
     lodash.values "^4.3.0"
 
+"@storybook/addon-a11y@^7.0.0-beta.15":
+  version "7.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.0.0-beta.15.tgz#285ef2585157310e16404af0ed4b0709a17ed8c4"
+  integrity sha512-0bTxztoPXF23Sx/FNHo747OSCAL7sngdrLEhsQYxmPxMGcsHmeqdY7pfyluHb99xlGgZ7zEpKxas+iu+cRVX0Q==
+  dependencies:
+    "@storybook/addon-highlight" "7.0.0-beta.15"
+    "@storybook/channels" "7.0.0-beta.15"
+    "@storybook/client-logger" "7.0.0-beta.15"
+    "@storybook/components" "7.0.0-beta.15"
+    "@storybook/core-events" "7.0.0-beta.15"
+    "@storybook/global" "^5.0.0"
+    "@storybook/manager-api" "7.0.0-beta.15"
+    "@storybook/preview-api" "7.0.0-beta.15"
+    "@storybook/theming" "7.0.0-beta.15"
+    "@storybook/types" "7.0.0-beta.15"
+    axe-core "^4.2.0"
+    lodash "^4.17.21"
+    react-resize-detector "^7.1.2"
+
 "@storybook/addon-actions@7.0.0-beta.15", "@storybook/addon-actions@^7.0.0-beta.15":
   version "7.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.15.tgz#95781bd86f3f86706c642e8731468d22afb046ea"
@@ -3799,7 +3818,7 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-axe-core@^4.4.3:
+axe-core@^4.2.0, axe-core@^4.4.3:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.6.1.tgz#79cccdee3e3ab61a8f42c458d4123a6768e6fbce"
   integrity sha512-lCZN5XRuOnpG4bpMq8v0khrWtUOn+i8lZSb6wHZH56ZfbIEv6XwJV84AAueh9/zi7qPVJ/E4yz6fmsiyOmXR4w==
@@ -8671,6 +8690,13 @@ react-refresh@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
+
+react-resize-detector@^7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-7.1.2.tgz#8ef975dd8c3d56f9a5160ac382ef7136dcd2d86c"
+  integrity sha512-zXnPJ2m8+6oq9Nn8zsep/orts9vQv3elrpA+R8XTcW7DVVUJ9vwDwMXaBtykAYjMnkCIaOoK9vObyR7ZgFNlOw==
+  dependencies:
+    lodash "^4.17.21"
 
 react-textarea-autosize@^8.4.0:
   version "8.4.0"

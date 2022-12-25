@@ -7,6 +7,8 @@ module.exports = {
     // 'storybook-addon-swc',
     '@storybook/addon-postcss',
     '@storybook/addon-interactions',
+    '@storybook/addon-actions',
+    '@storybook/addon-a11y',
   ],
   framework: {
     name: '@storybook/nextjs',
