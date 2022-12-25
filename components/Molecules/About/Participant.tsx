@@ -1,4 +1,4 @@
-import { SectionWrapper } from 'components/Molecules/About/Atoms'
+import { SectionWrapper } from 'components/Atoms/About/Atoms'
 
 export const Participant = () => (
   <SectionWrapper>

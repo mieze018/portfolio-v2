@@ -2,8 +2,8 @@ import { useTranslation } from 'next-i18next'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
+import { SectionWrapper } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
-import { SectionWrapper } from 'components/Molecules/About/Atoms'
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 

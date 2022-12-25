@@ -2,8 +2,8 @@ import { useTranslation } from 'next-i18next'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
+import { H2, SectionWrapper, UlNest1 } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
-import { H2, SectionWrapper, UlNest1 } from 'components/Molecules/About/Atoms'
 import { Work } from 'components/Molecules/About/Work'
 import { getProperties } from 'libs/notion'
 
