@@ -13,7 +13,7 @@
     "unused": "yarn ts-unused-exports tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes --only-changed --skip 'dependabot/**' --untraced '.storybook/decorators/*.js'"
+    "chromatic": "chromatic --exit-zero-on-changes --only-changed --skip 'dependabot/**'"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -50,9 +50,10 @@
     "@storybook/addon-interactions": "^7.0.0-beta.15",
     "@storybook/addon-links": "^7.0.0-beta.15",
     "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/jest": "^0.0.11-next.0",
     "@storybook/nextjs": "7.0.0-beta.15",
     "@storybook/react": "^7.0.0-beta.15",
-    "@storybook/testing-library": "^0.0.14--canary.30.5f44d14.0",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@types/gtag.js": "^0.0.12",
     "@types/node": "18.11.17",
     "@types/react": "18.0.26",
