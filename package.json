@@ -13,7 +13,7 @@
     "unused": "yarn ts-unused-exports tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes --only-changed --skip 'dependabot/**'"
+    "chromatic": "chromatic --exit-zero-on-changes --only-changed --skip 'dependabot/**' --untraced '.storybook/decorators/*.js'"
   },
   "prettier": {
     "trailingComma": "es5",

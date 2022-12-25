@@ -1,5 +1,4 @@
-import React from 'react'
-import { GlobalStyle } from '../styles/global'
+import { styledComponentsDecorator } from './decorators/styledComponents'
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -9,10 +8,5 @@ export const parameters = {
     },
   },
 }
-const storybookDecorator = (storyFn) => (
-  <>
-    <GlobalStyle />
-    {storyFn()}
-  </>
-)
-export const decorators = [storybookDecorator]
+
+export const decorators = [styledComponentsDecorator]
