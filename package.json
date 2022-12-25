@@ -15,11 +15,6 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes --only-changed --skip 'dependabot/**' --untraced '**.test.**"
   },
-  "babelMacros": {
-    "twin": {
-      "preset": "styled-components"
-    }
-  },
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
