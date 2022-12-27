@@ -9886,10 +9886,10 @@ ts-prune@^0.10.3:
     "true-myth" "^4.1.0"
     ts-morph "^13.0.1"
 
-ts-unused-exports@^8.0.5:
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/ts-unused-exports/-/ts-unused-exports-8.0.5.tgz#43b1ac25822ec9445b5fc3e57862c0d1f23471cb"
-  integrity sha512-ewEHxTtQsYQFQCI12CnMx8D0xxn1/Uui1Wr5jbiX4me+4LlSiOGvt4mGz0hxtIC3eElVaLrKEPbeT3TPrm4JvA==
+ts-unused-exports@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/ts-unused-exports/-/ts-unused-exports-9.0.0.tgz#fb4d7789623257f63f9c84c6b37fe91c25272e45"
+  integrity sha512-1ceabtcUClC2x2LlQIPZlMFUj7m6jqsR/GGS0zPJZ7TI6agCLKqUdC2H0gXZKQlb+iXy9eBlMMEWr0VnU71NRg==
   dependencies:
     chalk "^4.0.0"
     tsconfig-paths "^3.9.0"
