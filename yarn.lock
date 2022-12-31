@@ -2290,6 +2290,14 @@
     "@storybook/client-logger" "7.0.0-beta.15"
     "@storybook/preview-api" "7.0.0-beta.15"
 
+"@storybook/core-client@7.0.0-beta.16":
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.0.0-beta.16.tgz#b293780fe6535e4663d9aa1e50b79de01269edbf"
+  integrity sha512-AGKW4mEKLm4JWUGEXikf/24jFXwO+JhvpZSywjA49zi/RVhC2K5QU7F3AxQrXT59vY1XSTKC6jpyygA09Hpngw==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.16"
+    "@storybook/preview-api" "7.0.0-beta.16"
+
 "@storybook/core-common@7.0.0-beta.15":
   version "7.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-7.0.0-beta.15.tgz#440b67ec50c38cef2a0ea2027b9932c93a7b9def"
@@ -2798,7 +2806,7 @@
     react-docgen-typescript "^2.1.1"
     tslib "^2.0.0"
 
-"@storybook/react@7.0.0-beta.15", "@storybook/react@^7.0.0-beta.15":
+"@storybook/react@7.0.0-beta.15":
   version "7.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.15.tgz#c17188bdde309100a6af5694628109045fd1306c"
   integrity sha512-ePqUwbmdvwuMsUmqhHo9tP28EDRXQAjFKlQEm73xHG/mTHLPYzbyFucziETKbuaC5zzf6XRWYicGm9bHpiq7tA==
@@ -2809,6 +2817,31 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.15"
     "@storybook/types" "7.0.0-beta.15"
+    "@types/estree" "^0.0.51"
+    "@types/node" "^16.0.0"
+    acorn "^7.4.1"
+    acorn-jsx "^5.3.1"
+    acorn-walk "^7.2.0"
+    escodegen "^2.0.0"
+    html-tags "^3.1.0"
+    lodash "^4.17.21"
+    prop-types "^15.7.2"
+    react-element-to-jsx-string "^15.0.0"
+    ts-dedent "^2.0.0"
+    type-fest "^2.19.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/react@^7.0.0-beta.16":
+  version "7.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.16.tgz#3f03584c358614498551f777bf6defe2c58e9a0e"
+  integrity sha512-TOVCOPcrVLbRbXM5CWwOpyaMhaR7vfaqQn4hRXg/43wG4ktWq+OgI12eEs+QgMsvNXwWz1urJRTP6Y9dH23HXQ==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.16"
+    "@storybook/core-client" "7.0.0-beta.16"
+    "@storybook/docs-tools" "7.0.0-beta.16"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "7.0.0-beta.16"
+    "@storybook/types" "7.0.0-beta.16"
     "@types/estree" "^0.0.51"
     "@types/node" "^16.0.0"
     acorn "^7.4.1"
