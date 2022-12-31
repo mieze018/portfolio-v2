@@ -7,13 +7,13 @@ on: push
 # List of jobs
 jobs:
   chromatic-deployment:
+    # dependabotの作成したPRでは実行しない
+    if: github.actor != 'dependabot[bot]'
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
     steps:
       - uses: actions/checkout@v1
-        # dependabotの作成したPRでは実行しない
-        if: ${{ github.actor != 'dependabot[bot]' }}
       - name: Install dependencies
         # 👇 Install dependencies with the same package manager used in the project (replace it as needed) e.g. yarn, npm, pnpm
         run: yarn
