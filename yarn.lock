@@ -1713,7 +1713,7 @@
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
 
-"@storybook/addon-actions@7.0.0-beta.17", "@storybook/addon-actions@^7.0.0-beta.17":
+"@storybook/addon-actions@7.0.0-beta.17":
   version "7.0.0-beta.17"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.17.tgz#5a08a96479a0a32320c0bae255f86225cf5c5ea4"
   integrity sha512-PU+a+skbn6dXa67wCkRdXogVF06swJddFfK9qqpxO5t4Tv/jwQxdAS4ByxQejsl139EXabbMo9g2ONSZLiDyBg==
@@ -1726,6 +1726,28 @@
     "@storybook/preview-api" "7.0.0-beta.17"
     "@storybook/theming" "7.0.0-beta.17"
     "@storybook/types" "7.0.0-beta.17"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    polished "^4.2.2"
+    prop-types "^15.7.2"
+    react-inspector "^6.0.0"
+    telejson "^7.0.3"
+    ts-dedent "^2.0.0"
+    uuid-browser "^3.1.0"
+
+"@storybook/addon-actions@^7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.19.tgz#b264657db635b1a1be781ce691e662bc06cc139f"
+  integrity sha512-MCqnD1MCaTJa5f8hTa92pvGZIAwRd/e27O6zqmDeb3VIwdGDg7XTBPDrHe5TEdMJxHFLUlkfMO3ixk20GJCVyA==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
+    "@storybook/global" "^5.0.0"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
     dequal "^2.0.2"
     lodash "^4.17.21"
     polished "^4.2.2"
@@ -2203,6 +2225,19 @@
     memoizerific "^1.11.3"
     util-deprecate "^1.0.2"
 
+"@storybook/components@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-7.0.0-beta.19.tgz#ebf78bc2172fdadf4292f40b128e83c7d4bceef6"
+  integrity sha512-cvRnjAbw56GeiV+Kw2h3sMcQiZIaSrPqsy9H0DXpeg3ySOpbRoHgmD6ofiYR5VVfQgHlvT0/40BMQHpdS+gl5Q==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/csf" next
+    "@storybook/global" "^5.0.0"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
+    memoizerific "^1.11.3"
+    util-deprecate "^1.0.2"
+
 "@storybook/core-client@7.0.0-beta.17":
   version "7.0.0-beta.17"
   resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.0.0-beta.17.tgz#a62879ac263d1e728ba46e1e7be4e8348f4cd33b"
@@ -2480,6 +2515,27 @@
     telejson "^7.0.3"
     ts-dedent "^2.0.0"
 
+"@storybook/manager-api@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-7.0.0-beta.19.tgz#4399a8a11b0f60e8645a61956b9bd68984cca9c4"
+  integrity sha512-WROTFPctrL4LamVXchSW6obqF1EG2/LOb6dYMZgPyUgJFujk85izxfT1ZeiFto1Y3Q4fiyVj8mfzqJk2bHsFZA==
+  dependencies:
+    "@storybook/channels" "7.0.0-beta.19"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
+    "@storybook/csf" next
+    "@storybook/global" "^5.0.0"
+    "@storybook/router" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    semver "^7.3.7"
+    store2 "^2.14.2"
+    telejson "^7.0.3"
+    ts-dedent "^2.0.0"
+
 "@storybook/manager@7.0.0-beta.19":
   version "7.0.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/manager/-/manager-7.0.0-beta.19.tgz#37c86657021fbc3cbd564fc00857740383df0103"
@@ -2717,6 +2773,15 @@
     memoizerific "^1.11.3"
     qs "^6.10.0"
 
+"@storybook/router@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-7.0.0-beta.19.tgz#d68fdebfac88b79cbee976835f508a34ddb07ab5"
+  integrity sha512-B9O8foy0kQl0LsgiyNe+SEwifdm+OJHNIs+L7F0Cnf9TByVHlqIZTGRUdgvGcjU2lJd2HI2sVPAt9mLszTqw3g==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.19"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+
 "@storybook/store@7.0.0-beta.17":
   version "7.0.0-beta.17"
   resolved "https://registry.yarnpkg.com/@storybook/store/-/store-7.0.0-beta.17.tgz#8ccfa0f9c56c934a67e94ff693505471865cd4c9"
@@ -2758,6 +2823,16 @@
   dependencies:
     "@emotion/use-insertion-effect-with-fallbacks" "^1.0.0"
     "@storybook/client-logger" "7.0.0-beta.17"
+    "@storybook/global" "^5.0.0"
+    memoizerific "^1.11.3"
+
+"@storybook/theming@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.0.0-beta.19.tgz#c3dcb3a2f170effd12a9e493fad2e867526bd55e"
+  integrity sha512-+IS40GBvAofUNRgOFPlDn5AcQHdyD1Me40s/kIqrSyW1E3JM6crZ27KoEMKvMGnPYuh8NJPnE4pr+VjwGy/J9Q==
+  dependencies:
+    "@emotion/use-insertion-effect-with-fallbacks" "^1.0.0"
+    "@storybook/client-logger" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
     memoizerific "^1.11.3"
 
