@@ -1735,7 +1735,7 @@
     ts-dedent "^2.0.0"
     uuid-browser "^3.1.0"
 
-"@storybook/addon-actions@^7.0.0-beta.19":
+"@storybook/addon-actions@7.0.0-beta.19", "@storybook/addon-actions@^7.0.0-beta.19":
   version "7.0.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.19.tgz#b264657db635b1a1be781ce691e662bc06cc139f"
   integrity sha512-MCqnD1MCaTJa5f8hTa92pvGZIAwRd/e27O6zqmDeb3VIwdGDg7XTBPDrHe5TEdMJxHFLUlkfMO3ixk20GJCVyA==
@@ -1757,83 +1757,83 @@
     ts-dedent "^2.0.0"
     uuid-browser "^3.1.0"
 
-"@storybook/addon-backgrounds@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-7.0.0-beta.17.tgz#701495be3803dd8b2941f39a0a77553332b841b1"
-  integrity sha512-ZDHRv6yzG15PdhOn4x8dG5TtAI9NinilmV7MtMfZ7BVPn3QljNq+TIy6eg/PlpuwL9nf9fMGBn9oplWDK95EFA==
+"@storybook/addon-backgrounds@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-7.0.0-beta.19.tgz#a3272ae6122f8d3efff3e64a58aa4c84860e2ba7"
+  integrity sha512-CfEM+NKVwpXUhrmOcoEHeJpzwxfa0lNXssxpc4bfrV+gwLIuy1fodme44zpt5B68CX2fAP0+IVod0CmYB7lQsw==
   dependencies:
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/core-events" "7.0.0-beta.17"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/theming" "7.0.0-beta.17"
-    "@storybook/types" "7.0.0-beta.17"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
     memoizerific "^1.11.3"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-controls@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-7.0.0-beta.17.tgz#3fba1926f50b68cda59feba0368cac94e478c1fe"
-  integrity sha512-WtZe3U5BGdYVDbmeNeISC3HbSJbBYxqBFS0AYyWUiG+iUKWRZFt+s77T2mgxIvbH3GTE+Rb7p1A+dzg63IpKeQ==
+"@storybook/addon-controls@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-7.0.0-beta.19.tgz#d635fe756530954683ee1457ae91ea0e8a9ca807"
+  integrity sha512-TwyUH2CI2lV+UDzs7uCUBeLUDc/INE1i+FbjVwYIk4pL7jehkARDI+xxrFcuctUR20c30VxkDK7dv1AMBWy4JA==
   dependencies:
-    "@storybook/blocks" "7.0.0-beta.17"
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/core-common" "7.0.0-beta.17"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/node-logger" "7.0.0-beta.17"
+    "@storybook/blocks" "7.0.0-beta.19"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-common" "7.0.0-beta.19"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/node-logger" "7.0.0-beta.19"
     "@storybook/preview-api" "7.0.0-beta.8"
-    "@storybook/theming" "7.0.0-beta.17"
-    "@storybook/types" "7.0.0-beta.17"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
     lodash "^4.17.21"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-docs@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-7.0.0-beta.17.tgz#f37461d2b494d28c9f2f5297672b41adb8c38969"
-  integrity sha512-x0Mbx1AspV1769bdUhIllwImnyN5ir0+zsW8PsbTfy9hOkce0Cek5XksBRTWKSzp265epMmVGYS+HLodfYeS5A==
+"@storybook/addon-docs@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-7.0.0-beta.19.tgz#2dd88ac56f6861b9aedb59f42f613dca3ebda3f8"
+  integrity sha512-nJHZQkmyfpdZIB1g/eewWuO4mWXqbAEqcrM01HRoiNbNSPjBdRWEwa/GqC8v/YdqV6EDakrnSpziixnnM/X43A==
   dependencies:
     "@babel/core" "^7.20.2"
     "@babel/plugin-transform-react-jsx" "^7.19.0"
     "@jest/transform" "^29.3.1"
     "@mdx-js/react" "^2.1.5"
-    "@storybook/blocks" "7.0.0-beta.17"
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/csf-plugin" "7.0.0-beta.17"
-    "@storybook/csf-tools" "7.0.0-beta.17"
+    "@storybook/blocks" "7.0.0-beta.19"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/csf-plugin" "7.0.0-beta.19"
+    "@storybook/csf-tools" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
     "@storybook/mdx2-csf" next
-    "@storybook/node-logger" "7.0.0-beta.17"
-    "@storybook/postinstall" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/theming" "7.0.0-beta.17"
-    "@storybook/types" "7.0.0-beta.17"
+    "@storybook/node-logger" "7.0.0-beta.19"
+    "@storybook/postinstall" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
     fs-extra "^9.0.1"
     remark-external-links "^8.0.0"
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-7.0.0-beta.17.tgz#5202a1d8753158581fbfe3e3f9c17e269dc291cf"
-  integrity sha512-vq1aP4HvAK27shhQ6zuufR0gmuZEU5gBneu0hnQJlZx5vcveNyhd7VVpa8Jd+EMhOeopubap0ldZIwqnQ8i7Wg==
+"@storybook/addon-essentials@^7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-7.0.0-beta.19.tgz#6e766b758be6d9aadfb8b9bf018d50023e1f8b93"
+  integrity sha512-8WiJLbS56VngyLa39j7TTt/X8eAjEOYqx73JtkNXx3VTTmbnBMn7NCxLMz77m/UpJek8tiD4fYhuKnvPBfMx6g==
   dependencies:
-    "@storybook/addon-actions" "7.0.0-beta.17"
-    "@storybook/addon-backgrounds" "7.0.0-beta.17"
-    "@storybook/addon-controls" "7.0.0-beta.17"
-    "@storybook/addon-docs" "7.0.0-beta.17"
-    "@storybook/addon-highlight" "7.0.0-beta.17"
-    "@storybook/addon-measure" "7.0.0-beta.17"
-    "@storybook/addon-outline" "7.0.0-beta.17"
-    "@storybook/addon-toolbars" "7.0.0-beta.17"
-    "@storybook/addon-viewport" "7.0.0-beta.17"
-    "@storybook/core-common" "7.0.0-beta.17"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/node-logger" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
+    "@storybook/addon-actions" "7.0.0-beta.19"
+    "@storybook/addon-backgrounds" "7.0.0-beta.19"
+    "@storybook/addon-controls" "7.0.0-beta.19"
+    "@storybook/addon-docs" "7.0.0-beta.19"
+    "@storybook/addon-highlight" "7.0.0-beta.19"
+    "@storybook/addon-measure" "7.0.0-beta.19"
+    "@storybook/addon-outline" "7.0.0-beta.19"
+    "@storybook/addon-toolbars" "7.0.0-beta.19"
+    "@storybook/addon-viewport" "7.0.0-beta.19"
+    "@storybook/core-common" "7.0.0-beta.19"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/node-logger" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
     ts-dedent "^2.0.0"
 
 "@storybook/addon-highlight@7.0.0-beta.17":
@@ -1844,6 +1844,15 @@
     "@storybook/core-events" "7.0.0-beta.17"
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.0-beta.17"
+
+"@storybook/addon-highlight@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.0.0-beta.19.tgz#694827b7e8009fe651d2040d807c992820cd6414"
+  integrity sha512-UNlvs0bSPbK4Itg6LUS4VxrXCK8mXRvqXme9ozPC36BxtCsS07UsDnInTH9YYKKXa0DHbMvB8m1ag5XaYzgAYg==
+  dependencies:
+    "@storybook/core-events" "7.0.0-beta.19"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "7.0.0-beta.19"
 
 "@storybook/addon-interactions@^7.0.0-beta.17":
   version "7.0.0-beta.17"
@@ -1880,31 +1889,31 @@
     prop-types "^15.7.2"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-measure@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-7.0.0-beta.17.tgz#b9e4b3e0d0c318a528d062cd67246c5b438c0559"
-  integrity sha512-Bh0n4ezlXKja4MBYccswPk1t1momd9zTrO4qpu2prccW9DKQfQ+FvUL+1MQtTvqn/cNamk6K7AqRLQJvxc4o+Q==
+"@storybook/addon-measure@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-7.0.0-beta.19.tgz#91fbce2c847f5cad8492052a5bfac7e20b164d86"
+  integrity sha512-/EWiIqjyf26dUAvrg+FWnrWBoMqn6JXK9CB9dkrnKsO6dtC8UUdIY8tm2TNrGNvB1TxRn0fjw3MhpKehJs31tg==
   dependencies:
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/core-events" "7.0.0-beta.17"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/types" "7.0.0-beta.17"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
 
-"@storybook/addon-outline@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-outline/-/addon-outline-7.0.0-beta.17.tgz#2b9c8f4ff362d0e3dca8ffc7a6c7fac5ff784c18"
-  integrity sha512-/kR0Jfi8pMZiyxHVo71vUdyBsEK0iNOUQXo8Mf6FcDdjqlSmNEKcvUj7ev+z4I34wk4k4/JUNfJZAyAy2xqkjA==
+"@storybook/addon-outline@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-outline/-/addon-outline-7.0.0-beta.19.tgz#99bf7324c8bdd5f6048454ac915eaea69ca93c53"
+  integrity sha512-k+Hj+sPDIFa7XZA51YrwfVJpLZY7AL8gEpY9YY0ItdXrVJDRGuU8r4LGVAKH+ZyA+h7ABeoRLpLqF6T7YgwMww==
   dependencies:
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/core-events" "7.0.0-beta.17"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/types" "7.0.0-beta.17"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
     ts-dedent "^2.0.0"
 
 "@storybook/addon-postcss@^2.0.0":
@@ -1918,29 +1927,29 @@
     postcss-loader "^4.2.0"
     style-loader "^1.3.0"
 
-"@storybook/addon-toolbars@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-7.0.0-beta.17.tgz#49f29f22d1ca83d5ec93e02dfbcbf84c8d463c0f"
-  integrity sha512-jU4XnEFYx/mPocHrAGY7Esp1P07hHdWKFW5CYUUcFPF78mUT83yOYc1xMpnFlpojFNtQjNgyUbvcglZYSNUcyg==
+"@storybook/addon-toolbars@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-toolbars/-/addon-toolbars-7.0.0-beta.19.tgz#809ee7a188e21c969bd99504d8f3f66d9ad5936e"
+  integrity sha512-g0lWkGQwrtwajp1aNa/nalQcCoyoopLPQyGspDi+SKYSYl/oQO5Qhs1yFd8LDp3Nh4I2CbSleP98+Do+xOIlbQ==
   dependencies:
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/theming" "7.0.0-beta.17"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
 
-"@storybook/addon-viewport@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-7.0.0-beta.17.tgz#ee80c853588f043316c05ee083cb852bcbb620c9"
-  integrity sha512-AIXtgKhx1zGvHIPgci4tqx1+kA8sdzecx1rscPYTUmLIPqqFqZ7/lpjBjQXS0Yk66r0T33DunqhHKTXz5tJhHg==
+"@storybook/addon-viewport@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-7.0.0-beta.19.tgz#39d8d4fdf0da82a9f7e05c7418207fe52dfa22c0"
+  integrity sha512-zq4JEEaN8F8BhAfqwfP7hyNS1LFFg0H7wyMtYfKxeLCXL73mdM7BdcG+J07z8sGnKm2bmUU0IDwgFL2viboyhA==
   dependencies:
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/core-events" "7.0.0-beta.17"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/theming" "7.0.0-beta.17"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
     memoizerific "^1.11.3"
     prop-types "^15.7.2"
 
@@ -1961,22 +1970,22 @@
     "@storybook/client-logger" "7.0.0-beta.17"
     "@storybook/manager-api" "7.0.0-beta.17"
 
-"@storybook/blocks@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/blocks/-/blocks-7.0.0-beta.17.tgz#393159dbe44fce987072c2c754b61b6cbcc1bc5c"
-  integrity sha512-GthRavRCDpUfvm7r6MI7Lls/9ZOZPW1XhAjGq34tmqbBlnszRZ0K8C6FODqR43bWLzOthnPMqpKcTpXsZv/VSA==
+"@storybook/blocks@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/blocks/-/blocks-7.0.0-beta.19.tgz#03091aca52c534f4c185290887c170bf2cc0cfdf"
+  integrity sha512-NzvAqW2fj1dyVNq/Q58Q/PbcmfpAKkbixip5GMNvyCF1r8Xq7459/QuOmLT2/Y4ow7CyHU0L1gY5b3AARqS0Aw==
   dependencies:
-    "@storybook/channels" "7.0.0-beta.17"
-    "@storybook/client-logger" "7.0.0-beta.17"
-    "@storybook/components" "7.0.0-beta.17"
-    "@storybook/core-events" "7.0.0-beta.17"
+    "@storybook/channels" "7.0.0-beta.19"
+    "@storybook/client-logger" "7.0.0-beta.19"
+    "@storybook/components" "7.0.0-beta.19"
+    "@storybook/core-events" "7.0.0-beta.19"
     "@storybook/csf" next
-    "@storybook/docs-tools" "7.0.0-beta.17"
+    "@storybook/docs-tools" "7.0.0-beta.19"
     "@storybook/global" "^5.0.0"
-    "@storybook/manager-api" "7.0.0-beta.17"
-    "@storybook/preview-api" "7.0.0-beta.17"
-    "@storybook/theming" "7.0.0-beta.17"
-    "@storybook/types" "7.0.0-beta.17"
+    "@storybook/manager-api" "7.0.0-beta.19"
+    "@storybook/preview-api" "7.0.0-beta.19"
+    "@storybook/theming" "7.0.0-beta.19"
+    "@storybook/types" "7.0.0-beta.19"
     "@types/lodash" "^4.14.167"
     color-convert "^2.0.1"
     dequal "^2.0.2"
@@ -2385,24 +2394,13 @@
     "@types/node" "^16.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/csf-plugin@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-plugin/-/csf-plugin-7.0.0-beta.17.tgz#4f5a244a239ec9bdbdd4557a80e2c5c26387487a"
-  integrity sha512-U9nflUccUuSt6S2RHjQzQCnsbyVl0B4yP2LmDlc9kdmte1sHhe2coB/QQzQR2Ii/eputoNNjjAqkbA+7Z/m4dg==
+"@storybook/csf-plugin@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-plugin/-/csf-plugin-7.0.0-beta.19.tgz#01c69acce34041794e2c532896dce263143e9322"
+  integrity sha512-Za9XEhmGSnYj6KjX0lHGyWb3OV6ak6zfKjMLr278I8tKkJJ6UTVCcHFRK99ya/Fc+Cy3U1E6URIg1oCk0VZdTA==
   dependencies:
-    "@storybook/csf-tools" "7.0.0-beta.17"
+    "@storybook/csf-tools" "7.0.0-beta.19"
     unplugin "^0.10.2"
-
-"@storybook/csf-tools@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-7.0.0-beta.17.tgz#4de0c6e76c8798555cee3230d807c5b7d97e0448"
-  integrity sha512-MJsZmtRSg7jZIsyVMHmjQblAhlqLFmtKEAOpgy/zs8VZS9qmQLxqcPeK8RUVJcnlnm0GwjrfCZX3zZOD9GdPZA==
-  dependencies:
-    "@babel/types" "^7.20.2"
-    "@storybook/csf" next
-    "@storybook/types" "7.0.0-beta.17"
-    fs-extra "^9.0.1"
-    ts-dedent "^2.0.0"
 
 "@storybook/csf-tools@7.0.0-beta.19":
   version "7.0.0-beta.19"
@@ -2604,10 +2602,10 @@
     npmlog "^5.0.1"
     pretty-hrtime "^1.0.3"
 
-"@storybook/postinstall@7.0.0-beta.17":
-  version "7.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-7.0.0-beta.17.tgz#7a4e7090bedb07a106808187fd01e5f31d6e75fb"
-  integrity sha512-87sVmeMm8VP8YIxsxaO7nccZa/PQaPk/aZfowbff31orzx+Wy+ieoCugws9E8oPxk/WzmxA38CKMSmyjbuvaDA==
+"@storybook/postinstall@7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@storybook/postinstall/-/postinstall-7.0.0-beta.19.tgz#76c94bd9e5e480bca7ad393de3b75963f20ad269"
+  integrity sha512-xOceYAtRIube5xohoWVoP8HZCkuMco+ViyJFKHcg0YFWm002aV1UqNKZzjnsbbRePD98wUUACx6hZrCY3CI0Wg==
 
 "@storybook/preset-react-webpack@7.0.0-beta.17":
   version "7.0.0-beta.17"
