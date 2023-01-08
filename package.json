@@ -72,7 +72,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-css": "^0.6.0",
     "eslint-plugin-storybook": "^0.6.8",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "prettier": "^2.8.2",
     "storybook": "7.0.0-beta.20",
     "storybook-addon-swc": "^1.1.9",
