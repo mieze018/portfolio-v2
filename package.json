@@ -26,6 +26,7 @@
   "dependencies": {
     "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.7",
+    "@mieze018/ui-library-react": "git+ssh://git@github.com:mieze018/ui-library-react.git",
     "@notionhq/client": "^2.2.3",
     "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-separator": "^1.0.1",
