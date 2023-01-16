@@ -41,3 +41,4 @@ build-storybook.log
 
 .vercel
 .env
+.yarn
