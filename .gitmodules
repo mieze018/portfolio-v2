@@ -1,0 +1,3 @@
+[submodule "ui-library-react"]
+	path = ui-library-react
+	url = https://github.com/mieze018/ui-library-react.git
