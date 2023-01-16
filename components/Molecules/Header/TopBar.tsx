@@ -7,6 +7,7 @@ import { NavLinks } from 'components/Molecules/Header/NavLink'
 import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { routes } from 'libs/routes'
 import { description, title } from 'pages/api/basics'
+import { Button } from 'ui-library-react/Components/Atoms/Button'
 
 const Flare = styled.div`
   ${tw`fixed top-0 z-10 w-full h-g-14vh opacity-80 `}
@@ -23,6 +24,7 @@ export const TopBar = () => {
       <Floater>
         <FadeOuter>
           <Title>{title}</Title>
+          <Button primary>ボタン</Button>
           <Description>{description}</Description>
         </FadeOuter>
         <Nav>
