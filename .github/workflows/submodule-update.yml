@@ -1,0 +1,28 @@
+name: Submodule Updates
+on:
+  push:
+    branches-ignore: [master, main]
+  pull_request:
+    branches: [master, main]
+jobs:
+  build:
+    name: Submodule update
+    runs-on: ubuntu-latest
+    env:
+      PARENT_REPOSITORY: 'mieze018/portfolio-v2'
+      CHECKOUT_BRANCH: 'master'
+      PR_AGAINST_BRANCH: 'master'
+      OWNER: 'mieze018'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: run action
+        id: run_action
+        uses: releasehub-com/github-action-create-pr-parent-submodule@v1
+        with:
+          github_token: ${{ secrets.RELEASE_HUB_SECRET }}
+          parent_repository: ${{ env.PARENT_REPOSITORY }}
+          checkout_branch: ${{ env.CHECKOUT_BRANCH}}
+          pr_against_branch: ${{ env.PR_AGAINST_BRANCH }}
+          owner: ${{ env.OWNER }}
+          label: 'UI update'
