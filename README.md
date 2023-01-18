@@ -4,16 +4,19 @@
 
 <https://github.com/mieze018/portfolio-v2/network/dependencies>
 
-### フレームワーク(? なんと呼ぶのが正しいのか調べる)
+### 開発環境 (Dev Environments)
 
 - React <https://ja.reactjs.org/>
 - Next.js <https://nextjs.org/docs>
-- TypeScript <https://nextjs.org/docs/basic-features/typescript>
 
-### フレームワークのためのライブラリ
+#### ツール
 
 - Recoil <https://recoiljs.org/>
 - next-i18next <https://github.com/i18next/next-i18next>
+
+### Compiling
+
+- TypeScript <https://nextjs.org/docs/basic-features/typescript>
 
 ### スタイル, UI のためのライブラリ
 
@@ -97,10 +100,10 @@
 - WPGraphQL
 - Prisma
 
-### デプロイ先候補
+### Deployment
 
 - Vercel
-- GitHub Pages
+- ~~GitHub Pages~~
 
 ## ルールのメモ
 
