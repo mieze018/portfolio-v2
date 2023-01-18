@@ -1735,7 +1735,7 @@
     ts-dedent "^2.0.0"
     uuid-browser "^3.1.0"
 
-"@storybook/addon-actions@7.0.0-beta.28", "@storybook/addon-actions@^7.0.0-beta.20":
+"@storybook/addon-actions@7.0.0-beta.28":
   version "7.0.0-beta.28"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.28.tgz#a7ef36601e591ee635c4b145daca59cb66d34ec7"
   integrity sha512-Omk+d7zdEhC/RPmHGHFpW0jHffbUQTo7WJ1/vQxU4jnkC4+61Ewj1e5zYMSDCXm8kG0XOsH5JV1HBnYccZnqXQ==
@@ -1748,6 +1748,28 @@
     "@storybook/preview-api" "7.0.0-beta.28"
     "@storybook/theming" "7.0.0-beta.28"
     "@storybook/types" "7.0.0-beta.28"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    polished "^4.2.2"
+    prop-types "^15.7.2"
+    react-inspector "^6.0.0"
+    telejson "^7.0.3"
+    ts-dedent "^2.0.0"
+    uuid-browser "^3.1.0"
+
+"@storybook/addon-actions@^7.0.0-beta.29":
+  version "7.0.0-beta.29"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-beta.29.tgz#f689d4df1b3cadbcc4490e33afd2e516acb6b450"
+  integrity sha512-+Gxl2TvWXnd+IFxJFdEiPkv2niT8Dh1WVWX2gH+WsByW3tKeNKOS7U2B6Ci0ExR1yXi0jPSoQFIZE/NVZmkq+w==
+  dependencies:
+    "@storybook/client-logger" "7.0.0-beta.29"
+    "@storybook/components" "7.0.0-beta.29"
+    "@storybook/core-events" "7.0.0-beta.29"
+    "@storybook/global" "^5.0.0"
+    "@storybook/manager-api" "7.0.0-beta.29"
+    "@storybook/preview-api" "7.0.0-beta.29"
+    "@storybook/theming" "7.0.0-beta.29"
+    "@storybook/types" "7.0.0-beta.29"
     dequal "^2.0.2"
     lodash "^4.17.21"
     polished "^4.2.2"
