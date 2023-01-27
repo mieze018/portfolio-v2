@@ -3,7 +3,8 @@ FROM node:18-alpine
 RUN apk add --no-cache git
 
 # copy application code
-COPY . .
+COPY . /app
+WORKDIR /app
 
 # install app dependencies
 RUN yarn install 
