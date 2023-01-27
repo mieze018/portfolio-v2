@@ -9352,6 +9352,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18next@npm:^22.4.9":
+  version: 22.4.9
+  resolution: "i18next@npm:22.4.9"
+  dependencies:
+    "@babel/runtime": ^7.20.6
+  checksum: 8cce4aaced4857e006fab2c9d4adb0eb1375829e459076be79d4d3532b1be6342b7003a720e187098f17bb276bea46df8b3fc2cf21f0f3a230bd519243048d1a
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:0.4.24":
   version: 0.4.24
   resolution: "iconv-lite@npm:0.4.24"
@@ -12010,6 +12019,7 @@ __metadata:
     eslint-plugin-css: ^0.6.0
     eslint-plugin-storybook: ^0.6.10
     framer-motion: ^8.2.4
+    i18next: ^22.4.9
     next: ^13.1.1
     next-i18next: ^12.1.0
     postcss: ^8.4.21
