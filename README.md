@@ -68,7 +68,6 @@
 ## 余裕があればつかいたもの
 
 - Jest <https://jestjs.io/docs/ja/getting-started>
-- Playwright <https://playwright.dev/docs/intro>
 
 - Linktree-API <https://documenter.getpostman.com/view/14039622/Tzsik4P8>
   - リンクの二重管理しなくていいかも
