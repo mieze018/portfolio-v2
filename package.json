@@ -8,9 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "npx eslint . --config .eslintrc.json --fix",
+    "lint:fix": "npx eslint . --config .eslintrc.js --fix",
     "format": "prettier --write --ignore-path .gitignore ./**/*.{js,jsx,ts,tsx,json,css}",
-    "unused": "yarn ts-unused-exports tsconfig.json",
+    "unused": "yarn ts-unused-exports tsconfig.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes --only-changed"
