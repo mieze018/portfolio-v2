@@ -27,16 +27,16 @@ module.exports = {
         ignore: ['css'],
       },
     ],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
-        alphabetize: {
-          order: 'asc',
-        },
-        'newlines-between': 'always',
-      },
-    ],
+    // 'import/order': [
+    //   'error',
+    //   {
+    //     groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
+    //     alphabetize: {
+    //       order: 'asc',
+    //     },
+    //     'newlines-between': 'always',
+    //   },
+    // ],
     'import/no-duplicates': 'error',
     'import/first': 'error',
     'import/newline-after-import': 'error',
