@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "npx eslint . --config .eslintrc.js --fix",
+    "lint:fix": "next lint --fix --no-cache",
     "format": "prettier --write --ignore-path .gitignore ./**/*.{js,jsx,ts,tsx,json,css}",
     "unused": "yarn ts-unused-exports tsconfig.js",
     "storybook": "storybook dev -p 6006",
