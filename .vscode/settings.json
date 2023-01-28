@@ -33,7 +33,9 @@
     "welle"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    // モジュールのimportができていない時に自動でimportする
+    "source.addMissingImports": true
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#2a2a2a",
