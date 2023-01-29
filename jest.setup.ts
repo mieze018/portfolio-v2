@@ -16,8 +16,6 @@ i18n
     lng: 'ja',
     fallbackLng: 'ja',
 
-
-
     debug: true,
 
     resources: {
@@ -28,11 +26,13 @@ i18n
 
 jest.mock("next-i18next", () => ({
   ...jest.requireActual("next-i18next"),
+
+  I18nextProvider: jest.fn(),
+  __esmodule: true,
   useTranslation: () => {
     return {
       t: (str: string) => str,
 
-      debug: true,
       i18n: {
         language: "ja",
         locales: ['ja', 'en'],
@@ -42,8 +42,5 @@ jest.mock("next-i18next", () => ({
       },
     };
   },
-  withTranslation: () => (Component: any) => {
-    Component.defaultProps = { ...Component.defaultProps, t }
-    return Component
-  }
 }));
+
