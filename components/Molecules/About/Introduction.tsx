@@ -7,7 +7,7 @@ export const Introduction = () => {
   return (
     <SectionWrapper>
       <P>
-        {t('author')}
+        <span data-testid="author">{t('author')}</span>
         <small className="mr-2">{t('author_pronunciation')}</small>
         {t('description')}
       </P>
