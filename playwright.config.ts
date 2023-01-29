@@ -1,5 +1,6 @@
 import { devices } from '@playwright/test'
 
+import { defineConfig } from '@playwright/test';
 import type { PlaywrightTestConfig } from '@playwright/test'
 
 /**
@@ -106,4 +107,4 @@ const config: PlaywrightTestConfig = {
   },
 }
 
-export default config
+export default defineConfig(config)
