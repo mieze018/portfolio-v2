@@ -41,6 +41,7 @@ const config: PlaywrightTestConfig = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
   },
 
   /* Configure projects for major browsers */
@@ -102,7 +103,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: 'next build && next start',
     url: 'http://localhost:3000',
-    timeout: 120 * 1000,
+    timeout: 10 * 60000,
     reuseExistingServer: !process.env.CI,
   },
 }
