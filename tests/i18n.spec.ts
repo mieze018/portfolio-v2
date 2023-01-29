@@ -5,7 +5,7 @@ import { test, chromium, expect } from '@playwright/test'
 test.describe('i18nが正しく機能しているか', () => {
   test.describe('ブラウザの言語が英語の時', () => {
     test('ページにアクセスすると、/en/[path] にリダイレクトされる', async () => {
-      const browser = await chromium.launch({ headless: false, })
+      const browser = await chromium.launch()
       const context = await browser.newContext({
         locale: 'en',
       })
