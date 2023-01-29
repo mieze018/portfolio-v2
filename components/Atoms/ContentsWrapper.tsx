@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSetAtom } from 'jotai'
 import { useEffect, useRef } from 'react'
+import { css } from 'stailwc'
 import { keyframes } from 'styled-components'
-import tw, { css } from 'twin.macro'
 
 import { contentsWrapperState } from 'libs/states/atoms'
 

@@ -1,5 +1,5 @@
 import TextareaAutosize from 'react-textarea-autosize'
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 export const Textarea = styled(TextareaAutosize).attrs({
   minRows: 5,

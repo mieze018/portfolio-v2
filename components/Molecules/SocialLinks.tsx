@@ -10,7 +10,6 @@ import {
   SiTumblr,
   SiGumroad,
 } from 'react-icons/si'
-import tw from 'twin.macro'
 
 import { links } from 'pages/api/about/links'
 

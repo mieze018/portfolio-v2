@@ -1,7 +1,7 @@
 import { useSetAtom } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 

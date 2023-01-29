@@ -1,5 +1,5 @@
+import { css, styled } from 'stailwc'
 import { keyframes } from 'styled-components'
-import tw, { css, styled } from 'twin.macro'
 
 import type { scrollStatesType } from 'libs/useScrollState'
 

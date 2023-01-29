@@ -1,5 +1,3 @@
-import tw from 'twin.macro'
-
 import type { aboutDataType } from 'pages/about'
 
 import { EventHistory } from 'components/Molecules/About/EventHistory'

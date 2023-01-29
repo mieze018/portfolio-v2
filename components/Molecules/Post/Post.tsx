@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 

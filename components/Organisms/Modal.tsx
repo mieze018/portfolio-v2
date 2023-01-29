@@ -1,7 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { useAtomValue } from 'jotai'
 import { Fragment } from 'react'
-import tw from 'twin.macro'
 
 import { modalContentState } from 'libs/states/atoms'
 import { useHash } from 'libs/useHash'
