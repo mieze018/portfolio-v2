@@ -13,7 +13,8 @@
     "unused": "yarn ts-unused-exports tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes --only-changed"
+    "chromatic": "chromatic --exit-zero-on-changes --only-changed",
+    "test": "npx playwright test"
   },
   "prettier": {
     "trailingComma": "es5",
