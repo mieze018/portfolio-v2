@@ -24,18 +24,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-MyApp.getInitialProps = async (appContext: AppContext) => {
-  // calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(appContext)
-  const uaString = appContext?.ctx?.req?.headers['user-agent'] || ''
-
-  if (appContext.ctx.res?.statusCode === 404) {
-    appContext.ctx.res.writeHead(302, { Location: '/' })
-    appContext.ctx.res.end()
-    return
-  }
-
-  return { ...appProps, uaString }
-}
-
 export default appWithTranslation(MyApp)
