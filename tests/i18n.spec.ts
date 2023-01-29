@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-i18next'
 import { test, chromium, expect } from '@playwright/test'
 
 
@@ -10,8 +9,8 @@ test.describe('i18nが正しく機能しているか', () => {
         locale: 'en',
       })
       const page = await context.newPage()
-      await page.goto('http://localhost:3000')
-      await expect(page.url()).toBe('http://localhost:3000/en')
+      await page.goto('/')
+      await expect(page.url()).toMatch(/\/en$/)
     })
 
     test('/about を表示すると "Ayu Nakata"と表示される', async () => {
@@ -20,7 +19,7 @@ test.describe('i18nが正しく機能しているか', () => {
         locale: 'en-US',
       })
       const page = await context.newPage()
-      await page.goto('http://localhost:3000/en/about')
+      await page.goto('/en/about')
       //data-testid="about-name"の要素を取得
       const element = await page.$('[data-testid="author"]')
       //要素のテキストを取得
