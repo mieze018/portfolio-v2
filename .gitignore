@@ -35,6 +35,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /test-results/
+/playwright-report/
+/playwright/.cache/
 build-storybook.log
 
 .vercel

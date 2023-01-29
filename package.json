@@ -13,7 +13,8 @@
     "unused": "yarn ts-unused-exports tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes --only-changed"
+    "chromatic": "chromatic --exit-zero-on-changes --only-changed",
+    "test": "npx playwright test"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/plugin-syntax-typescript": "^7.20.0",
+    "@playwright/test": "^1.29.2",
     "@storybook/addon-a11y": "^7.0.0-beta.36",
     "@storybook/addon-actions": "^7.0.0-beta.36",
     "@storybook/addon-essentials": "^7.0.0-beta.36",
