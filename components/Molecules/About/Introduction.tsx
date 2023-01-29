@@ -8,7 +8,7 @@ export const Introduction = () => {
     <SectionWrapper>
       <P>
         {t('author')}
-        <small>{t('author_pronunciation')}</small>
+        <small className="mr-2">{t('author_pronunciation')}</small>
         {t('description')}
       </P>
     </SectionWrapper>
