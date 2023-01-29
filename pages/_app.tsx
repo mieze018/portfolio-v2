@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/react'
 import { appWithTranslation } from 'next-i18next'
+import { TailwindStyle } from "stailwc";
 
 import type { AppProps } from 'next/app'
 
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
     <Layout>
+      <TailwindStyle />
       <GoogleAnalytics />
       {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
       <ContentsWrapper $key={router.pathname}>
