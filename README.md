@@ -29,7 +29,6 @@
 - Headless UI <https://headlessui.com/>
 - Radix UI <https://www.radix-ui.com/docs/primitives/overview/introduction>
 - React Icons - <https://react-icons.github.io/react-icons/>
-- next-useragent<https://github.com/tokuda109/next-useragent>
 
 - Storybook <https://storybook.js.org/docs/react/>
   - [twin.macro Storybook + styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript)
