@@ -38,7 +38,6 @@ const config: PlaywrightTestConfig = {
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'http://localhost:3000',
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
@@ -101,9 +100,8 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'next build && next start',
+    command: 'yarn dev',
     url: 'http://localhost:3000',
-    timeout: 10 * 60000,
     reuseExistingServer: !process.env.CI,
   },
 }
