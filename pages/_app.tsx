@@ -1,8 +1,7 @@
 import { appWithTranslation } from 'next-i18next'
-import App from 'next/app'
 import { RecoilRoot } from 'recoil'
 
-import type { AppContext, AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 
 import '../styles/global.css'
 import { ContentsWrapper } from 'components/Atoms/ContentsWrapper'
