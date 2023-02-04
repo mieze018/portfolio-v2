@@ -51,6 +51,10 @@
 - Prettier <https://prettier.io/docs/en/>
 - ts-unused-exports <https://github.com/pzavolinsky/ts-unused-exports>
 
+### テスト
+
+-Playwright <https://playwright.dev/docs/intro>
+
 ### サーバとのやりとり
 
 - Tumblr API <https://www.tumblr.com/docs/en/api/>
@@ -68,18 +72,10 @@
 
 - Jest <https://jestjs.io/docs/ja/getting-started>
 
+  - このアプリには向いてないかも playwright だけでいいかも
+
 - Linktree-API <https://documenter.getpostman.com/view/14039622/Tzsik4P8>
   - リンクの二重管理しなくていいかも
-- .env
-  - 今回表示だけで非公開にする情報はないけど勉強のためにあとで Tumblr の API キーをサーバでも設定したい
-
-### DB の勉強のために仕事の経歴をサーバに置いて投稿できるようにする
-
-- Prisma?
-  - Prisma Github <https://github.com/prisma/prisma>
-- Heroku?
-- Firebase?
-- Upstash? <https://vercel.com/integrations/upstash>
 
 ## これができたら別リポジトリでエンジニアポートフォリ作成時にやりたいこと
 
@@ -97,6 +93,14 @@
 - GraphQL
 - WPGraphQL
 - Prisma
+
+### DB の勉強
+
+- Prisma?
+  - Prisma Github <https://github.com/prisma/prisma>
+- Heroku?
+- Firebase?
+- Upstash? <https://vercel.com/integrations/upstash>
 
 ### Deployment
 
