@@ -1415,6 +1415,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.20.13
+  resolution: "@babel/runtime@npm:7.20.13"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 09b7a97a05c80540db6c9e4ddf8c5d2ebb06cae5caf3a87e33c33f27f8c4d49d9c67a2d72f1570e796045288fad569f98a26ceba0c4f5fad2af84b6ad855c4fb
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.18.10, @babel/template@npm:^7.20.7":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -8910,7 +8919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-fs-backend@npm:^2.1.0":
+"i18next-fs-backend@npm:^2.1.1":
   version: 2.1.1
   resolution: "i18next-fs-backend@npm:2.1.1"
   checksum: fe606df2639b3ea49501b5bc947553e4bfbce67290c91ab22a8b9ecee4d11b8ae78179980720998881f117f0321d3ba0f739fb93a0ab95613cd79b85ffb014f5
@@ -10758,21 +10767,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-i18next@npm:^13.1.4":
-  version: 13.1.4
-  resolution: "next-i18next@npm:13.1.4"
+"next-i18next@npm:^13.1.5":
+  version: 13.1.5
+  resolution: "next-i18next@npm:13.1.5"
   dependencies:
-    "@babel/runtime": ^7.20.6
+    "@babel/runtime": ^7.20.13
     "@types/hoist-non-react-statics": ^3.3.1
     core-js: ^3
     hoist-non-react-statics: ^3.3.2
-    i18next-fs-backend: ^2.1.0
+    i18next-fs-backend: ^2.1.1
   peerDependencies:
     i18next: ^22.0.6
     next: ">= 12.0.0"
     react: ">= 17.0.2"
-    react-i18next: ^12.1.1
-  checksum: 182049c5d4b0126178750e02df3b74fc4577e77025874a8d379ab111a96b21701cf80c3ab4d5aa8acaa2de55f322dfebd5ee95750ca6c5f89800456b9d4edac7
+    react-i18next: ^12.1.5
+  checksum: 4f938fea7e9be3e75a1d8fd9bc230697bd0cd002b494b86bd5a8cbe3a5e94d387ee46d2c25401692e3278f69d878123722f57e7d2e264ee11e47e89dc840ede9
   languageName: node
   linkType: hard
 
@@ -11589,7 +11598,7 @@ __metadata:
     framer-motion: ^8.5.4
     i18next: ^22.4.9
     next: ^13.1.6
-    next-i18next: ^13.1.4
+    next-i18next: ^13.1.5
     postcss: ^8.4.21
     prettier: ^2.8.3
     react: 18.2.0
