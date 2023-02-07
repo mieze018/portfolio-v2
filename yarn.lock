@@ -8178,9 +8178,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^8.5.4":
-  version: 8.5.4
-  resolution: "framer-motion@npm:8.5.4"
+"framer-motion@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "framer-motion@npm:9.0.2"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": ^10.15.3
@@ -8192,7 +8192,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 9852c448951986b2c2984bcf457b8a50ea10bb5d63c5ee58af7a60582dc04739873aa458a5e26e4ee4b582a01afd3ac2421241f1941a4bd5c97122960429299a
+  checksum: 5694d3a49acb9f753f0eed4a946c2b33efc237e0863b882cc4bed9a6022447ce2c9024134b5e9fd7b6f73602d9af046fa633c0f7235e8cbb24702b403299b55e
   languageName: node
   linkType: hard
 
@@ -11586,7 +11586,7 @@ __metadata:
     eslint-plugin-import: ^2.27.5
     eslint-plugin-storybook: ^0.6.10
     eslint-plugin-unused-imports: ^2.0.0
-    framer-motion: ^8.5.4
+    framer-motion: ^9.0.2
     i18next: ^22.4.9
     next: ^13.1.6
     next-i18next: ^13.1.4
