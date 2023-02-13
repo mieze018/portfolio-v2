@@ -11605,7 +11605,7 @@ __metadata:
     swr: ^2.0.3
     tailwindcss: ^3.2.4
     ts-prune: ^0.10.3
-    ts-unused-exports: ^9.0.2
+    ts-unused-exports: ^9.0.4
     twin.macro: ^3.1.0
     typescript: ^4.9.5
   languageName: unknown
@@ -13947,9 +13947,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-unused-exports@npm:^9.0.2":
-  version: 9.0.2
-  resolution: "ts-unused-exports@npm:9.0.2"
+"ts-unused-exports@npm:^9.0.4":
+  version: 9.0.4
+  resolution: "ts-unused-exports@npm:9.0.4"
   dependencies:
     chalk: ^4.0.0
     tsconfig-paths: ^3.9.0
@@ -13960,7 +13960,7 @@ __metadata:
       optional: false
   bin:
     ts-unused-exports: bin/ts-unused-exports
-  checksum: d706af04931654d7024cf789163ad389ed49e27f7cae66d24dc5061424da1bb4bfb88edd0c6ce8e1c6626f7f03d7557190da0e7a6dba6ec50bbd90ae2d981d58
+  checksum: 9ab29c518df145742403add309813789b14106d4a4882867e2133cea7344194bb76838304cc32a8ca3a383a7ea7d2183a235997c444792ee658fe2ef11683b01
   languageName: node
   linkType: hard
 
