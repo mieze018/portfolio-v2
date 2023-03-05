@@ -4149,10 +4149,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:18.11.18":
+"@types/node@npm:*":
   version: 18.11.18
   resolution: "@types/node@npm:18.11.18"
   checksum: 03f17f9480f8d775c8a72da5ea7e9383db5f6d85aa5fefde90dd953a1449bd5e4ffde376f139da4f3744b4c83942166d2a7603969a6f8ea826edfb16e6e3b49d
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:18.14.6":
+  version: 18.14.6
+  resolution: "@types/node@npm:18.14.6"
+  checksum: 2f88f482cabadc6dbddd627a1674239e68c3c9beab56eb4ae2309fb96fd17fc3a509d99b0309bafe13b58529574f49ecf3a583f2ebe2896dd32fe4be436dc96e
   languageName: node
   linkType: hard
 
@@ -11592,7 +11599,7 @@ __metadata:
     "@storybook/react": ^7.0.0-beta.36
     "@storybook/testing-library": ^0.0.14-next.1
     "@types/gtag.js": ^0.0.12
-    "@types/node": 18.11.18
+    "@types/node": 18.14.6
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
     "@types/styled-components": ^5.1.26
