@@ -50,6 +50,7 @@
 - ESLint <https://eslint.org/docs/latest/>
 - Prettier <https://prettier.io/docs/en/>
 - ts-unused-exports <https://github.com/pzavolinsky/ts-unused-exports>
+- husky <https://typicode.github.io/husky/#/>
 
 ### テスト
 

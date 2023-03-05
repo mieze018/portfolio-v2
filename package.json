@@ -9,12 +9,13 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix --no-cache",
-    "format": "prettier --write --ignore-path .gitignore ./**/*.{js,jsx,ts,tsx,json,css}",
+    "format": "prettier --write . --ignore-path .gitignore",
     "unused": "yarn ts-unused-exports tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes --only-changed",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "prepare": "husky install"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -77,6 +78,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "stailwc": "^0.15.0",
