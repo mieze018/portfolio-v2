@@ -5,6 +5,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 yarn lint
-# yarn format
+yarn format
 # yarn unused
 # yarn test
