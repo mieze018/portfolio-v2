@@ -90,6 +90,7 @@
     "prettier": "^2.8.4",
     "stailwc": "^0.17.0",
     "storybook": "^7.1.0-alpha.36",
+    "storybook-addon-i18n": "^5.1.13",
     "storybook-addon-swc": "^1.1.9",
     "tailwindcss": "^3.2.7",
     "ts-prune": "^0.10.3",
