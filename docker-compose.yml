@@ -1,19 +1,36 @@
 version: '3'
 services:
   app: &app
-    build: .
-    ports:
-      - '3001:3001'
-    command: yarn dev -p 3001
+    image: node:18
     # Hot Reloadする
     tty: true
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+    user: root
+    working_dir: /app
     volumes:
       - .:/app
       - /app/node_modules
-  # storybook:
-  #   <<: *app
-  #   ports:
-  #     - '6006:6006'
-  #   command: yarn storybook -p 6006
+    command:
+      - sh
+      - -c
+      - |
+        yarn install
+        chown node:node -R node_modules
+        yarn dev -p 3001
+    ports:
+      - '3001:3001'
+  storybook:
+    <<: *app
+    depends_on:
+      - app
+    command:
+      - sh
+      - -c
+      - |
+        yarn install
+        chown node:node -R node_modules
+        yarn storybook
+    ports:
+      - '6006:6006'
