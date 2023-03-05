@@ -79,7 +79,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
-    "stailwc": "^0.14.1",
+    "stailwc": "^0.15.0",
     "storybook": "7.0.0-beta.61",
     "storybook-addon-swc": "^1.1.9",
     "tailwindcss": "^3.2.7",
