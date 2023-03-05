@@ -1762,15 +1762,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/react@npm:^1.7.9":
-  version: 1.7.9
-  resolution: "@headlessui/react@npm:1.7.9"
+"@headlessui/react@npm:^1.7.13":
+  version: 1.7.13
+  resolution: "@headlessui/react@npm:1.7.13"
   dependencies:
     client-only: ^0.0.1
   peerDependencies:
     react: ^16 || ^17 || ^18
     react-dom: ^16 || ^17 || ^18
-  checksum: e19338daba65853337f3f4a7e8f0fab8ed24be2b753ec2d6e6a051f9da7a6194ea8febf84d1b8b0a36262878628db7c085f9e176ac5ff627474abbc4f370916e
+  checksum: 132e5fce86978b9a6fd9d669fb556acec783debcd8f510c99226b3b3229dad50a13aeed69fc9af66465fc7029487ecfc46e6226f14218b760d5a309e08c0d059
   languageName: node
   linkType: hard
 
@@ -11735,7 +11735,7 @@ __metadata:
     "@babel/core": ^7.20.12
     "@babel/plugin-syntax-typescript": ^7.20.0
     "@formspree/react": ^2.4.1
-    "@headlessui/react": ^1.7.9
+    "@headlessui/react": ^1.7.13
     "@notionhq/client": ^2.2.3
     "@playwright/test": ^1.31.2
     "@radix-ui/react-label": ^2.0.0
