@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type { PageObject } from 'libs/@type/api/notion'
 import type { GetStaticProps, NextPage } from 'next'
 
-import { AboutContent } from 'components/Organisms/AboutContent'
+import { EngineerContent } from 'components/Organisms/EngineerContent'
 import { getDatabase } from 'libs/notion'
 import { prizesDBId, workExperienceDBId, workExperienceGenreDBId, eventDBId } from 'libs/notionDB'
 
@@ -16,12 +16,12 @@ export type aboutDataType = {
   }
 }
 
-const About: NextPage<aboutDataType> = ({ fallbackData }) => {
+const EngineerPortfolio: NextPage<aboutDataType> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  return <AboutContent fallbackData={fallbackData} />
+  return <EngineerContent fallbackData={fallbackData} />
 }
 
-export default About
+export default EngineerPortfolio
 
 export const getStaticProps: GetStaticProps<aboutDataType> = async ({ locale = 'ja' }) => {
   const prizesDB = await getDatabase(prizesDBId, {
