@@ -2593,14 +2593,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-mdx-gfm@npm:^7.0.0-beta.61":
-  version: 7.0.0-beta.61
-  resolution: "@storybook/addon-mdx-gfm@npm:7.0.0-beta.61"
+"@storybook/addon-mdx-gfm@npm:^7.0.0-rc.1":
+  version: 7.0.0-rc.1
+  resolution: "@storybook/addon-mdx-gfm@npm:7.0.0-rc.1"
   dependencies:
     "@storybook/node-logger": 7.0.0-beta.52
     remark-gfm: ^3.0.1
     ts-dedent: ^2.0.0
-  checksum: 2cb78dca56f821ef1ff1f8e3762fe31709e126bad5277e8c17da4a3f6eddc25e8d91a5bdbc19d70341461664b282f76e3612959ccd1fe8e35488283d1c2efd8e
+  checksum: 5322b362e2c5c8c6ebd9cde8205ee858519ea1929e676388835e20b450d1b9271d9234942d90b316a2df29afce1f5bbd3e92c58e228a609662ec3609886a5b49
   languageName: node
   linkType: hard
 
@@ -11679,7 +11679,7 @@ __metadata:
     "@storybook/addon-essentials": ^7.0.0-beta.61
     "@storybook/addon-interactions": ^7.0.0-beta.61
     "@storybook/addon-links": ^7.0.0-beta.61
-    "@storybook/addon-mdx-gfm": ^7.0.0-beta.61
+    "@storybook/addon-mdx-gfm": ^7.0.0-rc.1
     "@storybook/addon-postcss": ^2.0.0
     "@storybook/jest": ^0.0.11-next.0
     "@storybook/nextjs": 7.0.0-beta.61
