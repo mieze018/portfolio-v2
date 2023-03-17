@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useRef } from 'react'
+import { useSetRecoilState } from 'recoil'
 import { keyframes } from 'styled-components'
 import tw, { css } from 'twin.macro'
 
-import { useContentsWrapper } from 'libs/contexts/contentWrapper'
+import { contentsWrapperState } from 'libs/recoil/atoms'
 
 /** ページ移管時にトランジションする */
 export const ContentsWrapper = ({
@@ -23,7 +24,7 @@ export const ContentsWrapper = ({
     `,
   }
   const ref = useRef<HTMLElement>(null)
-  const { setContentsWrapper } = useContentsWrapper()
+  const setContentsWrapper = useSetRecoilState(contentsWrapperState)
 
   useEffect(() => {
     setContentsWrapper(ref.current)

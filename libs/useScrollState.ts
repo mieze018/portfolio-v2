@@ -1,7 +1,8 @@
 import { useScroll } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useRecoilState } from 'recoil'
 
-import { useContentsWrapper } from 'libs/contexts/contentWrapper'
+import { contentsWrapperState } from 'libs/recoil/atoms'
 
 export type scrollStatesType = {
   scrollY?: number
@@ -14,7 +15,7 @@ export type scrollStatesType = {
 export const useScrollState = () => {
   const { scrollY } = useScroll()
   const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
-  const { contentsWrapper } = useContentsWrapper()
+  const contentsWrapper = useRecoilState(contentsWrapperState)[0]
   const contentsWrapperScrollTop = contentsWrapper?.offsetTop ?? 500
 
   useEffect(() => {
