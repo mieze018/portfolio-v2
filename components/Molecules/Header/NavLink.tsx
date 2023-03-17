@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useRecoilState } from 'recoil'
 import tw, { styled } from 'twin.macro'
 
-import { contentsWrapperState } from 'libs/recoil/atoms'
+import { useContentsWrapper } from 'libs/contexts/contentWrapper'
 
 const A = styled.a<{ isCurrent: boolean }>`
   ${tw`inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`}
@@ -18,7 +17,7 @@ export const NavLinks = ({
   }[]
 }) => {
   const router = useRouter()
-  const [contentsWrapper] = useRecoilState(contentsWrapperState)
+  const { contentsWrapper } = useContentsWrapper()
   return (
     <>
       {routes.map((route) => {

@@ -1,16 +1,15 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { useRecoilState } from 'recoil'
 import tw from 'twin.macro'
 
-import { modalContentState } from 'libs/recoil/atoms'
+import { useModalContent } from 'libs/contexts/modalContentState'
 import { useHash } from 'libs/useHash'
 /**画像拡大用のハッシュ値 */
 export const hashCloseup = 'closeup'
 
 const ContentWrapper = tw.div`m-auto p-4`
 export const Modal = () => {
-  const [modalContent] = useRecoilState(modalContentState)
+  const { modalContent } = useModalContent()
   const [hash, setHash] = useHash()
   const isShow = !!(hash === hashCloseup && modalContent)
 
