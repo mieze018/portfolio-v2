@@ -11044,9 +11044,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-i18next@npm:^13.2.0":
-  version: 13.2.1
-  resolution: "next-i18next@npm:13.2.1"
+"next-i18next@npm:^13.2.2":
+  version: 13.2.2
+  resolution: "next-i18next@npm:13.2.2"
   dependencies:
     "@babel/runtime": ^7.20.13
     "@types/hoist-non-react-statics": ^3.3.1
@@ -11058,7 +11058,7 @@ __metadata:
     next: ">= 12.0.0"
     react: ">= 17.0.2"
     react-i18next: ^12.2.0
-  checksum: fb91ba66f8b3add32cccaf3c25c849d97f76cae520c8f0aa8773b4cf45874ad8155ca62d4bffda63822673cf612353e43ad7b9c4268ed3c21dbf4c85228cae67
+  checksum: 2adfc9facea57a5e733557d06377a85b991aa23dbc80f7af4856cfba224eac6714a46a970022a519dbda266371193f9251b12f29175a46d2b97cfcee21d5b1d4
   languageName: node
   linkType: hard
 
@@ -11870,7 +11870,7 @@ __metadata:
     i18next: ^22.4.10
     jotai: ^2.0.3
     next: ^13.2.3
-    next-i18next: ^13.2.0
+    next-i18next: ^13.2.2
     postcss: ^8.4.21
     prettier: ^2.8.4
     react: 18.2.0
