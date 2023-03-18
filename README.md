@@ -11,7 +11,8 @@
 
 #### ツール
 
-- Recoil <https://recoiljs.org/>
+- ~~Recoil <https://recoiljs.org/>~~
+- Jotai <http://jotai.org/>
 - next-i18next <https://github.com/i18next/next-i18next>
 
 ### Compiling
