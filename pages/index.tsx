@@ -4,11 +4,11 @@ import type { Tumblr } from 'libs/@type/api/tumblr'
 import type { GetStaticProps, NextPage } from 'next'
 
 import { endpoint, fetcher } from 'pages/api/works/tumblr'
-import Works from 'pages/works'
+import PersonalWork from 'pages/personal_works'
 
 const Home: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  return <Works fallbackData={fallbackData} />
+  return <PersonalWork fallbackData={fallbackData} />
 }
 
 export default Home
