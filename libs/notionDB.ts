@@ -1,4 +1,4 @@
-export const snsLinkDBId = 'b29bdf4a4e7841849ea40dcc815ea2d4'
+// export const snsLinkDBId = 'b29bdf4a4e7841849ea40dcc815ea2d4'
 
 // export const pageId = 'bb704f0980214ee4aa0b8e6b51eb670a'
 export const workAcceptanceStatusDBId = '83eb560e64f44cdd895aafaec98054f2'

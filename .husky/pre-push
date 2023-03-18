@@ -7,7 +7,7 @@ yarn upgrade:linter
 yarn upgrade:types
 yarn upgrade:storybook
 yarn lint
-# yarn unused
+yarn unused
 npx playwright install
 yarn test
 yarn build
