@@ -1,5 +1,4 @@
 import { appWithTranslation } from 'next-i18next'
-import { RecoilRoot } from 'recoil'
 
 import type { AppProps } from 'next/app'
 
@@ -11,15 +10,13 @@ import { GoogleAnalytics, usePageView } from 'libs/gtag'
 function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
-    <RecoilRoot>
-      <Layout>
-        <GoogleAnalytics />
-        {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
-        <ContentsWrapper $key={router.pathname}>
-          <Component {...pageProps} />
-        </ContentsWrapper>
-      </Layout>
-    </RecoilRoot>
+    <Layout>
+      <GoogleAnalytics />
+      {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
+      <ContentsWrapper $key={router.pathname}>
+        <Component {...pageProps} />
+      </ContentsWrapper>
+    </Layout>
   )
 }
 

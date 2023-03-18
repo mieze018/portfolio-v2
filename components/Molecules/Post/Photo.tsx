@@ -1,12 +1,12 @@
+import { useSetAtom } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useSetRecoilState } from 'recoil'
 import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
 import { hashCloseup } from 'components/Organisms/Modal'
-import { modalContentState } from 'libs/recoil/atoms'
+import { modalContentState } from 'libs/states/atoms'
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
 const FlexItem = styled.div<{ $isColumn: boolean }>`
   ${tw`w-full`}
@@ -18,7 +18,7 @@ const ImageElement = styled(Image)<{ photo: Tumblr.Photo; $closeup?: boolean }>`
   ${({ $closeup }) => ($closeup ? tw`max-w-none` : tw`max-w-full`)}
 `
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
-  const setModalContent = useSetRecoilState(modalContentState)
+  const setModalContent = useSetAtom(modalContentState)
   const lightCyan =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
   return (
