@@ -15,7 +15,10 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes --only-changed",
     "test": "npx playwright test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "upgrade:linter": "yarn up 'eslint*'",
+    "upgrade:types": "yarn up '@types/*' '*typescript*'",
+    "upgrade:storybook": "yarn up '@storybook*'"
   },
   "prettier": {
     "trailingComma": "es5",
