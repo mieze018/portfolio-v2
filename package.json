@@ -18,7 +18,7 @@
     "prepare": "husky install",
     "upgrade:linter": "yarn up 'eslint*'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
-    "upgrade:storybook": "yarn up '@storybook*'"
+    "upgrade:storybook": "npx storybook@next"
   },
   "prettier": {
     "trailingComma": "es5",
