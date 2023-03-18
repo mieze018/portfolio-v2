@@ -27,14 +27,15 @@ const pageView = (path: string) => {
   })
 }
 // GAイベントを発火させる 使いたいとこで使う
-export const event = ({ action, category, label }: Event) => {
-  if (!existsGaId) return
+//まだ設置できていないのでいったんコメントアウト
+// export const event = ({ action, category, label }: Event) => {
+//   if (!existsGaId) return
 
-  window.gtag('event', action, {
-    event_category: category,
-    event_label: JSON.stringify(label),
-  })
-}
+//   window.gtag('event', action, {
+//     event_category: category,
+//     event_label: JSON.stringify(label),
+//   })
+// }
 
 /**ページ移管時にカウントする */
 export const usePageView = () => {
