@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+
 test.describe('ページが存在しないアドレスにアクセスした時', () => {
   test('トップページにリダイレクトされる', async ({ page }) => {
     await page.goto('/undefined_page_url')
