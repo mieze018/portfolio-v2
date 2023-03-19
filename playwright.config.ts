@@ -1,6 +1,5 @@
-import { devices } from '@playwright/test'
+import { devices, defineConfig } from '@playwright/test'
 
-import { defineConfig } from '@playwright/test'
 import type { PlaywrightTestConfig } from '@playwright/test'
 
 /**
@@ -13,7 +12,7 @@ import type { PlaywrightTestConfig } from '@playwright/test'
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testDir: './',
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {

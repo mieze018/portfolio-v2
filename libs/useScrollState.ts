@@ -16,7 +16,8 @@ export const useScrollState = () => {
   const { scrollY } = useScroll()
   const [scrollTop, setScrollTop] = useState<number>(scrollY.get())
   const contentsWrapper = useAtomValue(contentsWrapperState)
-  const contentsWrapperScrollTop = contentsWrapper?.offsetTop ?? 500
+  const defaultScrollTop = 500
+  const contentsWrapperScrollTop = contentsWrapper?.offsetTop ?? defaultScrollTop
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
