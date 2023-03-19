@@ -43,5 +43,8 @@
     "titleBar.activeForeground": "#F8F9FD"
   },
   "i18n-ally.localesPaths": ["public/locales"],
-  "i18n-ally.keystyle": "flat"
+  "i18n-ally.keystyle": "flat",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
