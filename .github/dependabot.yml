@@ -9,4 +9,8 @@ updates:
     directory: '/' # Location of package manifests
     schedule:
       interval: 'daily'
-    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch', 'version-update:semver-minor']
+        # メジャーのみにする
+        # update-types: ['version-update:semver-patch', 'version-update:semver-minor']
