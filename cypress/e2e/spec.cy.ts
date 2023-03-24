@@ -1,5 +1,6 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
+describe('トップページにアクセスする', () => {
+  it('タイトルが表示される', () => {
+    cy.visit('/')
+    cy.contains('mieze illustration')
   })
 })
