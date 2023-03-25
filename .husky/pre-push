@@ -5,6 +5,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 yarn upgrade:linter
 yarn upgrade:types
+# https://github.com/storybookjs/storybook/releases
 yarn upgrade:storybook
 # yarn lint
 yarn unused
