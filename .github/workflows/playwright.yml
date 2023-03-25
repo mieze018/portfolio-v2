@@ -1,0 +1,26 @@
+name: Playwright Tests
+on:
+  deployment_status:
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: Install dependencies
+        run: yarn install  --immutable --immutable-cache --check-cache
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
+        env:
+          # This might depend on your test-runner/language binding
+          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
+          # バーセルで設定してるenv GitHubのシークレットにも追加する
+          NEXT_PUBLIC_api_Key: ${{ secrets.NEXT_PUBLIC_api_Key }}
+          NEXT_PUBLIC_NOTION_TOKEN: ${{ secrets.NEXT_PUBLIC_NOTION_TOKEN }}
+          NEXT_PUBLIC_FORM: ${{ secrets.NEXT_PUBLIC_FORM}}
