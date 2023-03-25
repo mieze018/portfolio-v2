@@ -3,9 +3,7 @@
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# yarn lint
-yarn unused
-# npx playwright install
-# yarn test
-yarn start:cy # build & start
-yarn cy:run 
+yarn upgrade:linter
+yarn upgrade:types
+# https://github.com/storybookjs/storybook/releases
+yarn upgrade:storybook

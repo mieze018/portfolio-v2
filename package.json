@@ -16,6 +16,8 @@
     "chromatic": "chromatic --exit-zero-on-changes --only-changed",
     "test": "npx playwright test",
     "cypress": "cypress open",
+    "start:cy": "kill $(lsof -i :3009 | grep node | awk '{print $2}') & next build && next start --port 3009 & wait-on http://localhost:3009 --timeout 10000",
+    "cy:run": "cypress run --browser chrome",
     "prepare": "husky install",
     "upgrade:linter": "yarn up 'eslint*'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
@@ -94,7 +96,8 @@
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^9.0.4",
     "twin.macro": "^3.1.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "wait-on": "^7.0.1"
   },
   "volta": {
     "node": "18.14.2",
