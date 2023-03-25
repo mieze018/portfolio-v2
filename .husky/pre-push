@@ -7,5 +7,4 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 yarn unused
 # npx playwright install
 # yarn test
-yarn start:cy # build & start
-yarn cy:run 
+yarn cy:test
