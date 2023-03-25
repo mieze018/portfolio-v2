@@ -34,3 +34,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # vercelで設定してるenv GitHubのシークレットにも追加する
+          NEXT_PUBLIC_api_Key: ${{ secrets.NEXT_PUBLIC_api_Key }}
+          NEXT_PUBLIC_NOTION_TOKEN: ${{ secrets.NEXT_PUBLIC_NOTION_TOKEN }}
+          NEXT_PUBLIC_FORM: ${{ secrets.NEXT_PUBLIC_FORM}}
