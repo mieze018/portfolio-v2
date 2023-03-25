@@ -24,7 +24,7 @@ describe('ルーティングが存在しないページにアクセスしたと�
     cy.visit('/undefined_page_url', { failOnStatusCode: false })
     //urlが`undefined_page_url`を含まなくなるのを待つ
     cy.url().should('not.include', 'undefined_page_url')
-    // urlがbaseUrlになることを確認する
-    cy.url().should('eq', Cypress.config().baseUrl)
+    // urlがbaseUrlまたはbaseUrl+/になることを確認する
+    cy.url().should('match', new RegExp(`^${Cypress.config().baseUrl}(/)?$`))
   })
 })
