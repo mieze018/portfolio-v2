@@ -33,6 +33,7 @@ export const NavLinks = ({
             onClick={() =>
               isToScrollToContentWrapper && setTimeout(() => contentsWrapper?.scrollIntoView(), 100)
             }
+            data-testid={`nav-link-${route.pathname}`}
           >
             <Span isCurrent={isLinkToCurrentPath}>{route.name}</Span>
           </Link>
