@@ -8,3 +8,8 @@ yarn unused
 # npx playwright install
 # yarn test
 yarn cy:test
+
+yarn upgrade:linter
+yarn upgrade:types
+# https://github.com/storybookjs/storybook/releases
+yarn upgrade:storybook
