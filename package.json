@@ -14,6 +14,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes --only-changed",
+    "playwright": "npx playwright test",
     "cypress": "cypress open",
     "cy:test": "kill $(lsof -i :3009 | grep node | awk '{print $2}') & next build && next start --port 3009 & cypress run --browser chrome && kill $(lsof -i :3009 | grep node | awk '{print $2}') ",
     "prepare": "husky install",
