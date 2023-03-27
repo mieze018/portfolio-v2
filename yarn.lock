@@ -4459,10 +4459,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.15.8":
-  version: 18.15.8
-  resolution: "@types/node@npm:18.15.8"
-  checksum: 795695b9f5bbfaea864261d3179da530dbe8c615bd525d6afcaa0d508f0b73f252507b54c735b1d744932677e30f55161bbe9b78487a60bd6a93b2d03027d30d
+"@types/node@npm:^18.15.10":
+  version: 18.15.10
+  resolution: "@types/node@npm:18.15.10"
+  checksum: 9aeae0b683eda82892def5315812bdee3f1a28c4898b7e70f8e2514564538b16c4dccbe8339c1266f8fc1d707a48f152689264a854f5ebc2eba5011e793612d9
   languageName: node
   linkType: hard
 
@@ -4838,6 +4838,15 @@ __metadata:
     "@typescript-eslint/types": 5.54.0
     eslint-visitor-keys: ^3.3.0
   checksum: 17fc323c09e6272b603cdaec30a99916600fbbb737e1fbc8c1727a487753b4363cea112277fa43e0562bff34bdd1de9ad73ff9433118b1fd469b112fad0313ca
+  languageName: node
+  linkType: hard
+
+"@vercel/analytics@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@vercel/analytics@npm:0.1.11"
+  peerDependencies:
+    react: ^16.8||^17||^18
+  checksum: 05b8180ac6e23ebe7c09d74c43f8ee78c408cd0b6546e676389cbf4fba44dfeeae3648c9b52e2421be64fe3aeee8b026e6ea4bdfc0589fb5780670f2b090a167
   languageName: node
   linkType: hard
 
@@ -12544,12 +12553,13 @@ __metadata:
     "@storybook/testing-library": ^0.0.14-next.1
     "@testing-library/react": ^14.0.0
     "@types/gtag.js": ^0.0.12
-    "@types/node": ^18.15.8
+    "@types/node": ^18.15.10
     "@types/react": ^18.0.29
     "@types/react-dom": ^18.0.11
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.51.0
     "@typescript-eslint/parser": ^5.54.0
+    "@vercel/analytics": ^0.1.11
     autoprefixer: ^10.4.14
     babel-loader: ^9.1.2
     babel-plugin-macros: ^3.1.0
