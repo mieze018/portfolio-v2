@@ -91,7 +91,7 @@
     "stailwc": "^0.15.0",
     "storybook": "^7.0.0-rc.8",
     "storybook-addon-swc": "^1.1.9",
-    "tailwindcss": "^3.2.7",
+    "tailwindcss": "^3.3.1",
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^9.0.4",
     "twin.macro": "^3.1.0",
