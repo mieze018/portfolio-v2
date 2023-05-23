@@ -1,4 +1,4 @@
-# portfolio-v2
+# portfolio as Artis - v2
 
 ## 使っているもの
 
