@@ -8613,9 +8613,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.6.0":
-  version: 10.6.0
-  resolution: "framer-motion@npm:10.6.0"
+"framer-motion@npm:^10.12.14":
+  version: 10.12.14
+  resolution: "framer-motion@npm:10.12.14"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -8630,7 +8630,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 83de861483cd5fe820284ee883fb5a78ae9463f083aca8e8588e9403d3fcc7d98a1f9bcf96aefcdd5058aeb2aca07a55cb6d1ce3a979e5fe9fd44d084e948c27
+  checksum: f59ad15cd1de257f1ae6c431b801716774397331a8b5b0105cba8abfb06f1b4e6fb96e4706c0b43c434e939ce91607d99ecdbd20f7c658dda9a901ca6bdc75ef
   languageName: node
   linkType: hard
 
@@ -12573,7 +12573,7 @@ __metadata:
     eslint-plugin-import: ^2.27.5
     eslint-plugin-storybook: ^0.6.11
     eslint-plugin-unused-imports: ^2.0.0
-    framer-motion: ^10.6.0
+    framer-motion: ^10.12.14
     husky: ^8.0.3
     i18next: ^22.4.12
     jotai: ^2.0.3
@@ -15163,11 +15163,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.0.2#~builtin<compat/typescript>":
   version: 5.0.2
-  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=ad5954"
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bdbf3d0aac0d6cf010fbe0536753dc19f278eb4aba88140dcd25487dfe1c56ca8b33abc0dcd42078790a939b08ebc4046f3e9bb961d77d3d2c3cfa9829da4d53
+  checksum: b63cb742fbb9aeb3085e002ad8f10d5fd963606aa4d6b3b65b4e76c396ff09739f03b5dbae08e1698c3bce9d5619d3f67aeb7ee470ed4016bd345b3cfe37b54a
   languageName: node
   linkType: hard
 
