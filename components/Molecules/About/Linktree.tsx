@@ -1,8 +1,7 @@
-import type { LocalApi } from 'libs/@type/api/local'
-
 import { SectionWrapper } from 'components/Atoms/About/Atoms'
 
-export const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
+// export const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
+export const Linktree = () => (
   <SectionWrapper>
     {/* <h1>
       <a href={linktree.url}>{linktree.text}</a>

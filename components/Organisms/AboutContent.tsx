@@ -23,7 +23,8 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
       )}
       <EventHistory events={events} />
       <Prizes prizes={prizes} />
-      {links?.length && <Linktree links={links} />}
+      {/* {links?.length && <Linktree links={links} />} */}
+      {links?.length && <Linktree />}
       <Participant />
     </Wrapper>
   )

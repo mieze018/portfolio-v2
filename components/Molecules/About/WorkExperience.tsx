@@ -34,7 +34,7 @@ export const WorkExperience = ({
     </SectionWrapper>
   )
 }
-const GenreBlock = ({ genre, works }: { genre: PageObject; works: PageObject[] }) => {
+const GenreBlock = ({ genre, works }: { genre: PageObject; works: PageObject[]; key: unknown }) => {
   const genreName = getProperties(genre, { name: 'genreName', type: 'title' })
   return (
     <li key={genre}>

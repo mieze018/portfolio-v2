@@ -25,7 +25,7 @@ const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
   ]}
 `
 
-export const Post = ({ post }: { post: Tumblr.Post }) => {
+export const Post = ({ post }: { post: Tumblr.Post; key: unknown }) => {
   // TODO:投稿ごとにタグでレイアウト指定できるようにするといいかも
   /** 画像が2枚以上(photoset)で4枚以上なら横に並べる*/
   const isColumn = !!post.photoset_layout && post.photos.length >= 4

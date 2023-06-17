@@ -15,7 +15,14 @@ const FlexItem = styled.div<{ $isColumn: boolean }>`
 const ImageElement = styled(Image)<{ photo: Tumblr.Photo; $closeup?: boolean }>`
   ${({ $closeup }) => [tw`mx-auto cursor-pointer `, $closeup ? tw`max-w-none` : tw`max-w-full`]}
 `
-export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
+export const Photo = ({
+  photo,
+  isColumn,
+}: {
+  photo: Tumblr.Photo
+  isColumn: boolean
+  key: unknown
+}) => {
   const setModalContent = useSetAtom(modalContentState)
   const lightCyan =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='

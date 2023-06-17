@@ -5,7 +5,7 @@ import type { PageObject } from 'libs/@type/api/notion'
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 
-export const Work = ({ work }: { work: PageObject }) => {
+export const Work = ({ work }: { work: PageObject; key: unknown }) => {
   const title = getProperties(work, { name: 'title', type: 'title' })
   const author = getProperties(work, { name: 'author', type: 'select' })
   const format = getProperties(work, { name: 'format', type: 'select' })
