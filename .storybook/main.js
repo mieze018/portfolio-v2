@@ -5,7 +5,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     // 'storybook-addon-swc',
-    '@storybook/addon-postcss',
+    "@storybook/addon-styling",
     '@storybook/addon-interactions',
     '@storybook/addon-actions',
     '@storybook/addon-a11y',
