@@ -4170,16 +4170,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/testing-library@npm:^0.0.14-next.2":
-  version: 0.0.14-next.2
-  resolution: "@storybook/testing-library@npm:0.0.14-next.2"
+"@storybook/testing-library@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@storybook/testing-library@npm:0.1.0"
   dependencies:
     "@storybook/client-logger": ^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0
     "@storybook/instrumenter": ^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0
     "@testing-library/dom": ^8.3.0
     "@testing-library/user-event": ^13.2.1
     ts-dedent: ^2.2.0
-  checksum: c471578493798e74e1f02f4a8cd046f24d1c387f32d5b3469f3331563d93c6dd872937aa9ce6a4dc12832e0c9f378639265c3b6862cbbc0b1887f6e26c102601
+  checksum: a413110dafe80f8fe64da912fddb653bc3c695c94bd023b8cb918e519e9f94119bae559909bfb8ad229041a4f17a12b33425c61572270702c116d0b727b4d4ba
   languageName: node
   linkType: hard
 
@@ -13054,7 +13054,7 @@ __metadata:
     "@storybook/jest": ^0.1.1-next.0
     "@storybook/nextjs": 7.1.0-alpha.36
     "@storybook/react": ^7.1.0-alpha.36
-    "@storybook/testing-library": ^0.0.14-next.2
+    "@storybook/testing-library": ^0.1.0
     "@testing-library/react": ^14.0.0
     "@types/gtag.js": ^0.0.12
     "@types/node": ^20.3.1
@@ -15701,11 +15701,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.3#~builtin<compat/typescript>":
   version: 5.1.3
-  resolution: "typescript@patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"
+  resolution: "typescript@patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 6f0a9dca6bf4ce9dcaf4e282aade55ef4c56ecb5fb98d0a4a5c0113398815aea66d871b5611e83353e5953a19ed9ef103cf5a76ac0f276d550d1e7cd5344f61e
+  checksum: 32a25b2e128a4616f999d4ee502aabb1525d5647bc8955e6edf05d7fbc53af8aa98252e2f6ba80bcedfc0260c982b885f3c09cfac8bb65d2924f3133ad1e1e62
   languageName: node
   linkType: hard
 
