@@ -20,9 +20,7 @@ declare module 'stailwc' {
   const styled: typeof styledImport
   const css: typeof cssImport
 }
-type TwComponentWrapper = <T extends ComponentType<any>>(
-  component: T
-) => TemplateFn<T>
+type TwComponentWrapper = <T extends ComponentType<any>>(component: T) => TemplateFn<T>
 
 declare module 'react' {
   // The css prop
@@ -39,7 +37,6 @@ declare module 'react' {
 declare global {
   const tw: TwFn & TwComponentMap & TwComponentWrapper
   namespace JSX {
-
     // The 'as' prop on styled components
     interface IntrinsicAttributes<T> extends DOMAttributes<T> {
       as?: string | Element

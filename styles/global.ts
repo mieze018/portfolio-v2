@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 
-
 // const styles = {
 //   eng: tw`leading-snug tracking-wider`,
 //   jpn: tw`text-sm leading-relaxed tracking-wide`,
