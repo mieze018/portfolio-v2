@@ -88,7 +88,7 @@
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
-    "stailwc": "^0.15.0",
+    "stailwc": "^0.17.0",
     "storybook": "^7.1.0-alpha.36",
     "storybook-addon-swc": "^1.1.9",
     "tailwindcss": "^3.2.7",

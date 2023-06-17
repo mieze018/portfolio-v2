@@ -1736,13 +1736,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/hash@npm:^0.9.1":
-  version: 0.9.1
-  resolution: "@emotion/hash@npm:0.9.1"
-  checksum: 716e17e48bf9047bf9383982c071de49f2615310fb4e986738931776f5a823bc1f29c84501abe0d3df91a3803c80122d24e28b57351bca9e01356ebb33d89876
-  languageName: node
-  linkType: hard
-
 "@emotion/is-prop-valid@npm:^0.8.2":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
@@ -1775,19 +1768,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/serialize@npm:^1.1.1":
-  version: 1.1.2
-  resolution: "@emotion/serialize@npm:1.1.2"
-  dependencies:
-    "@emotion/hash": ^0.9.1
-    "@emotion/memoize": ^0.8.1
-    "@emotion/unitless": ^0.8.1
-    "@emotion/utils": ^1.2.1
-    csstype: ^3.0.2
-  checksum: 413c352e657f1b5e27ea6437b3ef7dcc3860669b7ae17fd5c18bfbd44e033af1acc56b64d252284a813ca4f3b3e1b0841c42d3fb08e02d2df56fd3cd63d72986
-  languageName: node
-  linkType: hard
-
 "@emotion/stylis@npm:^0.8.4":
   version: 0.8.5
   resolution: "@emotion/stylis@npm:0.8.5"
@@ -1802,26 +1782,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/unitless@npm:^0.8.1":
-  version: 0.8.1
-  resolution: "@emotion/unitless@npm:0.8.1"
-  checksum: 385e21d184d27853bb350999471f00e1429fa4e83182f46cd2c164985999d9b46d558dc8b9cc89975cb337831ce50c31ac2f33b15502e85c299892e67e7b4a88
-  languageName: node
-  linkType: hard
-
 "@emotion/use-insertion-effect-with-fallbacks@npm:^1.0.0":
   version: 1.0.1
   resolution: "@emotion/use-insertion-effect-with-fallbacks@npm:1.0.1"
   peerDependencies:
     react: ">=16.8.0"
   checksum: 700b6e5bbb37a9231f203bb3af11295eed01d73b2293abece0bc2a2237015e944d7b5114d4887ad9a79776504aa51ed2a8b0ddbc117c54495dd01a6b22f93786
-  languageName: node
-  linkType: hard
-
-"@emotion/utils@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "@emotion/utils@npm:1.2.1"
-  checksum: e0b44be0705b56b079c55faff93952150be69e79b660ae70ddd5b6e09fc40eb1319654315a9f34bb479d7f4ec94be6068c061abbb9e18b9778ae180ad5d97c73
   languageName: node
   linkType: hard
 
@@ -13088,7 +13054,7 @@ __metadata:
     react-i18next: ^12.2.0
     react-icons: ^4.8.0
     react-textarea-autosize: ^8.4.0
-    stailwc: ^0.15.0
+    stailwc: ^0.17.0
     storybook: ^7.1.0-alpha.36
     storybook-addon-swc: ^1.1.9
     styled-components: ^5.3.9
@@ -14724,15 +14690,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stailwc@npm:^0.15.0":
-  version: 0.15.0
-  resolution: "stailwc@npm:0.15.0"
+"stailwc@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "stailwc@npm:0.17.0"
   dependencies:
     app-root-path: ^3.1.0
   peerDependencies:
     "@emotion/serialize": ^1.1.1
     tailwindcss: ^3.1.8
-  checksum: b146aef58978a803fd829dbd952d8683c0494890fc100af18f3a18192931800d5de747241ac6c8c9cef3bf76353d41c23f2044c0eddcfd2945ad610f4505c96f
+  checksum: 5500332a77bd6d3329b1c55d283e5c9ab9321d1ac14be3307aebc41fbf89286c88caf35594263bf536c81e43f2cd4cdd19705863f791fef184513604ed759796
   languageName: node
   linkType: hard
 
