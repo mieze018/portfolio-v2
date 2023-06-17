@@ -7,8 +7,6 @@ on: push
 # List of jobs
 jobs:
   chromatic-deployment:
-    # dependabotの作成したPRでは実行しない
-    if: github.actor != 'dependabot[bot]'
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
