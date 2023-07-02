@@ -2155,26 +2155,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formspree/core@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "@formspree/core@npm:2.8.1"
+"@formspree/core@npm:^2.8.3":
+  version: 2.8.3
+  resolution: "@formspree/core@npm:2.8.3"
   dependencies:
     "@stripe/stripe-js": ^1.35.0
-  checksum: 5d13a9aeff922bf324f8d6c0870eb2312ee9bc9a66b079b501c37607cb7ea3fe196754d9ecd63885f8bee11d16397151e40aa89b0059b78a29ab22b7d5a3a5ce
+  checksum: d57a1fb0e92ebd753ed427744c2190274d56c859509486f48c40f656f71e4927a30b88280df0bd846458b3b2a824e63ae57b4579d2e88a245cb4c3c8c787cb8b
   languageName: node
   linkType: hard
 
-"@formspree/react@npm:^2.4.1":
-  version: 2.4.2
-  resolution: "@formspree/react@npm:2.4.2"
+"@formspree/react@npm:^2.4.4":
+  version: 2.4.4
+  resolution: "@formspree/react@npm:2.4.4"
   dependencies:
-    "@formspree/core": ^2.8.1
+    "@formspree/core": ^2.8.3
     "@stripe/react-stripe-js": ^1.7.1
     "@stripe/stripe-js": ^1.35.0
   peerDependencies:
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: ff8035e39aae6b57283bc1632ae347be64ec3fa1894ce2170c447c7a604ae9efd055dad92f259df33b42a2573705c9eb3d709e9ab7be40c73c4d240ac797a486
+  checksum: 168ca45150d1cb9a7e829370bb1868a2b10fe4ba84035e0642d8fa746525b2c615940ce82154399143f1612c12dfbb7cdda43a8ec79ff1ef04fe79f3a8ad8760
   languageName: node
   linkType: hard
 
@@ -13005,7 +13005,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/plugin-syntax-typescript": ^7.20.0
-    "@formspree/react": ^2.4.1
+    "@formspree/react": ^2.4.4
     "@headlessui/react": ^1.7.13
     "@notionhq/client": ^2.2.3
     "@playwright/test": ^1.31.2
@@ -15668,11 +15668,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
+  checksum: 21e88b0a0c0226f9cb9fd25b9626fb05b4c0f3fddac521844a13e1f30beb8f14e90bd409a9ac43c812c5946d714d6e0dee12d5d02dfc1c562c5aacfa1f49b606
   languageName: node
   linkType: hard
 
