@@ -45,7 +45,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.0",
     "react-icons": "^4.10.1",
-    "react-textarea-autosize": "^8.5.0",
+    "react-textarea-autosize": "^8.5.1",
     "styled-components": "^5.3.9",
     "swr": "^2.2.0"
   },
