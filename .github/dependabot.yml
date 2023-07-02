@@ -12,6 +12,8 @@ updates:
     ignore:
       # storybook を含むものを無視
       - dependency-name: '*storybook*'
+      # @types/* を含むものを無視
+      - dependency-name: '*@types*'
       # - dependency-name: '*'
       # update-types: ['version-update:semver-patch']
       # メジャーのみにする
