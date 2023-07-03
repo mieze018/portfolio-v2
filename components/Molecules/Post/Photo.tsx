@@ -9,13 +9,11 @@ import { hashCloseup } from 'components/Organisms/Modal'
 import { modalContentState } from 'libs/states/atoms'
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
 const FlexItem = styled.div<{ $isColumn: boolean }>`
-  ${tw`w-full`}
-  ${({ $isColumn }) => $isColumn && tw`flex-grow w-1/4 mx-0 my-4 basis-1/4 shrink`}
+  ${({ $isColumn }) => [tw`w-full`, $isColumn && tw`grow w-1/4 mx-0 my-4 basis-1/4 shrink`]}
 `
 
 const ImageElement = styled(Image)<{ photo: Tumblr.Photo; $closeup?: boolean }>`
-  ${tw`mx-auto cursor-pointer `}
-  ${({ $closeup }) => ($closeup ? tw`max-w-none` : tw`max-w-full`)}
+  ${({ $closeup }) => [tw`mx-auto cursor-pointer `, $closeup ? tw`max-w-none` : tw`max-w-full`]}
 `
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
   const setModalContent = useSetAtom(modalContentState)

@@ -6,8 +6,10 @@ import tw, { styled } from 'twin.macro'
 import { contentsWrapperState } from 'libs/states/atoms'
 
 const Span = styled.span<{ isCurrent: boolean }>`
-  ${tw`inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`}
-  ${({ isCurrent }) => isCurrent && tw`underline hover:text-secondary`}
+  ${({ isCurrent }) => [
+    tw`inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`,
+    isCurrent && tw`underline hover:text-secondary`,
+  ]}
 `
 export const NavLinks = ({
   routes,
