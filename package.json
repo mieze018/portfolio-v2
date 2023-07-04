@@ -50,7 +50,7 @@
     "swr": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.22.6",
     "@babel/plugin-syntax-typescript": "^7.20.0",
     "@playwright/test": "^1.31.2",
     "@storybook/addon-a11y": "^7.1.0-alpha.42",
