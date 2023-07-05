@@ -10730,15 +10730,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jotai@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "jotai@npm:2.2.1"
+"jotai@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "jotai@npm:2.2.2"
   peerDependencies:
     react: ">=17.0.0"
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 1400d0320516966e23ff4d134e7ff525e32987f3a63e75246a49fed21790b9ff567c480e69a86b74d1bbfa354015de1581ab622664fdfe8a38d0fb8de00e424c
+  checksum: 6b3a62714a22984afd4f089e5bb904dc9d7dc8f6eb26135746bf154da760e485bcd5d83b08297e9f1f3f7843eb8d604c9b480fdae97786170f2d00de0ad2f87b
   languageName: node
   linkType: hard
 
@@ -13080,7 +13080,7 @@ __metadata:
     framer-motion: ^10.12.18
     husky: ^8.0.3
     i18next: ^22.4.12
-    jotai: ^2.2.1
+    jotai: ^2.2.2
     next: ^13.4.7
     next-i18next: ^13.2.2
     postcss: ^8.4.21
