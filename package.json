@@ -76,7 +76,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.1.4",
     "chromatic": "^6.19.9",
-    "cypress": "^12.16.0",
+    "cypress": "^12.17.0",
     "eslint": "^8.44.0",
     "eslint-config-next": "^13.4.7",
     "eslint-config-prettier": "^8.8.0",
