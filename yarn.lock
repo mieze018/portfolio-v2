@@ -13093,7 +13093,7 @@ __metadata:
     stailwc: ^0.17.0
     storybook: ^7.1.0-alpha.42
     storybook-addon-swc: ^1.1.9
-    styled-components: ^6.0.1
+    styled-components: ^6.0.4
     swr: ^2.2.0
     tailwindcss: ^3.2.7
     ts-prune: ^0.10.3
@@ -14991,9 +14991,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "styled-components@npm:6.0.1"
+"styled-components@npm:^6.0.4":
+  version: 6.0.4
+  resolution: "styled-components@npm:6.0.4"
   dependencies:
     "@babel/cli": ^7.21.0
     "@babel/core": ^7.21.0
@@ -15021,7 +15021,7 @@ __metadata:
   peerDependenciesMeta:
     babel-plugin-styled-components:
       optional: true
-  checksum: bd8a6163b07ee5f33de582370c33e0fb731e92771491b7ec28cc7c86159ce5b370a7a9e73e09e9381f0ead57c98f3939a7b14f0b1d3d91992c75940489399496
+  checksum: 15c5701c2606cc343d1d7a9369bca96e76d3be755dfc61198ba8fcd2961a568f4230ffbfb9dda67691cd31cf40a0e455ba6379e26a33700f3c6e69d12814ff29
   languageName: node
   linkType: hard
 
