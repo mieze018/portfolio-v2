@@ -85,7 +85,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.26",
     "prettier": "^2.8.4",
     "stailwc": "^0.17.0",
     "storybook": "^7.1.0-alpha.42",
