@@ -2550,13 +2550,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@notionhq/client@npm:^2.2.6":
-  version: 2.2.6
-  resolution: "@notionhq/client@npm:2.2.6"
+"@notionhq/client@npm:^2.2.8":
+  version: 2.2.8
+  resolution: "@notionhq/client@npm:2.2.8"
   dependencies:
     "@types/node-fetch": ^2.5.10
     node-fetch: ^2.6.1
-  checksum: 738bc7ac6d677eb0a869d6f892320eabd82d960ca771b70ca3cc113cdf086b41bcb7b71773b03f4c547290f0f514b18c6421e7a18a7b72f5e6c6ede3be85f4e0
+  checksum: d5e1f7defe3a0032579f9c07b4802a1bd369de4d274ba84ec117d13832e4f73a016491464d36d04679f0ed88022e48007df6118c91a0ea455703aab68a35a1ed
   languageName: node
   linkType: hard
 
@@ -13041,7 +13041,7 @@ __metadata:
     "@babel/plugin-syntax-typescript": ^7.20.0
     "@formspree/react": ^2.4.4
     "@headlessui/react": ^1.7.13
-    "@notionhq/client": ^2.2.6
+    "@notionhq/client": ^2.2.8
     "@playwright/test": ^1.31.2
     "@radix-ui/react-label": ^2.0.1
     "@radix-ui/react-separator": ^1.0.2
@@ -15727,11 +15727,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=85af82"
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 21e88b0a0c0226f9cb9fd25b9626fb05b4c0f3fddac521844a13e1f30beb8f14e90bd409a9ac43c812c5946d714d6e0dee12d5d02dfc1c562c5aacfa1f49b606
+  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
   languageName: node
   linkType: hard
 
