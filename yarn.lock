@@ -10730,15 +10730,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jotai@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "jotai@npm:2.2.1"
+"jotai@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "jotai@npm:2.2.3"
   peerDependencies:
+    "@types/react": ">=17.0.0"
     react: ">=17.0.0"
   peerDependenciesMeta:
+    "@types/react":
+      optional: true
     react:
       optional: true
-  checksum: 1400d0320516966e23ff4d134e7ff525e32987f3a63e75246a49fed21790b9ff567c480e69a86b74d1bbfa354015de1581ab622664fdfe8a38d0fb8de00e424c
+  checksum: 41f6c65bd115c92679047aaff47dfe99f8ec27cb4517144bf82b0fdd10b3b6a8b12c5101a80d9147c4660f5c2207aef13df138c8dc24e739f89cb15062ff2bdd
   languageName: node
   linkType: hard
 
@@ -13080,7 +13083,7 @@ __metadata:
     framer-motion: ^10.12.18
     husky: ^8.0.3
     i18next: ^22.4.12
-    jotai: ^2.2.1
+    jotai: ^2.2.3
     next: ^13.4.7
     next-i18next: ^13.2.2
     postcss: ^8.4.21
@@ -15727,11 +15730,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=85af82"
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 21e88b0a0c0226f9cb9fd25b9626fb05b4c0f3fddac521844a13e1f30beb8f14e90bd409a9ac43c812c5946d714d6e0dee12d5d02dfc1c562c5aacfa1f49b606
+  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
   languageName: node
   linkType: hard
 
