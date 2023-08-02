@@ -13093,7 +13093,7 @@ __metadata:
     stailwc: ^0.17.0
     storybook: ^7.1.0-alpha.42
     storybook-addon-swc: ^1.1.9
-    styled-components: ^6.0.1
+    styled-components: ^6.0.6
     swr: ^2.2.0
     tailwindcss: ^3.2.7
     ts-prune: ^0.10.3
@@ -14991,9 +14991,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "styled-components@npm:6.0.1"
+"styled-components@npm:^6.0.6":
+  version: 6.0.6
+  resolution: "styled-components@npm:6.0.6"
   dependencies:
     "@babel/cli": ^7.21.0
     "@babel/core": ^7.21.0
@@ -15021,7 +15021,7 @@ __metadata:
   peerDependenciesMeta:
     babel-plugin-styled-components:
       optional: true
-  checksum: bd8a6163b07ee5f33de582370c33e0fb731e92771491b7ec28cc7c86159ce5b370a7a9e73e09e9381f0ead57c98f3939a7b14f0b1d3d91992c75940489399496
+  checksum: bbff4a483fe4ef8dc9f7c0b65622177738970dd0d71730d44553c0694931d1ef2afed3c38879481cedd76410c75fa5cdac3d7e0f250135b8af19de30278e510b
   languageName: node
   linkType: hard
 
@@ -15727,11 +15727,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=85af82"
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 21e88b0a0c0226f9cb9fd25b9626fb05b4c0f3fddac521844a13e1f30beb8f14e90bd409a9ac43c812c5946d714d6e0dee12d5d02dfc1c562c5aacfa1f49b606
+  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
   languageName: node
   linkType: hard
 
