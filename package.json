@@ -78,7 +78,7 @@
     "chromatic": "^6.19.9",
     "cypress": "^12.16.0",
     "eslint": "^8.44.0",
-    "eslint-config-next": "^13.4.7",
+    "eslint-config-next": "^13.4.15",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-css": "^0.8.0",
     "eslint-plugin-import": "^2.27.5",
