@@ -1,0 +1,11 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/blocks'
+import { Textarea } from './Textarea'
+import * as TextareaStories from './Textarea.stories'
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+入力内容に応じて自動的にリサイズされる
+
+<Canvas of={TextareaStories.AutoResize} />
