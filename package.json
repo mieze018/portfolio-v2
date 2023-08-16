@@ -93,7 +93,7 @@
     "tailwindcss": "^3.3.3",
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^10.0.0",
-    "twin.macro": "^3.1.0",
+    "twin.macro": "^3.4.0",
     "typescript": "^5.1.6"
   },
   "volta": {
