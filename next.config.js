@@ -10,10 +10,11 @@ const nextConfig = {
 
 const stailwcConfig = {
   experimental: {
-    swcPlugins: [stailwc({
-      engine: "styled-components",
-      wasm: "/home/arlyon/Programming/stailwc/target/wasm32-wasi/release/stailwc.wasm",
-    })
+    swcPlugins: [
+      stailwc({
+        engine: 'styled-components',
+        wasm: '/home/arlyon/Programming/stailwc/target/wasm32-wasi/release/stailwc.wasm',
+      }),
     ],
   },
   compiler: { styledComponents: true },
