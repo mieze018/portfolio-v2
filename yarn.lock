@@ -14211,7 +14211,7 @@ __metadata:
     tailwindcss: ^3.3.3
     ts-prune: ^0.10.3
     ts-unused-exports: ^10.0.0
-    twin.macro: ^3.1.0
+    twin.macro: ^3.4.0
     typescript: ^5.1.6
   languageName: unknown
   linkType: soft
@@ -16826,9 +16826,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"twin.macro@npm:^3.1.0":
-  version: 3.3.1
-  resolution: "twin.macro@npm:3.3.1"
+"twin.macro@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "twin.macro@npm:3.4.0"
   dependencies:
     "@babel/template": ^7.18.10
     babel-plugin-macros: ^3.1.0
@@ -16838,7 +16838,7 @@ __metadata:
     postcss-selector-parser: ^6.0.10
   peerDependencies:
     tailwindcss: ">=3.3.1"
-  checksum: e9eb3dc7fa5d82cb915f76c4b485a20d6a7741755065b7a30097b56862115f5a3559a0383718d3fa54c01270f62d7830934deb94369c7e873e9060afe284b2a1
+  checksum: 59dcef16fc2ccf36f95999ff61cc20f4859b268d65bbf9c371dcee0445fc5bdbfbe2c640c1255c996ea4bd860280177e8456c3ae1f45947480c3e427de46ce32
   languageName: node
   linkType: hard
 
