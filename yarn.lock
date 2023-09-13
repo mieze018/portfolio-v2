@@ -2572,26 +2572,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formspree/core@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@formspree/core@npm:3.0.0"
+"@formspree/core@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@formspree/core@npm:3.0.1"
   dependencies:
     "@stripe/stripe-js": ^1.35.0
-  checksum: e1446fb2703a0bb6912b0771dbed695959be29764608102ded156442288af3eb7f7b6adc1de7c817a54f2e0b6ee147e34157753dc77b68197801c81551acf0c0
+  checksum: 186f367f089ec7fb197747af8eecf006bd307a65dc2a4a113b18de86e25c00c0bc82bd776dd95a0bd9907e15fa57cdfefc2540305125f7af822d0af4c8a41754
   languageName: node
   linkType: hard
 
-"@formspree/react@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "@formspree/react@npm:2.5.0"
+"@formspree/react@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "@formspree/react@npm:2.5.1"
   dependencies:
-    "@formspree/core": ^3.0.0
+    "@formspree/core": ^3.0.1
     "@stripe/react-stripe-js": ^1.7.1
     "@stripe/stripe-js": ^1.35.0
   peerDependencies:
     react: ^16.8 || ^17.0 || ^18.0
     react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: 0c88111e7435769a9e174199cba2fca544510085f49b603aaa61f5459d083e07bf0627d606b6daa6d6da901b6f802e5e77edf093311e00f64fe28932ebc04b0c
+  checksum: a1aa2f1da7d8508aabb715b5780a35675bf9bfc823ad83ff29fe9bac031ba7302f3c02aaf3d0d8c49e219faeb874c25f5c8c4570c92c5328a690285cc3a0ee15
   languageName: node
   linkType: hard
 
@@ -14152,7 +14152,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.22.10
     "@babel/plugin-syntax-typescript": ^7.20.0
-    "@formspree/react": ^2.5.0
+    "@formspree/react": ^2.5.1
     "@headlessui/react": ^1.7.16
     "@notionhq/client": ^2.2.11
     "@playwright/test": ^1.37.1

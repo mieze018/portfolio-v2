@@ -30,7 +30,7 @@
     "printWidth": 100
   },
   "dependencies": {
-    "@formspree/react": "^2.5.0",
+    "@formspree/react": "^2.5.1",
     "@headlessui/react": "^1.7.16",
     "@notionhq/client": "^2.2.11",
     "@radix-ui/react-label": "^2.0.1",
