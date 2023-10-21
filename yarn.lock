@@ -3031,19 +3031,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.37.1":
-  version: 1.37.1
-  resolution: "@playwright/test@npm:1.37.1"
+"@playwright/test@npm:^1.39.0":
+  version: 1.39.0
+  resolution: "@playwright/test@npm:1.39.0"
   dependencies:
-    "@types/node": "*"
-    fsevents: 2.3.2
-    playwright-core: 1.37.1
-  dependenciesMeta:
-    fsevents:
-      optional: true
+    playwright: 1.39.0
   bin:
     playwright: cli.js
-  checksum: b7038f29000289103c08b215eff7aabdda70cdc1375fa7dad0e81651be71086a1e2fc0e0e29dc70348037c366cf0cc69f762373fda34ba1a74aa1658741d9195
+  checksum: e93e58fc1af4239f239b890374f066c9a758e2492d25e2c1a532f3f00782ab8e7706956a07540fd14882c74e75f5de36273621adce9b79afb8e36e6c15f1d539
   languageName: node
   linkType: hard
 
@@ -14428,12 +14423,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.37.1":
-  version: 1.37.1
-  resolution: "playwright-core@npm:1.37.1"
+"playwright-core@npm:1.39.0":
+  version: 1.39.0
+  resolution: "playwright-core@npm:1.39.0"
   bin:
     playwright-core: cli.js
-  checksum: 69f818da2230057584140d5b3af7778a4f4a822b5b18d133abfc5d259128becb943c343a2ddf6b0635277a69f28983e83e2bc3fce23595ececb1e410475b6368
+  checksum: 556e78dee4f9890facf2af8249972e0d6e01a5ae98737b0f6b0166c660a95ffee4cb79350335b1ef96430a0ef01d3669daae9099fa46c8d403d11c623988238b
+  languageName: node
+  linkType: hard
+
+"playwright@npm:1.39.0":
+  version: 1.39.0
+  resolution: "playwright@npm:1.39.0"
+  dependencies:
+    fsevents: 2.3.2
+    playwright-core: 1.39.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 96d8ca5aa25465c1c5d554d0d6071981d55e22477800ff8f5d47a53ca75193d60ece2df538a01b7165b3277dd5493c67603a5acda713029df7fbd95ce2417bc9
   languageName: node
   linkType: hard
 
@@ -14464,7 +14474,7 @@ __metadata:
     "@formspree/react": ^2.5.0
     "@headlessui/react": ^1.7.16
     "@notionhq/client": ^2.2.13
-    "@playwright/test": ^1.37.1
+    "@playwright/test": ^1.39.0
     "@radix-ui/react-label": ^2.0.1
     "@radix-ui/react-separator": ^1.0.2
     "@storybook/addon-a11y": ^7.6.0-alpha.1
@@ -17355,11 +17365,11 @@ __metadata:
 
 "typescript@patch:typescript@^5.2.2#~builtin<compat/typescript>":
   version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=5da071"
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 07106822b4305de3f22835cbba949a2b35451cad50888759b6818421290ff95d522b38ef7919e70fb381c5fe9c1c643d7dea22c8b31652a717ddbd57b7f4d554
+  checksum: 0f4da2f15e6f1245e49db15801dbee52f2bbfb267e1c39225afdab5afee1a72839cd86000e65ee9d7e4dfaff12239d28beaf5ee431357fcced15fb08583d72ca
   languageName: node
   linkType: hard
 
