@@ -7571,14 +7571,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^7.5.4":
-  version: 7.5.4
-  resolution: "chromatic@npm:7.5.4"
+"chromatic@npm:^7.6.0":
+  version: 7.6.0
+  resolution: "chromatic@npm:7.6.0"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 0df9f24dff12fd0bb3846925f5a94e5bfd5c6acdaced214bccdd209ec9dda45c07b057c8394a4c5f933ae80069536c706dbe17626634967337ee146b1dca6d34
+  checksum: 5f473385cc2c152b43487646803a213f0dc3fcf9f7755a051040e31b5f8e67486b8a80fff3bbe0752bdb0e41851ff965b587f122938b35acf5c5eba1d3d1b9e4
   languageName: node
   linkType: hard
 
@@ -14466,7 +14466,7 @@ __metadata:
     babel-loader: ^9.1.3
     babel-plugin-macros: ^3.1.0
     babel-plugin-styled-components: ^2.1.4
-    chromatic: ^7.5.4
+    chromatic: ^7.6.0
     cypress: ^13.3.3
     eslint: ^8.52.0
     eslint-config-next: ^14.0.0
