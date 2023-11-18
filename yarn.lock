@@ -110,7 +110,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.18.9":
+"@babel/core@npm:^7.18.9, @babel/core@npm:^7.23.3":
   version: 7.23.3
   resolution: "@babel/core@npm:7.23.3"
   dependencies:
@@ -14722,7 +14722,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@babel/core": ^7.23.2
+    "@babel/core": ^7.23.3
     "@babel/plugin-syntax-typescript": ^7.23.3
     "@formspree/react": ^2.5.1
     "@headlessui/react": ^1.7.17
