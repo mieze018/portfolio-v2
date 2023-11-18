@@ -2,20 +2,43 @@
  * 例: WIndows `C:\Users\Public\Documents\Git\user\repo\components\Molecules\About\EventHistory.tsx`
  * or Mac `/Users/user/Documents/Git/repo/components/Molecules/About/EventHistory.tsx`
  * @type {string} */
-const fullPath = process.argv[2]
+let fullPath = process.argv[2]
+/** パスの区切り文字。 */
+const splitChar = process.platform === 'win32' ? '\\' : '/'
 if (!fullPath) {
   console.error('コンポーネントのパスを引数として渡してください。')
   process.exit(1)
 }
-console.log('fullPath', fullPath)
 /** コンポーネントが格納されているディレクトリの相対パス。
  * @type {string} */
 const componentsDir = 'components'
+// パスがフルパスじゃない場合は現在のディレクトリを取得する
+if (fullPath.indexOf(splitChar) === -1) {
+  const fs = require('fs')
+  const path = require('path')
+  function findFilesInDir(startPath, filter) {
+    let results = []
+    const files = fs.readdirSync(startPath)
+    files.forEach((file) => {
+      let filename = path.join(startPath, file)
+      let stat = fs.lstatSync(filename)
+
+      if (stat.isDirectory()) {
+        results = results.concat(findFilesInDir(filename, filter)) // recurse
+      } else if (filename.indexOf(filter) >= 0) {
+        results.push(filename)
+      }
+    })
+
+    return results
+  }
+  fullPath = `${process.cwd()}${splitChar}${findFilesInDir(componentsDir, fullPath)}`
+}
+console.log('fullPath', fullPath)
 
 /** ファイル名を取得する。
  * 例: `EventHistory`
  * @type {string} */
-const splitChar = process.platform === 'win32' ? '\\' : '/'
 const componentName = fullPath.split(splitChar).pop().replace('.tsx', '')
 
 /** fullPathから`componentsDir`以降のディレクトリを取得する。
