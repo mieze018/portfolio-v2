@@ -19,7 +19,8 @@
     "prepare": "husky install",
     "upgrade:linter": "yarn up 'eslint*'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
-    "upgrade:storybook": "npx storybook@next upgrade --prerelease"
+    "upgrade:storybook": "npx storybook@next upgrade --prerelease",
+    "create-stories": "node scripts/create-stories.js"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -58,8 +59,6 @@
     "@storybook/addon-essentials": "^7.6.0-alpha.6",
     "@storybook/addon-interactions": "^7.6.0-alpha.6",
     "@storybook/addon-links": "^7.6.0-alpha.6",
-    "@storybook/addon-mdx-gfm": "^7.6.0-alpha.6",
-    "@storybook/addon-styling": "^2.0.2-next.4",
     "@storybook/jest": "^0.2.3-next.0",
     "@storybook/nextjs": "7.6.0-alpha.6",
     "@storybook/react": "^7.6.0-alpha.6",
