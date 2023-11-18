@@ -64,7 +64,7 @@
     "@storybook/nextjs": "7.6.0-alpha.6",
     "@storybook/react": "^7.6.0-alpha.6",
     "@storybook/testing-library": "^0.2.2-next.0",
-    "@testing-library/react": "^14.1.0",
+    "@testing-library/react": "^14.1.2",
     "@types/gtag.js": "^0.0.18",
     "@types/node": "^20.9.1",
     "@types/react": "^18.2.37",
