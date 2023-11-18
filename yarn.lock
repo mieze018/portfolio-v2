@@ -999,7 +999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-typescript@npm:^7.20.0, @babel/plugin-syntax-typescript@npm:^7.22.5":
+"@babel/plugin-syntax-typescript@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/plugin-syntax-typescript@npm:7.22.5"
   dependencies:
@@ -14723,7 +14723,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@babel/core": ^7.23.2
-    "@babel/plugin-syntax-typescript": ^7.20.0
+    "@babel/plugin-syntax-typescript": ^7.23.3
     "@formspree/react": ^2.5.1
     "@headlessui/react": ^1.7.17
     "@notionhq/client": ^2.2.13
