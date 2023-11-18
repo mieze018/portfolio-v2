@@ -18,8 +18,7 @@ export const Photos = ({
       {photos.map((photo, i) => {
         const isLastPhoto = i === photos.length - 1
         //最後の画像だけ表示するタグがついている場合、最後の画像でなければスキップ
-        if (isShowOnlyLastPhoto && !isLastPhoto)
-          return <React.Fragment key={photo.original_size.url}></React.Fragment>
+        if (isShowOnlyLastPhoto && !isLastPhoto) return <></>
         return <Photo key={photo.original_size.url} photo={photo} isColumn={isColumn} />
       })}
     </>

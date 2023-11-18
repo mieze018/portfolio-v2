@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: [
-          <React.Fragment key="styles">
+          <>
             {initialProps.styles}
             {sheet.getStyleElement()}
 
@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=optional"
               rel="stylesheet"
             />
-          </React.Fragment>,
+          </>,
         ],
       }
     } finally {

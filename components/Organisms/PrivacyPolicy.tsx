@@ -1,5 +1,4 @@
 import { useTranslation } from 'next-i18next'
-import tw from 'twin.macro'
 
 const Wrapper = tw.div`px-5 max-w-screen-md m-auto grid gap-y-4 text-xs mb-20`
 const P = tw.p``

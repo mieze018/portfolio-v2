@@ -1,5 +1,5 @@
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 export const Separator = styled(SeparatorPrimitive.Root)`
   ${tw`shadow-sm bg-black/10 shadow-main/10`}

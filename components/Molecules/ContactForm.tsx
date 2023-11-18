@@ -3,7 +3,6 @@
 import { useForm, ValidationError } from '@formspree/react'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
-import tw from 'twin.macro'
 
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'

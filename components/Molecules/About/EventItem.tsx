@@ -1,4 +1,5 @@
 type eventItemType = {
+  key: unknown
   title: string
   date: string | number
   place: string

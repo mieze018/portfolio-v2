@@ -1,4 +1,4 @@
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 import type { scrollStatesType } from 'libs/useScrollState'
 

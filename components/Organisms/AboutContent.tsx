@@ -1,5 +1,3 @@
-import tw from 'twin.macro'
-
 import type { aboutDataType } from 'pages/about'
 
 import { EventHistory } from 'components/Molecules/About/EventHistory'
@@ -25,7 +23,8 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
       )}
       <EventHistory events={events} />
       <Prizes prizes={prizes} />
-      {links?.length && <Linktree links={links} />}
+      {/* {links?.length && <Linktree links={links} />} */}
+      {links?.length && <Linktree />}
       <Participant />
     </Wrapper>
   )

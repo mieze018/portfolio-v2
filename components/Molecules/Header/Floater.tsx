@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 /** 使ってないけどFramer Motionに翻訳前 */
 // const sunk = keyframes`

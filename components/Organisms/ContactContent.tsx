@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { GoMail } from 'react-icons/go'
 import { IoMdPaperPlane } from 'react-icons/io'
-import tw from 'twin.macro'
 
 import type { contactDataType } from 'pages/contact'
 

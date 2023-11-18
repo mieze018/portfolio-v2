@@ -1,4 +1,4 @@
-import tw, { styled } from 'twin.macro'
+import { styled } from 'stailwc'
 
 import { FadeOuter } from 'components/Molecules/Header/FadeOuter'
 import { Floater } from 'components/Molecules/Header/Floater'
