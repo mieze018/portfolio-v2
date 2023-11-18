@@ -58,7 +58,6 @@
     "@storybook/addon-essentials": "^7.6.0-alpha.6",
     "@storybook/addon-interactions": "^7.6.0-alpha.6",
     "@storybook/addon-links": "^7.6.0-alpha.6",
-    "@storybook/addon-mdx-gfm": "^7.6.0-alpha.6",
     "@storybook/addon-styling": "^2.0.2-next.4",
     "@storybook/jest": "^0.2.3-next.0",
     "@storybook/nextjs": "7.6.0-alpha.6",

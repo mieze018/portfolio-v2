@@ -9,7 +9,6 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-actions',
     '@storybook/addon-a11y',
-    '@storybook/addon-mdx-gfm',
   ],
   framework: {
     name: '@storybook/nextjs',
