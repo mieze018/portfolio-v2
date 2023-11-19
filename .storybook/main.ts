@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     // 'storybook-addon-swc',
     '@storybook/addon-actions',
     '@storybook/addon-a11y',
+    'storybook-react-i18next',
   ],
   framework: {
     name: '@storybook/nextjs',

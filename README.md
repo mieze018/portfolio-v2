@@ -1,5 +1,15 @@
 # portfolio as Artist - v2
 
+## セットアップ
+
+1. voltaをインストール <https://volta.sh/>
+2. nodeとyarnをvoltaでインストール
+3. `yarn install`で依存関係をインストール
+4. `vercel CLI`をインストール
+5. `vercel link`でプロジェクトをvercelに紐付ける
+6. `vercel env pull`で環境変数をローカルにダウンロード
+7. `yarn dev`で開発サーバーを起動
+
 ## 使っているもの
 
 <https://github.com/mieze018/portfolio-v2/network/dependencies>
