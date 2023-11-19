@@ -14,30 +14,6 @@
     "typescript": "javascript",
     "typescriptreact": "javascript"
   },
-  "cSpell.words": [
-    "autodocs",
-    "Autosize",
-    "Behance",
-    "Deviantart",
-    "Docgen",
-    "formspree",
-    "gtag",
-    "ijuice",
-    "KADOKAWA",
-    "languagedetector",
-    "Laxenanchaos",
-    "Lemo",
-    "Linktree",
-    "Lngs",
-    "Nakata",
-    "nextjs",
-    "photoset",
-    "Pinterest",
-    "pixiv",
-    "reblog",
-    "strapi",
-    "welle"
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     // モジュールのimportができていない時に自動でimportする

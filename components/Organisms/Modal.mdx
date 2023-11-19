@@ -1,0 +1,17 @@
+import { Meta, ArgsTable } from '@storybook/blocks'
+import { Modal } from './Modal'
+import * as ModalStories from './Modal.stories'
+
+<Meta of={ModalStories} />
+
+# Modal モーダル
+
+画像の原寸表示用のモーダル。
+
+コンテンツはJotaiから取得している。
+
+ハッシュ値がクローズアップを指定しているときのみ表示する形にしている。
+TODO: テストできないのでロジックを切り離してPropを渡す形にする。
+TODO: 命名も用途のスコープに合わせる
+
+<ArgsTable of={Modal} />

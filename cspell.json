@@ -1,0 +1,42 @@
+// cSpell Settings
+{
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "autodocs",
+    "Autosize",
+    "Behance",
+    "Deviantart",
+    "Docgen",
+    "formspree",
+    "gtag",
+    "headlessui",
+    "ijuice",
+    "KADOKAWA",
+    "languagedetector",
+    "Laxenanchaos",
+    "Lemo",
+    "Linktree",
+    "Lngs",
+    "Nakata",
+    "nextjs",
+    "notionhq",
+    "photoset",
+    "Pinterest",
+    "pixiv",
+    "reblog",
+    "strapi",
+    "welle"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".vscode/**",
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "public/**"
+  ]
+}
