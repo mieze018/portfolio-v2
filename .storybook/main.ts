@@ -18,7 +18,7 @@ const config: StorybookConfig = {
     autodocs: true,
   },
   typescript: {
-    check: true,
+    check: false,
     // TODO: ローカルでだけ立ち上がらないので一旦無効化している。SBのアップデート後に再度試す
     reactDocgen: false,
   },
