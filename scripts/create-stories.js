@@ -85,7 +85,7 @@ import { Meta, ArgsTable } from '@storybook/blocks'
 import { ${componentName} } from './${componentName}'
 import * as ${componentName}Stories from './${componentName}.stories'
 
-<Meta of={${componentName}} />
+<Meta of={${componentName}Stories} />
 
 # ${componentName}
 
