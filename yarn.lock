@@ -10692,9 +10692,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.16.5":
-  version: 10.16.5
-  resolution: "framer-motion@npm:10.16.5"
+"framer-motion@npm:^10.16.7":
+  version: 10.16.7
+  resolution: "framer-motion@npm:10.16.7"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -10709,7 +10709,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 189e26745c860390d9320586c11248c81c63edf093cda33f95cc6f5e5a31fdf09ed64319c8303923692c36beb5cf56a1a40a32c70520d55df37b7d77a690aeb0
+  checksum: 8bc14e00d3afb3632411048c5b3e8b45a62406162edf5ced431859c485c0964cd57f5218eeb8e37ed7b9fcc6f8c3f514abf3ebacbf892ccb132e7e8e55930521
   languageName: node
   linkType: hard
 
@@ -14439,7 +14439,7 @@ __metadata:
     eslint-plugin-import: ^2.29.0
     eslint-plugin-storybook: ^0.6.15
     eslint-plugin-unused-imports: ^3.0.0
-    framer-motion: ^10.16.5
+    framer-motion: ^10.16.7
     husky: ^8.0.3
     i18next: ^22.4.12
     jotai: ^2.6.0
