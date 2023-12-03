@@ -2,6 +2,7 @@ import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import tw, { styled } from 'twin.macro'
+import React from 'react'
 
 import { contentsWrapperState } from 'libs/states/atoms'
 
