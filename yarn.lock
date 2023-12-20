@@ -14654,7 +14654,7 @@ __metadata:
     storybook: ^7.6.0-alpha.6
     storybook-addon-swc: ^1.1.9
     storybook-react-i18next: ^2.0.9
-    styled-components: ^6.1.1
+    styled-components: ^6.1.2
     swr: ^2.2.4
     tailwindcss: ^3.4.0
     ts-prune: ^0.10.3
@@ -16862,9 +16862,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "styled-components@npm:6.1.1"
+"styled-components@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "styled-components@npm:6.1.2"
   dependencies:
     "@emotion/is-prop-valid": ^1.2.1
     "@emotion/unitless": ^0.8.0
@@ -16878,7 +16878,7 @@ __metadata:
   peerDependencies:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
-  checksum: d062ba473014a551ed76f4876feaccebc06aaa8dc2849c9d72f67420701dbc7d7c9af1dfa5207b2ad5df9b2e122ddf9e5fe6b6b69ba4d93c4c702abdff19435a
+  checksum: bd4088deb7a962750235936dd4ed916b80985a7f4e90834f637997a293cfa01d792c7756e27e65c11f00350d1b56894f9479f9f9a3146040d528b2f63beafde6
   languageName: node
   linkType: hard
 
