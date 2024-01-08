@@ -13745,7 +13745,7 @@ __metadata:
     storybook: ^8.0.0-alpha.6
     storybook-addon-swc: ^1.1.9
     storybook-react-i18next: ^2.0.9
-    styled-components: ^6.1.6
+    styled-components: ^6.1.7
     swr: ^2.2.4
     tailwindcss: ^3.4.0
     ts-prune: ^0.10.3
@@ -15849,23 +15849,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.1.6":
-  version: 6.1.6
-  resolution: "styled-components@npm:6.1.6"
+"styled-components@npm:^6.1.7":
+  version: 6.1.7
+  resolution: "styled-components@npm:6.1.7"
   dependencies:
-    "@emotion/is-prop-valid": "npm:1.2.1"
-    "@emotion/unitless": "npm:0.8.0"
-    "@types/stylis": "npm:4.2.0"
-    css-to-react-native: "npm:3.2.0"
-    csstype: "npm:3.1.2"
-    postcss: "npm:8.4.31"
-    shallowequal: "npm:1.1.0"
-    stylis: "npm:4.3.1"
-    tslib: "npm:2.5.0"
+    "@emotion/is-prop-valid": 1.2.1
+    "@emotion/unitless": 0.8.0
+    "@types/stylis": 4.2.0
+    css-to-react-native: 3.2.0
+    csstype: 3.1.2
+    postcss: 8.4.31
+    shallowequal: 1.1.0
+    stylis: 4.3.1
+    tslib: 2.5.0
   peerDependencies:
-    react: ">= 16.8.0"
-    react-dom: ">= 16.8.0"
-  checksum: 8bcda3719af222ebde8be358d0db4019e6fb03b6f9b19797ec20acc26aad4b1ede83b3820b25b8dd4aa7a1dfa7bb26d82e69f063b8e1f3b0d8a8e6e095f1b643
+    "@emotion/is-prop-valid": ^1.2.1
+    "@emotion/unitless": ">= 0.8.0"
+    "@types/stylis": ^4.2.0
+    css-to-react-native: ^3.2.0
+    csstype: ^3.1.2
+    postcss: ^8.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    shallowequal: ^1.1.0
+    tslib: ^2.5.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    "@emotion/unitless":
+      optional: true
+    "@types/stylis":
+      optional: true
+    css-to-react-native:
+      optional: true
+    csstype:
+      optional: true
+    postcss:
+      optional: true
+    react-dom:
+      optional: true
+    shallowequal:
+      optional: true
+    tslib:
+      optional: true
+  checksum: 88875aab6dfb05b69f7c105ee4718e741b8527db6ff9e9dbf5f30a0e5cbe33b55081e0e6fad5eb6990f2c5f1ca86ead78f0b3988098fa31ce33dfee28d556d59
   languageName: node
   linkType: hard
 
