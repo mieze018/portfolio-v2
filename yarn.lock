@@ -13739,7 +13739,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-i18next: ^12.2.0
-    react-icons: ^4.12.0
+    react-icons: ^5.0.0
     react-textarea-autosize: ^8.5.3
     stailwc: ^0.17.0
     storybook: ^8.0.0-alpha.6
@@ -14353,12 +14353,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^4.12.0":
-  version: 4.12.0
-  resolution: "react-icons@npm:4.12.0"
+"react-icons@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-icons@npm:5.0.0"
   peerDependencies:
     react: "*"
-  checksum: db82a141117edcd884ade4229f0294b2ce15d82f68e0533294db07765d6dce00b129cf504338ec7081ce364fe899b296cb7752554ea08665b1d6bad811134e79
+  checksum: 44b371a7f6a2439a9e44ca9a69432767f033b3e696a2f9886008ccf178c19ec556d0cc489094b68c25e4cc64f21dc70e6ade1b3f7b7ebdf6bb7b61468db43281
   languageName: node
   linkType: hard
 
