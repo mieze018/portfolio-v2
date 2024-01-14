@@ -80,7 +80,6 @@ const RAW_RUNTIME_STATE =
           ["react-textarea-autosize", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:8.5.3"],\
           ["stailwc", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.17.0"],\
           ["storybook", "npm:8.0.0-alpha.9"],\
-          ["storybook-addon-swc", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.2.0"],\
           ["storybook-react-i18next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.10"],\
           ["styled-components", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:6.1.8"],\
           ["swr", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.2.4"],\
@@ -17304,7 +17303,6 @@ const RAW_RUNTIME_STATE =
           ["react-textarea-autosize", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:8.5.3"],\
           ["stailwc", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.17.0"],\
           ["storybook", "npm:8.0.0-alpha.9"],\
-          ["storybook-addon-swc", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.2.0"],\
           ["storybook-react-i18next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.10"],\
           ["styled-components", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:6.1.8"],\
           ["swr", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.2.4"],\
@@ -19445,39 +19443,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["storybook-addon-swc", [\
-      ["npm:1.2.0", {\
-        "packageLocation": "../../../../.yarn/berry/cache/storybook-addon-swc-npm-1.2.0-75ec742092-10c0.zip/node_modules/storybook-addon-swc/",\
-        "packageDependencies": [\
-          ["storybook-addon-swc", "npm:1.2.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.2.0", {\
-        "packageLocation": "./.yarn/__virtual__/storybook-addon-swc-virtual-b352e3dc1a/5/.yarn/berry/cache/storybook-addon-swc-npm-1.2.0-75ec742092-10c0.zip/node_modules/storybook-addon-swc/",\
-        "packageDependencies": [\
-          ["storybook-addon-swc", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.2.0"],\
-          ["@babel/runtime", "npm:7.22.5"],\
-          ["@swc/core", null],\
-          ["@types/swc__core", null],\
-          ["@types/terser-webpack-plugin", null],\
-          ["@types/webpack", null],\
-          ["deepmerge", "npm:4.3.1"],\
-          ["swc-loader", "virtual:b352e3dc1a54a9d9975053fb71948ca3b62618d09cf14a28c723cc30b5763bc24c68f1181395039e1553fb0bcf94ce175e57190c2afdeabede59a9bd5717b2a0#npm:0.1.16"],\
-          ["terser-webpack-plugin", null],\
-          ["webpack", null]\
-        ],\
-        "packagePeers": [\
-          "@swc/core",\
-          "@types/swc__core",\
-          "@types/terser-webpack-plugin",\
-          "@types/webpack",\
-          "terser-webpack-plugin",\
-          "webpack"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["storybook-i18n", [\
       ["npm:2.0.13", {\
         "packageLocation": "../../../../.yarn/berry/cache/storybook-i18n-npm-2.0.13-6e5c4131f0-10c0.zip/node_modules/storybook-i18n/",\
@@ -19995,32 +19960,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../.yarn/berry/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-10c0.zip/node_modules/supports-preserve-symlinks-flag/",\
         "packageDependencies": [\
           ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["swc-loader", [\
-      ["npm:0.1.16", {\
-        "packageLocation": "../../../../.yarn/berry/cache/swc-loader-npm-0.1.16-f37c2a2b62-10c0.zip/node_modules/swc-loader/",\
-        "packageDependencies": [\
-          ["swc-loader", "npm:0.1.16"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:b352e3dc1a54a9d9975053fb71948ca3b62618d09cf14a28c723cc30b5763bc24c68f1181395039e1553fb0bcf94ce175e57190c2afdeabede59a9bd5717b2a0#npm:0.1.16", {\
-        "packageLocation": "./.yarn/__virtual__/swc-loader-virtual-75c54d82f8/5/.yarn/berry/cache/swc-loader-npm-0.1.16-f37c2a2b62-10c0.zip/node_modules/swc-loader/",\
-        "packageDependencies": [\
-          ["swc-loader", "virtual:b352e3dc1a54a9d9975053fb71948ca3b62618d09cf14a28c723cc30b5763bc24c68f1181395039e1553fb0bcf94ce175e57190c2afdeabede59a9bd5717b2a0#npm:0.1.16"],\
-          ["@swc/core", null],\
-          ["@types/swc__core", null],\
-          ["@types/webpack", null],\
-          ["webpack", null]\
-        ],\
-        "packagePeers": [\
-          "@swc/core",\
-          "@types/swc__core",\
-          "@types/webpack",\
-          "webpack"\
         ],\
         "linkType": "HARD"\
       }]\
