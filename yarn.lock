@@ -2026,7 +2026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.22.5
   resolution: "@babel/runtime@npm:7.22.5"
   dependencies:
@@ -13364,7 +13364,6 @@ __metadata:
     react-textarea-autosize: "npm:^8.5.3"
     stailwc: "npm:^0.17.0"
     storybook: "npm:^8.0.0-alpha.9"
-    storybook-addon-swc: "npm:^1.2.0"
     storybook-react-i18next: "npm:^2.0.10"
     styled-components: "npm:^6.1.6"
     swr: "npm:^2.2.4"
@@ -15137,28 +15136,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-swc@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "storybook-addon-swc@npm:1.2.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.17.2"
-    deepmerge: "npm:^4.2.2"
-    swc-loader: "npm:^0.1.15"
-  peerDependencies:
-    "@swc/core": ^1.2.152
-    terser-webpack-plugin: ^4.0.0 || ^5.0.0
-    webpack: ^4.0.0 || ^5.0.0
-  peerDependenciesMeta:
-    "@swc/core":
-      optional: false
-    terser-webpack-plugin:
-      optional: true
-    webpack:
-      optional: true
-  checksum: fcd3af635ff9b37f663feaed79585ab0a3d13f91b0d6e2d008a57fbf152c7989a5180db8a07001e3f7e35a4b0b1e9cfdf18fc56eb7f48b5c9757e50880a5c658
-  languageName: node
-  linkType: hard
-
 "storybook-i18n@npm:2.0.13":
   version: 2.0.13
   resolution: "storybook-i18n@npm:2.0.13"
@@ -15549,16 +15526,6 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
-  languageName: node
-  linkType: hard
-
-"swc-loader@npm:^0.1.15":
-  version: 0.1.16
-  resolution: "swc-loader@npm:0.1.16"
-  peerDependencies:
-    "@swc/core": ^1.2.147
-    webpack: ">=2"
-  checksum: 5e5c8591f2c41fb1a868d77bab0f46c8d161173bb20fa10b22d68e2c83e8c9ef3051308d2d44800f4b1fefc6be3c32c5d8ccc3d14d6c9fd39fdad7ac402d2750
   languageName: node
   linkType: hard
 
