@@ -2,13 +2,13 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on: push
+on: pull_request
 
 # List of jobs
 jobs:
   chromatic-deployment:
     # PRがDraftの場合は実行しない
-    if: !github.event.pull_request.draft
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     # Job steps
     steps:
