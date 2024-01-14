@@ -19,8 +19,6 @@ const config: StorybookConfig = {
   },
   typescript: {
     check: false,
-    // TODO: ローカルでだけ立ち上がらないので一旦無効化している。SBのアップデート後に再度試す
-    reactDocgen: false,
   },
 }
 export default config
