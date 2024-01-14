@@ -38,6 +38,7 @@
     "package-lock.json",
     "yarn.lock",
     ".yarnrc.yml",
-    "public/**"
+    "public/**",
+    ".github/**"
   ]
 }
