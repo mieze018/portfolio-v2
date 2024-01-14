@@ -6808,14 +6808,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "chromatic@npm:10.2.0"
+"chromatic@npm:^10.2.2":
+  version: 10.2.2
+  resolution: "chromatic@npm:10.2.2"
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 8df1b4a828c7d5eb2614fcab9a1685f5be947a68f5f31733ebf2bbfab86f6b02c0ee99064bfe62b1457f05ddef285c1d36d5674208f778c815714c51c72a68bd
+  checksum: f9496285e20667c31506a51a4679ecc093c6e58bc2911d817f17249c988beb492e2774ae056f5902a7371eba1c48b3751f90642a7de219311595736e7fd91780
   languageName: node
   linkType: hard
 
@@ -13339,7 +13339,7 @@ __metadata:
     babel-loader: "npm:^9.1.3"
     babel-plugin-macros: "npm:^3.1.0"
     babel-plugin-styled-components: "npm:^2.1.4"
-    chromatic: "npm:^10.2.0"
+    chromatic: "npm:^10.2.2"
     cspell: "npm:latest"
     cypress: "npm:^13.6.2"
     eslint: "npm:^8.56.0"
@@ -13364,8 +13364,8 @@ __metadata:
     react-textarea-autosize: "npm:^8.5.3"
     stailwc: "npm:^0.17.0"
     storybook: "npm:^8.0.0-alpha.9"
-    storybook-addon-swc: "npm:^1.1.9"
-    storybook-react-i18next: "npm:^2.0.9"
+    storybook-addon-swc: "npm:^1.2.0"
+    storybook-react-i18next: "npm:^2.0.10"
     styled-components: "npm:^6.1.6"
     swr: "npm:^2.2.4"
     tailwindcss: "npm:^3.4.0"
@@ -15137,7 +15137,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-swc@npm:^1.1.9":
+"storybook-addon-swc@npm:^1.2.0":
   version: 1.2.0
   resolution: "storybook-addon-swc@npm:1.2.0"
   dependencies:
@@ -15178,28 +15178,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-react-i18next@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "storybook-react-i18next@npm:2.0.9"
+"storybook-react-i18next@npm:^2.0.10":
+  version: 2.0.10
+  resolution: "storybook-react-i18next@npm:2.0.10"
   dependencies:
     storybook-i18n: "npm:2.0.13"
   peerDependencies:
-    "@storybook/components": ^7.0.0
-    "@storybook/manager-api": ^7.0.0
-    "@storybook/preview-api": ^7.0.0
-    "@storybook/types": ^7.0.0
-    i18next: ^22.0.0 || ^23.0.0
+    i18next: ^22.0.0 || ^23.0.0 || ^24.0.0
     i18next-browser-languagedetector: ^7.0.0
     i18next-http-backend: ^2.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-i18next: ^12.0.0 || ^13.0.0
+    react-i18next: ^12.0.0 || ^13.0.0 || ^14.0.0
   peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 49e4b35e7aae990e064c3acaff8e9b35ab6f97dd483bcd7965da8f7200c30d6aece2b09c761e4d16a20f740e61356c66b644efb9a78983a06807bb4f685e3e90
+  checksum: 3a5564f13b17318ea9c53f1e0b19ea93b962932c8b37a0c0f4fbaa7a89882186712453a8dfbd9b8fc2cfd98bae39ba9ae12153709080351348244a1d55fdec86
   languageName: node
   linkType: hard
 
