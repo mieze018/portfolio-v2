@@ -13364,8 +13364,8 @@ __metadata:
     react-textarea-autosize: "npm:^8.5.3"
     stailwc: "npm:^0.17.0"
     storybook: "npm:^8.0.0-alpha.9"
-    storybook-addon-swc: "npm:^1.1.9"
-    storybook-react-i18next: "npm:^2.0.9"
+    storybook-addon-swc: "npm:^1.2.0"
+    storybook-react-i18next: "npm:^2.0.10"
     styled-components: "npm:^6.1.6"
     swr: "npm:^2.2.4"
     tailwindcss: "npm:^3.4.0"
@@ -15137,7 +15137,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-swc@npm:^1.1.9":
+"storybook-addon-swc@npm:^1.2.0":
   version: 1.2.0
   resolution: "storybook-addon-swc@npm:1.2.0"
   dependencies:
@@ -15178,28 +15178,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-react-i18next@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "storybook-react-i18next@npm:2.0.9"
+"storybook-react-i18next@npm:^2.0.10":
+  version: 2.0.10
+  resolution: "storybook-react-i18next@npm:2.0.10"
   dependencies:
     storybook-i18n: "npm:2.0.13"
   peerDependencies:
-    "@storybook/components": ^7.0.0
-    "@storybook/manager-api": ^7.0.0
-    "@storybook/preview-api": ^7.0.0
-    "@storybook/types": ^7.0.0
-    i18next: ^22.0.0 || ^23.0.0
+    i18next: ^22.0.0 || ^23.0.0 || ^24.0.0
     i18next-browser-languagedetector: ^7.0.0
     i18next-http-backend: ^2.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-i18next: ^12.0.0 || ^13.0.0
+    react-i18next: ^12.0.0 || ^13.0.0 || ^14.0.0
   peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 49e4b35e7aae990e064c3acaff8e9b35ab6f97dd483bcd7965da8f7200c30d6aece2b09c761e4d16a20f740e61356c66b644efb9a78983a06807bb4f685e3e90
+  checksum: 3a5564f13b17318ea9c53f1e0b19ea93b962932c8b37a0c0f4fbaa7a89882186712453a8dfbd9b8fc2cfd98bae39ba9ae12153709080351348244a1d55fdec86
   languageName: node
   linkType: hard
 
