@@ -2044,17 +2044,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/template@npm:^7.18.10, @babel/template@npm:^7.22.5":
-  version: 7.22.5
-  resolution: "@babel/template@npm:7.22.5"
-  dependencies:
-    "@babel/code-frame": "npm:^7.22.5"
-    "@babel/parser": "npm:^7.22.5"
-    "@babel/types": "npm:^7.22.5"
-  checksum: c5746410164039aca61829cdb42e9a55410f43cace6f51ca443313f3d0bdfa9a5a330d0b0df73dc17ef885c72104234ae05efede37c1cc8a72dc9f93425977a3
-  languageName: node
-  linkType: hard
-
 "@babel/template@npm:^7.22.15":
   version: 7.22.15
   resolution: "@babel/template@npm:7.22.15"
@@ -2063,6 +2052,17 @@ __metadata:
     "@babel/parser": "npm:^7.22.15"
     "@babel/types": "npm:^7.22.15"
   checksum: 1f3e7dcd6c44f5904c184b3f7fe280394b191f2fed819919ffa1e529c259d5b197da8981b6ca491c235aee8dbad4a50b7e31304aa531271cb823a4a24a0dd8fd
+  languageName: node
+  linkType: hard
+
+"@babel/template@npm:^7.22.5":
+  version: 7.22.5
+  resolution: "@babel/template@npm:7.22.5"
+  dependencies:
+    "@babel/code-frame": "npm:^7.22.5"
+    "@babel/parser": "npm:^7.22.5"
+    "@babel/types": "npm:^7.22.5"
+  checksum: c5746410164039aca61829cdb42e9a55410f43cace6f51ca443313f3d0bdfa9a5a330d0b0df73dc17ef885c72104234ae05efede37c1cc8a72dc9f93425977a3
   languageName: node
   linkType: hard
 
@@ -13750,7 +13750,7 @@ __metadata:
     tailwindcss: ^3.4.0
     ts-prune: ^0.10.3
     ts-unused-exports: ^10.0.1
-    twin.macro: ^3.4.0
+    twin.macro: ^3.4.1
     typescript: ^5.3.3
   languageName: unknown
   linkType: soft
@@ -13866,13 +13866,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.10, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
+"postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
   version: 6.0.13
   resolution: "postcss-selector-parser@npm:6.0.13"
   dependencies:
     cssesc: "npm:^3.0.0"
     util-deprecate: "npm:^1.0.2"
   checksum: f89163338a1ce3b8ece8e9055cd5a3165e79a15e1c408e18de5ad8f87796b61ec2d48a2902d179ae0c4b5de10fccd3a325a4e660596549b040bc5ad1b465f096
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^6.0.13":
+  version: 6.0.15
+  resolution: "postcss-selector-parser@npm:6.0.15"
+  dependencies:
+    cssesc: ^3.0.0
+    util-deprecate: ^1.0.2
+  checksum: 57decb94152111004f15e27b9c61131eb50ee10a3288e7fcf424cebbb4aba82c2817517ae718f8b5d704ee9e02a638d4a2acff8f47685c295a33ecee4fd31055
   languageName: node
   linkType: hard
 
@@ -16500,19 +16510,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"twin.macro@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "twin.macro@npm:3.4.0"
+"twin.macro@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "twin.macro@npm:3.4.1"
   dependencies:
-    "@babel/template": "npm:^7.18.10"
-    babel-plugin-macros: "npm:^3.1.0"
-    chalk: "npm:4.1.2"
-    lodash.get: "npm:^4.4.2"
-    lodash.merge: "npm:^4.6.2"
-    postcss-selector-parser: "npm:^6.0.10"
+    "@babel/template": ^7.22.15
+    babel-plugin-macros: ^3.1.0
+    chalk: 4.1.2
+    lodash.get: ^4.4.2
+    lodash.merge: ^4.6.2
+    postcss-selector-parser: ^6.0.13
   peerDependencies:
     tailwindcss: ">=3.3.1"
-  checksum: 59dcef16fc2ccf36f95999ff61cc20f4859b268d65bbf9c371dcee0445fc5bdbfbe2c640c1255c996ea4bd860280177e8456c3ae1f45947480c3e427de46ce32
+  checksum: bcfb4242159dc94682a47d0a92d199d37baf047702a910687643c15d67f2fe66fd982235b6bb70ad4ebd830ba402197ad307f16c652f9b74d1d57d3e2849456b
   languageName: node
   linkType: hard
 
