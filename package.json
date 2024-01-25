@@ -51,7 +51,7 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
+    "@babel/core": "^7.23.9",
     "@babel/plugin-syntax-typescript": "^7.23.3",
     "@playwright/test": "^1.40.1",
     "@storybook/addon-a11y": "^8.0.0-alpha.6",
