@@ -7081,14 +7081,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "chromatic@npm:10.2.0"
+"chromatic@npm:^10.9.5":
+  version: 10.9.5
+  resolution: "chromatic@npm:10.9.5"
+  peerDependencies:
+    "@chromatic-com/cypress": ^0.5.2 || ^1.0.0
+    "@chromatic-com/playwright": ^0.5.2 || ^1.0.0
+  peerDependenciesMeta:
+    "@chromatic-com/cypress":
+      optional: true
+    "@chromatic-com/playwright":
+      optional: true
   bin:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 91cc4fac72789552121084399d5e6e0f560261e0c69d4678b112c446b629b0f3cd85ea8380d328c03a2bd595162d508fc07d541b97655c1278a4013eccad7f0f
+  checksum: 37c6fbb8be01e5d1c15ff1d7087304f4a050a553eff2c2bca87b077830e94d345cdce4e360a52b88c7b092754685f1fcaef93e79a4b7b588b6685a48b9354cc0
   languageName: node
   linkType: hard
 
@@ -13718,7 +13726,7 @@ __metadata:
     babel-loader: ^9.1.3
     babel-plugin-macros: ^3.1.0
     babel-plugin-styled-components: ^2.1.4
-    chromatic: ^10.2.0
+    chromatic: ^10.9.5
     cspell: latest
     cypress: ^13.6.2
     eslint: ^8.56.0
