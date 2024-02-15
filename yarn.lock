@@ -5458,12 +5458,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@vercel/analytics@npm:1.1.1"
+"@vercel/analytics@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "@vercel/analytics@npm:1.1.4"
   dependencies:
-    server-only: "npm:^0.0.1"
-  checksum: 25f0259a5730a05b9df3bb40309ff75db53d4136e2db24d8287eccb346de08e55484c885679746d4cfbc8418241c4a357ad07b34751380ffa108aaf844f4203e
+    server-only: ^0.0.1
+  checksum: 6aa9da0b7eaf63e6c14d95d725f088df41558a927d50d5a3de34a7326171d9195ec67a52481a1490cf64083741a503d6fd18e58164bc2a4068b8e3a9ef50e6bc
   languageName: node
   linkType: hard
 
@@ -13713,7 +13713,7 @@ __metadata:
     "@types/react-dom": ^18.2.18
     "@typescript-eslint/eslint-plugin": ^5.60.0
     "@typescript-eslint/parser": ^5.60.0
-    "@vercel/analytics": ^1.1.1
+    "@vercel/analytics": ^1.1.4
     autoprefixer: ^10.4.16
     babel-loader: ^9.1.3
     babel-plugin-macros: ^3.1.0
