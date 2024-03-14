@@ -2686,22 +2686,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:^0.8.2":
-  version: 0.8.8
-  resolution: "@emotion/is-prop-valid@npm:0.8.8"
-  dependencies:
-    "@emotion/memoize": "npm:0.7.4"
-  checksum: bb7ec6d48c572c540e24e47cc94fc2f8dec2d6a342ae97bc9c8b6388d9b8d283862672172a1bb62d335c02662afe6291e10c71e9b8642664a8b43416cdceffac
-  languageName: node
-  linkType: hard
-
-"@emotion/memoize@npm:0.7.4":
-  version: 0.7.4
-  resolution: "@emotion/memoize@npm:0.7.4"
-  checksum: 4e3920d4ec95995657a37beb43d3f4b7d89fed6caa2b173a4c04d10482d089d5c3ea50bbc96618d918b020f26ed6e9c4026bbd45433566576c1f7b056c3271dc
-  languageName: node
-  linkType: hard
-
 "@emotion/memoize@npm:^0.8.1":
   version: 0.8.1
   resolution: "@emotion/memoize@npm:0.8.1"
@@ -9947,24 +9931,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.17.4":
-  version: 10.17.4
-  resolution: "framer-motion@npm:10.17.4"
+"framer-motion@npm:^11.0.13":
+  version: 11.0.13
+  resolution: "framer-motion@npm:11.0.13"
   dependencies:
-    "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
   peerDependencies:
+    "@emotion/is-prop-valid": "*"
     react: ^18.0.0
     react-dom: ^18.0.0
-  dependenciesMeta:
+  peerDependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: c5aefc5ddc48f27f8f3b262290485dd17488f8f76b6f78028d67629fc06c8ceed7f4aefb1753de710b1d9f29bb408d5e24cbf8559ecb4b660ebf106a25ced759
+  checksum: 888feea1e17cc748992f7e42aeac0855c13561d7c87c82935a10f268ca9fffd5f22809b97a4ef2a3c1de8e8ca5ca69c8e93b5ae8a5df0cacd3cf79919f1d54c9
   languageName: node
   linkType: hard
 
@@ -13728,7 +13711,7 @@ __metadata:
     eslint-plugin-import: ^2.29.1
     eslint-plugin-storybook: ^0.6.15
     eslint-plugin-unused-imports: ^3.0.0
-    framer-motion: ^10.17.4
+    framer-motion: ^11.0.13
     husky: ^8.0.3
     i18next: ^22.4.12
     jotai: ^2.6.1
