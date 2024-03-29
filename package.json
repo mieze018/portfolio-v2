@@ -39,7 +39,7 @@
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^10.17.4",
     "i18next": "^22.4.12",
-    "jotai": "^2.6.1",
+    "jotai": "^2.7.2",
     "next": "^14.0.4",
     "next-i18next": "^13.2.2",
     "react": "^18.2.0",
