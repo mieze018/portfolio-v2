@@ -3294,13 +3294,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@notionhq/client@npm:^2.2.14":
-  version: 2.2.14
-  resolution: "@notionhq/client@npm:2.2.14"
+"@notionhq/client@npm:^2.2.15":
+  version: 2.2.15
+  resolution: "@notionhq/client@npm:2.2.15"
   dependencies:
-    "@types/node-fetch": "npm:^2.5.10"
-    node-fetch: "npm:^2.6.1"
-  checksum: 5f53e595c62798fdc25a6cb9fead47a49bfc6c8213656771693b2cb2e93fe3180ca0134714560ceed051916cbb2943e2a48737280be9091882a50a1e60a2d446
+    "@types/node-fetch": ^2.5.10
+    node-fetch: ^2.6.1
+  checksum: ff14b61f448f661536379bb7ea497f3c15e5dff568ad5f3edd5e4c67668520911356c7dc0f1877a7b1307d2fd8010e9693b7e3bfdae3522e47fb0882705622a4
   languageName: node
   linkType: hard
 
@@ -13693,7 +13693,7 @@ __metadata:
     "@babel/plugin-syntax-typescript": ^7.23.3
     "@formspree/react": ^2.5.1
     "@headlessui/react": ^1.7.17
-    "@notionhq/client": ^2.2.14
+    "@notionhq/client": ^2.2.15
     "@playwright/test": ^1.40.1
     "@radix-ui/react-label": ^2.0.1
     "@radix-ui/react-separator": ^1.0.2
