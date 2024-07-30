@@ -88,7 +88,7 @@
     "eslint-plugin-unused-imports": "^3.0.0",
     "husky": "^8.0.3",
     "postcss": "^8.4.33",
-    "prettier": "^3.1.1",
+    "prettier": "^3.3.3",
     "stailwc": "^0.17.0",
     "storybook": "^8.2.6",
     "storybook-react-i18next": "^3.1.7",
