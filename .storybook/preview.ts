@@ -12,12 +12,16 @@ const preview: Preview = {
       },
     },
   },
+
   i18n,
   locale: 'ja',
+
   locales: {
     en: 'English',
     ja: '日本語',
   },
+
+  tags: ['autodocs'],
 }
 
 export default preview

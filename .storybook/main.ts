@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-actions'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('storybook-react-i18next'),
+    getAbsolutePath('@chromatic-com/storybook'),
   ],
   framework: {
     name: getAbsolutePath('@storybook/nextjs'),
@@ -18,9 +19,7 @@ const config: StorybookConfig = {
       },
     },
   },
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
   typescript: {
     check: false,
   },
