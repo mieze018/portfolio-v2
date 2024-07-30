@@ -93,7 +93,7 @@
     "storybook-react-i18next": "^2.0.9",
     "tailwindcss": "^3.4.0",
     "ts-prune": "^0.10.3",
-    "ts-unused-exports": "^10.0.1",
+    "ts-unused-exports": "^10.1.0",
     "twin.macro": "^3.4.0",
     "typescript": "^5.3.3"
   },
