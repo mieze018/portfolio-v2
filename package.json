@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix --no-cache",
-    "format": "prettier --write . --ignore-path .gitignore",
+    "format": "prettier --write .",
     "unused": "yarn ts-unused-exports tsconfig.json --excludeDeclarationFiles --showLineNumber '--excludePathsFromReport=pages' '--ignoreFiles=.*config.*|.*.stories.*'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
