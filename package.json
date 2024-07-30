@@ -34,7 +34,7 @@
     "@formspree/react": "^2.5.1",
     "@headlessui/react": "^1.7.17",
     "@notionhq/client": "^2.2.14",
-    "@radix-ui/react-label": "^2.0.1",
+    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-separator": "^1.0.2",
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^10.17.4",
