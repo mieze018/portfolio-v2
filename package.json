@@ -66,10 +66,10 @@
     "@storybook/react": "^8.2.6",
     "@storybook/testing-library": "^0.2.2",
     "@testing-library/react": "^14.1.2",
-    "@types/gtag.js": "^0.0.18",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
+    "@types/gtag.js": "^0.0.20",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "autoprefixer": "^10.4.16",
@@ -96,7 +96,7 @@
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^10.0.1",
     "twin.macro": "^3.4.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.5.4"
   },
   "volta": {
     "node": "20.10.0",
