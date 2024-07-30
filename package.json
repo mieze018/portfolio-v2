@@ -21,7 +21,8 @@
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
     "upgrade:storybook": "yarn up 'storybook-*' & yarn up 'chromatic' & yarn dlx storybook@latest upgrade",
     "upgrade:storybook-all": "yarn up 'storybook-*' & yarn up 'chromatic'",
-    "create-stories": "node scripts/create-stories.js"
+    "create-stories": "node scripts/create-stories.js",
+    "test-storybook": "test-storybook"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -64,6 +65,7 @@
     "@storybook/jest": "^0.2.3",
     "@storybook/nextjs": "^8.2.6",
     "@storybook/react": "^8.2.6",
+    "@storybook/test-runner": "^0.19.1",
     "@storybook/testing-library": "^0.2.2",
     "@testing-library/react": "^14.1.2",
     "@types/gtag.js": "^0.0.20",
