@@ -29,7 +29,9 @@
     "pixiv",
     "reblog",
     "strapi",
-    "welle"
+    "Upstash",
+    "welle",
+    "Zenn"
   ],
   "ignorePaths": [
     "node_modules/**",
