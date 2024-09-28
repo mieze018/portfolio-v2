@@ -19,7 +19,7 @@
     "prepare": "husky install",
     "upgrade:linter": "yarn up 'eslint*'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
-    "upgrade:storybook": "npx storybook@next upgrade --prerelease",
+    "upgrade:storybook": "npx storybook@next upgrade",
     "create-stories": "node scripts/create-stories.js"
   },
   "prettier": {
