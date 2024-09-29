@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     // 'storybook-react-i18next',
     '@storybook/addon-webpack5-compiler-babel',
+    '@chromatic-com/storybook',
   ],
   framework: {
     name: '@storybook/nextjs',
