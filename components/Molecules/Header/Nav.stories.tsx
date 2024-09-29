@@ -1,7 +1,7 @@
-import { expect } from '@storybook/jest'
-import { userEvent, waitFor, within } from '@storybook/testing-library'
+import { expect, userEvent, waitFor, within } from '@storybook/test'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Nav } from './Nav'
+// import Default from 'components/Layout/Default'
 
 const meta: Meta<typeof Nav> = {
   component: Nav,

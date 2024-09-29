@@ -1,5 +1,3 @@
-import { expect } from '@storybook/jest'
-import { userEvent, waitFor, within } from '@storybook/testing-library'
 import type { Meta, StoryObj } from '@storybook/react'
 import { PostFooter } from './PostFooter'
 

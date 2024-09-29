@@ -1,9 +1,7 @@
-import { expect } from '@storybook/jest'
-import { userEvent, waitFor, within } from '@storybook/testing-library'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Post } from './Post'
 import { Default as Photo } from 'components/Molecules/Post/Photo.stories'
-import { Tumblr } from 'libs/@type/api/tumblr'
+import type { Tumblr } from 'libs/@type/api/tumblr'
 
 const meta: Meta<typeof Post> = { component: Post }
 export default meta

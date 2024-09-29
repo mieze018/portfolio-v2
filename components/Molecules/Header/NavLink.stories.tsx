@@ -1,5 +1,4 @@
-import { expect } from '@storybook/jest'
-import { userEvent, waitFor, within } from '@storybook/testing-library'
+import { within } from '@storybook/test'
 import type { Meta, StoryObj } from '@storybook/react'
 import { NavLinks } from './NavLinks'
 
