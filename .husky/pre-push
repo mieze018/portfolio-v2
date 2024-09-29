@@ -4,10 +4,10 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 yarn lint
-# yarn unused
-# npx playwright install
-# yarn test
-# yarn cy:test
+yarn unused
+npx playwright install
+yarn test
+yarn cy:test
 
 yarn upgrade:linter
 yarn upgrade:types
