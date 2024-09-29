@@ -13755,7 +13755,6 @@ __metadata:
     stailwc: "npm:^0.17.0"
     storybook: "npm:^8.0.0-alpha.6"
     storybook-addon-swc: "npm:^1.1.9"
-    storybook-react-i18next: "npm:^2.0.9"
     styled-components: "npm:^6.1.6"
     swr: "npm:^2.2.4"
     tailwindcss: "npm:^3.4.0"
@@ -15553,50 +15552,6 @@ __metadata:
     webpack:
       optional: true
   checksum: 5ecf7b815e6651e0ec0ab09142e120eee1cca0a500b470e1f2f2d2b6aaa038eb11a277238b43a3251dca1a198220e7469e9ebc1def3a8e05a7af2efb4dc02d81
-  languageName: node
-  linkType: hard
-
-"storybook-i18n@npm:2.0.13":
-  version: 2.0.13
-  resolution: "storybook-i18n@npm:2.0.13"
-  peerDependencies:
-    "@storybook/components": ^7.0.0
-    "@storybook/manager-api": ^7.0.0
-    "@storybook/preview-api": ^7.0.0
-    "@storybook/types": ^7.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  peerDependenciesMeta:
-    react:
-      optional: true
-    react-dom:
-      optional: true
-  checksum: a46adfd6a4352569bbb02155d57b37465b491dc415431d13f52094a9eee308586eb6602beb19dd672c4369e4959e10492eb2ff3f3377e054780c5ba4e6fc7a3c
-  languageName: node
-  linkType: hard
-
-"storybook-react-i18next@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "storybook-react-i18next@npm:2.0.9"
-  dependencies:
-    storybook-i18n: "npm:2.0.13"
-  peerDependencies:
-    "@storybook/components": ^7.0.0
-    "@storybook/manager-api": ^7.0.0
-    "@storybook/preview-api": ^7.0.0
-    "@storybook/types": ^7.0.0
-    i18next: ^22.0.0 || ^23.0.0
-    i18next-browser-languagedetector: ^7.0.0
-    i18next-http-backend: ^2.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-i18next: ^12.0.0 || ^13.0.0
-  peerDependenciesMeta:
-    react:
-      optional: true
-    react-dom:
-      optional: true
-  checksum: 49e4b35e7aae990e064c3acaff8e9b35ab6f97dd483bcd7965da8f7200c30d6aece2b09c761e4d16a20f740e61356c66b644efb9a78983a06807bb4f685e3e90
   languageName: node
   linkType: hard
 
