@@ -3498,7 +3498,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:8.3.4, @storybook/addon-actions@npm:^8.3.4":
+"@storybook/addon-actions@npm:8.3.4":
   version: 8.3.4
   resolution: "@storybook/addon-actions@npm:8.3.4"
   dependencies:
@@ -12289,7 +12289,6 @@ __metadata:
     "@radix-ui/react-label": "npm:^2.0.1"
     "@radix-ui/react-separator": "npm:^1.0.2"
     "@storybook/addon-a11y": "npm:^8.3.4"
-    "@storybook/addon-actions": "npm:^8.3.4"
     "@storybook/addon-essentials": "npm:^8.3.4"
     "@storybook/addon-interactions": "npm:^8.3.4"
     "@storybook/addon-links": "npm:^8.3.4"
