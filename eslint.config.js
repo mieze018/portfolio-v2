@@ -1,25 +1,35 @@
+import typescriptEslintParser from '@typescript-eslint/parser'
+import js from '@eslint/js'
+import tsEslint from 'typescript-eslint'
+// import importPlugin from 'eslint-plugin-import'
+import * as cssPlugin from 'eslint-plugin-css'
+import unusedImports from 'eslint-plugin-unused-imports'
+import reactPlugin from 'eslint-plugin-react'
+import hooksPlugin from 'eslint-plugin-react-hooks'
+import nextPlugin from '@next/eslint-plugin-next'
+import eslintConfigPrettier from 'eslint-config-prettier'
+// import storybook from 'eslint-plugin-storybook' // v9でバグってる？
+
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    extends: [
-      'eslint:recommended',
-      'plugin:import/recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:import/typescript',
-      'plugin:css/recommended',
-      'next',
-      'next/core-web-vitals',
-      'prettier',
-      'plugin:storybook/recommended',
-    ],
-    parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint', 'import', 'css', 'unused-imports'],
-    root: true,
-    settings: {
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-        },
-      },
+    languageOptions: {
+      parser: typescriptEslintParser,
+    },
+  },
+  js.configs.recommended,
+  // importPlugin.flatConfigs.recommended,
+  ...tsEslint.configs.recommended,
+  cssPlugin.configs['flat/standard'],
+  // ...storybook.configs['flat/recommended'], //まだ実装されていない
+  eslintConfigPrettier,
+  {
+    files: ['**/*.{mjs,ts,tsx}'],
+    plugins: {
+      react: reactPlugin,
+      'react-hooks': hooksPlugin,
+      '@next/next': nextPlugin,
+      'unused-imports': unusedImports,
     },
     rules: {
       'react/no-unknown-property': [
@@ -28,19 +38,19 @@ export default [
           ignore: ['css'],
         },
       ],
-      'import/order': [
-        'error',
-        {
-          groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
-          alphabetize: {
-            order: 'asc',
-          },
-          'newlines-between': 'always',
-        },
-      ],
-      'import/no-duplicates': 'error',
-      'import/first': 'error',
-      'import/newline-after-import': 'error',
+      // 'import/order': [
+      //   'error',
+      //   {
+      //     groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
+      //     alphabetize: {
+      //       order: 'asc',
+      //     },
+      //     'newlines-between': 'always',
+      //   },
+      // ],
+      // 'import/no-duplicates': 'error',
+      // 'import/first': 'error',
+      // 'import/newline-after-import': 'error',
       'no-multi-spaces': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
       // 未使用のインポートを自動で削除したい
@@ -55,7 +65,9 @@ export default [
           argsIgnorePattern: '^_',
         },
       ],
-      //
     },
+  },
+  {
+    files: ['**/*.{js,cjs,}'],
   },
 ]
