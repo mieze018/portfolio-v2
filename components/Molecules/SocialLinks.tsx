@@ -1,7 +1,7 @@
 import { GiShoppingBag } from 'react-icons/gi'
 import {
   SiGithub,
-  SiTwitter,
+  SiX,
   SiPixiv,
   SiInstagram,
   SiDeviantart,
@@ -30,7 +30,7 @@ export const SocialLinks = () => {
 const SocialIconDecider = ({ text }: { text: string }) => {
   switch (text.toLowerCase()) {
     case 'twitter':
-      return <SiTwitter />
+      return <SiX />
     case 'instagram':
       return <SiInstagram />
     case 'deviantart':
