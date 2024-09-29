@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     'storybook-react-i18next',
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
+    'storybook-addon-pseudo-states',
   ],
   framework: {
     name: '@storybook/nextjs',
