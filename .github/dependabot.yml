@@ -14,8 +14,8 @@ updates:
       - dependency-name: '*storybook*'
       # @types/* を含むものを無視
       - dependency-name: '*@types*'
-      # - dependency-name: '*'
-      # update-types: ['version-update:semver-patch']
-      # メジャーのみにする
-      # update-types: ['version-update:semver-patch', 'version-update:semver-minor']
-    open-pull-requests-limit: 100
+      - dependency-name: '*'
+        # update-types: ['version-update:semver-patch']
+        # メジャーのみにする
+        update-types: ['version-update:semver-patch', 'version-update:semver-minor']
+    open-pull-requests-limit: 5
