@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next'
+import React from 'react'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
