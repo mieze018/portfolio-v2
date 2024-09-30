@@ -16,6 +16,7 @@
     "Gumroad",
     "headlessui",
     "ijuice",
+    "interactability",
     "KADOKAWA",
     "languagedetector",
     "Laxenanchaos",
@@ -30,13 +31,12 @@
     "pixiv",
     "reblog",
     "strapi",
-    "Upstash",
-    "welle",
-    "Zenn"
+    "testid"
   ],
   "ignorePaths": [
-    "node_modules/**",
     ".vscode/**",
+    ".github/**",
+    "node_modules/**",
     "package.json",
     "package-lock.json",
     "yarn.lock",
