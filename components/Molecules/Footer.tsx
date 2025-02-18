@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next'
 import tw from 'twin.macro'
 
 import { Nav } from 'components/Molecules/Header/Nav'
-import { NavLinks } from 'components/Molecules/Header/NavLink'
+import { NavLinks } from 'components/Molecules/Header/NavLinks'
 import { SocialLinks } from 'components/Molecules/SocialLinks'
 import { copyright } from 'libs/copyright'
 import { routes } from 'libs/routes'
