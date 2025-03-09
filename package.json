@@ -7,7 +7,7 @@
     "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint './**/*.{ts,tsx}'",
+    "lint": "eslint './**/*.{ts,tsx}' --fix",
     "lint-": "next lint",
     "eslint-inspect": "npx @eslint/config-inspector@latest",
     "lint:fix": "next lint --fix --no-cache",
