@@ -1889,6 +1889,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.26.10":
+  version: 7.27.1
+  resolution: "@babel/runtime@npm:7.27.1"
+  checksum: 10/34cefcbf781ea5a4f1b93f8563327b9ac82694bebdae91e8bd9d7f58d084cbe5b9a6e7f94d77076e15b0bcdaa0040a36cb30737584028df6c4673b4c67b2a31d
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.18.10":
   version: 7.22.5
   resolution: "@babel/template@npm:7.22.5"
@@ -10393,12 +10400,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^23.15.1":
-  version: 23.15.1
-  resolution: "i18next@npm:23.15.1"
+"i18next@npm:^25.1.2":
+  version: 25.1.2
+  resolution: "i18next@npm:25.1.2"
   dependencies:
-    "@babel/runtime": "npm:^7.23.2"
-  checksum: 10/bfd4935517ddd68bd12ccc0b7bd454f1a19403b627d79a2fe81c9059380674f085804f8d7475dd248a887f90d9e2da0f9be64179ddf32e9eebac47e4b9f92889
+    "@babel/runtime": "npm:^7.26.10"
+  peerDependencies:
+    typescript: ^5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/40000d98969c5c76d4271b5ac3fedddc42482717961488bd2d595dc675f1a620f4f29f5f1d7f49c8c8ed4697faa911cfffa31360119a2fbbaf4b92f6dfc587c3
   languageName: node
   linkType: hard
 
@@ -12995,7 +13007,7 @@ __metadata:
     eslint-plugin-unused-imports: "npm:^4.1.4"
     framer-motion: "npm:^11.9.0"
     husky: "npm:^9.1.6"
-    i18next: "npm:^23.15.1"
+    i18next: "npm:^25.1.2"
     jotai: "npm:^2.6.1"
     next: "npm:^14.2.10"
     next-i18next: "npm:^15.3.1"
