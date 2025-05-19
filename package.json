@@ -40,7 +40,7 @@
     "@radix-ui/react-separator": "^1.0.2",
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^11.9.0",
-    "i18next": "^23.15.1",
+    "i18next": "^25.2.0",
     "jotai": "^2.6.1",
     "next": "^14.2.10",
     "next-i18next": "^15.3.1",
