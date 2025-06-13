@@ -1,5 +1,3 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import type { GetStaticProps, NextPage } from 'next'
 
 import { PrivacyPolicy } from 'components/Organisms/PrivacyPolicy'
@@ -10,10 +8,8 @@ const Contact: NextPage = () => {
 
 export default Contact
 
-export const getStaticProps: GetStaticProps = async ({ locale = 'ja' }) => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
+    props: {},
   }
 }

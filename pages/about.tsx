@@ -1,5 +1,3 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import type { PageObject } from 'libs/@type/api/notion'
 import type { GetStaticProps, NextPage } from 'next'
 
@@ -23,7 +21,7 @@ const About: NextPage<aboutDataType> = ({ fallbackData }) => {
 
 export default About
 
-export const getStaticProps: GetStaticProps<aboutDataType> = async ({ locale = 'ja' }) => {
+export const getStaticProps: GetStaticProps<aboutDataType> = async () => {
   const prizesDB = await getDatabase(prizesDBId, {
     sortProperty: 'date',
   })
@@ -45,7 +43,6 @@ export const getStaticProps: GetStaticProps<aboutDataType> = async ({ locale = '
   return {
     props: {
       fallbackData: Data,
-      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

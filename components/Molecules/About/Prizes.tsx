@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
@@ -8,10 +8,15 @@ import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 
 export const Prizes = ({ prizes }: { prizes: PageObject[] }) => {
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
+  const awards = tb('awards')
+
   return (
     <SectionWrapper>
-      {t('awards')}
+      <div className="space-y-1 mb-4">
+        <div className="font-medium">{awards.ja}</div>
+        {awards.en && <div className="text-gray-700">{awards.en}</div>}
+      </div>
 
       <Separator />
       {prizes.map((prize) => {

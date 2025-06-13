@@ -1,8 +1,12 @@
 import type { NextConfig } from 'next'
-import type { UserConfig } from 'next-i18next'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // ESMとの互換性を強制
+  experimental: {
+    forceSwcTransforms: true,
+    esmExternals: true,
+  },
 }
 
 const imageConfig: NextConfig = {
@@ -17,18 +21,9 @@ const imageConfig: NextConfig = {
   },
 }
 
-const i18n: UserConfig['i18n'] = {
-  locales: ['ja', 'en'],
-  defaultLocale: 'ja',
-}
-
 export const config = {
   ...nextConfig,
   ...imageConfig,
-  i18n,
-  experimental: {
-    forceSwcTransforms: true,
-  },
 }
 
 export default config

@@ -1,5 +1,4 @@
 import { Analytics } from '@vercel/analytics/react'
-import { appWithTranslation } from 'next-i18next'
 
 import type { AppProps } from 'next/app'
 
@@ -23,4 +22,4 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default MyApp

@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
@@ -8,7 +8,9 @@ import { EventItem } from 'components/Molecules/About/EventItem'
 import { getProperties } from 'libs/notion'
 
 export const Events = ({ events }: { events: PageObject[] }) => {
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
+  const eventIncoming = tb('eventIncoming')
+
   //日にちが今日以降のものだけを抽出
   const futureEvents = events.filter((event) => {
     const today = new Date()
@@ -18,7 +20,10 @@ export const Events = ({ events }: { events: PageObject[] }) => {
   if (!futureEvents.length) return <></>
   return (
     <div className="mt-12">
-      <P>{t('eventIncoming')}</P>
+      <P className="space-y-1">
+        <div className="font-medium">{eventIncoming.ja}</div>
+        {eventIncoming.en && <div className="text-gray-700">{eventIncoming.en}</div>}
+      </P>
 
       <Separator />
       <ul className="mt-2">

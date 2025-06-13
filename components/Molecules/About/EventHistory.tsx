@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
@@ -9,7 +9,9 @@ import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 
 export const EventHistory = ({ events }: { events: PageObject[] }) => {
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
+  const eventHistory = tb('eventHistory')
+
   //日にちが今日以前のものだけを抽出
   const pastEvents = events.filter((event) => {
     const today = new Date()
@@ -18,7 +20,10 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
   })
   return (
     <SectionWrapper>
-      <P>{t('eventHistory')}</P>
+      <P className="space-y-1">
+        <div className="font-medium">{eventHistory.ja}</div>
+        {eventHistory.en && <div className="text-gray-700">{eventHistory.en}</div>}
+      </P>
 
       <Separator />
       <ul className="mt-2">

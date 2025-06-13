@@ -1,7 +1,7 @@
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 import React from 'react'
 import { cva } from 'class-variance-authority'
 

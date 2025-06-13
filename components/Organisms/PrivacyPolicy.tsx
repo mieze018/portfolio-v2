@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 import { cva } from 'class-variance-authority'
 
 const wrapperVariants = cva('px-5 max-w-screen-md m-auto grid gap-y-4 text-xs mb-20')
@@ -40,7 +40,7 @@ export const PrivacyPolicy = () => {
           <a
             href="https://support.google.com/analytics/answer/7318509?hl"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {t('Privacy Disclosures Policy')}
           </a>

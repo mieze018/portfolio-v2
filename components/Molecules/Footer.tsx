@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 import { cva } from 'class-variance-authority'
 
 import { Nav } from 'components/Molecules/Header/Nav'
