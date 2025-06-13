@@ -22,7 +22,7 @@ const scrollAnimation = (scrollStates: scrollStatesType) => {
     `
   return tw``
 }
-export const Nav = styled.nav<{ footer?: boolean }>`
+export const Nav = styled.nav<{ $footer?: boolean }>`
   ${tw`sticky top-0 z-10 m-auto mt-6 md:mt-2 text-center hover:blur-0 grid grid-flow-col justify-center gap-x-4`}
 
   transition-property: opacity, filter, top;

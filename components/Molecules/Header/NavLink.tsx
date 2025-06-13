@@ -5,10 +5,10 @@ import tw, { styled } from 'twin.macro'
 
 import { contentsWrapperState } from 'libs/states/atoms'
 
-const Span = styled.span<{ isCurrent: boolean }>`
-  ${({ isCurrent }) => [
+const Span = styled.span<{ $isCurrent: boolean }>`
+  ${({ $isCurrent }) => [
     tw`inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`,
-    isCurrent && tw`underline hover:text-secondary`,
+    $isCurrent && tw`underline hover:text-secondary`,
   ]}
 `
 export const NavLinks = ({
@@ -37,7 +37,7 @@ export const NavLinks = ({
             }
             data-testid={`nav-link-${route.pathname}`}
           >
-            <Span isCurrent={isLinkToCurrentPath}>{route.name}</Span>
+            <Span $isCurrent={isLinkToCurrentPath}>{route.name}</Span>
           </Link>
         )
       })}

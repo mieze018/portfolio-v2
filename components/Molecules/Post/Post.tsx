@@ -16,12 +16,12 @@ const Article = styled(motion.article)`
 
 const PostCaption = tw.div`mt-8 text-sm sm:text-base text-left w-full`
 
-const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
-  ${({ isRow, isColumn }) => [
+const PhotoWrapper = styled.div<{ $isColumn: boolean; $isRow: boolean }>`
+  ${({ $isRow, $isColumn }) => [
     tw`mx-auto`,
-    (isRow || isColumn) && tw`inline-flex flex-wrap items-center content-start justify-around`,
-    isColumn && tw`flex flex-wrap justify-center max-w-full`,
-    isRow && tw`grid gap-y-4`,
+    ($isRow || $isColumn) && tw`inline-flex flex-wrap items-center content-start justify-around`,
+    $isColumn && tw`flex flex-wrap justify-center max-w-full`,
+    $isRow && tw`grid gap-y-4`,
   ]}
 `
 
@@ -51,7 +51,7 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
       whileInView="whileInView"
       transition={{ duration: 0.25, delay: 0, ease: 'easeInOut' }}
     >
-      <PhotoWrapper isColumn={isColumn} isRow={isRow}>
+      <PhotoWrapper $isColumn={isColumn} $isRow={isRow}>
         <Photos
           photos={post.photos}
           isShowOnlyLastPhoto={isShowOnlyLastPhoto}
