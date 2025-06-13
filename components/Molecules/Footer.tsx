@@ -14,7 +14,7 @@ export const Footer = () => {
   const { t } = useTranslation('common')
   return (
     <Wrapper>
-      <Nav footer css={tw`blur-0`}>
+      <Nav $footer css={tw`blur-0`}>
         <NavLinks routes={routes} />
       </Nav>
       <SocialLinks />
