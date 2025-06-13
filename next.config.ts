@@ -1,19 +1,16 @@
 import { i18n } from './next-i18next.config.mjs'
 import withTwin from './withTwin.mjs'
+import type { NextConfig } from 'next'
 
-/**
- * @import { NextConfig } from 'next'
- */
-
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 }
 
-const imageConfig = {
+const imageConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-         protocol: 'https' as const,
+        protocol: 'https' as const,
         hostname: '**.tumblr.com',
         pathname: '**',
       },
@@ -21,8 +18,7 @@ const imageConfig = {
   },
 }
 
-/** @type {import('next').NextConfig} */
-export default withTwin({
+export const config = withTwin({
   ...nextConfig,
   ...imageConfig,
   i18n,
@@ -36,3 +32,5 @@ export default withTwin({
   //   return config
   // },
 })
+
+export default config
