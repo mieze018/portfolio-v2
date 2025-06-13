@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import tw, { styled } from 'twin.macro'
 
 /** 使ってないけどFramer Motionに翻訳前 */
@@ -9,7 +9,10 @@ import tw, { styled } from 'twin.macro'
 // `
 
 export const Floater = styled(motion.header).attrs({
-  animate: { opacity: [0, 0.618, 1], translateY: [-84, -16, 0] },
+  animate: {
+    opacity: [0, 0.618, 1],
+    y: [-84, -16, 0],
+  },
   transition: {
     delay: 0.3,
     duration: 3,
