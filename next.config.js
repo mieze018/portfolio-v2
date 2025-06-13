@@ -4,7 +4,6 @@ const withTwin = require('./withTwin.js')
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 const imageConfig = {
@@ -24,6 +23,9 @@ module.exports = withTwin({
   ...nextConfig,
   ...imageConfig,
   i18n,
+  experimental: {
+    forceSwcTransforms: true,
+  },
   //withTwin と重複するためコメントアウト
   // webpack: (config) => {
   //   // Unset client-side javascript that only works server-side
