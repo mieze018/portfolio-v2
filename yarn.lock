@@ -9598,15 +9598,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^11.9.0":
-  version: 11.9.0
-  resolution: "framer-motion@npm:11.9.0"
+"framer-motion@npm:^12.18.1":
+  version: 12.18.1
+  resolution: "framer-motion@npm:12.18.1"
   dependencies:
+    motion-dom: "npm:^12.18.1"
+    motion-utils: "npm:^12.18.1"
     tslib: "npm:^2.4.0"
   peerDependencies:
     "@emotion/is-prop-valid": "*"
-    react: ^18.0.0
-    react-dom: ^18.0.0
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
@@ -9614,7 +9616,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: fa9dec871d99bd3289767eb2b1c2d4b68e142bbe3116deb6a17177c45e90d128e4184a0e96097bed15cf54d2db5c63c1ceed0b1156518e245b807ec8aa653a19
+  checksum: 97ce2df93f86cae23ecb5ce8346b7474e7acf8d32e29efb402268123b3b1f9d2144d998f41529830040307293108e47bee93d0e1fd12bbad5f709f15083db10b
   languageName: node
   linkType: hard
 
@@ -12172,6 +12174,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"motion-dom@npm:^12.18.1":
+  version: 12.18.1
+  resolution: "motion-dom@npm:12.18.1"
+  dependencies:
+    motion-utils: "npm:^12.18.1"
+  checksum: 8323bc61aa4bf232b3284da2407789fe41d0009959236c7bb38cd079db3820043aeb6aa5bec53f8a9574e653b282eff007be031d12ff3cfc8e1595adf66e3a97
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.18.1":
+  version: 12.18.1
+  resolution: "motion-utils@npm:12.18.1"
+  checksum: d3c68a5bf7561009b476df3b8d101b034d42fc9af16bacde004261f7303e3044758080ddf79decf67da733d32b284876b899d603bf0f31f5f19366f728006438
+  languageName: node
+  linkType: hard
+
+"motion@npm:^12.18.1":
+  version: 12.18.1
+  resolution: "motion@npm:12.18.1"
+  dependencies:
+    framer-motion: "npm:^12.18.1"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 94659caecd090308375102694e98ac52eee3de5f9be580cf30c741d1ae946ae2e7401be3d2d4f49921582aa65db4bf3d4fcdf54b0af94a4c2d14f460a48489e5
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -13156,10 +13195,10 @@ __metadata:
     eslint-plugin-import: "npm:^2.30.0"
     eslint-plugin-storybook: "npm:^0.9.0"
     eslint-plugin-unused-imports: "npm:^4.1.4"
-    framer-motion: "npm:^11.9.0"
     husky: "npm:^9.1.6"
     i18next: "npm:^23.15.1"
     jotai: "npm:^2.6.1"
+    motion: "npm:^12.18.1"
     next: "npm:15.3.3"
     next-i18next: "npm:^15.3.1"
     postcss: "npm:^8.4.34"

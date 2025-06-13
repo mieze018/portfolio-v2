@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { useSetAtom } from 'jotai'
 import { useEffect, useRef } from 'react'
 import { keyframes } from 'styled-components'

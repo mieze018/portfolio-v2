@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import tw, { styled } from 'twin.macro'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
