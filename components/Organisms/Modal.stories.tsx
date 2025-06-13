@@ -22,7 +22,7 @@ export const Default: Story = () => {
 
   return <Modal />
 }
-Default.play = async ({ canvasElement }) => {
+Default.play = async () => {
   // const canvas = within(canvasElement)
   // const body = within(canvasElement.parentNode as HTMLElement) // 内容がPortalなのでルートの親から探す
 }
