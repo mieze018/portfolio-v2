@@ -2,6 +2,7 @@ import type { LocalApi } from 'libs/@type/api/local'
 
 import { SectionWrapper } from 'components/Atoms/About/Atoms'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Linktree = ({ links }: { links: LocalApi.SnsLink[] }) => (
   <SectionWrapper>
     {/* <h1>

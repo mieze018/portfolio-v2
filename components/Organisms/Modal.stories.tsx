@@ -1,4 +1,4 @@
-import { within } from '@storybook/test'
+// import { within } from '@storybook/test'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
 import { useSetAtom } from 'jotai'
@@ -23,6 +23,6 @@ export const Default: Story = () => {
   return <Modal />
 }
 Default.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement)
-  const body = within(canvasElement.parentNode as HTMLElement) // 内容がPortalなのでルートの親から探す
+  // const canvas = within(canvasElement)
+  // const body = within(canvasElement.parentNode as HTMLElement) // 内容がPortalなのでルートの親から探す
 }
