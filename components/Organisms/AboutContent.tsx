@@ -1,4 +1,4 @@
-import tw from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
 import type { aboutDataType } from 'pages/about'
 
@@ -11,13 +11,15 @@ import { Prizes } from 'components/Molecules/About/Prizes'
 import { WorkExperience } from 'components/Molecules/About/WorkExperience'
 import { links } from 'pages/api/about/links'
 
-const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16`
+const wrapperVariants = cva(
+  'px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16'
+)
 
 export const AboutContent = ({ fallbackData }: aboutDataType) => {
   const { prizes, workExperience, workExperienceGenre, events } = fallbackData
   if (!fallbackData) return <div>Loading...</div>
   return (
-    <Wrapper>
+    <div className={wrapperVariants()}>
       <Introduction />
       {!!events?.length && <Events events={events} />}
       {!!workExperienceGenre?.length && (
@@ -27,6 +29,6 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
       <Prizes prizes={prizes} />
       {!!links?.length && <Linktree links={links} />}
       <Participant />
-    </Wrapper>
+    </div>
   )
 }

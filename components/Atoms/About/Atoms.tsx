@@ -1,8 +1,22 @@
-import tw from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
-export const P = tw.p``
-// export const SnsLink = tw.a`ml-3 tracking-wider`
-export const H2 = tw.h2`my-2 leading-loose tracking-widest`
+const pVariants = cva('')
+const h2Variants = cva('my-2 leading-loose tracking-widest')
+const sectionWrapperVariants = cva('md:min-h-g-23vh')
+const ulNest1Variants = cva('grid gap-4 leading-normal tracking-wide')
 
-export const SectionWrapper = tw.section`md:min-h-g-23vh`
-export const UlNest1 = tw.ul`grid gap-4 leading-normal tracking-wide`
+export const P = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+  <p className={pVariants({ className })} {...props} />
+)
+
+export const H2 = ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h2 className={h2Variants({ className })} {...props} />
+)
+
+export const SectionWrapper = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+  <section className={sectionWrapperVariants({ className })} {...props} />
+)
+
+export const UlNest1 = ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+  <ul className={ulNest1Variants({ className })} {...props} />
+)

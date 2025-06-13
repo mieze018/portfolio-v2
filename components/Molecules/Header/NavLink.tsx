@@ -1,16 +1,25 @@
 import { useAtomValue } from 'jotai'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import tw, { styled } from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
 import { contentsWrapperState } from 'libs/states/atoms'
 
-const Span = styled.span<{ $isCurrent: boolean }>`
-  ${({ $isCurrent }) => [
-    tw`inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]`,
-    $isCurrent && tw`underline hover:text-secondary`,
-  ]}
-`
+const spanVariants = cva(
+  'inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]',
+  {
+    variants: {
+      isCurrent: {
+        true: 'underline hover:text-secondary',
+        false: '',
+      },
+    },
+    defaultVariants: {
+      isCurrent: false,
+    },
+  }
+)
+
 export const NavLinks = ({
   routes,
 }: {
@@ -37,7 +46,7 @@ export const NavLinks = ({
             }
             data-testid={`nav-link-${route.pathname}`}
           >
-            <Span $isCurrent={isLinkToCurrentPath}>{route.name}</Span>
+            <span className={spanVariants({ isCurrent: isLinkToCurrentPath })}>{route.name}</span>
           </Link>
         )
       })}

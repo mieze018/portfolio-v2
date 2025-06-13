@@ -1,4 +1,14 @@
 import * as LabelPrimitive from '@radix-ui/react-label'
-import tw from 'twin.macro'
+import { forwardRef } from 'react'
 
-export const LabelText = tw(LabelPrimitive.Label)``
+interface LabelTextProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Label> {
+  className?: string
+}
+
+export const LabelText = forwardRef<React.ElementRef<typeof LabelPrimitive.Label>, LabelTextProps>(
+  ({ className, ...props }, ref) => {
+    return <LabelPrimitive.Label ref={ref} className={className} {...props} />
+  }
+)
+
+LabelText.displayName = 'LabelText'

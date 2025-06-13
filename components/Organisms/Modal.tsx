@@ -1,14 +1,24 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { useAtomValue } from 'jotai'
 import { Fragment } from 'react'
-import tw from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
 import { modalContentState } from 'libs/states/atoms'
 import { useHash } from 'libs/useHash'
 /**画像拡大用のハッシュ値 */
 export const hashCloseup = 'closeup'
 
-const ContentWrapper = tw.div`m-auto p-4`
+// CVAでスタイルバリアントを定義
+const dialogVariants = cva('fixed inset-0 z-50 w-full h-full')
+
+const overlayVariants = cva('bg-modal fixed h-full min-h-screen w-full min-w-screen inset-0')
+
+const panelVariants = cva(
+  'fixed m-auto cursor-pointer h-screen w-full flex items-center overflow-auto'
+)
+
+const contentWrapperVariants = cva('m-auto p-4')
+
 export const Modal = () => {
   const modalContent = useAtomValue(modalContentState)
   const [hash, setHash] = useHash()
@@ -16,7 +26,7 @@ export const Modal = () => {
 
   return (
     <Transition show={isShow} as={Fragment}>
-      <Dialog tw="fixed inset-0 z-50 w-full h-full" open={isShow} onClose={() => setHash('')}>
+      <Dialog className={dialogVariants()} open={isShow} onClose={() => setHash('')}>
         <Transition.Child
           as={Fragment}
           enter=""
@@ -26,7 +36,7 @@ export const Modal = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Dialog.Overlay tw="bg-modal fixed h-full min-h-screen w-full min-w-screen  inset-0" />
+          <Dialog.Overlay className={overlayVariants()} />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -37,11 +47,8 @@ export const Modal = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Dialog.Panel
-            tw="fixed m-auto cursor-pointer h-screen w-full flex items-center overflow-auto"
-            onClick={() => setHash('')}
-          >
-            <ContentWrapper>{modalContent}</ContentWrapper>
+          <Dialog.Panel className={panelVariants()} onClick={() => setHash('')}>
+            <div className={contentWrapperVariants()}>{modalContent}</div>
           </Dialog.Panel>
         </Transition.Child>
       </Dialog>

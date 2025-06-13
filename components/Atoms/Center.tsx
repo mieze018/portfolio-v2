@@ -1,3 +1,7 @@
-import tw from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
-export const Center = tw.div`m-auto flex items-center justify-center`
+const centerVariants = cva('m-auto flex items-center justify-center')
+
+export const Center = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={centerVariants({ className })} {...props} />
+)

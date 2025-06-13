@@ -1,4 +1,4 @@
-import tw, { styled } from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
 import { FadeOuter } from 'components/Molecules/Header/FadeOuter'
 import { Floater } from 'components/Molecules/Header/Floater'
@@ -8,22 +8,24 @@ import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { routes } from 'libs/routes'
 import { description, title } from 'pages/api/basics'
 
-const Flare = styled.div`
-  ${tw`fixed top-0 z-10 w-full h-g-14vh opacity-80 `}
-  background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
-`
+const flareVariants = cva('fixed top-0 z-10 w-full h-g-14vh opacity-80')
+const titleVariants = cva('mb-1 text-2xl xs:text-3xl tracking-title')
+const descriptionVariants = cva('text-xs sm:text-base')
 
-const Title = tw.h1`mb-1 text-2xl xs:text-3xl tracking-title`
-const Description = tw.p`text-xs  sm:text-base`
 export const TopBar = () => {
   return (
     <>
-      <Flare />
+      <div
+        className={flareVariants()}
+        style={{
+          background: 'linear-gradient(180deg, rgb(246 246 246) 0%, rgb(255 255 255 / 0%) 100%)',
+        }}
+      />
       <WaterSurface />
       <Floater>
         <FadeOuter>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
+          <h1 className={titleVariants()}>{title}</h1>
+          <p className={descriptionVariants()}>{description}</p>
         </FadeOuter>
         <Nav>
           <NavLinks routes={routes} />

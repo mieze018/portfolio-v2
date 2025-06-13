@@ -1,6 +1,5 @@
-import { i18n } from './next-i18next.config.mjs'
-import withTwin from './withTwin.mjs'
 import type { NextConfig } from 'next'
+import type { UserConfig } from 'next-i18next'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -18,19 +17,18 @@ const imageConfig: NextConfig = {
   },
 }
 
-export const config = withTwin({
+const i18n: UserConfig['i18n'] = {
+  locales: ['ja', 'en'],
+  defaultLocale: 'ja',
+}
+
+export const config = {
   ...nextConfig,
   ...imageConfig,
   i18n,
   experimental: {
     forceSwcTransforms: true,
   },
-  //withTwin と重複するためコメントアウト
-  // webpack: (config) => {
-  //   // Unset client-side javascript that only works server-side
-  //   config.resolve.fallback = { fs: false, module: false, path: false }
-  //   return config
-  // },
-})
+}
 
 export default config

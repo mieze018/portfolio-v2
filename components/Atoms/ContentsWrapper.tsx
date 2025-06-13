@@ -1,8 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react'
 import { useSetAtom } from 'jotai'
 import { useEffect, useRef } from 'react'
-import { keyframes } from 'styled-components'
-import tw, { css } from 'twin.macro'
 
 import { contentsWrapperState } from 'libs/states/atoms'
 
@@ -14,15 +12,13 @@ export const ContentsWrapper = ({
   children: React.ReactNode
   $key: string
 }) => {
-  const sunkShort = keyframes`
-  0% {transform: translate(0, -0.5em);}
-  100% {transform: translate(0, 0);}
-`
-  const styles = {
-    sunk: css`
-      animation: ${sunkShort} 0.618s 0s ease-out forwards;
-    `,
-  }
+  const sunkShortAnimation = `
+    @keyframes sunkShort {
+      0% { transform: translate(0, -0.5em); }
+      100% { transform: translate(0, 0); }
+    }
+  `
+
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
 
@@ -41,6 +37,7 @@ export const ContentsWrapper = ({
         ref.current?.scrollIntoView(true)
       }}
     >
+      <style>{sunkShortAnimation}</style>
       <motion.section
         ref={ref}
         key={$key}
@@ -49,10 +46,10 @@ export const ContentsWrapper = ({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
         onLoad={() => setContentsWrapper(ref.current)}
-        css={[
-          tw`relative px-0 py-6 top-contentWrapperTop pt-contentWrapperTopPadding`,
-          styles.sunk,
-        ]}
+        className="relative px-0 py-6 top-contentWrapperTop pt-contentWrapperTopPadding"
+        style={{
+          animation: 'sunkShort 0.618s 0s ease-out forwards',
+        }}
       >
         {children}
       </motion.section>

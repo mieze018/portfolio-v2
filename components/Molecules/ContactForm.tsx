@@ -3,23 +3,23 @@
 import { useForm, ValidationError } from '@formspree/react'
 import { useTranslation } from 'next-i18next'
 import React from 'react'
-import tw from 'twin.macro'
+import { cva } from 'class-variance-authority'
 
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { PrimaryButton } from 'components/Atoms/PrimaryButton'
 import { Textarea } from 'components/Atoms/Textarea'
 
+const formVariants = cva('grid gap-4 w-full md:w-g-61vw m-auto max-w-screen-sm')
+const requiredMarkVariants = cva('text-main px-1')
+const labelVariants = cva('flex items-center gap-2 py-1')
+
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || '')
   const { t } = useTranslation('common')
   // const [replyAllowed, setReplyAllowed] = useState(false)
 
-  const Form = tw.form`grid gap-4 w-full md:w-g-61vw m-auto max-w-screen-sm`
-  const RequiredMarkSpan = tw.span`text-main px-1`
-  const RequiredMark = () => <RequiredMarkSpan>*</RequiredMarkSpan>
-  const SubmitButton = tw(PrimaryButton)``
-  const Label = tw.label`flex items-center gap-2 py-1`
+  const RequiredMark = () => <span className={requiredMarkVariants()}>*</span>
   type formType = {
     label: string
     type: string
@@ -59,15 +59,15 @@ export const ContactForm = () => {
   ]
   if (state.succeeded) return <Center>{t('messageSendThankYou')}</Center>
   return (
-    <Form onSubmit={handleSubmit}>
+    <form className={formVariants()} onSubmit={handleSubmit}>
       {formsAttrs.map(({ label, type, name, placeholder, required, checked, onChange }) => {
         if (type === 'textarea')
           return (
             <div key={name}>
-              <Label htmlFor={name}>
+              <label className={labelVariants()} htmlFor={name}>
                 <LabelText>{label}</LabelText>
                 {required && <RequiredMark />}
-              </Label>
+              </label>
               <Textarea
                 id={name}
                 name={name}
@@ -81,45 +81,45 @@ export const ContactForm = () => {
         if (type === 'checkbox')
           return (
             <div key={name}>
-              <Label htmlFor={name}>
+              <label className={labelVariants()} htmlFor={name}>
                 <input
                   id={name}
                   name={name}
                   type={type}
                   placeholder={placeholder}
                   required={required}
-                  css={tw`w-4 h-4 p-2 border rounded-md border-Azure`}
+                  className="w-4 h-4 p-2 border rounded-md border-Azure"
                   onChange={onChange}
                   checked={checked}
                 />
                 <LabelText>{label}</LabelText>
                 {required && <RequiredMark />}
-              </Label>
+              </label>
               <ValidationError prefix={label} field={name} errors={state.errors} />
             </div>
           )
         return (
           <div key={name}>
-            <Label htmlFor={name}>
+            <label className={labelVariants()} htmlFor={name}>
               {label}
               {required && <RequiredMark />}
-            </Label>
+            </label>
             <input
               id={name}
               type={type}
               name={name}
               placeholder={placeholder}
               required={required}
-              css={tw`w-full p-2 border rounded-md border-Azure`}
+              className="w-full p-2 border rounded-md border-Azure"
               onChange={onChange}
             />
             <ValidationError prefix={label} field={name} errors={state.errors} />
           </div>
         )
       })}
-      <SubmitButton type="submit" disabled={state.submitting}>
+      <PrimaryButton type="submit" disabled={state.submitting}>
         {t('messageSend')}
-      </SubmitButton>
-    </Form>
+      </PrimaryButton>
+    </form>
   )
 }
