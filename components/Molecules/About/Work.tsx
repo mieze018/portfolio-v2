@@ -10,7 +10,7 @@ export const Work = ({ work }: { work: PageObject }) => {
   const title = getProperties(work, { name: 'title', type: 'title' })
   const author = getProperties(work, { name: 'author', type: 'select' })
   const format = getProperties(work, { name: 'format', type: 'select' })
-  const date = getProperties(work, { name: 'date', type: 'date' }).start
+  const date = getProperties(work, { name: 'date', type: 'date' })?.start
   const designer = getProperties(work, { name: 'designer', type: 'select' })
   const url = getProperties(work, { name: 'url', type: 'url' })
   const publisher = getProperties(work, { name: 'publisher', type: 'select' })

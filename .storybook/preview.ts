@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react'
 import { decoratorsComponent } from './decorators'
 import i18n from './i18next.js'
+import '../styles/global.css'
 
 const preview: Preview = {
   parameters: {

@@ -1,6 +1,41 @@
 import { Meta, ArgTypes } from '@storybook/blocks'
 import { Posts } from './Posts'
+import * as PostsStories from './Posts.stories'
+
+<Meta of={PostsStories} />
 
 # Posts
 
-Post のリスト
+投稿の一覧を表示する。
+
+Tumblr APIからの投稿データを受け取り、フィルタリングして表示する。
+
+## 概要
+
+このコンポーネントは以下の機能を提供します：
+
+- **投稿フィルタリング**: タグによる投稿の絞り込み
+- **レスポンシブレイアウト**: 画面サイズに応じた最適な表示
+- **空状態の表示**: 該当する投稿がない場合のフォールバック
+
+## Props
+
+<ArgTypes of={Posts} />
+
+## 実装の詳細
+
+### フィルタリングロジック
+
+投稿は以下の条件でフィルタリングされます：
+
+1. `tag`プロパティが空文字の場合：すべての投稿を表示
+2. `tag`プロパティが指定されている場合：該当タグを持つ投稿のみ表示
+
+### データ形式
+
+コンポーネントはTumblr APIの投稿形式を期待します：
+
+- `type`: 投稿タイプ（photo, text, etc.）
+- `tags`: 投稿に付けられたタグの配列
+- `photos`: 画像投稿の場合の画像データ
+- `caption`: 投稿のキャプション

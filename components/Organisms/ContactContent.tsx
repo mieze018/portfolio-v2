@@ -16,7 +16,8 @@ const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-24 g
 mx-auto gap-y-16`
 const MailWrapper = tw(Center)`text-lg select-all mb-4`
 const IconWrapper = tw(Center)`py-4 text-xl`
-export const ContactContent = ({ fallbackData }: contactDataType) => {
+
+export const ContactContent = ({ fallbackData, formId }: contactDataType & { formId: string }) => {
   const { workAcceptanceStatus } = fallbackData
   const router = useRouter()
   if (!router.locale) return <></>
@@ -44,7 +45,7 @@ export const ContactContent = ({ fallbackData }: contactDataType) => {
             <IoMdPaperPlane />
           </LabelText>
         </IconWrapper>
-        <ContactForm />
+        <ContactForm formId={formId} />
       </div>
     </Wrapper>
   )

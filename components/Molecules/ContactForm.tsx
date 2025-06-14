@@ -10,8 +10,8 @@ import { LabelText } from 'components/Atoms/LabelText'
 import { PrimaryButton } from 'components/Atoms/PrimaryButton'
 import { Textarea } from 'components/Atoms/Textarea'
 
-export const ContactForm = () => {
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || '')
+export const ContactForm = ({ formId }: { formId: string }) => {
+  const [state, handleSubmit] = useForm(formId)
   const { t } = useTranslation('common')
   // const [replyAllowed, setReplyAllowed] = useState(false)
 
