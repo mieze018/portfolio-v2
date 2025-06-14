@@ -7,6 +7,7 @@ const meta: Meta<typeof Post> = {
   parameters: {
     chromatic: { disableSnapshot: false },
   },
+  tags: ['motion'],
 }
 export default meta
 type Story = StoryObj<typeof Post>

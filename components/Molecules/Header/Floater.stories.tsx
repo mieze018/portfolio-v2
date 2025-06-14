@@ -6,6 +6,7 @@ const meta: Meta<typeof Floater> = {
   parameters: {
     chromatic: { disableSnapshot: false },
   },
+  tags: ['motion'],
 }
 export default meta
 type Story = StoryObj<typeof Floater>

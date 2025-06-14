@@ -7,6 +7,7 @@ const meta: Meta<typeof FadeOuter> = {
     layout: 'fullscreen',
     chromatic: { disableSnapshot: false },
   },
+  tags: ['motion'],
 } satisfies Meta<typeof FadeOuter>
 export default meta
 type Story = StoryObj<typeof meta>

@@ -7,6 +7,7 @@ const meta: Meta<typeof WaterSurface> = {
     chromatic: { disableSnapshot: false },
     layout: 'fullscreen',
   },
+  tags: ['motion'],
 }
 export default meta
 type Story = StoryObj<typeof WaterSurface>
