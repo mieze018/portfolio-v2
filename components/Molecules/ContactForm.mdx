@@ -1,0 +1,22 @@
+import { Meta, ArgTypes } from '@storybook/blocks'
+import { ContactForm } from './ContactForm'
+import * as ContactFormStories from './ContactForm.stories'
+
+<Meta of={ContactFormStories} />
+
+# ContactForm
+
+お問い合わせフォームのコンポーネント。
+
+Formspreeを使用。
+
+## Props
+
+<ArgTypes of={ContactForm} />
+
+### 環境設定
+
+環境変数での設定項目：
+
+- `NEXT_PUBLIC_FORM`: FormspreeフォームID
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`: reCAPTCHAサイトキー（オプション）

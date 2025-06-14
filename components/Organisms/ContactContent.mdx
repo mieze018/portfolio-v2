@@ -1,14 +1,20 @@
 import { Meta, ArgTypes } from '@storybook/blocks'
 import { ContactContent } from './ContactContent'
+import * as ContactContentStories from './ContactContent.stories'
+
+<Meta of={ContactContentStories} />
 
 # ContactContent
 
-コンタクトページのコンテンツ
+コンタクトページの主要なコンテンツ。
+お問い合わせフォームと仕事の受付状況を統合して表示。
 
-コンタクトフォームを表示する
-
-仕事の受付状況をNotionAPIから日本語英語それぞれで取得して環境に応じて表示する。
-
-TODO: テストできないのでロジックを切り離してPropを渡す形にする。
+## Props
 
 <ArgTypes of={ContactContent} />
+
+## 実装の詳細
+
+### データ取得
+
+仕事の受付状況はNotion APIから取得される。

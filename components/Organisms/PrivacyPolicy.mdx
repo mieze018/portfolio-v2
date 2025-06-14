@@ -1,4 +1,4 @@
-import { Meta, ArgTypes } from '@storybook/blocks'
+import { Meta, ArgTypes, Canvas } from '@storybook/blocks'
 import { PrivacyPolicy } from './PrivacyPolicy'
 import * as PrivacyPolicyStories from './PrivacyPolicy.stories'
 
@@ -6,8 +6,12 @@ import * as PrivacyPolicyStories from './PrivacyPolicy.stories'
 
 # PrivacyPolicy プライバシーポリシー
 
-Notion APIから取得したデータを表示する。
-
-日本語・英語を切り替えることができる。
+## Props
 
 <ArgTypes of={PrivacyPolicy} />
+
+## 実装の詳細
+
+### コンテンツ管理
+
+プライバシーポリシーのコンテンツはNotionで管理されている。
