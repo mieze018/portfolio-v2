@@ -5,6 +5,7 @@ const meta: Meta<typeof WaterSurface> = {
   component: WaterSurface,
   parameters: {
     chromatic: { disableSnapshot: false },
+    layout: 'fullscreen',
   },
 }
 export default meta

@@ -38,7 +38,7 @@ const wave = keyframes`
 
 export const WaterSurface = styled.div`
   ${tw`fixed top-0 z-10 w-full bg-scroll bg-no-repeat h-g-23vh`}
-  background-image:url('img/surface.webp');
+  background-image:url('/img/surface.webp');
   filter: blur(0) brightness(1);
   background-size: 120% 100%;
   transition-duration: 10000ms;
