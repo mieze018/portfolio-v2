@@ -14,7 +14,7 @@ export type contactDataType = {
 }
 const Contact: NextPage<contactDataType> = ({ fallbackData }) => {
   if (!fallbackData) return <div>Loading...</div>
-  return <ContactContent fallbackData={fallbackData} />
+  return <ContactContent fallbackData={fallbackData} formId={process.env.NEXT_PUBLIC_FORM || ''} />
 }
 
 export default Contact

@@ -31,5 +31,6 @@ export const Default: Story = {
     fallbackData: {
       workAcceptanceStatus: mockWorkAcceptanceStatus,
     },
+    formId: 'dummy-form-id-for-storybook',
   },
 }
