@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Work } from './Work'
 import type { PageObject } from 'libs/@type/api/notion'
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { AboutContent } from './AboutContent'
 
 const meta: Meta<typeof AboutContent> = { component: AboutContent }

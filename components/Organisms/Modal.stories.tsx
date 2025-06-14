@@ -1,5 +1,5 @@
-import { within } from '@storybook/test'
-import type { Meta, StoryObj } from '@storybook/react'
+import { within } from 'storybook/test'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Modal } from './Modal'
 import { useSetAtom } from 'jotai'
 import { modalContentState } from 'libs/states/atoms'

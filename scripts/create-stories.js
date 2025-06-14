@@ -59,8 +59,8 @@ if (!fs.existsSync(componentsDir)) {
 }
 // テンプレートの作成
 const createStoryTemplate = () => `
-import { expect, userEvent, waitFor, within  } from '@storybook/test'
-import type { Meta, StoryObj } from '@storybook/react'
+import { expect, userEvent, waitFor, within  } from 'storybook/test'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { ${componentName} } from './${componentName}'
 
 const meta: Meta<typeof ${componentName}> = { component: ${componentName} }
@@ -80,7 +80,7 @@ export const FocusVisible= { ...Default, parameters: { pseudo: { focusVisible: t
 `
 
 const createMdxTemplate = () => `
-import { Meta, ArgTypes } from '@storybook/blocks'
+import { Meta, ArgTypes } from '@storybook/addon-docs/blocks'
 import { ${componentName} } from './${componentName}'
 import * as ${componentName}Stories from './${componentName}.stories'
 
