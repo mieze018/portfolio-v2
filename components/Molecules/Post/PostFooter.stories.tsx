@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { PostFooter } from './PostFooter'
 
 const meta: Meta<typeof PostFooter> = {

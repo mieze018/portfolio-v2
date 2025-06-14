@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { FadeOuter } from './FadeOuter'
 
 const meta: Meta<typeof FadeOuter> = {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Posts } from './Posts'
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
