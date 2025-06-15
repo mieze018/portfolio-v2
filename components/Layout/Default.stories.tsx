@@ -53,7 +53,7 @@ export const WithLongContent: Story = {
     await expect(topBar).toBeInTheDocument()
 
     // ページをスクロールダウン（window.scrollToを使用）
-    htmlElement.scrollTo({ top: 500, behavior: 'smooth' })
+    htmlElement.scrollTo({ top: 500 })
     // スクロール完了を待機
     await waitFor(async () => expect(htmlElement.scrollTop).toBeGreaterThan(450))
 
@@ -66,15 +66,12 @@ export const WithLongContent: Story = {
     })
 
     // 最後にページトップに戻る
-    htmlElement.scrollTo({ top: 0, behavior: 'smooth' })
+    htmlElement.scrollTo({ top: 0 })
     await new Promise((resolve) => setTimeout(resolve, 300))
     // スクロール完了を待機
     await waitFor(async () => expect(htmlElement.scrollTop).toBe(0))
 
     // navが画面上部にないことを確認
     await waitFor(async () => expect(topNav.getBoundingClientRect().top).toBeGreaterThan(100))
-  },
-  parameters: {
-    chromatic: { disableSnapshot: true }, // スクロール状態のスナップショットは無効化
   },
 }
