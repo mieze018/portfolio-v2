@@ -5857,26 +5857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^11.10.4":
-  version: 11.10.4
-  resolution: "chromatic@npm:11.10.4"
-  peerDependencies:
-    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
-    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
-  peerDependenciesMeta:
-    "@chromatic-com/cypress":
-      optional: true
-    "@chromatic-com/playwright":
-      optional: true
-  bin:
-    chroma: dist/bin.js
-    chromatic: dist/bin.js
-    chromatic-cli: dist/bin.js
-  checksum: 10/e232b47112a86b55baa105d3f58a84dbfd06d89c3b637f59c8f4b2a1acb9b8068dc65469d70989f3cd1de83ef03831c73ece5e784b9c4ef964406df59462d2c1
-  languageName: node
-  linkType: hard
-
-"chromatic@npm:^12.0.0":
+"chromatic@npm:^12.0.0, chromatic@npm:^12.2.0":
   version: 12.2.0
   resolution: "chromatic@npm:12.2.0"
   peerDependencies:
@@ -11862,7 +11843,7 @@ __metadata:
     "@types/react-dom": "npm:19.1.6"
     "@vercel/analytics": "npm:^1.1.1"
     autoprefixer: "npm:^10.4.16"
-    chromatic: "npm:^11.10.4"
+    chromatic: "npm:^12.2.0"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     cspell: "npm:latest"
