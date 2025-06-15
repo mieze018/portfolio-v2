@@ -1,20 +1,10 @@
-// i18n
-describe('ブラウザの言語が英語の時', () => {
-  //この中で実行するテストの前に毎回行う処理
+// 日英併記表示のテスト
+describe('国際化対応（日英併記表示）', () => {
   beforeEach(() => {
-    //ブラウザの言語を英語に設定してトップページにアクセス
-    cy.visit('/', { headers: { 'Accept-Language': 'en' } })
-  })
-  it('/en/[path] にリダイレクトされる', () => {
-    cy.url().should('match', /\/en$/)
-  })
-  it('aboutへのリンクをクリックすると、"Osaka, Japan"と表示される', () => {
-    cy.get('[data-testid="nav-link-/about"]').first().click()
-    //urlが'/en/about'になるのを待つ
-    cy.url().should('eq', Cypress.config().baseUrl + '/en/about')
-    cy.contains('Osaka, Japan')
+    cy.visit('/')
   })
 })
+
 //404
 describe('ルーティングが存在しないページにアクセスしたとき', () => {
   it('トップページにリダイレクトされる', () => {
@@ -25,10 +15,18 @@ describe('ルーティングが存在しないページにアクセスしたと�
     cy.url().should('match', new RegExp(`^${Cypress.config().baseUrl}(/)?$`))
   })
 })
+
 // index
 describe('トップページにアクセスしたとき', () => {
   it('タイトルが表示される', () => {
     cy.visit('/')
     cy.contains('mieze illustration')
+  })
+
+  it('ページURLに言語プレフィックスがない', () => {
+    cy.visit('/')
+    cy.url().should('eq', Cypress.config().baseUrl + '/')
+    cy.url().should('not.include', '/en')
+    cy.url().should('not.include', '/ja')
   })
 })
