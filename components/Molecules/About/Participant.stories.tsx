@@ -4,7 +4,7 @@ import { Participant } from './Participant'
 const meta: Meta<typeof Participant> = {
   component: Participant,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

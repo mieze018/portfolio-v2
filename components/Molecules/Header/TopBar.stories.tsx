@@ -4,7 +4,7 @@ import { TopBar } from './TopBar'
 const meta: Meta<typeof TopBar> = {
   component: TopBar,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

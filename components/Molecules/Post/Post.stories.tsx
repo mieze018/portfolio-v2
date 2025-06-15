@@ -5,9 +5,7 @@ import { expect, waitFor } from 'storybook/test'
 
 const meta: Meta<typeof Post> = {
   component: Post,
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
+  parameters: {},
   tags: ['motion'],
 }
 export default meta

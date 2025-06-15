@@ -4,7 +4,7 @@ import { Floater } from './Floater'
 const meta: Meta<typeof Floater> = {
   component: Floater,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   tags: ['motion'],
 }

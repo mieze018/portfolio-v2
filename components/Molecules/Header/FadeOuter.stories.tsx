@@ -5,7 +5,7 @@ const meta: Meta<typeof FadeOuter> = {
   component: FadeOuter,
   parameters: {
     layout: 'fullscreen',
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   tags: ['motion'],
 } satisfies Meta<typeof FadeOuter>

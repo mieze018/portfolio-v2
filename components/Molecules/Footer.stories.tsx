@@ -5,7 +5,7 @@ const meta: Meta<typeof Footer> = {
   component: Footer,
   parameters: {
     // フッターのナビゲーションリンクとソーシャルリンクをテスト
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

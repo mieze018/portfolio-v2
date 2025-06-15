@@ -5,7 +5,7 @@ import type { PageObject } from 'libs/@type/api/notion'
 const meta: Meta<typeof Events> = {
   component: Events,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

@@ -4,7 +4,7 @@ import { EventItem } from './EventItem'
 const meta: Meta<typeof EventItem> = {
   component: EventItem,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

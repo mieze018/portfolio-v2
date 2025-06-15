@@ -4,9 +4,7 @@ import Layout from './Default'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
+  parameters: {},
 }
 export default meta
 type Story = StoryObj<typeof Layout>

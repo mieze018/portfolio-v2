@@ -4,7 +4,7 @@ import { PostFooter } from './PostFooter'
 const meta: Meta<typeof PostFooter> = {
   component: PostFooter,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

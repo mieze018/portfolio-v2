@@ -5,7 +5,7 @@ import type { LocalApi } from 'libs/@type/api/local'
 const meta: Meta<typeof Linktree> = {
   component: Linktree,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

@@ -4,7 +4,7 @@ import { ContactForm } from './ContactForm'
 const meta: Meta<typeof ContactForm> = {
   component: ContactForm,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

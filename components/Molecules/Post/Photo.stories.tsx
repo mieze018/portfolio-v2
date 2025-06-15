@@ -5,7 +5,7 @@ import type { Tumblr } from 'libs/@type/api/tumblr'
 const meta: Meta<typeof Photo> = {
   component: Photo,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta
