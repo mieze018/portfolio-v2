@@ -1,16 +1,32 @@
-import { useTranslation } from 'next-i18next'
-
-import { SectionWrapper, P } from 'components/Atoms/About/Atoms'
+import { useTranslation } from 'libs/useTranslation'
+import { tw, cva } from 'libs/component-factory'
+import { P, SectionWrapper } from 'components/Atoms/About/Atoms'
 
 export const Introduction = () => {
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
+  const author = tb('author')
+  const authorPronunciation = tb('author_pronunciation')
+  const description = tb('description')
+
+  const Wrapper = tw(P, cva('space-y-1 flex flex-col'))
+  const Line = tw('div', cva('flex items-center gap-x-4'))
   return (
     <SectionWrapper>
-      <P>
-        <span data-testid="author">{t('author')}</span>
-        <small className="mr-2">{t('author_pronunciation')}</small>
-        {t('description')}
-      </P>
+      <Wrapper>
+        {author.ja && description.ja && authorPronunciation.ja && (
+          <Line>
+            <div data-testid="author">{author.ja}</div>
+            <div>{authorPronunciation.ja}</div>
+            <div>{description.ja}</div>
+          </Line>
+        )}
+        {author.en && description.en && (
+          <Line>
+            <div data-testid="author">{author.en}</div>
+            <div>{description.en}</div>
+          </Line>
+        )}
+      </Wrapper>
     </SectionWrapper>
   )
 }

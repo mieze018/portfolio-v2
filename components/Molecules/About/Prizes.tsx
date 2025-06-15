@@ -1,17 +1,22 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
-import { SectionWrapper } from 'components/Atoms/About/Atoms'
+import { P, SectionWrapper } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 
 export const Prizes = ({ prizes }: { prizes: PageObject[] }) => {
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
+  const awards = tb('awards')
+
   return (
     <SectionWrapper>
-      {t('awards')}
+      <P>
+        <div>{awards.ja}</div>
+        {awards.en && <div>{awards.en}</div>}
+      </P>
 
       <Separator />
       {prizes.map((prize) => {
