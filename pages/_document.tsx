@@ -5,8 +5,8 @@ import { author, description, title, url } from 'pages/api/basics'
 export default function Document() {
   return (
     <Html lang="ja">
+      <title>{title}</title>
       <Head>
-        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="author" content={author} />
         <link rel="canonical" href={url} />

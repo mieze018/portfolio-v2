@@ -1,5 +1,4 @@
 import React from 'react'
-import tw from 'twin.macro'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
@@ -15,7 +14,7 @@ export const Work = ({ work }: { work: PageObject }) => {
   const url = getProperties(work, { name: 'url', type: 'url' })
   const publisher = getProperties(work, { name: 'publisher', type: 'select' })
   return (
-    <li css={tw`flex flex-wrap items-end gap-x-3`}>
+    <li className="flex flex-wrap items-end gap-x-3">
       {author && <i>{author}</i>}
       {title && <span>『{title}』</span>}
       {publisher && <span>({publisher})</span>}

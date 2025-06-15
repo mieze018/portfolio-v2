@@ -1,3 +1,3 @@
-import tw from 'twin.macro'
+import { tw, cva } from 'libs/component-factory'
 
-export const Center = tw.div`m-auto flex items-center justify-center`
+export const Center = tw('div', cva('m-auto flex items-center justify-center'))

@@ -19,7 +19,7 @@ export const Default: Story = {
 
 export const Footer: Story = {
   args: {
-    footer: true,
+    $footer: true,
     children: 'フッターナビゲーション',
   },
 }

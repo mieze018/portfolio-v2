@@ -1,4 +1,4 @@
-import tw from 'twin.macro'
+import { tw, cva } from 'libs/component-factory'
 
 import type { aboutDataType } from 'pages/about'
 
@@ -11,7 +11,10 @@ import { Prizes } from 'components/Molecules/About/Prizes'
 import { WorkExperience } from 'components/Molecules/About/WorkExperience'
 import { links } from 'pages/api/about/links'
 
-const Wrapper = tw.div`px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16`
+const Wrapper = tw(
+  'div',
+  cva('px-5 text-xs leading-7 md:text-sm mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16')
+)
 
 export const AboutContent = ({ fallbackData }: aboutDataType) => {
   const { prizes, workExperience, workExperienceGenre, events } = fallbackData
