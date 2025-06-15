@@ -1,11 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --color-main: 255 124 0;
   }
+
+  body {
+    /* @apply scroll-smooth; //ページ移管時にスムーズにスクロールして欲しくない */
+    @apply font-serif text-sm leading-normal tracking-wider text-primary accent-main/60 caret-main/60 md:text-base;
+    text-size-adjust: 100%;
+    text-shadow:
+      0 1px 0 rgb(255 255 255 / 38%),
+      0 2px 0 rgb(var(--color-main) / 16%);
+  }
+
+  body::before {
+    content: '';
+    @apply fixed inset-0 block w-full h-full min-h-screen bg-body -z-1;
+  }
+
+  ::selection {
+    @apply bg-main/30 text-primary;
+  }
 }
+
 @layer utilities {
   a {
     @apply text-primary transition;
@@ -24,5 +44,9 @@
 
   li {
     @apply m-0 mr-[0.556em];
+  }
+
+  .-z-1 {
+    z-index: -1;
   }
 }
