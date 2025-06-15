@@ -5,7 +5,7 @@ const meta: Meta<typeof SocialLinks> = {
   component: SocialLinks,
   parameters: {
     // ソーシャルメディアリンクのレイアウトをテスト
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

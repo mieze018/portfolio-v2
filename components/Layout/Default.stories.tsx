@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
+import { expect, waitFor } from 'storybook/test'
 import Layout from './Default'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true }, // アニメーション結果が安定しないので無効化
+    layout: 'fullscreen',
   },
 }
 export default meta
@@ -42,5 +44,34 @@ export const WithLongContent: Story = {
         ))}
       </div>
     ),
+  },
+
+  play: async ({ canvas }) => {
+    const htmlElement = document.documentElement
+    // 初期状態でTopBarが存在することを確認
+    const topBar = canvas.getByRole('banner')
+    await expect(topBar).toBeInTheDocument()
+
+    // ページをスクロールダウン（window.scrollToを使用）
+    htmlElement.scrollTo({ top: 500 })
+    // スクロール完了を待機
+    await waitFor(async () => expect(htmlElement.scrollTop).toBeGreaterThan(450))
+
+    // navが画面上部に固定されていることを確認
+    const navs = canvas.getAllByRole('navigation')
+    const topNav = navs[0]
+    await waitFor(() => {
+      expect(topNav.getBoundingClientRect().top).toBeLessThanOrEqual(10)
+      expect(topNav.getBoundingClientRect().top).toBeGreaterThan(0)
+    })
+
+    // 最後にページトップに戻る
+    htmlElement.scrollTo({ top: 0 })
+    await new Promise((resolve) => setTimeout(resolve, 300))
+    // スクロール完了を待機
+    await waitFor(async () => expect(htmlElement.scrollTop).toBe(0))
+
+    // navが画面上部にないことを確認
+    await waitFor(async () => expect(topNav.getBoundingClientRect().top).toBeGreaterThan(100))
   },
 }

@@ -4,9 +4,7 @@ import type { Tumblr } from 'libs/@type/api/tumblr'
 
 const meta: Meta<typeof Posts> = {
   component: Posts,
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
+  parameters: {},
 }
 export default meta
 type Story = StoryObj<typeof Posts>

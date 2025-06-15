@@ -9,11 +9,12 @@ const config: StorybookConfig = {
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
     'storybook-addon-pseudo-states',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
   ],
   framework: {
     name: '@storybook/nextjs',
     options: {},
   },
+  staticDirs: ['../public'],
 }
 export default config

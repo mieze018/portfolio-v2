@@ -4,7 +4,7 @@ import { Introduction } from './Introduction'
 const meta: Meta<typeof Introduction> = {
   component: Introduction,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

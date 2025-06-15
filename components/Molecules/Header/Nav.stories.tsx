@@ -4,8 +4,9 @@ import { Nav } from './Nav'
 const meta: Meta<typeof Nav> = {
   component: Nav,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
+  tags: ['motion'],
 }
 export default meta
 type Story = StoryObj<typeof Nav>

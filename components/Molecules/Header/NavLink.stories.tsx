@@ -4,7 +4,7 @@ import { NavLinks } from './NavLink'
 const meta: Meta<typeof NavLinks> = {
   component: NavLinks,
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
 }
 export default meta

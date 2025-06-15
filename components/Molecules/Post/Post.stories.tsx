@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Post } from './Post'
 import type { Tumblr } from 'libs/@type/api/tumblr'
+import { expect, waitFor } from 'storybook/test'
 
 const meta: Meta<typeof Post> = {
   component: Post,
-  parameters: {
-    chromatic: { disableSnapshot: false },
-  },
+  parameters: {},
+  tags: ['motion'],
 }
 export default meta
 type Story = StoryObj<typeof Post>
@@ -129,6 +129,43 @@ const mockPostWithShowOnlyLast: Tumblr.Post = {
 export const Default: Story = {
   args: {
     post: mockPost,
+  },
+  play: async ({ canvas }) => {
+    // 投稿記事要素を取得
+    const article = canvas.getByRole('article')
+    await expect(article).toBeInTheDocument()
+
+    // 初期状態でブラーがかかっていることを確認
+    // framer-motionの初期状態はinactiveでblur(8px)が適用される
+    await waitFor(() => {
+      const computedStyle = window.getComputedStyle(article)
+      expect(computedStyle.filter).toContain('blur(8px)')
+    })
+
+    // 要素をビューポートに入れるためにスクロール
+    article.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
+    // whileInViewトリガーを待機
+    await waitFor(
+      () => {
+        const computedStyle = window.getComputedStyle(article)
+        expect(computedStyle.filter).toContain('blur(0px)')
+      },
+      { timeout: 3000 }
+    )
+
+    // ブライトネスも正しく設定されていることを確認
+    await waitFor(() => {
+      const computedStyle = window.getComputedStyle(article)
+      expect(computedStyle.filter).toContain('brightness(1)')
+    })
+    // スクロール位置を元に戻す
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    await new Promise((resolve) => setTimeout(resolve, 300))
+    // スクロール完了を待機
+    await waitFor(() => {
+      expect(window.scrollY).toBe(0)
+    })
   },
 }
 
