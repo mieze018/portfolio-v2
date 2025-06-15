@@ -34,7 +34,8 @@
     "reblog",
     "RECAPTCHA",
     "strapi",
-    "testid"
+    "testid",
+    "viewports"
   ],
   "ignorePaths": [
     ".vscode/**",

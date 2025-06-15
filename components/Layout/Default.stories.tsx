@@ -75,3 +75,9 @@ export const WithLongContent: Story = {
     await waitFor(async () => expect(topNav.getBoundingClientRect().top).toBeGreaterThan(100))
   },
 }
+export const Mobile: Story = {
+  ...WithLongContent,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}

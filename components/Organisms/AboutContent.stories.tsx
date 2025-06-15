@@ -15,3 +15,9 @@ export const Default: Story = {
     },
   },
 }
+export const Mobile: Story = {
+  ...Default,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}

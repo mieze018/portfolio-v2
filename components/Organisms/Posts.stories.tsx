@@ -89,3 +89,9 @@ export const EmptyResults: Story = {
     tag: 'nonexistent',
   },
 }
+export const Mobile: Story = {
+  ...Default,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}

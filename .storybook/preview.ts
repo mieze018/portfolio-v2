@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/nextjs'
 import { decoratorsComponent } from './decorators'
 import i18n from './i18next.js'
 import '../styles/global.css'
-
+import { MINIMAL_VIEWPORTS } from 'storybook/viewport'
 const preview: Preview = {
   parameters: {
     controls: {
@@ -16,6 +16,9 @@ const preview: Preview = {
     locales: {
       en: 'English',
       ja: '日本語',
+    },
+    viewport: {
+      options: MINIMAL_VIEWPORTS,
     },
   },
 }

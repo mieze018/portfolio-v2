@@ -34,3 +34,10 @@ export const Default: Story = {
     formId: 'dummy-form-id-for-storybook',
   },
 }
+
+export const Mobile: Story = {
+  ...Default,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}
