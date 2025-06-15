@@ -1,8 +1,8 @@
 import { useTranslation } from 'next-i18next'
-import tw from 'twin.macro'
+import { tw, cva } from 'libs/component-factory'
 
-const Wrapper = tw.div`px-5 max-w-screen-md m-auto grid gap-y-4 text-xs mb-20`
-const P = tw.p``
+const Wrapper = tw('div', cva('px-5 max-w-screen-md m-auto grid gap-y-4 text-xs mb-20'))
+const P = tw('p', cva(''))
 
 export const PrivacyPolicy = () => {
   const { t } = useTranslation('common')

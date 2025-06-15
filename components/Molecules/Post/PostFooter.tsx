@@ -1,8 +1,8 @@
-import tw from 'twin.macro'
+import { tw, cva } from 'libs/component-factory'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
-const Wrapper = tw.footer`mt-0 text-xs sm:text-sm text-left w-full`
+const Wrapper = tw('footer', cva('mt-0 text-xs sm:text-sm text-left w-full'))
 
 export const PostFooter = ({ postDate }: { postDate: Tumblr.Post['date'] }) => (
   <Wrapper>

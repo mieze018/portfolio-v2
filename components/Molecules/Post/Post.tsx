@@ -1,29 +1,30 @@
-import { motion } from 'framer-motion'
-import tw, { styled } from 'twin.macro'
+import { motion } from 'motion/react'
+import { tw, cva } from 'libs/component-factory'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
 import { Photos } from 'components/Molecules/Post/Photos'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
-const Article = styled(motion.article)`
-  ${tw`flex flex-col items-center justify-center flex-wrap
-    max-w-full lg:max-w-screen-md 2xl:max-w-screen-lg
-    mx-auto px-[2.618vw] pb-64
-    min-h-g-61vh
-   `}
-`
+// motion.articleは特殊なので直接cvaで定義
+const articleVariants = cva(
+  'flex flex-col items-center justify-center flex-wrap max-w-full lg:max-w-screen-md 2xl:max-w-screen-lg mx-auto px-[2.618vw] pb-64 min-h-g-61vh'
+)
 
-const PostCaption = tw.div`mt-8 text-sm sm:text-base text-left w-full`
+const PostCaption = tw('div', cva('mt-8 text-sm sm:text-base text-left w-full'))
 
-const PhotoWrapper = styled.div<{ isColumn: boolean; isRow: boolean }>`
-  ${({ isRow, isColumn }) => [
-    tw`mx-auto`,
-    (isRow || isColumn) && tw`inline-flex flex-wrap items-center content-start justify-around`,
-    isColumn && tw`flex flex-wrap justify-center max-w-full`,
-    isRow && tw`grid gap-y-4`,
-  ]}
-`
+const photoWrapperVariants = cva('mx-auto', {
+  variants: {
+    layout: {
+      default: '',
+      row: 'grid gap-y-4',
+      column: 'flex flex-wrap justify-center max-w-full',
+    },
+  },
+  defaultVariants: {
+    layout: 'default',
+  },
+})
 
 export const Post = ({ post }: { post: Tumblr.Post }) => {
   // TODO:投稿ごとにタグでレイアウト指定できるようにするといいかも
@@ -44,20 +45,24 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
     },
   }
   return (
-    <Article
-      as={motion.article}
+    <motion.article
+      className={articleVariants()}
       variants={variants}
       initial="inactive"
       whileInView="whileInView"
       transition={{ duration: 0.25, delay: 0, ease: 'easeInOut' }}
     >
-      <PhotoWrapper isColumn={isColumn} isRow={isRow}>
+      <div
+        className={photoWrapperVariants({
+          layout: isColumn ? 'column' : isRow ? 'row' : 'default',
+        })}
+      >
         <Photos
           photos={post.photos}
           isShowOnlyLastPhoto={isShowOnlyLastPhoto}
           isColumn={isColumn}
         />
-      </PhotoWrapper>
+      </div>
 
       <PostCaption
         dangerouslySetInnerHTML={{
@@ -65,6 +70,6 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
         }}
       />
       <PostFooter postDate={post.date} />
-    </Article>
+    </motion.article>
   )
 }

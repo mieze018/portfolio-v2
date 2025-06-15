@@ -1,4 +1,4 @@
-import tw, { styled } from 'twin.macro'
+import { tw, cva } from 'libs/component-factory'
 
 import { FadeOuter } from 'components/Molecules/Header/FadeOuter'
 import { Floater } from 'components/Molecules/Header/Floater'
@@ -8,17 +8,18 @@ import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { routes } from 'libs/routes'
 import { description, title } from 'pages/api/basics'
 
-const Flare = styled.div`
-  ${tw`fixed top-0 z-10 w-full h-g-14vh opacity-80 `}
-  background: linear-gradient(180deg, rgb(246 246 246 / 100%) 0%, rgb(255 255 255 / 0%) 100%);
-`
+const Title = tw('h1', cva('mb-1 text-2xl xs:text-3xl tracking-title'))
+const Description = tw('p', cva('text-xs sm:text-base'))
 
-const Title = tw.h1`mb-1 text-2xl xs:text-3xl tracking-title`
-const Description = tw.p`text-xs  sm:text-base`
 export const TopBar = () => {
   return (
     <>
-      <Flare />
+      <div
+        className="fixed top-0 z-10 w-full h-g-14vh opacity-80"
+        style={{
+          background: 'linear-gradient(180deg, rgb(246 246 246) 0%, rgb(255 255 255 / 0%) 100%)',
+        }}
+      />
       <WaterSurface />
       <Floater>
         <FadeOuter>

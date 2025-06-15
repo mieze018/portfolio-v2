@@ -1,4 +1,4 @@
-import { useScroll } from 'framer-motion'
+import { useScroll } from 'motion/react'
 import { useAtomValue } from 'jotai'
 import { useState, useEffect } from 'react'
 

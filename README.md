@@ -1,5 +1,35 @@
 # portfolio as Artist - v2
 
+## アーキテクチャ
+
+このプロジェクトは **Atomic Design** + **CVA (class-variance-authority)** + **独自tw関数** をベースとしたコンポーネント設計を採用しています。
+
+### コンポーネント設計
+
+- **Atoms**: 最小単位のUIコンポーネント (Button, Input等)
+- **Molecules**: Atomsの組み合わせ (Header, Footer等)  
+- **Organisms**: MoleculesとAtomsの組み合わせ (ContactForm等)
+- **Layout**: ページ全体のレイアウト
+
+### スタイル管理
+
+- **tw関数** (`libs/component-factory.tsx`): CVAとforwardRefを統合した型安全なコンポーネントファクトリー
+- **cva (class-variance-authority)**: バリアントベースのクラス管理
+- **Tailwind CSS**: ユーティリティファーストCSS
+- **tailwind-merge**: クラス名の競合を安全に解決
+
+```tsx
+// 使用例
+export const Button = tw('button', cva('px-4 py-2 rounded', {
+  variants: {
+    variant: { 
+      primary: 'bg-blue-500 text-white',
+      secondary: 'bg-gray-500 text-white'
+    }
+  }
+}))
+```
+
 ## セットアップ
 
 1. voltaをインストール <https://volta.sh/>
@@ -31,18 +61,18 @@
 
 ### スタイル, UI のためのライブラリ
 
-- twin.macro <https://github.com/ben-rogerson/twin.macro>
-  - [next-styled-components-typescript](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript)
-  - Tailwind CSS <https://tailwindcss.com/>
-    - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
-    - Scrollbar Plugin for Tailwind CSS <https://github.com/adoxography/tailwind-scrollbar> overflow:overlay が不都合なのでオミット
-  - Styled Components <https://styled-components.com/>
-- Headless UI <https://headlessui.com/>
-- Radix UI <https://www.radix-ui.com/docs/primitives/overview/introduction>
-- React Icons - <https://react-icons.github.io/react-icons/>
+- **class-variance-authority (cva)** <https://cva.style/docs>
+  - バリアントベースのクラス管理
+- **独自tw関数** (`libs/component-factory.tsx`)
+  - CVAとforwardRefを組み合わせた型安全なコンポーネントファクトリー
+- **Tailwind CSS** <https://tailwindcss.com/>
+  - Tailwind CSS with Next.js <https://tailwindcss.com/docs/guides/nextjs>
+  - tailwind-merge <https://github.com/dcastil/tailwind-merge> (clsx統合)
+- **Headless UI** <https://headlessui.com/>
+- **Radix UI** <https://www.radix-ui.com/docs/primitives/overview/introduction>
+- **React Icons** - <https://react-icons.github.io/react-icons/>
 
-- Storybook <https://storybook.js.org/docs/react/>
-  - [twin.macro Storybook + styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript)
+- **Storybook** <https://storybook.js.org/docs/react/>
   - Chromatic <https://www.chromatic.com/>
     - メモ dependabot はフォークされた PR なのでシークレットキーを公開にしないと使えないので、UI に変更がある可能性のあるものは個別にローカルで`chromatic`コマンドを叩いてデプロイする
 
@@ -65,7 +95,8 @@
 
 ### テスト
 
--Playwright <https://playwright.dev/docs/intro>
+- Playwright <https://playwright.dev/docs/intro>
+- Cypress <https://docs.cypress.io/>
 
 ### サーバとのやりとり
 

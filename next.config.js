@@ -1,6 +1,5 @@
 /* eslint-disable */
 const { i18n } = require('./next-i18next.config')
-const withTwin = require('./withTwin.js')
 
 const nextConfig = {
   reactStrictMode: true,
@@ -20,7 +19,7 @@ const imageConfig = {
 }
 
 /** @type {import('next').NextConfig} */
-module.exports = withTwin({
+module.exports = {
   ...nextConfig,
   ...imageConfig,
   i18n,
@@ -30,4 +29,4 @@ module.exports = withTwin({
   //   config.resolve.fallback = { fs: false, module: false, path: false }
   //   return config
   // },
-})
+}
