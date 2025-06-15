@@ -3630,7 +3630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/icons@npm:^1.2.12, @storybook/icons@npm:^1.4.0":
+"@storybook/icons@npm:^1.2.12":
   version: 1.4.0
   resolution: "@storybook/icons@npm:1.4.0"
   peerDependencies:
@@ -12093,7 +12093,6 @@ __metadata:
     storybook: "npm:^9.0.9"
     storybook-addon-pseudo-states: "npm:^9.0.9"
     storybook-addon-swc: "npm:^1.1.9"
-    storybook-react-i18next: "npm:^4.0.11"
     swr: "npm:^2.2.4"
     tailwind-merge: "npm:^3.3.1"
     tailwindcss: "npm:^3.4.0"
@@ -13551,33 +13550,6 @@ __metadata:
     webpack:
       optional: true
   checksum: 5ecf7b815e6651e0ec0ab09142e120eee1cca0a500b470e1f2f2d2b6aaa038eb11a277238b43a3251dca1a198220e7469e9ebc1def3a8e05a7af2efb4dc02d81
-  languageName: node
-  linkType: hard
-
-"storybook-i18n@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "storybook-i18n@npm:4.0.5"
-  dependencies:
-    "@storybook/icons": "npm:^1.4.0"
-  peerDependencies:
-    storybook: ^9.0.0
-  checksum: 61254830a67ef5f2e2fc52b048d60275ca7e2b0a056b6eae3e3bfb3ca6409071c5973d70acf2e0a667b2c08ee19b04b53914f242514789d8b27bfe35c24c506d
-  languageName: node
-  linkType: hard
-
-"storybook-react-i18next@npm:^4.0.11":
-  version: 4.0.11
-  resolution: "storybook-react-i18next@npm:4.0.11"
-  dependencies:
-    storybook-i18n: "npm:^4.0.5"
-  peerDependencies:
-    i18next: ^22.0.0 || ^23.0.0 || ^24.0.0 || ^25.0.0
-    i18next-browser-languagedetector: ^7.0.0 || ^8.0.0
-    i18next-http-backend: ^2.0.0 || ^3.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    react-i18next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
-    storybook: ^9.0.0
-  checksum: 2b9ffcc26ae621226eff538b814733b34b79634ef7875c0ad40c45cdb692526b2945f230254e97e9b56b1753c70d72ba49f449d52f599b8dd79344cab5c82047
   languageName: node
   linkType: hard
 
