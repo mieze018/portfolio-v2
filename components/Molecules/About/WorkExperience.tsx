@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
@@ -14,10 +14,15 @@ export const WorkExperience = ({
   workExperience: PageObject[]
   genres: PageObject[]
 }) => {
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
+  const workExperienceLabel = tb('workExperience')
+
   return (
     <SectionWrapper>
-      <h1>{t('workExperience')}</h1>
+      <div>
+        <h1>{workExperienceLabel.ja}</h1>
+        {workExperienceLabel.en && <div>{workExperienceLabel.en}</div>}
+      </div>
       <Separator />
       <ul>
         {genres.map((genre) => (

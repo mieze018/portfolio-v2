@@ -1,7 +1,7 @@
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react'
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'libs/useTranslation'
 import React from 'react'
 import { tw, cva } from 'libs/component-factory'
 
@@ -16,7 +16,7 @@ const Label = tw('label', cva('flex items-center gap-2 py-1'))
 
 export const ContactForm = ({ formId }: { formId: string }) => {
   const [state, handleSubmit] = useForm(formId)
-  const { t } = useTranslation('common')
+  const { tb } = useTranslation('common')
   // const [replyAllowed, setReplyAllowed] = useState(false)
 
   const RequiredMark = () => <RequiredMarkSpan>*</RequiredMarkSpan>
@@ -31,7 +31,7 @@ export const ContactForm = ({ formId }: { formId: string }) => {
   }
   const formsAttrs: formType[] = [
     {
-      label: t('messageLabel'),
+      label: tb('messageLabel').en,
       type: 'textarea',
       name: 'message',
       required: true,
@@ -57,7 +57,13 @@ export const ContactForm = ({ formId }: { formId: string }) => {
     //   required: replyAllowed ? true : false,
     // },
   ]
-  if (state.succeeded) return <Center>{t('messageSendThankYou')}</Center>
+  if (state.succeeded)
+    return (
+      <Center className="flex-wrap">
+        <div>{tb('messageSendThankYou').ja}</div>
+        <div>{tb('messageSendThankYou').en}</div>
+      </Center>
+    )
   return (
     <Form onSubmit={handleSubmit}>
       {formsAttrs.map(({ label, type, name, placeholder, required, checked, onChange }) => {
@@ -118,7 +124,7 @@ export const ContactForm = ({ formId }: { formId: string }) => {
         )
       })}
       <PrimaryButton type="submit" disabled={state.submitting}>
-        {t('messageSend')}
+        {tb('messageSend').en}
       </PrimaryButton>
     </Form>
   )

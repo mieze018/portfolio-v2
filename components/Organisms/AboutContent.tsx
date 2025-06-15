@@ -2,7 +2,7 @@ import { tw, cva } from 'libs/component-factory'
 
 import type { aboutDataType } from 'pages/about'
 
-import { EventHistory } from 'components/Molecules/About/EventHistory'
+// import { EventHistory } from 'components/Molecules/About/EventHistory'
 import { Events } from 'components/Molecules/About/Events'
 import { Introduction } from 'components/Molecules/About/Introduction'
 import { Linktree } from 'components/Molecules/About/Linktree'
@@ -26,7 +26,7 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
       {!!workExperienceGenre?.length && (
         <WorkExperience workExperience={workExperience} genres={workExperienceGenre} />
       )}
-      <EventHistory events={events} />
+      {/* <EventHistory events={events} /> */}
       <Prizes prizes={prizes} />
       {!!links?.length && <Linktree links={links} />}
       <Participant />

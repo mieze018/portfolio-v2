@@ -1,5 +1,3 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import type { PageObject } from 'libs/@type/api/notion'
 import type { GetStaticProps, NextPage } from 'next'
 
@@ -19,13 +17,12 @@ const Contact: NextPage<contactDataType> = ({ fallbackData }) => {
 
 export default Contact
 
-export const getStaticProps: GetStaticProps = async ({ locale = 'ja' }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const workAcceptanceStatus = await getPage(workAcceptanceStatusDBId)
   const Data = { workAcceptanceStatus }
   return {
     props: {
       fallbackData: Data,
-      ...(await serverSideTranslations(locale, ['common'])),
     },
   }
 }

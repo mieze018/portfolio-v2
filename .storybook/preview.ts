@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/nextjs'
-import i18n from './i18next.js'
 import '../styles/global.css'
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport'
 const preview: Preview = {
@@ -10,7 +9,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    i18n,
     locale: 'ja',
     locales: {
       en: 'English',

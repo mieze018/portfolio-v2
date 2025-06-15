@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { GoMail } from 'react-icons/go'
 import { IoMdPaperPlane } from 'react-icons/io'
 import { tw, cva } from 'libs/component-factory'
@@ -26,16 +25,24 @@ const IconWrapper = tw('div', cva('py-4 text-xl m-auto flex items-center justify
 
 export const ContactContent = ({ fallbackData, formId }: contactDataType & { formId: string }) => {
   const { workAcceptanceStatus } = fallbackData
-  const router = useRouter()
-  if (!router.locale) return <></>
-  const statusTranslation = getProperties(workAcceptanceStatus, {
-    name: router.locale.includes('ja') ? 'ja' : 'en',
-    type: 'rich_text',
-  })
 
   return (
     <Wrapper>
-      <Center>{statusTranslation}</Center>
+      <Center className="flex flex-col items-center justify-center">
+        <div>
+          {getProperties(workAcceptanceStatus, {
+            name: 'ja',
+            type: 'rich_text',
+          })}
+        </div>
+
+        <div>
+          {getProperties(workAcceptanceStatus, {
+            name: 'en',
+            type: 'rich_text',
+          })}
+        </div>
+      </Center>
       <Separator />
       <div>
         <IconWrapper>
