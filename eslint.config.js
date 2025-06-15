@@ -31,6 +31,12 @@ export default [
       '@next/next': nextPlugin,
       'unused-imports': unusedImports,
     },
+    settings: {
+      react: {
+        version: 'detect',
+        runtime: 'automatic',
+      },
+    },
     rules: {
       'react/no-unknown-property': [
         'error',

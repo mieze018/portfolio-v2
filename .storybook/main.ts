@@ -5,7 +5,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-a11y',
-    '@storybook/addon-webpack5-compiler-babel',
+    'storybook-addon-swc',
     '@chromatic-com/storybook',
     'storybook-addon-pseudo-states',
     '@storybook/addon-docs',

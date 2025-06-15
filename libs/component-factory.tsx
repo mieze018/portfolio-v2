@@ -6,12 +6,12 @@ import React from 'react'
 
 // HTMLタグ用のprops型
 type TwHtmlProps<
-  T extends keyof JSX.IntrinsicElements,
+  T extends keyof React.JSX.IntrinsicElements,
   V extends ReturnType<typeof _cva>,
 > = ComponentProps<T> & VariantProps<V>
 
 /** HTMLタグ用のprops型 */
-export const tw = <T extends keyof JSX.IntrinsicElements, V extends ReturnType<typeof _cva>>(
+export const tw = <T extends keyof React.JSX.IntrinsicElements, V extends ReturnType<typeof _cva>>(
   tag: T,
   variants: V
 ) => {
@@ -39,7 +39,10 @@ export const twe = <T extends React.ElementType, V extends ReturnType<typeof _cv
   component: T,
   variants: V
 ) => {
-  const Component = forwardRef<React.ElementRef<T>, TweComponentProps<T, V>>((props, ref) => {
+  const Component = forwardRef<
+    T extends keyof React.JSX.IntrinsicElements ? React.ElementRef<T> : never,
+    TweComponentProps<T, V>
+  >((props, ref) => {
     const { className, ...restProps } = props
 
     // variantのクラス名を生成

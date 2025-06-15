@@ -1,9 +1,5 @@
-/* eslint-disable */
-const { i18n } = require('./next-i18next.config')
-
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 const imageConfig = {
@@ -19,10 +15,9 @@ const imageConfig = {
 }
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+const config = {
   ...nextConfig,
   ...imageConfig,
-  i18n,
   //withTwin と重複するためコメントアウト
   // webpack: (config) => {
   //   // Unset client-side javascript that only works server-side
@@ -30,3 +25,5 @@ module.exports = {
   //   return config
   // },
 }
+
+export default config

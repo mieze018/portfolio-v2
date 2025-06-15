@@ -1,3 +1,7 @@
+import fs from 'fs'
+import path from 'path'
+import { exec } from 'child_process'
+
 /** 引数。エクスプローラーからD&Dで受け取る。
  * 例: WIndows `C:\Users\Public\Documents\Git\user\repo\components\Molecules\About\EventHistory.tsx`
  * or Mac `/Users/user/Documents/Git/repo/components/Molecules/About/EventHistory.tsx`
@@ -14,8 +18,6 @@ if (!fullPath) {
 const componentsDir = 'components'
 // パスがフルパスじゃない場合は現在のディレクトリを取得する
 if (fullPath.indexOf(splitChar) === -1) {
-  const fs = require('fs')
-  const path = require('path')
   function findFilesInDir(startPath, filter) {
     let results = []
     const files = fs.readdirSync(startPath)
@@ -48,9 +50,6 @@ const relativeDir = fullPath
   .split(componentsDir)
   .pop()
   .replace(componentName + '.tsx', '')
-
-const fs = require('fs')
-const path = require('path')
 
 // ディレクトリが存在しなければ中止
 if (!fs.existsSync(componentsDir)) {
@@ -101,9 +100,7 @@ const createStories = () => fs.writeFileSync(storiesPath, createStoryTemplate(co
 const createMdx = () => fs.writeFileSync(mdxPath, createMdxTemplate(componentName))
 
 //作成したファイルを開く
-
 const openFile = () => {
-  const exec = require('child_process').exec
   exec(`code ${storiesPath} ${mdxPath}`)
 }
 //ファイルが既に存在する場合は中止
