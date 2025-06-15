@@ -15,7 +15,7 @@ const imageConfig = {
 }
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+const config = {
   ...nextConfig,
   ...imageConfig,
   //withTwin と重複するためコメントアウト
@@ -25,3 +25,5 @@ module.exports = {
   //   return config
   // },
 }
+
+export default config

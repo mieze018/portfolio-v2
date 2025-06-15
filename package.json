@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "turbo": "next dev --turbo",
@@ -22,7 +23,7 @@
     "upgrade:linter": "yarn up 'eslint*'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
     "upgrade:storybook": "npx storybook@latest upgrade",
-    "create-stories": "node scripts/create-stories.js"
+    "create-stories": "node scripts/create-stories.mjs"
   },
   "prettier": {
     "trailingComma": "es5",
