@@ -39,7 +39,10 @@ export const twe = <T extends React.ElementType, V extends ReturnType<typeof _cv
   component: T,
   variants: V
 ) => {
-  const Component = forwardRef<React.ElementRef<T>, TweComponentProps<T, V>>((props, ref) => {
+  const Component = forwardRef<
+    T extends keyof React.JSX.IntrinsicElements ? React.ElementRef<T> : never,
+    TweComponentProps<T, V>
+  >((props, ref) => {
     const { className, ...restProps } = props
 
     // variantのクラス名を生成
