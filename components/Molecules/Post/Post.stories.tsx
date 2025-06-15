@@ -196,3 +196,22 @@ export const LongCaption: Story = {
     },
   },
 }
+export const Mobile: Story = {
+  ...Default,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}
+
+export const MultiplePhotosRowMobile: Story = {
+  ...MultiplePhotosRow,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}
+export const MultiplePhotosColumnMobile: Story = {
+  ...MultiplePhotosColumn,
+  globals: {
+    viewport: { value: 'mobile1', isRotated: false },
+  },
+}
