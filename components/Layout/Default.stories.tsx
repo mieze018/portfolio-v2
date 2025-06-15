@@ -4,7 +4,10 @@ import Layout from './Default'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
-  parameters: {},
+  parameters: {
+    chromatic: { disableSnapshot: true }, // アニメーション結果が安定しないので無効化
+    layout: 'fullscreen',
+  },
 }
 export default meta
 type Story = StoryObj<typeof Layout>
