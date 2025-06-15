@@ -6,12 +6,12 @@ import React from 'react'
 
 // HTMLタグ用のprops型
 type TwHtmlProps<
-  T extends keyof JSX.IntrinsicElements,
+  T extends keyof React.JSX.IntrinsicElements,
   V extends ReturnType<typeof _cva>,
 > = ComponentProps<T> & VariantProps<V>
 
 /** HTMLタグ用のprops型 */
-export const tw = <T extends keyof JSX.IntrinsicElements, V extends ReturnType<typeof _cva>>(
+export const tw = <T extends keyof React.JSX.IntrinsicElements, V extends ReturnType<typeof _cva>>(
   tag: T,
   variants: V
 ) => {
