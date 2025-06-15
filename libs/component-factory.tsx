@@ -1,24 +1,41 @@
 import type { VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
+import type { ComponentProps, ComponentType } from 'react'
 import { forwardRef } from 'react'
 import { cva as _cva } from 'class-variance-authority'
 
-type TwProps<
-  T extends keyof JSX.IntrinsicElements,
-  V extends ReturnType<typeof _cva>,
-> = ComponentProps<T> & VariantProps<V>
+// HTMLタグかReactコンポーネントかを判別する型
+type ElementOrComponent = keyof JSX.IntrinsicElements | ComponentType<Record<string, unknown>>
 
-export const tw = <T extends keyof JSX.IntrinsicElements, V extends ReturnType<typeof _cva>>(
-  tag: T,
+// propsの型を適切に推論する
+type TwProps<
+  T extends ElementOrComponent,
+  V extends ReturnType<typeof _cva>,
+> = T extends keyof JSX.IntrinsicElements
+  ? ComponentProps<T> & VariantProps<V>
+  : T extends ComponentType<infer P>
+    ? P & VariantProps<V>
+    : never
+
+export const tw = <T extends ElementOrComponent, V extends ReturnType<typeof _cva>>(
+  component: T,
   variants: V
 ) => {
-  return forwardRef<React.ElementRef<T>, TwProps<T, V>>((allProps, ref) => {
-    const { ...props } = allProps
-    const Component = tag as React.ElementType
-    // TypeScript型推論の複雑性を回避するため、明示的に型変換
+  return forwardRef<
+    T extends keyof JSX.IntrinsicElements ? React.ElementRef<T> : React.ComponentRef<T>,
+    TwProps<T, V>
+  >((allProps, ref) => {
+    const { className, ...props } = allProps as TwProps<T, V> & { className?: string }
+    const Component = component as React.ElementType
+
+    // バリアント用のpropsを抽出
     const variantConfig = allProps as Parameters<typeof variants>[0]
-    const classNames = variants(variantConfig)
-    return <Component ref={ref} className={classNames} {...props} />
+    const variantClasses = variants(variantConfig)
+
+    // 既存のclassNameとマージ
+    const finalClassName = className ? `${variantClasses} ${className}` : variantClasses
+
+    return <Component ref={ref} className={finalClassName} {...props} />
   })
 }
+
 export const cva = _cva
