@@ -1,12 +1,13 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
+import { notoSerifJP, ebGaramond } from 'libs/fonts'
 import { author, description, title, url } from 'pages/api/basics'
 
 export default function Document() {
   return (
-    <Html lang="ja">
-      <title>{title}</title>
+    <Html lang="ja" className={`${notoSerifJP.variable} ${ebGaramond.variable} antialiased`}>
       <Head>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="author" content={author} />
         <link rel="canonical" href={url} />

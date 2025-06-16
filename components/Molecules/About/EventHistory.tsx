@@ -2,7 +2,7 @@ import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
-import { SectionWrapper, P } from 'components/Atoms/About/Atoms'
+import { SectionWrapper } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
 import { EventItem } from 'components/Molecules/About/EventItem'
 import { dateToYear } from 'libs/dataFormat'
@@ -20,10 +20,10 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
   })
   return (
     <SectionWrapper>
-      <P className="space-y-1">
+      <div className="space-y-1">
         <div>{eventHistory.ja}</div>
         {eventHistory.en && <div>{eventHistory.en}</div>}
-      </P>
+      </div>
 
       <Separator />
       <ul className="mt-2">

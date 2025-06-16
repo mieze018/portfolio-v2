@@ -21,25 +21,6 @@ const config = {
     },
 
     fontFamily: {
-      kakugo: [
-        'Hiragino Kaku Gothic ProN',
-        'ヒラギノ角ゴ ProN W3',
-        'Meiryo',
-        'メイリオ',
-        'ＭＳ ゴシック',
-        'MS Gothic',
-        'sans-serif',
-      ],
-      meiryo: [
-        'Meiryo',
-        'メイリオ',
-        'Hiragino Kaku Gothic ProN',
-        'ヒラギノ角ゴ ProN W3',
-        'ＭＳ ゴシック',
-        'MS Gothic',
-        'sans-serif',
-      ],
-      mincho: ['HGS明朝E', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝', 'serif'],
       serif: [
         'Baskerville Old Face',
         'Baskerville',
