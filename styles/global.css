@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@theme inline {
+  --font-jp: var(--font-noto-serif-jp);
+  --font-en: var(--font-cormorant-garamond);
+}
 @layer base {
   :root {
     --color-main: 255 124 0;

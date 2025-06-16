@@ -1,5 +1,4 @@
 import { Analytics } from '@vercel/analytics/react'
-
 import type { AppProps } from 'next/app'
 
 import '../styles/global.css'
@@ -10,15 +9,16 @@ import { GoogleAnalytics, usePageView } from 'libs/gtag'
 function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
-    <Layout>
-      <GoogleAnalytics />
-      {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
-      <ContentsWrapper $key={router.pathname}>
-        <Component {...pageProps} />
-      </ContentsWrapper>
-
-      <Analytics />
-    </Layout>
+    <div>
+      <Layout>
+        <GoogleAnalytics />
+        {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
+        <ContentsWrapper $key={router.pathname}>
+          <Component {...pageProps} />
+        </ContentsWrapper>
+        <Analytics />
+      </Layout>
+    </div>
   )
 }
 
