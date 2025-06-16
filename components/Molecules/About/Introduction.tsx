@@ -9,7 +9,7 @@ export const Introduction = () => {
   const description = tb('description')
 
   const Wrapper = twe(P, cva('space-y-1 flex flex-col'))
-  const Line = tw('div', cva('flex items-center gap-x-4'))
+  const Line = tw('div', cva('flex items-center gap-x-4 flex-wrap'))
   return (
     <SectionWrapper>
       <Wrapper>
