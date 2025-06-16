@@ -8,7 +8,7 @@ import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
 // motion.articleは特殊なので直接cvaで定義
 const articleVariants = cva(
-  'flex flex-col items-center justify-center flex-wrap max-w-full lg:max-w-screen-md 2xl:max-w-screen-lg mx-auto px-[2.618vw] pb-64 min-h-g-61vh'
+  'flex flex-col items-center justify-center flex-wrap max-w-full lg:max-w-(--breakpoint-md) 2xl:max-w-(--breakpoint-lg) mx-auto px-[2.618vw] pb-64 min-h-g-61vh'
 )
 
 const PostCaption = tw('div', cva('mt-8 text-sm sm:text-base text-left w-full'))

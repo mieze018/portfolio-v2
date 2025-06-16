@@ -6,7 +6,7 @@ import type { scrollStatesType } from 'libs/useScrollState'
 import { useScrollState } from 'libs/useScrollState'
 
 const navVariants = cva(
-  'sticky top-0 z-10 m-auto mt-6 md:mt-2 text-center hover:blur-0 grid grid-flow-col justify-center gap-x-4',
+  'sticky top-0 z-10 m-auto mt-6 md:mt-2 text-center hover:blur-none grid grid-flow-col justify-center gap-x-4',
   {
     variants: {
       footer: {
@@ -22,10 +22,10 @@ const navVariants = cva(
 
 const scrollAnimation = (scrollStates: scrollStatesType) => {
   if (scrollStates.init) {
-    return 'brightness-100 blur-0'
+    return 'brightness-100 blur-none'
   }
   if (scrollStates.sinking || scrollStates.sunk) {
-    return 'brightness-125 blur-0 md:blur-[1px]'
+    return 'brightness-125 blur-none md:blur-1px'
   }
   return ''
 }
