@@ -2,7 +2,7 @@ import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
-import { P, SectionWrapper } from 'components/Atoms/About/Atoms'
+import { SectionWrapper } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
@@ -13,10 +13,10 @@ export const Prizes = ({ prizes }: { prizes: PageObject[] }) => {
 
   return (
     <SectionWrapper>
-      <P>
+      <div>
         <div>{awards.ja}</div>
         {awards.en && <div>{awards.en}</div>}
-      </P>
+      </div>
 
       <Separator />
       {prizes.map((prize) => {

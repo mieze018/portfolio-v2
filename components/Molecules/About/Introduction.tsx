@@ -1,6 +1,6 @@
 import { useTranslation } from 'libs/useTranslation'
-import { tw, cva, twe } from 'libs/component-factory'
-import { P, SectionWrapper } from 'components/Atoms/About/Atoms'
+import { tw, cva } from 'libs/component-factory'
+import { SectionWrapper } from 'components/Atoms/About/Atoms'
 
 export const Introduction = () => {
   const { tb } = useTranslation('common')
@@ -8,7 +8,7 @@ export const Introduction = () => {
   const authorPronunciation = tb('author_pronunciation')
   const description = tb('description')
 
-  const Wrapper = twe(P, cva('space-y-1 flex flex-col'))
+  const Wrapper = tw('div', cva('space-y-1 flex flex-col'))
   const Line = tw('div', cva('flex items-center gap-x-4 flex-wrap'))
   return (
     <SectionWrapper>

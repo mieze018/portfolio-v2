@@ -2,7 +2,6 @@ import { useTranslation } from 'libs/useTranslation'
 
 import type { PageObject } from 'libs/@type/api/notion'
 
-import { P } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
 import { EventItem } from 'components/Molecules/About/EventItem'
 import { getProperties } from 'libs/notion'
@@ -20,10 +19,10 @@ export const Events = ({ events }: { events: PageObject[] }) => {
   if (!futureEvents.length) return <></>
   return (
     <div className="mt-12">
-      <P className="space-y-1">
+      <div className="space-y-1">
         <div>{eventIncoming.ja}</div>
         {eventIncoming.en && <div>{eventIncoming.en}</div>}
-      </P>
+      </div>
 
       <Separator />
       <ul className="mt-2">
