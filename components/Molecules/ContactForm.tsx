@@ -10,7 +10,7 @@ import { LabelText } from 'components/Atoms/LabelText'
 import { PrimaryButton } from 'components/Atoms/PrimaryButton'
 import { Textarea } from 'components/Atoms/Textarea'
 
-const Form = tw('form', cva('grid gap-4 w-full md:w-g-61vw m-auto max-w-screen-sm'))
+const Form = tw('form', cva('grid gap-4 w-full md:w-g-61vw m-auto max-w-(--breakpoint-sm)'))
 const RequiredMarkSpan = tw('span', cva('text-main px-1'))
 const Label = tw('label', cva('flex items-center gap-2 py-1'))
 
