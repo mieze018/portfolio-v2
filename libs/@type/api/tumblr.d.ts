@@ -144,7 +144,7 @@ export namespace Tumblr {
     avatar_shape: string
     background_color: string
     body_font: string
-    header_bounds: any
+    header_bounds: unknown
     header_image: string
     header_image_focused: string
     header_image_poster: string
