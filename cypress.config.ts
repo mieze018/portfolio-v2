@@ -7,8 +7,8 @@ export default defineConfig({
     defaultCommandTimeout: 10000,
     //実行前にサーバを起動する
 
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    // setupNodeEvents(on, config) {
+    // implement node event listeners here
+    // },
   },
 })

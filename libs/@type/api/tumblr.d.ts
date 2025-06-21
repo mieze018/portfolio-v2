@@ -85,8 +85,8 @@ export namespace Tumblr {
     short_url: string
     summary: string
     should_open_in_legacy: boolean
-    recommended_source: any
-    recommended_color: any
+    recommended_source: unknown
+    recommended_color: unknown
     note_count: number
     caption: string
     reblog: Reblog
