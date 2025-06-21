@@ -72,7 +72,7 @@
     "cspell": "latest",
     "cypress": "^14.0.3",
     "eslint": "^9.11.1",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "^15.3.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-css": "^0.11.0",
     "eslint-plugin-import": "^2.32.0",
