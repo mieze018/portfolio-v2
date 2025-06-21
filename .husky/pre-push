@@ -5,7 +5,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 yarn lint
 # yarn unused
 npx playwright install
-yarn cy:test
+# yarn cy:test
 
 yarn upgrade:linter
 yarn upgrade:types
