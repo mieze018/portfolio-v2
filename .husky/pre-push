@@ -10,5 +10,5 @@ npx playwright install
 yarn upgrade:linter
 yarn upgrade:types
 # https://github.com/storybookjs/storybook/releases
-yarn upgrade:storybook
+# yarn upgrade:storybook
 yarn up chromatic
