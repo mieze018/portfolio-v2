@@ -84,7 +84,7 @@
     "storybook": "^9.0.9",
     "storybook-addon-pseudo-states": "^9.0.9",
     "storybook-addon-swc": "^1.1.9",
-    "tailwindcss": "^3.4.0",
+    "tailwindcss": "^4.1.10",
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^10.0.1",
     "typescript": "^5.8.3",
