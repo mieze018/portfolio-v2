@@ -1,7 +1,7 @@
 import typescriptEslintParser from '@typescript-eslint/parser'
 import js from '@eslint/js'
 import tsEslint from 'typescript-eslint'
-// import importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import'
 import * as cssPlugin from 'eslint-plugin-css'
 import unusedImports from 'eslint-plugin-unused-imports'
 import reactPlugin from 'eslint-plugin-react'
@@ -18,7 +18,7 @@ export default [
     },
   },
   js.configs.recommended,
-  // importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.recommended,
   ...tsEslint.configs.recommended,
   cssPlugin.configs['flat/standard'],
   // ...storybook.configs['flat/recommended'], //まだ実装されていない
