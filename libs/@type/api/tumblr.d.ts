@@ -85,8 +85,8 @@ export namespace Tumblr {
     short_url: string
     summary: string
     should_open_in_legacy: boolean
-    recommended_source: any
-    recommended_color: any
+    recommended_source: unknown
+    recommended_color: unknown
     note_count: number
     caption: string
     reblog: Reblog
@@ -144,7 +144,7 @@ export namespace Tumblr {
     avatar_shape: string
     background_color: string
     body_font: string
-    header_bounds: any
+    header_bounds: unknown
     header_image: string
     header_image_focused: string
     header_image_poster: string

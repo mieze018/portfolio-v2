@@ -1,34 +1,4 @@
-# portfolio as Artist - v2
-
-## アーキテクチャ
-
-このプロジェクトは **Atomic Design** + **CVA (class-variance-authority)** + **独自tw関数** をベースとしたコンポーネント設計を採用しています。
-
-### コンポーネント設計
-
-- **Atoms**: 最小単位のUIコンポーネント (Button, Input等)
-- **Molecules**: Atomsの組み合わせ (Header, Footer等)  
-- **Organisms**: MoleculesとAtomsの組み合わせ (ContactForm等)
-- **Layout**: ページ全体のレイアウト
-
-### スタイル管理
-
-- **tw関数** (`libs/component-factory.tsx`): CVAとforwardRefを統合した型安全なコンポーネントファクトリー
-- **cva (class-variance-authority)**: バリアントベースのクラス管理
-- **Tailwind CSS**: ユーティリティファーストCSS
-- **tailwind-merge**: クラス名の競合を安全に解決
-
-```tsx
-// 使用例
-export const Button = tw('button', cva('px-4 py-2 rounded', {
-  variants: {
-    variant: { 
-      primary: 'bg-blue-500 text-white',
-      secondary: 'bg-gray-500 text-white'
-    }
-  }
-}))
-```
+# portfolio v2
 
 ## セットアップ
 
@@ -75,6 +45,39 @@ export const Button = tw('button', cva('px-4 py-2 rounded', {
 - **Storybook** <https://storybook.js.org/docs/react/>
   - Chromatic <https://www.chromatic.com/>
     - メモ dependabot はフォークされた PR なのでシークレットキーを公開にしないと使えないので、UI に変更がある可能性のあるものは個別にローカルで`chromatic`コマンドを叩いてデプロイする
+
+#### アーキテクチャ
+
+**Atomic Design** + **CVA (class-variance-authority)** + **独自tw関数** をベースとしたコンポーネント設計を採用
+
+##### コンポーネント設計
+
+- **Atoms**: 最小単位のUIコンポーネント (Button, Input等)
+- **Molecules**: Atomsの組み合わせ (Header, Footer等)
+- **Organisms**: MoleculesとAtomsの組み合わせ (ContactForm等)
+- **Layout**: ページ全体のレイアウト
+
+##### スタイル管理
+
+- **tw関数** (`libs/component-factory.tsx`): CVAとforwardRefを統合した型安全なコンポーネントファクトリー
+- **cva (class-variance-authority)**: バリアントベースのクラス管理
+- **Tailwind CSS**: ユーティリティファーストCSS
+- **tailwind-merge**: クラス名の競合を安全に解決
+
+```tsx
+// 使用例
+export const Button = tw(
+  'button',
+  cva('px-4 py-2 rounded', {
+    variants: {
+      variant: {
+        primary: 'bg-blue-500 text-white',
+        secondary: 'bg-gray-500 text-white',
+      },
+    },
+  })
+)
+```
 
 ### スタイルのための資料
 
