@@ -4,19 +4,19 @@ import { useEffect } from 'react'
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
 
-type ContactEvent = {
-  action: 'submit_form'
-  category: 'contact'
-  label: string
-}
+// type ContactEvent = {
+//   action: 'submit_form'
+//   category: 'contact'
+//   label: string
+// }
 
-type ClickEvent = {
-  action: 'click'
-  category: 'other'
-  label: string
-}
+// type ClickEvent = {
+//   action: 'click'
+//   category: 'other'
+//   label: string
+// }
 
-type Event = ContactEvent | ClickEvent
+// type Event = ContactEvent | ClickEvent
 // IDが取得できない場合を想定する
 const existsGaId = GA_ID !== ''
 
