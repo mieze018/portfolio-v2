@@ -2,7 +2,7 @@ import { GoMail } from 'react-icons/go'
 import { IoMdPaperPlane } from 'react-icons/io'
 import { tw, cva } from 'libs/component-factory'
 
-import type { contactDataType } from 'pages/contact'
+import type { contactDataType } from 'app/contact/page'
 
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'

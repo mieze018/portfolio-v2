@@ -1,3 +1,5 @@
+'use client'
+
 import { Dialog, Transition } from '@headlessui/react'
 import { useAtomValue } from 'jotai'
 import { Fragment } from 'react'

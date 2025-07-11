@@ -1,6 +1,8 @@
+'use client'
+
 import { useAtomValue } from 'jotai'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { cva } from 'class-variance-authority'
 
 import { contentsWrapperState } from 'libs/states/atoms'
@@ -28,12 +30,12 @@ export const NavLinks = ({
     pathname: string
   }[]
 }) => {
-  const router = useRouter()
+  const pathname = usePathname()
   const contentsWrapper = useAtomValue(contentsWrapperState)
   return (
     <>
       {routes.map((route) => {
-        const isLinkToCurrentPath = router.pathname === route.pathname
+        const isLinkToCurrentPath = pathname === route.pathname
         /** コンテンツまでスクロールさせるかどうか */
         const isToScrollToContentWrapper = route.pathname === '/' || isLinkToCurrentPath
         return (

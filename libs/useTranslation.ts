@@ -1,17 +1,17 @@
 // 翻訳データのインポート
-import jaCommon from '../public/locales/ja/common.json'
-import enCommon from '../public/locales/en/common.json'
+// import jaCommon from '../public/locales/ja/common.json'
+// import enCommon from '../public/locales/en/common.json'
 
 // 翻訳データの型定義
-type TranslationKeys = keyof typeof jaCommon
+type TranslationKeys = string
 
 // 翻訳データのマップ
 const translations = {
   ja: {
-    common: jaCommon,
+    common: {} as Record<string, string>,
   },
   en: {
-    common: enCommon,
+    common: {} as Record<string, string>,
   },
 } as const
 

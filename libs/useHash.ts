@@ -1,5 +1,7 @@
-import { useRouter } from 'next/router'
-import { useCallback } from 'react'
+'use client'
+
+import { useRouter, usePathname } from 'next/navigation'
+import { useCallback, useEffect, useState } from 'react'
 
 // URL の # 以降の文字列を取り出すユーティリティ
 const extractHash = (url: string): string => url.split('#')[1] ?? ''
@@ -17,13 +19,24 @@ const extractHash = (url: string): string => url.split('#')[1] ?? ''
 
 export function useHash(): [string, (newHash: string) => void] {
   const router = useRouter()
-  const hash = extractHash(router.asPath)
+  const pathname = usePathname()
+  const [hash, setHashState] = useState('')
+
+  useEffect(() => {
+    // クライアントサイドでのみ実行
+    if (typeof window !== 'undefined') {
+      setHashState(extractHash(window.location.href))
+    }
+  }, [pathname])
+
   const setHash = useCallback(
     (newHash: string) => {
-      // ブラウザの履歴に残すならrouter.push, そうでなければrouter.replace
-      router.replace({ hash: newHash }, undefined, { shallow: true, scroll: false })
+      const newUrl = `${pathname}#${newHash}`
+      router.replace(newUrl, { scroll: false })
+      setHashState(newHash)
     },
-    [router]
+    [router, pathname]
   )
+
   return [hash, setHash]
 }

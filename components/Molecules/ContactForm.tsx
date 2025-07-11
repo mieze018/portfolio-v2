@@ -1,3 +1,5 @@
+'use client'
+
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react'

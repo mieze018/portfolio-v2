@@ -1,5 +1,4 @@
 import type { PageObject } from 'libs/@type/api/notion'
-import type { GetStaticProps, NextPage } from 'next'
 
 import { AboutContent } from 'components/Organisms/AboutContent'
 import { getDatabase } from 'libs/notion'
@@ -14,14 +13,7 @@ export type aboutDataType = {
   }
 }
 
-const About: NextPage<aboutDataType> = ({ fallbackData }) => {
-  if (!fallbackData) return <div>Loading...</div>
-  return <AboutContent fallbackData={fallbackData} />
-}
-
-export default About
-
-export const getStaticProps: GetStaticProps<aboutDataType> = async () => {
+async function getData() {
   const prizesDB = await getDatabase(prizesDBId, {
     sortProperty: 'date',
   })
@@ -33,16 +25,18 @@ export const getStaticProps: GetStaticProps<aboutDataType> = async () => {
     sortDirection: 'ascending',
   })
   const eventDB = await getDatabase(eventDBId)
-  const Data = {
+
+  return {
     prizes: prizesDB,
     workExperience: workExperienceDB,
     workExperienceGenre: workExperienceGenreDB,
     events: eventDB,
   }
+}
 
-  return {
-    props: {
-      fallbackData: Data,
-    },
-  }
+export default async function About() {
+  const fallbackData = await getData()
+
+  if (!fallbackData) return <div>Loading...</div>
+  return <AboutContent fallbackData={fallbackData} />
 }

@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router'
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 import { useEffect } from 'react'
 
@@ -39,20 +41,12 @@ const pageView = (path: string) => {
 
 /**ページ移管時にカウントする */
 export const usePageView = () => {
-  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
-    if (!existsGaId) return
-
-    const handleRouteChange = (path: string) => {
-      pageView(path)
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+    if (!existsGaId || !pathname) return
+    pageView(pathname)
+  }, [pathname])
 }
 /** gtag.jsを読み込む */
 export const GoogleAnalytics = () => (

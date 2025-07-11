@@ -48,7 +48,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Layout>
           <GoogleAnalytics />
+
+          {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
           <ContentsWrapperWithPath>{children}</ContentsWrapperWithPath>
+          {/* <ContentsWrapper $key={router.pathname}>
+            <Component {...pageProps} />
+          </ContentsWrapper> */}
           <Analytics />
         </Layout>
       </body>

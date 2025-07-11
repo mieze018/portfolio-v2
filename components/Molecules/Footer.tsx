@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { useTranslation } from 'libs/useTranslation'
 import { tw, cva } from 'libs/component-factory'

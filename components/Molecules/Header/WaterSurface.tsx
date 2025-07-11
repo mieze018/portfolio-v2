@@ -1,3 +1,5 @@
+'use client'
+
 import { tw, cva } from 'libs/component-factory'
 
 import type { scrollStatesType } from 'libs/useScrollState'

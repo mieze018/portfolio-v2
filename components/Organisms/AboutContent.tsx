@@ -1,6 +1,6 @@
 import { tw, cva } from 'libs/component-factory'
 
-import type { aboutDataType } from 'pages/about'
+import type { aboutDataType } from 'app/about/page'
 
 // import { EventHistory } from 'components/Molecules/About/EventHistory'
 import { Events } from 'components/Molecules/About/Events'

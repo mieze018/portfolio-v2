@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'motion/react'
 import { tw, cva } from 'libs/component-factory'
 

@@ -1,12 +1,14 @@
-import { useRouter } from 'next/router'
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
-export default function Custom404() {
+export default function NotFound() {
   const router = useRouter()
 
   useEffect(() => {
     router.replace('/')
-  })
+  }, [router])
 
   return null
 }

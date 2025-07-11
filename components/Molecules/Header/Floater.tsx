@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'motion/react'
 import { cva } from 'class-variance-authority'
 import { cn } from 'libs/tw-clsx-util'

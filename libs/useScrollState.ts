@@ -1,3 +1,5 @@
+'use client'
+
 import { useScroll } from 'motion/react'
 import { useAtomValue } from 'jotai'
 import { useState, useEffect } from 'react'
