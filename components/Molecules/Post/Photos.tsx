@@ -20,7 +20,14 @@ export const Photos = ({
         //最後の画像だけ表示するタグがついている場合、最後の画像でなければスキップ
         if (isShowOnlyLastPhoto && !isLastPhoto)
           return <React.Fragment key={photo.original_size.url}></React.Fragment>
-        return <Photo key={photo.original_size.url} photo={photo} isColumn={isColumn} />
+        return (
+          <Photo
+            key={photo.original_size.url}
+            photo={photo}
+            isColumn={isColumn}
+            priority={i === 0 ? true : false}
+          />
+        )
       })}
     </>
   )

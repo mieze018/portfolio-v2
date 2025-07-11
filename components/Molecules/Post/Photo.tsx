@@ -35,7 +35,15 @@ const imageVariants = cva('mx-auto cursor-pointer', {
   },
 })
 
-export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
+export const Photo = ({
+  photo,
+  isColumn,
+  priority,
+}: {
+  photo: Tumblr.Photo
+  isColumn: boolean
+  priority: boolean
+}) => {
   const setModalContent = useSetAtom(modalContentState)
   const lightCyan =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
@@ -54,6 +62,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
               className={cn(imageVariants({ closeup: true }))}
               placeholder="blur"
               blurDataURL={lightCyan}
+              priority={false}
             />
           )
         }}
@@ -65,6 +74,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
           height={photo.original_size.height}
           width={photo.original_size.width}
           className={cn(imageVariants({ closeup: false }))}
+          priority={priority}
         />
       </div>
     </Link>
