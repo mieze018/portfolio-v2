@@ -2785,26 +2785,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formspree/core@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@formspree/core@npm:3.0.1"
+"@formspree/core@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@formspree/core@npm:4.0.0"
   dependencies:
-    "@stripe/stripe-js": "npm:^1.35.0"
-  checksum: 186f367f089ec7fb197747af8eecf006bd307a65dc2a4a113b18de86e25c00c0bc82bd776dd95a0bd9907e15fa57cdfefc2540305125f7af822d0af4c8a41754
+    "@stripe/stripe-js": ^5.7.0
+  checksum: 33495daf5fd4feaabaf3b4ddee8f8dda17ad251b5b953ffc31d85afe9a4a9a73d7a31a8e9f32c6dec8ca1ab44450586d7ff0721ad1bd9d091ccd2ee3273d4dce
   languageName: node
   linkType: hard
 
-"@formspree/react@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "@formspree/react@npm:2.5.1"
+"@formspree/react@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@formspree/react@npm:3.0.0"
   dependencies:
-    "@formspree/core": "npm:^3.0.1"
-    "@stripe/react-stripe-js": "npm:^1.7.1"
-    "@stripe/stripe-js": "npm:^1.35.0"
+    "@formspree/core": ^4.0.0
+    "@stripe/react-stripe-js": ^3.1.1
+    "@stripe/stripe-js": ^5.7.0
   peerDependencies:
-    react: ^16.8 || ^17.0 || ^18.0
-    react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: a1aa2f1da7d8508aabb715b5780a35675bf9bfc823ad83ff29fe9bac031ba7302f3c02aaf3d0d8c49e219faeb874c25f5c8c4570c92c5328a690285cc3a0ee15
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+  checksum: 7c07db605fbde31fec9c3acfe4e7ad848f963897c97528318f92170ce49a3b6ed0796f001e0a74fa077d5031b5f44d8750904fcbc92a1ce422d9c73301a268e1
   languageName: node
   linkType: hard
 
@@ -3707,23 +3707,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stripe/react-stripe-js@npm:^1.7.1":
-  version: 1.16.5
-  resolution: "@stripe/react-stripe-js@npm:1.16.5"
+"@stripe/react-stripe-js@npm:^3.1.1":
+  version: 3.7.0
+  resolution: "@stripe/react-stripe-js@npm:3.7.0"
   dependencies:
-    prop-types: "npm:^15.7.2"
+    prop-types: ^15.7.2
   peerDependencies:
-    "@stripe/stripe-js": ^1.44.1
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: fc43248af6fd1f9825463eeb23183b586635048e544c7fa076ee59e85439e7864afaca4adee2a62a9d1cf9a72ce7eaf405dbeffec9ff34e6e0464be0cc92c6a8
+    "@stripe/stripe-js": ">=1.44.1 <8.0.0"
+    react: ">=16.8.0 <20.0.0"
+    react-dom: ">=16.8.0 <20.0.0"
+  checksum: 6546460a4dee52a941ee6db8c2cdeed32609ecfd8f6520399427d020fec1c0653a10196230649c580f56c05cf1f4564470e9124e9f2cf5f9835de009e81bbcc6
   languageName: node
   linkType: hard
 
-"@stripe/stripe-js@npm:^1.35.0":
-  version: 1.54.0
-  resolution: "@stripe/stripe-js@npm:1.54.0"
-  checksum: b5108ac03e367212d584fe5fde2fe56909c968eb04f616fcfd983378bcd0903209e40fd37866cbea1337d231ac9291419d600b5146334c6bd49d3b6bb71a84f2
+"@stripe/stripe-js@npm:^5.7.0":
+  version: 5.10.0
+  resolution: "@stripe/stripe-js@npm:5.10.0"
+  checksum: e3e0025dae8b406eec981fb41100dcf2d30bfaec63411001e1af78b0495497ca18f3a95869e6ae0346264072fe763a752f5d7424af9378ff441ea85eb572fcd3
   languageName: node
   linkType: hard
 
@@ -12072,7 +12072,7 @@ __metadata:
   dependencies:
     "@chromatic-com/storybook": ^4.0.0
     "@eslint/js": ^9.11.1
-    "@formspree/react": ^2.5.1
+    "@formspree/react": ^3.0.0
     "@headlessui/react": ^1.7.17
     "@notionhq/client": ^3.1.3
     "@playwright/test": ^1.40.1
