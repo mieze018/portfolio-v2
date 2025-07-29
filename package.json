@@ -46,7 +46,7 @@
     "motion": "^12.18.1",
     "next": "15.3.3",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react-dom": "19.1.1",
     "react-icons": "^5.3.0",
     "react-textarea-autosize": "^8.5.3",
     "swr": "^2.2.4",
@@ -66,7 +66,7 @@
     "@types/gtag.js": "^0.0.20",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@types/react-dom": "^19.1.7",
     "autoprefixer": "^10.4.16",
     "chromatic": "^13.0.1",
     "cspell": "latest",
@@ -96,6 +96,6 @@
   },
   "resolutions": {
     "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6"
+    "@types/react-dom": "19.1.7"
   }
 }
