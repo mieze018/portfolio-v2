@@ -10,6 +10,10 @@ import nextPlugin from '@next/eslint-plugin-next'
 import eslintConfigPrettier from 'eslint-config-prettier'
 // import storybook from 'eslint-plugin-storybook' // v9でバグってる？
 
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+defineConfig([globalIgnores(['.next/**'])])
+
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
