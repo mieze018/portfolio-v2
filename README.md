@@ -96,10 +96,24 @@ export const Button = tw(
 - ts-unused-exports <https://github.com/pzavolinsky/ts-unused-exports>
 - husky <https://typicode.github.io/husky/#/>
 
-### テスト
+### テスト / 品質戦略
 
-- Playwright <https://playwright.dev/docs/intro>
-- Cypress <https://docs.cypress.io/>
+- Playwright <https://playwright.dev/docs/intro> (E2E 主要ユーザーフロー)
+- Storybook Interaction + Chromatic (UI/VRT)
+- Vitest (ユーティリティ/フック単体テスト予定)
+- Husky Hooks (pre-commit: lint-staged / pre-push: typecheck + unit)
+
+#### 要件トレーサビリティ (@Req タグ運用)
+テストコード/Story から仕様 ID へリンクするため下記形式を採用：
+
+| 対象 | 記法例 |
+|------|--------|
+| Playwright test 名 | `test('@Req WorksListingFiltering-FR-002 personal filter', async ({ page }) => { ... })` |
+| Vitest it 名 | `it('@Req LocalizationBilingualText-FR-001 returns JA text', () => { ... })` |
+| Storybook story parameters | `parameters: { docs: { description: { story: 'Implements: MediaModalImagePresentation-FR-001' }}}` |
+| コメントタグ (任意) | `// @Req NavigationAndFooter-FR-002` |
+
+将来 CI で `grep -R "@Req"` により仕様未参照/未テスト ID 検出を自動化予定。
 
 ### サーバとのやりとり
 
