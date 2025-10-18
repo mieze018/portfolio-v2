@@ -36,7 +36,7 @@
 | FR-003      | Vitest                | libs/\*_/**tests**/_.test.ts    |
 | FR-004      | Chromatic VRT         | Chromatic build                 |
 | FR-005      | Husky Hook            | .husky/pre-commit / pre-push    |
-| FR-006      | CI Pipeline           | .github/workflows/*.yml|
+| FR-006      | CI Pipeline           | .github/workflows/\*.yml        |
 
 ## @Req Tagging Guidelines (Preview)
 
