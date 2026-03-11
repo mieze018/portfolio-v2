@@ -14,7 +14,7 @@ import { mail } from 'pages/api/basics'
 const Wrapper = tw(
   'div',
   cva(
-    'px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-24 grid gap-12 text-left mx-auto gap-y-16'
+    'px-5 text-xs leading-7 md:text-sm max-w-(--breakpoint-sm) mb-24 grid gap-12 text-left mx-auto gap-y-16'
   )
 )
 const MailWrapper = tw(
