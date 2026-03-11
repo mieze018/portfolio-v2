@@ -10,12 +10,17 @@ import nextPlugin from '@next/eslint-plugin-next'
 import eslintConfigPrettier from 'eslint-config-prettier'
 // import storybook from 'eslint-plugin-storybook' // v9でバグってる？
 
-import { defineConfig, globalIgnores } from 'eslint/config'
-
-defineConfig([globalIgnores(['.next/**'])])
-
+// Why: globalIgnores は export するオブジェクトに含めないと無効
+// 旧: defineConfig([globalIgnores(['.next/**'])]) は dead code だった
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  {
+    // Why: .next/ は Next.js が自動生成するファイル群で、型定義に {} / any を含むため
+    //      ESLint の型チェックルールに抵触するが修正不可。生成ファイルはlint対象外とする
+    // Why: next-env.d.ts は Next.js が生成し triple-slash reference を使うため
+    //      @typescript-eslint/triple-slash-reference に抵触するが修正不可
+    ignores: ['.next/**', 'next-env.d.ts'],
+  },
   {
     languageOptions: {
       parser: typescriptEslintParser,
