@@ -30,8 +30,9 @@ export const WorkExperience = ({
             key={genre.id}
             genre={genre}
             works={workExperience.filter((work) => {
-              const genreId = getProperties(work, { name: 'genre', type: 'relation' }).id
-              return genreId === genre.id
+              // Why: relation が空の場合 getProperties は undefined を返すため optional chaining で安全にアクセス
+              const genreRelation = getProperties(work, { name: 'genre', type: 'relation' })
+              return genreRelation?.id === genre.id
             })}
           />
         ))}

@@ -1,9 +1,21 @@
 import { Client } from '@notionhq/client'
 
-import type { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
+import type { QueryDataSourceParameters } from '@notionhq/client/build/src/api-endpoints'
 import type { PageObject, propertiesTypes } from 'libs/@type/api/notion'
 
 const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN })
+
+// Why: Notion API v2025-09-03 で database と data_source が分離された
+// database_id から data_source_id を解決するヘルパー
+// Trade-off: ビルド時に1DB毎に追加APIコールが発生するが、getStaticPropsのみで使用するため許容範囲
+const resolveDataSourceId = async (databaseId: string): Promise<string> => {
+  const database = await notion.databases.retrieve({ database_id: databaseId })
+  if (!('data_sources' in database) || database.data_sources.length === 0) {
+    throw new Error(`Database ${databaseId} has no data sources`)
+  }
+  return database.data_sources[0].id
+}
+
 type getDatabaseOptions = {
   sortProperty?: string
   sortDirection?: 'ascending' | 'descending'
@@ -12,8 +24,10 @@ export const getDatabase = async (
   databaseId: string,
   { sortProperty, sortDirection = 'descending' }: getDatabaseOptions = {}
 ) => {
+  const dataSourceId = await resolveDataSourceId(databaseId)
+
   //オプションでソート順を指定できる
-  const sorts: QueryDatabaseParameters['sorts'] = sortProperty
+  const sorts: QueryDataSourceParameters['sorts'] = sortProperty
     ? [
         {
           property: sortProperty || '',
@@ -27,8 +41,8 @@ export const getDatabase = async (
         },
       ]
 
-  const response = await notion.databases.query({
-    database_id: databaseId,
+  const response = await notion.dataSources.query({
+    data_source_id: dataSourceId,
     sorts: sorts,
   })
   return response.results
