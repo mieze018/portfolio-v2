@@ -7,8 +7,9 @@ yarn lint
 npx playwright install
 # yarn cy:test
 
-yarn upgrade:linter
-yarn upgrade:types
-# https://github.com/storybookjs/storybook/releases
+# Why: push時の自動アップグレードはパッケージの意図しない升級を招くため無効化
+# Alternative: 依存関係の更新はrenovate/dependabotまたは手動で管理する
+# yarn upgrade:linter
+# yarn upgrade:types
 # yarn upgrade:storybook
-yarn up chromatic
+# yarn up chromatic
