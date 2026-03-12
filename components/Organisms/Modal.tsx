@@ -1,6 +1,5 @@
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
 import { useAtomValue } from 'jotai'
-import { Fragment } from 'react'
 import { tw, cva } from 'libs/component-factory'
 import { cn } from 'libs/tw-clsx-util'
 
@@ -23,33 +22,30 @@ export const Modal = () => {
   const isShow = !!(hash === hashCloseup && modalContent)
 
   return (
-    <Transition show={isShow} as={Fragment}>
-      <Dialog open={isShow} onClose={() => setHash('')} className={cn(dialogVariants())}>
-        <Transition.Child
-          as={Fragment}
-          enter=""
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transition duration-500"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Dialog.Overlay className={cn(dialogOverlayVariants())} />
-        </Transition.Child>
-        <Transition.Child
-          as={Fragment}
-          enter="transition duration-500"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave=""
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Dialog.Panel className={cn(dialogPanelVariants())} onClick={() => setHash('')}>
-            <ContentWrapper>{modalContent}</ContentWrapper>
-          </Dialog.Panel>
-        </Transition.Child>
-      </Dialog>
-    </Transition>
+    // Why: v2では外側のTransitionラッパーが不要になり、Dialog自体がopen propでトランジションを管理する
+    <Dialog open={isShow} onClose={() => setHash('')} className={cn(dialogVariants())}>
+      <TransitionChild
+        enter=""
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition duration-500"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <DialogBackdrop className={cn(dialogOverlayVariants())} />
+      </TransitionChild>
+      <TransitionChild
+        enter="transition duration-500"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave=""
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <DialogPanel className={cn(dialogPanelVariants())} onClick={() => setHash('')}>
+          <ContentWrapper>{modalContent}</ContentWrapper>
+        </DialogPanel>
+      </TransitionChild>
+    </Dialog>
   )
 }
