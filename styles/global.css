@@ -1,22 +1,119 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-primary: #888;
+  --color-secondary: #797979;
+  --color-darkest: #222;
+  --color-main: #ff7f00;
+  --color-Water: #ebf4fa;
+  --color-Snow: #fffafa;
+  --color-WhiteSmoke: #f5f5f5;
+  --color-GhostWhite: #f8f8ff;
+  --color-AliceBlue: #f0f8ff;
+  --color-MintCream: #f5fffa;
+  --color-Azure: #f0ffff;
+  --color-HoneyDew: #f0fff0;
+  --color-LightCyan: #e0ffff;
+
+  --font-*: initial;
+  --font-serif: Baskerville Old Face, Baskerville, Times New Roman, Times, Georgia, Palatino,
+    Palatino Linotype, HGS明朝E, ヒラギノ明朝 Pro W3, Hiragino Mincho Pro, ＭＳ Ｐ明朝, 游明朝,
+    YuMincho, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, MS PMincho, serif;
+  --font-sans: Merriweather, serif;
+
+  --spacing-square: calc((92vh + 92vw) / 2);
+  --spacing-g-61vw: 61.8vw;
+  --spacing-g-61vh: 61.8vh;
+  --spacing-g-38vw: 38.2vw;
+  --spacing-g-38vh: 38.2vh;
+  --spacing-g-23vw: 23.6vw;
+  --spacing-g-23vh: 23.6vh;
+  --spacing-g-14vw: 14.6vw;
+  --spacing-g-14vh: 14.6vh;
+  --spacing-g-85: 85.4134%;
+  --spacing-g-76: 76.3971%;
+  --spacing-g-100-38: 61.8076%;
+  --spacing-g-61: 61.8033%;
+  --spacing-g-38: 38.1924%;
+  --spacing-g-23: 23.6029032%;
+  --spacing-g-14: 14.58659418%;
+  --spacing-contentWrapperTop: 23vh;
+  --spacing-contentWrapperTopPadding: 38vh;
+
+  --min-height-g-61vh: 61.8vh;
+  --min-height-g-38vh: 38.2vh;
+  --min-height-g-23vh: 23.6vh;
+
+  --min-width-screen: 100vw;
+  --min-width-g-61vh: 61.8vh;
+
+  --transition-property-header-transition-property: all;
+  --transition-property-header-transition-timing-function: ease-in-out;
+  --transition-property-header-transition-duration: 2000ms;
+
+  --tracking-title: 0.2em;
+
+  --blur-1px: 1px;
+
+  --breakpoint-xs: 375px;
+
+  --background-image-body: linear-gradient(
+    to top,
+    WhiteSmoke 0%,
+    #ebf4fa 61.8%,
+    AliceBlue 76.4%,
+    azure 85.4%,
+    MintCream 100%
+  );
+  --background-image-modal: linear-gradient(
+    to bottom,
+    WhiteSmoke 0%,
+    #ebf4fa 61.8%,
+    AliceBlue 85.4%,
+    GhostWhite 100%
+  );
+}
 @theme inline {
   --font-jp: var(--font-noto-serif-jp);
   --font-en: var(--font-cormorant-garamond);
 }
-@layer base {
-  :root {
-    --color-main: 255 124 0;
-  }
 
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility -z-1 {
+  z-index: -1;
+}
+
+@layer base {
   body {
     /* @apply scroll-smooth; //ページ移管時にスムーズにスクロールして欲しくない */
     @apply text-sm leading-normal tracking-wider text-primary accent-main/60 caret-main/60 md:text-base;
     text-size-adjust: 100%;
     text-shadow:
       0 1px 0 rgb(255 255 255 / 38%),
-      0 2px 0 rgb(var(--color-main) / 16%);
+      /* Why: v4 では --color-main が hex (#ff7f00) になったため、v3 の rgb(var()/%) 構文は使えない
+         color-mix を使って opacity を表現する */
+      0 2px 0 color-mix(in srgb, var(--color-main) 16%, transparent);
   }
 
   body::before {
@@ -37,7 +134,7 @@
     }
     &:hover,
     &:active {
-      @apply opacity-100 text-secondary blur-0 underline;
+      @apply opacity-100 text-secondary blur-none underline;
     }
   }
 
@@ -47,9 +144,5 @@
 
   li {
     @apply m-0 mr-[0.556em];
-  }
-
-  .-z-1 {
-    z-index: -1;
   }
 }

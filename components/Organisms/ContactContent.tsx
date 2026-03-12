@@ -14,14 +14,23 @@ import { mail } from 'pages/api/basics'
 const Wrapper = tw(
   'div',
   cva(
-    'px-5 text-xs leading-7 md:text-sm max-w-screen-sm mb-24 grid gap-12 text-left mx-auto gap-y-16'
+    // Why: v4 では leading-7 が --tw-leading CSS変数として全子孫にカスケードするため、
+    //      md:text-sm が v3 の様に line-height: 1.25rem を上書きしない。
+    //      md:leading-5 を明示して v3 の挙動 (text-sm の既定行高 1.25rem) を復元する。
+    'px-5 text-xs leading-7 md:text-sm md:leading-5 max-w-(--breakpoint-sm) mb-24 grid gap-12 text-left mx-auto gap-y-16'
   )
 )
 const MailWrapper = tw(
   'div',
-  cva('text-lg select-all mb-4 m-auto flex items-center justify-center')
+  // Why: 親の md:leading-5 が --tw-leading=1.25rem にカスケードするが、
+  //      text-lg の v3 既定行高は 1.75rem だったので md:leading-7 で明示的に復元する。
+  cva('text-lg md:leading-7 select-all mb-4 m-auto flex items-center justify-center')
 )
-const IconWrapper = tw('div', cva('py-4 text-xl m-auto flex items-center justify-center'))
+const IconWrapper = tw(
+  'div',
+  // Why: text-xl の v3 既定行高 1.75rem を md: で明示的に保持する (MailWrapper と同様の理由)。
+  cva('py-4 text-xl md:leading-7 m-auto flex items-center justify-center')
+)
 
 export const ContactContent = ({ fallbackData, formId }: contactDataType & { formId: string }) => {
   const { workAcceptanceStatus } = fallbackData
