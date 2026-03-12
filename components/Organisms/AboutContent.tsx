@@ -16,7 +16,9 @@ const Wrapper = tw(
   // Why: v4 では leading-7 が --tw-leading CSS変数として全子孫にカスケードするため、
   //      md:text-sm が v3 の様に line-height: 1.25rem を上書きしない。
   //      md:leading-5 を明示して v3 の挙動 (text-sm の既定行高 1.25rem) を復元する。
-  cva('px-5 text-xs leading-7 md:text-sm md:leading-5 mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16')
+  cva(
+    'px-5 text-xs leading-7 md:text-sm md:leading-5 mb-20 grid gap-12 text-left w-fit mt-14 mx-auto gap-y-16'
+  )
 )
 
 export const AboutContent = ({ fallbackData }: aboutDataType) => {

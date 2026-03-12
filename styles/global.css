@@ -113,7 +113,7 @@
       0 1px 0 rgb(255 255 255 / 38%),
       /* Why: v4 では --color-main が hex (#ff7f00) になったため、v3 の rgb(var()/%) 構文は使えない
          color-mix を使って opacity を表現する */
-      0 2px 0 color-mix(in srgb, var(--color-main) 16%, transparent);
+        0 2px 0 color-mix(in srgb, var(--color-main) 16%, transparent);
   }
 
   body::before {
