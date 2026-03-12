@@ -22,10 +22,9 @@ export const ContentsWrapper = ({
 
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
-  // Why: 初回マウント（直接URLアクセス）とページ遷移でスクロール制御を分離し、
-  // 複数のscrollIntoViewが競合するレース状態を防ぐ。
-  // - 初回マウント: このuseEffect内でスクロール（onExitCompleteは発火しないため）
-  // - ページ遷移: onExitCompleteのみがスクロールを担当
+  // Why: onExitComplete発火時にはAnimatePresenceが古いmotion.sectionをアンマウント済みで
+  // refが無効になる場合がある。requestAnimationFrameで1フレーム待つことで、
+  // 新しいmotion.sectionがマウントされrefが有効になった後にスクロールする。
   const isInitialMount = useRef(true)
 
   useEffect(() => {
@@ -43,9 +42,11 @@ export const ContentsWrapper = ({
       <AnimatePresence
         mode="wait"
         onExitComplete={() => {
-          //現在のスクロール位置がコンテンツラッパーより下ならコンテンツラッパーの上部までスクロール
-          // if (window.scrollY > 0) ref.current?.scrollIntoView(true)
-          ref.current?.scrollIntoView(true)
+          // Why: onExitComplete時点ではrefが無効な場合があるため、
+          // 次のフレームまで待って新しい要素のマウントを確実にする
+          requestAnimationFrame(() => {
+            ref.current?.scrollIntoView(true)
+          })
         }}
       >
         <motion.section
