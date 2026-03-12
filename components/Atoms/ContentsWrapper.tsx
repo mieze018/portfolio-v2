@@ -22,11 +22,19 @@ export const ContentsWrapper = ({
 
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
+  // Why: 初回マウント（直接URLアクセス）とページ遷移でスクロール制御を分離し、
+  // 複数のscrollIntoViewが競合するレース状態を防ぐ。
+  // - 初回マウント: このuseEffect内でスクロール（onExitCompleteは発火しないため）
+  // - ページ遷移: onExitCompleteのみがスクロールを担当
+  const isInitialMount = useRef(true)
 
   useEffect(() => {
     setContentsWrapper(ref.current)
-    if ($key !== '/' && ref.current?.offsetTop)
-      setTimeout(() => ref.current?.scrollIntoView(true), 10)
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      if ($key !== '/' && ref.current?.offsetTop)
+        setTimeout(() => ref.current?.scrollIntoView(true), 10)
+    }
   }, [setContentsWrapper, ref, $key])
 
   return (
