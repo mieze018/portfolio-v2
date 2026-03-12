@@ -4,5 +4,5 @@
   "cleanUrls": true,
   "devCommand": "yarn dev",
   "framework": "nextjs",
-  "installCommand": "corepack enable && yarn install"
+  "installCommand": "corepack yarn install"
 }
