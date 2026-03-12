@@ -13,6 +13,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+      - name: Enable Corepack (Yarn 4)
+        # Why: cypress-io/github-action は内部で yarn を呼ぶが corepack を有効化しないため、
+        #      事前に有効化して packageManager フィールドから Yarn 4 を使わせる。
+        run: corepack enable
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v4

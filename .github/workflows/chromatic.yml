@@ -14,6 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.16.0
+      - name: Enable Corepack (Yarn 4)
+        # Why: actions/setup-node は corepack を自動有効化しないため明示的に実行する。
+        #      packageManager フィールドと組み合わせて Yarn 4 を CI で使用するために必要。
+        run: corepack enable
       - name: Install dependencies
         # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
         run: yarn
