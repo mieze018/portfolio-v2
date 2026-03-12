@@ -12629,7 +12629,7 @@ __metadata:
     tailwind-merge: "npm:^3.3.1"
     tailwindcss: "npm:^4.2.1"
     ts-prune: "npm:^0.10.3"
-    ts-unused-exports: "npm:^10.0.1"
+    ts-unused-exports: "npm:^11.0.1"
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.34.1"
   languageName: unknown
@@ -14968,9 +14968,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-unused-exports@npm:^10.0.1":
-  version: 10.0.1
-  resolution: "ts-unused-exports@npm:10.0.1"
+"ts-unused-exports@npm:^11.0.1":
+  version: 11.0.1
+  resolution: "ts-unused-exports@npm:11.0.1"
   dependencies:
     chalk: "npm:^4.0.0"
     tsconfig-paths: "npm:^3.9.0"
@@ -14981,7 +14981,7 @@ __metadata:
       optional: false
   bin:
     ts-unused-exports: bin/ts-unused-exports
-  checksum: 8a8a42dbe03837cd54846b087e8385f97f2a9a1f222863b656a718bd7198bf3792b4e3872e6be6f96cfe7395e65e27edb4c20bac2ef6458ba7ce61aa2514a8df
+  checksum: 1859501c7cdd5302971890b8d3ddbabece84b166b88fc36b0c221fa3f4baf3226f3d0ee95f00c1c20ec1556296483fcbdf17b82a344f861b41b8b2b2d31eb05d
   languageName: node
   linkType: hard
 
