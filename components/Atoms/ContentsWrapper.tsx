@@ -22,11 +22,18 @@ export const ContentsWrapper = ({
 
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
+  // Why: onExitComplete発火時にはAnimatePresenceが古いmotion.sectionをアンマウント済みで
+  // refが無効になる場合がある。requestAnimationFrameで1フレーム待つことで、
+  // 新しいmotion.sectionがマウントされrefが有効になった後にスクロールする。
+  const isInitialMount = useRef(true)
 
   useEffect(() => {
     setContentsWrapper(ref.current)
-    if ($key !== '/' && ref.current?.offsetTop)
-      setTimeout(() => ref.current?.scrollIntoView(true), 10)
+    if (isInitialMount.current) {
+      isInitialMount.current = false
+      if ($key !== '/' && ref.current?.offsetTop)
+        setTimeout(() => ref.current?.scrollIntoView(true), 10)
+    }
   }, [setContentsWrapper, ref, $key])
 
   return (
@@ -35,9 +42,11 @@ export const ContentsWrapper = ({
       <AnimatePresence
         mode="wait"
         onExitComplete={() => {
-          //現在のスクロール位置がコンテンツラッパーより下ならコンテンツラッパーの上部までスクロール
-          // if (window.scrollY > 0) ref.current?.scrollIntoView(true)
-          ref.current?.scrollIntoView(true)
+          // Why: onExitComplete時点ではrefが無効な場合があるため、
+          // 次のフレームまで待って新しい要素のマウントを確実にする
+          requestAnimationFrame(() => {
+            ref.current?.scrollIntoView(true)
+          })
         }}
       >
         <motion.section
