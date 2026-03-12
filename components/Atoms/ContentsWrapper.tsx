@@ -22,9 +22,8 @@ export const ContentsWrapper = ({
 
   const ref = useRef<HTMLElement>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
-  // Why: onExitComplete発火時にはAnimatePresenceが古いmotion.sectionをアンマウント済みで
-  // refが無効になる場合がある。requestAnimationFrameで1フレーム待つことで、
-  // 新しいmotion.sectionがマウントされrefが有効になった後にスクロールする。
+  // Why: 初回マウント時のみ `setTimeout(scrollIntoView)` を実行するためのガード。
+  // 2回目以降のエフェクト実行時には、自動スクロールを抑止する意図。
   const isInitialMount = useRef(true)
 
   useEffect(() => {
