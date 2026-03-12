@@ -4799,12 +4799,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@vercel/analytics@npm:1.1.1"
-  dependencies:
-    server-only: "npm:^0.0.1"
-  checksum: fece944678360085a5deaea3afdade16cab67097dca6585e02a1c4c67ac3ba91b8e0bb848b7ec686b87757aad763df5bae41ce103bdc16c6e586b9390d0b4c11
+"@vercel/analytics@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@vercel/analytics@npm:2.0.0"
+  peerDependencies:
+    "@remix-run/react": ^2
+    "@sveltejs/kit": ^1 || ^2
+    next: ">= 13"
+    nuxt: ">= 3"
+    react: ^18 || ^19 || ^19.0.0-rc
+    svelte: ">= 4"
+    vue: ^3
+    vue-router: ^4
+  peerDependenciesMeta:
+    "@remix-run/react":
+      optional: true
+    "@sveltejs/kit":
+      optional: true
+    next:
+      optional: true
+    react:
+      optional: true
+    svelte:
+      optional: true
+    vue:
+      optional: true
+    vue-router:
+      optional: true
+  checksum: fad69b26ab2f9d2cb95dda69f26890764e098664b0567868ca44e537ff745c1a7a775ae294358013da4e7502fa4f68bd91b751a40da75cc80e0fe5978f9361cf
   languageName: node
   linkType: hard
 
@@ -12550,7 +12572,7 @@ __metadata:
     "@types/node": "npm:^24.0.3"
     "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
-    "@vercel/analytics": "npm:^1.1.1"
+    "@vercel/analytics": "npm:^2.0.0"
     autoprefixer: "npm:^10.4.16"
     chromatic: "npm:^15.2.0"
     class-variance-authority: "npm:^0.7.1"
@@ -13731,13 +13753,6 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 7a24cffcaa13f53c09ce55e05efe25cd41328730b2308678624f8b9f5fc3093fc4d189f47950f0b811ff8f3c3039c24a2c36717ba7961615c682045bf03e1dda
-  languageName: node
-  linkType: hard
-
-"server-only@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "server-only@npm:0.0.1"
-  checksum: c432348956641ea3f460af8dc3765f3a1bdbcf7a1e0205b0756d868e6e6fe8934cdee6bff68401a1dd49ba4a831c75916517a877446d54b334f7de36fa273e53
   languageName: node
   linkType: hard
 
