@@ -69,7 +69,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.16",
-    "chromatic": "^13.0.1",
+    "chromatic": "^15.2.0",
     "cspell": "latest",
     "cypress": "^14.0.3",
     "eslint": "^9.29.0",
