@@ -8832,9 +8832,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-css@npm:^0.11.0":
-  version: 0.11.1
-  resolution: "eslint-plugin-css@npm:0.11.1"
+"eslint-plugin-css@npm:0.12.0":
+  version: 0.12.0
+  resolution: "eslint-plugin-css@npm:0.12.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.3.0"
     colord: "npm:^2.9.1"
@@ -8843,7 +8843,7 @@ __metadata:
     postcss-value-parser: "npm:^4.1.0"
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: 59f7afd966abdaae5a8674d6ce17728a5da5df13cba55d05999eab54e225837868c5c035ce7bce9668aba3f2b189605e74c4f9e8aef32ab9758fd89b5c55d135
+  checksum: 1c61e2f37634ba309ad3a8d573c3cf733a85bfa323765bb10a22030315b2482b080ab8c6247e2bb31f204964fff0a1a00498af652497ddb28abdca9188b94f41
   languageName: node
   linkType: hard
 
@@ -13301,7 +13301,7 @@ __metadata:
     eslint: "npm:^10.0.3"
     eslint-config-next: "npm:^16.1.6"
     eslint-config-prettier: "npm:^10.1.5"
-    eslint-plugin-css: "npm:^0.11.0"
+    eslint-plugin-css: "npm:0.12.0"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-storybook: "npm:^10.2.17"
     eslint-plugin-unused-imports: "npm:^4.1.4"
