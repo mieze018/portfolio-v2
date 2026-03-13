@@ -1,7 +1,7 @@
 // vitest.config.ts
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
-import path from 'path'
+import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
   plugins: [react()],
@@ -16,8 +16,9 @@ export default defineConfig({
   resolve: {
     alias: {
       // Why: tsconfig.json の baseUrl: "./" に合わせたパスエイリアス
-      libs: path.resolve(__dirname, './libs'),
-      components: path.resolve(__dirname, './components'),
+      // ESM 環境では __dirname が使えないため import.meta.url から解決
+      libs: fileURLToPath(new URL('./libs', import.meta.url)),
+      components: fileURLToPath(new URL('./components', import.meta.url)),
     },
   },
 })

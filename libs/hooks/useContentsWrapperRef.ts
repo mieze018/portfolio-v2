@@ -34,6 +34,9 @@ export const useContentsWrapperRef = (routeKey: string) => {
       if (timeoutId !== null) {
         clearTimeout(timeoutId)
       }
+      // Why: アンマウント時に古い DOM 参照が atom に残ると、
+      // NavLinks / useScrollState が無効な要素を参照し続ける。
+      setContentsWrapper(null)
     }
   }, [setContentsWrapper, ref, routeKey])
 

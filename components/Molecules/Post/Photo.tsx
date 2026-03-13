@@ -49,17 +49,14 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
     // useModalControl.open() が setHash('closeup') を内部で行うため、
     // <Link> と open() の二重ナビゲーションが発生し "Cancel rendering route" エラーになっていた。
     // open() にハッシュ管理を一本化し、<Link> を除去。
-    <div
-      className={flexClasses({ isColumn })}
-      role="button"
-      tabIndex={0}
+    <button
+      type="button"
+      className={cn(
+        flexClasses({ isColumn }),
+        'appearance-none border-none bg-transparent p-0 block'
+      )}
+      aria-label={`写真を拡大表示: ${photo.caption || '画像'}`}
       onClick={handleOpenPhoto}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          handleOpenPhoto()
-        }
-      }}
     >
       <Image
         src={photo.original_size.url}
@@ -69,6 +66,6 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
         width={photo.original_size.width}
         className={cn(imageVariants({ closeup: false }))}
       />
-    </div>
+    </button>
   )
 }
