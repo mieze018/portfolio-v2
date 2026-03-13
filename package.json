@@ -22,7 +22,9 @@
     "upgrade:linter": "yarn up 'eslint*'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
     "upgrade:storybook": "npx storybook@latest upgrade",
-    "create-stories": "node scripts/create-stories.mjs"
+    "create-stories": "node scripts/create-stories.mjs",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -65,9 +67,11 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@types/gtag.js": "^0.0.20",
+    "@types/jsdom": "^28",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.0",
     "autoprefixer": "^10.4.16",
     "chromatic": "^15.2.0",
     "cspell": "latest",
@@ -80,6 +84,7 @@
     "eslint-plugin-storybook": "^10.2.17",
     "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^9.1.6",
+    "jsdom": "^28.1.0",
     "lint-staged": "^16.3.3",
     "postcss": "^8.4.34",
     "prettier": "^3.1.1",
@@ -89,7 +94,8 @@
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^11.0.1",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1"
+    "typescript-eslint": "^8.34.1",
+    "vitest": "^4.1.0"
   },
   "packageManager": "yarn@4.0.2",
   "volta": {
