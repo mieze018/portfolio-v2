@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { cva } from 'libs/component-factory'
 import { cn } from 'libs/tw-clsx-util'
 
@@ -37,29 +36,42 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
   const { open } = useModalControl()
 
   return (
-    <Link href="#closeup" scroll={false} className="contents">
-      <div
-        className={flexClasses({ isColumn })}
-        onClick={() => {
-          // Why: JSX ではなくデータだけを渡す。
-          // Modal 側で Image コンポーネントをレンダリングする責務を持つ。
+    // Why: 以前は <Link href="#closeup"> でハッシュ遷移していたが、
+    // useModalControl.open() が setHash('closeup') を内部で行うため、
+    // <Link> と open() の二重ナビゲーションが発生し "Cancel rendering route" エラーになっていた。
+    // open() にハッシュ管理を一本化し、<Link> を除去。
+    <div
+      className={flexClasses({ isColumn })}
+      role="button"
+      tabIndex={0}
+      onClick={() => {
+        open({
+          src: photo.original_size.url,
+          width: photo.original_size.width,
+          height: photo.original_size.height,
+          alt: photo.original_size.url,
+        })
+      }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
           open({
             src: photo.original_size.url,
             width: photo.original_size.width,
             height: photo.original_size.height,
             alt: photo.original_size.url,
           })
-        }}
-      >
-        <Image
-          src={photo.original_size.url}
-          alt={photo.original_size.url}
-          key={photo.original_size.url}
-          height={photo.original_size.height}
-          width={photo.original_size.width}
-          className={cn(imageVariants({ closeup: false }))}
-        />
-      </div>
-    </Link>
+        }
+      }}
+    >
+      <Image
+        src={photo.original_size.url}
+        alt={photo.original_size.url}
+        key={photo.original_size.url}
+        height={photo.original_size.height}
+        width={photo.original_size.width}
+        className={cn(imageVariants({ closeup: false }))}
+      />
+    </div>
   )
 }
