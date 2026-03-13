@@ -20,11 +20,19 @@ export const useContentsWrapperRef = (routeKey: string) => {
   const isInitialMount = useRef(true)
 
   useEffect(() => {
+    let timeoutId: number | null = null
+
     setContentsWrapper(ref.current)
     if (isInitialMount.current) {
       isInitialMount.current = false
       if (routeKey !== '/' && ref.current?.offsetTop) {
-        setTimeout(() => ref.current?.scrollIntoView(true), 10)
+        timeoutId = window.setTimeout(() => ref.current?.scrollIntoView(true), 10)
+      }
+    }
+
+    return () => {
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId)
       }
     }
   }, [setContentsWrapper, ref, routeKey])
