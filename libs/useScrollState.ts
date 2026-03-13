@@ -24,7 +24,7 @@ export const useScrollState = () => {
     return scrollY.on('change', (latest) => {
       setScrollTop(latest)
     })
-  }, [contentsWrapper, scrollY])
+  }, [scrollY])
 
   return {
     scrollTop: scrollTop,
