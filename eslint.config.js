@@ -8,7 +8,7 @@ import reactPlugin from 'eslint-plugin-react'
 import hooksPlugin from 'eslint-plugin-react-hooks'
 import nextPlugin from '@next/eslint-plugin-next'
 import eslintConfigPrettier from 'eslint-config-prettier'
-// import storybook from 'eslint-plugin-storybook' // v9でバグってる？
+import storybook from 'eslint-plugin-storybook' // v9でバグってる？
 
 // Why: globalIgnores は export するオブジェクトに含めないと無効
 // 旧: defineConfig([globalIgnores(['.next/**'])]) は dead code だった
@@ -30,7 +30,7 @@ export default [
   // importPlugin.flatConfigs.recommended,
   ...tsEslint.configs.recommended,
   cssPlugin.configs['flat/standard'],
-  // ...storybook.configs['flat/recommended'], //まだ実装されていない
+  ...storybook.configs['flat/recommended'], //まだ実装されていない
   eslintConfigPrettier,
   {
     files: ['**/*.{mjs,ts,tsx}'],
