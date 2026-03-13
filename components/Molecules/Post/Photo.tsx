@@ -1,4 +1,3 @@
-import { useSetAtom } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
 import { cva } from 'libs/component-factory'
@@ -6,8 +5,7 @@ import { cn } from 'libs/tw-clsx-util'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
-import { hashCloseup } from 'components/Organisms/Modal'
-import { modalContentState } from 'libs/states/atoms'
+import { useModalControl } from 'libs/hooks/useModalControl'
 
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
 const flexClasses = cva('w-full', {
@@ -36,26 +34,21 @@ const imageVariants = cva('mx-auto cursor-pointer', {
 })
 
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
-  const setModalContent = useSetAtom(modalContentState)
-  const lightCyan =
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
+  const { open } = useModalControl()
+
   return (
-    <Link href={`#${hashCloseup}`} scroll={false} className="contents">
+    <Link href="#closeup" scroll={false} className="contents">
       <div
         className={flexClasses({ isColumn })}
         onClick={() => {
-          setModalContent(
-            <Image
-              src={photo.original_size.url}
-              alt={photo.original_size.url}
-              key={photo.original_size.url}
-              height={photo.original_size.height}
-              width={photo.original_size.width}
-              className={cn(imageVariants({ closeup: true }))}
-              placeholder="blur"
-              blurDataURL={lightCyan}
-            />
-          )
+          // Why: JSX ではなくデータだけを渡す。
+          // Modal 側で Image コンポーネントをレンダリングする責務を持つ。
+          open({
+            src: photo.original_size.url,
+            width: photo.original_size.width,
+            height: photo.original_size.height,
+            alt: photo.original_size.url,
+          })
         }}
       >
         <Image
