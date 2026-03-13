@@ -35,6 +35,15 @@ const imageVariants = cva('mx-auto cursor-pointer', {
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
   const { open } = useModalControl()
 
+  const handleOpenPhoto = () => {
+    open({
+      src: photo.original_size.url,
+      width: photo.original_size.width,
+      height: photo.original_size.height,
+      alt: photo.original_size.url,
+    })
+  }
+
   return (
     // Why: 以前は <Link href="#closeup"> でハッシュ遷移していたが、
     // useModalControl.open() が setHash('closeup') を内部で行うため、
@@ -44,23 +53,11 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
       className={flexClasses({ isColumn })}
       role="button"
       tabIndex={0}
-      onClick={() => {
-        open({
-          src: photo.original_size.url,
-          width: photo.original_size.width,
-          height: photo.original_size.height,
-          alt: photo.original_size.url,
-        })
-      }}
+      onClick={handleOpenPhoto}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault()
-          open({
-            src: photo.original_size.url,
-            width: photo.original_size.width,
-            height: photo.original_size.height,
-            alt: photo.original_size.url,
-          })
+          handleOpenPhoto()
         }
       }}
     >
