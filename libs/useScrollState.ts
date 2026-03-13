@@ -20,10 +20,11 @@ export const useScrollState = () => {
   const contentsWrapperScrollTop = contentsWrapper?.offsetTop ?? defaultScrollTop
 
   useEffect(() => {
-    return scrollY.onChange((latest) => {
+    // Why: onChange は motion/react v12 で非推奨。on("change", cb) が新 API。
+    return scrollY.on('change', (latest) => {
       setScrollTop(latest)
     })
-  }, [contentsWrapper, scrollY])
+  }, [scrollY])
 
   return {
     scrollTop: scrollTop,

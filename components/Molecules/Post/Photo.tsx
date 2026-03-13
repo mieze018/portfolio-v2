@@ -1,13 +1,10 @@
-import { useSetAtom } from 'jotai'
 import Image from 'next/image'
-import Link from 'next/link'
 import { cva } from 'libs/component-factory'
 import { cn } from 'libs/tw-clsx-util'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 
-import { hashCloseup } from 'components/Organisms/Modal'
-import { modalContentState } from 'libs/states/atoms'
+import { useModalControl } from 'libs/hooks/useModalControl'
 
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
 const flexClasses = cva('w-full', {
@@ -36,37 +33,39 @@ const imageVariants = cva('mx-auto cursor-pointer', {
 })
 
 export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: boolean }) => {
-  const setModalContent = useSetAtom(modalContentState)
-  const lightCyan =
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
+  const { open } = useModalControl()
+
+  const handleOpenPhoto = () => {
+    open({
+      src: photo.original_size.url,
+      width: photo.original_size.width,
+      height: photo.original_size.height,
+      alt: photo.original_size.url,
+    })
+  }
+
   return (
-    <Link href={`#${hashCloseup}`} scroll={false} className="contents">
-      <div
-        className={flexClasses({ isColumn })}
-        onClick={() => {
-          setModalContent(
-            <Image
-              src={photo.original_size.url}
-              alt={photo.original_size.url}
-              key={photo.original_size.url}
-              height={photo.original_size.height}
-              width={photo.original_size.width}
-              className={cn(imageVariants({ closeup: true }))}
-              placeholder="blur"
-              blurDataURL={lightCyan}
-            />
-          )
-        }}
-      >
-        <Image
-          src={photo.original_size.url}
-          alt={photo.original_size.url}
-          key={photo.original_size.url}
-          height={photo.original_size.height}
-          width={photo.original_size.width}
-          className={cn(imageVariants({ closeup: false }))}
-        />
-      </div>
-    </Link>
+    // Why: 以前は <Link href="#closeup"> でハッシュ遷移していたが、
+    // useModalControl.open() が setHash('closeup') を内部で行うため、
+    // <Link> と open() の二重ナビゲーションが発生し "Cancel rendering route" エラーになっていた。
+    // open() にハッシュ管理を一本化し、<Link> を除去。
+    <button
+      type="button"
+      className={cn(
+        flexClasses({ isColumn }),
+        'appearance-none border-none bg-transparent p-0 block'
+      )}
+      aria-label={`写真を拡大表示: ${photo.caption || '画像'}`}
+      onClick={handleOpenPhoto}
+    >
+      <Image
+        src={photo.original_size.url}
+        alt={photo.original_size.url}
+        key={photo.original_size.url}
+        height={photo.original_size.height}
+        width={photo.original_size.width}
+        className={cn(imageVariants({ closeup: false }))}
+      />
+    </button>
   )
 }

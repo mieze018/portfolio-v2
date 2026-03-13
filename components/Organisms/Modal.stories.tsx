@@ -1,60 +1,52 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { hashCloseup, Modal } from './Modal'
-import { useSetAtom } from 'jotai'
-import { modalContentState } from 'libs/states/atoms'
+import { Provider, createStore } from 'jotai'
+import { Modal } from './Modal'
+import { modalPhotoState } from 'libs/states/atoms'
 
-const testImageThumb = 'https://picsum.photos/id/4/400/300'
-const testImageFull = 'https://picsum.photos/id/4/1200/800'
+const testPhoto = {
+  src: 'https://picsum.photos/id/4/1200/800',
+  width: 1200,
+  height: 800,
+  alt: 'サンプル画像',
+}
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  decorators: [
-    (Story) => {
-      const setModalContent = useSetAtom(modalContentState)
-      setModalContent(<img src={testImageFull} alt="サンプル画像" />)
-      return (
-        <div style={{ padding: '20px' }}>
-          <a href={`#${hashCloseup}`} data-testid="modal-trigger">
-            <img src={testImageThumb} alt="サンプル画像" />
-          </a>
-          <Story />
-        </div>
-      )
-    },
-  ],
 }
 export default meta
 type Story = StoryObj<typeof Modal>
 
-export const Default: Story = {}
+/**
+ * モーダルが閉じている状態。
+ * photo データが null のため、何も表示されない。
+ */
+export const Closed: Story = {}
 
-// todo: URLへのハッシュ付与がテストできないので要リファクタ
-// export const OpenModal: Story = {
-//   ...Default,
-//   play: async ({ canvasElement }) => {
-//     const canvas = within(canvasElement)
-
-//     // モーダルトリガーをクリック
-//     const trigger = canvas.getByTestId('modal-trigger')
-//     await userEvent.click(trigger)
-
-//     // モーダルが開いていることを確認
-//     await waitFor(() => {
-//       const modal = canvas.getByRole('dialog')
-//       expect(modal).toBeInTheDocument()
-//     })
-//   },
-// }
-
-export const InitiallyOpen: Story = {
-  ...Default,
+/**
+ * モーダルが開いている状態。
+ *
+ * Why: modalPhotoState にテストデータを注入し、URL hash を closeup に設定する。
+ * useModalControl の isOpen 条件（hash === 'closeup' && photo !== null）を満たす。
+ */
+export const Open: Story = {
+  decorators: [
+    (Story) => {
+      const store = createStore()
+      store.set(modalPhotoState, testPhoto)
+      return (
+        <Provider store={store}>
+          <Story />
+        </Provider>
+      )
+    },
+  ],
   parameters: {
     nextjs: {
       router: {
-        asPath: `/#${hashCloseup}`,
+        asPath: '/#closeup',
       },
     },
   },

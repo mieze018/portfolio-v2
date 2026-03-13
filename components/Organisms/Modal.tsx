@@ -1,12 +1,9 @@
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
-import { useAtomValue } from 'jotai'
+import Image from 'next/image'
 import { tw, cva } from 'libs/component-factory'
 import { cn } from 'libs/tw-clsx-util'
 
-import { modalContentState } from 'libs/states/atoms'
-import { useHash } from 'libs/useHash'
-/**画像拡大用のハッシュ値 */
-export const hashCloseup = 'closeup'
+import { useModalControl } from 'libs/hooks/useModalControl'
 
 // HeadlessUIコンポーネントは特殊なので直接cvaで定義
 const dialogVariants = cva('fixed inset-0 z-50 w-full h-full')
@@ -16,14 +13,23 @@ const dialogPanelVariants = cva(
 )
 const ContentWrapper = tw('div', cva('m-auto p-4'))
 
+const lightCyan =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
+
+/**
+ * 画像拡大モーダル
+ *
+ * Why: useModalControl から photo データを受け取り、
+ * この Modal が Image のレンダリング責務を持つ。
+ * 以前は Photo 側で JSX を生成して atom に渡していたが、
+ * データとレンダリングの関心を分離した。
+ */
 export const Modal = () => {
-  const modalContent = useAtomValue(modalContentState)
-  const [hash, setHash] = useHash()
-  const isShow = !!(hash === hashCloseup && modalContent)
+  const { photo, isOpen, close } = useModalControl()
 
   return (
     // Why: v2では外側のTransitionラッパーが不要になり、Dialog自体がopen propでトランジションを管理する
-    <Dialog open={isShow} onClose={() => setHash('')} className={cn(dialogVariants())}>
+    <Dialog open={isOpen} onClose={close} className={cn(dialogVariants())}>
       <TransitionChild
         enter=""
         enterFrom="opacity-0"
@@ -42,8 +48,20 @@ export const Modal = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <DialogPanel className={cn(dialogPanelVariants())} onClick={() => setHash('')}>
-          <ContentWrapper>{modalContent}</ContentWrapper>
+        <DialogPanel className={cn(dialogPanelVariants())} onClick={close}>
+          <ContentWrapper>
+            {photo && (
+              <Image
+                src={photo.src}
+                alt={photo.alt ?? photo.src}
+                width={photo.width}
+                height={photo.height}
+                className="max-w-none mx-auto cursor-pointer"
+                placeholder="blur"
+                blurDataURL={lightCyan}
+              />
+            )}
+          </ContentWrapper>
         </DialogPanel>
       </TransitionChild>
     </Dialog>
