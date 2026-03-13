@@ -8,12 +8,12 @@ import { useScrollState } from 'libs/useScrollState'
 import { contentsWrapperState } from 'libs/states/atoms'
 
 // Why: motion/react の useScroll は DOM に依存するため、テスト環境ではモックする。
-// MotionValue は onChange コールバック登録に必要なため、最低限のモックを提供。
+// MotionValue は on("change", cb) コールバック登録に必要なため、最低限のモックを提供。
 vi.mock('motion/react', () => ({
   useScroll: vi.fn(() => ({
     scrollY: {
       get: () => 0,
-      onChange: vi.fn(() => () => {}),
+      on: vi.fn(() => () => {}),
     },
   })),
 }))
