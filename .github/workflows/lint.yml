@@ -1,0 +1,30 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  biome:
+    name: Biome check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+
+      - name: Enable Corepack (Yarn 4)
+        # Why: actions/setup-node は corepack を自動有効化しないため明示的に実行する。
+        #      packageManager フィールドと組み合わせて Yarn 4 を CI で使用するために必要。
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run Biome check
+        # Why: check:ci は --write なしで差分を検出するだけのモード。
+        #      CI では自動修正せず、問題があれば失敗させてプルリクエストで気づけるようにする。
+        run: yarn check:ci
