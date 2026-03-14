@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { EventHistory } from './EventHistory'
 import type { PageObject } from 'libs/@type/api/notion'
+import { EventHistory } from './EventHistory'
 
 const meta: Meta<typeof EventHistory> = {
   component: EventHistory,

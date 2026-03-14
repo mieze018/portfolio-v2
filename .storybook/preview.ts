@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/nextjs'
 import '../styles/global.css'
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport'
+
 const preview: Preview = {
   parameters: {
     controls: {

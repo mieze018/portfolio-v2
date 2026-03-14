@@ -1,4 +1,4 @@
-import { tw, cva } from 'libs/component-factory'
+import { cva, tw } from 'libs/component-factory'
 
 export const PrimaryButton = tw(
   'button',

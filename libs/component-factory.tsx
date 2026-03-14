@@ -1,8 +1,7 @@
 import type { VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
-import { forwardRef } from 'react'
 import { cva as _cva } from 'class-variance-authority'
-import React from 'react'
+import type { ComponentProps } from 'react'
+import React, { forwardRef } from 'react'
 
 // HTMLタグ用のprops型
 type TwHtmlProps<

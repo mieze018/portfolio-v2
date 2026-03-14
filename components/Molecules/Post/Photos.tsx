@@ -1,8 +1,7 @@
-import React from 'react'
+import { Photo } from 'components/Molecules/Post/Photo'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
-
-import { Photo } from 'components/Molecules/Post/Photo'
+import React from 'react'
 
 export const Photos = ({
   photos,

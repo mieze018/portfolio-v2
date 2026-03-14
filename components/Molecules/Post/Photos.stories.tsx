@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Photos } from './Photos'
 import type { Tumblr } from 'libs/@type/api/tumblr'
+import { Photos } from './Photos'
 
 const meta: Meta<typeof Photos> = {
   component: Photos,

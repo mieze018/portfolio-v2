@@ -1,10 +1,8 @@
-import { useTranslation } from 'libs/useTranslation'
-
-import type { PageObject } from 'libs/@type/api/notion'
-
 import { Separator } from 'components/Atoms/Separator'
 import { EventItem } from 'components/Molecules/About/EventItem'
+import type { PageObject } from 'libs/@type/api/notion'
 import { getProperties } from 'libs/notion'
+import { useTranslation } from 'libs/useTranslation'
 
 export const Events = ({ events }: { events: PageObject[] }) => {
   const { tb } = useTranslation('common')

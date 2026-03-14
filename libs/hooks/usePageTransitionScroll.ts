@@ -1,5 +1,5 @@
 // libs/hooks/usePageTransitionScroll.ts
-import { useCallback, type RefObject } from 'react'
+import { type RefObject, useCallback } from 'react'
 
 /**
  * AnimatePresence の onExitComplete 用コールバックを生成する hook

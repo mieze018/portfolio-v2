@@ -1,9 +1,8 @@
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
-import Image from 'next/image'
-import { tw, cva } from 'libs/component-factory'
-import { cn } from 'libs/tw-clsx-util'
-
+import { cva, tw } from 'libs/component-factory'
 import { useModalControl } from 'libs/hooks/useModalControl'
+import { cn } from 'libs/tw-clsx-util'
+import Image from 'next/image'
 
 // HeadlessUIコンポーネントは特殊なので直接cvaで定義
 const dialogVariants = cva('fixed inset-0 z-50 w-full h-full')

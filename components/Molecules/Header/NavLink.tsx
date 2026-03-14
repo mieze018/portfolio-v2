@@ -1,9 +1,8 @@
+import { cva } from 'class-variance-authority'
 import { useAtomValue } from 'jotai'
+import { contentsWrapperState } from 'libs/states/atoms'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { cva } from 'class-variance-authority'
-
-import { contentsWrapperState } from 'libs/states/atoms'
 
 const spanVariants = cva(
   'inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]',

@@ -1,12 +1,10 @@
-import { useTranslation } from 'libs/useTranslation'
-
-import type { PageObject } from 'libs/@type/api/notion'
-
 import { SectionWrapper } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
 import { EventItem } from 'components/Molecules/About/EventItem'
+import type { PageObject } from 'libs/@type/api/notion'
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
+import { useTranslation } from 'libs/useTranslation'
 
 export const EventHistory = ({ events }: { events: PageObject[] }) => {
   const { tb } = useTranslation('common')

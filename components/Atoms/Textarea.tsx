@@ -1,6 +1,6 @@
-import TextareaAutosize from 'react-textarea-autosize'
 import { cva } from 'class-variance-authority'
 import { forwardRef } from 'react'
+import TextareaAutosize from 'react-textarea-autosize'
 
 const textareaVariants = cva(
   'w-full h-32 p-2 border rounded resize-none border-Azure outline-AliceBlue bg-white/80'

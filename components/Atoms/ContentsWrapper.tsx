@@ -1,8 +1,7 @@
-import { motion, AnimatePresence } from 'motion/react'
 import { cva } from 'class-variance-authority'
-
 import { useContentsWrapperRef } from 'libs/hooks/useContentsWrapperRef'
 import { usePageTransitionScroll } from 'libs/hooks/usePageTransitionScroll'
+import { AnimatePresence, motion } from 'motion/react'
 
 const sunkShortAnimation = `
   @keyframes sunkShort {

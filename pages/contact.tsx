@@ -1,9 +1,8 @@
-import type { PageObject } from 'libs/@type/api/notion'
-import type { GetStaticProps, NextPage } from 'next'
-
 import { ContactContent } from 'components/Organisms/ContactContent'
+import type { PageObject } from 'libs/@type/api/notion'
 import { getPage } from 'libs/notion'
 import { workAcceptanceStatusDBId } from 'libs/notionDB'
+import type { GetStaticProps, NextPage } from 'next'
 
 export type contactDataType = {
   fallbackData: {

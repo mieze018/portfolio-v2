@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
+import { expect, fireEvent, waitFor } from 'storybook/test'
 import { FadeOuter } from './FadeOuter'
-import { expect, waitFor, fireEvent } from 'storybook/test'
+
 const meta: Meta<typeof FadeOuter> = {
   component: FadeOuter,
   parameters: {

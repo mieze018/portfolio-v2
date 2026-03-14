@@ -1,6 +1,5 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-
-import { notoSerifJP, ebGaramond } from 'libs/fonts'
+import { ebGaramond, notoSerifJP } from 'libs/fonts'
+import { Head, Html, Main, NextScript } from 'next/document'
 import { author, description, title, url } from 'pages/api/basics'
 
 export default function Document() {

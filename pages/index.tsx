@@ -1,8 +1,5 @@
-import React from 'react'
-
 import type { Tumblr } from 'libs/@type/api/tumblr'
 import type { GetStaticProps, NextPage } from 'next'
-
 import { endpoint, fetcher } from 'pages/api/works/tumblr'
 import Works from 'pages/works'
 

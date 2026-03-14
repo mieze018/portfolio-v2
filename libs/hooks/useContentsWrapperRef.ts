@@ -1,8 +1,7 @@
 // libs/hooks/useContentsWrapperRef.ts
 import { useSetAtom } from 'jotai'
-import { useEffect, useRef } from 'react'
-
 import { contentsWrapperState } from 'libs/states/atoms'
+import { useEffect, useRef } from 'react'
 
 /**
  * ContentsWrapper の DOM ref 管理 + Jotai 状態セット + 初回マウントスクロール
@@ -38,7 +37,7 @@ export const useContentsWrapperRef = (routeKey: string) => {
       // NavLinks / useScrollState が無効な要素を参照し続ける。
       setContentsWrapper(null)
     }
-  }, [setContentsWrapper, ref, routeKey])
+  }, [setContentsWrapper, routeKey])
 
   return ref
 }

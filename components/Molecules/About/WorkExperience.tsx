@@ -1,11 +1,9 @@
-import { useTranslation } from 'libs/useTranslation'
-
-import type { PageObject } from 'libs/@type/api/notion'
-
 import { H2, SectionWrapper, UlNest1 } from 'components/Atoms/About/Atoms'
 import { Separator } from 'components/Atoms/Separator'
 import { Work } from 'components/Molecules/About/Work'
+import type { PageObject } from 'libs/@type/api/notion'
 import { getProperties } from 'libs/notion'
+import { useTranslation } from 'libs/useTranslation'
 
 export const WorkExperience = ({
   workExperience,

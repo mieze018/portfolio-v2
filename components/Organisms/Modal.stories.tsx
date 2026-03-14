@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Provider, createStore } from 'jotai'
-import { Modal } from './Modal'
+import { createStore, Provider } from 'jotai'
 import { modalPhotoState } from 'libs/states/atoms'
+import { Modal } from './Modal'
 
 const testPhoto = {
   src: 'https://picsum.photos/id/4/1200/800',
