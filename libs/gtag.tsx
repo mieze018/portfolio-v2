@@ -1,6 +1,5 @@
+import { useEffect } from 'libs/reactCompat'
 import { useRouter } from 'next/router'
-import Script from 'next/script'
-import { useEffect } from 'react'
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
 
@@ -59,19 +58,18 @@ export const GoogleAnalytics = () => (
   <>
     {existsGaId && (
       <>
-        <Script
-          defer
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga" defer strategy="afterInteractive">
-          {`
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Google Analytics 初期化の固定 script を埋め込むため意図的に使用。ユーザー入力は含まない
+          dangerouslySetInnerHTML={{
+            __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());    
+              gtag('js', new Date());
               gtag('config', '${GA_ID}');
-          `}
-        </Script>
+            `,
+          }}
+        />
       </>
     )}
   </>
