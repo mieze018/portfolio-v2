@@ -1,6 +1,5 @@
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import { cva } from 'class-variance-authority'
-import { forwardRef } from 'react'
 
 const classes = cva('shadow-sm bg-black/10 shadow-main/10', {
   variants: {
@@ -14,14 +13,19 @@ const classes = cva('shadow-sm bg-black/10 shadow-main/10', {
   },
 })
 
-interface SeparatorProps extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {
+type RefLike<T> = ((instance: T | null) => void) | { current: T | null } | null
+
+interface SeparatorProps extends SeparatorPrimitive.SeparatorProps {
   className?: string
+  ref?: RefLike<HTMLDivElement>
 }
 
-export const Separator = forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
-  SeparatorProps
->(({ className, orientation = 'horizontal', ...props }, ref) => {
+export const Separator = ({
+  className,
+  orientation = 'horizontal',
+  ref,
+  ...props
+}: SeparatorProps) => {
   return (
     <SeparatorPrimitive.Root
       ref={ref}
@@ -30,6 +34,6 @@ export const Separator = forwardRef<
       {...props}
     />
   )
-})
+}
 
 Separator.displayName = 'Separator'
