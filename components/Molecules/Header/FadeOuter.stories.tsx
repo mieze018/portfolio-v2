@@ -12,6 +12,7 @@ const meta: Meta<typeof FadeOuter> = {
 } satisfies Meta<typeof FadeOuter>
 export default meta
 type Story = StoryObj<typeof meta>
+type StoryPlayContext = Parameters<NonNullable<Story['play']>>[0]
 
 export const Default: Story = {
   args: {
@@ -23,7 +24,8 @@ export const Default: Story = {
     ),
   },
 
-  play: async ({ canvas }) => {
+  play: async (context: StoryPlayContext) => {
+    const { canvas } = context
     const htmlElement = document.documentElement
     // スクロールテストのための要素を取得
     const scrollContent = canvas.getByTestId('scroll-content')

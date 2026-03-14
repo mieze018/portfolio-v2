@@ -11,6 +11,7 @@ const meta: Meta<typeof Layout> = {
 }
 export default meta
 type Story = StoryObj<typeof Layout>
+type StoryPlayContext = Parameters<NonNullable<Story['play']>>[0]
 
 export const Default: Story = {
   args: {
@@ -47,7 +48,8 @@ export const WithLongContent: Story = {
     ),
   },
 
-  play: async ({ canvas }) => {
+  play: async (context: StoryPlayContext) => {
+    const { canvas } = context
     const htmlElement = document.documentElement
     // 初期状態でTopBarが存在することを確認
     const topBar = canvas.getByRole('banner')
