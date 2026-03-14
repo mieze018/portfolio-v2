@@ -1,5 +1,5 @@
+import { useCallback } from 'libs/reactCompat'
 import { useRouter } from 'next/router'
-import { useCallback } from 'react'
 
 // URL の # 以降の文字列を取り出すユーティリティ
 const extractHash = (url: string): string => url.split('#')[1] ?? ''

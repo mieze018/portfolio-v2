@@ -1,8 +1,8 @@
 import { useAtom } from 'jotai'
+import { useCallback } from 'libs/reactCompat'
 import { modalPhotoState } from 'libs/states/atoms'
 import type { ModalPhoto } from 'libs/states/types'
 import { useHash } from 'libs/useHash'
-import { useCallback } from 'react'
 
 /**
  * モーダルの開閉を一元管理する hook

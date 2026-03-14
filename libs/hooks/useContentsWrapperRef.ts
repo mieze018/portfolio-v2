@@ -1,7 +1,7 @@
 // libs/hooks/useContentsWrapperRef.ts
 import { useSetAtom } from 'jotai'
+import { useEffect, useRef } from 'libs/reactCompat'
 import { contentsWrapperState } from 'libs/states/atoms'
-import { useEffect, useRef } from 'react'
 
 /**
  * ContentsWrapper の DOM ref 管理 + Jotai 状態セット + 初回マウントスクロール
@@ -12,7 +12,7 @@ import { useEffect, useRef } from 'react'
  * @param routeKey - 現在のルートキー。"/" の場合は初回スクロールをスキップ
  */
 export const useContentsWrapperRef = (routeKey: string) => {
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLElement | null>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
   // Why: 初回マウント時のみ scrollIntoView を実行するためのガード。
   // 2回目以降のエフェクト実行時には、自動スクロールを抑止する意図。
