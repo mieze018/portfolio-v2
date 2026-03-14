@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.classAttributes": ["class", "className", "ngClass"],
   "tailwindCSS.classFunctions": ["cva", "cx", "tw"],
@@ -10,8 +10,9 @@
     "typescriptreact": "javascript"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.addMissingImports": "explicit"
+    "source.fixAll.biome": "explicit",
+    "source.addMissingImports": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#2a2a2a",
@@ -23,24 +24,24 @@
   // 各言語別にフォーマッターを設定
   "[json]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[javascript]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[tsx]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[mdx]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "eslint.useFlatConfig": true,
+  // ESLint は Biome に移行済みのため不要だが、既存設定との互換性のために残す
   "chat.promptFilesRecommendations": {
     "speckit.constitution": true,
     "speckit.specify": true,
