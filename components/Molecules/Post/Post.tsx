@@ -1,10 +1,9 @@
-import { motion } from 'motion/react'
-import { tw, cva } from 'libs/component-factory'
-
-import type { Tumblr } from 'libs/@type/api/tumblr'
-
 import { Photos } from 'components/Molecules/Post/Photos'
 import { PostFooter } from 'components/Molecules/Post/PostFooter'
+
+import type { Tumblr } from 'libs/@type/api/tumblr'
+import { cva, tw } from 'libs/component-factory'
+import { motion } from 'motion/react'
 
 // motion.articleは特殊なので直接cvaで定義
 const articleVariants = cva(
@@ -65,6 +64,7 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
       </div>
 
       <PostCaption
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: Tumblr API から返却される HTML を表示するため意図的に使用。外部入力ではなく API レスポンスに限定
         dangerouslySetInnerHTML={{
           __html: post.caption,
         }}
