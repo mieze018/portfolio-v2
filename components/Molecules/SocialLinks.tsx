@@ -54,6 +54,6 @@ const SocialIconDecider = ({ text }: { text: string }) => {
     case 'booth':
       return <GiShoppingBag />
     default:
-      return <></>
+      return null
   }
 }

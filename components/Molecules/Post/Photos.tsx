@@ -1,7 +1,6 @@
 import { Photo } from 'components/Molecules/Post/Photo'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
-import React from 'react'
 
 export const Photos = ({
   photos,
@@ -17,8 +16,7 @@ export const Photos = ({
       {photos.map((photo, i) => {
         const isLastPhoto = i === photos.length - 1
         //最後の画像だけ表示するタグがついている場合、最後の画像でなければスキップ
-        if (isShowOnlyLastPhoto && !isLastPhoto)
-          return <React.Fragment key={photo.original_size.url}></React.Fragment>
+        if (isShowOnlyLastPhoto && !isLastPhoto) return null
         return <Photo key={photo.original_size.url} photo={photo} isColumn={isColumn} />
       })}
     </>

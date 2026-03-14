@@ -14,7 +14,7 @@ export const Events = ({ events }: { events: PageObject[] }) => {
     const eventDate = new Date(getProperties(event, { name: 'date', type: 'date' }).start)
     return eventDate >= today
   })
-  if (!futureEvents.length) return <></>
+  if (!futureEvents.length) return null
   return (
     <div className="mt-12">
       <div className="space-y-1">
