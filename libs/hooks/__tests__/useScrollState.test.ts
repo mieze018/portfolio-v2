@@ -1,11 +1,11 @@
 // libs/hooks/__tests__/useScrollState.test.ts
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { renderHook } from '@testing-library/react'
-import { Provider, createStore } from 'jotai'
-import { createElement, type ReactNode } from 'react'
 
-import { useScrollState } from 'libs/useScrollState'
+import { renderHook } from '@testing-library/react'
+import { createStore, Provider } from 'jotai'
 import { contentsWrapperState } from 'libs/states/atoms'
+import { useScrollState } from 'libs/useScrollState'
+import { createElement, type ReactNode } from 'react'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 // Why: motion/react の useScroll は DOM に依存するため、テスト環境ではモックする。
 // MotionValue は on("change", cb) コールバック登録に必要なため、最低限のモックを提供。

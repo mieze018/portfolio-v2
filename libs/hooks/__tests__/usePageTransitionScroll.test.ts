@@ -1,9 +1,9 @@
 // libs/hooks/__tests__/usePageTransitionScroll.test.ts
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { renderHook } from '@testing-library/react'
-import { type RefObject } from 'react'
 
+import { renderHook } from '@testing-library/react'
 import { usePageTransitionScroll } from 'libs/hooks/usePageTransitionScroll'
+import type { RefObject } from 'react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 describe('usePageTransitionScroll', () => {
   beforeEach(() => {

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
-import { tw, cva, twe } from './component-factory'
-
 import React from 'react'
+import { cva, tw, twe } from './component-factory'
+
 // テスト用のvariantsを定義
 const buttonVariants = cva('base-button', {
   variants: {
