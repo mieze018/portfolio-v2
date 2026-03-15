@@ -4,7 +4,11 @@ import type { GetStaticProps, NextPage } from 'next'
 import { tags } from 'pages/api/works/tags'
 import { endpoint, fetcher } from 'pages/api/works/tumblr'
 
-const ClientWorks: NextPage<{ fallbackData: Tumblr.Root }> = ({ fallbackData }) => {
+const ClientWorks: NextPage<{ fallbackData: Tumblr.Root }> = ({
+  fallbackData,
+}: {
+  fallbackData: Tumblr.Root
+}) => {
   if (!fallbackData) return <div>Loading...</div>
   const posts = fallbackData.response.posts
   return <Posts posts={posts} tag={tags.commissionedWork} />

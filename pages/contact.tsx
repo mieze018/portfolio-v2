@@ -9,7 +9,7 @@ export type contactDataType = {
     workAcceptanceStatus: PageObject[]
   }
 }
-const Contact: NextPage<contactDataType> = ({ fallbackData }) => {
+const Contact: NextPage<contactDataType> = ({ fallbackData }: contactDataType) => {
   if (!fallbackData) return <div>Loading...</div>
   return <ContactContent fallbackData={fallbackData} formId={process.env.NEXT_PUBLIC_FORM || ''} />
 }

@@ -1,11 +1,20 @@
 import { ebGaramond, notoSerifJP } from 'libs/fonts'
-import { Head, Html, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { author, description, title, url } from 'pages/api/basics'
+import ReactRuntime from 'react'
 
-export default function Document() {
-  return (
-    <Html lang="ja" className={`${notoSerifJP.variable} ${ebGaramond.variable} antialiased`}>
-      <Head>
+const reactFactory = ReactRuntime as unknown as {
+  createElement: (
+    type: unknown,
+    props: Record<string, unknown> | null,
+    ...children: unknown[]
+  ) => never
+}
+
+export default class CustomDocument extends Document {
+  render() {
+    const headChildren = (
+      <>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="author" content={author} />
@@ -24,11 +33,17 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=optional"
           rel="stylesheet"
         />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+      </>
+    )
+
+    return (
+      <Html lang="ja" className={`${notoSerifJP.variable} ${ebGaramond.variable} antialiased`}>
+        {reactFactory.createElement(Head as never, null, headChildren)}
+        <body>
+          <Main />
+          {reactFactory.createElement(NextScript as never, null)}
+        </body>
+      </Html>
+    )
+  }
 }

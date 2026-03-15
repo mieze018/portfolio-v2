@@ -13,7 +13,7 @@ export type aboutDataType = {
   }
 }
 
-const About: NextPage<aboutDataType> = ({ fallbackData }) => {
+const About: NextPage<aboutDataType> = ({ fallbackData }: aboutDataType) => {
   if (!fallbackData) return <div>Loading...</div>
   return <AboutContent fallbackData={fallbackData} />
 }
