@@ -89,7 +89,7 @@
     "yarn": "4.0.2"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,css}": ["yarn check:staged"]
+    "*.{ts,tsx,js,jsx,json,css}": "yarn check:staged"
   },
   "resolutions": {
     "@types/react": "19.1.8",
