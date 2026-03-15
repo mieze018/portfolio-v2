@@ -13,6 +13,7 @@
     "format": "biome format --write .",
     "check": "biome check --write .",
     "check:ci": "biome check .",
+    "check:staged": "biome check --write --no-errors-on-unmatched",
     "unused": "yarn ts-unused-exports tsconfig.json --excludeDeclarationFiles --showLineNumber '--excludePathsFromReport=pages' '--ignoreFiles=.*config.*|.*.stories.*'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -88,7 +89,7 @@
     "yarn": "4.0.2"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,css}": ["biome check --write --no-errors-on-unmatched"]
+    "*.{ts,tsx,js,jsx,json,css}": ["yarn check:staged"]
   },
   "resolutions": {
     "@types/react": "19.1.8",
