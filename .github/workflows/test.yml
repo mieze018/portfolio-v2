@@ -1,0 +1,41 @@
+name: Test & Coverage
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+# Why: カバレッジレポートを PR コメントに書き込むため write 権限が必要
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  unit-test:
+    name: Unit Test & Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+
+      - name: Enable Corepack (Yarn 4)
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run unit tests with coverage
+        run: yarn vitest run --project=unit --coverage
+
+      - name: Report coverage to PR
+        # Why: PR へのコメントとして見やすい形でカバレッジを表示する
+        # push イベントでも実行されるが、PR がない場合はスキップされる
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: ./coverage/coverage-summary.json
+          json-final-path: ./coverage/coverage-final.json

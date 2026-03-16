@@ -26,7 +26,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'html', 'json-summary'],
+      reporter: ['text', 'html', 'json-summary', 'json'],
       // Why: テスト対象のソースコードのみを計測対象にする。
       // 設定ファイル・型定義・stories・テストファイル自体は除外。
       include: ['libs/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
