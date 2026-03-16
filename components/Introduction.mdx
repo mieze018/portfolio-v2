@@ -1,0 +1,249 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# ルール・設計規約
+
+このプロジェクトにおける命名規則・ディレクトリ構造・コーディング規約のまとめ。
+
+---
+
+## ファイル・ディレクトリ命名規則
+
+| 対象 | ケース | 例 |
+| --- | --- | --- |
+| `./pages` 以下のルーティングファイル | スネークケース（URLパスに準じる） | `about_me.tsx` |
+| React コンポーネント（`.tsx`）とそのディレクトリ | パスカルケース | `PrimaryButton.tsx` |
+| メソッド・型（`.ts`）・設定ファイル | キャメルケース | `useModalControl.ts` |
+
+> ⚠️ **教訓**: 後から大文字小文字を変更するとローカルでは認識されてもサーバーで認識されないことがある。
+> 一度親ディレクトリごとリネーム → 中身のリネーム → 親の名前を戻す、とするとよい。
+
+---
+
+## ディレクトリ構造
+
+```
+components/
+├── Atoms/          # 最小UIパーツ（HTMLタグの置き換えレベル）
+├── Molecules/      # 複数Atomsの組み合わせ＋簡単なロジック
+├── Organisms/      # ページスケールのUI＋複雑なロジック
+└── Layout/         # ページ全体レイアウトテンプレート
+
+libs/               # メソッド・型・i18nなど
+pages/api/          # データ配列の定義（型は interface を使用）
+```
+
+### Atomic Design の境界線
+
+- **Atoms**: `tw()` + `cva()` で定義されるスタイル付きコンポーネント。外部UIライブラリの re-export も含む
+- **Molecules**: Atoms の組み合わせ。フォームやリストアイテムなど、簡単なビジネスロジックを持つ
+- **Organisms**: Molecules を複数組み合わせた自己完結したユニット。データ取得・フックも持つ
+- **Layout**: `children` を受け取る共通ページテンプレート
+
+---
+
+## コンポーネントの書き方
+
+### Export
+
+- **Named Export のみ** — default export は使用しない
+- **index.ts は作らない** — ファイルパスで直接 import する
+
+```tsx
+// ✅
+export const PrimaryButton = () => { ... }
+
+// ❌
+export default PrimaryButton
+```
+
+### Props の型定義
+
+- 基本は `type`（`interface` は外部ライブラリの型を拡張するときだけ使う）
+- 型名は `lowerCamelCase` ＋ `Type` サフィックス（プロジェクト独自の規約）
+
+```tsx
+// ✅ 通常のProps
+type eventItemType = {
+  title: string
+  date: string | number
+}
+export const EventItem = ({ title, date }: eventItemType) => { ... }
+
+// ✅ 外部ライブラリを拡張するとき
+interface SeparatorProps extends SeparatorPrimitive.SeparatorProps {
+  className?: string
+}
+```
+
+---
+
+## スタイリング
+
+Tailwind CSS v4 ＋ CVA（Class Variance Authority）を組み合わせて使う。
+
+### ユーティリティ関数
+
+| 関数 | 用途 |
+| --- | --- |
+| `tw(tag, cva(...))` | HTML要素にスタイルを付ける |
+| `twe(Component, cva(...))` | React コンポーネントにスタイルを付ける |
+| `cva(...)` | バリアントを定義する |
+| `cn(...classes)` | クラス名をマージする（clsx + tailwind-merge） |
+
+```tsx
+// HTML要素
+export const Center = tw('div', cva('m-auto flex items-center justify-center'))
+
+// バリアント付き
+const imageVariants = cva('mx-auto cursor-pointer', {
+  variants: {
+    closeup: { true: 'max-w-none', false: 'max-w-full' },
+  },
+  defaultVariants: { closeup: false },
+})
+
+// クラスのマージ
+<button className={cn(flexClasses({ isColumn }), 'appearance-none bg-transparent')} />
+```
+
+### Tailwind v4 の注意点
+
+`leading-*`（行の高さ）は CSS 変数としてカスケードするため、レスポンシブで変更するときは **明示的に指定** する必要がある。
+
+```tsx
+// Why: v4 では leading-7 が CSS変数で全子孫にカスケードするため、
+//      md:text-sm だけでは行高が上書きされない。md:leading-5 を明示して復元する。
+cva('text-xs leading-7 md:text-sm md:leading-5')
+```
+
+---
+
+## TypeScript
+
+### import type の強制
+
+型のインポートには必ず `import type` を使う（Biome: `useImportType: "error"`）。
+
+```tsx
+// ✅
+import type { Meta, StoryObj } from '@storybook/nextjs'
+
+// ❌ Biome がエラーにする
+import { Meta, StoryObj } from '@storybook/nextjs'
+```
+
+### コードスタイル（Biome）
+
+| 設定 | 値 |
+| --- | --- |
+| クォート | シングル `'` |
+| セミコロン | なし |
+| 末尾カンマ | ES5 スタイル（配列・オブジェクトにあり、関数引数にはなし） |
+| インデント | スペース 2 |
+| 最大行長 | 100文字 |
+
+---
+
+## Stories の書き方（CSF3）
+
+### シンプルなコンポーネント
+
+```tsx
+export default { component: Center }
+export const Default = { args: { children: 'Center' } }
+```
+
+### 型付き・複雑なコンポーネント
+
+```tsx
+const meta: Meta<typeof PrimaryButton> = { component: PrimaryButton }
+export default meta
+type Story = StoryObj<typeof PrimaryButton>
+
+export const Default: Story = { args: { children: 'Primary Button' } }
+```
+
+### よく使う `parameters`
+
+```tsx
+// 擬似クラスの状態
+parameters: { pseudo: { hover: true } }
+
+// モバイルビューポート
+globals: { viewport: { value: 'mobile1' } }
+
+// Chromatic スナップショットを無効化（動的コンテンツ）
+parameters: { chromatic: { disableSnapshot: true } }
+
+// フルスクリーンレイアウト
+parameters: { layout: 'fullscreen' }
+```
+
+### Story の自動生成
+
+```bash
+yarn create-stories "path/to/Component.tsx"
+```
+
+`.stories.tsx` と `.mdx` を自動生成する。
+
+### Storybook / Chromatic の注意
+
+Dependabot はフォークされたPRなのでシークレットキーを公開にしないと使えない。
+UIに変更がある可能性のあるものは、個別にローカルで `chromatic` コマンドを叩いてデプロイすること。
+
+---
+
+## テスト
+
+| 種別 | ファイル配置 | ランナー |
+| --- | --- | --- |
+| コンポーネント・ユーティリティ | 同ディレクトリに `.test.ts(x)` | Vitest |
+| フック | `__tests__/` フォルダに分離 | Vitest |
+| E2E | `tests/` または `cypress/` | Playwright / Cypress |
+
+---
+
+## コメントの書き方
+
+コメントは **日本語** で記述する。「何をしているか」より **なぜそうしているか** を優先する。
+
+```tsx
+// Why: APIレスポンスの型が不安定なため、ランタイムバリデーションで保証
+// Trade-off: パフォーマンスコストを払い、型安全性を獲得
+// Alternative: 型アサーションも検討したが、実行時エラーリスクが高い
+const validatedData = validateApiResponse(response)
+```
+
+Biome のルールを意図的に無視するときは、理由も添える。
+
+```tsx
+// biome-ignore lint/suspicious/noExplicitAny: React 19 型との互換レイヤーとして意図的に any を使う
+type ComponentLike<P = unknown> = ((props: P) => any) | ...
+```
+
+---
+
+## セットアップ補足
+
+### Windows 環境での Git 設定
+
+Windows の `core.autocrlf=true` が Biome の `lineEnding: "lf"` 設定と衝突し、pre-push フックが失敗する。
+**リポジトリのクローン後に以下を実行すること。**
+
+```bash
+git config core.autocrlf false
+```
+
+その後、既存の CRLF ファイルを LF に変換するため全ファイルを削除・再チェックアウトする。
+
+```bash
+python3 -c "
+import subprocess, os
+files = subprocess.run(['git', 'ls-files', '-z'], capture_output=True).stdout.split(b'\x00')
+[os.remove(f.decode('utf-8')) for f in files if f]
+"
+git checkout HEAD -- .
+```

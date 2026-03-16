@@ -1,4 +1,4 @@
-# GEMINI.md
+# CLAUDE.md
 
 このプロジェクトのルール・規約の原本は Storybook ドキュメントで管理している。
 
