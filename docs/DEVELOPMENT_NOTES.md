@@ -1,5 +1,36 @@
 # Development Notes
 
+
+## セットアップ補足
+
+### Windows 環境での Git 設定
+
+Windows では Git のデフォルト設定 `core.autocrlf=true` により、
+チェックアウト時にファイルの改行コードが CRLF に変換される。
+Biome の `lineEnding: "lf"` 設定と衝突し、pre-push フックが失敗するため、
+**リポジトリをクローン後に以下を実行すること**:
+
+```bash
+git config core.autocrlf false
+```
+
+その後、既存の CRLF ファイルを LF に変換するため全ファイルを削除・再チェックアウトする:
+
+```bash
+python3 -c "
+import subprocess, os
+files = subprocess.run(['git', 'ls-files', '-z'], capture_output=True).stdout.split(b'\x00')
+[os.remove(f.decode('utf-8')) for f in files if f]
+"
+git checkout HEAD -- .
+```
+
+> **Why**: `.gitattributes` の `eol=lf` だけでは Windows の `core.autocrlf=true` を
+> 上書きできないケースがある（ファイル削除なしの `git reset --hard` では作業ディレクトリが
+> 更新されない）。詳細は [#1423](https://github.com/mieze018/portfolio-v2/issues/1423) 参照。
+
+---
+
 ## ファイル / ディレクトリ命名規則
 
 > 教訓: 後から大文字小文字を変更するとローカルでは認識されてもサーバーで認識されないことがある。
