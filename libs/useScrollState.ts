@@ -1,8 +1,7 @@
-import { useScroll } from 'motion/react'
 import { useAtomValue } from 'jotai'
-import { useState, useEffect } from 'react'
-
+import { useEffect, useState } from 'libs/reactCompat'
 import { contentsWrapperState } from 'libs/states/atoms'
+import { useScroll } from 'motion/react'
 
 export type scrollStatesType = {
   scrollY?: number

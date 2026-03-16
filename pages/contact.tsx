@@ -1,16 +1,15 @@
-import type { PageObject } from 'libs/@type/api/notion'
-import type { GetStaticProps, NextPage } from 'next'
-
 import { ContactContent } from 'components/Organisms/ContactContent'
+import type { PageObject } from 'libs/@type/api/notion'
 import { getPage } from 'libs/notion'
 import { workAcceptanceStatusDBId } from 'libs/notionDB'
+import type { GetStaticProps, NextPage } from 'next'
 
 export type contactDataType = {
   fallbackData: {
     workAcceptanceStatus: PageObject[]
   }
 }
-const Contact: NextPage<contactDataType> = ({ fallbackData }) => {
+const Contact: NextPage<contactDataType> = ({ fallbackData }: contactDataType) => {
   if (!fallbackData) return <div>Loading...</div>
   return <ContactContent fallbackData={fallbackData} formId={process.env.NEXT_PUBLIC_FORM || ''} />
 }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Linktree } from './Linktree'
 import type { LocalApi } from 'libs/@type/api/local'
+import { Linktree } from './Linktree'
 
 const meta: Meta<typeof Linktree> = {
   component: Linktree,

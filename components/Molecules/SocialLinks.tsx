@@ -1,18 +1,17 @@
+import { cva, tw } from 'libs/component-factory'
+import { links } from 'pages/api/about/links'
 import { GiShoppingBag } from 'react-icons/gi'
 import {
-  SiGithub,
-  SiX,
-  SiPixiv,
-  SiInstagram,
-  SiDeviantart,
-  SiPinterest,
   SiBehance,
-  SiTumblr,
+  SiDeviantart,
+  SiGithub,
   SiGumroad,
+  SiInstagram,
+  SiPinterest,
+  SiPixiv,
+  SiTumblr,
+  SiX,
 } from 'react-icons/si'
-import { tw, cva } from 'libs/component-factory'
-
-import { links } from 'pages/api/about/links'
 
 const Wrapper = tw(
   'div',
@@ -55,6 +54,6 @@ const SocialIconDecider = ({ text }: { text: string }) => {
     case 'booth':
       return <GiShoppingBag />
     default:
-      return <></>
+      return null
   }
 }

@@ -1,7 +1,4 @@
-import React from 'react'
-
 import type { PageObject } from 'libs/@type/api/notion'
-
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 

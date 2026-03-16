@@ -1,5 +1,5 @@
+import { cva, tw } from 'libs/component-factory'
 import { useTranslation } from 'libs/useTranslation'
-import { tw, cva } from 'libs/component-factory'
 
 const Wrapper = tw('div', cva('px-5 max-w-(--breakpoint-md) m-auto grid gap-y-4 text-xs mb-20'))
 const P = tw('p', cva(''))

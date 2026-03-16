@@ -1,6 +1,5 @@
-import { tw, cva } from 'libs/component-factory'
-
 import type { Tumblr } from 'libs/@type/api/tumblr'
+import { cva, tw } from 'libs/component-factory'
 
 const Wrapper = tw('footer', cva('mt-0 text-xs sm:text-sm text-left w-full'))
 

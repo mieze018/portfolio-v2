@@ -1,9 +1,8 @@
-import type { PageObject } from 'libs/@type/api/notion'
-import type { GetStaticProps, NextPage } from 'next'
-
 import { AboutContent } from 'components/Organisms/AboutContent'
+import type { PageObject } from 'libs/@type/api/notion'
 import { getDatabase } from 'libs/notion'
-import { prizesDBId, workExperienceDBId, workExperienceGenreDBId, eventDBId } from 'libs/notionDB'
+import { eventDBId, prizesDBId, workExperienceDBId, workExperienceGenreDBId } from 'libs/notionDB'
+import type { GetStaticProps, NextPage } from 'next'
 
 export type aboutDataType = {
   fallbackData: {
@@ -14,7 +13,7 @@ export type aboutDataType = {
   }
 }
 
-const About: NextPage<aboutDataType> = ({ fallbackData }) => {
+const About: NextPage<aboutDataType> = ({ fallbackData }: aboutDataType) => {
   if (!fallbackData) return <div>Loading...</div>
   return <AboutContent fallbackData={fallbackData} />
 }

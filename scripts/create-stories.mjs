@@ -1,6 +1,6 @@
-import fs from 'fs'
-import path from 'path'
-import { exec } from 'child_process'
+import { exec } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
 
 /** 引数。エクスプローラーからD&Dで受け取る。
  * 例: WIndows `C:\Users\Public\Documents\Git\user\repo\components\Molecules\About\EventHistory.tsx`
@@ -22,8 +22,8 @@ if (fullPath.indexOf(splitChar) === -1) {
     let results = []
     const files = fs.readdirSync(startPath)
     files.forEach((file) => {
-      let filename = path.join(startPath, file)
-      let stat = fs.lstatSync(filename)
+      const filename = path.join(startPath, file)
+      const stat = fs.lstatSync(filename)
 
       if (stat.isDirectory()) {
         results = results.concat(findFilesInDir(filename, filter)) // recurse
@@ -46,10 +46,7 @@ const componentName = fullPath.split(splitChar).pop().replace('.tsx', '')
 /** fullPathから`componentsDir`以降のディレクトリを取得する。
  * 例: `Molecules/About/`
  * @type {string} */
-const relativeDir = fullPath
-  .split(componentsDir)
-  .pop()
-  .replace(componentName + '.tsx', '')
+const relativeDir = fullPath.split(componentsDir).pop().replace(`${componentName}.tsx`, '')
 
 // ディレクトリが存在しなければ中止
 if (!fs.existsSync(componentsDir)) {

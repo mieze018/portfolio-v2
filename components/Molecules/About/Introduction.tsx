@@ -1,6 +1,6 @@
-import { useTranslation } from 'libs/useTranslation'
-import { tw, cva } from 'libs/component-factory'
 import { SectionWrapper } from 'components/Atoms/About/Atoms'
+import { cva, tw } from 'libs/component-factory'
+import { useTranslation } from 'libs/useTranslation'
 
 export const Introduction = () => {
   const { tb } = useTranslation('common')

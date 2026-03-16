@@ -1,15 +1,13 @@
-import { GoMail } from 'react-icons/go'
-import { IoMdPaperPlane } from 'react-icons/io'
-import { tw, cva } from 'libs/component-factory'
-
-import type { contactDataType } from 'pages/contact'
-
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { Separator } from 'components/Atoms/Separator'
 import { ContactForm } from 'components/Molecules/ContactForm'
+import { cva, tw } from 'libs/component-factory'
 import { getProperties } from 'libs/notion'
 import { mail } from 'pages/api/basics'
+import type { contactDataType } from 'pages/contact'
+import { GoMail } from 'react-icons/go'
+import { IoMdPaperPlane } from 'react-icons/io'
 
 const Wrapper = tw(
   'div',

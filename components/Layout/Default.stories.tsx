@@ -11,6 +11,7 @@ const meta: Meta<typeof Layout> = {
 }
 export default meta
 type Story = StoryObj<typeof Layout>
+type StoryPlayContext = Parameters<NonNullable<Story['play']>>[0]
 
 export const Default: Story = {
   args: {
@@ -30,6 +31,7 @@ export const WithLongContent: Story = {
       <div style={{ padding: '20px' }}>
         <h1>長いコンテンツのページ</h1>
         {Array.from({ length: 10 }, (_, i) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: Story の fixture 用ダミーデータで順序固定のため index key で問題なし
           <div key={i} style={{ marginBottom: '40px' }}>
             <h2>セクション {i + 1}</h2>
             <p>
@@ -46,7 +48,8 @@ export const WithLongContent: Story = {
     ),
   },
 
-  play: async ({ canvas }) => {
+  play: async (context: StoryPlayContext) => {
+    const { canvas } = context
     const htmlElement = document.documentElement
     // 初期状態でTopBarが存在することを確認
     const topBar = canvas.getByRole('banner')

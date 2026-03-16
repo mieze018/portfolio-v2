@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Post } from './Post'
 import type { Tumblr } from 'libs/@type/api/tumblr'
 import { expect, waitFor } from 'storybook/test'
+import { Post } from './Post'
 
 const meta: Meta<typeof Post> = {
   component: Post,
@@ -10,6 +10,7 @@ const meta: Meta<typeof Post> = {
 }
 export default meta
 type Story = StoryObj<typeof Post>
+type StoryPlayContext = Parameters<NonNullable<Story['play']>>[0]
 
 const testImage1 = 'https://picsum.photos/id/1/800/600'
 const testImage2 = 'https://picsum.photos/id/10/400/300'
@@ -130,7 +131,8 @@ export const Default: Story = {
   args: {
     post: mockPost,
   },
-  play: async ({ canvas }) => {
+  play: async (context: StoryPlayContext) => {
+    const { canvas } = context
     // 投稿記事要素を取得
     const article = canvas.getByRole('article')
     await expect(article).toBeInTheDocument()

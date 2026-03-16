@@ -1,11 +1,10 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { renderHook, act } from '@testing-library/react'
-import { Provider, createStore } from 'jotai'
-import { createElement, type ReactNode } from 'react'
-
+import { act, renderHook } from '@testing-library/react'
+import { createStore, Provider } from 'jotai'
 import { useModalControl } from 'libs/hooks/useModalControl'
 import { modalPhotoState } from 'libs/states/atoms'
 import type { ModalPhoto } from 'libs/states/types'
+import { createElement, type ReactNode } from 'react'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 // Why: useHash は Next.js の useRouter に依存するため、テスト環境ではモックする
 const mockSetHash = vi.fn()
@@ -14,6 +13,7 @@ vi.mock('libs/useHash', () => ({
 }))
 
 import { useHash } from 'libs/useHash'
+
 const mockUseHash = vi.mocked(useHash)
 
 const createWrapper = (store: ReturnType<typeof createStore>) => {

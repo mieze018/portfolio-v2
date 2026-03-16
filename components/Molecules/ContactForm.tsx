@@ -1,14 +1,12 @@
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react'
-import { useTranslation } from 'libs/useTranslation'
-import React from 'react'
-import { tw, cva } from 'libs/component-factory'
-
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { PrimaryButton } from 'components/Atoms/PrimaryButton'
 import { Textarea } from 'components/Atoms/Textarea'
+import { cva, tw } from 'libs/component-factory'
+import { useTranslation } from 'libs/useTranslation'
 
 const Form = tw('form', cva('grid gap-4 w-full md:w-g-61vw m-auto max-w-(--breakpoint-sm)'))
 const RequiredMarkSpan = tw('span', cva('text-main px-1'))

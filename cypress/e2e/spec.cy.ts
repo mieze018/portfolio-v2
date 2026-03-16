@@ -25,7 +25,7 @@ describe('トップページにアクセスしたとき', () => {
 
   it('ページURLに言語プレフィックスがない', () => {
     cy.visit('/')
-    cy.url().should('eq', Cypress.config().baseUrl + '/')
+    cy.url().should('eq', `${Cypress.config().baseUrl}/`)
     cy.url().should('not.include', '/en')
     cy.url().should('not.include', '/ja')
   })

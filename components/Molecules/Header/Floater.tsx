@@ -1,6 +1,6 @@
-import { motion } from 'motion/react'
 import { cva } from 'class-variance-authority'
 import { cn } from 'libs/tw-clsx-util'
+import { motion } from 'motion/react'
 
 /** 使ってないけどFramer Motionに翻訳前 */
 // const sunk = keyframes`

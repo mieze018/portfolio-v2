@@ -2,7 +2,8 @@
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-yarn lint
+# Why: Biome に移行済み。check:ci は --write なしで差分を出さずに検査のみ行う
+yarn check:ci
 # yarn unused
 npx playwright install
 # yarn cy:test

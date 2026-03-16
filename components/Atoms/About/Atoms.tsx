@@ -1,4 +1,4 @@
-import { tw, cva } from 'libs/component-factory'
+import { cva, tw } from 'libs/component-factory'
 
 export const P = tw('p', cva(''))
 export const H2 = tw('h2', cva('my-2 leading-loose tracking-widest'))

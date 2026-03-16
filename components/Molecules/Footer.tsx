@@ -1,12 +1,11 @@
-import Link from 'next/link'
-import { useTranslation } from 'libs/useTranslation'
-import { tw, cva } from 'libs/component-factory'
-
 import { Nav } from 'components/Molecules/Header/Nav'
 import { NavLinks } from 'components/Molecules/Header/NavLink'
 import { SocialLinks } from 'components/Molecules/SocialLinks'
+import { cva, tw } from 'libs/component-factory'
 import { copyright } from 'libs/copyright'
 import { routes } from 'libs/routes'
+import { useTranslation } from 'libs/useTranslation'
+import Link from 'next/link'
 
 const Wrapper = tw(
   'footer',

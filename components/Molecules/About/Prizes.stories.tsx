@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Prizes } from './Prizes'
 import type { PageObject } from 'libs/@type/api/notion'
+import { Prizes } from './Prizes'
 
 const meta: Meta<typeof Prizes> = {
   component: Prizes,

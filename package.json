@@ -8,10 +8,12 @@
     "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint './**/*.{ts,tsx}'",
-    "eslint-inspect": "npx @eslint/config-inspector@latest",
-    "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
-    "format": "prettier --write . --ignore-path .gitignore",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "check:ci": "biome check .",
+    "check:staged": "biome check --write --no-errors-on-unmatched",
     "unused": "yarn ts-unused-exports tsconfig.json --excludeDeclarationFiles --showLineNumber '--excludePathsFromReport=pages' '--ignoreFiles=.*config.*|.*.stories.*'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -20,20 +22,12 @@
     "e2e:local": "node scripts/cy-test.mjs",
     "cy:test": "yarn run e2e:local",
     "prepare": "husky install",
-    "upgrade:linter": "yarn up 'eslint*'",
+    "upgrade:linter": "yarn up '@biomejs/biome'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
     "upgrade:storybook": "npx storybook@latest upgrade",
     "create-stories": "node scripts/create-stories.mjs",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "printWidth": 100
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
@@ -56,8 +50,8 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.7",
     "@chromatic-com/storybook": "^5.0.1",
-    "@eslint/js": "^9.39.4",
     "@playwright/test": "^1.55.1",
     "@storybook/addon-a11y": "^10.2.17",
     "@storybook/addon-docs": "^10.2.17",
@@ -77,25 +71,16 @@
     "chromatic": "^15.2.0",
     "cspell": "latest",
     "cypress": "^15.11.0",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "^16.1.6",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-css": "0.12.0",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-storybook": "^10.2.17",
-    "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^9.1.6",
     "jsdom": "^28.1.0",
     "lint-staged": "^16.3.3",
     "postcss": "^8.4.34",
-    "prettier": "^3.1.1",
     "storybook": "^10.2.17",
     "storybook-addon-pseudo-states": "^10.2.17",
     "tailwindcss": "^4.2.1",
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^11.0.1",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1",
     "vitest": "^4.1.0"
   },
   "packageManager": "yarn@4.0.2",
@@ -104,9 +89,7 @@
     "yarn": "4.0.2"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,css,md,yml,yaml}": [
-      "prettier --write"
-    ]
+    "*.{ts,tsx,js,jsx,json,css}": "yarn check:staged"
   },
   "resolutions": {
     "@types/react": "19.1.8",

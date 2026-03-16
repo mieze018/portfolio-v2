@@ -1,6 +1,7 @@
 // 翻訳データのインポート
-import jaCommon from '../public/locales/ja/common.json'
+
 import enCommon from '../public/locales/en/common.json'
+import jaCommon from '../public/locales/ja/common.json'
 
 // 翻訳データの型定義
 type TranslationKeys = keyof typeof jaCommon

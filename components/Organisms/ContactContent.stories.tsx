@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import { ContactContent } from './ContactContent'
 import type { PageObject } from 'libs/@type/api/notion'
+import { ContactContent } from './ContactContent'
 
 const meta: Meta<typeof ContactContent> = {
   component: ContactContent,

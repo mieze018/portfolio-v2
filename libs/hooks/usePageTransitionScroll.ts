@@ -1,5 +1,5 @@
 // libs/hooks/usePageTransitionScroll.ts
-import { useCallback, type RefObject } from 'react'
+import { type RefObjectLike, useCallback } from 'libs/reactCompat'
 
 /**
  * AnimatePresence の onExitComplete 用コールバックを生成する hook
@@ -10,7 +10,7 @@ import { useCallback, type RefObject } from 'react'
  * Trade-off: rAF を使うことでフレーム単位の遅延が入るが、
  * DOM 更新完了後に確実にスクロールできる。
  */
-export const usePageTransitionScroll = (ref: RefObject<HTMLElement | null>) => {
+export const usePageTransitionScroll = (ref: RefObjectLike<HTMLElement | null>) => {
   const onExitComplete = useCallback(() => {
     requestAnimationFrame(() => {
       ref.current?.scrollIntoView(true)
