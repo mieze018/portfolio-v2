@@ -2,6 +2,11 @@ name: 'Chromatic'
 
 on: push
 
+# Why: GITHUB_TOKEN の権限を最小化してサプライチェーン攻撃リスクを低減する。
+#      Chromatic 実行はチェックアウトのみで書き込み不要なため contents: read で十分。
+permissions:
+  contents: read
+
 jobs:
   chromatic:
     name: Run Chromatic

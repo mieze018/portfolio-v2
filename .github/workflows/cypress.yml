@@ -1,5 +1,12 @@
 name: Cypress Tests
 on: [push]
+
+# Why: GITHUB_TOKEN の権限を最小化してサプライチェーン攻撃リスクを低減する。
+#      GITHUB_TOKEN は Cypress Cloud のラン識別に使用するだけで書き込み不要なため
+#      contents: read で十分。
+permissions:
+  contents: read
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
