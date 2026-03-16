@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { PrivacyPolicy } from './PrivacyPolicy'
 
 const meta: Meta<typeof PrivacyPolicy> = { component: PrivacyPolicy }

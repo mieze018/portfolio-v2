@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import type { LocalApi } from 'libs/@type/api/local'
 import { Linktree } from './Linktree'
 

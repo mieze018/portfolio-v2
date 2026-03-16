@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { createStore, Provider } from 'jotai'
 import { modalPhotoState } from 'libs/states/atoms'
 import { Modal } from './Modal'
