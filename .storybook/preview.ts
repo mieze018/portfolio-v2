@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/nextjs'
+import type { Preview } from '@storybook/nextjs-vite'
 import '../styles/global.css'
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport'
 
