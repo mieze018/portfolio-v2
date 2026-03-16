@@ -1,0 +1,16 @@
+# Why: Windows の core.autocrlf=true によるCRLF変換を防ぎ、
+#      Biome の lineEnding: "lf" 設定と一致させるため全テキストファイルを LF に統一する。
+# Trade-off: 既存の CRLF ファイルは --renormalize で一括変換が必要。
+* text=auto eol=lf
+
+# バイナリファイルは変換しない
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
