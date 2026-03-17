@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   usePageView()
   return (
     <div>
-      <Layout>
+      <Layout socialLinks={pageProps.socialLinks}>
         <GoogleAnalytics />
         {/* //router.asPathでハッシュを含む, router.pathnameでハッシュを含まない */}
         <ContentsWrapper $key={router.pathname}>

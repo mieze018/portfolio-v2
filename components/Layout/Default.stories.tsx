@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { mockSocialLinks } from 'libs/test/mockSocialLinks'
 import { expect, waitFor } from 'storybook/test'
 import Layout from './Default'
 
@@ -15,6 +16,7 @@ type StoryPlayContext = Parameters<NonNullable<Story['play']>>[0]
 
 export const Default: Story = {
   args: {
+    socialLinks: mockSocialLinks,
     children: (
       <div style={{ padding: '20px', textAlign: 'center' }}>
         <h1>サンプルページコンテンツ</h1>

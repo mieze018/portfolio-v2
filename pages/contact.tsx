@@ -2,6 +2,7 @@ import { ContactContent } from 'components/Organisms/ContactContent'
 import type { PageObject } from 'libs/@type/api/notion'
 import { getPage } from 'libs/notion'
 import { workAcceptanceStatusDBId } from 'libs/notionDB'
+import { getSharedStaticProps } from 'libs/sharedStaticProps'
 import type { GetStaticProps, NextPage } from 'next'
 
 export type contactDataType = {
@@ -17,10 +18,12 @@ const Contact: NextPage<contactDataType> = ({ fallbackData }: contactDataType) =
 export default Contact
 
 export const getStaticProps: GetStaticProps = async () => {
+  const shared = await getSharedStaticProps()
   const workAcceptanceStatus = await getPage(workAcceptanceStatusDBId)
   const Data = { workAcceptanceStatus }
   return {
     props: {
+      ...shared,
       fallbackData: Data,
     },
   }

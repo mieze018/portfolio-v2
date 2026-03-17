@@ -24,7 +24,7 @@ describe('notion API ラッパー', () => {
   })
 
   describe('getDatabase', () => {
-    it('データベースを取得してソート付きでクエリする', async () => {
+    it('sortProperty 未指定の場合は sorts なしで Notion DB の表示順をそのまま使う', async () => {
       mockRetrieve.mockResolvedValue({
         data_sources: [{ id: 'ds-123' }],
       })
@@ -35,10 +35,8 @@ describe('notion API ラッパー', () => {
       const results = await getDatabase('db-abc')
 
       expect(mockRetrieve).toHaveBeenCalledWith({ database_id: 'db-abc' })
-      expect(mockQuery).toHaveBeenCalledWith({
-        data_source_id: 'ds-123',
-        sorts: [{ timestamp: 'created_time', direction: 'descending' }],
-      })
+      // Why: sorts を渡さないことで Notion DB の手動並び替え順が反映される
+      expect(mockQuery).toHaveBeenCalledWith({ data_source_id: 'ds-123' })
       expect(results).toHaveLength(2)
     })
 

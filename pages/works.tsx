@@ -1,5 +1,6 @@
 import { Posts } from 'components/Organisms/Posts'
 import type { Tumblr } from 'libs/@type/api/tumblr'
+import { getSharedStaticProps } from 'libs/sharedStaticProps'
 import type { GetStaticProps, NextPage } from 'next'
 import { tags } from 'pages/api/works/tags'
 import { endpoint, fetcher } from 'pages/api/works/tumblr'
@@ -17,11 +18,13 @@ const PersonalWork: NextPage<{ fallbackData: Tumblr.Root }> = ({
 export default PersonalWork
 
 export const getStaticProps: GetStaticProps = async () => {
+  const shared = await getSharedStaticProps()
   const API_URL_ROOT = endpoint
 
   const data = await fetcher(API_URL_ROOT)
   return {
     props: {
+      ...shared,
       fallbackData: data,
     },
   }

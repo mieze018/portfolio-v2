@@ -7,7 +7,6 @@ import { Prizes } from 'components/Molecules/About/Prizes'
 import { WorkExperience } from 'components/Molecules/About/WorkExperience'
 import { cva, tw } from 'libs/component-factory'
 import type { aboutDataType } from 'pages/about'
-import { links } from 'pages/api/about/links'
 
 const Wrapper = tw(
   'div',
@@ -19,7 +18,7 @@ const Wrapper = tw(
   )
 )
 
-export const AboutContent = ({ fallbackData }: aboutDataType) => {
+export const AboutContent = ({ socialLinks, fallbackData }: aboutDataType) => {
   const { prizes, workExperience, workExperienceGenre, events } = fallbackData
   if (!fallbackData) return <div>Loading...</div>
   return (
@@ -31,7 +30,7 @@ export const AboutContent = ({ fallbackData }: aboutDataType) => {
       )}
       {/* <EventHistory events={events} /> */}
       <Prizes prizes={prizes} />
-      {!!links?.length && <Linktree links={links} />}
+      {!!socialLinks?.length && <Linktree links={socialLinks} />}
       <Participant />
     </Wrapper>
   )
