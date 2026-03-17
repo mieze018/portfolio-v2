@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { mockSocialLinks } from 'libs/test/mockSocialLinks'
 import { Footer } from './Footer'
 
 const meta: Meta<typeof Footer> = {
@@ -11,4 +12,8 @@ const meta: Meta<typeof Footer> = {
 export default meta
 type Story = StoryObj<typeof Footer>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    socialLinks: mockSocialLinks,
+  },
+}

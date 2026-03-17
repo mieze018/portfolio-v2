@@ -33,6 +33,7 @@ export const SocialLinks = ({ links }: { links: LocalApi.SnsLink[] }) => {
 }
 const SocialIconDecider = ({ text }: { text: string }) => {
   switch (text.toLowerCase()) {
+    case 'x':
     case 'twitter':
       return <SiX />
     case 'instagram':
