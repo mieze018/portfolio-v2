@@ -21,7 +21,12 @@ const toSnsLink = (page: PageObject): LocalApi.SnsLink | null => {
 }
 
 const getSocialLinks = async (): Promise<LocalApi.SnsLink[]> => {
-  const pages = await getDatabase(snsLinkDBId)
+  // Why: Notion DB の order 列で昇順ソートすることで表示順を明示的に管理する
+  // Alternative: sorts 未指定の場合は作成順になりユーザーが制御できないため採用しない
+  const pages = await getDatabase(snsLinkDBId, {
+    sortProperty: 'order',
+    sortDirection: 'ascending',
+  })
   return pages.map(toSnsLink).filter((link): link is LocalApi.SnsLink => link !== null)
 }
 
