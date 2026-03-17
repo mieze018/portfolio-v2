@@ -5,13 +5,12 @@ import type { LocalApi } from 'libs/@type/api/local'
 // Storybook 上で全アイコンの表示確認ができる。
 export const mockSocialLinks: LocalApi.SnsLink[] = [
   { text: 'X', url: 'https://x.com/example' },
-  { text: 'GitHub', url: 'https://github.com/example' },
-  { text: 'Instagram', url: 'https://www.instagram.com/example' },
   { text: 'pixiv', url: 'https://www.pixiv.net/users/0' },
-  { text: 'Tumblr', url: 'https://www.tumblr.com/blog/example', mobileLUrl: 'tumblr' },
+  { text: 'Instagram', url: 'https://www.instagram.com/example' },
+  { text: 'Tumblr', url: 'https://www.tumblr.com/blog/example' },
   { text: 'Deviantart', url: 'https://www.deviantart.com/example' },
-  { text: 'Pinterest', url: 'https://www.pinterest.com/example' },
   { text: 'Behance', url: 'https://www.behance.net/example' },
-  { text: 'Gumroad', url: 'https://example.gumroad.com' },
+  { text: 'Pinterest', url: 'https://www.pinterest.com/example' },
   { text: 'Booth', url: 'https://example.booth.pm' },
+  { text: 'GitHub', url: 'https://github.com/example' },
 ]

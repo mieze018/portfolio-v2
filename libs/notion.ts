@@ -26,24 +26,16 @@ export const getDatabase = async (
 ) => {
   const dataSourceId = await resolveDataSourceId(databaseId)
 
-  //オプションでソート順を指定できる
+  // Why: sortProperty 未指定の場合は sorts を渡さず Notion DB の表示順をそのまま使う
+  // Trade-off: 以前は created_time 降順をデフォルトとしていたが、
+  //   DB 側で手動並び替えしても反映されない問題があったため廃止
   const sorts: QueryDataSourceParameters['sorts'] = sortProperty
-    ? [
-        {
-          property: sortProperty,
-          direction: sortDirection,
-        },
-      ]
-    : [
-        {
-          timestamp: 'created_time',
-          direction: 'descending',
-        },
-      ]
+    ? [{ property: sortProperty, direction: sortDirection }]
+    : []
 
   const response = await notion.dataSources.query({
     data_source_id: dataSourceId,
-    sorts: sorts,
+    ...(sorts.length > 0 && { sorts }),
   })
   return response.results
 }
