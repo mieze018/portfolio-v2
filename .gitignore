@@ -20,7 +20,10 @@
 *.pem
 
 # Claude Code (ローカルのツール許可設定。個人環境依存のため除外)
-.claude/
+# Why: .claude/ 全体を除外すると子ディレクトリのネゲートが効かないため、
+# 個別ファイルを除外し skills/ だけバージョン管理する
+.claude/*
+!.claude/skills/
 
 # debug
 npm-debug.log*
