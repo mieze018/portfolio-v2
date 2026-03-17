@@ -41,9 +41,11 @@ export default defineConfig({
         // Why: テスト不可能または純粋な定数のみのファイルを除外
         // fonts.ts は next/font/google のランタイム初期化でテスト環境では動作しない
         // notionDB.ts, routes.ts はロジックを含まない定数定義のみ
+        // libs/test/ はテストヘルパー（モックデータ等）のため coverage 対象外とする
         'libs/fonts.ts',
         'libs/notionDB.ts',
         'libs/routes.ts',
+        'libs/test/**',
       ],
     },
     projects: [
