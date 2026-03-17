@@ -25,7 +25,6 @@
     "upgrade:linter": "yarn up '@biomejs/biome'",
     "upgrade:types": "yarn up '@types/*' '*typescript*'",
     "upgrade:storybook": "npx storybook@latest upgrade",
-    "create-stories": "node scripts/create-stories.mjs",
     "test": "vitest run --passWithNoTests",
     "test:unit": "vitest run --project=unit",
     "test:storybook": "vitest run --project=storybook",
