@@ -57,5 +57,36 @@ describe('gtag', () => {
 
       expect(mockOn).toHaveBeenCalledWith('routeChangeComplete', expect.any(Function))
     })
+
+    it('routeChangeComplete 発火時に window.gtag が呼ばれる', async () => {
+      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = 'G-TEST123'
+      // Why: gtag はグローバル関数として存在する前提のコード。テスト用にモックする
+      const mockGtag = vi.fn()
+      // biome-ignore lint/suspicious/noExplicitAny: window.gtag はテスト用のモック定義
+      ;(window as any).gtag = mockGtag
+
+      const { renderHook } = await import('@testing-library/react')
+      const { usePageView } = await import('./gtag')
+
+      renderHook(() => usePageView())
+
+      // Why: mockOn に渡されたコールバックを取り出して手動で呼ぶ
+      const handler = mockOn.mock.calls[0][1]
+      handler('/test-page')
+
+      expect(mockGtag).toHaveBeenCalledWith('config', 'G-TEST123', {
+        page_path: '/test-page',
+      })
+    })
+
+    it('GA_ID が未設定の場合、イベントを購読しない', async () => {
+      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = ''
+      const { renderHook } = await import('@testing-library/react')
+      const { usePageView } = await import('./gtag')
+
+      renderHook(() => usePageView())
+
+      expect(mockOn).not.toHaveBeenCalled()
+    })
   })
 })

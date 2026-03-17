@@ -27,15 +27,23 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'json-summary', 'json'],
-      // Why: テスト対象のソースコードのみを計測対象にする。
-      // 設定ファイル・型定義・stories・テストファイル自体は除外。
-      include: ['libs/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
+      // Why: CI (CI=true) では unit テストのみなので libs/ に限定。
+      // ローカルでは Storybook テストも含めて components/ もカバレッジ対象にする。
+      include: process.env.CI
+        ? ['libs/**/*.{ts,tsx}']
+        : ['libs/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
       exclude: [
         '**/*.test.{ts,tsx}',
         '**/*.spec.{ts,tsx}',
         '**/*.stories.{ts,tsx}',
         '**/*.d.ts',
         '**/node_modules/**',
+        // Why: テスト不可能または純粋な定数のみのファイルを除外
+        // fonts.ts は next/font/google のランタイム初期化でテスト環境では動作しない
+        // notionDB.ts, routes.ts はロジックを含まない定数定義のみ
+        'libs/fonts.ts',
+        'libs/notionDB.ts',
+        'libs/routes.ts',
       ],
     },
     projects: [

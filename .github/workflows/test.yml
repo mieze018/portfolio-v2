@@ -33,6 +33,8 @@ jobs:
         run: yarn
 
       - name: Run unit tests with coverage
+        # Why: CI=true で vitest.config.ts のカバレッジ対象を libs/ に限定する。
+        # components/ のカバレッジは Storybook テスト経由でローカルで確認する運用。
         run: yarn vitest run --project=unit --coverage
 
       - name: Report coverage to PR

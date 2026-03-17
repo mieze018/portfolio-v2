@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react'
 import type React from 'react'
 import { cva, tw, twe } from './component-factory'
 
@@ -25,6 +26,16 @@ describe('tw (component factory)', () => {
 
     // Why: React 19 では forwardRef を使わず plain function component を返す
     expect(typeof Button).toBe('function')
+  })
+
+  test('tw で作成したコンポーネントをレンダリングすると variant クラスが適用される', () => {
+    const Button = tw('button', buttonVariants)
+    const { container } = render(<Button variant="secondary" size="lg" />)
+    const el = container.firstElementChild!
+
+    expect(el.tagName).toBe('BUTTON')
+    expect(el.className).toContain('bg-gray-500')
+    expect(el.className).toContain('px-4 py-2')
   })
 
   test('variantsが正しく適用されること', () => {
@@ -161,6 +172,19 @@ describe('twe (component wrapper)', () => {
     expect(typeof WrappedComponent).toBe('function')
   })
 
+  test('twe で作成したコンポーネントをレンダリングすると variant と className が結合される', () => {
+    const variants = cva('base', {
+      variants: { size: { sm: 'text-sm', lg: 'text-lg' } },
+    })
+    const Wrapped = twe(TestComponent, variants)
+    const { container } = render(<Wrapped size="lg" className="extra" />)
+    const el = container.firstElementChild!
+
+    expect(el.className).toContain('base')
+    expect(el.className).toContain('text-lg')
+    expect(el.className).toContain('extra')
+  })
+
   test('displayNameが正しく設定されること', () => {
     const WrappedComponent = twe(TestComponent, buttonVariants)
     expect(WrappedComponent.displayName).toBe('twe(TestComponent)')
@@ -173,6 +197,12 @@ describe('twe (component wrapper)', () => {
     const AnonymousComponent = (props: React.ComponentPropsWithoutRef<'div'>) => <div {...props} />
     const WrappedAnonymous = twe(AnonymousComponent, buttonVariants)
     expect(WrappedAnonymous.displayName).toBe('twe(AnonymousComponent)')
+
+    // Why: displayName も name も持たないコンポーネントで 'Component' フォールバックを検証
+    const noNameComponent = (props: Record<string, unknown>) => <div {...props} />
+    Object.defineProperty(noNameComponent, 'name', { value: '', writable: true })
+    const WrappedNoName = twe(noNameComponent as never, buttonVariants)
+    expect(WrappedNoName.displayName).toBe('twe(Component)')
   })
 
   test('variantsが正しく適用されること', () => {
