@@ -22,6 +22,7 @@ const TestComponent = ({ routeKey }: { routeKey: string }) => {
 
 describe('useContentsWrapperRef', () => {
   const originalOffsetTop = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetTop')
+  const originalScrollIntoView = HTMLElement.prototype.scrollIntoView
 
   beforeEach(() => {
     vi.clearAllMocks()
@@ -34,6 +35,7 @@ describe('useContentsWrapperRef', () => {
     if (originalOffsetTop) {
       Object.defineProperty(HTMLElement.prototype, 'offsetTop', originalOffsetTop)
     }
+    HTMLElement.prototype.scrollIntoView = originalScrollIntoView
   })
 
   it('マウント時に setContentsWrapper を ref.current で呼ぶ', () => {
