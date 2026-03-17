@@ -1,10 +1,13 @@
 import { AboutContent } from 'components/Organisms/AboutContent'
+import type { LocalApi } from 'libs/@type/api/local'
 import type { PageObject } from 'libs/@type/api/notion'
 import { getDatabase } from 'libs/notion'
 import { eventDBId, prizesDBId, workExperienceDBId, workExperienceGenreDBId } from 'libs/notionDB'
+import { getSharedStaticProps } from 'libs/sharedStaticProps'
 import type { GetStaticProps, NextPage } from 'next'
 
 export type aboutDataType = {
+  socialLinks: LocalApi.SnsLink[]
   fallbackData: {
     prizes: PageObject[]
     workExperience: PageObject[]
@@ -13,14 +16,15 @@ export type aboutDataType = {
   }
 }
 
-const About: NextPage<aboutDataType> = ({ fallbackData }: aboutDataType) => {
+const About: NextPage<aboutDataType> = ({ socialLinks, fallbackData }: aboutDataType) => {
   if (!fallbackData) return <div>Loading...</div>
-  return <AboutContent fallbackData={fallbackData} />
+  return <AboutContent fallbackData={fallbackData} socialLinks={socialLinks} />
 }
 
 export default About
 
 export const getStaticProps: GetStaticProps<aboutDataType> = async () => {
+  const shared = await getSharedStaticProps()
   const prizesDB = await getDatabase(prizesDBId, {
     sortProperty: 'date',
   })
@@ -41,6 +45,7 @@ export const getStaticProps: GetStaticProps<aboutDataType> = async () => {
 
   return {
     props: {
+      ...shared,
       fallbackData: Data,
     },
   }

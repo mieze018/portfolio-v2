@@ -1,5 +1,5 @@
+import type { LocalApi } from 'libs/@type/api/local'
 import { cva, tw } from 'libs/component-factory'
-import { links } from 'pages/api/about/links'
 import { GiShoppingBag } from 'react-icons/gi'
 import {
   SiBehance,
@@ -20,7 +20,7 @@ const Wrapper = tw(
   )
 )
 
-export const SocialLinks = () => {
+export const SocialLinks = ({ links }: { links: LocalApi.SnsLink[] }) => {
   return (
     <Wrapper>
       {links.map((link) => (

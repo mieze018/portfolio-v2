@@ -1,6 +1,7 @@
 import { Nav } from 'components/Molecules/Header/Nav'
 import { NavLinks } from 'components/Molecules/Header/NavLink'
 import { SocialLinks } from 'components/Molecules/SocialLinks'
+import type { LocalApi } from 'libs/@type/api/local'
 import { cva, tw } from 'libs/component-factory'
 import { copyright } from 'libs/copyright'
 import { routes } from 'libs/routes'
@@ -12,14 +13,14 @@ const Wrapper = tw(
   cva('bottom-0 py-0 text-xs text-center pb-4 relative top-contentWrapperTop pt-8 grid gap-16')
 )
 
-export const Footer = () => {
+export const Footer = ({ socialLinks }: { socialLinks?: LocalApi.SnsLink[] }) => {
   const { t } = useTranslation('common')
   return (
     <Wrapper>
       <Nav $footer className="blur-none">
         <NavLinks routes={routes} />
       </Nav>
-      <SocialLinks />
+      {!!socialLinks?.length && <SocialLinks links={socialLinks} />}
       <div>{copyright()}</div>
       <div>
         <Link href="privacy_policy">{t('Privacy Policy')}</Link>
