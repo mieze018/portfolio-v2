@@ -30,7 +30,7 @@ export const getDatabase = async (
   const sorts: QueryDataSourceParameters['sorts'] = sortProperty
     ? [
         {
-          property: sortProperty || '',
+          property: sortProperty,
           direction: sortDirection,
         },
       ]

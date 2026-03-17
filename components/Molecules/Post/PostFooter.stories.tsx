@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { PostFooter } from './PostFooter'
 
 const meta: Meta<typeof PostFooter> = {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import type { PageObject } from 'libs/@type/api/notion'
 import { Events } from './Events'
 

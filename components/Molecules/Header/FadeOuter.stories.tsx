@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { expect, fireEvent, waitFor } from 'storybook/test'
 import { FadeOuter } from './FadeOuter'
 

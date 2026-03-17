@@ -1,0 +1,49 @@
+name: Test & Coverage
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+# Why: workflow 全体は最小権限 (read) に設定
+permissions:
+  contents: read
+
+jobs:
+  unit-test:
+    name: Unit Test & Coverage
+    runs-on: ubuntu-latest
+    # Why: PR コメントへのカバレッジレポート投稿に pull-requests: write が必要。
+    # push イベント時はこの権限は使われないが、GitHub Actions は
+    # イベント種別に関わらず job 定義の permissions を適用する仕様のため、
+    # レポート投稿ステップ自体を if で PR 時のみに制限して安全性を担保する。
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+
+      - name: Enable Corepack (Yarn 4)
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run unit tests with coverage
+        # Why: CI=true で vitest.config.ts のカバレッジ対象を libs/ に限定する。
+        # components/ のカバレッジは Storybook テスト経由でローカルで確認する運用。
+        run: yarn vitest run --project=unit --coverage
+
+      - name: Report coverage to PR
+        # Why: PR のときだけカバレッジレポートを投稿する。
+        # push イベント時はスキップされるため pull-requests: write は実質使われない。
+        if: always() && github.event_name == 'pull_request'
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: ./coverage/coverage-summary.json
+          json-final-path: ./coverage/coverage-final.json
