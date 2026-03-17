@@ -5,15 +5,19 @@ on:
     branches: [master]
   pull_request:
 
-# Why: カバレッジレポートを PR コメントに書き込むため write 権限が必要
+# Why: push 時は read のみ、PR コメント書き込みは job レベルで付与
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   unit-test:
     name: Unit Test & Coverage
     runs-on: ubuntu-latest
+    # Why: カバレッジレポートを PR コメントに書き込むため write 権限が必要
+    # push イベントでは pull-requests 権限は不要なので job レベルで最小権限にする
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -32,9 +36,8 @@ jobs:
         run: yarn vitest run --project=unit --coverage
 
       - name: Report coverage to PR
-        # Why: PR へのコメントとして見やすい形でカバレッジを表示する
-        # push イベントでも実行されるが、PR がない場合はスキップされる
-        if: always()
+        # Why: PR のときだけカバレッジレポートを投稿する
+        if: always() && github.event_name == 'pull_request'
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           json-summary-path: ./coverage/coverage-summary.json

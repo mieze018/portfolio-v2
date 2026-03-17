@@ -31,7 +31,7 @@
     "test:storybook": "vitest --project=storybook",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:coverage:storybook": "vitest --project=storybook --coverage"
+    "test:coverage:storybook": "vitest run --project=storybook --coverage"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
