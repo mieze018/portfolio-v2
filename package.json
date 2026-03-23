@@ -74,7 +74,7 @@
     "@vitest/browser-playwright": "^4.1.0",
     "@vitest/coverage-v8": "^4.1.0",
     "autoprefixer": "^10.4.16",
-    "chromatic": "^15.2.0",
+    "chromatic": "^16.0.0",
     "cspell": "latest",
     "cypress": "^15.11.0",
     "husky": "^9.1.6",
