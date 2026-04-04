@@ -1,8 +1,11 @@
+import 'react'
+
 declare module 'react' {
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
+  interface HTMLAttributes<T> {
     'data-testid'?: string
   }
-  interface SVGProps extends SVGProps<SVGSVGElement> {
+
+  interface SVGProps<T> {
     'data-testid'?: string
   }
 }
