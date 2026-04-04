@@ -44,3 +44,10 @@ AIが即座に参照できるよう、最低限の要点をここにまとめる
 - **日本語** で記述する
 - 「何をしているか」より **Why（なぜそうしているか）** を優先する
 - Biome ルールを意図的に無視するときは理由も添える（`biome-ignore lint/...: 理由`）
+
+### Storybook MCP
+
+- UI コンポーネントや Storybook の変更時は、まず `portfolio-storybook` MCP を使って既存コンポーネントの docs / stories を確認する
+- props や variant 名は推測せず、MCP の documentation / story 情報で確認できたものだけを使う
+- story を追加・修正する前に、必要なら story instructions を参照して現在の Storybook 運用に合わせる
+- UI 変更後は必要に応じて Storybook 側の story tests を実行し、結果を確認する
