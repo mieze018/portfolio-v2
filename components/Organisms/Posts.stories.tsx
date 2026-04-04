@@ -1,13 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import type { Tumblr } from 'libs/@type/api/tumblr'
+import { expect, waitFor } from 'storybook/test'
 import { Posts } from './Posts'
 
 const meta: Meta<typeof Posts> = {
   component: Posts,
   parameters: {},
+  tags: ['motion'],
 }
 export default meta
 type Story = StoryObj<typeof Posts>
+type StoryPlayContext = Parameters<NonNullable<Story['play']>>[0]
 
 // picsum.photosの固定画像URL（ビジュアルリグレッションテスト用）
 const testImage = (id: number) => `https://picsum.photos/id/${id}/400/300`
@@ -76,6 +79,33 @@ export const Default: Story = {
     tag: 'personal work',
   },
 }
+
+export const DefaultScrolled: Story = {
+  ...Default,
+  play: async ({ canvasElement }: StoryPlayContext) => {
+    const scrollingElement = document.scrollingElement ?? document.documentElement
+    const articles = Array.from(canvasElement.querySelectorAll('article'))
+    const targetArticle = articles.at(-1)
+
+    if (!targetArticle) {
+      throw new Error('スクロール検証対象の post が見つかりません')
+    }
+
+    window.scrollTo({ top: scrollingElement.scrollHeight, behavior: 'auto' })
+
+    await waitFor(() => {
+      expect(window.scrollY + window.innerHeight).toBeGreaterThanOrEqual(
+        scrollingElement.scrollHeight - 1
+      )
+
+      const rect = targetArticle.getBoundingClientRect()
+      expect(rect.bottom).toBeLessThanOrEqual(window.innerHeight)
+    })
+
+    await expect(targetArticle).toBeVisible()
+  },
+}
+
 export const ClientWork: Story = {
   args: {
     posts: mockPosts,
