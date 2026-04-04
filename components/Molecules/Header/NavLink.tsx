@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const spanVariants = cva(
-  'inline-block cursor-pointer mix-blend-multiply xs:tracking-widest [word-spacing:-0.2em]',
+  'inline-block cursor-pointer mix-blend-multiply group-hover:underline group-active:underline xs:tracking-widest [word-spacing:-0.2em]',
   {
     variants: {
       isCurrent: {
@@ -39,6 +39,7 @@ export const NavLinks = ({
           <Link
             href={route.pathname}
             key={route.pathname}
+            className="group"
             // Why: スクロール制御はContentsWrapperのonExitCompleteに一本化。
             // Next.jsのscroll={true}は(0,0)に飛ばすだけで、コンテンツ先頭への
             // スクロールと競合するため、常にfalseにする。

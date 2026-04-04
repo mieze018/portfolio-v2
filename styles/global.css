@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/*
+  Why: color-mix() のパーセンテージ引数に通常の var() を使うと、ブラウザが展開前にパースした時点で
+  「これが <percentage> なのか不明」と判断し invalid になる。
+  @property で <percentage> 型を宣言することで var() 展開後の型が保証され、正しく解決される。
+  Alternative: color-mix() を2箇所に書く方法もあるが、構造の重複を避けるためこちらを採用。
+*/
+@property --text-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 38%;
+}
+
 @theme {
   --color-transparent: transparent;
   --color-black: #000;
@@ -90,6 +102,15 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  :root {
+    /*
+      Why: @theme に置くと Tailwind がビルド時に var() を解決してしまう可能性がある。
+      ここに置くことでランタイム解決を保証し、セレクタ内での --text-shadow-alpha 上書きが機能する。
+      --text-shadow-alpha の初期値は @property の initial-value (38%) が担うため、ここでの宣言は不要。
+    */
+    --text-shadow: 0 1px 0 rgb(255 255 255 / 38%), 0 2px 0 color-mix(in srgb, var(--color-main) var(--text-shadow-alpha), transparent);
+  }
 }
 
 @utility -z-1 {
@@ -102,12 +123,7 @@
     @apply text-sm leading-normal tracking-wider text-primary accent-main/60 caret-main/60 md:text-base;
 
     text-size-adjust: 100%;
-    text-shadow:
-      0 1px 0 rgb(255 255 255 / 38%),
-      /* Why: v4 では --color-main が hex (#ff7f00) になったため、v3 の rgb(var()/%) 構文は使えない
-         color-mix を使って opacity を表現する */
-      0
-      2px 0 color-mix(in srgb, var(--color-main) 16%, transparent);
+    text-shadow: var(--text-shadow);
   }
 
   body::before {
@@ -132,6 +148,10 @@
     &:hover,
     &:active {
       @apply opacity-100 text-secondary blur-none underline;
+
+    --text-shadow-alpha: 100%;
+
+    text-shadow: var(--text-shadow);
     }
   }
 
