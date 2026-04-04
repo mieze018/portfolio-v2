@@ -188,8 +188,8 @@
 
     100% {
       top: -4vh;
-      height: calc(4vh + 7em);
-      filter: blur(12px) brightness(1.1);
+      height: calc(12em);
+      filter: blur(14px) brightness(1.1);
     }
   }
   /* 水面の変化タイミング（時間変化, スクロール変化） */ .water-surface-anim {
@@ -210,25 +210,27 @@
   @keyframes floater-in {
     /* 落ちてくる前 */
     0% {
-      opacity: 0;
+      opacity: 0.382;
       transform: translateY(-84px);
+      filter: blur(2px) brightness(1.3);
     }
 
   /* ぽちゃんと落ちた瞬間 */
     3% {
       opacity: 0.618;
       transform: translateY(-16px);
+      filter: blur(0) brightness(1);
     }
 
-  /* ゆっくり沈む */
     100% {
       opacity: 1;
       transform: translateY(0);
     }
+
   }
 
   .floater-anim {
-    animation: floater-in 3s 0.3s ease-in-out forwards;
+    animation: floater-in 5s 0.5s ease-in-out forwards;
   }
 
   /* サイトタイトル、説明文 */
@@ -294,7 +296,7 @@
   @keyframes post-enter {
     from {
       filter: blur(16px) brightness(1.5);
-      opacity: 0.5;
+      opacity: 0.618;
     }
 
     to {
@@ -311,7 +313,7 @@
 
     to {
       filter: blur(16px) brightness(1.5);
-      opacity: 0.5;
+      opacity: 0.618;
     }
   }
 
@@ -321,11 +323,11 @@
     animation:
       post-enter linear forwards,
       post-exit linear forwards;
-    animation-timeline: view(), view();
+      animation-timeline: view(), view();
 
     /* １つ目のアニメーションは開始も終了もentryをトリガーにし、2つ目のアニメーションは開始も終了もexitをトリガーにする */
     animation-range:
       entry 0% entry 30%,
-      exit 0% exit 85%;
+      exit 62% exit 80%;
   }
 }
