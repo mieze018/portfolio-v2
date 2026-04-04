@@ -32,12 +32,15 @@ export const tw = <T extends IntrinsicTag, V extends ReturnType<typeof _cva>>(
   variants: V
 ) => {
   const ComponentWithVariants = (allProps: TwHtmlProps<T, V>) => {
-    const { ...props } = allProps
+    // Why: className を先に分離しないと ...props でバリアントのクラス名が上書きされてしまう。
+    // twe と同様に [variantClasses, className] でマージする。
+    const { className, ...props } = allProps
     const Component = tag as keyof HTMLElementTagNameMap
     // TypeScript型推論の複雑性を回避するため、明示的に型変換
     const variantConfig = allProps as Parameters<typeof variants>[0]
     const classNames = variants(variantConfig)
-    const componentProps = { className: classNames, ...(props as Record<string, unknown>) }
+    const mergedClassName = [classNames, className].filter(Boolean).join(' ')
+    const componentProps = { className: mergedClassName, ...(props as Record<string, unknown>) }
     return <Component {...componentProps} />
   }
 

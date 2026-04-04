@@ -148,3 +148,130 @@
     @apply m-0 mr-[0.556em];
   }
 }
+
+@layer utilities {
+  /* アニメーション関連のスタイル */
+
+  /*  水面  */
+  /* 水面の時間経過の変形 */ @keyframes wave {
+    0% {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    2% {
+      transform: matrix(1, 0, 0, 0.8, 0, 0);
+    }
+    10% {
+      transform: matrix(1, 0.02, 0, 0.6, 0, 0);
+    }
+    30% {
+      transform: matrix(1, 0.03, 0, 0.8, 0, 0);
+    }
+    50% {
+      transform: matrix(1, 0.03, 0, 0.7, 0, 0);
+    }
+    100% {
+      transform: matrix(1, 0.03, 0, 1, 0, 0);
+    }
+  }
+
+  /* 水面のスクロール後の変化 */ @keyframes waterSurfaceScroll {
+    0% {
+      top: 0px;
+      height: var(--spacing-contentWrapperTop);
+      filter: blur(4px) brightness(1.05);
+    }
+    100% {
+      top: -4vh;
+      height: calc(4vh + 7em);
+      filter: blur(10px) brightness(1.1);
+    }
+  }
+  /* 水面の変化タイミング（時間変化, スクロール変化） */ .water-surface-anim {
+    animation-name: wave, waterSurfaceScroll;
+    animation-duration: 180s, auto;
+    animation-delay: 0s, 0s;
+    animation-timing-function: ease-out, linear;
+    animation-fill-mode: forwards, both;
+    animation-timeline: auto, scroll(root);
+    animation-range:
+      normal,
+      0px 100vh;
+
+    /* フォールバック */
+  }
+
+  /*  FadeOuter  */
+
+  @keyframes fadeOuter {
+    from {
+      opacity: 1;
+      margin-bottom: 0;
+    }
+
+    to {
+      opacity: 0;
+      margin-bottom: -4em;
+    }
+  }
+
+  .fade-outer-anim {
+    animation: fadeOuter linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 80vh;
+  }
+
+  /*  Floater  */
+
+  @keyframes floaterIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-84px);
+    }
+    3% {
+      opacity: 0.618;
+      transform: translateY(-16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .floater-anim {
+    animation: floaterIn 3s 0.3s ease-in-out forwards;
+  }
+
+  /*  Nav  */
+  /* 
+    スクロール量に応じてナビゲーションの brightness / blur を変化させる CSS スクロール駆動アニメーション。
+    Why: JS で scrollY を監視する代わりに animation-timeline: scroll(root) を使うことで、メインスレッドをブロックせずにアニメーションを実現できる。
+    md 以上のブレークポイントでのみ blur を付加するため @media クエリで animation-name を切り替える。
+  */
+  @keyframes navScrollBase {
+    from {
+      filter: brightness(1);
+    }
+    to {
+      filter: brightness(1.25);
+    }
+  }
+  @keyframes navScrollMd {
+    from {
+      filter: brightness(1);
+    }
+    to {
+      filter: brightness(1.25) blur(1px);
+    }
+  }
+  .nav-scroll-anim {
+    animation: navScrollBase linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 23vh;
+  }
+  @media (min-width: 768px) {
+    /* Why: CSS @media クエリでは CSS 変数が使えないため、Tailwind のデフォルト md ブレークポイント値を直接指定する */
+    .nav-scroll-anim {
+      animation-name: navScrollMd;
+    }
+  }
+}
