@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority'
 import { cn } from 'libs/tw-clsx-util'
 
 const navVariants = cva(
-  'sticky top-0 z-10 m-auto mt-6 md:mt-2 text-center hover:blur-none grid grid-flow-col justify-center gap-x-4',
+  'sticky top-0 z-10 m-auto mt-6 md:mt-2 text-center hover:blur-none! transition-all grid grid-flow-col justify-center gap-x-4',
   {
     variants: {
       footer: {

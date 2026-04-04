@@ -169,14 +169,14 @@
     100% {
       top: -4vh;
       height: calc(4vh + 7em);
-      filter: blur(10px) brightness(1.1);
+      filter: blur(12px) brightness(1.1);
     }
   }
   /* 水面の変化タイミング（時間変化, スクロール変化） */ .water-surface-anim {
     animation-name: wave, water-surface-scroll;
     animation-duration: 180s, auto;
     animation-delay: 0s, 0s;
-    animation-timing-function: ease-out, linear;
+    animation-timing-function: ease-out, ease;
     animation-fill-mode: forwards, both;
     animation-timeline: auto, scroll(root);
     animation-range:
@@ -184,37 +184,23 @@
       0 100vh;
   }
 
-  /* FadeOuter */
-  @keyframes fade-outer {
-    from {
-      opacity: 1;
-      margin-bottom: 0;
-    }
+/* navとサイトタイトル全体 */
 
-    to {
-      opacity: 0;
-      margin-bottom: -4em;
-    }
-  }
-
-  .fade-outer-anim {
-    animation: fade-outer linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0 80vh;
-  }
-
-  /* Floater */
+  /* 上部に上がるアニメーション */
   @keyframes floater-in {
+    /* 落ちてくる前 */
     0% {
       opacity: 0;
       transform: translateY(-84px);
     }
 
+  /* ぽちゃんと落ちた瞬間 */
     3% {
       opacity: 0.618;
       transform: translateY(-16px);
     }
 
+  /* ゆっくり沈む */
     100% {
       opacity: 1;
       transform: translateY(0);
@@ -225,27 +211,44 @@
     animation: floater-in 3s 0.3s ease-in-out forwards;
   }
 
-  /* Nav */
+  /* サイトタイトル、説明文 */
+  @keyframes fade-outer {
+    from {
+      opacity: 1;
+      margin-bottom: 0;filter: blur(0);
+    }
 
-  /*
-    スクロール量に応じてナビゲーションの brightness / blur を変化させる CSS スクロール駆動アニメーション。
-    Why: JS で scrollY を監視する代わりに animation-timeline: scroll(root) を使うことで、メインスレッドをブロックせずにアニメーションを実現できる。
-    md 以上のブレークポイントでのみ blur を付加するため @media クエリで animation-name を切り替える。
-  */
-  @keyframes nav-scroll-base {
-    from { filter: brightness(1);}
-    to { filter: brightness(1.25);}
+    to {
+      opacity: 0;
+      margin-bottom: -4em;filter: blur(5px);
+    }
   }
 
-  @keyframes nav-scroll-md {
+  .fade-outer-anim {
+    animation: fade-outer linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 23vh;
+  }
+
+
+  /* Navのみ */
+
+    /* スクロール量に応じて brightness / blur を変更 */
+  @keyframes nav-scroll-base {
     from { filter: brightness(1);}
-    to { filter: brightness(1.25) blur(1px);}
+    to { filter: brightness(1.14);}
   }
 
   .nav-scroll-anim {
     animation: nav-scroll-base linear both;
     animation-timeline: scroll(root);
     animation-range: 0 23vh;
+  }
+
+  /* md 以上のブレークポイントでのみ blur を付加するため @media クエリで animation-name を切り替える。 */
+  @keyframes nav-scroll-md {
+    from { filter: brightness(1);}
+    to { filter: brightness(1.14) blur(1px);}
   }
 
   @media (width >= 768px) {

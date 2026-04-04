@@ -8,7 +8,6 @@ export const WaterSurface = () => {
       className="water-surface-anim"
       style={{
         backgroundImage: 'url("/img/surface.webp")',
-        filter: 'blur(0) brightness(1)',
         backgroundSize: '120% 100%',
         transformOrigin: 'right top',
       }}
