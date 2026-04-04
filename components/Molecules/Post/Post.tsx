@@ -3,11 +3,10 @@ import { PostFooter } from 'components/Molecules/Post/PostFooter'
 
 import type { Tumblr } from 'libs/@type/api/tumblr'
 import { cva, tw } from 'libs/component-factory'
-import { motion } from 'motion/react'
 
-// motion.articleは特殊なので直接cvaで定義
+// articleは直接cvaで定義
 const articleVariants = cva(
-  'flex flex-col items-center justify-center flex-wrap max-w-full lg:max-w-(--breakpoint-md) 2xl:max-w-(--breakpoint-lg) mx-auto px-[2.618vw] pb-64 min-h-g-61vh'
+  'flex flex-col items-center justify-center flex-wrap max-w-full lg:max-w-(--breakpoint-md) 2xl:max-w-(--breakpoint-lg) mx-auto px-[2.618vw] pb-64 min-h-g-61vh post-reveal-anim'
 )
 
 const PostCaption = tw('div', cva('mt-8 text-sm sm:text-base text-left w-full'))
@@ -32,25 +31,8 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
   /** 画像が2枚以上(photoset)で4枚未満なら縦に並べる*/
   const isRow = !!post.photoset_layout && !isColumn
   const isShowOnlyLastPhoto = post.tags.includes('s-o-l-p')
-  /** ビューに入るまでぼかす */
-  const variants = {
-    whileInView: {
-      // opacity: 1,
-      filter: 'blur(0px) brightness(1)',
-    },
-    inactive: {
-      // opacity: 0.5,
-      filter: 'blur(8px)  brightness(1.1)',
-    },
-  }
   return (
-    <motion.article
-      className={articleVariants()}
-      variants={variants}
-      initial="inactive"
-      whileInView="whileInView"
-      transition={{ duration: 0.25, delay: 0, ease: 'easeInOut' }}
-    >
+    <article className={articleVariants()}>
       <div
         className={photoWrapperVariants({
           layout: isColumn ? 'column' : isRow ? 'row' : 'default',
@@ -70,6 +52,6 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
         }}
       />
       <PostFooter postDate={post.date} />
-    </motion.article>
+    </article>
   )
 }

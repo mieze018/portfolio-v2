@@ -257,4 +257,55 @@
       animation-name: nav-scroll-md;
     }
   }
+
+  /* Post */
+
+  /*
+    ビューポートへの進入・退出に連動してスタイル付与。
+    Why: animation-fill-mode: backwards/both は scroll-driven animations と組み合わせると
+    ブラウザによって信頼性が低い。そのため初期状態（blur あり）を CSS プロパティ直書きで担保し、
+    両アニメーションは forwards のみにする。
+    - entry 前: .post-reveal-anim のベーススタイルが適用（blur あり）
+    - entry 中: post-enter が上書き（アニメーション中）
+    - cover 中: post-enter の forwards fill が残る（blur なし）
+    - exit 中: post-exit が上書き（後に書いた方が優先）
+    - exit 後: post-exit の forwards fill が残る（blur あり）
+  */
+  @keyframes post-enter {
+    from {
+      filter: blur(16px) brightness(1.5);
+      opacity: 0.5;
+    }
+
+    to {
+      filter: blur(0) brightness(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes post-exit {
+    from {
+      filter: blur(0) brightness(1);
+      opacity: 1;
+    }
+
+    to {
+      filter: blur(16px) brightness(1.5);
+      opacity: 0.5;
+    }
+  }
+
+  .post-reveal-anim {
+    /* Why: backwards fill の代わりにベーススタイルとして初期状態を明示指定 */
+
+    animation:
+      post-enter linear forwards,
+      post-exit linear forwards;
+    animation-timeline: view(), view();
+
+    /* １つ目のアニメーションは開始も終了もentryをトリガーにし、2つ目のアニメーションは開始も終了もexitをトリガーにする */
+    animation-range:
+      entry 0% entry 30%,
+      exit 0% exit 85%;
+  }
 }
