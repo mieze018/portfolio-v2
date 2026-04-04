@@ -150,24 +150,12 @@
   /*  水面  */
   @keyframes wave {
     /* 水面の時間経過の変形 */
-    0% {
-      transform: matrix(1, 0, 0, 1, 0, 0);
-    }
-    2% {
-      transform: matrix(1, 0, 0, 0.8, 0, 0);
-    }
-    10% {
-      transform: matrix(1, 0.02, 0, 0.6, 0, 0);
-    }
-    30% {
-      transform: matrix(1, 0.03, 0, 0.8, 0, 0);
-    }
-    50% {
-      transform: matrix(1, 0.03, 0, 0.7, 0, 0);
-    }
-    100% {
-      transform: matrix(1, 0.03, 0, 1, 0, 0);
-    }
+    0% { transform: matrix(1, 0, 0, 1, 0, 0); }
+    2% {transform: matrix(1, 0, 0, 0.8, 0, 0); }
+    10% { transform: matrix(1, 0.02, 0, 0.6, 0, 0);}
+    30% {transform: matrix(1, 0.03, 0, 0.8, 0, 0); }
+    50% { transform: matrix(1, 0.03, 0, 0.7, 0, 0); }
+    100% { transform: matrix(1, 0.03, 0, 1, 0, 0); }
   }
 
   /* 水面のスクロール後の変化 */
@@ -184,7 +172,6 @@
       filter: blur(10px) brightness(1.1);
     }
   }
-
   /* 水面の変化タイミング（時間変化, スクロール変化） */ .water-surface-anim {
     animation-name: wave, water-surface-scroll;
     animation-duration: 180s, auto;
@@ -246,21 +233,13 @@
     md 以上のブレークポイントでのみ blur を付加するため @media クエリで animation-name を切り替える。
   */
   @keyframes nav-scroll-base {
-    from {
-      filter: brightness(1);
-    }
-    to {
-      filter: brightness(1.25);
-    }
+    from { filter: brightness(1);}
+    to { filter: brightness(1.25);}
   }
 
   @keyframes nav-scroll-md {
-    from {
-      filter: brightness(1);
-    }
-    to {
-      filter: brightness(1.25) blur(1px);
-    }
+    from { filter: brightness(1);}
+    to { filter: brightness(1.25) blur(1px);}
   }
 
   .nav-scroll-anim {
