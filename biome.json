@@ -6,6 +6,9 @@
     "includes": ["**", "!!storybook-static", "!!playwright-report", "!!test-results"]
   },
   "css": {
+    "formatter": {
+      "enabled": false
+    },
     "parser": {
       "tailwindDirectives": true
     }
