@@ -21,7 +21,7 @@ const existsGaId = GA_ID !== ''
 
 // PVを測定する
 const pageView = (path: string) => {
-  window.gtag('config', GA_ID, {
+  gtag('config', GA_ID, {
     page_path: path,
   })
 }
