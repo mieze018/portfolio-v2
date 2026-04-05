@@ -181,15 +181,15 @@
   /* 水面のスクロール後の変化 */
   @keyframes water-surface-scroll {
     0% {
-      top: 0;
+      translate: 0 0;
       height: var(--spacing-contentWrapperTop);
       filter: blur(4px) brightness(1.05);
     }
 
     100% {
-      top: -4vh;
+      translate: 0 -40%;
       height: calc(12em);
-      filter: blur(14px) brightness(1.1);
+      filter: blur(6px) brightness(1.1);
     }
   }
   /* 水面の変化タイミング（時間変化, スクロール変化） */ .water-surface-anim {
