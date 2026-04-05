@@ -2,7 +2,12 @@ import type { PageObject } from 'libs/@type/api/notion'
 import { dateToYear } from 'libs/dataFormat'
 import { getProperties } from 'libs/notion'
 
-export const Work = ({ work }: { work: PageObject }) => {
+type workType = {
+  work: PageObject
+  genreName?: string | null
+}
+
+export const Work = ({ work, genreName }: workType) => {
   const title = getProperties(work, { name: 'title', type: 'title' })
   const author = getProperties(work, { name: 'author', type: 'select' })
   const format = getProperties(work, { name: 'format', type: 'select' })
@@ -12,6 +17,7 @@ export const Work = ({ work }: { work: PageObject }) => {
   const publisher = getProperties(work, { name: 'publisher', type: 'select' })
   return (
     <li className="flex flex-wrap items-end gap-x-3">
+      {genreName && <small>{genreName}</small>}
       {author && <i>{author}</i>}
       {title && <span>『{title}』</span>}
       {publisher && <span>({publisher})</span>}

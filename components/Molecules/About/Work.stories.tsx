@@ -51,3 +51,10 @@ export const Default: Story = {
     work: mockWork,
   },
 }
+
+export const WithGenre: Story = {
+  args: {
+    work: mockWork,
+    genreName: 'Web開発',
+  },
+}

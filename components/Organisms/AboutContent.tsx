@@ -25,7 +25,7 @@ export const AboutContent = ({ socialLinks, fallbackData }: aboutDataType) => {
     <Wrapper>
       <Introduction />
       {!!events?.length && <Events events={events} />}
-      {!!workExperienceGenre?.length && (
+      {!!workExperience?.length && (
         <WorkExperience workExperience={workExperience} genres={workExperienceGenre} />
       )}
       {/* <EventHistory events={events} /> */}
