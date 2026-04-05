@@ -4133,9 +4133,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^15.2.0":
-  version: 15.2.0
-  resolution: "chromatic@npm:15.2.0"
+"chromatic@npm:^16.1.0":
+  version: 16.1.0
+  resolution: "chromatic@npm:16.1.0"
   peerDependencies:
     "@chromatic-com/cypress": ^0.*.* || ^1.0.0
     "@chromatic-com/playwright": ^0.*.* || ^1.0.0
@@ -4148,7 +4148,7 @@ __metadata:
     chroma: dist/bin.js
     chromatic: dist/bin.js
     chromatic-cli: dist/bin.js
-  checksum: 66353aaf937897d77c95e9162169330c526ad8d07a9997190a2bb2938feabe051add65d6718c0fc2eb813f0361b828d69eff5df4513c43b672f9c8514100a556
+  checksum: 526d51809d7495d9cd785232e8ff8c87c36512880d3b082cbdd90aa1934de278491561bab657cf5c85c9533e281899d911f58ed61b9bf82304a5c02805990a27
   languageName: node
   linkType: hard
 
@@ -7836,7 +7836,7 @@ __metadata:
     "@vitest/browser-playwright": "npm:^4.1.0"
     "@vitest/coverage-v8": "npm:^4.1.0"
     autoprefixer: "npm:^10.4.16"
-    chromatic: "npm:^15.2.0"
+    chromatic: "npm:^16.1.0"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     cspell: "npm:latest"
