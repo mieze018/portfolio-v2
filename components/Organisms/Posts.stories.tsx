@@ -6,6 +6,9 @@ import { Posts } from './Posts'
 const meta: Meta<typeof Posts> = {
   component: Posts,
   parameters: {},
+  globals: {
+    viewport: { value: 'desktop', isRotated: false },
+  },
   tags: ['motion'],
 }
 export default meta
