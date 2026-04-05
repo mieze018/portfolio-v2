@@ -91,7 +91,7 @@
     "tailwindcss": "^4.2.1",
     "ts-prune": "^0.10.3",
     "ts-unused-exports": "^11.0.1",
-    "typescript": "^5.8.3",
+    "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vitest": "^4.1.0"
   },
