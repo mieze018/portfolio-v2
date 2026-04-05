@@ -27,3 +27,19 @@ export const Mobile: Story = {
     viewport: { value: 'mobile1', isRotated: false },
   },
 }
+
+/**
+ * events / workExperience / socialLinks が空配列の場合。
+ * 条件分岐（!!array?.length）の falsy パスをカバーする。
+ */
+export const WithEmptyData: Story = {
+  args: {
+    socialLinks: [],
+    fallbackData: {
+      prizes: [],
+      workExperience: [],
+      workExperienceGenre: [],
+      events: [],
+    },
+  },
+}

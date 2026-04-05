@@ -51,3 +51,31 @@ export const Open: Story = {
     },
   },
 }
+
+/**
+ * alt が未指定の場合。photo.alt ?? photo.src の nullish coalescing をカバーする。
+ */
+export const OpenWithoutAlt: Story = {
+  decorators: [
+    (Story) => {
+      const store = createStore()
+      store.set(modalPhotoState, {
+        src: 'https://picsum.photos/id/4/1200/800',
+        width: 1200,
+        height: 800,
+      })
+      return (
+        <Provider store={store}>
+          <Story />
+        </Provider>
+      )
+    },
+  ],
+  parameters: {
+    nextjs: {
+      router: {
+        asPath: '/#closeup',
+      },
+    },
+  },
+}

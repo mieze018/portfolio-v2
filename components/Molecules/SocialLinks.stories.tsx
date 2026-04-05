@@ -24,3 +24,10 @@ export const Mobile: Story = {
     viewport: { value: 'mobile1', isRotated: false },
   },
 }
+
+/** SocialIconDecider の default 分岐（未知のサービス名）をカバー */
+export const WithUnknownService: Story = {
+  args: {
+    links: [...mockSocialLinks, { text: 'UnknownService', url: 'https://example.com' }],
+  },
+}
