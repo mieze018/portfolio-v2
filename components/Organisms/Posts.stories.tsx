@@ -5,7 +5,9 @@ import { Posts } from './Posts'
 
 const meta: Meta<typeof Posts> = {
   component: Posts,
-  parameters: {},
+  parameters: {
+    chromatic: { pauseAnimationAtEnd: false },
+  },
   globals: {
     viewport: { value: 'desktop', isRotated: false },
   },

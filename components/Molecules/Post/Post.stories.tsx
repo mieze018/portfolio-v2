@@ -4,7 +4,9 @@ import { Post } from './Post'
 
 const meta: Meta<typeof Post> = {
   component: Post,
-  parameters: {},
+  parameters: {
+    chromatic: { pauseAnimationAtEnd: false },
+  },
   tags: ['motion'],
 }
 export default meta
