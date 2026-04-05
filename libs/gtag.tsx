@@ -1,3 +1,4 @@
+/// <reference types="gtag.js" />
 import { useEffect } from 'libs/reactCompat'
 import { useRouter } from 'next/router'
 
