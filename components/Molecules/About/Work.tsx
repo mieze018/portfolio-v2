@@ -16,19 +16,23 @@ export const Work = ({ work, genreName }: workType) => {
   const url = getProperties(work, { name: 'url', type: 'url' })
   const publisher = getProperties(work, { name: 'publisher', type: 'select' })
   return (
-    <li className="flex flex-wrap items-end gap-x-3">
-      {genreName && <small>{genreName}</small>}
-      {author && <i>{author}</i>}
-      {title && <span>『{title}』</span>}
-      {publisher && <span>({publisher})</span>}
-      {format && <small>{format}</small>}
-      {designer && <small>{designer}</small>}
-      {date && <small> - {dateToYear(date)}</small>}
-      {url && (
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          [link]
-        </a>
-      )}
+    <li>
+      {genreName && <span>{genreName}</span>}
+      <li className="flex flex-wrap items-end gap-x-3">
+        {title && <span>『{title}』</span>}
+        {author && <span>{author}</span>}
+        {publisher && <span>{publisher}</span>}
+        {format && <small>{format}</small>}
+        {designer && <small>{designer}</small>}
+        {date && <small> - {dateToYear(date)}</small>}
+        {url && (
+          <small>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              [link]
+            </a>
+          </small>
+        )}
+      </li>
     </li>
   )
 }

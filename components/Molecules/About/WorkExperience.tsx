@@ -17,14 +17,14 @@ export const WorkExperience = ({
 
   return (
     <SectionWrapper>
-      <div>
-        <h1>{workExperienceLabel.ja}</h1>
-        {workExperienceLabel.en && <div>{workExperienceLabel.en}</div>}
-      </div>
-      <Separator />
+      <h1 className="gap-x-2 flex ">
+        <p>{workExperienceLabel.en}</p>
+        <p>{workExperienceLabel.ja}</p>
+      </h1>
+
+      <Separator className="mb-6" />
       <UlNest1>
         {workExperience.map((work) => {
-          // Why: relation から対応するジャンル名を解決して各アイテムの先頭に表示する
           const genreRelation = getProperties(work, { name: 'genre', type: 'relation' })
           const genre = genres.find((g) => g.id === genreRelation?.id)
           const genreName = genre
