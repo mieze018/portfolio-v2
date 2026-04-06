@@ -17,12 +17,12 @@ export const WorkExperience = ({
 
   return (
     <SectionWrapper>
-      <h1 className="gap-x-2 flex ">
+      <h1>
         <p>{workExperienceLabel.en}</p>
         <p>{workExperienceLabel.ja}</p>
       </h1>
 
-      <Separator className="mb-6" />
+      <Separator className="mb-4" />
       <UlNest1>
         {workExperience.map((work) => {
           const genreRelation = getProperties(work, { name: 'genre', type: 'relation' })

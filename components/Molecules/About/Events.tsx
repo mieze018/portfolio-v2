@@ -22,8 +22,8 @@ export const Events = ({ events }: { events: PageObject[] }) => {
         {eventIncoming.en && <div>{eventIncoming.en}</div>}
       </div>
 
-      <Separator />
-      <ul className="mt-2">
+      <Separator className="mb-4" />
+      <ul>
         {futureEvents.map((event) => {
           const title = getProperties(event, { name: 'title', type: 'title' })
           const place = getProperties(event, { name: 'place', type: 'select' })
