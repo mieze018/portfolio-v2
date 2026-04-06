@@ -41,6 +41,14 @@ const mockWorkExperience: PageObject[] = [
         type: 'relation',
         relation: [{ id: 'genre-1' }],
       },
+      title: {
+        type: 'title',
+        title: [{ plain_text: 'サンプルプロジェクトA' }],
+      },
+      date: {
+        type: 'date',
+        date: { start: '2024-01-01' },
+      },
     },
   } as PageObject,
   {
@@ -49,6 +57,14 @@ const mockWorkExperience: PageObject[] = [
       genre: {
         type: 'relation',
         relation: [{ id: 'genre-2' }],
+      },
+      title: {
+        type: 'title',
+        title: [{ plain_text: 'サンプルプロジェクトB' }],
+      },
+      date: {
+        type: 'date',
+        date: { start: '2023-06-01' },
       },
     },
   } as PageObject,

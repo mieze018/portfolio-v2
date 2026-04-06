@@ -23,8 +23,8 @@ export const EventHistory = ({ events }: { events: PageObject[] }) => {
         {eventHistory.en && <div>{eventHistory.en}</div>}
       </div>
 
-      <Separator />
-      <ul className="mt-2">
+      <Separator className="mb-4" />
+      <ul>
         {pastEvents.map((event) => {
           const title = getProperties(event, { name: 'title', type: 'title' })
           const place = getProperties(event, { name: 'place', type: 'select' })

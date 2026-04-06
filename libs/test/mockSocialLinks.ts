@@ -13,4 +13,5 @@ export const mockSocialLinks: LocalApi.SnsLink[] = [
   { text: 'Pinterest', url: 'https://www.pinterest.com/example' },
   { text: 'Booth', url: 'https://example.booth.pm' },
   { text: 'GitHub', url: 'https://github.com/example' },
+  { text: 'Gumroad', url: 'https://example.gumroad.com' },
 ]

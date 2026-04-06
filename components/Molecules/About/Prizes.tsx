@@ -11,18 +11,18 @@ export const Prizes = ({ prizes }: { prizes: PageObject[] }) => {
 
   return (
     <SectionWrapper>
-      <div>
-        <div>{awards.ja}</div>
-        {awards.en && <div>{awards.en}</div>}
-      </div>
+      <h1>
+        <p>{awards.ja}</p>
+        <p>{awards.en}</p>
+      </h1>
 
-      <Separator />
+      <Separator className="mb-4" />
       {prizes.map((prize) => {
         const title = getProperties(prize, { name: 'title', type: 'title' })
         const prizeName = getProperties(prize, { name: 'prizeName', type: 'rich_text' })
         const date = getProperties(prize, { name: 'date', type: 'date' }).start
         return (
-          <ul key={prize.id} className="mt-2">
+          <ul key={prize.id}>
             <li>
               <i className="ml-3">{title}</i>
               {prizeName}

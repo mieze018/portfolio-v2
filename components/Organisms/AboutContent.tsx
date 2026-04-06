@@ -19,17 +19,17 @@ const Wrapper = tw(
 )
 
 export const AboutContent = ({ socialLinks, fallbackData }: aboutDataType) => {
-  const { prizes, workExperience, workExperienceGenre, events } = fallbackData
   if (!fallbackData) return <div>Loading...</div>
+  const { prizes, workExperience, workExperienceGenre, events } = fallbackData
   return (
     <Wrapper>
       <Introduction />
       {!!events?.length && <Events events={events} />}
-      {!!workExperienceGenre?.length && (
+      {!!workExperience?.length && (
         <WorkExperience workExperience={workExperience} genres={workExperienceGenre} />
       )}
       {/* <EventHistory events={events} /> */}
-      <Prizes prizes={prizes} />
+      {!!prizes?.length && <Prizes prizes={prizes} />}
       {!!socialLinks?.length && <Linktree links={socialLinks} />}
       <Participant />
     </Wrapper>

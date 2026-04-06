@@ -1,9 +1,12 @@
+import { useForm } from '@formspree/react'
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { Separator } from 'components/Atoms/Separator'
+import type { formFieldType } from 'components/Molecules/ContactForm'
 import { ContactForm } from 'components/Molecules/ContactForm'
 import { cva, tw } from 'libs/component-factory'
 import { getProperties } from 'libs/notion'
+import { useTranslation } from 'libs/useTranslation'
 import { mail } from 'pages/api/basics'
 import type { contactDataType } from 'pages/contact'
 import { GoMail } from 'react-icons/go'
@@ -32,6 +35,17 @@ const IconWrapper = tw(
 
 export const ContactContent = ({ fallbackData, formId }: contactDataType & { formId: string }) => {
   const { workAcceptanceStatus } = fallbackData
+  const [state, handleSubmit] = useForm(formId)
+  const { tb } = useTranslation('common')
+
+  const formFields: formFieldType[] = [
+    {
+      label: tb('messageLabel').en,
+      type: 'textarea',
+      name: 'message',
+      required: true,
+    },
+  ]
 
   return (
     <Wrapper>
@@ -66,7 +80,7 @@ export const ContactContent = ({ fallbackData, formId }: contactDataType & { for
             <IoMdPaperPlane />
           </LabelText>
         </IconWrapper>
-        <ContactForm formId={formId} />
+        <ContactForm state={state} handleSubmit={handleSubmit} formFields={formFields} />
       </div>
     </Wrapper>
   )
