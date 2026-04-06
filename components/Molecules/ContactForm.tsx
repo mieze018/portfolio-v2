@@ -1,60 +1,46 @@
-// Make sure to run npm install @formspree/react
-// For more help visit https://formspr.ee/react-help
-import { useForm, ValidationError } from '@formspree/react'
+import { type useForm, ValidationError } from '@formspree/react'
 import { Center } from 'components/Atoms/Center'
 import { LabelText } from 'components/Atoms/LabelText'
 import { PrimaryButton } from 'components/Atoms/PrimaryButton'
 import { Textarea } from 'components/Atoms/Textarea'
 import { cva, tw } from 'libs/component-factory'
 import { useTranslation } from 'libs/useTranslation'
+import type { FormEvent } from 'react'
 
 const Form = tw('form', cva('grid gap-4 w-full md:w-g-61vw m-auto max-w-(--breakpoint-sm)'))
 const RequiredMarkSpan = tw('span', cva('text-main px-1'))
 const Label = tw('label', cva('flex items-center gap-2 py-1'))
 
-export const ContactForm = ({ formId }: { formId: string }) => {
-  const [state, handleSubmit] = useForm(formId)
-  const { tb } = useTranslation('common')
-  // const [replyAllowed, setReplyAllowed] = useState(false)
+export type formFieldType = {
+  label: string
+  type: string
+  name: string
+  placeholder?: string
+  required: boolean
+  checked?: boolean
+  onChange?: () => void
+}
 
+// Why: @formspree/react が FormState 型を export しないため、useForm の戻り値から抽出する
+export type formStateType = ReturnType<typeof useForm>[0]
+
+export type contactFormType = {
+  state: formStateType
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => void
+  formFields: formFieldType[]
+}
+
+/**
+ * フォーム表示のプレゼンテーショナルコンポーネント
+ *
+ * Why: useForm（データ取得/状態管理）は呼び出し元（ContactContent）が担い、
+ * このコンポーネントは受け取った state を表示するだけに専念する。
+ * これにより Storybook から state.succeeded 等の分岐を自由にテストできる。
+ */
+export const ContactForm = ({ state, handleSubmit, formFields }: contactFormType) => {
+  const { tb } = useTranslation('common')
   const RequiredMark = () => <RequiredMarkSpan>*</RequiredMarkSpan>
-  type formType = {
-    label: string
-    type: string
-    name: string
-    placeholder?: string
-    required: boolean
-    checked?: boolean
-    onChange?: () => void
-  }
-  const formsAttrs: formType[] = [
-    {
-      label: tb('messageLabel').en,
-      type: 'textarea',
-      name: 'message',
-      required: true,
-    },
-    // {
-    //   label: '返信可能',
-    //   type: 'checkbox',
-    //   name: 'replyAllowed',
-    //   required: false,
-    //   checked: replyAllowed,
-    //   onChange: () => setReplyAllowed(!replyAllowed),
-    // },
-    // {
-    //   label: 'お名前',
-    //   type: 'text',
-    //   name: 'name',
-    //   required: replyAllowed ? true : false,
-    // },
-    // {
-    //   label: 'メールアドレス',
-    //   type: 'email',
-    //   name: 'email',
-    //   required: replyAllowed ? true : false,
-    // },
-  ]
+
   if (state.succeeded)
     return (
       <Center className="flex-wrap">
@@ -64,7 +50,7 @@ export const ContactForm = ({ formId }: { formId: string }) => {
     )
   return (
     <Form onSubmit={handleSubmit}>
-      {formsAttrs.map(({ label, type, name, placeholder, required, checked, onChange }) => {
+      {formFields.map(({ label, type, name, placeholder, required, checked, onChange }) => {
         if (type === 'textarea')
           return (
             <div key={name}>
