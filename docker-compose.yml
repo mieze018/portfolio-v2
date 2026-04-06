@@ -16,9 +16,9 @@ services:
       - sh
       - -c
       - |
-        yarn install
+        pnpm install
         chown node:node -R node_modules
-        yarn dev -p 3001
+        pnpm dev -p 3001
     ports:
       - '3001:3001'
   storybook:
@@ -29,8 +29,8 @@ services:
       - sh
       - -c
       - |
-        yarn install
+        pnpm install
         chown node:node -R node_modules
-        yarn storybook
+        pnpm storybook
     ports:
       - '6006:6006'

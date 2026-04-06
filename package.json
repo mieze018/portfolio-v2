@@ -14,16 +14,16 @@
     "check": "biome check --write .",
     "check:ci": "biome check .",
     "check:staged": "biome check --write --no-errors-on-unmatched",
-    "unused": "yarn ts-unused-exports tsconfig.json --excludeDeclarationFiles --showLineNumber '--excludePathsFromReport=pages' '--ignoreFiles=.*config.*|.*.stories.*'",
+    "unused": "pnpm ts-unused-exports tsconfig.json --excludeDeclarationFiles --showLineNumber '--excludePathsFromReport=pages' '--ignoreFiles=.*config.*|.*.stories.*'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes --only-changed",
     "cypress": "cypress open",
     "e2e:local": "node scripts/cy-test.mjs",
-    "cy:test": "yarn run e2e:local",
+    "cy:test": "pnpm run e2e:local",
     "prepare": "husky install",
-    "upgrade:linter": "yarn up '@biomejs/biome'",
-    "upgrade:types": "yarn up '@types/*' '*typescript*'",
+    "upgrade:linter": "pnpm up '@biomejs/biome'",
+    "upgrade:types": "pnpm up '@types/*' '*typescript*'",
     "upgrade:storybook": "npx storybook@latest upgrade",
     "test": "vitest run --passWithNoTests",
     "test:unit": "vitest run --project=unit",
@@ -95,36 +95,38 @@
     "vite": "^8.0.0",
     "vitest": "^4.1.0"
   },
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "pnpm@10.33.0",
   "volta": {
-    "node": "22.16.0",
-    "yarn": "4.0.2"
+    "node": "22.16.0"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json}": "yarn check:staged"
+    "*.{ts,tsx,js,jsx,json}": "pnpm check:staged"
   },
-  "resolutions": {
-    "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6",
-    "tar": "7.5.11",
-    "pbkdf2": "3.1.3",
-    "sha.js": "2.4.12",
-    "cipher-base": "1.0.5",
-    "form-data": "4.0.4",
-    "serialize-javascript": "7.0.3",
-    "lodash": "4.17.23",
-    "qs": "6.14.2",
-    "js-yaml": "4.1.1",
-    "minimatch@^3.0.4": "3.1.5",
-    "minimatch@^3.1.1": "3.1.5",
-    "minimatch@^3.1.2": "3.1.5",
-    "minimatch@^9.0.1": "9.0.9",
-    "ip": "2.0.1",
-    "postcss@^8.2.14": "8.4.47",
-    "postcss@^8.4.21": "8.4.47",
-    "tmp": "0.2.4",
-    "glob@^10.2.2": "10.5.0",
-    "glob@^10.3.7": "10.5.0",
-    "webpack": "5.104.1"
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.1.8",
+      "@types/react-dom": "19.1.6",
+      "tar": "7.5.11",
+      "pbkdf2": "3.1.3",
+      "sha.js": "2.4.12",
+      "cipher-base": "1.0.5",
+      "form-data": "4.0.4",
+      "serialize-javascript": "7.0.3",
+      "lodash": "4.17.23",
+      "qs": "6.14.2",
+      "js-yaml": "4.1.1",
+      "minimatch@^3.0.4": "3.1.5",
+      "minimatch@^3.1.1": "3.1.5",
+      "minimatch@^3.1.2": "3.1.5",
+      "minimatch@^9.0.1": "9.0.9",
+      "ip": "2.0.1",
+      "postcss@^8.2.14": "8.4.47",
+      "postcss@^8.4.21": "8.4.47",
+      "tmp": "0.2.4",
+      "glob@^10.2.2": "10.5.0",
+      "glob@^10.3.7": "10.5.0",
+      "webpack": "5.104.1"
+    },
+    "onlyBuiltDependencies": ["@swc/core", "cypress", "esbuild", "sharp"]
   }
 }

@@ -126,9 +126,9 @@ async function killProcessOnPort() {
 
 async function main() {
   await killProcessOnPort()
-  await runCommand('yarn', ['build'])
+  await runCommand('pnpm', ['build'])
 
-  const serverProcess = spawn('yarn', ['next', 'start', '--port', String(PORT)], {
+  const serverProcess = spawn('pnpm', ['next', 'start', '--port', String(PORT)], {
     stdio: 'inherit',
     shell: process.platform === 'win32',
   })
@@ -140,7 +140,7 @@ async function main() {
 
   try {
     await waitForServer()
-    await runCommand('yarn', ['exec', 'cypress', 'run', '--browser', 'chrome'])
+    await runCommand('pnpm', ['exec', 'cypress', 'run', '--browser', 'chrome'])
   } finally {
     await cleanup()
   }

@@ -3,14 +3,14 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Why: Biome に移行済み。check:ci は --write なしで差分を出さずに検査のみ行う
-yarn check:ci
-# yarn unused
+pnpm check:ci
+# pnpm unused
 npx playwright install
-# yarn cy:test
+# pnpm cy:test
 
 # Why: push時の自動アップグレードはパッケージの意図しない升級を招くため無効化
 # Alternative: 依存関係の更新はrenovate/dependabotまたは手動で管理する
-# yarn upgrade:linter
-# yarn upgrade:types
-# yarn upgrade:storybook
-# yarn up chromatic
+# pnpm upgrade:linter
+# pnpm upgrade:types
+# pnpm upgrade:storybook
+# pnpm up chromatic

@@ -20,23 +20,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 22.16.0
-      - name: Enable Corepack (Yarn 4)
-        # Why: cypress-io/github-action は内部で yarn を呼ぶが corepack を有効化しないため、
-        #      事前に有効化して packageManager フィールドから Yarn 4 を使わせる。
-        run: corepack enable
+          cache: 'pnpm'
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v4
         with:
-          install-command: yarn
+          install-command: pnpm install --frozen-lockfile
           browser: chrome
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-          build: yarn build
-          start: yarn start --port 3009
+          build: pnpm build
+          start: pnpm start --port 3009
           wait-on: 'http://localhost:3009' # Waits for above
           # Records to Cypress Cloud
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
