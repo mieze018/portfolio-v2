@@ -19,8 +19,8 @@ const Wrapper = tw(
 )
 
 export const AboutContent = ({ socialLinks, fallbackData }: aboutDataType) => {
-  const { prizes, workExperience, workExperienceGenre, events } = fallbackData
   if (!fallbackData) return <div>Loading...</div>
+  const { prizes, workExperience, workExperienceGenre, events } = fallbackData
   return (
     <Wrapper>
       <Introduction />

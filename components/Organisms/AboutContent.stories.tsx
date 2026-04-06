@@ -43,3 +43,9 @@ export const WithEmptyData: Story = {
     },
   },
 }
+export const Loading: Story = {
+  args: {
+    socialLinks: [],
+    fallbackData: undefined,
+  },
+}
