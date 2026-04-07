@@ -21,4 +21,13 @@ jobs:
         with:
           # ip@2.0.1 は GHSA-2p57-rm9w-gvfp (SSRF) の修正版が upstream に存在しないため許可
           # 参照: https://github.com/mieze018/portfolio-v2/security/dependabot/33
-          allow-ghsas: GHSA-2p57-rm9w-gvfp
+          # lodash 4.x は全バージョンで GHSA-r5fr-rjxr-66jc / GHSA-f23m-r3pf-42rh が存在するため許可
+          # (pnpm.overrides で 4.17.23 に固定済み・5.x への upgrade は破壊的変更のため見送り)
+          # vite 8.x の dev-server 系 CVE は本番には影響しないため許可
+          allow-ghsas: >-
+            GHSA-2p57-rm9w-gvfp,
+            GHSA-r5fr-rjxr-66jc,
+            GHSA-f23m-r3pf-42rh,
+            GHSA-p9ff-h696-f583,
+            GHSA-v2wj-q39q-566r,
+            GHSA-4w7w-66w2-5vf9

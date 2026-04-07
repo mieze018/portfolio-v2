@@ -25,6 +25,10 @@ jobs:
         with:
           node-version: 22.16.0
           cache: 'pnpm'
+      - name: Install Cypress binary
+        # Why: pnpmキャッシュ復元時にpostinstallがスキップされ、
+        # Cypressバイナリが存在しない場合があるため、明示的にインストールする。
+        run: pnpm exec cypress install
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v4
