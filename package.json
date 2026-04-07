@@ -21,7 +21,7 @@
     "cypress": "cypress open",
     "e2e:local": "node scripts/cy-test.mjs",
     "cy:test": "pnpm run e2e:local",
-    "prepare": "husky install",
+    "prepare": "husky",
     "upgrade:linter": "pnpm up '@biomejs/biome'",
     "upgrade:types": "pnpm up '@types/*' '*typescript*'",
     "upgrade:storybook": "npx storybook@latest upgrade",
