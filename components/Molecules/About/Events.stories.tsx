@@ -12,12 +12,10 @@ export default meta
 type Story = StoryObj<typeof Events>
 
 // 未来の日付（テスト用）
-const futureDate = new Date()
-futureDate.setMonth(futureDate.getMonth() + 1)
+const futureDate = new Date('2026-05-06')
 
 // 過去の日付（テスト用）
-const pastDate = new Date()
-pastDate.setMonth(pastDate.getMonth() - 1)
+const pastDate = new Date('2026-03-06')
 
 const mockEvents: PageObject[] = [
   {

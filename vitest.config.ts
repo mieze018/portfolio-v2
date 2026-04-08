@@ -54,7 +54,7 @@ export default defineConfig({
         extends: true,
         test: {
           name: 'unit',
-          environment: 'jsdom',
+          environment: 'happy-dom',
           globals: true,
           include: ['libs/**/*.test.{ts,tsx}', 'libs/**/*.spec.{ts,tsx}'],
           exclude: ['node_modules', '.next', 'cypress', 'tests'],
@@ -66,7 +66,7 @@ export default defineConfig({
         plugins: [
           storybookTest({
             configDir: path.join(dirname, '.storybook'),
-            storybookScript: 'yarn storybook --no-open',
+            storybookScript: 'pnpm storybook --no-open',
           }),
         ],
         resolve: {

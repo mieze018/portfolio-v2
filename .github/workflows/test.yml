@@ -24,20 +24,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22.16.0
-
-      - name: Enable Corepack (Yarn 4)
-        run: corepack enable
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm install --frozen-lockfile
 
       - name: Run unit tests with coverage
         # Why: CI=true で vitest.config.ts のカバレッジ対象を libs/ に限定する。
         # components/ のカバレッジは Storybook テスト経由でローカルで確認する運用。
-        run: yarn vitest run --project=unit --coverage
+        run: pnpm vitest run --project=unit --coverage
 
       - name: Extract coverage percentage
         # Why: coverage-summary.json から lines カバレッジを取り出し、後続ステップで使う

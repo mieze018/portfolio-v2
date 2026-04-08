@@ -47,7 +47,6 @@ build-storybook.log
 
 .vercel
 .env
-.yarn
 cypress/screenshots/*
 cypress/videos/*
 

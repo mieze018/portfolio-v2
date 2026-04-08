@@ -17,19 +17,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22.16.0
-
-      - name: Enable Corepack (Yarn 4)
-        # Why: actions/setup-node は corepack を自動有効化しないため明示的に実行する。
-        #      packageManager フィールドと組み合わせて Yarn 4 を CI で使用するために必要。
-        run: corepack enable
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm install --frozen-lockfile
 
       - name: Run Biome check
         # Why: check:ci は --write なしで差分を検出するだけのモード。
         #      CI では自動修正せず、問題があれば失敗させてプルリクエストで気づけるようにする。
-        run: yarn check:ci
+        run: pnpm check:ci

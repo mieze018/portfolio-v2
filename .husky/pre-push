@@ -1,16 +1,21 @@
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+#!/bin/sh
+# Why: Volta v2 on Windows のデータディレクトリは %LOCALAPPDATA%\Volta。
+#      旧来の ~/.volta（macOS/Linux形式）は無効。
+#      VOLTA_HOME が空だと Volta シムが node のパスを解決できず
+#      push 時の pnpm / npx 実行が失敗するため、明示的に設定する。
+#      PATH は Git Bash 起動時に既に Volta bin を含むため変更不要。
+export VOLTA_HOME="${LOCALAPPDATA}\\Volta"
 
 # Why: Biome に移行済み。check:ci は --write なしで差分を出さずに検査のみ行う
-yarn check:ci
-# yarn unused
+pnpm check:ci
+# pnpm unused
 npx playwright install
-# yarn cy:test
+# pnpm cy:test
 
 # Why: push時の自動アップグレードはパッケージの意図しない升級を招くため無効化
 # Alternative: 依存関係の更新はrenovate/dependabotまたは手動で管理する
-# yarn upgrade:linter
-# yarn upgrade:types
-# yarn upgrade:storybook
-# yarn up chromatic
+# pnpm upgrade:linter
+# pnpm upgrade:types
+# pnpm upgrade:storybook
+# pnpm up chromatic
