@@ -8,10 +8,7 @@ type postPagePropsType = {
   post: Tumblr.Post
 }
 
-const PostPage: NextPage<postPagePropsType> = ({ post }: postPagePropsType) => {
-  if (!post) return <div>Loading...</div>
-  return <Post post={post} />
-}
+const PostPage: NextPage<postPagePropsType> = ({ post }: postPagePropsType) => <Post post={post} />
 
 export default PostPage
 

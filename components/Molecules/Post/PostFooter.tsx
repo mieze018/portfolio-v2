@@ -21,7 +21,11 @@ export const PostFooter = ({ postDate, idString }: postFooterPropsType) => (
       }).format(new Date(postDate.replace(' GMT', '').replace(' ', 'T')))}
     </span>
     {idString && (
-      <Link href={`/posts/${idString}`} className="underline hover:opacity-70">
+      <Link
+        href={`/posts/${idString}`}
+        className="underline hover:opacity-70"
+        aria-label="この投稿のパーマネントリンク"
+      >
         ¶
       </Link>
     )}
