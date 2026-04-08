@@ -9,6 +9,8 @@ export VOLTA_HOME="${LOCALAPPDATA}\\Volta"
 
 # Why: Biome に移行済み。check:ci は --write なしで差分を出さずに検査のみ行う
 pnpm check:ci
+# Why: lat.md ナレッジグラフのwikiリンクとコード参照の整合性を検証する
+pnpm lat:check
 # pnpm unused
 npx playwright install
 # pnpm cy:test
