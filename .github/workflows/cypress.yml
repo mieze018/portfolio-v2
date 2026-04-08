@@ -25,15 +25,17 @@ jobs:
         with:
           node-version: 22.16.0
           cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Install Cypress binary
-        # Why: pnpmキャッシュ復元時にpostinstallがスキップされ、
-        # Cypressバイナリが存在しない場合があるため、明示的にインストールする。
+        # Why: pnpm install はキャッシュヒット時に postinstall をスキップするため、
+        # Cypress バイナリが存在しない場合がある。明示的にインストールして保証する。
         run: pnpm exec cypress install
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v4
         with:
-          install-command: pnpm install --frozen-lockfile
+          install: false
           browser: chrome
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
