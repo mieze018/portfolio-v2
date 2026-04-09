@@ -8,6 +8,8 @@ Node.js のバージョンは [mise](https://mise.jdx.dev/) で管理する。`.
 
 ### セットアップ
 
+mise をインストールし、シェルフックを設定してからリポジトリで `mise install` を実行する。
+
 ```bash
 # mise をインストール（macOS / Linux）
 curl https://mise.run | sh
@@ -61,9 +63,9 @@ Vitest の unit テストは `happy-dom`（jsdom ではなく）を使用。
 
 ## CI Workflows
 
-GitHub Actions で以下のワークフローを実行。Node 22 / pnpm 10 を使用。
-Node バージョンは `.node-version` で管理し、`actions/setup-node` の `node-version-file` で参照する。
-（mise を使う場合は `.mise.toml` も同じバージョンに合わせておく。`actions/setup-node` は `.mise.toml` の TOML パースに非互換があるため `.node-version` を採用している。）
+GitHub Actions で以下のワークフローを実行。Node 22 / pnpm 10 を使用。Node バージョンは `.node-version` で参照する。
+
+`actions/setup-node` は `.mise.toml` の TOML パースに非互換があるため `.node-version` を採用。mise を使う場合は `.mise.toml` も同じバージョンに合わせておく。
 
 - **lint**: Biome check（PR ごと）
 - **test**: Vitest + カバレッジ（PR ごと）
