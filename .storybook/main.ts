@@ -6,7 +6,11 @@ import type { StorybookConfig } from '@storybook/nextjs-vite'
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const config: StorybookConfig = {
-  stories: ['../components/**/*.mdx', '../components/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: [
+    '../components/**/*.mdx',
+    '../components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../pages/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
   features: {
     experimentalComponentsManifest: true,
   },
