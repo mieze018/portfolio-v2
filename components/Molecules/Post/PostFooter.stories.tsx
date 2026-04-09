@@ -15,3 +15,10 @@ export const Default: Story = {
     postDate: '2024-01-15 12:00:00 GMT',
   },
 }
+
+export const WithPermalink: Story = {
+  args: {
+    postDate: '2024-01-15 12:00:00 GMT',
+    idString: '123456',
+  },
+}

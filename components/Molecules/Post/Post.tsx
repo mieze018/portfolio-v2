@@ -51,7 +51,7 @@ export const Post = ({ post }: { post: Tumblr.Post }) => {
           __html: post.caption,
         }}
       />
-      <PostFooter postDate={post.date} />
+      <PostFooter postDate={post.date} idString={post.id_string} />
     </article>
   )
 }
