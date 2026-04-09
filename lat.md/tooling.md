@@ -32,6 +32,7 @@ Vitest の unit テストは `happy-dom`（jsdom ではなく）を使用。
 ## CI Workflows
 
 GitHub Actions で以下のワークフローを実行。Node 22 / pnpm 10 を使用。
+Node バージョンは `.mise.toml` で管理し、`actions/setup-node` の `node-version-file` で参照する。
 
 - **lint**: Biome check（PR ごと）
 - **test**: Vitest + カバレッジ（PR ごと）
