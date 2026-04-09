@@ -1,6 +1,17 @@
 # GEMINI.md
 
-このプロジェクトのルール・規約の原本は Storybook ドキュメントで管理している。
+このプロジェクトのルール・規約の原本は Storybook ドキュメント（`components/Introduction.mdx`）と `lat.md/` ナレッジグラフで管理している。
+
+## lat.md ナレッジグラフ
+
+このプロジェクトは [lat.md](https://www.npmjs.com/package/lat.md) を使ってコードベースのナレッジグラフを管理している。規約・アーキテクチャ・ツール構成の詳細は `lat.md/` ディレクトリを参照。
+
+- `lat.md/conventions.md` — 命名規則・コンポーネント設計・TypeScript ルール
+- `lat.md/styling.md` — Tailwind CSS v4 + CVA によるスタイリング規約
+- `lat.md/architecture.md` — ディレクトリ構造と Atomic Design の境界線
+- `lat.md/tooling.md` — Biome・Husky・テスト・CI 構成
+
+---
 
 ## 規約ドキュメント（原本）
 
@@ -10,7 +21,7 @@
 
 ## 要点サマリー
 
-AIが即座に参照できるよう、最低限の要点をここにまとめる。詳細・背景は原本を参照。
+AIが即座に参照できるよう、最低限の要点をここにまとめる。詳細・背景は `lat.md/conventions.md` と `lat.md/styling.md` を参照。
 
 ### 命名規則
 

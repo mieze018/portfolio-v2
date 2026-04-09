@@ -31,3 +31,8 @@ jobs:
         # Why: check:ci は --write なしで差分を検出するだけのモード。
         #      CI では自動修正せず、問題があれば失敗させてプルリクエストで気づけるようにする。
         run: pnpm check:ci
+
+      - name: Run lat check
+        # Why: lat.md ナレッジグラフの wiki リンクとコード参照の整合性を CI で保証する。
+        #      ローカルの pre-push フックと同等の検証を CI でも行い、不整合を早期検出する。
+        run: pnpm lat:check
