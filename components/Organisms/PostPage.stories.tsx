@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Default as PostDefault } from 'components/Molecules/Post/Post.stories'
 import type { Tumblr } from 'libs/@type/api/tumblr'
-import PostPage from './[id_string]'
+import PostPage from 'pages/posts/[id_string]'
 
 const meta: Meta<typeof PostPage> = {
   component: PostPage,
