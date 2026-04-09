@@ -30,7 +30,7 @@ mise ls             # インストール済みのツール一覧
 mise upgrade node   # Node.js を最新版にアップグレード（.mise.toml も更新される）
 ```
 
-Node バージョンを変更する場合は `.mise.toml` の `node` を更新し、CI ワークフローは自動的にそのバージョンを参照する。
+Node バージョンを変更する場合は `.node-version` と `.mise.toml` の両方を更新する。CI は `.node-version` を参照し、mise はローカルで `.mise.toml` を使用する。
 
 ## Linting and Formatting
 
@@ -62,7 +62,8 @@ Vitest の unit テストは `happy-dom`（jsdom ではなく）を使用。
 ## CI Workflows
 
 GitHub Actions で以下のワークフローを実行。Node 22 / pnpm 10 を使用。
-Node バージョンは `.mise.toml` で管理し、`actions/setup-node` の `node-version-file` で参照する。
+Node バージョンは `.node-version` で管理し、`actions/setup-node` の `node-version-file` で参照する。
+（mise を使う場合は `.mise.toml` も同じバージョンに合わせておく。`actions/setup-node` は `.mise.toml` の TOML パースに非互換があるため `.node-version` を採用している。）
 
 - **lint**: Biome check（PR ごと）
 - **test**: Vitest + カバレッジ（PR ごと）
