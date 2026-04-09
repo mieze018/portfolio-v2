@@ -2,6 +2,36 @@
 
 ビルドツール・リント・テスト・CI の構成。コーディング規約は [[conventions]] を参照。
 
+## Node.js バージョン管理（mise）
+
+Node.js のバージョンは [mise](https://mise.jdx.dev/) で管理する。`.mise.toml` にバージョンを記述しており、CI・ローカル双方で同一バージョンが使われる。
+
+### セットアップ
+
+```bash
+# mise をインストール（macOS / Linux）
+curl https://mise.run | sh
+
+# シェルへのフック設定（~/.zshrc や ~/.bashrc に追加）
+# zsh の例:
+echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+source ~/.zshrc
+
+# リポジトリルートで Node をインストール
+mise install
+```
+
+### 使い方
+
+```bash
+mise install        # .mise.toml に記載のツールを一括インストール
+mise current node   # 現在アクティブな Node.js バージョンを確認
+mise ls             # インストール済みのツール一覧
+mise upgrade node   # Node.js を最新版にアップグレード（.mise.toml も更新される）
+```
+
+Node バージョンを変更する場合は `.mise.toml` の `node` を更新し、CI ワークフローは自動的にそのバージョンを参照する。
+
 ## Linting and Formatting
 
 Biome を単一ツールで lint + format を担う。ESLint/Prettier は使わない。
