@@ -1,6 +1,6 @@
 # Overview
 
-イラストレーター・中田あゆの portfolio サイト（Next.js 製）。Notion をヘッドレス CMS として使い、Vercel でデプロイ。Tailwind CSS v4 + CVA でスタイリング、Biome で lint/format、Vitest + Storybook + Cypress でテストを管理する。
+イラストレーター mieze(Ayu Nakata) の portfolio サイト（Next.js 製）。Notion をヘッドレス CMS として使い、Vercel でデプロイ。Tailwind CSS v4 + CVA でスタイリング、Biome で lint/format、Vitest + Storybook + Cypress でテストを管理する。
 
 ## Tech Stack
 
@@ -16,3 +16,14 @@
 ## Conventions
 
 コーディング規約の詳細は [[conventions]] を参照。スタイリング規約は [[styling]] を参照。
+
+## Concent
+
+サイト設計のコンセプト。没入感と軽快さを最優先。
+
+- 作品や世界観への没入感
+    - 水中に沈み込むようなアニメーション表現
+    - 作品に集中させるように余計な情報を極力省き、一般的なUIデザインの「便利さ」の踏襲ではなく印象に残ることを主眼とする。
+    - ただし学習が必要な認知や操作は禁止
+- ページロードや操作の軽快さ
+    - 作品への集中を阻害する要因は排除する。
