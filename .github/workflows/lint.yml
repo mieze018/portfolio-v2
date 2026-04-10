@@ -35,3 +35,10 @@ jobs:
         # Why: lat.md ナレッジグラフの wiki リンクとコード参照の整合性を CI で保証する。
         #      ローカルの pre-push フックと同等の検証を CI でも行い、不整合を早期検出する。
         run: pnpm lat:check
+
+      - name: Run Knip check
+        # Why: 未使用 export / ファイル / 依存パッケージを CI で可視化する。
+        #      continue-on-error: true にしているのは既存の指摘を段階的に解消するため。
+        #      全件解消後は continue-on-error を外してハードゲートにする。
+        continue-on-error: true
+        run: pnpm unused

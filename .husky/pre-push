@@ -11,8 +11,9 @@ export VOLTA_HOME="${LOCALAPPDATA}\\Volta"
 pnpm check:ci
 # Why: lat.md ナレッジグラフのwikiリンクとコード参照の整合性を検証する
 pnpm lat:check
-# pnpm unused
-npx playwright install
+# Why: 未使用 export / ファイル / 依存パッケージを可視化する（|| true で非ブロッキング）
+#      現時点で既存の指摘が残っているため push をブロックしない。全件解消後に || true を外す。
+pnpm unused || true
 # pnpm cy:test
 
 # Why: push時の自動アップグレードはパッケージの意図しない升級を招くため無効化
