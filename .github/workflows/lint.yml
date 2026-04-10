@@ -1,7 +1,6 @@
 name: Lint
 
 on:
-  push:
   pull_request:
 
 # Why: GITHUB_TOKEN の権限を最小化してサプライチェーン攻撃リスクを低減する。
@@ -21,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.16.0
+          node-version-file: '.node-version'
           cache: 'pnpm'
 
       - name: Install dependencies
