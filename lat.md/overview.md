@@ -1,6 +1,6 @@
 # Overview
 
-イラストレーター・中田あゆの portfolio サイト（Next.js 製）。Notion をヘッドレス CMS として使い、Vercel でデプロイ。Tailwind CSS v4 + CVA でスタイリング、Biome で lint/format、Vitest + Storybook + Cypress でテストを管理する。
+イラストレーター mieze(Ayu Nakata) の portfolio サイト（Next.js 製）。Notion をヘッドレス CMS として使い、Vercel でデプロイ。Tailwind CSS v4 + CVA でスタイリング、Biome で lint/format、Vitest + Storybook + Cypress でテストを管理する。
 
 ## Tech Stack
 
