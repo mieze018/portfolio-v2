@@ -31,7 +31,7 @@ describe('tw (component factory)', () => {
   test('tw で作成したコンポーネントをレンダリングすると variant クラスが適用される', () => {
     const Button = tw('button', buttonVariants)
     const { container } = render(<Button variant="secondary" size="lg" />)
-    const el = container.firstElementChild!
+    const el = container.firstElementChild as HTMLElement
 
     expect(el.tagName).toBe('BUTTON')
     expect(el.className).toContain('bg-gray-500')
@@ -178,7 +178,7 @@ describe('twe (component wrapper)', () => {
     })
     const Wrapped = twe(TestComponent, variants)
     const { container } = render(<Wrapped size="lg" className="extra" />)
-    const el = container.firstElementChild!
+    const el = container.firstElementChild as HTMLElement
 
     expect(el.className).toContain('base')
     expect(el.className).toContain('text-lg')
