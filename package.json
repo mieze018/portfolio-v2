@@ -32,8 +32,7 @@
     "test:coverage": "vitest run --coverage",
     "test:coverage:storybook": "vitest run --project=storybook --coverage",
     "graphify": "graphify update .",
-    "lat:check": "lat check",
-    "lat:gen": "lat gen"
+    "lat:check": "lat check"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
