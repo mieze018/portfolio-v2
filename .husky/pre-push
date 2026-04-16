@@ -1,12 +1,5 @@
 
 #!/bin/sh
-# Why: Volta v2 on Windows のデータディレクトリは %LOCALAPPDATA%\Volta。
-#      旧来の ~/.volta（macOS/Linux形式）は無効。
-#      VOLTA_HOME が空だと Volta シムが node のパスを解決できず
-#      push 時の pnpm / npx 実行が失敗するため、明示的に設定する。
-#      PATH は Git Bash 起動時に既に Volta bin を含むため変更不要。
-export VOLTA_HOME="${LOCALAPPDATA}\\Volta"
-
 # Why: Biome に移行済み。check:ci は --write なしで差分を出さずに検査のみ行う
 pnpm check:ci
 # Why: lat.md ナレッジグラフのwikiリンクとコード参照の整合性を検証する
