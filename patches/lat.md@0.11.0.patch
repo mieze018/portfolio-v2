@@ -1,0 +1,13 @@
+diff --git a/dist/src/lattice.js b/dist/src/lattice.js
+index 7244e34a6c414771acf1c7a23b95068eb5d1f0ba..0db242bb543885d627f0a8e4a24ccb137fbfab55 100644
+--- a/dist/src/lattice.js
++++ b/dist/src/lattice.js
+@@ -197,7 +197,7 @@ export function buildFileIndex(sections) {
+     const flat = flattenSections(sections);
+     const index = new Map();
+     for (const s of flat) {
+-        const parts = s.file.split('/');
++        const parts = s.file.split(/[/\\]/);
+         // Index all trailing path suffixes (excluding the full path itself,
+         // which is handled by exact match). Keys are lowercase for
+         // case-insensitive lookup.

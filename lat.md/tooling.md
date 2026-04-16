@@ -57,6 +57,14 @@ Husky + lint-staged でコミット前・プッシュ前にチェックを実行
 - **pre-commit**: `lint-staged` → ステージ済みファイルに `biome check --write` を実行
 - **pre-push**: `biome check:ci`、`lat check`、`knip`（非ブロッキング）を実行
 
+## lat.md
+
+[lat.md](https://www.npmjs.com/package/lat.md) でソースコードとナレッジグラフを紐付ける。
+
+### Windows パッチ（pnpm patch）
+
+v0.11.0 時点で `buildFileIndex` がパスを `/` のみで分割するため、Windows 環境（パス区切りが `\`）ではファイルインデックスが空になり、短い形式の wiki link（`[[conventions]]` 等）が解決できない。`pnpm patch` で `split('/')` → `split(/[/\\]/)` に修正済み（`patches/lat.md@0.11.0.patch`）。公式修正後はパッチを削除してよい。
+
 ## Testing
 
 テスト構成は3層。ユニット・Storybook・E2E それぞれ独立して実行できる。
