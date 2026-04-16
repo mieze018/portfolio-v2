@@ -53,3 +53,6 @@ cypress/videos/*
 *storybook.log
 /storybook-static
 /.playwright-mcp
+
+# graphify
+graphify-out/

@@ -10,16 +10,12 @@ Node.js のバージョンは [mise](https://mise.jdx.dev/) で管理する。`.
 
 mise をインストールし、シェルフックを設定してからリポジトリで `mise install` を実行する。
 
+#### pnpm（推奨・マルチプラットフォーム）
+
+このプロジェクトは pnpm を使用しているため、pnpm 経由のインストールが最もシンプルでクロスプラットフォームに動作する。
+
 ```bash
-# mise をインストール（macOS / Linux）
-curl https://mise.run | sh
-
-# シェルへのフック設定（~/.zshrc や ~/.bashrc に追加）
-# zsh の例:
-echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
-source ~/.zshrc
-
-# リポジトリルートで Node をインストール
+pnpm add -g @jdx/mise
 mise install
 ```
 
@@ -71,6 +67,26 @@ Husky + lint-staged でコミット前・プッシュ前にチェックを実行
 - `pnpm cy:test` — Cypress E2E
 
 Vitest の unit テストは `happy-dom`（jsdom ではなく）を使用。
+
+## Graphify
+
+[graphify](https://graphify.net/) はローカルの知識グラフ生成ツールとして任意で利用できる。
+リポジトリからは npm script 経由で実行する。
+
+```bash
+uv tool install graphifyy && graphify install
+graphify hook install 
+pnpm graphify
+```
+claudeで一度だけ実行
+```bash
+graphify claude install
+```
+
+
+`pnpm graphify` は差分のみ再抽出する。初回・更新どちらも同じコマンドでよい。
+
+`graphify-out/` は生成物のため Git 管理しない。
 
 ## CI Workflows
 
