@@ -90,7 +90,10 @@ claudeで一度だけ実行
 ```bash
 graphify claude install
 ```
-
+graphifyのアップデート
+```bash
+uv tool pip install --upgrade graphifyy
+```
 
 `pnpm graphify` は差分のみ再抽出する。初回・更新どちらも同じコマンドでよい。
 
