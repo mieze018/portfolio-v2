@@ -33,7 +33,7 @@ jobs:
         run: pnpm exec cypress install
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v7
         with:
           install: false
           browser: chrome
