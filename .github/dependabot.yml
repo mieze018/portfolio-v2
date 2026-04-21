@@ -19,3 +19,7 @@ updates:
         # メジャーのみにする
         update-types: ['version-update:semver-patch', 'version-update:semver-minor']
     open-pull-requests-limit: 5
+  - package-ecosystem: 'github-actions'
+    directory: '/' # Location of package manifests
+    schedule:
+      interval: 'daily'
