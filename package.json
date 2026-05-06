@@ -86,7 +86,7 @@
     "jsdom": "^29.0.0",
     "knip": "6.3.1",
     "lat.md": "^0.11.0",
-    "lint-staged": "^16.3.3",
+    "lint-staged": "^17.0.2",
     "playwright": "^1.58.2",
     "postcss": "^8.4.34",
     "storybook": "^10.3.4",
