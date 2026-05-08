@@ -17,7 +17,7 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v6
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v4
+        uses: actions/dependency-review-action@v5
         with:
           # ip@2.0.1 は GHSA-2p57-rm9w-gvfp (SSRF) の修正版が upstream に存在しないため許可
           # 参照: https://github.com/mieze018/portfolio-v2/security/dependabot/33
