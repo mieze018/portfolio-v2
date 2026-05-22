@@ -78,7 +78,7 @@
     "@vitest/browser-playwright": "^4.1.0",
     "@vitest/coverage-v8": "^4.1.0",
     "autoprefixer": "^10.4.16",
-    "chromatic": "^16.1.0",
+    "chromatic": "^17.0.0",
     "cspell": "latest",
     "cypress": "^15.13.1",
     "happy-dom": "^20.8.9",
