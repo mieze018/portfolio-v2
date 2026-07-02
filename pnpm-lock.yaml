@@ -162,8 +162,8 @@ importers:
         specifier: ^10.4.16
         version: 10.4.27(postcss@8.4.47)
       chromatic:
-        specifier: ^17.0.0
-        version: 17.0.0
+        specifier: ^18.0.1
+        version: 18.0.1
       cspell:
         specifier: latest
         version: 10.0.1
@@ -2560,8 +2560,8 @@ packages:
       '@chromatic-com/playwright':
         optional: true
 
-  chromatic@17.0.0:
-    resolution: {integrity: sha512-gYbIBg6IoqH9Ut+bVE5uTZmGzmv/aoHcFzAXaym08JZ7FkB3OSjxrq1xO/dhMPfMqpnwzycHZytYIp3N+IZr5w==}
+  chromatic@18.0.1:
+    resolution: {integrity: sha512-GlTYrZ4ui5ZW8Jzut6SAo5bMH3sIugYZ37Nq2DyVHBfPINeEzGA8eG5xNo4N/I2aRdM9Xnqw0SCls7wgf2llvA==}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -4273,13 +4273,13 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.8.0:
-    resolution: {integrity: sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==}
+  semver@7.8.1:
+    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.8.1:
-    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -7069,9 +7069,9 @@ snapshots:
 
   chromatic@13.3.5: {}
 
-  chromatic@17.0.0:
+  chromatic@18.0.1:
     dependencies:
-      semver: 7.8.0
+      semver: 7.8.5
 
   ci-info@4.4.0: {}
 
@@ -8260,7 +8260,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.8.1
+      semver: 7.8.5
 
   math-intrinsics@1.1.0: {}
 
@@ -8954,9 +8954,9 @@ snapshots:
 
   semver@7.7.4: {}
 
-  semver@7.8.0: {}
-
   semver@7.8.1: {}
+
+  semver@7.8.5: {}
 
   send@1.2.1:
     dependencies:
@@ -8989,7 +8989,7 @@ snapshots:
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
-      semver: 7.8.1
+      semver: 7.8.5
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.34.5
       '@img/sharp-darwin-x64': 0.34.5
