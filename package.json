@@ -44,7 +44,7 @@
     "@vercel/analytics": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "jotai": "^2.6.1",
+    "jotai": "^3.0.0",
     "motion": "^12.18.1",
     "next": "^16.2.6",
     "react": "^19.2.0",
