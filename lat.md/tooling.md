@@ -46,7 +46,7 @@ Biome を単一ツールで lint + format を担う。ESLint/Prettier は使わ�
 - `pnpm unused` — knip を実行して未使用の export / ファイル / 依存パッケージを一覧表示
 - 設定ファイル: `knip.json`（プロジェクトルート）
 
-Knip は Next.js のエントリポイント（`pages/`・`app/`）を自動認識するため、`ts-unused-exports` で必要だった `--excludePathsFromReport=pages` のような手動除外設定は不要。
+Knip は Astro のルート、React コンポーネント、libs を検査する。エントリポイントは knip.json に定義する。
 
 Knip は **pre-push フック**と **CI lint ジョブ**にも組み込み済み。現時点では既存の指摘が残っているため非ブロッキング（`|| true` / `continue-on-error: true`）で動作する。指摘を全件解消後にハードゲートへ切り替える予定。
 
@@ -101,7 +101,7 @@ uv tool pip install --upgrade graphifyy
 
 ## CI Workflows
 
-GitHub Actions で以下のワークフローを実行。Node 22 / pnpm 10 を使用。Node バージョンは `.node-version` で参照する。
+GitHub Actions で以下のワークフローを実行。Node 22.23.4 / pnpm 10.33.0 を使用。Node バージョンは `.node-version` で参照する。
 
 `actions/setup-node` は `.mise.toml` の TOML パースに非互換があるため `.node-version` を採用。mise を使う場合は `.mise.toml` も同じバージョンに合わせておく。
 
@@ -109,3 +109,20 @@ GitHub Actions で以下のワークフローを実行。Node 22 / pnpm 10 を�
 - **test**: Vitest + カバレッジ（PR ごと）
 - **chromatic**: Visual Regression（PR ごと）
 - **cypress**: E2E テスト（PR ごと）
+
+## Astro / Cloudflare Pages
+
+- `pnpm dev:fixtures` / `pnpm build:fixtures` — 認証不要の明示的な検証モード。バナーと noindex 付き。
+- `pnpm dev` / `pnpm build` — 実データ。NOTION_TOKEN / TUMBLR_API_KEY をビルド環境へ設定する。
+- `pnpm typecheck` — Astro / React / テストの型チェック。Cypress のグローバル型は除外する。
+- `pnpm test:e2e` — fixture ビルドを起動し、Playwright で静的生成・モーダル・遷移を検証する。
+- `pnpm preview` — dist のローカル検証。配信環境は静的ホスティングでよい。
+- CI `astro.yml` — 型チェックと Playwright。Cypress も fixture モードで実行する。
+
+Node は Astro 7 が要求する 22.23.4 以上へ更新した。Cloudflare Pages のコマンドは
+`pnpm build`、出力は `dist`。本番切り替え・認証・画像配信の詳細は
+[移行ガイド](../docs/CLOUDFLARE_MIGRATION.md) を参照。
+
+Biome 2.4 は Astro の frontmatter とテンプレート間の参照を追跡できないため、
+`.astro` に限り noUnusedImports / noUnusedVariables を無効にする。
+テンプレートの整合性は `pnpm typecheck`（astro check）で検証する。

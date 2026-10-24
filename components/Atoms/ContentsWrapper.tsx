@@ -6,8 +6,8 @@ import { AnimatePresence, motion } from 'motion/react'
 
 const sunkShortAnimation = `
   @keyframes sunkShort {
-    0% { transform: translate(0, -0.5em); }
-    100% { transform: translate(0, 0); }
+    0% { transform: translate(0, -0.5em); opacity: 0; }
+    100% { transform: translate(0, 0); opacity: 1; }
   }
 `
 
@@ -36,7 +36,7 @@ export const ContentsWrapper = ({
         <motion.section
           ref={ref}
           key={$key}
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2, delay: initialDelay }}

@@ -1,8 +1,7 @@
 import { cva } from 'class-variance-authority'
 import { useAtomValue } from 'jotai'
 import { contentsWrapperState } from 'libs/states/atoms'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'libs/usePathname'
 
 const spanVariants = cva(
   'inline-block cursor-pointer mix-blend-multiply group-hover:underline group-active:underline xs:tracking-widest [word-spacing:-0.2em]',
@@ -27,30 +26,37 @@ export const NavLinks = ({
     pathname: string
   }[]
 }) => {
-  const router = useRouter()
+  const pathname = usePathname()
   const contentsWrapper = useAtomValue(contentsWrapperState)
   return (
     <>
       {routes.map((route) => {
-        const isLinkToCurrentPath = router.pathname === route.pathname
+        const isLinkToCurrentPath = pathname === route.pathname
         /** コンテンツまでスクロールさせるかどうか */
         const isToScrollToContentWrapper = route.pathname === '/' || isLinkToCurrentPath
         return (
-          <Link
+          <a
             href={route.pathname}
             key={route.pathname}
             className="group"
-            // Why: スクロール制御はContentsWrapperのonExitCompleteに一本化。
-            // Next.jsのscroll={true}は(0,0)に飛ばすだけで、コンテンツ先頭への
-            // スクロールと競合するため、常にfalseにする。
-            scroll={false}
-            onClick={() =>
-              isToScrollToContentWrapper && setTimeout(() => contentsWrapper?.scrollIntoView(), 100)
-            }
+            aria-current={isLinkToCurrentPath ? 'page' : undefined}
+            onClick={(event) => {
+              if (
+                isLinkToCurrentPath &&
+                !event.ctrlKey &&
+                !event.metaKey &&
+                !event.shiftKey &&
+                !event.altKey &&
+                event.button === 0
+              ) {
+                event.preventDefault()
+                if (isToScrollToContentWrapper) contentsWrapper?.scrollIntoView()
+              }
+            }}
             data-testid={`nav-link-${route.pathname}`}
           >
             <span className={spanVariants({ isCurrent: isLinkToCurrentPath })}>{route.name}</span>
-          </Link>
+          </a>
         )
       })}
     </>

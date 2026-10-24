@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { userEvent } from 'storybook/test'
 import { NavLinks } from './NavLink'
 
@@ -26,18 +26,14 @@ export const Default: Story = {
 
 /**
  * 現在ページのリンクがアクティブ（underline）になるケース。
- * router.pathname を /about に設定して isLinkToCurrentPath=true を発火させる。
+ * pathname を /about に設定して isLinkToCurrentPath=true を発火させる。
  */
 export const WithCurrentRoute: Story = {
   args: {
     routes: mockRoutes,
   },
   parameters: {
-    nextjs: {
-      router: {
-        pathname: '/about',
-      },
-    },
+    location: { pathname: '/about' },
   },
 }
 

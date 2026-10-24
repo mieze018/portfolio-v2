@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { createStore, Provider } from 'jotai'
 import { modalPhotoState } from 'libs/states/atoms'
 import { Modal } from './Modal'
@@ -44,11 +44,7 @@ export const Open: Story = {
     },
   ],
   parameters: {
-    nextjs: {
-      router: {
-        asPath: '/#closeup',
-      },
-    },
+    location: { hash: '#closeup' },
   },
 }
 
@@ -72,10 +68,6 @@ export const OpenWithoutAlt: Story = {
     },
   ],
   parameters: {
-    nextjs: {
-      router: {
-        asPath: '/#closeup',
-      },
-    },
+    location: { hash: '#closeup' },
   },
 }

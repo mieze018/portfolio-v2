@@ -1,3 +1,4 @@
+import { expect, it } from 'vitest'
 import { dateToYear } from './dataFormat'
 
 it('年が4桁で返される', () => {

@@ -1,6 +1,6 @@
 import type { PageObject } from 'libs/@type/api/notion'
 import { dateToYear } from 'libs/dataFormat'
-import { getProperties } from 'libs/notion'
+import { getProperties } from 'libs/notionProperties'
 
 type workType = {
   work: PageObject

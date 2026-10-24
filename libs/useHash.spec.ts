@@ -1,46 +1,34 @@
-import { renderHook } from '@testing-library/react'
-import { useRouter } from 'next/router'
-import { describe, expect, it, vi } from 'vitest'
-
-// Why: Next.js の useRouter はテスト環境に存在しないためモックする
-const mockReplace = vi.fn()
-vi.mock('next/router', () => ({
-  useRouter: vi.fn(() => ({
-    asPath: '/page#section1',
-    replace: mockReplace,
-  })),
-}))
-
+import { act, renderHook } from '@testing-library/react'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { useHash } from './useHash'
+
+beforeEach(() => window.history.replaceState(null, '', '/page?filter=works'))
 
 describe('useHash', () => {
   it('URL のハッシュ部分を取得できる', () => {
+    window.history.replaceState(null, '', '/page#section1')
     const { result } = renderHook(() => useHash())
-    const [hash] = result.current
-    expect(hash).toBe('section1')
+    expect(result.current[0]).toBe('section1')
   })
 
-  it('URL にハッシュがない場合は空文字を返す', () => {
-    // Why: extractHash の `?? ''` 分岐をテストする
-    vi.mocked(useRouter).mockReturnValueOnce({
-      asPath: '/page-without-hash',
-      replace: mockReplace,
-    } as never)
-
-    const { result } = renderHook(() => useHash())
-    const [hash] = result.current
-    expect(hash).toBe('')
+  it('setHash はパス・クエリ・履歴状態を維持し、他の購読者にも反映する', () => {
+    window.history.replaceState({ marker: 'retained' }, '', '/page?filter=works')
+    const { result } = renderHook(() => [useHash(), useHash()])
+    act(() => result.current[0][1]('closeup'))
+    expect(result.current[1][0]).toBe('closeup')
+    expect(window.location.pathname + window.location.search).toBe('/page?filter=works')
+    expect(window.history.state).toEqual({ marker: 'retained' })
+    act(() => result.current[1][1](''))
+    expect(result.current[0][0]).toBe('')
+    expect(window.location.hash).toBe('')
   })
 
-  it('setHash でハッシュを変更できる', () => {
+  it('ブラウザの履歴移動も反映する', () => {
     const { result } = renderHook(() => useHash())
-    const [, setHash] = result.current
-
-    setHash('newSection')
-
-    expect(mockReplace).toHaveBeenCalledWith({ hash: 'newSection' }, undefined, {
-      shallow: true,
-      scroll: false,
+    act(() => {
+      window.history.replaceState(null, '', '/page#history')
+      window.dispatchEvent(new PopStateEvent('popstate'))
     })
+    expect(result.current[0]).toBe('history')
   })
 })

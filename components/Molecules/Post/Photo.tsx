@@ -2,7 +2,6 @@ import type { Tumblr } from 'libs/@type/api/tumblr'
 import { cva } from 'libs/component-factory'
 import { useModalControl } from 'libs/hooks/useModalControl'
 import { cn } from 'libs/tw-clsx-util'
-import Image from 'next/image'
 
 /** 画像に直接スタイル指定せずラッパーにflex-itemのCSSをかける */
 const flexClasses = cva('w-full', {
@@ -17,7 +16,7 @@ const flexClasses = cva('w-full', {
   },
 })
 
-// Next.js Imageは特殊なので直接cvaで定義
+// Why: 画像のレイアウトは移植前と同じクラスで保つ。
 const imageVariants = cva('mx-auto cursor-pointer', {
   variants: {
     closeup: {
@@ -56,9 +55,23 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
       aria-label={`写真を拡大表示: ${photo.caption || '画像'}`}
       onClick={handleOpenPhoto}
     >
-      <Image
+      <img
         src={photo.original_size.url}
-        alt={photo.original_size.url}
+        alt={photo.caption || '作品画像'}
+        srcSet={
+          photo.alt_sizes?.length
+            ? [
+                ...new Map(
+                  [...photo.alt_sizes, photo.original_size].map((size) => [size.width, size])
+                ).values(),
+              ]
+                .map((size) => `${size.url} ${size.width}w`)
+                .join(', ')
+            : undefined
+        }
+        sizes={isColumn ? '(min-width: 768px) 25vw, 50vw' : '(min-width: 1024px) 768px, 95vw'}
+        loading="lazy"
+        decoding="async"
         key={photo.original_size.url}
         height={photo.original_size.height}
         width={photo.original_size.width}

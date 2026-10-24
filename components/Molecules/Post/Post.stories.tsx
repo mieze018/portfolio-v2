@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import type { Tumblr } from 'libs/@type/api/tumblr'
 import { Post } from './Post'
 

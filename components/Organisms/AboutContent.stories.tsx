@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Default as mockEvents } from 'components/Molecules/About/Events.stories'
 import { Default as PrizesDefault } from 'components/Molecules/About/Prizes.stories'
 import { Default as WorkDefault } from 'components/Molecules/About/WorkExperience.stories'

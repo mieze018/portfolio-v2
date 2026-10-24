@@ -12,7 +12,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 | 対象 | ケース | 例 |
 | --- | --- | --- |
-| `./pages` 以下のルーティングファイル | スネークケース（URLパスに準じる） | `about_me.tsx` |
+| `src/pages/` 以下のルーティングファイル | スネークケース（URLパスに準じる） | `about_me.astro` |
 | React コンポーネント（`.tsx`）とそのディレクトリ | パスカルケース | `PrimaryButton.tsx` |
 | メソッド・型（`.ts`）・設定ファイル | キャメルケース | `useModalControl.ts` |
 
@@ -31,7 +31,9 @@ components/
 └── Layout/         # ページ全体レイアウトテンプレート
 
 libs/               # メソッド・型・i18nなど
-pages/api/          # データ配列の定義（型は interface を使用）
+src/pages/          # Astro の静的ルーティング
+src/layouts/        # HTMLレイアウト
+libs/content.ts     # ビルド時のデータ取得
 ```
 
 ### Atomic Design の境界線
@@ -128,10 +130,10 @@ cva('text-xs leading-7 md:text-sm md:leading-5')
 
 ```tsx
 // ✅
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
 // ❌ Biome がエラーにする
-import { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { Meta, StoryObj } from '@storybook/react-vite'
 ```
 
 ### コードスタイル（Biome）

@@ -1,29 +1,24 @@
-import { useCallback } from 'libs/reactCompat'
-import { useRouter } from 'next/router'
+import { useCallback, useSyncExternalStore } from 'react'
 
-// URL の # 以降の文字列を取り出すユーティリティ
-const extractHash = (url: string): string => url.split('#')[1] ?? ''
-
-/**
- * URL のハッシュフラグメント部分を扱うためのフックです。
- *
- * 次のようにすると、`hash` 変数に URL の `#` 以降の値が格納されます。
- * URL の `#` 以降の値を変更したいときは、`setHash` 関数を使用します。
- *
- * ```
- * const [hash, setHash] = useHash()
- * ```
- */
+const subscribe = (listener: () => void) => {
+  window.addEventListener('hashchange', listener)
+  window.addEventListener('popstate', listener)
+  return () => {
+    window.removeEventListener('hashchange', listener)
+    window.removeEventListener('popstate', listener)
+  }
+}
+const getSnapshot = () => window.location.hash.slice(1)
+const getServerSnapshot = () => ''
 
 export function useHash(): [string, (newHash: string) => void] {
-  const router = useRouter()
-  const hash = extractHash(router.asPath)
-  const setHash = useCallback(
-    (newHash: string) => {
-      // ブラウザの履歴に残すならrouter.push, そうでなければrouter.replace
-      router.replace({ hash: newHash }, undefined, { shallow: true, scroll: false })
-    },
-    [router]
-  )
+  const hash = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const setHash = useCallback((newHash: string) => {
+    const url = new URL(window.location.href)
+    url.hash = newHash
+    // Why: ページ遷移やスクロールを起こさず、既存どおり現在の履歴を置き換える。
+    window.history.replaceState(window.history.state, '', url)
+    window.dispatchEvent(new HashChangeEvent('hashchange'))
+  }, [])
   return [hash, setHash]
 }

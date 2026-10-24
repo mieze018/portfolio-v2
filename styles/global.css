@@ -82,8 +82,8 @@
 }
 
 @theme inline {
-  --font-jp: var(--font-noto-serif-jp);
-  --font-en: var(--font-cormorant-garamond);
+  --font-jp: var(--font-noto-serif-jp-variable);
+  --font-en: var(--font-eb-garamond-variable);
 }
 
 /*
@@ -104,6 +104,8 @@
   }
 
   :root {
+    --font-noto-serif-jp-variable: "Noto Serif JP Variable", serif;
+    --font-eb-garamond-variable: "EB Garamond Variable", serif;
     /*
       Why: @theme に置くと Tailwind がビルド時に var() を解決してしまう可能性がある。
       ここに置くことでランタイム解決を保証し、セレクタ内での --text-shadow-alpha 上書きが機能する。

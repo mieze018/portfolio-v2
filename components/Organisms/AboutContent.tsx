@@ -6,7 +6,7 @@ import { Participant } from 'components/Molecules/About/Participant'
 import { Prizes } from 'components/Molecules/About/Prizes'
 import { WorkExperience } from 'components/Molecules/About/WorkExperience'
 import { cva, tw } from 'libs/component-factory'
-import type { aboutDataType } from 'pages/about'
+import type { aboutDataType } from 'libs/contentTypes'
 
 const Wrapper = tw(
   'div',

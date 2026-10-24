@@ -5,10 +5,10 @@ import { Separator } from 'components/Atoms/Separator'
 import type { formFieldType } from 'components/Molecules/ContactForm'
 import { ContactForm } from 'components/Molecules/ContactForm'
 import { cva, tw } from 'libs/component-factory'
-import { getProperties } from 'libs/notion'
+import type { contactDataType } from 'libs/contentTypes'
+import { getProperties } from 'libs/notionProperties'
+import { mail } from 'libs/site'
 import { useTranslation } from 'libs/useTranslation'
-import { mail } from 'pages/api/basics'
-import type { contactDataType } from 'pages/contact'
 import { GoMail } from 'react-icons/go'
 import { IoMdPaperPlane } from 'react-icons/io'
 
@@ -33,7 +33,7 @@ const IconWrapper = tw(
   cva('py-4 text-xl md:leading-7 m-auto flex items-center justify-center')
 )
 
-export const ContactContent = ({ fallbackData, formId }: contactDataType & { formId: string }) => {
+const ActiveContactContent = ({ fallbackData, formId }: contactDataType & { formId: string }) => {
   const { workAcceptanceStatus } = fallbackData
   const [state, handleSubmit] = useForm(formId)
   const { tb } = useTranslation('common')
@@ -84,4 +84,28 @@ export const ContactContent = ({ fallbackData, formId }: contactDataType & { for
       </div>
     </Wrapper>
   )
+}
+
+export const ContactContent = (props: contactDataType & { formId: string }) => {
+  if (!props.formId) {
+    return (
+      <Wrapper>
+        <p>
+          {getProperties(props.fallbackData.workAcceptanceStatus, {
+            name: 'ja',
+            type: 'rich_text',
+          })}
+        </p>
+        <p>
+          {getProperties(props.fallbackData.workAcceptanceStatus, {
+            name: 'en',
+            type: 'rich_text',
+          })}
+        </p>
+        <MailWrapper>{mail}</MailWrapper>
+        <p>お問い合わせはメールアドレスへお願いいたします。</p>
+      </Wrapper>
+    )
+  }
+  return <ActiveContactContent {...props} />
 }

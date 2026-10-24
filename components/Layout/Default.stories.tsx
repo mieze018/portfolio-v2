@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { mockSocialLinks } from 'libs/test/mockSocialLinks'
 import { expect, waitFor } from 'storybook/test'
 import Layout from './Default'

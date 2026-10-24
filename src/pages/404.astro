@@ -1,0 +1,7 @@
+---
+import Document from '../layouts/Document.astro'
+---
+<Document pathname="/404" preview={import.meta.env.MODE === 'fixtures'}>
+  <main class="p-8 text-center"><h1>Page not found</h1><a href="/">トップページへ</a></main>
+  <script>window.location.replace('/')</script>
+</Document>
