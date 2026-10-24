@@ -1,11 +1,15 @@
 import type { Preview } from '@storybook/react-vite'
 import { createElement } from 'react'
 import { PathContext } from '../libs/usePathname'
+import '@fontsource-variable/noto-serif-jp'
+import '@fontsource-variable/eb-garamond'
 import '../styles/global.css'
 import { MINIMAL_VIEWPORTS } from 'storybook/viewport'
 
 const preview: Preview = {
   beforeEach: (context) => {
+    // Why: Astro の Document と同じ文字描画条件で VRT を行う。
+    document.documentElement.classList.add('antialiased')
     const hash = context.parameters.location?.hash || ''
     window.history.replaceState(
       window.history.state,

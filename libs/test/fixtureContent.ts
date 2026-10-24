@@ -27,7 +27,20 @@ export const fixtureContent: portfolioContentType = {
     post('10002', tags.commissionedWork, 'Migration preview — commissioned work'),
   ],
   socialLinks: [{ text: 'Tumblr', url: 'https://mieze018.tumblr.com' }],
-  about: { prizes: [], workExperience: [], workExperienceGenre: [], events: [] },
+  about: {
+    prizes: [],
+    workExperience: [
+      {
+        id: 'fixture-work',
+        properties: {
+          title: { type: 'title', title: [{ plain_text: 'Migration preview book' }] },
+          date: { type: 'date', date: { start: '2026-01-01' } },
+        },
+      } as unknown as PageObject,
+    ],
+    workExperienceGenre: [],
+    events: [],
+  },
   contact: {
     workAcceptanceStatus: {
       id: 'fixture-status',

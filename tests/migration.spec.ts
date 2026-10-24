@@ -95,8 +95,30 @@ test('JavaScript が無効でも作品とナビゲーションを表示する', 
   await expect(page.locator('article')).toContainText('personal work')
   await expect(page.locator('article')).toBeVisible()
   await expect(page.locator('article img')).toHaveJSProperty('naturalWidth', 1200)
-  await page.getByTestId('nav-link-/about').first().click()
+  // Why: JS 無効でも動く標準リンクを検証し、スクロール連動で動くヘッダーを避ける。
+  await page.getByRole('contentinfo').getByTestId('nav-link-/about').click()
   await expect(page).toHaveURL(/\/about$/)
   await expect(page.getByRole('heading', { name: 'mieze illustration' })).toBeVisible()
   await context.close()
+})
+
+test('実績のある About ページを hydration エラーなく表示する', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(error.message))
+  page.on('console', (message) => {
+    if (message.type() === 'error') errors.push(message.text())
+  })
+  await page.goto('/about')
+  await expect(page.getByText('『Migration preview book』')).toBeVisible()
+  await page
+    .locator('astro-island')
+    .evaluate((island) =>
+      island.hasAttribute('ssr')
+        ? new Promise<void>((resolve) =>
+            island.addEventListener('astro:hydrate', () => resolve(), { once: true })
+          )
+        : undefined
+    )
+  await expect(page.getByText('『Migration preview book』')).toBeVisible()
+  expect(errors).toEqual([])
 })

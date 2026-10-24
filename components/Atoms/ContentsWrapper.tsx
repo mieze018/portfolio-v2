@@ -25,7 +25,7 @@ export const ContentsWrapper = ({
   children: React.ReactNode
   $key: string
 }) => {
-  const ref = useContentsWrapperRef($key)
+  const { ref, attachRef } = useContentsWrapperRef($key)
   const { onExitComplete } = usePageTransitionScroll(ref)
   const initialDelay = useInitialLoadDelay(1)
 
@@ -34,7 +34,7 @@ export const ContentsWrapper = ({
       <style>{sunkShortAnimation}</style>
       <AnimatePresence mode="wait" onExitComplete={onExitComplete}>
         <motion.section
-          ref={ref}
+          ref={attachRef}
           key={$key}
           initial={false}
           animate={{ opacity: 1 }}

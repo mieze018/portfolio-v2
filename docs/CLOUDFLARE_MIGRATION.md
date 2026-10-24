@@ -87,6 +87,22 @@ CI の `astro.yml` で型チェックと上記E2Eを実行する。既存の Cyp
 使うように変更しており、外部APIの認証情報や Cypress Cloud の記録キーを必要としない。
 実データのビルド、実際のTumblr画像、Formspree送信、GA送信は本物の設定で別途確認する。
 
+### PR の見た目の検証
+
+Cloudflare アカウントが未作成でも GitHub Actions と Chromatic による検証は実行できる。
+`chromatic.yml` は push 時に Storybook をビルド・送信し、既存のベースラインとの差分を検出する。
+`components/Portfolio.stories.tsx` は固定データの主要ページを 375px / 1280px で撮影し、
+開いた画像モーダルも固定画像で検証する。Storybook テストは `astro.yml` でも実行する。
+
+Chromatic のビルド成功は見た目の承認完了を意味しない。変更されたスナップショットは
+既存ベースラインと比較し、新しいページのスナップショットは初回ベースラインとしてレビューする。
+差分の自動承認や、検証を通すための一括ベースライン更新は行わない。
+Storybook では拾えない HTML ルート・hydration・ページ遷移は Playwright で検証する。
+fixture の About に実績データを含め、空データだけで SSR の問題を見逃さないようにする。
+
+PR の検証後に Cloudflare アカウントと Pages を用意し、実データでのプレビュー検証を行う。
+マージ・本番公開・DNS 変更はその結果を確認した後の作業とし、PR 検証だけでは実施しない。
+
 ## Cloudflare Pages の設定
 
 Pages の Git 連携で次を指定する。Next.js 用のプリセットは使わない。

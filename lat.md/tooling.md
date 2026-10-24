@@ -117,7 +117,11 @@ GitHub Actions で以下のワークフローを実行。Node 22.23.4 / pnpm 10.
 - `pnpm typecheck` — Astro / React / テストの型チェック。Cypress のグローバル型は除外する。
 - `pnpm test:e2e` — fixture ビルドを起動し、Playwright で静的生成・モーダル・遷移を検証する。
 - `pnpm preview` — dist のローカル検証。配信環境は静的ホスティングでよい。
-- CI `astro.yml` — 型チェックと Playwright。Cypress も fixture モードで実行する。
+- CI `astro.yml` — 型チェック、Storybook のブラウザテスト、Playwright。Cypress も fixture モードで実行する。
+- CI `chromatic.yml` — Storybook の VRT。[[components/Portfolio.stories.tsx]] で主要ページを
+  PC / モバイルの固定データで検証する。差分の承認は別途レビューし、自動承認しない。
+- fixture の About に実績データを含め、SSR / hydration の不整合も E2E で検証する。
+- Cloudflare アカウントは PR の CI / VRT には不要。Pages の実データプレビュー準備時に作成する。
 
 Node は Astro 7 が要求する 22.23.4 以上へ更新した。Cloudflare Pages のコマンドは
 `pnpm build`、出力は `dist`。本番切り替え・認証・画像配信の詳細は

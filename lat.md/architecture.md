@@ -43,6 +43,8 @@ getStaticPaths で既存URLと投稿詳細を生成する。追加投稿はコ�
 Astro ClientRouter が island を永続化し、遷移先の props を更新する。
 画像モーダル・React の遷移アニメーション・ナビゲーションを同じ状態で扱う。
 リンクは標準の a 要素、画像は Tumblr の alt_sizes を使う img 要素。
+コンテンツの DOM 参照は [[libs/hooks/useContentsWrapperRef.ts]] の callback ref で更新する。
+AnimatePresence の exit 中に遷移先 DOM が未接続でも、接続後にスクロール対象を登録する。
 
 fixtures モードだけ [[libs/test/fixtureContent.ts]] を使う。本番でAPIが失敗したときは
 ビルドを止め、テストデータを自動で代用しない。セットアップは [[tooling]] を参照。
