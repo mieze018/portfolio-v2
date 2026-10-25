@@ -95,6 +95,11 @@ CI の `astro.yml` で型チェックと上記E2Eを実行する。既存の Cyp
 秘密の値をクラウド作業環境へ取り出したり、再入力したりする必要はない。
 fork / Dependabot の PR にはこのジョブを実行せず、シークレットはビルドステップだけに渡す。
 実データビルドもデプロイ・フォーム送信・GA送信は実行しない。
+ビルド後は `playwright.real.config.ts` で生成済みの全ルートを PC / モバイル幅で開き、
+実画像の読み込み、hydration、モーダル、ページ遷移を検証する。
+主要ページとモーダルのスクリーンショット・HTMLレポートは Actions の
+`real-content-browser-results` に7日間保存する。計測・フォーム宛ての通信はブラウザで遮断する。
+この検証は Cloudflare 上での配信確認とは別であり、Pages のプレビュー確認も必要。
 
 Cloudflare アカウントが未作成でも GitHub Actions と Chromatic による検証は実行できる。
 `chromatic.yml` は push 時に Storybook をビルド・送信し、既存のベースラインとの差分を検出する。

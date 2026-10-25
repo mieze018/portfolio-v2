@@ -120,6 +120,9 @@ GitHub Actions で以下のワークフローを実行。Node 22.23.4 / pnpm 10.
 - CI `astro.yml` — 型チェック、Storybook のブラウザテスト、Playwright。Cypress も fixture モードで実行する。
 - 同一リポジトリの PR は `real-content` ジョブで GitHub シークレットを利用して実データをビルドする。
   認証情報はビルドステップだけに渡し、fork / Dependabot ではこのジョブを実行しない。
+- `playwright.real.config.ts` は生成済みの実データ全ルートを PC / モバイルで確認する。
+  画像読み込み・hydration・モーダル・遷移を検証し、スクリーンショットとレポートを7日保存する。
+  fixture 用の Playwright 設定とは分離し、実データを fixture で上書きしない。
 - CI `chromatic.yml` — Storybook の VRT。[[components/Portfolio.stories.tsx]] で主要ページを
   PC / モバイルの固定データで検証する。差分の承認は別途レビューし、自動承認しない。
 - fixture の About に実績データを含め、SSR / hydration の不整合も E2E で検証する。
