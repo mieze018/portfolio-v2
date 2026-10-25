@@ -1,0 +1,45 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { Portfolio } from '../../components/Portfolio'
+import { getContent } from '../../libs/content'
+import type { portfolioContentType } from '../../libs/contentTypes'
+import Document from '../layouts/Document.astro'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const content = await getContent()
+  const paths = ['', 'works', 'client_works', 'about', 'contact', 'privacy_policy']
+  const routes = paths.map((path) => ({ params: { path: path || undefined }, props: { content } }))
+  for (const post of content.posts) {
+    routes.push({ params: { path: `posts/${post.id_string}` }, props: { content } })
+  }
+  return routes
+}
+
+const { content } = Astro.props as { content: portfolioContentType }
+const pathname = Astro.params.path ? `/${Astro.params.path}` : '/'
+const postId = pathname.startsWith('/posts/') ? pathname.split('/')[2] : undefined
+const preview = import.meta.env.MODE === 'fixtures'
+// Why: 各ページの hydration データへ不要な全投稿・他ページの情報を複製しない。
+const pageContent = {
+  socialLinks: content.socialLinks,
+  posts: postId
+    ? content.posts.filter((post) => post.id_string === postId)
+    : ['/', '/works', '/client_works'].includes(pathname)
+      ? content.posts
+      : [],
+  about:
+    pathname === '/about'
+      ? content.about
+      : { prizes: [], workExperience: [], workExperienceGenre: [], events: [] },
+  contact: pathname === '/contact' ? content.contact : { workAcceptanceStatus: { properties: {} } },
+} as portfolioContentType
+const formId = preview
+  ? ''
+  : import.meta.env.PUBLIC_FORM_ID ||
+    import.meta.env.NEXT_PUBLIC_FORM ||
+    process.env.NEXT_PUBLIC_FORM ||
+    ''
+---
+<Document pathname={pathname} preview={preview}>
+  <Portfolio pathname={pathname} content={pageContent} postId={postId} formId={formId} transition:persist="portfolio" client:load />
+</Document>

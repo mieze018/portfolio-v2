@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { createStore, Provider } from 'jotai'
 import { modalPhotoState } from 'libs/states/atoms'
 import { Modal } from './Modal'
 
 const testPhoto = {
-  src: 'https://picsum.photos/id/4/1200/800',
+  src: '/fixture-artwork.svg',
   width: 1200,
   height: 800,
   alt: 'サンプル画像',
@@ -44,11 +44,8 @@ export const Open: Story = {
     },
   ],
   parameters: {
-    nextjs: {
-      router: {
-        asPath: '/#closeup',
-      },
-    },
+    location: { hash: '#closeup' },
+    chromatic: { disableSnapshot: false, viewports: [375, 1280] },
   },
 }
 
@@ -60,7 +57,7 @@ export const OpenWithoutAlt: Story = {
     (Story) => {
       const store = createStore()
       store.set(modalPhotoState, {
-        src: 'https://picsum.photos/id/4/1200/800',
+        src: '/fixture-artwork.svg',
         width: 1200,
         height: 800,
       })
@@ -72,10 +69,6 @@ export const OpenWithoutAlt: Story = {
     },
   ],
   parameters: {
-    nextjs: {
-      router: {
-        asPath: '/#closeup',
-      },
-    },
+    location: { hash: '#closeup' },
   },
 }

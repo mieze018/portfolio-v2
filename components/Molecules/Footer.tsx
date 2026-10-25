@@ -6,7 +6,6 @@ import { cva, tw } from 'libs/component-factory'
 import { copyright } from 'libs/copyright'
 import { routes } from 'libs/routes'
 import { useTranslation } from 'libs/useTranslation'
-import Link from 'next/link'
 
 const Wrapper = tw(
   'footer',
@@ -23,7 +22,7 @@ export const Footer = ({ socialLinks }: { socialLinks?: LocalApi.SnsLink[] }) =>
       {!!socialLinks?.length && <SocialLinks links={socialLinks} />}
       <div>{copyright()}</div>
       <div>
-        <Link href="privacy_policy">{t('Privacy Policy')}</Link>
+        <a href="/privacy_policy">{t('Privacy Policy')}</a>
       </div>
     </Wrapper>
   )

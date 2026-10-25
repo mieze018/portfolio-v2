@@ -8,7 +8,7 @@
 
 | 対象 | ケース | 例 |
 | --- | --- | --- |
-| `pages/` 以下のルーティングファイル | スネークケース（URLパスに準じる） | `about_me.tsx` |
+| `src/pages/` 以下のルーティングファイル | スネークケース（URLパスに準じる） | `about_me.astro` |
 | React コンポーネント（`.tsx`）とそのディレクトリ | パスカルケース | `PrimaryButton.tsx` |
 | メソッド・型（`.ts`）・設定ファイル | キャメルケース | `useModalControl.ts` |
 

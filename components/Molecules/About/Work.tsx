@@ -1,6 +1,6 @@
 import type { PageObject } from 'libs/@type/api/notion'
 import { dateToYear } from 'libs/dataFormat'
-import { getProperties } from 'libs/notion'
+import { getProperties } from 'libs/notionProperties'
 
 type workType = {
   work: PageObject
@@ -18,7 +18,7 @@ export const Work = ({ work, genreName }: workType) => {
   return (
     <li>
       {genreName && <span>{genreName}</span>}
-      <li className="flex flex-wrap items-end gap-x-3">
+      <div className="flex flex-wrap items-end gap-x-3">
         {title && <span>『{title}』</span>}
         {author && <span>{author}</span>}
         {publisher && <span>{publisher}</span>}
@@ -32,7 +32,7 @@ export const Work = ({ work, genreName }: workType) => {
             </a>
           </small>
         )}
-      </li>
+      </div>
     </li>
   )
 }

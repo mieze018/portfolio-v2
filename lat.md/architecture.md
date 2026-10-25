@@ -14,8 +14,10 @@ components/          # UI コンポーネント（Atomic Design）
 └── Layout/          # ページ全体レイアウトテンプレート
 
 libs/                # メソッド・型・i18nなど
-pages/               # Next.js Pages Router（スネークケース）
-pages/api/           # データ配列の定義（型は interface を使用）
+src/pages/           # Astro の静的ルート
+src/layouts/         # HTML・メタデータ・フォント・ページ遷移
+libs/content.ts      # ビルド用データ取得
+libs/site.ts         # サイト情報
 public/              # 静的アセット
 styles/              # グローバルCSS
 tests/               # テスト補助ファイル
@@ -32,7 +34,17 @@ tests/               # テスト補助ファイル
 
 ## Data Flow
 
-データ取得パターン。Notion API は `pages/api/` でまとめ、コンポーネントからは SWR または `getStaticProps` 経由で利用する。
+[[libs/content.ts]] が Notion / Tumblr をビルド時に取得し、[[src/pages/[...path].astro]] の
+getStaticPaths で既存URLと投稿詳細を生成する。追加投稿はコード変更なしで再ビルド時に反映する。
+認証情報を読む [[libs/notion.ts]] / [[libs/tumblr.ts]] は React から import しない。
+表示用のプロパティ取得は純粋関数 [[libs/notionProperties.ts]] へ分離する。
 
-- **静的生成**: `getStaticProps` + Notion client → ビルド時にデータを取得
-- **クライアントフェッチ**: SWR + `/api/*` エンドポイント → ランタイムでデータを取得
+[[components/Portfolio.tsx]] は共有 Jotai Provider を持つ React island。
+Astro ClientRouter が island を永続化し、遷移先の props を更新する。
+画像モーダル・React の遷移アニメーション・ナビゲーションを同じ状態で扱う。
+リンクは標準の a 要素、画像は Tumblr の alt_sizes を使う img 要素。
+コンテンツの DOM 参照は [[libs/hooks/useContentsWrapperRef.ts]] の callback ref で更新する。
+AnimatePresence の exit 中に遷移先 DOM が未接続でも、接続後にスクロール対象を登録する。
+
+fixtures モードだけ [[libs/test/fixtureContent.ts]] を使う。本番でAPIが失敗したときは
+ビルドを止め、テストデータを自動で代用しない。セットアップは [[tooling]] を参照。

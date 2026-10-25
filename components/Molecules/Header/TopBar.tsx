@@ -5,7 +5,7 @@ import { NavLinks } from 'components/Molecules/Header/NavLink'
 import { WaterSurface } from 'components/Molecules/Header/WaterSurface'
 import { cva, tw } from 'libs/component-factory'
 import { routes } from 'libs/routes'
-import { description, title } from 'pages/api/basics'
+import { description, title } from 'libs/site'
 
 const Title = tw('h1', cva('mb-1 text-2xl xs:text-3xl tracking-title'))
 const Description = tw('p', cva('text-xs sm:text-base'))

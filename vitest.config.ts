@@ -20,7 +20,6 @@ export default defineConfig({
       // ESM 環境では __dirname が使えないため import.meta.url から解決
       libs: fileURLToPath(new URL('./libs', import.meta.url)),
       components: fileURLToPath(new URL('./components', import.meta.url)),
-      pages: fileURLToPath(new URL('./pages', import.meta.url)),
     },
   },
   test: {
@@ -39,10 +38,8 @@ export default defineConfig({
         '**/*.d.ts',
         '**/node_modules/**',
         // Why: テスト不可能または純粋な定数のみのファイルを除外
-        // fonts.ts は next/font/google のランタイム初期化でテスト環境では動作しない
         // notionDB.ts, routes.ts はロジックを含まない定数定義のみ
         // libs/test/ はテストヘルパー（モックデータ等）のため coverage 対象外とする
-        'libs/fonts.ts',
         'libs/notionDB.ts',
         'libs/routes.ts',
         'libs/test/**',
@@ -57,7 +54,7 @@ export default defineConfig({
           environment: 'happy-dom',
           globals: true,
           include: ['libs/**/*.test.{ts,tsx}', 'libs/**/*.spec.{ts,tsx}'],
-          exclude: ['node_modules', '.next', 'cypress', 'tests'],
+          exclude: ['node_modules', 'dist', 'cypress', 'tests'],
         },
       },
       // --- Storybook テスト (Playwright browser) ---
@@ -69,18 +66,15 @@ export default defineConfig({
             storybookScript: 'pnpm storybook --no-open',
           }),
         ],
-        resolve: {
-          alias: {
-            // Why: @storybook/nextjs-vite の NextImage モックが Vitest ブラウザ環境で
-            // object として解決されるバグを回避。軽量な img 要素モックに差し替え。
-            'next/image': path.join(dirname, '.storybook/mocks/next-image.tsx'),
-          },
-        },
         test: {
           name: 'storybook',
           browser: {
             enabled: true,
-            provider: playwright({}),
+            provider: playwright({
+              launchOptions: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
+                ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH }
+                : {},
+            }),
             headless: true,
             instances: [{ browser: 'chromium' }],
           },
