@@ -89,6 +89,13 @@ CI の `astro.yml` で型チェックと上記E2Eを実行する。既存の Cyp
 
 ### PR の見た目の検証
 
+同一リポジトリの PR では `astro.yml` の `real-content` ジョブが GitHub Actions の
+シークレットで実データをビルドする。`TUMBLR_API_KEY` / `NOTION_TOKEN` を優先し、
+既存の `NEXT_PUBLIC_api_Key` / `NEXT_PUBLIC_NOTION_TOKEN` も利用できる。
+秘密の値をクラウド作業環境へ取り出したり、再入力したりする必要はない。
+fork / Dependabot の PR にはこのジョブを実行せず、シークレットはビルドステップだけに渡す。
+実データビルドもデプロイ・フォーム送信・GA送信は実行しない。
+
 Cloudflare アカウントが未作成でも GitHub Actions と Chromatic による検証は実行できる。
 `chromatic.yml` は push 時に Storybook をビルド・送信し、既存のベースラインとの差分を検出する。
 `components/Portfolio.stories.tsx` は固定データの主要ページを 375px / 1280px で撮影し、

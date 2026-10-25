@@ -118,6 +118,8 @@ GitHub Actions で以下のワークフローを実行。Node 22.23.4 / pnpm 10.
 - `pnpm test:e2e` — fixture ビルドを起動し、Playwright で静的生成・モーダル・遷移を検証する。
 - `pnpm preview` — dist のローカル検証。配信環境は静的ホスティングでよい。
 - CI `astro.yml` — 型チェック、Storybook のブラウザテスト、Playwright。Cypress も fixture モードで実行する。
+- 同一リポジトリの PR は `real-content` ジョブで GitHub シークレットを利用して実データをビルドする。
+  認証情報はビルドステップだけに渡し、fork / Dependabot ではこのジョブを実行しない。
 - CI `chromatic.yml` — Storybook の VRT。[[components/Portfolio.stories.tsx]] で主要ページを
   PC / モバイルの固定データで検証する。差分の承認は別途レビューし、自動承認しない。
 - fixture の About に実績データを含め、SSR / hydration の不整合も E2E で検証する。
