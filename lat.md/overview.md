@@ -1,6 +1,6 @@
 # Overview
 
-イラストレーター mieze(Ayu Nakata) の portfolio サイト（Astro 製）。Notion / Tumblr をビルド時に取得し、Cloudflare Pages 向けに静的生成する。本番の切り替えは別途行う。Tailwind CSS v4 + CVA でスタイリング、Biome で lint/format、Vitest + Storybook + Cypress でテストを管理する。
+イラストレーター mieze(Ayu Nakata) の portfolio サイト（Astro 製）。Notion / Tumblr をビルド時に取得し、Cloudflare Workers Static Assets 向けに静的生成する。本番の切り替えは別途行う。Tailwind CSS v4 + CVA でスタイリング、Biome で lint/format、Vitest + Storybook + Cypress でテストを管理する。
 
 ## Tech Stack
 
@@ -11,7 +11,7 @@
 - **状態管理**: Jotai（軽量アトムベース）
 - **CMS**: Notionhq client（API で Notion DB からデータ取得）
 - **テスト**: Vitest（unit + Storybook）、Playwright / Cypress（E2E）
-- **CI/CD**: GitHub Actions、Cloudflare Pages（移行先）、Chromatic（Visual Regression）
+- **CI/CD**: GitHub Actions、Cloudflare Workers Static Assets（移行先）、Chromatic（Visual Regression）
 
 ## Conventions
 

@@ -1,11 +1,11 @@
-# Astro / Cloudflare Pages への移行
+# Astro / Cloudflare Workers Static Assets への移行
 
 ## 構成
 
 Astro がビルド時に Notion と Tumblr を取得し、`dist/` に静的 HTML を生成する。
 React 19 / Jotai / Motion / Tailwind CSS v4 の既存部品を再利用し、Astro の
 ClientRouter と永続化する React island でナビゲーション・画像モーダルを動かす。
-サーバー実行用の Cloudflare アダプターや Worker は不要。
+サーバー実行用の Cloudflare アダプターや Worker スクリプトは不要。
 
 URL は `/`、`/works`、`/client_works`、`/about`、`/contact`、`/privacy_policy`、
 `/posts/<Tumblr id_string>` を維持する。存在しないページは `404.html` から従来どおり
@@ -99,7 +99,7 @@ fork / Dependabot の PR にはこのジョブを実行せず、シークレッ�
 実画像の読み込み、hydration、モーダル、ページ遷移を検証する。
 主要ページとモーダルのスクリーンショット・HTMLレポートは Actions の
 `real-content-browser-results` に7日間保存する。計測・フォーム宛ての通信はブラウザで遮断する。
-この検証は Cloudflare 上での配信確認とは別であり、Pages のプレビュー確認も必要。
+この検証は Cloudflare 上での配信確認とは別であり、Workers のプレビュー確認も必要。
 
 Cloudflare アカウントが未作成でも GitHub Actions と Chromatic による検証は実行できる。
 `chromatic.yml` は push 時に Storybook をビルド・送信し、既存のベースラインとの差分を検出する。
@@ -112,34 +112,76 @@ Chromatic のビルド成功は見た目の承認完了を意味しない。変�
 Storybook では拾えない HTML ルート・hydration・ページ遷移は Playwright で検証する。
 fixture の About に実績データを含め、空データだけで SSR の問題を見逃さないようにする。
 
-PR の検証後に Cloudflare アカウントと Pages を用意し、実データでのプレビュー検証を行う。
+PR の検証後に Cloudflare Workers を用意し、実データでのプレビュー検証を行う。
 マージ・本番公開・DNS 変更はその結果を確認した後の作業とし、PR 検証だけでは実施しない。
 
-## Cloudflare Pages の設定
+## Cloudflare Workers Static Assets の設定
 
-Pages の Git 連携で次を指定する。Next.js 用のプリセットは使わない。
+`wrangler.jsonc` は Worker `portfolio-v2` に `dist/` を静的配信する設定。
+Astro は `/works/index.html` などを生成するため、`html_handling: drop-trailing-slash`
+で既存の `/works` にURLを統一する。`not_found_handling: 404-page` は生成済みの
+`404.html` をHTTP 404で返す。SSRアダプターやWorkerスクリプトは追加しない。
+既存実装を維持できる一方、CMS更新の反映には再ビルドが必要。
+
+Wranglerは開発依存に固定する。Workers Previewsは4.135.0以上を必要とし、
+`previews: {}` を使ってブランチごとの検証配信を作る。
+
+```sh
+# ローカルの配信確認（アップロードなし）
+pnpm build:fixtures
+pnpm exec wrangler dev --local
+```
+
+実データでのプレビュー配信は、ビルド環境にCMS認証情報を設定してから行う。
+fixture出力のまま実データ検証用のプレビューへアップロードしない。
+
+```sh
+pnpm build
+pnpm exec wrangler preview
+```
+
+Workers Buildsを使う場合:
 
 | 項目 | 値 |
 | --- | --- |
-| プロジェクトルート | リポジトリのルート |
-| 本番ブランチ | `master` |
-| ビルドコマンド | `pnpm build` |
-| 出力ディレクトリ | `dist` |
+| リポジトリ | `mieze018/portfolio-v2` |
+| ルート | リポジトリのルート |
+| プロダクションブランチ | `master` |
+| 検証するブランチ | `feat/astro-cloudflare-pages` |
+| ビルドコマンド | `pnpm run build` |
+| プレビューコマンド | `npx wrangler preview` |
 | Node | `NODE_VERSION=22.23.4` |
 | pnpm | `PNPM_VERSION=10.33.0` |
 
-上記のアプリ用変数を Pages のビルド環境に設定する。本番・プレビューそれぞれに必要。
-ローカルのクラウド開発環境へ入れた値は Cloudflare に自動転送されない。
+プレビューブランチのビルドとプレビューURLを有効にする。
+`wrangler deploy` はWorkerのプロダクションへ配信するため、ブランチの検証には使わない。
+Workerへの配信と既存サイトのカスタムドメイン/DNS切り替えは別の操作。
 
-本番の認証情報がない間に動作を試す場合は、**別の検証用プロジェクト**で
-`pnpm build:fixtures` を指定する。本番ドメインは接続しない。
+プレビュー用の**ビルド**シークレットとして `TUMBLR_API_KEY` と `NOTION_TOKEN` を設定する。
+既存の旧名も利用できるが新名を優先する。実行時のWorker secretへの登録だけでは
+ビルドに渡らない。ローカルやGitHubの値も自動転送されない。
+フォームとGAを設定しないプレビューは、フォームがメールリンク、GAが計測なしとなる。
+
+GitHub Actionsの実データビルドも利用できる。ただし現在のワークフローはdistの配信処理を
+持たないため、Actionsから配信する場合はCloudflare認証と配信処理の追加が必要。
+
+プレビューURLは既定で公開される。実データビルドにはfixture専用のnoindexは付かないため、
+配信前にCloudflare Accessや検索除外の設定を確認する。
+
+公式資料:
+
+- [Astro静的サイト](https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/)
+- [HTML URLの正規化](https://developers.cloudflare.com/workers/static-assets/routing/advanced/html-handling/)
+- [カスタム404](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)
+- [Workers Previews](https://developers.cloudflare.com/workers/previews/get-started/)
+- [Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)
 
 ## 切り替えと切り戻し
 
-1. 移行用ブランチを Pages のプレビューとしてビルドする。公開検索の対象にしない設定を確認する。
+1. 移行用ブランチを Workers のプレビューとしてビルドする。公開検索の対象にしない設定を確認する。
 2. 実データで全ページ、画像、フォーム、スマートフォン表示、canonical を検証する。
 3. 既存の DNS / リダイレクト設定と Vercel のデプロイを記録し、Vercel を維持する。
-4. `www.mieze018.net` を Pages のカスタムドメインとして登録し、必要な DNS 設定と証明書を確認する。
+4. `www.mieze018.net` を Workers のカスタムドメインとして登録し、必要な DNS 設定と証明書を確認する。
    apex ドメインからの既存リダイレクトも維持する。DNS のネームサーバーを変更する場合は
    メール用の MX / TXT などサイト以外のレコードも引き継ぐ。
 5. 本番へ切り替え、主要URLとログを確認する。問題時は記録した配信先へ戻す。

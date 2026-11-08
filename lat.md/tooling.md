@@ -110,13 +110,16 @@ GitHub Actions で以下のワークフローを実行。Node 22.23.4 / pnpm 10.
 - **chromatic**: Visual Regression（PR ごと）
 - **cypress**: E2E テスト（PR ごと）
 
-## Astro / Cloudflare Pages
+## Astro / Cloudflare Workers Static Assets
 
 - `pnpm dev:fixtures` / `pnpm build:fixtures` — 認証不要の明示的な検証モード。バナーと noindex 付き。
 - `pnpm dev` / `pnpm build` — 実データ。NOTION_TOKEN / TUMBLR_API_KEY をビルド環境へ設定する。
 - `pnpm typecheck` — Astro / React / テストの型チェック。Cypress のグローバル型は除外する。
 - `pnpm test:e2e` — fixture ビルドを起動し、Playwright で静的生成・モーダル・遷移を検証する。
-- `pnpm preview` — dist のローカル検証。配信環境は静的ホスティングでよい。
+- `pnpm preview` — Astroによるdistのローカル検証。
+- ビルド後の `pnpm exec wrangler dev --local` でWorkersの配信経路を確認する。
+- [wrangler.jsonc](../wrangler.jsonc) で末尾スラッシュなしのURLとカスタム404を維持する。
+- `pnpm exec wrangler preview` はブランチのプレビューへ配信する。`wrangler deploy` は本番向け。
 - CI `astro.yml` — 型チェック、Storybook のブラウザテスト、Playwright。Cypress も fixture モードで実行する。
 - 同一リポジトリの PR は `real-content` ジョブで GitHub シークレットを利用して実データをビルドする。
   認証情報はビルドステップだけに渡し、fork / Dependabot ではこのジョブを実行しない。
@@ -126,9 +129,9 @@ GitHub Actions で以下のワークフローを実行。Node 22.23.4 / pnpm 10.
 - CI `chromatic.yml` — Storybook の VRT。[[components/Portfolio.stories.tsx]] で主要ページを
   PC / モバイルの固定データで検証する。差分の承認は別途レビューし、自動承認しない。
 - fixture の About に実績データを含め、SSR / hydration の不整合も E2E で検証する。
-- Cloudflare アカウントは PR の CI / VRT には不要。Pages の実データプレビュー準備時に作成する。
+- Cloudflare アカウントは PR の CI / VRT には不要。Workers への配信時に必要。
 
-Node は Astro 7 が要求する 22.23.4 以上へ更新した。Cloudflare Pages のコマンドは
+Node は Astro 7 が要求する 22.23.4 以上へ更新した。Cloudflare Workers Static Assets のコマンドは
 `pnpm build`、出力は `dist`。本番切り替え・認証・画像配信の詳細は
 [移行ガイド](../docs/CLOUDFLARE_MIGRATION.md) を参照。
 
