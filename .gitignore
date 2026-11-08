@@ -60,3 +60,8 @@ graphify-out/
 # Astro
 /dist/
 /.astro/
+
+# Wrangler local state and runtime secrets
+/.wrangler/
+.dev.vars
+.dev.vars.*
