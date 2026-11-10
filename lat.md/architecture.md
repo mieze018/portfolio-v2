@@ -42,7 +42,10 @@ getStaticPaths で既存URLと投稿詳細を生成する。追加投稿はコ�
 [[components/Portfolio.tsx]] は共有 Jotai Provider を持つ React island。
 Astro ClientRouter が island を永続化し、遷移先の props を更新する。
 画像モーダル・React の遷移アニメーション・ナビゲーションを同じ状態で扱う。
-リンクは標準の a 要素、画像は Tumblr の alt_sizes を使う img 要素。
+リンクは標準の a 要素。[[libs/optimizePostImages.ts]] が画像の表示サイズを決め、
+Astro の getImage でビルド時にWebPを生成し、ReactにはURLだけ渡す。
+一覧・詳細の img は静的配信の srcset、拡大モーダルは Tumblr の元画像を使う。
+GIF・SVG・fixture画像は変換せず、未変換画像は従来の alt_sizes を使う。
 コンテンツの DOM 参照は [[libs/hooks/useContentsWrapperRef.ts]] の callback ref で更新する。
 AnimatePresence の exit 中に遷移先 DOM が未接続でも、接続後にスクロール対象を登録する。
 

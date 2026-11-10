@@ -52,10 +52,12 @@ Playwright の webServer では `--ignore-lock` を付けてフォアグラウ�
 
 ## 画像・フォント・計測
 
-- 作品画像は現在の Tumblr 上のファイルを引き続き使用する。Tumblr の `alt_sizes` を
-  `srcset` に使い、一覧では遅延読み込み、拡大時は元画像を表示する。
+- Tumblr の JPEG・PNG・WebP 作品画像は Astro の `getImage()` でビルド時に WebP（品質80）へ変換する。
+  最大1280px、320・640・960pxの候補を元画像の幅以下で生成し、`dist/_astro/` から静的配信する。
+  一覧・詳細は画面幅に応じた `srcset` と遅延読み込みを使い、拡大時は元画像を表示する。
+  GIF・SVG・fixture画像は変換しない。元画像の取得・変換時間がビルドに加わる。
 - Next.js の画像最適化エンドポイントと有料の画像変換サービスは使用しない。
-  現段階では作品画像を Cloudflare へ複製・リサイズしていない。
+  生成した画像はHTMLと一緒にCloudflareへ配信するため、閲覧時の画像変換処理は不要。
 - EB Garamond / Noto Serif JP は Fontsource から静的アセットへ含める。
   ビルド中の Google Fonts へのアクセスは不要。
 - Vercel Analytics を削除。Google Analytics は設定があるときだけ Astro の
