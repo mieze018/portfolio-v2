@@ -165,6 +165,7 @@ export namespace Tumblr {
   }
 
   export interface Photo {
+    optimized?: { src: string; srcSet: string }
     caption: string
     original_size: OriginalSize
     alt_sizes: AltSize[]
