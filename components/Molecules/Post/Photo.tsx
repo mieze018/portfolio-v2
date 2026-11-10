@@ -56,10 +56,11 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
       onClick={handleOpenPhoto}
     >
       <img
-        src={photo.original_size.url}
+        src={photo.optimized?.src ?? photo.original_size.url}
         alt={photo.caption || '作品画像'}
         srcSet={
-          photo.alt_sizes?.length
+          photo.optimized?.srcSet ??
+          (photo.alt_sizes?.length
             ? [
                 ...new Map(
                   [...photo.alt_sizes, photo.original_size].map((size) => [size.width, size])
@@ -67,7 +68,7 @@ export const Photo = ({ photo, isColumn }: { photo: Tumblr.Photo; isColumn: bool
               ]
                 .map((size) => `${size.url} ${size.width}w`)
                 .join(', ')
-            : undefined
+            : undefined)
         }
         sizes={isColumn ? '(min-width: 768px) 25vw, 50vw' : '(min-width: 1024px) 768px, 95vw'}
         loading="lazy"

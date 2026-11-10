@@ -1,12 +1,25 @@
 ---
+import { getImage } from 'astro:assets'
 import type { GetStaticPaths } from 'astro'
 import { Portfolio } from '../../components/Portfolio'
 import { getContent } from '../../libs/content'
 import type { portfolioContentType } from '../../libs/contentTypes'
+import { optimizePostImages } from '../../libs/optimizePostImages'
 import Document from '../layouts/Document.astro'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const content = await getContent()
+  const source = await getContent()
+  const posts = await optimizePostImages(source.posts, async (image, width) => {
+    const result = await getImage({
+      src: image.url,
+      width,
+      height: Math.round((image.height * width) / image.width),
+      format: 'webp',
+      quality: 80,
+    })
+    return result.src
+  })
+  const content = { ...source, posts }
   const paths = ['', 'works', 'client_works', 'about', 'contact', 'privacy_policy']
   const routes = paths.map((path) => ({ params: { path: path || undefined }, props: { content } }))
   for (const post of content.posts) {

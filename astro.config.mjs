@@ -9,6 +9,9 @@ export default defineConfig({
   server: { port: 3000 },
   trailingSlash: 'never',
   integrations: [react()],
+  image: {
+    remotePatterns: [{ protocol: 'https', hostname: '*.media.tumblr.com' }],
+  },
   vite: {
     plugins: [tailwind()],
     css: { postcss: { plugins: [] } },
