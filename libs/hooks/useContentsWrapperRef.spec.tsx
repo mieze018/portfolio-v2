@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react'
-import type React from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 // Why: jotai の useSetAtom はストア依存なのでモックする
@@ -13,11 +12,10 @@ vi.mock('jotai', () => ({
 import { useContentsWrapperRef } from './useContentsWrapperRef'
 
 // Why: フックが返す ref を DOM 要素に紐づけるためのラッパーコンポーネント
-// React は ref.current を useEffect の前にセットするため、
-// useEffect 内の ref.current?.offsetTop が正しく評価される
+// callback ref の接続・切断を React から実際に発生させる
 const TestComponent = ({ routeKey }: { routeKey: string }) => {
-  const ref = useContentsWrapperRef(routeKey)
-  return <div ref={ref as React.RefObject<HTMLDivElement>} />
+  const { attachRef } = useContentsWrapperRef(routeKey)
+  return <div ref={attachRef} />
 }
 
 describe('useContentsWrapperRef', () => {
@@ -67,12 +65,12 @@ describe('useContentsWrapperRef', () => {
 
     render(<TestComponent routeKey="/about" />)
 
-    vi.advanceTimersByTime(10)
+    vi.advanceTimersByTime(50)
 
     expect(mockScrollIntoView).toHaveBeenCalledWith(true)
   })
 
-  it('アンマウント時に setTimeout がキャンセルされる', () => {
+  it('アンマウント後は予約済みフレームでもスクロールしない', () => {
     Object.defineProperty(HTMLElement.prototype, 'offsetTop', {
       get() {
         return 500
@@ -83,9 +81,9 @@ describe('useContentsWrapperRef', () => {
 
     const { unmount } = render(<TestComponent routeKey="/about" />)
 
-    // Why: setTimeout 発火前にアンマウントし、clearTimeout が実行されることを確認
+    // Why: フレーム実行前に切断された DOM にはスクロールしない
     unmount()
-    vi.advanceTimersByTime(10)
+    vi.advanceTimersByTime(50)
 
     // scrollIntoView はキャンセルされているため呼ばれない
     expect(HTMLElement.prototype.scrollIntoView).not.toHaveBeenCalled()
@@ -103,13 +101,13 @@ describe('useContentsWrapperRef', () => {
 
     render(<TestComponent routeKey="/" />)
 
-    vi.advanceTimersByTime(10)
+    vi.advanceTimersByTime(50)
 
     expect(mockScrollIntoView).not.toHaveBeenCalled()
   })
 
-  it('routeKey 変更時、2回目以降の effect では scrollIntoView を実行しない', () => {
-    // Why: isInitialMount.current が false になる分岐をカバーする
+  it('routeKey 変更時、新しい対象へスクロールする', () => {
+    // Why: 遷移先の DOM の接続時にスクロールすることを検証する
     Object.defineProperty(HTMLElement.prototype, 'offsetTop', {
       get() {
         return 500
@@ -121,15 +119,14 @@ describe('useContentsWrapperRef', () => {
 
     const { rerender } = render(<TestComponent routeKey="/about" />)
 
-    vi.advanceTimersByTime(10)
+    vi.advanceTimersByTime(50)
     expect(mockScrollIntoView).toHaveBeenCalledTimes(1)
     mockScrollIntoView.mockClear()
 
-    // Why: routeKey を変更して再レンダリングし、2回目の effect を発火させる
+    // Why: ルート変更で callback ref の再接続を発生させる
     rerender(<TestComponent routeKey="/contact" />)
 
-    vi.advanceTimersByTime(10)
-    // 2回目は isInitialMount が false なので scrollIntoView は呼ばれない
-    expect(mockScrollIntoView).not.toHaveBeenCalled()
+    vi.advanceTimersByTime(50)
+    expect(mockScrollIntoView).toHaveBeenCalledWith(true)
   })
 })

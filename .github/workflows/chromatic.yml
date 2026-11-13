@@ -30,6 +30,3 @@ jobs:
           # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           onlyChanged: true
-        env:
-          # 👇 アプリケーション用の環境変数
-          NEXT_PUBLIC_FORM: ${{ secrets.NEXT_PUBLIC_FORM }}

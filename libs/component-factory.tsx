@@ -1,18 +1,17 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva as _cva } from 'class-variance-authority'
+import type { JSX, ReactNode } from 'react'
 
 // HTMLタグ用のprops型
-type IntrinsicTag = keyof HTMLElementTagNameMap
+type IntrinsicTag = keyof HTMLElementTagNameMap & keyof JSX.IntrinsicElements
 type LooseIntrinsicProps = {
   children?: unknown
   className?: string
   [key: string]: unknown
 }
-// Why: React 19 の型定義と既存 factory のジェネリクスが噛み合わず、
-// JSX component として解釈させるには戻り値型の広い関数シグネチャが必要。
-// Trade-off: ここだけ any を許容し、既存コンポーネント API を維持する。
-// biome-ignore lint/suspicious/noExplicitAny: React 19 型との互換レイヤーとして意図的に any を使う
-type ComponentLike<P = unknown> = ((props: P) => any) | (new (...args: unknown[]) => { props: P })
+// Why: props を never にすることで、個々の props 型を持つコンポーネントを受け入れる。
+// PropsOf が実際の型を抽出するため、呼び出し側の props 検査は維持される。
+type ComponentLike = ((props: never) => ReactNode) | (new (...args: never[]) => { props: never })
 type PropsOf<T> = T extends IntrinsicTag
   ? LooseIntrinsicProps
   : T extends (props: infer P) => unknown
@@ -35,7 +34,7 @@ export const tw = <T extends IntrinsicTag, V extends ReturnType<typeof _cva>>(
     // Why: className を先に分離しないと ...props でバリアントのクラス名が上書きされてしまう。
     // twe と同様に [variantClasses, className] でマージする。
     const { className, ...props } = allProps
-    const Component = tag as keyof HTMLElementTagNameMap
+    const Component = tag as IntrinsicTag
     // TypeScript型推論の複雑性を回避するため、明示的に型変換
     const variantConfig = allProps as Parameters<typeof variants>[0]
     const classNames = variants(variantConfig)

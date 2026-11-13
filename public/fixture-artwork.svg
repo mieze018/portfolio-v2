@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs><linearGradient id="water" x2="0" y2="1"><stop stop-color="#ebf4fa"/><stop offset="1" stop-color="#f5fffa"/></linearGradient></defs>
+  <path fill="url(#water)" d="M0 0h1200v800H0z"/>
+  <circle cx="600" cy="350" r="180" fill="#ff7f00" opacity=".15"/>
+  <text x="600" y="610" text-anchor="middle" font-family="serif" font-size="32" fill="#888">Migration preview</text>
+</svg>

@@ -128,7 +128,7 @@ async function main() {
   await killProcessOnPort()
   await runCommand('pnpm', ['build'])
 
-  const serverProcess = spawn('pnpm', ['next', 'start', '--port', String(PORT)], {
+  const serverProcess = spawn('pnpm', ['preview', '--host', '127.0.0.1', '--port', String(PORT)], {
     stdio: 'inherit',
     shell: process.platform === 'win32',
   })

@@ -1,4 +1,4 @@
-import { author } from 'pages/api/basics'
+import { author } from 'libs/site'
 
 export const copyright = () => {
   const now = new Date()

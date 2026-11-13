@@ -1,6 +1,5 @@
 import type { Tumblr } from 'libs/@type/api/tumblr'
 import { cva, tw } from 'libs/component-factory'
-import Link from 'next/link'
 
 const Wrapper = tw(
   'footer',
@@ -21,13 +20,13 @@ export const PostFooter = ({ postDate, idString }: postFooterPropsType) => (
       }).format(new Date(postDate.replace(' GMT', '').replace(' ', 'T')))}
     </span>
     {idString && (
-      <Link
+      <a
         href={`/posts/${idString}`}
         className="underline hover:opacity-70"
         aria-label="この投稿のパーマネントリンク"
       >
         ¶
-      </Link>
+      </a>
     )}
   </Wrapper>
 )

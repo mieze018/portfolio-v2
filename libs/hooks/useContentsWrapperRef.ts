@@ -1,6 +1,6 @@
 // libs/hooks/useContentsWrapperRef.ts
 import { useSetAtom } from 'jotai'
-import { useEffect, useRef } from 'libs/reactCompat'
+import { useCallback, useRef } from 'libs/reactCompat'
 import { contentsWrapperState } from 'libs/states/atoms'
 
 /**
@@ -14,30 +14,24 @@ import { contentsWrapperState } from 'libs/states/atoms'
 export const useContentsWrapperRef = (routeKey: string) => {
   const ref = useRef<HTMLElement | null>(null)
   const setContentsWrapper = useSetAtom(contentsWrapperState)
-  // Why: 初回マウント時のみ scrollIntoView を実行するためのガード。
-  // 2回目以降のエフェクト実行時には、自動スクロールを抑止する意図。
-  const isInitialMount = useRef(true)
-
-  useEffect(() => {
-    let timeoutId: number | null = null
-
-    setContentsWrapper(ref.current)
-    if (isInitialMount.current) {
-      isInitialMount.current = false
-      if (routeKey !== '/' && ref.current?.offsetTop) {
-        timeoutId = window.setTimeout(() => ref.current?.scrollIntoView(true), 10)
+  const hasMounted = useRef(false)
+  // Why: AnimatePresence の exit 中は遷移先の DOM がまだない。
+  // routeKey の effect ではなく、実際の DOM の接続時に参照とスクロールを更新する。
+  const attachRef = useCallback(
+    (element: HTMLElement | null) => {
+      ref.current = element
+      setContentsWrapper(element)
+      if (!element) return
+      const shouldScroll = hasMounted.current || routeKey !== '/'
+      hasMounted.current = true
+      if (shouldScroll) {
+        requestAnimationFrame(() => {
+          if (ref.current === element && element.isConnected) element.scrollIntoView(true)
+        })
       }
-    }
+    },
+    [setContentsWrapper, routeKey]
+  )
 
-    return () => {
-      if (timeoutId !== null) {
-        clearTimeout(timeoutId)
-      }
-      // Why: アンマウント時に古い DOM 参照が atom に残ると、
-      // NavLinks / useScrollState が無効な要素を参照し続ける。
-      setContentsWrapper(null)
-    }
-  }, [setContentsWrapper, routeKey])
-
-  return ref
+  return { ref, attachRef }
 }

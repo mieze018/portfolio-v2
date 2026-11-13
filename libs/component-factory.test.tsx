@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
 import type React from 'react'
+import { describe, expect, test } from 'vitest'
 import { cva, tw, twe } from './component-factory'
 
 // テスト用のvariantsを定義

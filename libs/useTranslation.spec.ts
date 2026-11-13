@@ -2,13 +2,13 @@ import { describe, expect, it, vi } from 'vitest'
 
 // Why: useTranslation は public/ 配下の JSON を直接 import しているが、
 // Vitest の Vite 環境では public/ からの import がエラーになるためモックする
-vi.mock('../public/locales/ja/common.json', () => ({
+vi.mock('./locales/ja/common.json', () => ({
   default: {
     greeting: 'こんにちは',
     about: '概要',
   },
 }))
-vi.mock('../public/locales/en/common.json', () => ({
+vi.mock('./locales/en/common.json', () => ({
   default: {
     greeting: 'Hello',
     about: 'About',

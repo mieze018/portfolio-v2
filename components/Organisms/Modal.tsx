@@ -2,7 +2,6 @@ import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessu
 import { cva, tw } from 'libs/component-factory'
 import { useModalControl } from 'libs/hooks/useModalControl'
 import { cn } from 'libs/tw-clsx-util'
-import Image from 'next/image'
 
 // HeadlessUIコンポーネントは特殊なので直接cvaで定義
 const dialogVariants = cva('fixed inset-0 z-50 w-full h-full')
@@ -12,14 +11,11 @@ const dialogPanelVariants = cva(
 )
 const ContentWrapper = tw('div', cva('m-auto p-4'))
 
-const lightCyan =
-  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePD//38ACX8D3nikQTQAAAAASUVORK5CYII='
-
 /**
  * 画像拡大モーダル
  *
  * Why: useModalControl から photo データを受け取り、
- * この Modal が Image のレンダリング責務を持つ。
+ * この Modal が画像のレンダリング責務を持つ。
  * 以前は Photo 側で JSX を生成して atom に渡していたが、
  * データとレンダリングの関心を分離した。
  */
@@ -50,14 +46,13 @@ export const Modal = () => {
         <DialogPanel className={cn(dialogPanelVariants())} onClick={close}>
           <ContentWrapper>
             {photo && (
-              <Image
+              <img
                 src={photo.src}
                 alt={photo.alt ?? photo.src}
                 width={photo.width}
                 height={photo.height}
                 className="max-w-none mx-auto cursor-pointer"
-                placeholder="blur"
-                blurDataURL={lightCyan}
+                decoding="async"
               />
             )}
           </ContentWrapper>

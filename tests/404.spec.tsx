@@ -6,6 +6,6 @@ test.describe('ページが存在しないアドレスにアクセスした時',
     //urlが`undefined_page_url`を含まなくなるのを待つ
     await page.waitForURL((url) => !url.toString().includes('undefined_page_url'))
     // サブドメインを含まないurl
-    await expect(page.url()).toMatch(/http(s?):\/\/([^/]*)(\/?)$/)
+    expect(page.url()).toMatch(/http(s?):\/\/([^/]*)(\/?)$/)
   })
 })

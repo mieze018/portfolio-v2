@@ -1,36 +1,18 @@
-version: '3'
 services:
   app: &app
-    image: node:18
-    # Hot Reloadする
-    tty: true
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-      - NODE_ENV=development
-    user: root
+    image: node:22.23.4
     working_dir: /app
     volumes:
       - .:/app
       - /app/node_modules
-    command:
-      - sh
-      - -c
-      - |
-        pnpm install
-        chown node:node -R node_modules
-        pnpm dev -p 3001
+    environment:
+      ASTRO_TELEMETRY_DISABLED: '1'
+      CYPRESS_INSTALL_BINARY: '0'
+    command: sh -c "corepack pnpm install --frozen-lockfile && corepack pnpm dev:fixtures --host 0.0.0.0 --port 3001 --ignore-lock"
     ports:
       - '3001:3001'
   storybook:
     <<: *app
-    depends_on:
-      - app
-    command:
-      - sh
-      - -c
-      - |
-        pnpm install
-        chown node:node -R node_modules
-        pnpm storybook
+    command: sh -c "corepack pnpm install --frozen-lockfile && corepack pnpm storybook --ci --no-open --host 0.0.0.0"
     ports:
       - '6006:6006'

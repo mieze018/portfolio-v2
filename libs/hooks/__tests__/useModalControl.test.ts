@@ -6,7 +6,7 @@ import type { ModalPhoto } from 'libs/states/types'
 import { createElement, type ReactNode } from 'react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-// Why: useHash は Next.js の useRouter に依存するため、テスト環境ではモックする
+// Why: useHash はブラウザの履歴に依存するため、テスト環境ではモックする
 const mockSetHash = vi.fn()
 vi.mock('libs/useHash', () => ({
   useHash: vi.fn(() => ['', mockSetHash]),

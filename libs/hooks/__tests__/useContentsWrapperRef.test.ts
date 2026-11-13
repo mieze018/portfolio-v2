@@ -1,6 +1,6 @@
 // libs/hooks/__tests__/useContentsWrapperRef.test.ts
 
-import { renderHook } from '@testing-library/react'
+import { act, renderHook } from '@testing-library/react'
 import { createStore, Provider } from 'jotai'
 import { useContentsWrapperRef } from 'libs/hooks/useContentsWrapperRef'
 import { contentsWrapperState } from 'libs/states/atoms'
@@ -28,8 +28,8 @@ describe('useContentsWrapperRef', () => {
       wrapper: createWrapper(store),
     })
 
-    expect(result.current).toHaveProperty('current')
-    expect(result.current.current).toBeNull()
+    expect(result.current.ref).toHaveProperty('current')
+    expect(result.current.ref.current).toBeNull()
   })
 
   it('初回レンダリング時に contentsWrapperState atom を更新する（ref.current=null）', () => {
@@ -50,5 +50,32 @@ describe('useContentsWrapperRef', () => {
     vi.advanceTimersByTime(50)
     // ref.current が null なので scrollIntoView は呼ばれない
     // エラーなく完了することを確認
+  })
+
+  it('exit 後に DOM が接続されても参照を更新し、遷移先へスクロールする', () => {
+    const { result, rerender } = renderHook(({ path }) => useContentsWrapperRef(path), {
+      initialProps: { path: '/' },
+      wrapper: createWrapper(store),
+    })
+    const section = document.createElement('section')
+    section.scrollIntoView = vi.fn()
+    document.body.append(section)
+    const frame = vi.spyOn(globalThis, 'requestAnimationFrame').mockImplementation((callback) => {
+      callback(0)
+      return 0
+    })
+    try {
+      act(() => result.current.attachRef(section))
+      expect(section.scrollIntoView).not.toHaveBeenCalled()
+      act(() => result.current.attachRef(null))
+      expect(store.get(contentsWrapperState)).toBeNull()
+      rerender({ path: '/about' })
+      act(() => result.current.attachRef(section))
+      expect(store.get(contentsWrapperState)).toBe(section)
+      expect(section.scrollIntoView).toHaveBeenCalledWith(true)
+    } finally {
+      frame.mockRestore()
+      section.remove()
+    }
   })
 })

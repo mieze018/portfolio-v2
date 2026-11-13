@@ -57,6 +57,25 @@ describe('notion API ラッパー', () => {
       })
     })
 
+    it('次のカーソルがあるときは Notion DB の残りのページも取得する', async () => {
+      mockRetrieve.mockResolvedValue({ data_sources: [{ id: 'ds-123' }] })
+      mockQuery.mockResolvedValueOnce({
+        results: [{ id: 'first' }],
+        has_more: true,
+        next_cursor: 'cursor-2',
+      })
+      mockQuery.mockResolvedValueOnce({
+        results: [{ id: 'second' }],
+        has_more: false,
+        next_cursor: null,
+      })
+      expect(await getDatabase('db-abc')).toEqual([{ id: 'first' }, { id: 'second' }])
+      expect(mockQuery).toHaveBeenLastCalledWith({
+        data_source_id: 'ds-123',
+        start_cursor: 'cursor-2',
+      })
+    })
+
     it('data_sources が空の場合エラーを投げる', async () => {
       mockRetrieve.mockResolvedValue({ data_sources: [] })
 
